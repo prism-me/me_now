@@ -233,7 +233,7 @@
 											<a href="<?php echo e(isset($d->google_id)?$d->google_id:''); ?>" target="_blank"><i class="fab fa-google-plus-g"></i></a>
 										</span>
 										<span class="instagram-doctorl">
-											<a href="<?php echo e(isset($d->instagram_id)?$d->instagram_id:''); ?>" target="_blank"><img src="<?php echo e(asset('public/front/img/instagram.png')); ?>"></a>
+											<a href="<?php echo e(isset($d->instagram_id)?$d->instagram_id:''); ?>" target="_blank"><img src="<?php echo e(asset('front/img/instagram.png')); ?>"></a>
 										</span>
 									</div>
 								</div>

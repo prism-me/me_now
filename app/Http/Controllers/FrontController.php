@@ -39,13 +39,13 @@ class FrontController extends Controller
           Session::put("headingtext_color","#0f4a86");
           Session::put("lowbackground_box_color","#ededc2");
           Session::put("slider_color","#f1f5ff");          
-          Session::put("main_banner",asset('public/upload/web').'/'.$setting->main_banner);
+          Session::put("main_banner",asset('upload/web').'/'.$setting->main_banner);
        }
        public function showhome(){
          if(!isset($_COOKIE['fload'])){
             setcookie('fload','1', time() + (86400 * 30), "/");
          }
-          $service=Service::get()->take(6);
+          $service=Service::get()->take(8);
           $package=Package::get()->take(3);
           $department=Department::all();
           $doctor=Doctor::get()->take(4);

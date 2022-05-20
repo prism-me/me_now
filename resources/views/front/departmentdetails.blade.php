@@ -125,7 +125,7 @@
 																	<a href="{{isset($doc->google_id)?$doc->google_id:''}}"><i class="fab fa-google-plus-g"></i></a>
 																</span>
 																<span class="instagram-doctorl">
-																	<a href="{{isset($doc->instagram_id)?$doc->instagram_id:''}}"><img src="{{asset('public/front/img/instagram.png')}}"></a>
+																	<a href="{{isset($doc->instagram_id)?$doc->instagram_id:''}}"><img src="{{asset('front/img/instagram.png')}}"></a>
 																</span>
 															</div>
 														</div>

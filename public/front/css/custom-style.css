@@ -1,0 +1,73 @@
+.services-dropdown{
+    position: absolute !important;
+    margin-top: 2.5rem;
+    margin-left: 8rem;
+}
+
+.book-now-nav a{
+
+    border-radius: 25px;
+    background-color: #FA4638;
+    color: white !important;
+    padding: 0.4rem 1rem !important;
+}
+
+.navbar-nav{
+    align-items: center;
+}
+
+.top-header{
+    font-size: 14px;
+}
+.top-header select{
+background: transparent;
+border: none;
+font-size: 14px;
+}
+.sticky_buttons{
+    display: flex;
+    position: fixed;
+    bottom: 3rem;
+    right: 0px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sticky_buttons img:nth-child(1){
+    width:45px;
+    margin-bottom: 1rem;
+}
+
+.sticky_buttons img:nth-child(2){
+    width:70px;
+}
+
+.services-2nd-box{
+    height:300px !important;
+    margin-top: 3rem;
+    
+}
+.services-2nd-box .left-part-detail{
+
+    padding: 3rem;
+}
+
+.video-section{
+    margin-top: 50px;
+}
+
+.footer-icons-main-box ul li{
+display: inline-block;
+
+}
+.footer-icons-main-box ul li a{
+   color : #fff;
+}
+.anchor-doctor-image{
+    width: 100%;
+}
+.book_appointment_doctor button{
+    border-color: #49B7C6;
+    border-radius:25px;
+    color: white;
+}

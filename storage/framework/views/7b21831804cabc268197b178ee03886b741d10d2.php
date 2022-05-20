@@ -1,11 +1,12 @@
-@extends('front.layout')
-@section('title')
-    {{ __('messages.Home') }}
-@stop
-@section('loader')
+
+<?php $__env->startSection('title'); ?>
+    <?php echo e(__('messages.Home')); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('loader'); ?>
     <div id="overlayer"></div><span class="loader"><span class="loader-inner"></span></span>
-@stop
-@section('content')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
     <style>
 
     </style>
@@ -14,60 +15,62 @@
         </div>
         <div class="container">
             <div class="header-appo-main-box">
-                <h1>{{ __('messages.Appointment Now!') }}</h1>
-                @if (Session::get('message'))
+                <h1><?php echo e(__('messages.Appointment Now!')); ?></h1>
+                <?php if(Session::get('message')): ?>
                     <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
-                        {{ Session::get('message') }}
+                        <?php echo e(Session::get('message')); ?>
+
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">×</span>
                         </button>
                     </div>
-                @endif
+                <?php endif; ?>
                 <span id="loginerrorreview"></span>
-                <form action="{{ url('bookappoinment') }}" method="post">
-                    {{ csrf_field() }}
+                <form action="<?php echo e(url('bookappoinment')); ?>" method="post">
+                    <?php echo e(csrf_field()); ?>
+
                     <div class="appo-select-main-box">
                         <div class="appo-select-box">
                             <select id="department" required class="dropdown" name="department"
                                 onchange="getserviceanddoctor(this.value)">
                                 <option value="" disabled="disabled" selected="selected">-
-                                    {{ __('messages.Select Service') }}</option>
-                                @foreach ($department as $d)
-                                    <option value="{{ $d->id }}">{{ $d->name }}</option>
-                                @endforeach
+                                    <?php echo e(__('messages.Select Service')); ?></option>
+                                <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <option value="<?php echo e($d->id); ?>"><?php echo e($d->name); ?></option>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </select>
                         </div>
                         <div class="appo-select-box">
                             <select id="doctors" required class="dropdown" name="doctors">
                                 <option value="" disabled="disabled" selected="selected">-
-                                    {{ __('messages.Select Doctors') }}</option>
+                                    <?php echo e(__('messages.Select Doctors')); ?></option>
                             </select>
                         </div>
                         <div class="appo-select-box">
                             <select id="service" required class="dropdown" name="service">
                                 <option value="" disabled="disabled" selected="selected">-
-                                    {{ __('messages.Select Services') }}</option>
+                                    <?php echo e(__('messages.Select Services')); ?></option>
                             </select>
                         </div>
 
                     </div>
                     <div class="appo-input-main-box">
                         <input type="text" required name="name" id="name" placeholder="Your name"
-                            value="{{ Auth::user() ? Auth::user()->name : '' }}">
+                            value="<?php echo e(Auth::user() ? Auth::user()->name : ''); ?>">
                         <input type="text" required name="phone_no" id="phone_no" placeholder="Phone number"
-                            class="appo-right-input" value="{{ Auth::user() ? Auth::user()->phone_no : '' }}">
+                            class="appo-right-input" value="<?php echo e(Auth::user() ? Auth::user()->phone_no : ''); ?>">
                         <input type="date" required name="app_date" id="app_date" data-date-inline-picker="true"
                             min="<?= date('Y-m-d') ?>" placeholder="dd/mm/yyyy">
                         <input type="time" required name="app_time" placeholder="Time" class="appo-right-input">
                         <textarea rows="3" required name="messages" placeholder="Message"></textarea>
                     </div>
                     <div class="appo-btn-main-box">
-                        @if (Auth::id())
-                            <button type="submit">{{ __('messages.Book Now') }}</button>
-                        @else
+                        <?php if(Auth::id()): ?>
+                            <button type="submit"><?php echo e(__('messages.Book Now')); ?></button>
+                        <?php else: ?>
                             <button type="button" onclick="changehiddenstatus()" data-toggle="modal"
-                                data-target="#myModal">{{ __('messages.Book Now') }}</button>
-                        @endif
+                                data-target="#myModal"><?php echo e(__('messages.Book Now')); ?></button>
+                        <?php endif; ?>
 
                     </div>
                 </form>
@@ -78,10 +81,10 @@
         <div class="container">
             <div class="services-left-part">
                 <div class="left-part-detail">
-                    <h2>{{ __('messages.Personal care & healthy living') }}</h2>
-                    <p>{{ __('messages.facilitydetails') }}</p>
+                    <h2><?php echo e(__('messages.Personal care & healthy living')); ?></h2>
+                    <p><?php echo e(__('messages.facilitydetails')); ?></p>
                     <div class="services-btn-main-box">
-                        <a href="{{ url('allfacilites') }}">{{ __('messages.Learn More') }}</a>
+                        <a href="<?php echo e(url('allfacilites')); ?>"><?php echo e(__('messages.Learn More')); ?></a>
                     </div>
                     <div class="left-triangle">
                     </div>
@@ -89,25 +92,25 @@
             </div>
             <div class="services-right-part">
                 <div class="row">
-                    @if (count($services) > 0)
+                    <?php if(count($services) > 0): ?>
                         <?php $i = 0; ?>
-                        @foreach ($services as $s)
+                        <?php $__currentLoopData = $services; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $s): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="col-md-4 col-sm-6">
-                                @if ($i % 2 == 0)
+                                <?php if($i % 2 == 0): ?>
                                     <div class="services-part-box services-part1-box">
-                                    @else
+                                    <?php else: ?>
                                         <div class="services-part-box services-part2-box">
-                                @endif
-                                <img src="{{ asset('upload/service') . '/' . $s->icon }}">
+                                <?php endif; ?>
+                                <img src="<?php echo e(asset('upload/service') . '/' . $s->icon); ?>">
                                 <div class="text-detail-box">
-                                    <h4>{{ $s->name }}</h4>
-                                    <p>{{ $s->description }}</p>
+                                    <h4><?php echo e($s->name); ?></h4>
+                                    <p><?php echo e($s->description); ?></p>
                                 </div>
                             </div>
                 </div>
                 <?php $i++; ?>
-                @endforeach
-                @endif
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php endif; ?>
             </div>
         </div>
     </div>
@@ -115,36 +118,35 @@
     <div class="container">
         <div class="services-left-part services-2nd-box">
             <div class="left-part-detail">
-                <h2>{{ __('messages.Services') }}</h2>
-                <p>{{ __('messages.facilitydetails') }}</p>
+                <h2><?php echo e(__('messages.Services')); ?></h2>
+                <p><?php echo e(__('messages.facilitydetails')); ?></p>
                 <div class="services-btn-main-box">
-                    <a href="{{ url('allfacilites') }}">{{ __('messages.Learn More') }}</a>
+                    <a href="<?php echo e(url('allfacilites')); ?>"><?php echo e(__('messages.Learn More')); ?></a>
                 </div>
-                {{-- <div class="left-triangle">
-					</div> --}}
+                
             </div>
         </div>
         <div class="services-right-part">
             <div class="row">
-                @if (count($services) > 0)
+                <?php if(count($services) > 0): ?>
                     <?php $i = 0; ?>
-                    @foreach ($services as $s)
+                    <?php $__currentLoopData = $services; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $s): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="col-md-4 col-sm-6">
-                            @if ($i % 2 == 0)
+                            <?php if($i % 2 == 0): ?>
                                 <div class="services-part-box services-part1-box">
-                                @else
+                                <?php else: ?>
                                     <div class="services-part-box services-part2-box">
-                            @endif
-                            <img src="{{ asset('upload/service') . '/' . $s->icon }}">
+                            <?php endif; ?>
+                            <img src="<?php echo e(asset('upload/service') . '/' . $s->icon); ?>">
                             <div class="text-detail-box">
-                                <h4>{{ $s->name }}</h4>
-                                <p>{{ $s->description }}</p>
+                                <h4><?php echo e($s->name); ?></h4>
+                                <p><?php echo e($s->description); ?></p>
                             </div>
                         </div>
             </div>
             <?php $i++; ?>
-            @endforeach
-            @endif
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            <?php endif; ?>
         </div>
     </div>
     </div>
@@ -157,30 +159,30 @@
     <div class="pricing-main-box">
         <div class="container">
             <div class="global-heading">
-                <h2>{{ __('messages.Help Package') }}</h2>
-                <p>{{ __('messages.The easiest way to keep life on track') }}</p>
+                <h2><?php echo e(__('messages.Help Package')); ?></h2>
+                <p><?php echo e(__('messages.The easiest way to keep life on track')); ?></p>
             </div>
             <div class="pricing-part-main-box">
                 <div class="row">
-                    @foreach ($package as $p)
+                    <?php $__currentLoopData = $package; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $p): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="col-md-4">
                             <div class="pricing-all-content">
                                 <div class="pricing-part-box">
-                                    <h3>{{ $p->name }}</h3>
+                                    <h3><?php echo e($p->name); ?></h3>
                                     <div class="pricing-cost">
-                                        <h3>{{ Session::get('currency') }}</h3>
-                                        <span>{{ $p->price }}</span>
+                                        <h3><?php echo e(Session::get('currency')); ?></h3>
+                                        <span><?php echo e($p->price); ?></span>
                                         <h6>/ session</h6>
                                     </div>
-                                    <p>{{ $p->description }}</p>
+                                    <p><?php echo e($p->description); ?></p>
                                 </div>
                                 <div class="pricing-part-btn">
                                     <a class="btn"
-                                        href="{{ url('subscription') . '/' . $p->id }}">{{ __('messages.Order now') }}</a>
+                                        href="<?php echo e(url('subscription') . '/' . $p->id); ?>"><?php echo e(__('messages.Order now')); ?></a>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
             </div>
         </div>
@@ -192,12 +194,13 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="numbers-counter-part-box">
                         <div id="counter">
-                            <img src="{{ asset('front/img/n1.png') }}">
+                            <img src="<?php echo e(asset('front/img/n1.png')); ?>">
                             <div class="counter-value" data-count="10200">
-                                {{ $setting->happy_client }}
+                                <?php echo e($setting->happy_client); ?>
+
                             </div>
                             <div class="counter-name">
-                                <p>{{ __('messages.Happy people') }}</p>
+                                <p><?php echo e(__('messages.Happy people')); ?></p>
                             </div>
                         </div>
                     </div>
@@ -205,12 +208,13 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="numbers-counter-part-box">
                         <div id="counter">
-                            <img src="{{ asset('front/img/n2.png') }}">
+                            <img src="<?php echo e(asset('front/img/n2.png')); ?>">
                             <div class="counter-value" data-count="700">
-                                {{ $setting->surgery_complete }}
+                                <?php echo e($setting->surgery_complete); ?>
+
                             </div>
                             <div class="counter-name">
-                                <p>{{ __('messages.SURGERY COMPLETED') }}</p>
+                                <p><?php echo e(__('messages.SURGERY COMPLETED')); ?></p>
                             </div>
                         </div>
                     </div>
@@ -218,12 +222,13 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="numbers-counter-part-box">
                         <div id="counter">
-                            <img src="{{ asset('front/img/n3.png') }}">
+                            <img src="<?php echo e(asset('front/img/n3.png')); ?>">
                             <div class="counter-value" data-count="189">
-                                {{ $setting->expert_doctor }}
+                                <?php echo e($setting->expert_doctor); ?>
+
                             </div>
                             <div class="counter-name">
-                                <p>{{ __('messages.Expert doctors') }}</p>
+                                <p><?php echo e(__('messages.Expert doctors')); ?></p>
                             </div>
                         </div>
                     </div>
@@ -231,12 +236,13 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="numbers-counter-part-box">
                         <div id="counter">
-                            <img src="{{ asset('front/img/n4.png') }}">
+                            <img src="<?php echo e(asset('front/img/n4.png')); ?>">
                             <div class="counter-value" data-count="11">
-                                {{ $setting->worldwide_branch }}
+                                <?php echo e($setting->worldwide_branch); ?>
+
                             </div>
                             <div class="counter-name">
-                                <p>{{ __('messages.World wide branch') }}</p>
+                                <p><?php echo e(__('messages.World wide branch')); ?></p>
                             </div>
                         </div>
                     </div>
@@ -248,13 +254,13 @@
     <div class="doctorl-main-box">
         <div class="container">
             <div class="global-heading">
-                <h2>{{ __('messages.Meet Our Doctors') }}</h2>
-                <p>{{ __('messages.Talent wins games, but teamwork and intelligence win championships') }}</p>
+                <h2><?php echo e(__('messages.Meet Our Doctors')); ?></h2>
+                <p><?php echo e(__('messages.Talent wins games, but teamwork and intelligence win championships')); ?></p>
             </div>
             <div class="row">
-                @if (count($doctorls) > 0)
-                    @foreach ($doctorls as $d)
-                        <a href="{{ url('doctordetails/') . '/' . $d->user_id }}" class="anchor-doctor-image">
+                <?php if(count($doctorls) > 0): ?>
+                    <?php $__currentLoopData = $doctorls; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <a href="<?php echo e(url('doctordetails/') . '/' . $d->user_id); ?>" class="anchor-doctor-image">
                             <div class="col-lg-3 col-md-6 col-sm-6">
                                 <div class="doctorl-part-box">
                                     <?php
@@ -267,49 +273,33 @@
                                     <div class="doctorl-dp-img doctorl-dp-img-1"
                                         style="background-image: url('<?= $image ?>')"></div>
                                     <div class="doctorl-part-detail">
-                                        <h4>{{ ucwords(strtolower($d->name)) }}</h4>
-                                        <p>{{ substr(trim($d->about_us), 0, 135) }}</p>
+                                        <h4><?php echo e(ucwords(strtolower($d->name))); ?></h4>
+                                        <p><?php echo e(substr(trim($d->about_us), 0, 135)); ?></p>
                                     </div>
                                     <div class="icons-images">
                                         <div class="book_appointment_doctor">
                                             <button>Make an Appointment</button>
                                         </div>
-                                        {{-- <span class="facebook-doctorl">
-                                            <a href="{{ isset($d->facebook_id) ? $d->facebook_id : '' }}" target="_blank"><i
-                                                    class="fab fa-facebook-f"></i></a>
-                                        </span>
-                                        <span class="twitter-doctorl">
-                                            <a href="{{ isset($d->twitter_id) ? $d->twitter_id : '' }}" target="_blank"><i
-                                                    class="fab fa-twitter"></i></a>
-                                        </span>
-                                        <span class="gp-doctorl">
-                                            <a href="{{ isset($d->google_id) ? $d->google_id : '' }}" target="_blank"><i
-                                                    class="fab fa-google-plus-g"></i></a>
-                                        </span>
-                                        <span class="instagram-doctorl">
-                                            <a href="{{ isset($d->instagram_id) ? $d->instagram_id : '' }}"
-                                                target="_blank"><img
-                                                    src="{{ asset('front/img/instagram.png') }}"></a>
-                                        </span> --}}
+                                        
                                     </div>
                                 </div>
                             </div>
                         </a>
-                    @endforeach
-                @endif
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php endif; ?>
             </div>
         </div>
     </div>
     <div class="testimonial-main-box">
         <div class="container">
             <div class="global-heading">
-                <h2>{{ __('messages.Patient Reviews') }}</h2>
-                <p>{{ __('messages.Feedback is the breakfast of champions') }}</p>
+                <h2><?php echo e(__('messages.Patient Reviews')); ?></h2>
+                <p><?php echo e(__('messages.Feedback is the breakfast of champions')); ?></p>
             </div>
             <div class="testimonial-part-main-box">
                 <div class="owl-carousel testimonial-carousel">
-                    @if ($review)
-                        @foreach ($review as $r)
+                    <?php if($review): ?>
+                        <?php $__currentLoopData = $review; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="single-testimonial">
                                 <div class="testimonial-part-box">
                                     <div class="testimonial-inner-images">
@@ -323,22 +313,24 @@
                                                 $image = asset('upload/profile/profile.png');
                                             }
                                             ?>
-                                            <img src="{{ $image }}" class="testimonial-profile-img">
+                                            <img src="<?php echo e($image); ?>" class="testimonial-profile-img">
                                         </div>
                                         <div class="col-md-9 testtext">
-                                            <p class="testip">{{ substr($r->review, 0, 165) }}</p>
+                                            <p class="testip"><?php echo e(substr($r->review, 0, 165)); ?></p>
                                             <span class="testimonialspan"></span>
-                                            @if (isset($r->users->name))
-                                                <h3 class="testimonialh">- {{ $r->users->name }}</h3>
-                                            @endif
+                                            <?php if(isset($r->users->name)): ?>
+                                                <h3 class="testimonialh">- <?php echo e($r->users->name); ?></h3>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
-                    @endif
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
     </div>
-@stop
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('front.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Projects\Menow\me_now\resources\views/front/home.blade.php ENDPATH**/ ?>
