@@ -39,13 +39,13 @@
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </select>
                         </div>
+                        
                         <div class="appo-select-box">
-                            <select id="doctors" required class="dropdown" name="doctors">
+                            <select id="service" required class="dropdown" name="service">
                                 <option value="" disabled="disabled" selected="selected">-
-                                    <?php echo e(__('messages.Select Doctors')); ?></option>
+                                    <?php echo e(__('messages.Select Services')); ?></option>
                             </select>
                         </div>
-                        
 
                     </div>
                     <div class="appo-input-main-box">

@@ -20,8 +20,8 @@ Route::get('/', function() {
 });
  Route::get("/brain","braintreeController@showbrain");
  
- Route::get("add_doctor_review","AuthenticatedoctorController@show_product_review_user");
- Route::post("checkoutbrain","braintreeController@checkoutbrain");
+Route::get("add_doctor_review","AuthenticatedoctorController@show_product_review_user");
+Route::post("checkoutbrain","braintreeController@checkoutbrain");
 Route::get("sendnotification","FrontController@sendnotification");
 Route::get("privacy_policy","HomeController@privacy");
 Route::group(['prefix' => '/'], function () {
@@ -100,6 +100,8 @@ Route::group(['prefix' => 'admin'], function () {
 		 Route::get("savedepartment/{id}","DepartmentController@saveddepartment");
 		 Route::post("updatedepartment","DepartmentController@updatedepartment");
 		 Route::get("deletedepartment/{id}","DepartmentController@deletedepartment");
+
+         
 		 Route::get("departmentservice/{id}","DepartmentController@departmentservice");
 		 Route::get("savedepartmentservice/{dept_id}/{id}","DepartmentController@savedepartmentservice");
 		 Route::post("updatedepartmentservice","DepartmentController@updatedepartmentservice");

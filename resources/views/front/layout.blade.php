@@ -94,8 +94,15 @@
                                     
                                 </a>
                                 <div class="dropdown-menu services-dropdown" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Services 1</a>
-                                    <a class="dropdown-item" href="#">Services 1</a>
+                                    
+                                  @foreach($department as $departments)
+                                        <option value="{{$departments->id}}">{{$departments->name}}</option>
+                                       
+                                        @if($departments->services)
+                                           {{ $departments->services->name }}
+                                        @endif
+                                    @endforeach
+                               
                                 </div>
                             </li>
                             <li class="nav-item">
