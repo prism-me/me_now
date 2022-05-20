@@ -220,10 +220,11 @@ class FrontController extends Controller
        }
 
        public function doctorlist(){
+           
           $department=Department::all();
           $doctor=Doctor::all();
           $departmentdoctor=Department::with('doctor')->get();
-           $setting=Setting::find(1);
+          $setting=Setting::find(1);
           return view("front.doctorlist")->with("department",$department)->with("doctor",$doctor)->with("departmentdoctor",$departmentdoctor)->with("setting",$setting);
        }
      

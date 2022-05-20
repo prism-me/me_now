@@ -20,6 +20,7 @@
 			      		<?php echo e(__('messages.All')); ?>
 
 			      	</div>
+					
 			      	<?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 				      	<div class="slide tablinks" onclick="openCity(event, '<?php echo e($d->id); ?>')">
 				      		<?php echo e($d->name); ?>

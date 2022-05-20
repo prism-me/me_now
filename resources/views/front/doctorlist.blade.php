@@ -19,6 +19,7 @@
 			      	<div class="slide tablinks" id="defaultOpen" onclick="openCity(event, 'all')">
 			      		{{__('messages.All')}}
 			      	</div>
+					
 			      	@foreach($department as $d)
 				      	<div class="slide tablinks" onclick="openCity(event, '{{$d->id}}')">
 				      		{{$d->name}}

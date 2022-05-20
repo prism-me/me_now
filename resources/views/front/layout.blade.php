@@ -86,12 +86,12 @@
 			        			<a class="nav-link" href="{{url('/')}}">{{ __('messages.Home' )}}</a>
 			  				</li> --}}
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('about') }}">{{ __('About') }}</a>
+                                <a class="nav-link" href="{{ url('about') }}">{{ __('messages.About')}}</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Services
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ __('messages.Select Services')}}
+                                    
                                 </a>
                                 <div class="dropdown-menu services-dropdown" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="#">Services 1</a>
@@ -100,21 +100,21 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="{{ url('doctorlist') }}">{{ __('Corporate Services') }}</a>
+                                    href="{{ url('doctorlist') }}">{{ __('messages.Corporate Services') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="{{ url('doctorlist') }}">{{ __('messages.Doctors') }}</a>
+                                    href="{{ url('doctorlist') }}">{{ __('messages.Doctors')}}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('allfacilites') }}">{{ __('Workshops') }}</a>
+                                <a class="nav-link" href="{{ url('allfacilites') }}">{{ __('messages.Workshops') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="{{ url('gallery') }}">{{ __('Women Empowerment') }}</a>
+                                    href="{{ url('gallery') }}">{{ __('messages.Women Empowerment') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('pricing') }}">{{ __('Become a Member') }}</a>
+                                <a class="nav-link" href="{{ url('pricing') }}">{{ __('messages.Become a Member') }}</a>
                             </li>
                             <li class="nav-item book-now-nav">
                                 <a class="nav-link" style="color:white !important; width: 104px"
@@ -555,24 +555,27 @@
                 <div class="footer-bottom-main-box">
 
                     <p>
-                        {{ __('messages.Copyright') }} @ {{ date('Y') }}
-                        {{ __('messages.Me Now All Rights Reserved') }}
+                        
+                        {{ __('messages.Designed and Managed by Prism') }}
                     </p>
 
                     <div class="footer-icons-main-box">
+                        <p>{{ __('messages.All Right Reserved') }}</p>&nbsp;
+                        <p>{{ __('messages.Me Now') }}.</p>&nbsp;
+                        <p>{{ __('messages.Copyright') }} @ {{ date('Y') }}</p>&nbsp;
                         <ul>
                             <li>
-                                <a href="terms-of-service">{{ __('messages.Terms of Service') }}</a>
+                                <a href="terms-of-service">{{ __('messages.Terms of Service') }}</a>&nbsp;
                             </li>
                             <li>
-                                <a href="privacy-policy">{{ __('messages.Privacy Policy') }}</a>
+                                <a href="privacy-policy">{{ __('messages.Privacy Policy') }}</a>&nbsp;
                             </li>
                             <li>
-                                <a href="copy-rights">{{ __('messages.Copy Rights') }}</a>
+                                <a href="copy-rights">{{ __('messages.Shipping Policy') }}</a>&nbsp;
                             </li>
                         </ul>
                     </div>
-                    {{-- <div class="footer-icon-box">
+                        {{-- <div class="footer-icon-box">
 							<a href="{{isset($setting->facebook_id)?$setting->facebook_id:''}}">
 								<i class="fab fa-facebook-f"></i>
 							</a>
@@ -592,7 +595,7 @@
 								<i class="fab fa-instagram"></i>
 							</a>
 						</div> --}}
-                    <p>{{ date('Y') }} @ {{ __('messages.Company private ltd') }}.</p>
+                    {{-- <p>{{ date('Y') }} @ {{ __('messages.Company private ltd') }}.</p> --}}
                 </div>
             </div>
         </div>

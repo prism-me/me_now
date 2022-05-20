@@ -30,8 +30,7 @@
                         <div class="appo-select-box">
                             <select id="department" required class="dropdown" name="department"
                                 onchange="getserviceanddoctor(this.value)">
-                                <option value="" disabled="disabled" selected="selected">-
-                                    {{ __('messages.Select Service') }}</option>
+                                <option value="" disabled="disabled" selected="selected">{{ __('messages.Select Services')}}</option>
                                 @foreach ($department as $d)
                                     <option value="{{ $d->id }}">{{ $d->name }}</option>
                                 @endforeach
@@ -43,12 +42,12 @@
                                     {{ __('messages.Select Doctors') }}</option>
                             </select>
                         </div>
-                        <div class="appo-select-box">
+                        {{-- <div class="appo-select-box">
                             <select id="service" required class="dropdown" name="service">
                                 <option value="" disabled="disabled" selected="selected">-
                                     {{ __('messages.Select Services') }}</option>
                             </select>
-                        </div>
+                        </div> --}}
 
                     </div>
                     <div class="appo-input-main-box">
