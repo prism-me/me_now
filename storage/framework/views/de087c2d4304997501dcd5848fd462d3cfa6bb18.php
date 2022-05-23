@@ -210,4 +210,4 @@
 /*.slick-track{
 	transform: translate3d(0px, 0px, 0px)!important;
 } */
-</style><?php /**PATH D:\Projects\Menow\me_now\resources\views/front/cssclass.blade.php ENDPATH**/ ?>
+</style><?php /**PATH C:\xampp\htdocs\meNow\resources\views/front/cssclass.blade.php ENDPATH**/ ?>

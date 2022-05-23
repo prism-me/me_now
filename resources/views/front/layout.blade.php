@@ -41,7 +41,7 @@
 
 <body onload="gettimezone()">
     @include('front.firebase_config');
-    @include('front.cssclass');
+    {{-- @include('front.cssclass'); --}}
     @yield('loader')
 
 
@@ -95,14 +95,24 @@
                                 </a>
                                 <div class="dropdown-menu services-dropdown" aria-labelledby="navbarDropdown">
                                     
-                                    @foreach($department as $departments)
+                                    {{-- @foreach($department as $departments)
                                         <option value="{{$departments->id}}">{{$departments->name}}</option>
                                        
-                                        @if(!blank($department->services))
-                                           {{ $departments['services'][0]['name'] }}
-                                        @endif
+                                         @if(!blank($departments->service))
+                                           {{ $departments['service'][0]['name'] }}
+                                        @endif 
+                                    @endforeach --}}
+                                    @foreach($department as $category)
+                                        <li class="dropdown m-menu-fw">
+                                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">{{ $category->name }}
+                                            <span><i class="fa fa-angle-down"></i></span></a>
+                                            <ul class="dropdown-menu" >
+                                                @if(!blank($category->service))
+                                                    {{ $category['service'][0]['name'] }}
+                                                @endif 
+                                            </ul>
+                                        </li>
                                     @endforeach
-                               
                                 </div>
                             </li>
                             <li class="nav-item">

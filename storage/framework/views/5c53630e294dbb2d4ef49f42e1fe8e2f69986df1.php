@@ -41,7 +41,7 @@
 
 <body onload="gettimezone()">
     <?php echo $__env->make('front.firebase_config', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>;
-    <?php echo $__env->make('front.cssclass', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>;
+    
     <?php echo $__env->yieldContent('loader'); ?>
 
 
@@ -94,15 +94,20 @@
                                 </a>
                                 <div class="dropdown-menu services-dropdown" aria-labelledby="navbarDropdown">
                                     
-                                    <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $departments): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                        <option value="<?php echo e($departments->id); ?>"><?php echo e($departments->name); ?></option>
-                                       
-                                        <?php if(!blank($department->services)): ?>
-                                           <?php echo e($departments['services'][0]['name']); ?>
+                                    
+                                    <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <li class="dropdown m-menu-fw">
+                                            <a href="#" data-toggle="dropdown" class="dropdown-toggle"><?php echo e($category->name); ?>
 
-                                        <?php endif; ?>
+                                            <span><i class="fa fa-angle-down"></i></span></a>
+                                            <ul class="dropdown-menu" >
+                                                <?php if(!blank($category->service)): ?>
+                                                    <?php echo e($category['service'][0]['name']); ?>
+
+                                                <?php endif; ?> 
+                                            </ul>
+                                        </li>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                               
                                 </div>
                             </li>
                             <li class="nav-item">
