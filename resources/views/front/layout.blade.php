@@ -95,13 +95,13 @@
                                 </a>
                                 <div class="dropdown-menu services-dropdown" aria-labelledby="navbarDropdown">
                                     
-                                  @foreach($department as $departments)
+                                    @foreach($department as $departments)
                                         <option value="{{$departments->id}}">{{$departments->name}}</option>
-                                       
-                                        @if($departments->services)
-                                           {{ $departments->services->name }}
+                                        @if (!blank($departments->service))
+                                            {{ $departments['service'][0]['name'] }}
                                         @endif
-                                    @endforeach
+                                        @endforeach
+                                      
                                
                                 </div>
                             </li>
