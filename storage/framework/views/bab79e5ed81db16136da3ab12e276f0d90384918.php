@@ -13,64 +13,9 @@
     <div class="appointment-section">
         <div class="header-img">
         </div>
-        <div class="container">
-            <div class="header-appo-main-box">
-                <h1><?php echo e(__('messages.Appointment Now!')); ?></h1>
-                <?php if(Session::get('message')): ?>
-                    <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
-                        <?php echo e(Session::get('message')); ?>
-
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                <?php endif; ?>
-                <span id="loginerrorreview"></span>
-                <form action="<?php echo e(url('bookappoinment')); ?>" method="post">
-                    <?php echo e(csrf_field()); ?>
-
-                    <div class="appo-select-main-box">
-                        <div class="appo-select-box">
-                            <select id="department" required class="dropdown" name="department"
-                                onchange="getserviceanddoctor(this.value)">
-                                <option value="" disabled="disabled" selected="selected"><?php echo e(__('messages.Select Services')); ?></option>
-                                <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <option value="<?php echo e($d->id); ?>"><?php echo e($d->name); ?></option>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                            </select>
-                        </div>
-                        
-                        <div class="appo-select-box">
-                            <select id="service" required class="dropdown" name="service">
-                                <option value="" disabled="disabled" selected="selected">-
-                                    <?php echo e(__('messages.Select Services')); ?></option>
-                            </select>
-                        </div>
-
-                    </div>
-                    <div class="appo-input-main-box">
-                        <input type="text" required name="name" id="name" placeholder="Your name"
-                            value="<?php echo e(Auth::user() ? Auth::user()->name : ''); ?>">
-                        <input type="text" required name="phone_no" id="phone_no" placeholder="Phone number"
-                            class="appo-right-input" value="<?php echo e(Auth::user() ? Auth::user()->phone_no : ''); ?>">
-                        <input type="date" required name="app_date" id="app_date" data-date-inline-picker="true"
-                            min="<?= date('Y-m-d') ?>" placeholder="dd/mm/yyyy">
-                        <input type="time" required name="app_time" placeholder="Time" class="appo-right-input">
-                        <textarea rows="3" required name="messages" placeholder="Message"></textarea>
-                    </div>
-                    <div class="appo-btn-main-box">
-                        <?php if(Auth::id()): ?>
-                            <button type="submit"><?php echo e(__('messages.Book Now')); ?></button>
-                        <?php else: ?>
-                            <button type="button" onclick="changehiddenstatus()" data-toggle="modal"
-                                data-target="#myModal"><?php echo e(__('messages.Book Now')); ?></button>
-                        <?php endif; ?>
-
-                    </div>
-                </form>
-            </div>
-        </div>
+        <?php echo $__env->make('front.banner_slider', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     </div>
+
     <div class="services-main-box">
         <div class="container">
             <div class="services-left-part">
@@ -254,8 +199,8 @@
             <div class="row">
                 <?php if(count($doctorls) > 0): ?>
                     <?php $__currentLoopData = $doctorls; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <a href="<?php echo e(url('doctordetails/') . '/' . $d->user_id); ?>" class="anchor-doctor-image">
-                            <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <a href="<?php echo e(url('doctordetails/') . '/' . $d->user_id); ?>" class="anchor-doctor-image">
                                 <div class="doctorl-part-box">
                                     <?php
                                     if ($d->image) {
@@ -269,16 +214,17 @@
                                     <div class="doctorl-part-detail">
                                         <h4><?php echo e(ucwords(strtolower($d->name))); ?></h4>
                                         <p><?php echo e(substr(trim($d->about_us), 0, 135)); ?></p>
-                                    </div>
-                                    <div class="icons-images">
-                                        <div class="book_appointment_doctor">
+                                        <div class="book_appointment_doctor text-center">
                                             <button>Make an Appointment</button>
                                         </div>
+                                    </div>
+                                    <div class="icons-images">
+                                        
                                         
                                     </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 <?php endif; ?>
             </div>
@@ -326,5 +272,19 @@
         </div>
     </div>
 <?php $__env->stopSection(); ?>
+
+
+<?php $__env->startPush('scripts'); ?>
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            animateOut: 'fadeOut',
+            margin: 10,
+            nav: true,
+            items: 1,
+            dots: false,
+        })
+    </script>
+<?php $__env->stopPush(); ?>
 
 <?php echo $__env->make('front.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\meNow\resources\views/front/home.blade.php ENDPATH**/ ?>

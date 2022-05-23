@@ -96,12 +96,12 @@
                                     
                                     <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $departments): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <option value="<?php echo e($departments->id); ?>"><?php echo e($departments->name); ?></option>
-                                        <?php if(!blank($departments->service)): ?>
-                                            <?php echo e($departments['service'][0]['name']); ?>
+                                       
+                                        <?php if(!blank($department->services)): ?>
+                                           <?php echo e($departments['services'][0]['name']); ?>
 
                                         <?php endif; ?>
-                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                      
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                
                                 </div>
                             </li>
