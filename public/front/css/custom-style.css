@@ -60,6 +60,9 @@ font-size: 14px;
 display: inline-block;
 
 }
+.footer-icons-main-box ul{
+    padding-left: 0px;
+}
 .footer-icons-main-box ul li a{
    color : #fff;
 }
@@ -67,7 +70,112 @@ display: inline-block;
     width: 100%;
 }
 .book_appointment_doctor button{
-    border-color: #49B7C6;
+    border:0px;
+    background: #1B7081;
     border-radius:25px;
     color: white;
+    padding:.5rem 1rem;
+}
+
+.doctorl-part-detail{
+    background: #DAF0FF;
+    padding: 1rem;
+
+}
+
+/* banner slider */
+.appointment-section .owl-nav {
+
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    padding: 0px 30px;
+}
+
+.appointment-section .owl-nav button{
+    background: #48b7c6 !important;
+    padding: 2.5rem !important;
+    border-radius: 50px;
+    height: 36px;
+    width: 37px;
+    color: white !important;
+    float: left;
+}
+
+.appointment-section .owl-nav .owl-next{
+    float: right;
+}   
+
+.appointment-section .item .caption {
+    position: absolute;
+    top: 23%;
+    left: 9%;
+}
+
+.appointment-section .item .caption h1{
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.appointment-section .item .caption p{
+    font-size: 17px;
+}   
+.appointment-section .item .caption button{
+    background-color: #48b7c6;
+    color: white;
+    border-radius: 30px;
+    padding:.6rem 1rem;
+    border: none;
+
+}
+
+
+/* header */
+.top-header p , .top-right-text .form-inline label {
+
+    color: white !important;
+}
+
+/* footer */
+
+
+ .footer-r1-detail h3{
+    color: #49B7C6 !important;
+} 
+
+
+.subcribe-button-box button{
+    background-color: #49B7C6;
+    color: white !important;
+}
+
+
+/* doctors page */
+
+/* .doctorpg-tab-mainbox .customer-logos{
+    display: flex;
+    justify-content: center; 
+} */
+
+.promo_section {
+    margin: 60px auto;
+    background-color: #49B7C6;
+    padding: 3rem 0px;
+}
+.promo_section p{
+    color: white;
+}
+
+.get-in-touch-button{
+    background-color: #1B7081;
+    border:1px solid #1B7081;
+    padding: .5rem 1rem;
+}
+
+.under-doctor-appointment-button{
+    background-color: #1B7081;
+    width: 100%;
+    color: white;
+    border: 1px solid #1B7081;
+    padding: 1rem;
+
 }

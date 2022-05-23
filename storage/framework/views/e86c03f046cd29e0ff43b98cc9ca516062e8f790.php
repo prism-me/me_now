@@ -21,9 +21,9 @@
             <div class="row">
                <div class="col-md-5">
                   <?php if ($doctor->image) {
-                     $image = asset('public/upload/doctor') . "/" . $doctor->image;
+                     $image = asset('upload/doctor') . "/" . $doctor->image;
                      } else {
-                     $image = asset('public/upload/profile/profile.png');
+                     $image = asset('upload/profile/profile.png');
                      } 
                      ?>
                   <div class="doctor-detail-img-box" style="background-image: url('<?= $image ?>')">
@@ -86,16 +86,14 @@
                         <a href="<?php echo e(isset($doctor->google_id)?$doctor->google_id:''); ?>" target="_blank"><i class="fab fa-google-plus-g"></i></a>
                         </span>
                         <span class="instagram-doctorl">
-                        <a href="<?php echo e(isset($doctor->instagram_id)?$doctor->instagram_id:''); ?>" target="_blank"><img src="<?php echo e(asset('public/front/img/instagram.png')); ?>"></a>
+                        <a href="<?php echo e(isset($doctor->instagram_id)?$doctor->instagram_id:''); ?>" target="_blank"><img src="<?php echo e(asset('front/img/instagram.png')); ?>"></a>
                         </span>
                      </div>
                      <div class="appo-btn-main-box">
-                        <?php if(Auth::id()): ?>
+                    
                         <a href="#" data-toggle="modal" data-target="#appointmentModal" onclick="changedatamodelapp('<?php echo e($doctor->department_id); ?>','<?php echo e($doctor->department->name); ?>','<?php echo e($doctor->user_id); ?>','<?php echo e($doctor->name); ?>')"><?php echo e(__('messages.Make an appointment')); ?></a>
-                        <?php else: ?>
-                        <a href="#" type="button" onclick="changehiddenstatus()" data-toggle="modal" data-target="#myModal"><?php echo e(__('messages.Make an appointment')); ?></a>
-                        <?php endif; ?>
-                        <a href="<?php echo e(url('chatarea/').'/'.$doctor->user_id); ?>"><?php echo e(__('messages.Chat with Doctor')); ?></a>
+                       
+                        
                      </div>
                   </div>
                </div>
@@ -112,10 +110,10 @@
                            <div class="pricelist-part-detail-box">
                               <p><?php echo e($arr[0]); ?></p>
                               <?php if (isset($doctor->TimeTabledata[0])) {
-                                 $starttime = date_format(date_create($doctor->TimeTabledata[0]->from), "H:i a");
+                                 @$starttime = date_format(date_create($doctor->TimeTabledata[0]->from), "H:i a");
                                  $endtime = date_format(date_create($doctor->TimeTabledata[0]->to), "h:i a");
                                  } ?>
-                              <span>- <?php echo e($starttime); ?> <?php echo e(__('messages.To')); ?> <?php echo e($endtime); ?></span>
+                              <span>- <?php echo e(@$starttime); ?> <?php echo e(__('messages.To')); ?> <?php echo e($endtime); ?></span>
                            </div>
                            <div class="pricelist-part-detail-box">
                               <p><?php echo e($arr[1]); ?></p>
@@ -178,21 +176,14 @@
             </div>
             <div class="doctorpg-tab-mainbox doctordetailpg-tab-mainbox">
                <section class="customer-logos slider tab">
-                  <div class="slide tablinks" id="defaultOpen" onclick="openCity(event, 'aboutus')">
-                     <?php echo e(__('messages.About us')); ?>
+                  <div class="slide tablinks" id="defaultOpen" onclick="openCity(event, 'aboutdoctor')">
+                     <?php echo e(__('messages.About Doctor')); ?>
 
                   </div>
-                  <div class="slide tablinks" onclick="openCity(event, 'services')">
-                     <?php echo e(__('messages.Service')); ?>
-
-                  </div>
-                  <div class="slide tablinks" onclick="openCity(event, 'addreview')">
-                     <?php echo e(__('messages.Add review')); ?>
-
-                  </div>
+                  
                </section>
             </div>
-            <div id="aboutus" class="tabcontent">
+            <div id="aboutdoctor" class="tabcontent">
                <div class="dd-tab-part-mbox">
                   <div class="global-part-heading global-heading">
                      <h3><?php echo e(__('messages.About us')); ?></h3>
@@ -256,12 +247,12 @@
          </div>
          <div class="col-lg-3 col-md-12">
             <div class="d-detail-emergency-mainbox">
-               <img src="<?php echo e(asset('public/front/img/emergency.png')); ?>">
+               <img src="<?php echo e(asset('front/img/emergency.png')); ?>">
                <p><?php echo e(__('messages.Emergency Number')); ?></p>
                <h4><?php echo e($doctor->phone_no); ?></h4>
             </div>
             <div class="d-detail-emergency-mainbox">
-               <img src="<?php echo e(asset('public/front/img/mailoutline.png')); ?>">
+               <img src="<?php echo e(asset('front/img/mailoutline.png')); ?>">
                <p><?php echo e(__('messages.Email address')); ?></p>
                <h4><?php echo e($doctor->email); ?></h4>
             </div>
@@ -286,31 +277,19 @@
                            <div class="card-body">
                               <div class="doctorl-part-box">
                                  <?php if ($doc->image) {
-                                    $image = asset('public/upload/doctor') . "/" . $doc->image;
+                                    $image = asset('upload/doctor') . "/" . $doc->image;
                                     } else {
-                                    $image = asset('public/upload/profile/profile.png');
+                                    $image = asset('upload/profile/profile.png');
                                     } ?>
-                                 <div class="doctorl-dp-img doctorl-dp-img-1" style="background-image: url('<?= $image ?>')"></div>
-                                 <div class="doctor-detail-part">
+                                 <div class="doctorl-dp-img doctorl-dp-img-1" style="margin-top: -1px;background-image: url('<?= $image ?>')"></div>
+                                 <div class="doctor-detail-part-11">
                                     <div class="doctorl-part-detail">
                                        <h4><?php echo e($doc->name); ?></h4>
                                        <p><?php echo e(substr($doc->about_us,0,50)); ?></p>
                                     </div>
-                                    <div class="icons-images">
-                                       <span class="facebook-doctorl">
-                                       <a href="<?php echo e(isset($doc->facebook_id)?$doc->facebook_id:''); ?>"><i class="fab fa-facebook-f"></i></a>
-                                       </span>
-                                       <span class="twitter-doctorl">
-                                       <a href="<?php echo e(isset($doc->twitter_id)?$doc->twitter_id:''); ?>"><i class="fab fa-twitter"></i></a>
-                                       </span>
-                                       <span class="gp-doctorl">
-                                       <a href="<?php echo e(isset($doc->google_id)?$doc->google_id:''); ?>"><i class="fab fa-google-plus-g"></i></a>
-                                       </span>
-                                       <span class="instagram-doctorl">
-                                       <a href="<?php echo e(isset($doc->instagram_id)?$doc->instagram_id:''); ?>"><img src="<?php echo e(asset('public/front/img/instagram.png')); ?>"></a>
-                                       </span>
-                                    </div>
+                                    
                                  </div>
+                                 <button data-toggle="modal" data-target="#appointmentModal" class="under-doctor-appointment-button">Book an Appointment</button>
                               </div>
                            </div>
                         </div>
@@ -344,11 +323,11 @@
 						    		    <div class="col-md-3 testimage">
 						    		        <?php 
 						    				 if($r->users->profile_pic!=""){
-									     	   		$image=asset('public/upload/profile')."/".$r->users->profile_pic;
+									     	   		$image=asset('upload/profile')."/".$r->users->profile_pic;
 									     	   }elseif(isset($r->doctors)&&isset($r->doctors-> $image)){
-									     	   		$image=asset('public/upload/doctor')."/".$r->doctors->image;
+									     	   		$image=asset('upload/doctor')."/".$r->doctors->image;
 									     	   }else{
-									     	   		 $image=asset('public/upload/profile/profile.png');
+									     	   		 $image=asset('upload/profile/profile.png');
 									     	   }
 						    			?>
 						    			<img src="<?php echo e($image); ?>" class="testimonial-profile-img">

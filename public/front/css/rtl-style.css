@@ -36,7 +36,7 @@ a:hover{
     content: '';
     height: 8px;
     width: 67px;
-    background-color: #e7d045;
+    background-color: #49B7C6;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -92,14 +92,14 @@ a:hover{
     height: 8px;
     position: absolute;
     left: 0;
-    background-color: #e7d046;
+    background-color: #1B7081;
     bottom: 0;
     top: 35px;
 }
 
 
 .services-btn-main-box a {
-    background-color: #e7d045;
+    background-color: #49B7C6;
     border: none;
     color: white;
     width: 100%;
@@ -113,7 +113,7 @@ a:hover{
 }
 
 .appo-btn-main-box button {
-    background-color: #e7d045;
+    background-color: #49B7C6;
     border: none;
     color: white;
     width: 100%;
@@ -148,7 +148,7 @@ a:hover{
     position:fixed;
     z-index:11;
     top: 0;
-    background: #e7d045;
+    background: #49B7C6;
 }
 .loader {
     display: inline-block;
@@ -221,7 +221,7 @@ a:hover{
 /* css */
 
 .top-header {
-    background-color: #e7d045;
+    background-color: #49B7C6;
 }
 
 .top-header .top-right-text {
@@ -237,7 +237,6 @@ a:hover{
     margin-bottom: 0;
     padding: 10px 0px;
     font-size: 15px;
-    color: #356380;
 }
 
 .navigation-custom-single .navbar {
@@ -517,7 +516,7 @@ a:hover{
     margin-bottom: 0;
     font-size: 20px;
     font-weight: bold;
-    color: #e7d045;
+    color: #49B7C6;
 }
 
 .pricing-cost h6 {
@@ -549,7 +548,7 @@ a:hover{
 }
 
 .pricing-part-btn button {
-    background-color: #e7d045;
+    background-color: #49B7C6;
     border: none;
     color: white;
     width: 100%;
@@ -602,7 +601,7 @@ a:hover{
 }
 
 .doctorl-part-detail h4 {
-    margin: 14px 0px 10px;
+    margin: 0px 0px 10px;
     font-weight: bold;
     font-size: 18px;
     color: black;
@@ -757,7 +756,6 @@ a:hover{
 .footer-r1-detail h3 {
     font-size: 17px;
     font-family: 'AvenirLTStd-Medium';
-    color: #e7d045;
     text-align: right;
 }
 
@@ -828,7 +826,7 @@ a:hover{
 .footer-icons-main-box .footer-icon-box {
     height: 35px;
     width: 35px;
-    background-color: #e7d046;
+    background-color: #1B7081;
     text-align: center;
     padding: 6px 0px;
     border-radius: 1000px;
@@ -856,7 +854,6 @@ a:hover{
 
 .subcribe-button-box button {
     border: 0;
-    background-color: #e7d046;
     color: white;
     padding: 5px 30px;
     border-radius: 5px;
@@ -918,7 +915,7 @@ a:hover{
 
 .pricelist-part-img-box {
     padding: 10px;
-    background-color: #e7d046;
+    background-color: #1B7081;
     display: inline-block;
     border-radius: 100px;
     float: left;
@@ -975,7 +972,7 @@ a:hover{
 .d-detail-emergency-mainbox p {
     margin: 30px 0px 10px;
     font-size: 17px;
-    color: #e7d046;
+    color: #1B7081;
     font-weight: bold;
 }
 
@@ -988,7 +985,7 @@ a:hover{
 
 .d-detail-collapse-doctor .accordion .card-header {
     cursor: pointer;
-    background-color: #356280;
+    background-color: #1B7081;
     color: white;
 }
 
@@ -1069,8 +1066,8 @@ a:hover{
 }
 
 .doctorpg-tab-mainbox .slick-active.active {
-    background-color: #e7d046;
-    border: 1px solid #e7d046;
+    background-color: #1B7081;
+    border: 1px solid #1B7081;
     color: white;
 }
 
@@ -1141,7 +1138,7 @@ a:hover{
 
 .contactpg-part2-main-box {
     width: 40%;
-    background-color: #e7d046;
+    background-color: #1B7081;
     text-align: center;
 }
 
@@ -1181,7 +1178,7 @@ a:hover{
 .part-form-main-box button {
     border-radius: 1000px;
     font-family: 'AvenirLTStd-Medium';
-    background-color: #e7d046;
+    background-color: #1B7081;
     border: none;
     padding: 10px 50px;
     color: #35627f;
@@ -1270,7 +1267,7 @@ a:hover{
 }
 
 .doctor-detail-main-box span i.fas.fa-star {
-    color: #e7d046;
+    color: #1B7081;
     font-size: 20px;
 }
 
@@ -1297,7 +1294,7 @@ a:hover{
 .appo-btn-main-box a {
     padding: 10px 30px;
     display: inline-block;
-    background-color: #e7d046;
+    background-color: #1B7081;
     color: white;
     border-radius: 100px;
     margin-top: 30px;
@@ -1360,12 +1357,12 @@ a:hover{
 }
 
 .star-rating :checked ~ label {
-    color:#e7d046;
+    color:#1B7081;
 }
 
 .star-rating label:hover,
 .star-rating label:hover ~ label {
-    color:#e7d046;
+    color:#1B7081;
 }
 
 /* css end */
@@ -1537,7 +1534,7 @@ a:hover{
 /*    height: 50px;*/
 /*    position: absolute;*/
 /*    display: block;*/
-/*    background-color: #e7d045;*/
+/*    background-color: #49B7C6;*/
 /*    bottom: 30px;*/
 /*    right: 10px;*/
 /*    border-radius: 50%;*/
@@ -1606,7 +1603,7 @@ a:hover{
 
 .myaccountpg-main-tabbox {
     width: 30%;
-    background-color: #e7d046;
+    background-color: #1B7081;
     padding: 80px 50px;
 }
 
@@ -1689,7 +1686,7 @@ a:hover{
     font-size: 14px;
     display: inline-block;
     padding: 6px 10px;
-    background-color: #e7d045;
+    background-color: #49B7C6;
     color: black;
     border-radius: 10px;
 }
@@ -1706,7 +1703,7 @@ a:hover{
 }
 
 .pending {
-    color: #e7d045;
+    color: #49B7C6;
 }
 
 .cancel {
@@ -2420,7 +2417,7 @@ img {
 }
 
 .pricing-part-btn a {
-    background-color: #e7d045;
+    background-color: #49B7C6;
     border: none;
     color: white;
     width: 100%;
@@ -2436,7 +2433,7 @@ img {
 
 .card-header{
     color:white;
-    background: #e7d045;
+    background: #49B7C6;
 }
 
 
@@ -2490,7 +2487,7 @@ img {
     float: right;
     margin-right: 0px;
     margin-top: 10px;
-    background-color: #e7d045;
+    background-color: #49B7C6;
     border-radius: 1000px;
     border: none;
     padding: 7px 15px;
@@ -2519,7 +2516,7 @@ img {
     float: right;
     margin-right: 0px;
     margin-top: 10px;
-    background-color: #e7d045;
+    background-color: #49B7C6;
     border-radius: 1000px;
     border: none;
     padding: 7px 15px;
@@ -2537,7 +2534,7 @@ img {
 
 .call-notification-box {
     padding: 10px 20px;
-    background-color: #e7d045;
+    background-color: #49B7C6;
     display: flex;
 }
 
@@ -2623,7 +2620,7 @@ img {
 }
 
 .ch2 {
-    background-color: #e7d045;
+    background-color: #49B7C6;
     padding: 20px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;

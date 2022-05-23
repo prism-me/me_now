@@ -41,9 +41,7 @@
 	color: <?=Session::get('headingtext_color')?> !important;
 }
 
-.footer-r1-detail h3 {
-	color: <?=Session::get('main_color')?> !important;
-}
+
 
 .footer-icons-main-box .footer-icon-box {
 	background-color: <?=Session::get('main_color')?> !important;

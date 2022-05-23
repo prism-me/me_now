@@ -19,7 +19,7 @@
         border-radius: 0.25rem;
         transition: all .3s ease;
         padding: 15px;
-        background: #e7d045;
+        background: #49B7C6;
         border: 4px solid #294b65;
         margin-bottom: 10px;
     }

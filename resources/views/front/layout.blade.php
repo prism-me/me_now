@@ -40,8 +40,8 @@
 </head>
 
 <body onload="gettimezone()">
-    @include('front.firebase_config');
-    @include('front.cssclass');
+    {{-- @include('front.firebase_config'); --}}
+    {{-- @include('front.cssclass'); --}}
     @yield('loader')
 
 
@@ -86,12 +86,13 @@
 			        			<a class="nav-link" href="{{url('/')}}">{{ __('messages.Home' )}}</a>
 			  				</li> --}}
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('about') }}">{{ __('messages.About')}}</a>
+                                <a class="nav-link" href="{{ url('about') }}">{{ __('messages.About') }}</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ __('messages.Select Services')}}
-                                    
+                                    data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">{{ __('messages.Select Services') }}
+
                                 </a>
                                 <div class="dropdown-menu services-dropdown" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="#">Services 1</a>
@@ -104,21 +105,25 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="{{ url('doctorlist') }}">{{ __('messages.Doctors')}}</a>
+                                    href="{{ url('doctorlist') }}">{{ __('messages.Doctors') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('allfacilites') }}">{{ __('messages.Workshops') }}</a>
+                                <a class="nav-link"
+                                    href="{{ url('allfacilites') }}">{{ __('messages.Workshops') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
                                     href="{{ url('gallery') }}">{{ __('messages.Women Empowerment') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('pricing') }}">{{ __('messages.Become a Member') }}</a>
+                                <a class="nav-link"
+                                    href="{{ url('pricing') }}">{{ __('messages.Become a Member') }}</a>
                             </li>
                             <li class="nav-item book-now-nav">
-                                <a class="nav-link" style="color:white !important; width: 104px"
-                                    href="{{ url('pricing') }}">{{ __('Book Now') }}</a>
+                                <a href="#" data-toggle="modal" data-target="#appointmentModal" class="nav-link"
+                                    style="color:white !important; width: 104px">{{ __('Book Now') }} </a>
+
+
                             </li>
                             {{-- <li class="nav-item">
 			      				@if (Auth::id() && Auth::user()->usertype == '1')
@@ -325,7 +330,8 @@
                                         placeholder="{{ __('messages.Enter Your Full Name') }}"
                                         value="{{ Auth::user() ? Auth::user()->name : '' }}">
                                     <input type="text" required name="phone_no" id="phone_no"
-                                        placeholder="{{ __('messages.Enter Phone number') }}" class="appo-right-input"
+                                        placeholder="{{ __('messages.Enter Phone number') }}"
+                                        class="appo-right-input"
                                         value="{{ Auth::user() ? Auth::user()->phone_no : '' }}">
                                     <input type="date" required name="app_date" id="app_date" min="<?= date('Y-m-d') ?>"
                                         placeholder="dd/mm/yyyy">
@@ -404,7 +410,8 @@
                                     <div class="form-group col-md-4">
                                         <label for="amount">{{ __('messages.Amount') }}</label>
                                         <input type="text" class="form-control" id="amount" name="amount"
-                                            value="{{ isset($subscription->price) ? $subscription->price : '' }}" required>
+                                            value="{{ isset($subscription->price) ? $subscription->price : '' }}"
+                                            required>
 
 
                                     </div>
@@ -517,7 +524,8 @@
                                     <h3>{{ __('messages.Helpful links') }}</h3>
                                     <a href="{{ url('allfacilites') }}">{{ __('messages.Facilities') }}</a>
 
-                                    <a href="{{ url('termcondition') }}">{{ __('messages.Terms & Condition') }}</a>
+                                    <a
+                                        href="{{ url('termcondition') }}">{{ __('messages.Terms & Condition') }}</a>
                                     <a href="{{ url('privacypolicy') }}">{{ __('messages.Privacy Policy') }}</a>
                                     <a href="{{ url('contact_us') }}">{{ __('messages.Contact Us') }}</a>
                                 </div>
@@ -530,7 +538,8 @@
                             <div class="footer-r1-detail">
                                 <div class="footer-d1-box">
                                     <h3>{{ __('messages.Address') }}</h3>
-                                    <p>{{ isset($setting->address) ? $setting->address : Session::get('address') }}</p>
+                                    <p>{{ isset($setting->address) ? $setting->address : Session::get('address') }}
+                                    </p>
                                 </div>
                                 <div class="footer-d1-box">
                                     <p>{{ __('messages.Subscribe More Info') }}</p>
@@ -553,29 +562,39 @@
             </div>
             <div class="footer-part2-main-box">
                 <div class="footer-bottom-main-box">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="footer-icons-main-box">
+                                {{-- <p></p> --}}
+                                <ul>
+                                    <li>
+                                        {{ __('messages.Copyright') }} @ {{ date('Y') }}
+                                        {{ __('messages.All Right Reserved') }} {{ __('messages.Me Now') }}
+                                    </li>
+                                    <li>
+                                        <a href="terms-of-service">{{ __('messages.Terms of Service') }}</a>&nbsp;
+                                    </li>
+                                    <li>
+                                        <a href="privacy-policy">{{ __('messages.Privacy Policy') }}</a>&nbsp;
+                                    </li>
+                                    <li>
+                                        <a href="copy-rights">{{ __('messages.Shipping Policy') }}</a>&nbsp;
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <p>
+                                {{ __('messages.Designed and Managed by Prism') }}
 
-                    <p>
-                        
-                        {{ __('messages.Designed and Managed by Prism') }}
-                    </p>
+                            </p>
+                        </div>
 
-                    <div class="footer-icons-main-box">
-                        <p>{{ __('messages.All Right Reserved') }}</p>&nbsp;
-                        <p>{{ __('messages.Me Now') }}.</p>&nbsp;
-                        <p>{{ __('messages.Copyright') }} @ {{ date('Y') }}</p>&nbsp;
-                        <ul>
-                            <li>
-                                <a href="terms-of-service">{{ __('messages.Terms of Service') }}</a>&nbsp;
-                            </li>
-                            <li>
-                                <a href="privacy-policy">{{ __('messages.Privacy Policy') }}</a>&nbsp;
-                            </li>
-                            <li>
-                                <a href="copy-rights">{{ __('messages.Shipping Policy') }}</a>&nbsp;
-                            </li>
-                        </ul>
                     </div>
-                        {{-- <div class="footer-icon-box">
+
+
+
+                    {{-- <div class="footer-icon-box">
 							<a href="{{isset($setting->facebook_id)?$setting->facebook_id:''}}">
 								<i class="fab fa-facebook-f"></i>
 							</a>
@@ -676,6 +695,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     @yield('footer')
+    @stack('scripts')
 
     <script type="text/javascript" src="{{ asset('js/front.js?v=4543543') }}"></script>
 
