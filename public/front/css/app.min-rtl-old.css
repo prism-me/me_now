@@ -131,7 +131,7 @@
 }
 
 .chats-tab-open .message.self .message-content {
-  background-color: #e7d045;
+  background-color: #49B7C6;
   color: #fff;
   margin-right: 1.25rem;
   margin-left: 0px; 
@@ -191,7 +191,7 @@
   }
 
   .chats-tab-open .contacts-list .contacts-item.active .avatar::before {
-    border-color: #e7d045; 
+    border-color: #49B7C6; 
   }
 
   .chats-tab-open .contacts-list .contacts-item.unread .avatar::before {
@@ -221,14 +221,14 @@
 
 @media (min-width: 1200px) {
   .chats-tab-open .contacts-list .contacts-item:hover .contacts-link {
-    border-color: #e7d045; 
+    border-color: #49B7C6; 
   } 
 }
 
 @media (min-width: 1200px) {
   .chats-tab-open .contacts-list .contacts-item.active .contacts-link {
-    background: #e7d045;
-    border: 1px solid #e7d045; 
+    background: #49B7C6;
+    border: 1px solid #49B7C6; 
   }
 
   .chats-tab-open .contacts-list .contacts-item.active .contacts-link .chat-name {
@@ -253,8 +253,8 @@
 
 @media (min-width: 1200px) {
   .chats-tab-open .contacts-list .contacts-item.unread.active .contacts-link {
-    background: #e7d045;
-    border: 1px solid #e7d045; 
+    background: #49B7C6;
+    border: 1px solid #49B7C6; 
   }
 
   .chats-tab-open .contacts-list .contacts-item.unread.active .contacts-link .chat-name,
@@ -602,8 +602,8 @@
 }
 
 .chats-tab-open .btn-primary {
-  background-color: #e7d046;
-  border: #e7d046;
+  background-color: #1B7081;
+  border: #1B7081;
   height: 3rem;
   width: 3rem;
   padding: 0;
@@ -681,7 +681,7 @@
 }
 
 .audio-call-main-box h2 span {
-  color: #e7d045;
+  color: #49B7C6;
   margin-left: 10px;
 }
 

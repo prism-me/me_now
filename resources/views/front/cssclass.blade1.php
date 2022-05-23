@@ -41,10 +41,6 @@
 	color: <?=Session::get('headingtext_color')?> !important;
 }
 
-.footer-r1-detail h3 {
-	color: <?=Session::get('main_color')?> !important;
-}
-
 .footer-icons-main-box .footer-icon-box {
 	background-color: <?=Session::get('main_color')?> !important;
 }
@@ -214,4 +210,4 @@
 /*.slick-track{
 	transform: translate3d(0px, 0px, 0px)!important;
 } */
-</style><?php /**PATH E:\xampp\htdocs\project\company\blank_script\blank_singleclinic_web\singleclinic\resources\views/front/cssclass.blade.php ENDPATH**/ ?>
+</style>

@@ -34,11 +34,11 @@ class FrontController extends Controller
 {
        public function __construct(){
           $setting = Setting::find(1);
-          Session::put("main_color","#e7d045");
-          Session::put("text_color","#0f4a86");
-          Session::put("headingtext_color","#0f4a86");
-          Session::put("lowbackground_box_color","#ededc2");
-          Session::put("slider_color","#f1f5ff");          
+        //   Session::put("main_color","#000");
+        //   Session::put("text_color","#fff");
+        //   Session::put("headingtext_color","#0f4a86");
+        //   Session::put("lowbackground_box_color","#ededc2");
+        //   Session::put("slider_color","#f1f5ff");          
           Session::put("main_banner",asset('upload/web').'/'.$setting->main_banner);
        }
        public function showhome(){

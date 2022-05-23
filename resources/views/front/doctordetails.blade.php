@@ -19,9 +19,9 @@
             <div class="row">
                <div class="col-md-5">
                   <?php if ($doctor->image) {
-                     $image = asset('public/upload/doctor') . "/" . $doctor->image;
+                     $image = asset('upload/doctor') . "/" . $doctor->image;
                      } else {
-                     $image = asset('public/upload/profile/profile.png');
+                     $image = asset('upload/profile/profile.png');
                      } 
                      ?>
                   <div class="doctor-detail-img-box" style="background-image: url('<?= $image ?>')">
@@ -84,16 +84,16 @@
                         <a href="{{isset($doctor->google_id)?$doctor->google_id:''}}" target="_blank"><i class="fab fa-google-plus-g"></i></a>
                         </span>
                         <span class="instagram-doctorl">
-                        <a href="{{isset($doctor->instagram_id)?$doctor->instagram_id:''}}" target="_blank"><img src="{{asset('public/front/img/instagram.png')}}"></a>
+                        <a href="{{isset($doctor->instagram_id)?$doctor->instagram_id:''}}" target="_blank"><img src="{{asset('front/img/instagram.png')}}"></a>
                         </span>
                      </div>
                      <div class="appo-btn-main-box">
-                        @if(Auth::id())
+                    
                         <a href="#" data-toggle="modal" data-target="#appointmentModal" onclick="changedatamodelapp('{{$doctor->department_id}}','{{$doctor->department->name}}','{{$doctor->user_id}}','{{$doctor->name}}')">{{__('messages.Make an appointment')}}</a>
-                        @else
-                        <a href="#" type="button" onclick="changehiddenstatus()" data-toggle="modal" data-target="#myModal">{{__('messages.Make an appointment')}}</a>
-                        @endif
-                        <a href="{{url('chatarea/').'/'.$doctor->user_id}}">{{__('messages.Chat with Doctor')}}</a>
+                       
+                        {{-- <a href="#" type="button" onclick="changehiddenstatus()" data-toggle="modal" data-target="#myModal">{{__('messages.Make an appointment')}}</a>
+                      
+                        <a href="{{url('chatarea/').'/'.$doctor->user_id}}">{{__('messages.Chat with Doctor')}}</a> --}}
                      </div>
                   </div>
                </div>
@@ -110,10 +110,10 @@
                            <div class="pricelist-part-detail-box">
                               <p>{{$arr[0]}}</p>
                               <?php if (isset($doctor->TimeTabledata[0])) {
-                                 $starttime = date_format(date_create($doctor->TimeTabledata[0]->from), "H:i a");
+                                 @$starttime = date_format(date_create($doctor->TimeTabledata[0]->from), "H:i a");
                                  $endtime = date_format(date_create($doctor->TimeTabledata[0]->to), "h:i a");
                                  } ?>
-                              <span>- {{$starttime}} {{__('messages.To')}} {{$endtime}}</span>
+                              <span>- {{@$starttime}} {{__('messages.To')}} {{$endtime}}</span>
                            </div>
                            <div class="pricelist-part-detail-box">
                               <p>{{$arr[1]}}</p>
@@ -176,18 +176,18 @@
             </div>
             <div class="doctorpg-tab-mainbox doctordetailpg-tab-mainbox">
                <section class="customer-logos slider tab">
-                  <div class="slide tablinks" id="defaultOpen" onclick="openCity(event, 'aboutus')">
-                     {{__('messages.About us')}}
+                  <div class="slide tablinks" id="defaultOpen" onclick="openCity(event, 'aboutdoctor')">
+                     {{__('messages.About Doctor')}}
                   </div>
-                  <div class="slide tablinks" onclick="openCity(event, 'services')">
+                  {{-- <div class="slide tablinks" onclick="openCity(event, 'services')">
                      {{__('messages.Service')}}
                   </div>
                   <div class="slide tablinks" onclick="openCity(event, 'addreview')">
                      {{__('messages.Add review')}}
-                  </div>
+                  </div> --}}
                </section>
             </div>
-            <div id="aboutus" class="tabcontent">
+            <div id="aboutdoctor" class="tabcontent">
                <div class="dd-tab-part-mbox">
                   <div class="global-part-heading global-heading">
                      <h3>{{__('messages.About us')}}</h3>
@@ -250,12 +250,12 @@
          </div>
          <div class="col-lg-3 col-md-12">
             <div class="d-detail-emergency-mainbox">
-               <img src="{{asset('public/front/img/emergency.png')}}">
+               <img src="{{asset('front/img/emergency.png')}}">
                <p>{{__('messages.Emergency Number')}}</p>
                <h4>{{$doctor->phone_no}}</h4>
             </div>
             <div class="d-detail-emergency-mainbox">
-               <img src="{{asset('public/front/img/mailoutline.png')}}">
+               <img src="{{asset('front/img/mailoutline.png')}}">
                <p>{{__('messages.Email address')}}</p>
                <h4>{{$doctor->email}}</h4>
             </div>
@@ -279,17 +279,17 @@
                            <div class="card-body">
                               <div class="doctorl-part-box">
                                  <?php if ($doc->image) {
-                                    $image = asset('public/upload/doctor') . "/" . $doc->image;
+                                    $image = asset('upload/doctor') . "/" . $doc->image;
                                     } else {
-                                    $image = asset('public/upload/profile/profile.png');
+                                    $image = asset('upload/profile/profile.png');
                                     } ?>
-                                 <div class="doctorl-dp-img doctorl-dp-img-1" style="background-image: url('<?= $image ?>')"></div>
-                                 <div class="doctor-detail-part">
+                                 <div class="doctorl-dp-img doctorl-dp-img-1" style="margin-top: -1px;background-image: url('<?= $image ?>')"></div>
+                                 <div class="doctor-detail-part-11">
                                     <div class="doctorl-part-detail">
                                        <h4>{{$doc->name}}</h4>
                                        <p>{{substr($doc->about_us,0,50)}}</p>
                                     </div>
-                                    <div class="icons-images">
+                                    {{-- <div class="icons-images">
                                        <span class="facebook-doctorl">
                                        <a href="{{isset($doc->facebook_id)?$doc->facebook_id:''}}"><i class="fab fa-facebook-f"></i></a>
                                        </span>
@@ -300,10 +300,11 @@
                                        <a href="{{isset($doc->google_id)?$doc->google_id:''}}"><i class="fab fa-google-plus-g"></i></a>
                                        </span>
                                        <span class="instagram-doctorl">
-                                       <a href="{{isset($doc->instagram_id)?$doc->instagram_id:''}}"><img src="{{asset('public/front/img/instagram.png')}}"></a>
+                                       <a href="{{isset($doc->instagram_id)?$doc->instagram_id:''}}"><img src="{{asset('front/img/instagram.png')}}"></a>
                                        </span>
-                                    </div>
+                                    </div> --}}
                                  </div>
+                                 <button data-toggle="modal" data-target="#appointmentModal" class="under-doctor-appointment-button">Book an Appointment</button>
                               </div>
                            </div>
                         </div>
@@ -337,11 +338,11 @@
 						    		    <div class="col-md-3 testimage">
 						    		        <?php 
 						    				 if($r->users->profile_pic!=""){
-									     	   		$image=asset('public/upload/profile')."/".$r->users->profile_pic;
+									     	   		$image=asset('upload/profile')."/".$r->users->profile_pic;
 									     	   }elseif(isset($r->doctors)&&isset($r->doctors-> $image)){
-									     	   		$image=asset('public/upload/doctor')."/".$r->doctors->image;
+									     	   		$image=asset('upload/doctor')."/".$r->doctors->image;
 									     	   }else{
-									     	   		 $image=asset('public/upload/profile/profile.png');
+									     	   		 $image=asset('upload/profile/profile.png');
 									     	   }
 						    			?>
 						    			<img src="{{$image}}" class="testimonial-profile-img">

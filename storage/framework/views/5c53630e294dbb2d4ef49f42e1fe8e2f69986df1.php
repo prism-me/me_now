@@ -95,16 +95,11 @@
                                 <div class="dropdown-menu services-dropdown" aria-labelledby="navbarDropdown">
                                     
                                     <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $departments): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                        <option value="<?php echo e($departments->id); ?>"></option>
-                                         <a href="#<?php echo e($departments->id); ?>" data-toggle="collapse" data-parent="#accordian"><?php echo e($departments->name); ?>
+                                        <option value="<?php echo e($departments->id); ?>"><?php echo e($departments->name); ?></option>
+                                        <?php if(!blank($departments->service)): ?>
+                                            <?php echo e($departments['service'][0]['name']); ?>
 
-                                            <?php if(!blank($departments->service)): ?>
-                                            <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                                                    <?php echo e($departments['service'][0]['name']); ?>
-
-                                             <?php endif; ?> 
-                                        </a>
-                                        
+                                        <?php endif; ?>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                       
                                

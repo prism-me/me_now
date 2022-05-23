@@ -182,7 +182,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\xampp\\htdocs\\meNow\\storage\\framework/cache/data',
+        'path' => 'D:\\Projects\\Menow\\me_now\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -348,12 +348,20 @@
       'local' => 
       array (
         'driver' => 'local',
+<<<<<<< HEAD
         'root' => 'C:\\xampp\\htdocs\\meNow\\storage\\app',
+=======
+        'root' => 'D:\\Projects\\Menow\\me_now\\storage\\app',
+>>>>>>> 421e2e8702ab944493aa83645df2bc39bc91324d
       ),
       'public' => 
       array (
         'driver' => 'local',
+<<<<<<< HEAD
         'root' => 'C:\\xampp\\htdocs\\meNow\\storage\\app/public',
+=======
+        'root' => 'D:\\Projects\\Menow\\me_now\\storage\\app/public',
+>>>>>>> 421e2e8702ab944493aa83645df2bc39bc91324d
         'url' => 'http://localhost/project/company/blank_script/blank_singleclinic_web/singleclinic//storage',
         'visibility' => 'public',
       ),
@@ -370,7 +378,11 @@
     ),
     'links' => 
     array (
+<<<<<<< HEAD
       'C:\\xampp\\htdocs\\meNow\\public\\storage' => 'C:\\xampp\\htdocs\\meNow\\storage\\app/public',
+=======
+      'D:\\Projects\\Menow\\me_now\\public\\storage' => 'D:\\Projects\\Menow\\me_now\\storage\\app/public',
+>>>>>>> 421e2e8702ab944493aa83645df2bc39bc91324d
     ),
   ),
   'hashing' => 
@@ -404,13 +416,21 @@
       'single' => 
       array (
         'driver' => 'single',
+<<<<<<< HEAD
         'path' => 'C:\\xampp\\htdocs\\meNow\\storage\\logs/laravel.log',
+=======
+        'path' => 'D:\\Projects\\Menow\\me_now\\storage\\logs/laravel.log',
+>>>>>>> 421e2e8702ab944493aa83645df2bc39bc91324d
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
+<<<<<<< HEAD
         'path' => 'C:\\xampp\\htdocs\\meNow\\storage\\logs/laravel.log',
+=======
+        'path' => 'D:\\Projects\\Menow\\me_now\\storage\\logs/laravel.log',
+>>>>>>> 421e2e8702ab944493aa83645df2bc39bc91324d
         'level' => 'debug',
         'days' => 14,
       ),
@@ -460,7 +480,11 @@
       ),
       'emergency' => 
       array (
+<<<<<<< HEAD
         'path' => 'C:\\xampp\\htdocs\\meNow\\storage\\logs/laravel.log',
+=======
+        'path' => 'D:\\Projects\\Menow\\me_now\\storage\\logs/laravel.log',
+>>>>>>> 421e2e8702ab944493aa83645df2bc39bc91324d
       ),
     ),
   ),
@@ -517,7 +541,11 @@
       'theme' => 'default',
       'paths' => 
       array (
+<<<<<<< HEAD
         0 => 'C:\\xampp\\htdocs\\meNow\\resources\\views/vendor/mail',
+=======
+        0 => 'D:\\Projects\\Menow\\me_now\\resources\\views/vendor/mail',
+>>>>>>> 421e2e8702ab944493aa83645df2bc39bc91324d
       ),
     ),
   ),
@@ -622,7 +650,11 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
+<<<<<<< HEAD
     'files' => 'C:\\xampp\\htdocs\\meNow\\storage\\framework/sessions',
+=======
+    'files' => 'D:\\Projects\\Menow\\me_now\\storage\\framework/sessions',
+>>>>>>> 421e2e8702ab944493aa83645df2bc39bc91324d
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -651,9 +683,15 @@
   array (
     'paths' => 
     array (
+<<<<<<< HEAD
       0 => 'C:\\xampp\\htdocs\\meNow\\resources\\views',
     ),
     'compiled' => 'C:\\xampp\\htdocs\\meNow\\storage\\framework\\views',
+=======
+      0 => 'D:\\Projects\\Menow\\me_now\\resources\\views',
+    ),
+    'compiled' => 'D:\\Projects\\Menow\\me_now\\storage\\framework\\views',
+>>>>>>> 421e2e8702ab944493aa83645df2bc39bc91324d
   ),
   'flare' => 
   array (
@@ -800,7 +838,11 @@
     ),
     'temporary_files' => 
     array (
+<<<<<<< HEAD
       'local_path' => 'C:\\xampp\\htdocs\\meNow\\storage\\framework/cache/laravel-excel',
+=======
+      'local_path' => 'D:\\Projects\\Menow\\me_now\\storage\\framework/cache/laravel-excel',
+>>>>>>> 421e2e8702ab944493aa83645df2bc39bc91324d
       'remote_disk' => NULL,
       'remote_prefix' => NULL,
       'force_resync_remote' => NULL,
