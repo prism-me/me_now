@@ -57,7 +57,7 @@
                            <td>{{isset($d->title)?$d->title:""}}</td>
                            <td>{{isset($d->sub_title)?$d->sub_title:""}}</td>
                            <td>
-                               <img src="{{ asset('public/upload/blog').'/'. $d->featured_img}}" class="imgsize1"/>
+                               <img src="{{ asset('upload/blog').'/'. $d->featured_img}}" class="imgsize1"/>
                            </td>
                            <td>
                                 <a href="{{URL::to('admin/blogs/'.$d->id.'/edit')}}" class="btn btn-primary">{{__('messages.Edit')}}</a>

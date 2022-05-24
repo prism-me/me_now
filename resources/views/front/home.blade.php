@@ -30,22 +30,25 @@
             </div>
             <div class="services-right-part">
                 <div class="row">
-                    @if (count($services) > 0)
+                    @if (count($department) > 0)
                         <?php $i = 0; ?>
-                        @foreach ($services as $s)
-                            <div class="col-md-4 col-sm-6">
-                                @if ($i % 2 == 0)
-                                    <div class="services-part-box services-part1-box">
-                                    @else
-                                        <div class="services-part-box services-part2-box">
-                                @endif
-                                <img src="{{ asset('upload/service') . '/' . $s->icon }}">
-                                <div class="text-detail-box">
-                                    <h4>{{ $s->name }}</h4>
-                                    <p>{{ $s->description }}</p>
+                        @foreach ($department as $s)
+                            @if ($i < 6)
+                                <div class="col-md-4 col-sm-6">
+                                    @if ($i % 2 == 0)
+                                        <div class="services-part-box services-part1-box">
+                                        @else
+                                            <div class="services-part-box services-part2-box">
+                                    @endif
+                                    <img src="{{ asset('front/img/department') . '/' . $s->image }}">
+                                    <div class="text-detail-box">
+                                        <h4>{{ $s->name }}</h4>
+                                        <p>{{ $s->description }}</p>
+                                    </div>
+                                    </div>
                                 </div>
-                            </div>
-                </div>
+                            @endif
+
                 <?php $i++; ?>
                 @endforeach
                 @endif
@@ -67,22 +70,25 @@
         </div>
         <div class="services-right-part">
             <div class="row">
-                @if (count($services) > 0)
+                @if (count($department) > 0)
                     <?php $i = 0; ?>
-                    @foreach ($services as $s)
+                    @foreach ($department as $s)
+                    @if ($i > 5)
                         <div class="col-md-4 col-sm-6">
                             @if ($i % 2 == 0)
                                 <div class="services-part-box services-part1-box">
                                 @else
                                     <div class="services-part-box services-part2-box">
                             @endif
-                            <img src="{{ asset('upload/service') . '/' . $s->icon }}">
+                            <img src="{{ asset('front/img/department') . '/' . $s->image }}">
                             <div class="text-detail-box">
                                 <h4>{{ $s->name }}</h4>
                                 <p>{{ $s->description }}</p>
                             </div>
                         </div>
-            </div>
+                     </div>
+                     @endif
+
             <?php $i++; ?>
             @endforeach
             @endif

@@ -11,6 +11,7 @@ use App\Model\Appointment;
 use App\Model\DepartService;
 use App\Model\Token;
 use App\Model\Review;
+use App\Model\Blog;
 use App\Model\Service;
 use App\Model\Setting;
 use App\Model\Package;
@@ -47,14 +48,49 @@ class FrontController extends Controller
            if(!isset($_COOKIE['fload'])){
                setcookie('fload','1', time() + (86400 * 30), "/");
             }
+            //$service=Service::get()->take(8);
+            $package= Package::get()->take(3);
+            $doctor= Doctor::get()->take(4);
+            $department= Department::with('service')->get();
+            $setting= Setting::find(1);
+            $reviews= Review::with('doctors','users')->get()->take(4);
+            return view("front.home")->with("package",$package)->with("setting",$setting)->with("department",$department)->with("review",$reviews)->with("doctorls",$doctor)->with("chatpage",'1');;
+       }
+
+       public function blog(){
+
+            if(!isset($_COOKIE['fload'])){
+                setcookie('fload','1', time() + (86400 * 30), "/");
+            }
             $service=Service::get()->take(8);
             $package=Package::get()->take(3);
             $doctor=Doctor::get()->take(4);
             $department=Department::with('service')->get();
             $setting=Setting::find(1);
+            $blog= Blog::all();
             $reviews=Review::with('doctors','users')->get()->take(4);
-            return view("front.home")->with("services",$service)->with("package",$package)->with("setting",$setting)->with("department",$department)->with("review",$reviews)->with("doctorls",$doctor)->with("chatpage",'1');;
+            return view("front.blog")->with("services",$service)->with("setting",$setting)->with("department",$department)->with('blog',$blog);
+        
+        }
+
+        public function blogdetails($id){
+            $blog=blog::all();
+            $doctor=Doctor::with('blog',"TimeTabledata")->where("user_id",$id)->first();
+            if(!$doctor) {
+                return redirect('/');
+            }
+            $blogdetails=blog::with("doctor","service")->find($doctor->blog_id); 
+            $doctor->total_ratting=count(Review::where("doctor_id",$id)->get());
+            $doctor->ratting=Review::where("doctor_id",$id)->avg('ratting');
+            $reviews=Review::with('doctors','users')->where("doctor_id",$id)->get();
+            //echo "<pre>";print_r($reviews);exit;
+             $setting=Setting::find(1);
+           //  echo "<pre>";print_r($doctor);exit;
+            return view("front.doctordetails")->with("blog",$blog)->with("review",$reviews)->with("doctor",$doctor)->with("departmentdetails",$departmentdetails)->with("id",$id)->with("setting",$setting);
        }
+
+
+
 
        public function getserviceanddoctor($department_id){
            $departmentservice=DepartService::where("department_id",$department_id)->get();
@@ -532,9 +568,5 @@ class FrontController extends Controller
     }
 
 
-    public function blog(){
-
-        $blog = Blog::all();
-        return view('front.bloglist')->with('data', $blog);
-    }
+   
 }

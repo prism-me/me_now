@@ -87,16 +87,25 @@
                                 <a class="nav-link" href="<?php echo e(url('about')); ?>"><?php echo e(__('messages.About')); ?></a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo e(__('messages.Select Services')); ?>
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Services </a>
+                                <ul class="dropdown-menu services-dropdown">
 
-                                    
-                                </a>
-                                <div class="dropdown-menu services-dropdown" aria-labelledby="navbarDropdown">
-                                    
-                                    
-                                    
-                                </div>
+                                    <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $departments): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <li><a class="dropdown-item" href="<?php echo e(url('department')); ?>">
+                                                <?php echo e($departments->name); ?> </a>
+
+                                            <?php if(!blank($departments->service)): ?>
+                                                <ul class="submenu dropdown-menu">
+                                                    <?php $__currentLoopData = $departments->service; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $subdepartment): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                        <li><a class="dropdown-item" href="department">
+                                                                <?php echo e($subdepartment->name); ?></a>
+                                                        </li>
+                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                </ul>
+                                            <?php endif; ?>
+                                        </li>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                </ul>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
@@ -123,8 +132,6 @@
                                 <a class="nav-link" style="color:white !important; width: 104px"
                                     href="<?php echo e(url('pricing')); ?>"><?php echo e(__('Book Now')); ?></a>
                             </li>
-                            
-                            
                         </ul>
                     </div>
                 </nav>
@@ -617,7 +624,25 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <?php echo $__env->yieldContent('footer'); ?>
+    <?php echo $__env->yieldPushContent('scripts'); ?>
+    <script>
+        $(document).on('click', '.dropdown-menu', function(e) {
+            e.stopPropagation();
+        });
 
+        // make it as accordion for smaller screens
+        if ($(window).width() < 992) {
+            $('.dropdown-menu a').click(function(e) {
+                e.preventDefault();
+                if ($(this).next('.submenu').length) {
+                    $(this).next('.submenu').toggle();
+                }
+                $('.dropdown').on('hide.bs.dropdown', function() {
+                    $(this).find('.submenu').hide();
+                })
+            });
+        }
+    </script>
     <script type="text/javascript" src="<?php echo e(asset('js/front.js?v=4543543')); ?>"></script>
 
 </body>

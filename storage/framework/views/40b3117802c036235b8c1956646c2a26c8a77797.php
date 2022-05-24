@@ -59,7 +59,7 @@
                            <td><?php echo e(isset($d->title)?$d->title:""); ?></td>
                            <td><?php echo e(isset($d->sub_title)?$d->sub_title:""); ?></td>
                            <td>
-                               <img src="<?php echo e(asset('public/upload/blog').'/'. $d->featured_img); ?>" class="imgsize1"/>
+                               <img src="<?php echo e(asset('upload/blog').'/'. $d->featured_img); ?>" class="imgsize1"/>
                            </td>
                            <td>
                                 <a href="<?php echo e(URL::to('admin/blogs/'.$d->id.'/edit')); ?>" class="btn btn-primary"><?php echo e(__('messages.Edit')); ?></a>

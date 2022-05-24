@@ -117,7 +117,7 @@
                <div class="col-sm-5">
                   <div class="user-area dropdown float-right">
                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     <img class="user-avatar rounded-circle" src="<?php echo e(Session::get('profile_pic')); ?>" alt="User Avatar">
+                     <img class="user-avatar rounded-circle" src="<?php echo e(asset('front/img/logo.png')); ?>" alt="User Avatar">
                      </a>
                      <div class="user-menu dropdown-menu">
                         <a class="nav-link" href="<?php echo e(url('admin/editprofile')); ?>"><i class="fa fa-user"></i> <?php echo e(__('messages.My Profile')); ?></a>

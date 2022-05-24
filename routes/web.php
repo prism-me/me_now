@@ -28,6 +28,7 @@ Route::group(['prefix' => '/'], function () {
      Route::get('auth/{driver}', 'Auth\FacebookController@redirectToProvider')->name('social.oauth');
      Route::get('auth/{driver}/callback', 'Auth\FacebookController@handleProviderCallback')->name('social.callback');
      Route::get("/","FrontController@showhome");
+     Route::get("blog","FrontController@blog");
      Route::get("getserviceanddoctor/{id}","FrontController@getserviceanddoctor");
      Route::post("bookappoinment","FrontController@bookappoinment");
      Route::get("allfacilites","FrontController@allfacilites");

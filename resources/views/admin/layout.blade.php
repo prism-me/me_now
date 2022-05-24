@@ -117,7 +117,7 @@
                <div class="col-sm-5">
                   <div class="user-area dropdown float-right">
                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     <img class="user-avatar rounded-circle" src="{{Session::get('profile_pic')}}" alt="User Avatar">
+                     <img class="user-avatar rounded-circle" src="{{ asset('front/img/logo.png')}}" alt="User Avatar">
                      </a>
                      <div class="user-menu dropdown-menu">
                         <a class="nav-link" href="{{url('admin/editprofile')}}"><i class="fa fa-user"></i> {{__('messages.My Profile')}}</a>
