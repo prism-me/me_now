@@ -94,8 +94,17 @@
 
                                 </a>
                                 <div class="dropdown-menu services-dropdown" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Services 1</a>
-                                    <a class="dropdown-item" href="#">Services 1</a>
+                                    
+                                    <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $departments): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <option value="<?php echo e($departments->id); ?>"><?php echo e($departments->name); ?></option>
+                                   
+                                     <?php if(!blank($departments->service)): ?>
+                                       <?php echo e($departments['service'][0]['name']); ?>
+
+                                    <?php endif; ?> 
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                      
+                               
                                 </div>
                             </li>
                             <li class="nav-item">

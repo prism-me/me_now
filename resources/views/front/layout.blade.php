@@ -97,11 +97,12 @@
                                 <div class="dropdown-menu services-dropdown" aria-labelledby="navbarDropdown">
                                     
                                     @foreach($department as $departments)
-                                        <option value="{{$departments->id}}">{{$departments->name}}</option>
-                                        @if (!blank($departments->service))
-                                            {{ $departments['service'][0]['name'] }}
-                                        @endif
-                                        @endforeach
+                                    <option value="{{$departments->id}}">{{$departments->name}}</option>
+                                   
+                                     @if(!blank($departments->service))
+                                       {{ $departments['service'][0]['name'] }}
+                                    @endif 
+                                @endforeach
                                       
                                
                                 </div>
