@@ -89,23 +89,26 @@
                                 <a class="nav-link" href="{{ url('about') }}">{{ __('messages.About') }}</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">{{ __('messages.Select Services') }}
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Services </a>
+                                <ul class="dropdown-menu services-dropdown">
 
-                                </a>
-                                <div class="dropdown-menu services-dropdown" aria-labelledby="navbarDropdown">
-                                    
-                                    @foreach($department as $departments)
-                                    <option value="{{$departments->id}}">{{$departments->name}}</option>
-                                   
-                                     @if(!blank($departments->service))
-                                       {{ $departments['service'][0]['name'] }}
-                                    @endif 
-                                @endforeach
-                                      
-                               
-                                </div>
+                                    @foreach ($department as $departments)
+                                        <li><a class="dropdown-item" href=" {{ $departments->name }}">
+                                                {{ $departments->name }} </a>
+
+                                            @if (!blank($departments->service))
+                                                @foreach ($departments->service as $subdepartment)
+                                                    <ul class="submenu dropdown-menu">
+                                                        <li><a class="dropdown-item" href="">
+                                                                {{ $subdepartment->name }}</a>
+                                                        </li>
+
+                                                    </ul>
+                                                @endforeach
+                                            @endif
+                                        </li>
+                                    @endforeach
+                                </ul>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
@@ -133,40 +136,6 @@
 
 
                             </li>
-                            {{-- <li class="nav-item">
-			      				@if (Auth::id() && Auth::user()->usertype == '1')
-			      				   <a class="nav-link" href="{{url('myaccount')}}">
-			        				<span>{{__('messages.My Account')}}</span>
-			        			  </a>
-			      				@else
-			        			<a class="nav-link" href="#">
-			        				<span type="button" onclick="showloginmodel()" data-toggle="modal" data-target="#myModal">{{__('messages.Login')}}</span>
-			        				<span>/</span>
-			        				<span id="six" class="button2" onclick="showregmodel()" data-toggle="modal" data-target="#myModal">{{__('messages.Register')}}</span>
-			        			</a>
-			        			@endif
-			      			</li>
-			      			@if (Auth::id() && Auth::user()->usertype == '1')
-			      				<li class="nav-item">
-			        			<a class="nav-link" href="javascript:logout()">{{__('messages.Log out')}}</a>
-			      			</li>
-
-
-			      			@endif --}}
-                            {{-- <ul class="navbar-nav ml-auto">
-									@if (count(config('app.languages')) > 1)
-										<li class="nav-item dropdown d-md-down-none">
-											<a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-												{{ strtoupper(app()->getLocale()) }}
-											</a>
-											<div class="dropdown-menu dropdown-menu-right">
-												@foreach (config('app.languages') as $langLocale => $langName)
-													<a class="dropdown-item" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
-												@endforeach
-											</div>
-										</li>
-									@endif
-							  </ul> --}}
                         </ul>
                     </div>
                 </nav>
@@ -704,7 +673,24 @@
 
     @yield('footer')
     @stack('scripts')
+    <script>
+        $(document).on('click', '.dropdown-menu', function(e) {
+            e.stopPropagation();
+        });
 
+        // make it as accordion for smaller screens
+        if ($(window).width() < 992) {
+            $('.dropdown-menu a').click(function(e) {
+                e.preventDefault();
+                if ($(this).next('.submenu').length) {
+                    $(this).next('.submenu').toggle();
+                }
+                $('.dropdown').on('hide.bs.dropdown', function() {
+                    $(this).find('.submenu').hide();
+                })
+            });
+        }
+    </script>
     <script type="text/javascript" src="{{ asset('js/front.js?v=4543543') }}"></script>
 
 </body>
