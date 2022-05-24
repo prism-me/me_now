@@ -46,7 +46,7 @@
                      </ul>
                   </div>
                   @endif                              
-                  <form action="{{ URL::to('admin/blogs/update/')}}" method="PUT" novalidate="novalidate" enctype="multipart/form-data">
+                  <form action="{{ URL::to('admin/blogs/update').'/'.$data->id }}" method="PUT" novalidate="novalidate" enctype="multipart/form-data">
                      {{csrf_field()}}
                              
                      <div class="form-group">

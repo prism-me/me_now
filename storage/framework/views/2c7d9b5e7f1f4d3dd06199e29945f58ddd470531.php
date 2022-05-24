@@ -48,7 +48,7 @@
                      </ul>
                   </div>
                   <?php endif; ?>                              
-                  <form action="<?php echo e(URL::to('admin/blogs/update/')); ?>" method="PUT" novalidate="novalidate" enctype="multipart/form-data">
+                  <form action="<?php echo e(URL::to('admin/blogs/update').'/'.$data->id); ?>" method="PUT" novalidate="novalidate" enctype="multipart/form-data">
                      <?php echo e(csrf_field()); ?>
 
                              
