@@ -95,19 +95,7 @@
                                 <div class="dropdown-menu services-dropdown" aria-labelledby="navbarDropdown">
                                     
                                     
-                                    <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                        <li class="dropdown m-menu-fw">
-                                            <a href="#" data-toggle="dropdown" class="dropdown-toggle"><?php echo e($category->name); ?>
-
-                                            <span><i class="fa fa-angle-down"></i></span></a>
-                                            <ul class="dropdown-menu" >
-                                                <?php if(!blank($category->service)): ?>
-                                                    <?php echo e($category['service'][0]['name']); ?>
-
-                                                <?php endif; ?> 
-                                            </ul>
-                                        </li>
-                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    
                                 </div>
                             </li>
                             <li class="nav-item">
@@ -117,6 +105,9 @@
                             <li class="nav-item">
                                 <a class="nav-link"
                                     href="<?php echo e(url('doctorlist')); ?>"><?php echo e(__('messages.Doctors')); ?></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?php echo e(url('blog')); ?>"><?php echo e(__('messages.Blog')); ?></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="<?php echo e(url('allfacilites')); ?>"><?php echo e(__('messages.Workshops')); ?></a>

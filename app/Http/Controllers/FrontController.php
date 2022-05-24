@@ -41,10 +41,9 @@ class FrontController extends Controller
         //   Session::put("slider_color","#f1f5ff");          
           Session::put("main_banner",asset('upload/web').'/'.$setting->main_banner);
        }
+
        public function showhome(){
 
-           
-           
            if(!isset($_COOKIE['fload'])){
                setcookie('fload','1', time() + (86400 * 30), "/");
             }
@@ -54,13 +53,13 @@ class FrontController extends Controller
             $department=Department::with('service')->get();
             $setting=Setting::find(1);
             $reviews=Review::with('doctors','users')->get()->take(4);
-          return view("front.home")->with("services",$service)->with("package",$package)->with("setting",$setting)->with("department",$department)->with("review",$reviews)->with("doctorls",$doctor)->with("chatpage",'1');;
+            return view("front.home")->with("services",$service)->with("package",$package)->with("setting",$setting)->with("department",$department)->with("review",$reviews)->with("doctorls",$doctor)->with("chatpage",'1');;
        }
 
        public function getserviceanddoctor($department_id){
            $departmentservice=DepartService::where("department_id",$department_id)->get();
            $doctorlist=Doctor::where("department_id",$department_id)->get();
-           $data=array("service"=>$departmentservice,"doctor"=>$doctorlist);
+           $data=array("service"=> $departmentservice,"doctor"=>$doctorlist);
            return json_encode($data);
        }
 
@@ -530,5 +529,12 @@ class FrontController extends Controller
                         }                        
                   }
                   return "done";
+    }
+
+
+    public function blog(){
+
+        $blog = Blog::all();
+        return view('front.bloglist')->with('data', $blog);
     }
 }

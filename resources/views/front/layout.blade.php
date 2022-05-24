@@ -102,7 +102,7 @@
                                            {{ $departments['service'][0]['name'] }}
                                         @endif 
                                     @endforeach --}}
-                                    @foreach($department as $category)
+                                    {{-- @foreach($department as $category)
                                         <li class="dropdown m-menu-fw">
                                             <a href="#" data-toggle="dropdown" class="dropdown-toggle">{{ $category->name }}
                                             <span><i class="fa fa-angle-down"></i></span></a>
@@ -112,7 +112,7 @@
                                                 @endif 
                                             </ul>
                                         </li>
-                                    @endforeach
+                                    @endforeach --}}
                                 </div>
                             </li>
                             <li class="nav-item">
@@ -122,6 +122,9 @@
                             <li class="nav-item">
                                 <a class="nav-link"
                                     href="{{ url('doctorlist') }}">{{ __('messages.Doctors')}}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('blog') }}">{{ __('messages.Blog') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('allfacilites') }}">{{ __('messages.Workshops') }}</a>

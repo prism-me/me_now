@@ -78,6 +78,11 @@ Route::group(['prefix' => '/'], function () {
      Route::get("resetpassword/{code}","FrontController@resetpwd");
      Route::any("resetnewpwd","FrontController@resetpassword");
      Route::Get("getcurrenttime/{offset}","HomeController@getcurrenttime");
+     Route::get("blog","FrontController@blog");
+     Route::get("blog-detail/{id}","FrontController@blogDetail");
+
+
+     
      
 });
 
@@ -171,6 +176,9 @@ Route::group(['prefix' => 'admin'], function () {
 
         #ARticle
         Route::resource('articles', 'ArticleController');
+
+        #Blog 
+        Route::resource('blogs', 'BlogController');
 
 
 	 });
