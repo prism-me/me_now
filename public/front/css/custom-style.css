@@ -43,13 +43,13 @@ font-size: 14px;
 }
 
 .services-2nd-box{
-    height:300px !important;
-    margin-top: 3rem;
+    height:240px !important;
+    /* margin-top: 3rem; */
     
 }
 .services-2nd-box .left-part-detail{
 
-    padding: 3rem;
+    padding: 1rem 20px;
 }
 
 .video-section{
@@ -234,3 +234,9 @@ display: inline-block;
     50%  {background-color:#1B7081; }
     100%  {background-color:#48b7c6; }
   }
+
+@media (min-width: 1200px){
+    .container {
+        max-width: 1240px;
+    }
+}

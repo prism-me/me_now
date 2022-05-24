@@ -48,13 +48,13 @@ class FrontController extends Controller
            if(!isset($_COOKIE['fload'])){
                setcookie('fload','1', time() + (86400 * 30), "/");
             }
-            $service=Service::get()->take(8);
+            //$service=Service::get()->take(8);
             $package=Package::get()->take(3);
             $doctor=Doctor::get()->take(4);
             $department=Department::with('service')->get();
             $setting=Setting::find(1);
             $reviews=Review::with('doctors','users')->get()->take(4);
-          return view("front.home")->with("services",$service)->with("package",$package)->with("setting",$setting)->with("department",$department)->with("review",$reviews)->with("doctorls",$doctor)->with("chatpage",'1');;
+          return view("front.home")->with("package",$package)->with("setting",$setting)->with("department",$department)->with("review",$reviews)->with("doctorls",$doctor)->with("chatpage",'1');;
        }
 
        public function blog(){

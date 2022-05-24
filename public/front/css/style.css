@@ -461,6 +461,7 @@ a:hover{
     padding: 25px;
     border-radius: 10px;
     margin-bottom: 30px;
+    height: 240px;
 }
 
 .services-part1-box {
@@ -472,6 +473,7 @@ a:hover{
     color: #356380;
     margin: 20px 0px;
     font-weight: bold;
+    text-align: center;
 }
 
 .text-detail-box p {
@@ -479,6 +481,7 @@ a:hover{
     margin-bottom: 0;
     color: #767676;
     font-family: 'AvenirLTStd-Book';
+    text-align:center;
 }
 
 .services-part2-box {
@@ -587,8 +590,11 @@ a:hover{
 }
 
 .services-part-box img {
-    width: 80px;
-    height: auto;
+    width: auto;
+    height: 60px;
+    margin: 0px auto;
+    display: block;
+
 }
 
 .numbers-counter-part-box img {
@@ -877,7 +883,7 @@ p.testip {
 }
 
 .department-part-box {
-    background-color: #fffcec;
+    background-color: #DAF0FF;
     border-radius: 10px;
     padding: 30px;
     text-align: center;

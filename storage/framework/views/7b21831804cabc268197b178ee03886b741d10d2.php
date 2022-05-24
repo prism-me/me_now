@@ -31,22 +31,25 @@
             </div>
             <div class="services-right-part">
                 <div class="row">
-                    <?php if(count($services) > 0): ?>
+                    <?php if(count($department) > 0): ?>
                         <?php $i = 0; ?>
-                        <?php $__currentLoopData = $services; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $s): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <div class="col-md-4 col-sm-6">
-                                <?php if($i % 2 == 0): ?>
-                                    <div class="services-part-box services-part1-box">
-                                    <?php else: ?>
-                                        <div class="services-part-box services-part2-box">
-                                <?php endif; ?>
-                                <img src="<?php echo e(asset('upload/service') . '/' . $s->icon); ?>">
-                                <div class="text-detail-box">
-                                    <h4><?php echo e($s->name); ?></h4>
-                                    <p><?php echo e($s->description); ?></p>
+                        <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $s): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <?php if($i < 6): ?>
+                                <div class="col-md-4 col-sm-6">
+                                    <?php if($i % 2 == 0): ?>
+                                        <div class="services-part-box services-part1-box">
+                                        <?php else: ?>
+                                            <div class="services-part-box services-part2-box">
+                                    <?php endif; ?>
+                                    <img src="<?php echo e(asset('front/img/department') . '/' . $s->image); ?>">
+                                    <div class="text-detail-box">
+                                        <h4><?php echo e($s->name); ?></h4>
+                                        <p><?php echo e($s->description); ?></p>
+                                    </div>
+                                    </div>
                                 </div>
-                            </div>
-                </div>
+                            <?php endif; ?>
+
                 <?php $i++; ?>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 <?php endif; ?>
@@ -67,22 +70,25 @@
         </div>
         <div class="services-right-part">
             <div class="row">
-                <?php if(count($services) > 0): ?>
+                <?php if(count($department) > 0): ?>
                     <?php $i = 0; ?>
-                    <?php $__currentLoopData = $services; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $s): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $s): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <?php if($i > 5): ?>
                         <div class="col-md-4 col-sm-6">
                             <?php if($i % 2 == 0): ?>
                                 <div class="services-part-box services-part1-box">
                                 <?php else: ?>
                                     <div class="services-part-box services-part2-box">
                             <?php endif; ?>
-                            <img src="<?php echo e(asset('upload/service') . '/' . $s->icon); ?>">
+                            <img src="<?php echo e(asset('front/img/department') . '/' . $s->image); ?>">
                             <div class="text-detail-box">
                                 <h4><?php echo e($s->name); ?></h4>
                                 <p><?php echo e($s->description); ?></p>
                             </div>
                         </div>
-            </div>
+                     </div>
+                     <?php endif; ?>
+
             <?php $i++; ?>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             <?php endif; ?>

@@ -91,18 +91,17 @@
                                 <ul class="dropdown-menu services-dropdown">
 
                                     <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $departments): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                        <li><a class="dropdown-item" href=" <?php echo e($departments->name); ?>">
+                                        <li><a class="dropdown-item" href="<?php echo e(url('department')); ?>">
                                                 <?php echo e($departments->name); ?> </a>
 
                                             <?php if(!blank($departments->service)): ?>
-                                                <?php $__currentLoopData = $departments->service; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $subdepartment): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                    <ul class="submenu dropdown-menu">
-                                                        <li><a class="dropdown-item" href="">
+                                                <ul class="submenu dropdown-menu">
+                                                    <?php $__currentLoopData = $departments->service; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $subdepartment): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                        <li><a class="dropdown-item" href="department">
                                                                 <?php echo e($subdepartment->name); ?></a>
                                                         </li>
-
-                                                    </ul>
-                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                </ul>
                                             <?php endif; ?>
                                         </li>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

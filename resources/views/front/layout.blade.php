@@ -93,18 +93,17 @@
                                 <ul class="dropdown-menu services-dropdown">
 
                                     @foreach ($department as $departments)
-                                        <li><a class="dropdown-item" href=" {{ $departments->name }}">
+                                        <li><a class="dropdown-item" href="{{ url('department') }}">
                                                 {{ $departments->name }} </a>
 
                                             @if (!blank($departments->service))
-                                                @foreach ($departments->service as $subdepartment)
-                                                    <ul class="submenu dropdown-menu">
-                                                        <li><a class="dropdown-item" href="">
+                                                <ul class="submenu dropdown-menu">
+                                                    @foreach ($departments->service as $subdepartment)
+                                                        <li><a class="dropdown-item" href="department">
                                                                 {{ $subdepartment->name }}</a>
                                                         </li>
-
-                                                    </ul>
-                                                @endforeach
+                                                    @endforeach
+                                                </ul>
                                             @endif
                                         </li>
                                     @endforeach
