@@ -28,7 +28,10 @@ Route::group(['prefix' => '/'], function () {
      Route::get('auth/{driver}', 'Auth\FacebookController@redirectToProvider')->name('social.oauth');
      Route::get('auth/{driver}/callback', 'Auth\FacebookController@handleProviderCallback')->name('social.callback');
      Route::get("/","FrontController@showhome");
+     Route::get("about","FrontController@about");
      Route::get("blog","FrontController@blog");
+     Route::get("workshop","FrontController@workshop");
+     Route::get("workshop/{id}","FrontController@workshopdetail");
      Route::get("getserviceanddoctor/{id}","FrontController@getserviceanddoctor");
      Route::post("bookappoinment","FrontController@bookappoinment");
      Route::get("allfacilites","FrontController@allfacilites");
@@ -180,6 +183,9 @@ Route::group(['prefix' => 'admin'], function () {
 
         #Blog 
         Route::resource('blogs', 'BlogController');
+
+        #Workshop 
+        Route::resource('workshops', 'WorkshopController');
 
 
 	 });

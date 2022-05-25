@@ -1,25 +1,25 @@
 /* Global css */
 
 @font-face {
-    font-family: 'AvenirLTStd-Book';
+    font-family: 'Roboto', sans-serif ;
     src: url('../font/AvenirLTStd-Book.eot'); 
-    src: local('AvenirLTStd-Book'), local('AvenirLTStd-Book'), url('AvenirLTStd-Book.otf') format('opentype');
+    src: local('Roboto', sans-serif ), local('Roboto', sans-serif ), url('AvenirLTStd-Book.otf') format('opentype');
 }
 
 @font-face {
-    font-family: 'AvenirLTStd-Medium';
+    font-family: 'Roboto', sans-serif ;
     src: url('../font/AvenirLTStd-Medium.eot'); 
-    src: local('AvenirLTStd-Medium'), local('AvenirLTStd-Medium'), url('AvenirLTStd-Medium.otf') format('opentype');
+    src: local('Roboto', sans-serif ), local('Roboto', sans-serif ), url('AvenirLTStd-Medium.otf') format('opentype');
 }
 
 @font-face {
-    font-family: 'AvenirLTStd-Roman';
+    font-family: 'Roboto', sans-serif ;
     src: url('../font/AvenirLTStd-Roman.eot'); 
-    src: local('AvenirLTStd-Roman'), local('AvenirLTStd-Roman'), url('AvenirLTStd-Roman.otf') format('opentype');
+    src: local('Roboto', sans-serif ), local('Roboto', sans-serif ), url('AvenirLTStd-Roman.otf') format('opentype');
 }
 
 body {
-    font-family: 'AvenirLTStd-Roman'!important;
+    font-family: 'Roboto', sans-serif !important;
     direction: rtl;
 }
 
@@ -62,7 +62,7 @@ a:hover{
     margin-bottom: 0;
     width: 75%;
     margin: 25px auto 0;
-    font-family: 'AvenirLTStd-Book';
+    font-family: 'Roboto', sans-serif ;
 }
 
 .global-part-heading {
@@ -75,7 +75,7 @@ a:hover{
     margin-bottom: 0;
     width: 100%;
     margin: 25px 0 0;
-    font-family: 'AvenirLTStd-Book';
+    font-family: 'Roboto', sans-serif ;
 }
 
 .global-heading h3 {
@@ -106,7 +106,7 @@ a:hover{
     padding: 15px;
     border-radius: 100px;
     outline: none;
-    font-family: 'AvenirLTStd-Medium';
+    font-family: 'Roboto', sans-serif ;
     text-transform: uppercase;
     font-size: 13px;
     display: block;
@@ -120,7 +120,7 @@ a:hover{
     padding: 15px;
     border-radius: 100px;
     outline: none;
-    font-family: 'AvenirLTStd-Medium';
+    font-family: 'Roboto', sans-serif ;
     text-transform: uppercase;
     font-size: 15px;
 }
@@ -326,7 +326,7 @@ a:hover{
     padding: 10px;
     color: #3f3f3f;
     margin-bottom: 15px;
-    font-family: 'AvenirLTStd-Book';
+    font-family: 'Roboto', sans-serif ;
 }
 
 .appo-select-box .dropdown {
@@ -438,7 +438,7 @@ a:hover{
     font-size: 15px;
     padding-bottom: 20px;
     margin-bottom: 0;
-    font-family: 'AvenirLTStd-Book';
+    font-family: 'Roboto', sans-serif ;
 }
 
 .left-part-detail {
@@ -481,7 +481,7 @@ a:hover{
     font-size: 13px;
     margin-bottom: 0;
     color: #767676;
-    font-family: 'AvenirLTStd-Book';
+    font-family: 'Roboto', sans-serif ;
     text-align: right;
 }
 
@@ -544,7 +544,7 @@ a:hover{
     width: 80%;
     margin: 0 auto;
     color: #767676;
-    font-family: 'AvenirLTStd-Book';
+    font-family: 'Roboto', sans-serif ;
 }
 
 .pricing-part-btn button {
@@ -555,7 +555,7 @@ a:hover{
     padding: 15px;
     border-radius: 10px;
     outline: none;
-    font-family: 'AvenirLTStd-Medium';
+    font-family: 'Roboto', sans-serif ;
     text-transform: uppercase;
     font-size: 15px;
     border-top-left-radius: 0px;
@@ -583,7 +583,7 @@ a:hover{
     text-transform: uppercase;
     font-size: 17px;
     margin-bottom: 0;
-    font-family: 'AvenirLTStd-Book';
+    font-family: 'Roboto', sans-serif ;
 }
 
 .services-part-box img {
@@ -612,7 +612,7 @@ a:hover{
     font-size: 14px;
     color: #767676;
     margin-bottom: 10px;
-    font-family: 'AvenirLTStd-Book';
+    font-family: 'Roboto', sans-serif ;
 }
 
 .facebook-doctorl i {
@@ -701,7 +701,7 @@ a:hover{
     color: #767676;
     font-size: 14px;
     margin: 20px 0px;
-    font-family: 'AvenirLTStd-Book';
+    font-family: 'Roboto', sans-serif ;
     line-height: 25px;
     text-align: right;
 }
@@ -755,21 +755,21 @@ a:hover{
 
 .footer-r1-detail h3 {
     font-size: 17px;
-    font-family: 'AvenirLTStd-Medium';
+    font-family: 'Roboto', sans-serif ;
     text-align: right;
 }
 
 .footer-r1-detail p {
     margin-bottom: 10px;
     font-size: 12px;
-    font-family: 'AvenirLTStd-Medium';
+    font-family: 'Roboto', sans-serif ;
     text-align: right;
 }
 
 .footer-r1-detail a {
     margin-bottom: 5px;
     font-size: 12px;
-    font-family: 'AvenirLTStd-Medium';
+    font-family: 'Roboto', sans-serif ;
     cursor: pointer;
     display: inline-block;
     color: white;
@@ -845,7 +845,7 @@ a:hover{
     padding: 20px 0px 0px;
     margin-bottom: 0px;
     font-size: 12px;
-    font-family: 'AvenirLTStd-Book';
+    font-family: 'Roboto', sans-serif ;
 }
 
 .footer-bottom-main-box {
@@ -940,7 +940,7 @@ a:hover{
     color: #767676;
     font-size: 14px;
     margin-bottom: 0;
-    font-family: 'AvenirLTStd-Book';
+    font-family: 'Roboto', sans-serif ;
 }
 
 .pricelist-part-detail-box {
@@ -980,7 +980,7 @@ a:hover{
     margin-top: 0px;
     font-size: 17px;
     color: black;
-    font-family: 'AvenirLTStd-Book';
+    font-family: 'Roboto', sans-serif ;
 }
 
 .d-detail-collapse-doctor .accordion .card-header {
@@ -1177,7 +1177,7 @@ a:hover{
 
 .part-form-main-box button {
     border-radius: 1000px;
-    font-family: 'AvenirLTStd-Medium';
+    font-family: 'Roboto', sans-serif ;
     background-color: #1B7081;
     border: none;
     padding: 10px 50px;
@@ -1208,7 +1208,7 @@ a:hover{
     font-size: 20px;
     color: white;
     margin: 15px 0px 5px;
-    font-family: 'AvenirLTStd-Medium';
+    font-family: 'Roboto', sans-serif ;
 
 }
 
@@ -1216,7 +1216,7 @@ a:hover{
     font-size: 18px;
     color: white;
     margin-bottom: 0;
-    font-family: 'AvenirLTStd-Book';
+    font-family: 'Roboto', sans-serif ;
 }
 
 .part2-part-main-box {
@@ -1252,13 +1252,13 @@ a:hover{
 .doctor-detail-main-box h4 {
     font-size: 28px;
     color: black;
-    font-family: 'AvenirLTStd-Medium';
+    font-family: 'Roboto', sans-serif ;
 }
 
 .doctor-detail-main-box h6 {
     font-size: 15px;
     color: #2f3658;
-    font-family: 'AvenirLTStd-Book';
+    font-family: 'Roboto', sans-serif ;
     margin-bottom: 20px;
 }
 
@@ -1281,7 +1281,7 @@ a:hover{
 .doctor-detail-main-box p {
     font-size: 15px;
     color: #767676;
-    font-family: 'AvenirLTStd-Book';
+    font-family: 'Roboto', sans-serif ;
     margin: 30px 0px;
 }
 
@@ -1396,7 +1396,7 @@ a:hover{
     font-size: 15px;
     margin-bottom: 0;
     margin-top: 30px;
-    font-family: 'AvenirLTStd-Medium';
+    font-family: 'Roboto', sans-serif ;
     color: black;
     text-align: center;
 }
@@ -1647,7 +1647,7 @@ a:hover{
 .tab-appointment-main-box h5 {
     font-size: 20px;
     color: black;
-    font-family: 'AvenirLTStd-Medium';
+    font-family: 'Roboto', sans-serif ;
     text-align: right;
 }
 
@@ -2424,7 +2424,7 @@ img {
     padding: 15px;
     border-radius: 10px;
     outline: none;
-    font-family: 'AvenirLTStd-Medium';
+    font-family: 'Roboto', sans-serif ;
     text-transform: uppercase;
     font-size: 15px;
     border-top-left-radius: 0px;
@@ -2456,7 +2456,7 @@ img {
 }
 
 .ssuccess-main-box {
-    font-family: 'AvenirLTStd-Roman';
+    font-family: 'Roboto', sans-serif ;
 }
 
 .success-des p {

@@ -20,6 +20,8 @@
     <meta property="og:keyword" content="<?php echo e(__('messages.meta_keyword')); ?>" />
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('front/css/bootstrap.css')); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('front/css/custom-style.css')); ?>">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <?php if(isset($setting->is_rtl) && $setting->is_rtl == '0'): ?>
         <link rel="stylesheet" type="text/css" href="<?php echo e(asset('front/css/rtl-style.css?v=5r12')); ?>">
     <?php else: ?>
@@ -116,10 +118,8 @@
                                     href="<?php echo e(url('doctorlist')); ?>"><?php echo e(__('messages.Doctors')); ?></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?php echo e(url('blog')); ?>"><?php echo e(__('messages.Blog')); ?></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?php echo e(url('allfacilites')); ?>"><?php echo e(__('messages.Workshops')); ?></a>
+                                <a class="nav-link"
+                                    href="<?php echo e(url('workshop')); ?>"><?php echo e(__('messages.Workshops')); ?></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"

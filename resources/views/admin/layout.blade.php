@@ -68,6 +68,9 @@
                      <a href="{{url('admin/blogs')}}"> <i class="menu-icon fa  fa-newspaper-o"></i>{{__('messages.Blog')}}</a>
                   </li>
                   <li class="active">
+                     <a href="{{url('admin/workshops')}}"> <i class="menu-icon fa  fa-newspaper-o"></i>{{__('messages.Workshop')}}</a>
+                  </li>
+                  <li class="active">
                      <a href="{{url('admin/chat')}}"> <i class="menu-icon fa fa-comment"></i>{{__('messages.Chat')}} </a>
                   </li>
                   <li class="active">

@@ -427,5 +427,16 @@ return [
 		"View"=>"View",
 		"Blog List"=>"Blog List",
 		"Delete"=>"Delete",
+		
+		"Workshop"=>"Workshop",
+		"Sub-Title"=>"Sub-Title",
+		"Title"=>"Title",
+		"Save Workshop"=>"Save Workshop",
+		"Posted By"=>"Posted By",
+		"View"=>"View",
+		"Workshop List"=>"Workshop List",
+		"Delete"=>"Delete",
+		"Short Description"=>"Short Description",
+		"Event Date"=>"Event Date",
 
 	];

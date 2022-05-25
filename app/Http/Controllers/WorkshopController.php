@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Workshop;
+use App\Model\Workshop;
 use Illuminate\Http\Request;
 
-class WorkshopController extends Controller
+class WorkshopController extends UploadController
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class WorkshopController extends Controller
      */
     public function index()
     {
-        //
+        $workshop = Workshop::all();
+        return view("admin.workshop.default")->with("data",$workshop);
     }
 
     /**
@@ -24,7 +25,7 @@ class WorkshopController extends Controller
      */
     public function create()
     {
-        //
+         return view("admin.workshop.addWorkshop");
     }
 
     /**
@@ -35,7 +36,31 @@ class WorkshopController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $request->validate([
+            'title'=>'required',
+            'description'=>'required',
+            'featured_img'=>'required',
+            'event_date'=>'required',
+           
+        ]);
+
+        if ($img = $request->hasFile('featured_img')) {
+               
+           $media =  UploadController::upload_media($request->featured_img);
+           $mediaUpload = $media['url'];
+
+        }
+       
+
+        $data  =$request->all();
+        $blogCreate = Workshop::create(array(
+                    'title' => $data['title'],
+                    'description' => $data['description'],
+                    'short_description' => isset($data['short_description']) ?  : '',
+                    'event_date' => $data['event_date'],
+                    'featured_img' => $mediaUpload
+        ));
+        return redirect("admin/workshops");
     }
 
     /**
@@ -57,7 +82,7 @@ class WorkshopController extends Controller
      */
     public function edit(Workshop $workshop)
     {
-        //
+        return view('admin.workshop.saveWorkshop')->with('data', $workshop);
     }
 
     /**
@@ -69,7 +94,17 @@ class WorkshopController extends Controller
      */
     public function update(Request $request, Workshop $workshop)
     {
-        //
+        if ($img = $request->hasFile('featured_img')) {
+               
+           $media =  UploadController::upload_media($request->featured_img);
+           $mediaUpload = $media['url'];
+
+        }
+        $data  =$request->all();
+       
+        $data['featured_img'] = isset( $mediaUpload->featured_img ) ? $mediaUpload ->featured_img : " " ;
+        $blogCreate = Workshop::update($data);
+        return redirect("admin/workshops");
     }
 
     /**
@@ -78,8 +113,10 @@ class WorkshopController extends Controller
      * @param  \App\Workshop  $workshop
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Workshop $workshop)
+    public function destroy(Workshop $workshop,$id)
     {
-        //
+        $workshop = Workshop::find($id);
+        $workshop->delete();
+        return redirect("admin/workshops");
     }
 }

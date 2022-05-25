@@ -10,6 +10,7 @@ use App\Model\TimeTable;
 use App\Model\Appointment;
 use App\Model\DepartService;
 use App\Model\Token;
+use App\Model\Workshop;
 use App\Model\Review;
 use App\Model\Blog;
 use App\Model\Service;
@@ -90,6 +91,50 @@ class FrontController extends Controller
 
 
 
+    public function workshop(){
+        if(!isset($_COOKIE['fload'])){
+            setcookie('fload','1', time() + (86400 * 30), "/");
+         }
+         $service=Service::get()->take(8);
+         $workshop=Workshop::get()->take(8);
+         $package=Package::get()->take(3);
+         $doctor=Doctor::get()->take(4);
+         $department=Department::with('service')->get();
+         $setting=Setting::find(1);
+         $reviews=Review::with('doctors','users')->get()->take(4);
+       return view("front.workshop")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with("workshop",$workshop);
+    }
+
+
+    public function workshopdetail(){
+        if(!isset($_COOKIE['fload'])){
+            setcookie('fload','1', time() + (86400 * 30), "/");
+         }
+         $service=Service::get()->take(8);
+         $package=Package::get()->take(3);
+         $doctor=Doctor::get()->take(4);
+         $department=Department::with('service')->get();
+         $setting=Setting::find(1);
+         $reviews=Review::with('doctors','users')->get()->take(4);
+       return view("front.workshops_inner")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department);
+    }
+
+
+    public function about(){
+        if(!isset($_COOKIE['fload'])){
+            setcookie('fload','1', time() + (86400 * 30), "/");
+         }
+         $service=Service::get()->take(8);
+         $package=Package::get()->take(3);
+         $doctor=Doctor::get()->take(4);
+         $department=Department::with('service')->get();
+         $setting=Setting::find(1);
+         $reviews=Review::with('doctors','users')->get()->take(4);
+       return view("front.about")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department);
+     
+    }
+
+    
 
        public function getserviceanddoctor($department_id){
            $departmentservice=DepartService::where("department_id",$department_id)->get();
@@ -248,9 +293,11 @@ class FrontController extends Controller
        public function departmentdetail($id){
            $department=Department::all();
             $setting=Setting::find(1);
-           $departmentdetails=Department::with("doctor","service")->find($id);          
+           $departmentdetails=Department::with("doctor","service")->find($id);
+           $subServices = DepartService::where('department_id',$id)->get(); 
+                   
            if($departmentdetails){
-               return view("front.departmentdetails")->with("department",$department)->with("departmentdetails",$departmentdetails)->with("setting",$setting);
+               return view("front.departmentdetails")->with('subServices',$subServices)->with("department",$department)->with("departmentdetails",$departmentdetails)->with("setting",$setting);
            }else{
                return redirect('/');
            }

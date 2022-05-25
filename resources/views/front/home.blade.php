@@ -206,7 +206,7 @@
                                 <div class="doctorl-part-box">
                                     <?php
                                     if ($d->image) {
-                                        $image = asset('upload/doctor') . '/' . $d->image;
+                                        $image = $d->image;
                                     } else {
                                         $image = asset('upload/profile/profile.png');
                                     }
