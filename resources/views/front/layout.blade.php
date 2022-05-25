@@ -126,7 +126,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="{{ url('gallery') }}">{{ __('messages.Women Empowerment') }}</a>
+                                    href="{{ url('women-empowerment') }}">{{ __('messages.Women Empowerment') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"

@@ -314,12 +314,15 @@ font-weight: bold;
     margin:1rem 0px;
 }
 
+.who_we_are_cotent h2:nth-child(1):before{
+    content: "~";
+    margin-right: 3rem;
+}
 .who_we_are_cotent h2{
     margin:2rem auto;
 }
 .who_we_are_cotent h2:nth-child(1){
     font-size: 30px;
-    text-align:center;
     color: #49B7C6;
 
 }
@@ -342,9 +345,54 @@ font-weight: bold;
 }
 
 .about_tiles .single-tile{
+    height: 340px;
     padding: 0px 2rem;
-    border:5px solid #49B7C6;
-    text-align:center;
-    box-shadow: 0px 0px 5px #eee;
+    text-align: center;
+    margin: 1rem;
     
+}
+.about_tiles .inner-single-title{
+    border-top:5px solid #49B7C6;
+    border-bottom:5px solid #49B7C6;
+    height: 100%;
+}
+
+.about_tiles .middle{
+    box-shadow: 0 0 12px #ddd;
+}
+.about_tiles .inner-single-title img{
+    width:50px;
+    height:auto;
+    padding:2.5rem 0px;
+}
+
+.about_tiles .inner-single-title h4{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.about_tiles .inner-single-title p{
+    margin-bottom: 2rem;
+}
+
+.text-section-about p{
+
+    border-left: 3px solid #49B7C6;
+    padding: 1rem;
+}
+.faq #accordion  .card{
+    border: none;
+
+}
+.faq #accordion .btn-link:hover{
+    text-decoration: none;
+}
+.faq #accordion .btn-link{
+    width:100%;
+    text-align: left;
+    color: #1B7081;
+}
+.faq #accordion .card-header {
+background-color: transparent;
+padding-left: 0px;
+
 }
