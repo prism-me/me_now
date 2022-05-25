@@ -20,7 +20,7 @@
                         {{ __('messages.All') }}
                     </div>
 
-                    @foreach ($department as $d)
+                    @foreach ($doctor as $d)
                         <div class="slide tablinks" onclick="openCity(event, '{{ $d->id }}')">
                             {{ $d->name }}
                         </div>
@@ -44,11 +44,14 @@
                                             }
                                             ?>
                                             <div class="doctorl-dp-img doctorl-dp-img-1"
-                                                style="background-image: url('<?= $d->image ?>')"></div>
+                                                style="background-image: url({{'<?= $d->image ?>'}})"></div>
 
                                             <div class="doctorl-part-detail">
                                                 <h4>{{ ucwords(strtolower($d->name)) }}</h4>
-                                                <p>{{ substr(trim($d->about_us), 0, 135) }}</p>
+                                                <p style="color:rgb(108, 108, 108)">
+                                                {{ substr($d->about_us, 0,  100) }}....
+                                        
+                                                <a href="{{ url('blog-detail'). '/'.$d->id }}" stle="color:#49B7C6;">Read More</a> </p>
                                                 <div class="book_appointment_doctor text-center">
                                                     <button>Make an Appointment</button>
                                                 </div>

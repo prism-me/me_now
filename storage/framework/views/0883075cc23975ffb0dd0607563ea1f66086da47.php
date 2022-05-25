@@ -22,7 +22,7 @@
 
                     </div>
 
-                    <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <?php $__currentLoopData = $doctor; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="slide tablinks" onclick="openCity(event, '<?php echo e($d->id); ?>')">
                             <?php echo e($d->name); ?>
 
@@ -47,11 +47,14 @@
                                             }
                                             ?>
                                             <div class="doctorl-dp-img doctorl-dp-img-1"
-                                                style="background-image: url('<?= $d->image ?>')"></div>
+                                                style="background-image: url({{'<?= $d->image ?>'}})"></div>
 
                                             <div class="doctorl-part-detail">
                                                 <h4><?php echo e(ucwords(strtolower($d->name))); ?></h4>
-                                                <p><?php echo e(substr(trim($d->about_us), 0, 135)); ?></p>
+                                                <p style="color:rgb(108, 108, 108)">
+                                                <?php echo e(substr($d->about_us, 0,  100)); ?>....
+                                        
+                                                <a href="<?php echo e(url('blog-detail'). '/'.$d->id); ?>" stle="color:#49B7C6;">Read More</a> </p>
                                                 <div class="book_appointment_doctor text-center">
                                                     <button>Make an Appointment</button>
                                                 </div>

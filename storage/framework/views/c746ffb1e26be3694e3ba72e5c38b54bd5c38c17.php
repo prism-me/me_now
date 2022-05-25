@@ -47,7 +47,6 @@
                                             <div class="doctorl-part-detail">
                                                 <h4><?php echo e(ucwords(strtolower($d->title))); ?></h4>
                                                 <p>Event Date:<?php echo e($d->event_date); ?></p>
-                                                <h4><a href=""><?php echo e($d->title); ?></a></h4>
                                                 <p style="color:rgb(108, 108, 108)">
                                                     <?php echo e(substr($d->short_description, 0,  150)); ?>....
                                             
