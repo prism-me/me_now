@@ -74,6 +74,7 @@ class FrontController extends Controller
         }
 
         public function blogdetails($id){
+
             $blog=blog::all();
             $doctor=Doctor::with('blog',"TimeTabledata")->where("user_id",$id)->first();
             if(!$doctor) {
@@ -83,9 +84,7 @@ class FrontController extends Controller
             $doctor->total_ratting=count(Review::where("doctor_id",$id)->get());
             $doctor->ratting=Review::where("doctor_id",$id)->avg('ratting');
             $reviews=Review::with('doctors','users')->where("doctor_id",$id)->get();
-            //echo "<pre>";print_r($reviews);exit;
-             $setting=Setting::find(1);
-           //  echo "<pre>";print_r($doctor);exit;
+            $setting=Setting::find(1);
             return view("front.doctordetails")->with("blog",$blog)->with("review",$reviews)->with("doctor",$doctor)->with("departmentdetails",$departmentdetails)->with("id",$id)->with("setting",$setting);
        }
 

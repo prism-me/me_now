@@ -38,13 +38,13 @@
                                         <div class="doctorl-part-box">
                                             <?php
                                             if ($d->image) {
-                                                $image = asset('upload/doctor') . '/' . $d->image;
+                                                $d->image;
                                             } else {
                                                 $image = asset('upload/profile/profile.png');
                                             }
                                             ?>
                                             <div class="doctorl-dp-img doctorl-dp-img-1"
-                                                style="background-image: url('<?= $image ?>')"></div>
+                                                style="background-image: url('<?= $d->image ?>')"></div>
 
                                             <div class="doctorl-part-detail">
                                                 <h4>{{ ucwords(strtolower($d->name)) }}</h4>

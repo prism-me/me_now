@@ -59,7 +59,7 @@
                         <tr>
                            <td><?php echo e(isset($d->id)?$d->id:""); ?></td>
                            <td>
-                                <img src="<?php echo e(asset('public/upload/doctor').'/'.$d->image); ?>" class="imgsize1" style="width: 150px;"/>
+                                <img src="<?php echo e($d->image); ?>" class="imgsize1" style="height:50px;width: 50px;"/>
                            </td>
                            <td><?php echo e($d->department->name); ?></td>
                            <td><?php echo e($d->name); ?></td>

@@ -65,7 +65,7 @@
                      <a href="{{url('admin/package')}}"> <i class="menu-icon fa fa-user-md"></i>{{__('messages.Help Package')}}</a>
                   </li>
                   <li class="active">
-                     <a href="{{url('admin/blogs')}}"> <i class="menu-icon fa fa-fa-newspaper-md"></i>{{__('messages.Blog')}}</a>
+                     <a href="{{url('admin/blogs')}}"> <i class="menu-icon fa  fa-newspaper-o"></i>{{__('messages.Blog')}}</a>
                   </li>
                   <li class="active">
                      <a href="{{url('admin/chat')}}"> <i class="menu-icon fa fa-comment"></i>{{__('messages.Chat')}} </a>

@@ -75,7 +75,7 @@
                         {{__('messages.Image')}}<span class="reqfield" >*</span>
                         </label>
                         @if($department_id!=0)
-                        <img src="{{asset('public/upload/department').'/'.$data->image}}" class="imgsize1 departmentimg"/> 
+                        <img src="{{$data->image}}" class="imgsize1 departmentimg" style="width:50px;height:50px;"/> 
                         @endif
                         <div>
                            <input type="file" id="file" name="image" class="form-control-file" accept="image/*">

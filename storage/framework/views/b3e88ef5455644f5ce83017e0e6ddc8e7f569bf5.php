@@ -58,7 +58,7 @@
                            <td><?php echo e(isset($d->id)?$d->id:""); ?></td>
                            <td><?php echo e(isset($d->name)?$d->name:""); ?></td>
                            <td>
-                               <img src="<?php echo e(asset('public/upload/department').'/'.$d->image); ?>" class="imgsize1"/>
+                               <img src="<?php echo e($d->image); ?>" class="imgsize1" style="width:50px;height:50px;"/>
                            </td>
                            <td><?php echo e(isset($d->emergency_no)?$d->emergency_no:""); ?></td>
                            <td>

@@ -65,7 +65,7 @@
                      <a href="<?php echo e(url('admin/package')); ?>"> <i class="menu-icon fa fa-user-md"></i><?php echo e(__('messages.Help Package')); ?></a>
                   </li>
                   <li class="active">
-                     <a href="<?php echo e(url('admin/blogs')); ?>"> <i class="menu-icon fa fa-fa-newspaper-md"></i><?php echo e(__('messages.Blog')); ?></a>
+                     <a href="<?php echo e(url('admin/blogs')); ?>"> <i class="menu-icon fa  fa-newspaper-o"></i><?php echo e(__('messages.Blog')); ?></a>
                   </li>
                   <li class="active">
                      <a href="<?php echo e(url('admin/chat')); ?>"> <i class="menu-icon fa fa-comment"></i><?php echo e(__('messages.Chat')); ?> </a>

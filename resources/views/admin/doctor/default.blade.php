@@ -57,7 +57,7 @@
                         <tr>
                            <td>{{isset($d->id)?$d->id:""}}</td>
                            <td>
-                                <img src="{{asset('public/upload/doctor').'/'.$d->image}}" class="imgsize1" style="width: 150px;"/>
+                                <img src="{{ $d->image}}" class="imgsize1" style="height:50px;width: 50px;"/>
                            </td>
                            <td>{{$d->department->name}}</td>
                            <td>{{$d->name}}</td>

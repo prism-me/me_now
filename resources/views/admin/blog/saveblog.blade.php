@@ -45,10 +45,13 @@
                         @endforeach
                      </ul>
                   </div>
-                  @endif                              
-                  <form action="{{ URL::to('admin/blogs/update').'/'.$data->id }}" method="PUT" novalidate="novalidate" enctype="multipart/form-data">
+                  @endif  
+                                         
+                  <form action="{{ URL::to('admin/blogs').'/'.$data->id }}" method="post" novalidate="novalidate" enctype="multipart/form-data">
                      {{csrf_field()}}
+                     
                              
+                     {{method_field('PUT')}}
                      <div class="form-group">
                         <label for="name" class=" form-control-label">
                         {{__('messages.Title')}}
@@ -68,7 +71,7 @@
                         {{__('messages.Description')}}
                         <span class="reqfield">*</span>
                         </label>
-                        <textarea id="description" placeholder="{{__('messages.Enter').'  '.__('messages.Description')}}" class="form-control" required name="description" value="{{ isset($data->description)?$data->description:''}}"></textarea>
+                        <textarea id="description" placeholder="{{__('messages.Enter').'  '.__('messages.Description')}}" class="form-control" required name="description" value="{{ isset($data->description)?$data->description:''}}">{{ isset($data->description)?$data->description:''}}</textarea>
                      </div>
                      <div class="form-group">
                         <label for="name" class=" form-control-label">
@@ -83,7 +86,7 @@
                         {{__('messages.Image')}}<span class="reqfield" >*</span>
                         </label>
                         @if($data->featured_img)
-                           <img src="{{asset('public/upload/blog').'/'.$data->featured_img}}" class="imgsize1 departmentimg"/> 
+                           <img src="{{asset('upload/blog').'/'.$data->featured_img}}" class="imgsize1 departmentimg"/> 
                         @endif
                         <input type="file" id="file" name="featured_img" class="form-control-file" accept="image/*">
                     

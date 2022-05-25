@@ -38,7 +38,7 @@
                   </div>
                   <?php endif; ?>
                   <div>
-                     <a href="<?php echo e(URL::to('admin/blogs/create')); ?>" class="btn btn-primary"><?php echo e(__('messages.Update').' '.__('messages.Blog')); ?></a>
+                     <a href="<?php echo e(URL::to('admin/blogs/create')); ?>" class="btn btn-primary"><?php echo e(__('messages.Add').' '.__('messages.Blog')); ?></a>
                   </div>
                   <div class="table-responsive">
                   <table id="service" class="table  table-striped table-bordered">
@@ -59,12 +59,12 @@
                            <td><?php echo e(isset($d->title)?$d->title:""); ?></td>
                            <td><?php echo e(isset($d->sub_title)?$d->sub_title:""); ?></td>
                            <td>
-                               <img src="<?php echo e(asset('upload/blog').'/'. $d->featured_img); ?>" class="imgsize1"/>
+                               <img src="<?php echo e($d->featured_img); ?>" style="width:50px;height: 50px;" class="imgsize1"/>
                            </td>
                            <td>
                                 <a href="<?php echo e(URL::to('admin/blogs/'.$d->id.'/edit')); ?>" class="btn btn-primary"><?php echo e(__('messages.Edit')); ?></a>
                                 <a href="<?php echo e(URL::to('admin/blogs/'.$d->id.'/show')); ?>" class="btn btn-success"><?php echo e(__('messages.View')); ?></a>
-                                <a href="javascript:deleterow('admin/blogs/delete','<?= $d->id ?>')" class="btn btn-danger"><?php echo e(__('messages.Delete')); ?></a>
+                                <form action="<?php echo e(URL::to('admin/blogs/delete').'/'.$d->id); ?>"  novalidate="novalidate" ><?php echo e(csrf_field()); ?><?php echo e(method_field('Delete')); ?><input type="submit" class="btn btn-danger" name="Delete"></form>
                            </td>
                         </tr>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

@@ -14,7 +14,7 @@ use App\User;
 use App\Model\Setting;
 use Session;
 use validate;
-class DoctorController extends Controller
+class DoctorController extends UploadController
 {
  
     public function index(){
@@ -30,6 +30,7 @@ class DoctorController extends Controller
     }
 
     public function updatedoctorprofile(Request $request){
+        
             $setting=Setting::find(1);
             if($request->get("id")!="0"){
                 $request->validate([
@@ -53,43 +54,13 @@ class DoctorController extends Controller
                 ]);
              }
 
-             $img_url="";
-            if($request->get("real_image")!=""){
-                 if ($request->hasFile('image')) 
-                  {
-                     $file = $request->file('image');
-                     $filename = $file->getClientOriginalName();
-                     $extension = $file->getClientOriginalExtension() ?: 'png';
-                     $folderName = '/upload/doctor';
-                     $picture = 'doctor_'.mt_rand(100000,999999). '.' . $extension;
-                     $destinationPath = public_path() . $folderName;
-                     $request->file('image')->move($destinationPath, $picture);
-                     $img_url = $picture;
-                     $image_path = public_path() ."/upload/doctor/".$request->get("real_image");
-                        if(file_exists($image_path)) {
-                            try {
-                                 unlink($image_path);
-                            }
-                            catch(Exception $e) {
-                              
-                            }                        
-                        }
-                 }else{
-                     $img_url = $request->get("real_image");
-                 }
-            }else{
-                if ($request->hasFile('image')) 
-                  {
-                     $file = $request->file('image');
-                     $filename = $file->getClientOriginalName();
-                     $extension = $file->getClientOriginalExtension() ?: 'png';
-                     $folderName = '/upload/doctor';
-                     $picture = 'doctor_'.mt_rand(100000,999999). '.' . $extension;
-                     $destinationPath = public_path() . $folderName;
-                     $request->file('image')->move($destinationPath, $picture);
-                     $img_url = $picture;
-                 }
+            if ($img = $request->hasFile('image')) {
+               
+                $media =  UploadController::upload_media($request->image);
+                $mediaUpload = $media['url'];
+
             }
+           
             if($request->get("id")!="0"){
                
                 $store=Doctor::find($request->get("id"));
@@ -106,7 +77,6 @@ class DoctorController extends Controller
                 $usd->password=$request->get("password");
                 $usd->phone_no=$request->get("phone_no");
                 $usd->usertype='3';
-                
                 $usd->save();
             }else{
                 $store=new Doctor();
@@ -132,7 +102,7 @@ class DoctorController extends Controller
             $store->twitter_id=$request->get("twitter_id");
             $store->google_id=$request->get("google_id");
             $store->instagram_id=$request->get("instagram_id");
-            $store->image=$img_url;
+            $store->image=$mediaUpload;
             $store->save(); 
             return redirect("admin/savedoctor/".$store->id.'/2');
 

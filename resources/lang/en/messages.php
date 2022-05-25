@@ -425,5 +425,7 @@ return [
 		"Save Blog"=>"Save Blog",
 		"Posted By"=>"Posted By",
 		"View"=>"View",
+		"Blog List"=>"Blog List",
+		"Delete"=>"Delete",
 
 	];

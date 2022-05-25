@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Blog;
+use App\Model\Blog;
 use Illuminate\Http\Request;
+use App\Http\Controllers\UploadController;
 
-class BlogController extends Controller
+class BlogController extends UploadController
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+  
     public function index()
     {
         $blog = Blog::all();
@@ -42,28 +45,21 @@ class BlogController extends Controller
             'title'=>'required',
             'sub_title'=>'required'
         ]);
-        if ($request->hasFile('featured_img')) 
-        {
-            $file = $request->file('featured_img');
-            $filename = $file->getClientOriginalName();
-           
-            $extension = $file->getClientOriginalExtension() ?: 'png';
-            $folderName = '/upload/blog';
-            $picture = 'blog'.mt_rand(100000,999999). '.' . $extension;
-            $destinationPath = public_path() . $folderName;
-            $request->file('featured_img')->move($destinationPath, $picture);
-            $img_url = $picture;
-            $image_path = public_path() ."/upload/blog/".$request->get("featured_img");
-            
-        }else{
-            $img_url = $request->get("featured_img");
+
+        if ($img = $request->hasFile('featured_img')) {
+               
+           $media =  UploadController::upload_media($request->featured_img);
+           $mediaUpload = $media['url'];
+
         }
+       
+
         $data  =$request->all();
         $blogCreate = Blog::create(array('title' => $data['title'],
                     'sub_title' => $data['sub_title'],
                 'description' => $data['description'],
                 'posted_by' => $data['posted_by'],
-                'featured_img' => $img_url
+                'featured_img' => $mediaUpload
                 ));
         return redirect("admin/blogs");
     }
@@ -101,25 +97,16 @@ class BlogController extends Controller
      */
     public function update(Request $request, Blog $blog)
     {
-        dd('blog');
-        if ($request->hasFile('featured_img')) 
-        {
-            $file = $request->file('featured_img');
-            $filename = $file->getClientOriginalName();
-           
-            $extension = $file->getClientOriginalExtension() ?: 'png';
-            $folderName = '/upload/blog';
-            $picture = 'blog'.mt_rand(100000,999999). '.' . $extension;
-            $destinationPath = public_path() . $folderName;
-            $request->file('featured_img')->move($destinationPath, $picture);
-            $img_url = $picture;
-            $image_path = public_path() ."/upload/blog/".$request->get("featured_img");
-            
-        }else{
-            $img_url = $request->get("featured_img");
+       
+        if ($img = $request->hasFile('featured_img')) {
+               
+           $media =  UploadController::upload_media($request->featured_img);
+           $mediaUpload = $media['url'];
+
         }
         $data  =$request->all();
-        $data['featured_img'] = $img_url;
+       
+        $data['featured_img'] = isset( $mediaUpload->featured_img ) ? $mediaUpload ->featured_img : " " ;
         $blogCreate = Blog::update($data);
         return redirect("admin/blogs");
     }
@@ -130,8 +117,13 @@ class BlogController extends Controller
      * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Blog $blog)
-    {
-        //
+    public function destroy(Blog $blog, $id)
+    {   
+
+        $blog = Blog::find($id);
+        $blog->delete();
+         return redirect("admin/blogs");
+      
+        
     }
 }

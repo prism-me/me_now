@@ -47,11 +47,15 @@
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                      </ul>
                   </div>
-                  <?php endif; ?>                              
-                  <form action="<?php echo e(URL::to('admin/blogs/update').'/'.$data->id); ?>" method="PUT" novalidate="novalidate" enctype="multipart/form-data">
+                  <?php endif; ?>  
+                                         
+                  <form action="<?php echo e(URL::to('admin/blogs').'/'.$data->id); ?>" method="post" novalidate="novalidate" enctype="multipart/form-data">
                      <?php echo e(csrf_field()); ?>
 
+                     
                              
+                     <?php echo e(method_field('PUT')); ?>
+
                      <div class="form-group">
                         <label for="name" class=" form-control-label">
                         <?php echo e(__('messages.Title')); ?>
@@ -74,7 +78,7 @@
 
                         <span class="reqfield">*</span>
                         </label>
-                        <textarea id="description" placeholder="<?php echo e(__('messages.Enter').'  '.__('messages.Description')); ?>" class="form-control" required name="description" value="<?php echo e(isset($data->description)?$data->description:''); ?>"></textarea>
+                        <textarea id="description" placeholder="<?php echo e(__('messages.Enter').'  '.__('messages.Description')); ?>" class="form-control" required name="description" value="<?php echo e(isset($data->description)?$data->description:''); ?>"><?php echo e(isset($data->description)?$data->description:''); ?></textarea>
                      </div>
                      <div class="form-group">
                         <label for="name" class=" form-control-label">
@@ -90,7 +94,7 @@
                         <?php echo e(__('messages.Image')); ?><span class="reqfield" >*</span>
                         </label>
                         <?php if($data->featured_img): ?>
-                           <img src="<?php echo e(asset('public/upload/blog').'/'.$data->featured_img); ?>" class="imgsize1 departmentimg"/> 
+                           <img src="<?php echo e(asset('upload/blog').'/'.$data->featured_img); ?>" class="imgsize1 departmentimg"/> 
                         <?php endif; ?>
                         <input type="file" id="file" name="featured_img" class="form-control-file" accept="image/*">
                     

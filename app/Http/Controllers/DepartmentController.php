@@ -13,7 +13,7 @@ use App\Model\TimeTable;
 use App\Model\Token;
 use Session;
 use validate;
-class DepartmentController extends Controller
+class DepartmentController extends UploadController
 {
  
     public function index(){
@@ -41,43 +41,13 @@ class DepartmentController extends Controller
                     'image'=>'required'
                 ]);
              }
-            $img_url="";
-            if($request->get("real_image")!=""){
-                 if ($request->hasFile('image')) 
-                  {
-                     $file = $request->file('image');
-                     $filename = $file->getClientOriginalName();
-                     $extension = $file->getClientOriginalExtension() ?: 'png';
-                     $folderName = '/upload/department';
-                     $picture = 'department_'.mt_rand(100000,999999). '.' . $extension;
-                     $destinationPath = public_path() . $folderName;
-                     $request->file('image')->move($destinationPath, $picture);
-                     $img_url = $picture;
-                     $image_path = public_path() ."/upload/department/".$request->get("real_image");
-                        if(file_exists($image_path)) {
-                            try {
-                                 unlink($image_path);
-                            }
-                            catch(Exception $e) {
-                              
-                            }                        
-                        }
-                 }else{
-                     $img_url = $request->get("real_image");
-                 }
-            }else{
-                if ($request->hasFile('image')) 
-                  {
-                     $file = $request->file('image');
-                     $filename = $file->getClientOriginalName();
-                     $extension = $file->getClientOriginalExtension() ?: 'png';
-                     $folderName = '/upload/department';
-                     $picture = 'department_'.mt_rand(100000,999999). '.' . $extension;
-                     $destinationPath = public_path() . $folderName;
-                     $request->file('image')->move($destinationPath, $picture);
-                     $img_url = $picture;
-                 }
+            if ($img = $request->hasFile('image')) {
+               
+                $media =  UploadController::upload_media($request->image);
+                $mediaUpload = $media['url'];
+
             }
+       
 
             if($request->get("id")!="0"){
                 $store=Department::find($request->get("id"));
@@ -90,7 +60,7 @@ class DepartmentController extends Controller
             $store->name=$request->get("name");
             $store->description=$request->get("description");
             $store->emergency_no=$request->get("emergency_no");
-            $store->image=$img_url;
+            $store->image=$mediaUpload;
             $store->save(); 
             Session::flash('message',$msg); 
             Session::flash('alert-class', 'alert-success');
