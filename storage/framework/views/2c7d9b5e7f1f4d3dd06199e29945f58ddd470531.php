@@ -94,7 +94,7 @@
                         <?php echo e(__('messages.Image')); ?><span class="reqfield" >*</span>
                         </label>
                         <?php if($data->featured_img): ?>
-                           <img src="<?php echo e(asset('upload/blog').'/'.$data->featured_img); ?>" class="imgsize1 departmentimg"/> 
+                           <img src="<?php echo e($data->featured_img); ?>" class="imgsize1 departmentimg"/> 
                         <?php endif; ?>
                         <input type="file" id="file" name="featured_img" class="form-control-file" accept="image/*">
                     

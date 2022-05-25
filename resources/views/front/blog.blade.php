@@ -33,7 +33,7 @@
                                             <p style="color:rgb(108, 108, 108)">
                                                 {{ substr($data->description, 0,  150) }}....
                                         
-                                            <a href="{{ url('blog-detail'). '/'.$data->id }}" stle="color:#49B7C6;">Read More</a> </p>
+                                            <a href="{{ url('#'). '/'.$data->id }}" stle="color:#49B7C6;">Read More</a> </p>
                                         </div>
                                     </div>
                                 </div>
