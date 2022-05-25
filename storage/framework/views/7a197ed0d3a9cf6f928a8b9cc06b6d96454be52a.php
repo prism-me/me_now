@@ -20,7 +20,7 @@
                                             <img src="<?php echo e(asset('front/img/department') . '/' . $d->image); ?>">
                                         </div>
                                         <div class="text-detail-box">
-                                            <h4><?php echo e($d->name); ?></h4>
+										<h4><?php echo e($d->name); ?></h4>
                                             <p><?php echo e(substr($d->description, 0, 75)); ?></p>
                                         </div>
                                         <div class="department-viewd-btn services-btn-main-box">

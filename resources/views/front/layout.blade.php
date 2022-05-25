@@ -20,6 +20,9 @@
     <meta property="og:keyword" content="{{ __('messages.meta_keyword') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('front/css/bootstrap.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('front/css/custom-style.css') }}">
+    {{-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> --}}
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     @if (isset($setting->is_rtl) && $setting->is_rtl == '0')
         <link rel="stylesheet" type="text/css" href="{{ asset('front/css/rtl-style.css?v=5r12') }}">
     @else
@@ -119,7 +122,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="{{ url('allfacilites') }}">{{ __('messages.Workshops') }}</a>
+                                    href="{{ url('workshop') }}">{{ __('messages.Workshops') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"

@@ -556,7 +556,7 @@ p.testip {
 .doctor-detail-main-box h4 {
     font-size: 28px;
     color: black;
-    font-family: 'AvenirLTStd-Medium';
+    font-family: 'Roboto', sans-serif ;
     margin-top: 5px;
 }
 }

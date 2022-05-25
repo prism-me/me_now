@@ -19,7 +19,7 @@
                                             <img src="{{ asset('front/img/department') . '/' . $d->image }}">
                                         </div>
                                         <div class="text-detail-box">
-                                            <h4>{{ $d->name }}</h4>
+										<h4>{{ $d->name }}</h4>
                                             <p>{{ substr($d->description, 0, 75) }}</p>
                                         </div>
                                         <div class="department-viewd-btn services-btn-main-box">
