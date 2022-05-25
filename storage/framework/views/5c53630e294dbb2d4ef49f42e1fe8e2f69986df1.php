@@ -123,6 +123,10 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
+                                    href="<?php echo e(url('blog')); ?>"><?php echo e(__('messages.Blog')); ?></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"
                                     href="<?php echo e(url('gallery')); ?>"><?php echo e(__('messages.Women Empowerment')); ?></a>
                             </li>
                             <li class="nav-item">
