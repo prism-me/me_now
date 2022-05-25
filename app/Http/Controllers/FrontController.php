@@ -102,9 +102,8 @@ class FrontController extends Controller
          $department=Department::with('service')->get();
          $setting=Setting::find(1);
          $reviews=Review::with('doctors','users')->get()->take(4);
-       return view("front.workshop")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with("workshop",$workshop);
+        return view("front.workshop")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with("workshop",$workshop);
     }
-
 
     public function workshopdetail(){
         if(!isset($_COOKIE['fload'])){
@@ -133,7 +132,21 @@ class FrontController extends Controller
        return view("front.about")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department);
      
     }
-
+    
+    
+    public function women_empowerment(){
+        if(!isset($_COOKIE['fload'])){
+            setcookie('fload','1', time() + (86400 * 30), "/");
+         }
+         $service=Service::get()->take(8);
+         $package=Package::get()->take(3);
+         $doctor=Doctor::get()->take(4);
+         $department=Department::with('service')->get();
+         $setting=Setting::find(1);
+         $reviews=Review::with('doctors','users')->get()->take(4);
+       return view("front.women_empowerment")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department);
+     
+    }
     
 
        public function getserviceanddoctor($department_id){
