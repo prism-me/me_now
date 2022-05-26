@@ -36,15 +36,9 @@
                                 <a href="{{ url('doctordetails/') . '/' . $d->user_id }}" class="denone">
                                     <div class="d-detail-collapse-doctor">
                                         <div class="doctorl-part-box">
-                                            <?php
-                                            if ($d->image) {
-                                                $d->image;
-                                            } else {
-                                                $image = $d->image;
-                                            }
-                                            ?>
-                                            <div class="doctorl-dp-img doctorl-dp-img-1"
-                                                style="background-image: url({{'<?= $d->image ?>'}})"></div>
+                                           <img src="{{ $d->image }}" style="width:70px;height:70px;">
+                                            {{-- <div class="doctorl-dp-img doctorl-dp-img-1"
+                                                style=""></div> --}}
 
                                             <div class="doctorl-part-detail">
                                                 <h4>{{ ucwords(strtolower($d->name)) }}</h4>
