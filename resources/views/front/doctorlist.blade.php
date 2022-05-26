@@ -40,7 +40,7 @@
                                             if ($d->image) {
                                                 $d->image;
                                             } else {
-                                                $image = asset('upload/profile/profile.png');
+                                                $image = $d->image;
                                             }
                                             ?>
                                             <div class="doctorl-dp-img doctorl-dp-img-1"

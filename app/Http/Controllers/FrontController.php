@@ -105,7 +105,7 @@ class FrontController extends Controller
         return view("front.workshop")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with("workshop",$workshop);
     }
 
-    public function workshopdetail(){
+    public function workshopdetail($id){
         if(!isset($_COOKIE['fload'])){
             setcookie('fload','1', time() + (86400 * 30), "/");
          }
@@ -115,7 +115,8 @@ class FrontController extends Controller
          $department=Department::with('service')->get();
          $setting=Setting::find(1);
          $reviews=Review::with('doctors','users')->get()->take(4);
-       return view("front.workshops_inner")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department);
+         $workshop=Workshop::where('id',$id)->first();
+       return view("front.workshops_inner")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with("workshop",$workshop);
     }
 
 

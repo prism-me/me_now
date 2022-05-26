@@ -18,6 +18,7 @@ class CreateWorkshopsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->text('short_description')->nullable();
+            $table->string('event_type')->nullable();
             $table->string('featured_img');
             $table->string('event_date');
             $table->timestamps();

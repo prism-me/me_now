@@ -34,12 +34,12 @@
                     <div class="row">
                         @foreach ($workshop as $d)
                             <div class="col-lg-4 col-md-4 col-sm-6 " data-aos="fade-up">
-                                <a href="{{ url('workshop/') . '/' . $d->id }}" class="denone">
+                                <a href="{{ url('workshop') . '/' . $d->id }}" class="denone">
                                     <div class="d-detail-collapse-doctor">
                                         <div class="doctorl-part-box">
-                                            <img src="{{ $d->image }}">
-                                            <div class="doctorl-dp-img doctorl-dp-img-1"
-                                                style="background-image: url({{'<?= $d->image ?>'}})"></div>
+                                            <img src="{{ $d->featured_img }}" style="width:70px;height:70px;">
+                                            {{-- <div class="doctorl-dp-img doctorl-dp-img-1"
+                                                style=""></div> --}}
 
                                             <div class="doctorl-part-detail">
                                                 <h4>{{ ucwords(strtolower($d->title)) }}</h4>
@@ -47,7 +47,7 @@
                                                 <p style="color:rgb(108, 108, 108)">
                                                     {{ substr($d->short_description, 0,  150) }}....
                                             
-                                                <a href="{{ url('#'). '/'.$d->id }}" stle="color:#49B7C6;">Read More</a> </p>
+                                                <a href="{{ url('workshop') . '/' . $d->id }}" stle="color:#49B7C6;">Read More</a> </p>
                                                 <div class="book_appointment_doctor">
                                                     <button>Book Event</button>
                                                 </div>

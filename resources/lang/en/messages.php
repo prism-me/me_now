@@ -438,5 +438,6 @@ return [
 		"Delete"=>"Delete",
 		"Short Description"=>"Short Description",
 		"Event Date"=>"Event Date",
+		"Event Type"=>"Event Type",
 
 	];
