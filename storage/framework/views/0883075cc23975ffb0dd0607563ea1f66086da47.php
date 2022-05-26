@@ -47,7 +47,7 @@
                                                 <p style="color:rgb(108, 108, 108)">
                                                 <?php echo e(substr($d->about_us, 0,  100)); ?>....
                                         
-                                                <a href="<?php echo e(url('blog-detail'). '/'.$d->id); ?>" stle="color:#49B7C6;">Read More</a> </p>
+                                                <a href="<?php echo e(url('doctordetails'). '/'.$d->id); ?>" stle="color:#49B7C6;">Read More</a> </p>
                                                 <div class="book_appointment_doctor text-center">
                                                     <button>Make an Appointment</button>
                                                 </div>

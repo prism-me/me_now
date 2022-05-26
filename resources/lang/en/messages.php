@@ -440,4 +440,8 @@ return [
 		"Event Date"=>"Event Date",
 		"Event Type"=>"Event Type",
 
+
+		"About Doctor" => "About Doctor",
+		
+
 	];

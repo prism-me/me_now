@@ -17,6 +17,7 @@
       <meta property="og:site_name" content="<?php echo e(__('messages.site name')); ?>"/>
       <meta property="og:description" content="<?php echo e(__('messages.meta_description_admin')); ?>"/>
       <meta property="og:keyword" content="<?php echo e(__('messages.meta_keyword')); ?>"/>
+      <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
       <?php echo $__env->yieldContent('meta_title'); ?>
       <link rel="shortcut icon" href="<?php echo e(asset('App_icon.png')); ?>">
       <link rel="stylesheet" href="<?php echo e(asset('adesign/vendors/bootstrap/dist/css/bootstrap.min.css')); ?>">
@@ -245,5 +246,12 @@
       <script src="<?php echo e(asset('js/admin.js?v=1333324')); ?>"></script>
        <?php echo $__env->yieldContent('footer'); ?>
       
+       <script>
+         ClassicEditor
+         .create( document.querySelector( '#description' ) )
+         .catch( error => {
+         console.error( error );
+         } );
+         </script>
    </body>
 </html><?php /**PATH C:\xampp\htdocs\meNow\resources\views/admin/layout.blade.php ENDPATH**/ ?>

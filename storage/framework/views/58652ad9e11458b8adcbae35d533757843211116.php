@@ -20,8 +20,8 @@
             <?php endif; ?>
             <div class="row">
                <div class="col-md-5">
-                  <?php if ($doctor->image) {
-                     $image = asset('upload/doctor') . "/" . $doctor->image;
+                  <?php if ($doctorDetail->image) {
+                     $image = $doctorDetail->image;
                      } else {
                      $image = asset('upload/profile/profile.png');
                      } 
@@ -31,11 +31,11 @@
                </div>
                <div class="col-md-7">
                   <div class="doctor-detail-main-box">
-                     <h4><?php echo e($doctor->name); ?></h4>
-                     <h6><?php echo e(isset($doctor->department)?$doctor->department->name:""); ?></h6>
+                     <h4><?php echo e($doctorDetail->name); ?></h4>
+                     <h6><?php echo e(isset($doctorDetail->department)?$doctorDetail->department->name:""); ?></h6>
                      <span>
                         <?php
-                           $arr = explode(".", $doctor->ratting);
+                           $arr = explode(".", $doctorDetail->ratting);
                            
                            if (!empty($arr[0])) {
                                $i = 0;
@@ -72,29 +72,29 @@
                         <?php
                            }
                            ?>
-                        <h3>( <?php echo e($doctor->total_ratting); ?> <?php echo e(__('messages.Rating')); ?> )</h3>
+                        <h3>( <?php echo e($doctorDetail->total_ratting); ?> <?php echo e(__('messages.Rating')); ?> )</h3>
                      </span>
-                     <p><?php echo e(substr($doctor->about_us,0,250)); ?></p>
+                     <p><?php echo e(substr($doctorDetail->about_us,0,250)); ?></p>
                      <div class="icons-images doctor-detail-icon-box">
                         <span class="facebook-doctorl">
-                        <a href="<?php echo e(isset($doctor->facebook_id)?$doctor->facebook_id:''); ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="<?php echo e(isset($doctorDetail->facebook_id)?$doctorDetail->facebook_id:''); ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         </span>
                         <span class="twitter-doctorl">
-                        <a href="<?php echo e(isset($doctor->twitter_id)?$doctor->twitter_id:''); ?>" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="<?php echo e(isset($doctorDetail->twitter_id)?$doctorDetail->twitter_id:''); ?>" target="_blank"><i class="fab fa-twitter"></i></a>
                         </span>
                         <span class="gp-doctorl">
-                        <a href="<?php echo e(isset($doctor->google_id)?$doctor->google_id:''); ?>" target="_blank"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="<?php echo e(isset($doctorDetail->google_id)?$doctorDetail->google_id:''); ?>" target="_blank"><i class="fab fa-google-plus-g"></i></a>
                         </span>
                         <span class="instagram-doctorl">
-                        <a href="<?php echo e(isset($doctor->instagram_id)?$doctor->instagram_id:''); ?>" target="_blank"><img src="<?php echo e(asset('front/img/instagram.png')); ?>"></a>
+                        <a href="<?php echo e(isset($doctorDetail->instagram_id)?$doctorDetail->instagram_id:''); ?>" target="_blank"><img src="<?php echo e(asset('front/img/instagram.png')); ?>"></a>
                         </span>
                      </div>
                      <div class="appo-btn-main-box">
                     
-                        <a href="#" data-toggle="modal" data-target="#appointmentModal" onclick="changedatamodelapp('<?php echo e($doctor->department_id); ?>','<?php echo e($doctor->department->name); ?>','<?php echo e($doctor->user_id); ?>','<?php echo e($doctor->name); ?>')"><?php echo e(__('messages.Make an appointment')); ?></a>
+                        
                        
                         
-                     </div>
+                     </div> 
                   </div>
                </div>
             </div>
@@ -109,16 +109,16 @@
                            <?php $arr = [__('messages.Monday'), __('messages.Tuesday'), __('messages.Wednesday'), __('messages.Thursday'), __('messages.Friday'), __('messages.Saturday'), __('messages.Sunday')]; ?>
                            <div class="pricelist-part-detail-box">
                               <p><?php echo e($arr[0]); ?></p>
-                              <?php if (isset($doctor->TimeTabledata[0])) {
-                                 @$starttime = date_format(date_create($doctor->TimeTabledata[0]->from), "H:i a");
-                                 $endtime = date_format(date_create($doctor->TimeTabledata[0]->to), "h:i a");
+                              <?php if (isset($doctorDetail->TimeTabledata[0])) {
+                                 @$starttime = date_format(date_create($doctorDetail->TimeTabledata[0]->from), "H:i a");
+                                 $endtime = date_format(date_create($doctorDetail->TimeTabledata[0]->to), "h:i a");
                                  } ?>
                               <span>- <?php echo e(@$starttime); ?> <?php echo e(__('messages.To')); ?> <?php echo e($endtime); ?></span>
                            </div>
                            <div class="pricelist-part-detail-box">
                               <p><?php echo e($arr[1]); ?></p>
-                              <?php if (isset($doctor->TimeTabledata[1])) {
-                                 $starttime = date_format(date_create($doctor->TimeTabledata[1]->from), "H:i a");
+                              <?php if (isset($doctorDetail->TimeTabledata[1])) {
+                                 $starttime = date_format(date_create($doctorDetail->TimeTabledata[1]->from), "H:i a");
                                  $endtime = date_format(date_create($doctor->TimeTabledata[1]->to), "h:i a");
                                  } ?>
                               <span>- <?php echo e($starttime); ?> <?php echo e(__('messages.To')); ?> <?php echo e($endtime); ?></span>
@@ -180,7 +180,14 @@
                      <?php echo e(__('messages.About Doctor')); ?>
 
                   </div>
-                  
+                  <div class="slide tablinks" onclick="openCity(event, 'services')">
+                     <?php echo e(__('messages.Service')); ?>
+
+                  </div>
+                  <div class="slide tablinks" onclick="openCity(event, 'addreview')">
+                     <?php echo e(__('messages.Add review')); ?>
+
+                  </div>
                </section>
             </div>
             <div id="aboutdoctor" class="tabcontent">
@@ -245,64 +252,7 @@
                </p>
             </div>
          </div>
-         <div class="col-lg-3 col-md-12">
-            <div class="d-detail-emergency-mainbox">
-               <img src="<?php echo e(asset('front/img/emergency.png')); ?>">
-               <p><?php echo e(__('messages.Emergency Number')); ?></p>
-               <h4><?php echo e($doctor->phone_no); ?></h4>
-            </div>
-            <div class="d-detail-emergency-mainbox">
-               <img src="<?php echo e(asset('front/img/mailoutline.png')); ?>">
-               <p><?php echo e(__('messages.Email address')); ?></p>
-               <h4><?php echo e($doctor->email); ?></h4>
-            </div>
-            <div class="d-detail-collapse-doctor">
-               <div class="accordion indicator-plus-before round-indicator" id="accordionH" aria-multiselectable="true">
-                  <div class="card m-b-0">
-                     <?php if($departmentdetails->doctor): ?>
-                     <?php $i = 0; ?>
-                     <?php $__currentLoopData = $departmentdetails->doctor; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $doc): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                     <?php if($doc->user_id!=$id): ?>
-                     <div class="card-header collapsed" role="tab" id="heading<?php echo e($i); ?>" href="#collapse<?php echo e($i); ?>" onclick="changedoctorblog('<?php echo e($i); ?>')" data-parent="#accordion<?php echo e($i); ?>" aria-expanded="false" aria-controls="collapse<?php echo e($i); ?>">
-                        <a class="card-title">
-                        <?php echo e(ucwords(strtolower($doc->name))); ?>
-
-                        </a>
-                     </div>
-                     <?php if($i==0): ?>
-                     <div class="collapse in" id="collapse<?php echo e($i); ?>" role="tabpanel" aria-labelledby="heading<?php echo e($i); ?>">
-                        <?php else: ?>
-                        <div class="collapse" id="collapse<?php echo e($i); ?>" role="tabpanel" aria-labelledby="heading<?php echo e($i); ?>">
-                           <?php endif; ?>
-                           <div class="card-body">
-                              <div class="doctorl-part-box">
-                                 <?php if ($doc->image) {
-                                    $image = asset('upload/doctor') . "/" . $doc->image;
-                                    } else {
-                                    $image = asset('upload/profile/profile.png');
-                                    } ?>
-                                 <div class="doctorl-dp-img doctorl-dp-img-1" style="margin-top: -1px;background-image: url('<?= $image ?>')"></div>
-                                 <div class="doctor-detail-part-11">
-                                    <div class="doctorl-part-detail">
-                                       <h4><?php echo e($doc->name); ?></h4>
-                                       <p><?php echo e(substr($doc->about_us,0,50)); ?></p>
-                                    </div>
-                                    
-                                 </div>
-                                 <button data-toggle="modal" data-target="#appointmentModal" class="under-doctor-appointment-button">Book an Appointment</button>
-                              </div>
-                           </div>
-                        </div>
-                        <?php $i++; ?>
-                        <?php endif; ?>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                        <?php endif; ?>	
-                        <input type="hidden" id="avilabledoctor" value="<?php echo e($i); ?>">
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
+         
       </div>
    </div>
 </div>
@@ -348,6 +298,6 @@
       </div>
    </div>
 </div>
-<?php endif; ?>	
+<?php endif; ?>	 
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('front.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\meNow\resources\views/front/doctordetails.blade.php ENDPATH**/ ?>

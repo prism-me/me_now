@@ -298,10 +298,9 @@ class FrontController extends Controller
             $doctor->total_ratting=count(Review::where("doctor_id",$id)->get());
             $doctor->ratting=Review::where("doctor_id",$id)->avg('ratting');
             $reviews=Review::with('doctors','users')->where("doctor_id",$id)->get();
-            //echo "<pre>";print_r($reviews);exit;
-             $setting=Setting::find(1);
-           //  echo "<pre>";print_r($doctor);exit;
-            return view("front.doctordetails")->with("department",$department)->with("review",$reviews)->with("doctor",$doctor)->with("departmentdetails",$departmentdetails)->with("id",$id)->with("setting",$setting);
+            $doctorDetail = Doctor::where('id',$id)->first();
+            $setting=Setting::find(1);
+            return view("front.doctordetails")->with("department",$department)->with("review",$reviews)->with("doctor",$doctor)->with("departmentdetails",$departmentdetails)->with("id",$id)->with("setting",$setting)->with('doctorDetail',$doctorDetail);
        }
 
        public function departmentdetail($id){
