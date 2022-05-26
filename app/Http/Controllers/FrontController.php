@@ -102,7 +102,7 @@ class FrontController extends Controller
          $department=Department::with('service')->get();
          $setting=Setting::find(1);
          $reviews=Review::with('doctors','users')->get()->take(4);
-        return view("front.workshop")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with("workshop",$workshop);
+       return view("front.workshop")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with("workshop",$workshop);
     }
 
     public function workshopdetail($id){

@@ -17,6 +17,7 @@
       <meta property="og:site_name" content="{{__('messages.site name')}}"/>
       <meta property="og:description" content="{{__('messages.meta_description_admin')}}"/>
       <meta property="og:keyword" content="{{__('messages.meta_keyword')}}"/>
+      <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
       @yield('meta_title')
       <link rel="shortcut icon" href="{{asset('App_icon.png')}}">
       <link rel="stylesheet" href="{{asset('adesign/vendors/bootstrap/dist/css/bootstrap.min.css')}}">
@@ -245,5 +246,12 @@
       <script src="{{asset('js/admin.js?v=1333324')}}"></script>
        @yield('footer')
       
+       <script>
+         ClassicEditor
+         .create( document.querySelector( '#description' ) )
+         .catch( error => {
+         console.error( error );
+         } );
+         </script>
    </body>
 </html>

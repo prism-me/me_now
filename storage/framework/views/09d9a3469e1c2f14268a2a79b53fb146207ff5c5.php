@@ -12,7 +12,7 @@
 
         <div class="container">
             <div class="global-heading">
-                <h2><?php echo e(__('messages.Doctor List')); ?> </h2>
+                <h2><?php echo e(__('messages.Workshop List')); ?> </h2>
                 <p><?php echo e(__("messages.The best doctor is the one you run to and can't find")); ?></p>
             </div>
 
@@ -23,9 +23,9 @@
 
                     </div>
 
-                    <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <?php $__currentLoopData = $workshop; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="slide tablinks" onclick="openCity(event, '<?php echo e($d->id); ?>')">
-                            <?php echo e($d->name); ?>
+                            <?php echo e($d->title); ?>
 
                         </div>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -35,21 +35,22 @@
             <div class="doctorpg-part-main-box">
                 <div id="all" class="tabcontent">
                     <div class="row">
-                        <?php $__currentLoopData = $doctor; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php $__currentLoopData = $workshop; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="col-lg-4 col-md-4 col-sm-6 " data-aos="fade-up">
-                                <a href="<?php echo e(url('workshop/') . '/' . $d->user_id); ?>" class="denone">
+                                <a href="<?php echo e(url('workshop/') . '/' . $d->id); ?>" class="denone">
                                     <div class="d-detail-collapse-doctor">
                                         <div class="doctorl-part-box">
-                                            <?php
-                                            $image = asset('upload/doctor') . '/' . $d->image;
-                                            
-                                            ?>
+                                            <img src="<?php echo e($d->image); ?>">
                                             <div class="doctorl-dp-img doctorl-dp-img-1"
-                                                style="background-image: url('<?= $image ?>')"></div>
+                                                style="background-image: url({{'<?= $d->image ?>'}})"></div>
 
                                             <div class="doctorl-part-detail">
-                                                <h4><?php echo e(ucwords(strtolower($d->name))); ?></h4>
-                                                <p>Event Date:<?php echo e($d->created_at->diffForHumans()); ?></p>
+                                                <h4><?php echo e(ucwords(strtolower($d->title))); ?></h4>
+                                                <p>Event Date:<?php echo e($d->event_date); ?></p>
+                                                <p style="color:rgb(108, 108, 108)">
+                                                    <?php echo e(substr($d->short_description, 0,  150)); ?>....
+                                            
+                                                <a href="<?php echo e(url('#'). '/'.$d->id); ?>" stle="color:#49B7C6;">Read More</a> </p>
                                                 <div class="book_appointment_doctor">
                                                     <button>Book Event</button>
                                                 </div>

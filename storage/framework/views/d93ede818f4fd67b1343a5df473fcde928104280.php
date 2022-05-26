@@ -1,6 +1,6 @@
 
 <?php $__env->startSection('title'); ?>
-    <?php echo e(__('messages.Doctor List')); ?>
+    <?php echo e(__('messages.Blog List')); ?>
 
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('loader'); ?>
@@ -8,36 +8,42 @@
     <span class="loader"><span class="loader-inner"></span></span>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
-    <div class="container">
-        <div class="global-heading">
-            <h2><?php echo e(__('messages.Blog')); ?> </h2>
-        </div>
-        <div class="row">
-            <?php for($i = 0; $i < 8; $i++): ?>
-                <div class="col-md-4">
-                    <div class="blog-single">
-                        <div class="img_wrapper">
-                            <a href=""><img src="http://127.0.0.1:8000/upload/doctor/doctor_899606.jpg" alt="blog"></a>
-                        </div>
-                        <div class="content_wrapper">
-                            <div class="date_time">
-                                <div class="time"><i class="fa fa-clock"></i> Time</div>
-                                <div class="topic"><i class="fa fa-user"></i> Author</div>
+    <div class="blogpg-main-box">
+        <div class="container">
+            <div class="global-heading">
+                <h2><?php echo e(__('messages.Blog')); ?> </h2>
+            </div>
+            <div class="blogpg-part-main-box">
+                <div id="all" class="tabcontent">
+                    <div class="row">
+                
+                        <?php $__currentLoopData = $blog; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <div class="col-md-4">
+                                <div class="blog-single">
+                                    <div class="img_wrapper">
+                                        <a href=""><img src="<?php echo e($data->featured_img); ?>" alt="blog" style="height:100%;width:100%;"></a>
+                                    </div>
+                                    <div class="content_wrapper">
+                                        <div class="date_time">
+                                            <div class="time"><i class="fa fa-clock"></i><?php echo e(date('d-m-Y',strtotime($data->created_at))); ?>&nbsp;&nbsp;
+                                                <i class="fa fa-user"></i> <?php echo e($data->posted_by); ?>
+
+                                            </div>
+                                        </div>
+                                        <div class="text_wrapper">
+                                            <h4><a href=""><?php echo e($data->title); ?></a></h4>
+                                            <p style="color:rgb(108, 108, 108)">
+                                                <?php echo e(substr($data->description, 0,  150)); ?>....
+                                        
+                                            <a href="<?php echo e(url('blog-detail'). '/'.$data->id); ?>" stle="color:#49B7C6;">Read More</a> </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="text_wrapper">
-                                <h4><a href="">Blog Heading</a></h4>
-                                <p>
-                                    Lorem ipsum dolor sit amet lorem impossible
-                                    Lorem ipsum dolor sit amet lorem impossible
-                                    Lorem ipsum dolor sit amet lorem impossible
-                                </p>
-                                <a href="">Read More</a>
-                            </div>
-                        </div>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </div>
                 </div>
-            <?php endfor; ?>
-
+            </div>
         </div>
     </div>
 

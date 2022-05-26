@@ -42,7 +42,7 @@
 </head>
 
 <body onload="gettimezone()">
-    
+    <?php echo $__env->make('front.firebase_config', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>;
     
     <?php echo $__env->yieldContent('loader'); ?>
 
@@ -123,17 +123,18 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="<?php echo e(url('women-empowerment')); ?>"><?php echo e(__('messages.Women Empowerment')); ?></a>
+                                    href="<?php echo e(url('blog')); ?>"><?php echo e(__('messages.Blog')); ?></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="<?php echo e(url('pricing')); ?>"><?php echo e(__('messages.Become a Member')); ?></a>
+                                    href="<?php echo e(url('gallery')); ?>"><?php echo e(__('messages.Women Empowerment')); ?></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?php echo e(url('pricing')); ?>"><?php echo e(__('messages.Become a Member')); ?></a>
                             </li>
                             <li class="nav-item book-now-nav">
-                                <a href="#" data-toggle="modal" data-target="#appointmentModal" class="nav-link"
-                                    style="color:white !important; width: 104px"><?php echo e(__('Book Now')); ?> </a>
-
-
+                                <a class="nav-link" style="color:white !important; width: 104px"
+                                    href="<?php echo e(url('pricing')); ?>"><?php echo e(__('Book Now')); ?></a>
                             </li>
                         </ul>
                     </div>
@@ -307,8 +308,7 @@
                                         placeholder="<?php echo e(__('messages.Enter Your Full Name')); ?>"
                                         value="<?php echo e(Auth::user() ? Auth::user()->name : ''); ?>">
                                     <input type="text" required name="phone_no" id="phone_no"
-                                        placeholder="<?php echo e(__('messages.Enter Phone number')); ?>"
-                                        class="appo-right-input"
+                                        placeholder="<?php echo e(__('messages.Enter Phone number')); ?>" class="appo-right-input"
                                         value="<?php echo e(Auth::user() ? Auth::user()->phone_no : ''); ?>">
                                     <input type="date" required name="app_date" id="app_date" min="<?= date('Y-m-d') ?>"
                                         placeholder="dd/mm/yyyy">
@@ -387,8 +387,7 @@
                                     <div class="form-group col-md-4">
                                         <label for="amount"><?php echo e(__('messages.Amount')); ?></label>
                                         <input type="text" class="form-control" id="amount" name="amount"
-                                            value="<?php echo e(isset($subscription->price) ? $subscription->price : ''); ?>"
-                                            required>
+                                            value="<?php echo e(isset($subscription->price) ? $subscription->price : ''); ?>" required>
 
 
                                     </div>
@@ -505,8 +504,7 @@
                                     <h3><?php echo e(__('messages.Helpful links')); ?></h3>
                                     <a href="<?php echo e(url('allfacilites')); ?>"><?php echo e(__('messages.Facilities')); ?></a>
 
-                                    <a
-                                        href="<?php echo e(url('termcondition')); ?>"><?php echo e(__('messages.Terms & Condition')); ?></a>
+                                    <a href="<?php echo e(url('termcondition')); ?>"><?php echo e(__('messages.Terms & Condition')); ?></a>
                                     <a href="<?php echo e(url('privacypolicy')); ?>"><?php echo e(__('messages.Privacy Policy')); ?></a>
                                     <a href="<?php echo e(url('contact_us')); ?>"><?php echo e(__('messages.Contact Us')); ?></a>
                                 </div>
@@ -519,9 +517,7 @@
                             <div class="footer-r1-detail">
                                 <div class="footer-d1-box">
                                     <h3><?php echo e(__('messages.Address')); ?></h3>
-                                    <p><?php echo e(isset($setting->address) ? $setting->address : Session::get('address')); ?>
-
-                                    </p>
+                                    <p><?php echo e(isset($setting->address) ? $setting->address : Session::get('address')); ?></p>
                                 </div>
                                 <div class="footer-d1-box">
                                     <p><?php echo e(__('messages.Subscribe More Info')); ?></p>
@@ -544,42 +540,30 @@
             </div>
             <div class="footer-part2-main-box">
                 <div class="footer-bottom-main-box">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="footer-icons-main-box">
-                                
-                                <ul>
-                                    <li>
-                                        <?php echo e(__('messages.Copyright')); ?> @ <?php echo e(date('Y')); ?>
 
-                                        <?php echo e(__('messages.All Right Reserved')); ?> <?php echo e(__('messages.Me Now')); ?>
+                    <p>
+                        
+                        <?php echo e(__('messages.Designed and Managed by Prism')); ?>
 
-                                    </li>
-                                    <li>
-                                        <a href="terms-of-service"><?php echo e(__('messages.Terms of Service')); ?></a>&nbsp;
-                                    </li>
-                                    <li>
-                                        <a href="privacy-policy"><?php echo e(__('messages.Privacy Policy')); ?></a>&nbsp;
-                                    </li>
-                                    <li>
-                                        <a href="copy-rights"><?php echo e(__('messages.Shipping Policy')); ?></a>&nbsp;
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <p>
-                                <?php echo e(__('messages.Designed and Managed by Prism')); ?>
+                    </p>
 
-
-                            </p>
-                        </div>
-
+                    <div class="footer-icons-main-box">
+                        <p><?php echo e(__('messages.All Right Reserved')); ?></p>&nbsp;
+                        <p><?php echo e(__('messages.Me Now')); ?>.</p>&nbsp;
+                        <p><?php echo e(__('messages.Copyright')); ?> @ <?php echo e(date('Y')); ?></p>&nbsp;
+                        <ul>
+                            <li>
+                                <a href="terms-of-service"><?php echo e(__('messages.Terms of Service')); ?></a>&nbsp;
+                            </li>
+                            <li>
+                                <a href="privacy-policy"><?php echo e(__('messages.Privacy Policy')); ?></a>&nbsp;
+                            </li>
+                            <li>
+                                <a href="copy-rights"><?php echo e(__('messages.Shipping Policy')); ?></a>&nbsp;
+                            </li>
+                        </ul>
                     </div>
-
-
-
-                    
+                        
                     
                 </div>
             </div>
