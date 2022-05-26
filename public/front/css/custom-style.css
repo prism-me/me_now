@@ -108,7 +108,7 @@ display: inline-block;
 
 .appointment-section .item .caption {
     position: absolute;
-    top: 23%;
+    top: 30%;
     left: 9%;
 }
 
@@ -436,4 +436,21 @@ font-weight: bold;
 }
 .popular_posts ul li p{
     font-size: 14px;
+}
+
+select.form-control:not([size]):not([multiple]) {
+    height: calc(1.9rem + 2px);
+    color: white;
+    border: 1px solid white;
+    margin-left: 1rem;
+}
+#header form .form-group{
+    margin-top: .28rem;
+}
+#header form select.form-control:focus{
+    color: black;
+}
+.container-fluid, .container-lg, .container-md, .container-sm, .container-xl{
+    padding-right: 35px !important;
+    padding-left: 35px !important;
 }

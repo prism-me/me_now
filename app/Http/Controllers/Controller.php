@@ -18,74 +18,74 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
      public function gettoken(){
-		        $identity = Auth::user()->email;
-		        $setting=Setting::find(1);
-		        $TWILIO_ACCOUNT_SID=$setting->TWILIO_ACCOUNT_SID;
-		        $TWILIO_API_KEY=$setting->TWILIO_API_KEY;
-		        $TWILIO_API_SECRET=$setting->TWILIO_API_SECRET;
-		        $TWILIO_CHAT_SERVICE_SID=$setting->TWILIO_CHAT_SERVICE_SID;
+		        // $identity = Auth::user()->email;
+		        // $setting=Setting::find(1);
+		        // $TWILIO_ACCOUNT_SID=$setting->TWILIO_ACCOUNT_SID;
+		        // $TWILIO_API_KEY=$setting->TWILIO_API_KEY;
+		        // $TWILIO_API_SECRET=$setting->TWILIO_API_SECRET;
+		        // $TWILIO_CHAT_SERVICE_SID=$setting->TWILIO_CHAT_SERVICE_SID;
 		        
-		        $token = new AccessToken(
-		            $TWILIO_ACCOUNT_SID,
-		            $TWILIO_API_KEY,
-		            $TWILIO_API_SECRET,
-		            3600,
-		            $identity
-		        );
+		        // $token = new AccessToken(
+		        //     $TWILIO_ACCOUNT_SID,
+		        //     $TWILIO_API_KEY,
+		        //     $TWILIO_API_SECRET,
+		        //     3600,
+		        //     $identity
+		        // );
 		        
-		            $grant = new VideoGrant();
-		            $token->addGrant($grant);
-		            if (!empty($TWILIO_CHAT_SERVICE_SID)) {
+		        //     $grant = new VideoGrant();
+		        //     $token->addGrant($grant);
+		        //     if (!empty($TWILIO_CHAT_SERVICE_SID)) {
 
-		                $chatGrant = new ChatGrant();
-		                $chatGrant->setServiceSid($TWILIO_CHAT_SERVICE_SID);
-		                $token->addGrant($chatGrant);
-		            }
-		            header('Content-type:application/json;charset=utf-8');
-		            return  json_encode(array(
-		                'identity' => $identity,
-		                'token' => $token->toJWT(),
-		            ));
+		        //         $chatGrant = new ChatGrant();
+		        //         $chatGrant->setServiceSid($TWILIO_CHAT_SERVICE_SID);
+		        //         $token->addGrant($chatGrant);
+		        //     }
+		        //     header('Content-type:application/json;charset=utf-8');
+		        //     return  json_encode(array(
+		        //         'identity' => $identity,
+		        //         'token' => $token->toJWT(),
+		        //     ));
      }
      
      
      public function pushgettoken($type){
-                $identity = Auth::user()->email;
-		        $setting=Setting::find(1);
-		        $TWILIO_ACCOUNT_SID=$setting->TWILIO_ACCOUNT_SID;
-		        $TWILIO_API_KEY=$setting->TWILIO_API_KEY;
-		        $TWILIO_API_SECRET=$setting->TWILIO_API_SECRET;
-		        $TWILIO_CHAT_SERVICE_SID=$setting->TWILIO_CHAT_SERVICE_SID;
-		        $pushios=$setting->APNCredentialSid;
-		        $pushandroid=$setting->GCM_or_FCM_Credential_Sid;
-		        $token = new AccessToken(
-		            $TWILIO_ACCOUNT_SID,
-		            $TWILIO_API_KEY,
-		            $TWILIO_API_SECRET,
-		            3600,
-		            $identity
-		        );
+                // $identity = Auth::user()->email;
+		        // $setting=Setting::find(1);
+		        // $TWILIO_ACCOUNT_SID=$setting->TWILIO_ACCOUNT_SID;
+		        // $TWILIO_API_KEY=$setting->TWILIO_API_KEY;
+		        // $TWILIO_API_SECRET=$setting->TWILIO_API_SECRET;
+		        // $TWILIO_CHAT_SERVICE_SID=$setting->TWILIO_CHAT_SERVICE_SID;
+		        // $pushios=$setting->APNCredentialSid;
+		        // $pushandroid=$setting->GCM_or_FCM_Credential_Sid;
+		        // $token = new AccessToken(
+		        //     $TWILIO_ACCOUNT_SID,
+		        //     $TWILIO_API_KEY,
+		        //     $TWILIO_API_SECRET,
+		        //     3600,
+		        //     $identity
+		        // );
 		        
-		            $grant = new VideoGrant();
-		            $token->addGrant($grant);
-		            if (!empty($TWILIO_CHAT_SERVICE_SID)) {
+		        //     $grant = new VideoGrant();
+		        //     $token->addGrant($grant);
+		        //     if (!empty($TWILIO_CHAT_SERVICE_SID)) {
 
-		                $chatGrant = new ChatGrant();
-		                $chatGrant->setServiceSid($TWILIO_CHAT_SERVICE_SID);
-		                if($type=='1'){//android
-		                    $chatGrant->setPushCredentialSid($pushandroid);
-		                }else if($type=='2'){//ios
-		                    $chatGrant->setPushCredentialSid($pushios);
-		                }else{
+		        //         $chatGrant = new ChatGrant();
+		        //         $chatGrant->setServiceSid($TWILIO_CHAT_SERVICE_SID);
+		        //         if($type=='1'){//android
+		        //             $chatGrant->setPushCredentialSid($pushandroid);
+		        //         }else if($type=='2'){//ios
+		        //             $chatGrant->setPushCredentialSid($pushios);
+		        //         }else{
 		                    
-		                }
-		                $token->addGrant($chatGrant);
-		            }
-		            header('Content-type:application/json;charset=utf-8');
-		            return  json_encode(array(
-		                'identity' => $identity,
-		                'token' => $token->toJWT(),
-		            ));
+		        //         }
+		        //         $token->addGrant($chatGrant);
+		        //     }
+		        //     header('Content-type:application/json;charset=utf-8');
+		        //     return  json_encode(array(
+		        //         'identity' => $identity,
+		        //         'token' => $token->toJWT(),
+		        //     ));
      }
 
 
