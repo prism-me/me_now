@@ -84,7 +84,7 @@ Route::group(['prefix' => '/'], function () {
      Route::any("resetnewpwd","FrontController@resetpassword");
      Route::Get("getcurrenttime/{offset}","HomeController@getcurrenttime");
      Route::get("blog","FrontController@blog");
-     Route::get("blog-detail/{id}","FrontController@blogDetail");
+     Route::get("blog-detail/{id}","FrontController@blogdetails");
 
 
      

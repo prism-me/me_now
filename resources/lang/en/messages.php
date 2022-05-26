@@ -444,6 +444,7 @@ return [
 
 
 		"About Doctor" => "About Doctor",
+		"Frequently Asked Questions" => "Frequently Asked Questions",
 		
 
 	];

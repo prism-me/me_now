@@ -17,7 +17,7 @@
                     <div class="row">
                         <div class="col-md-9">
                             <div class="img_wrapper">
-                                <img src="http://127.0.0.1:8000/upload/web/1599559630.png" alt="" class="img-fluid">
+                                <img src="{{ $blogdetails->featured_img }}" alt="" class="img-fluid">
                                 <div class="meta_data">
                                    <div> Posted at: 24, May 2014</div>
                                    <div>Author: Admin</div>
@@ -25,53 +25,8 @@
                                 <h4></h4>
                             </div>
                             <div class="content_area">
-                                <h1>Blog Heading</h1>
-                                <p> messages.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    Lorem
-                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                                    printer took a galley of type and scrambled it to make a type specimen book. It has
-                                    survived
-                                    not only five centuries, but also the leap into electronic typesetting, remaining
-                                    essentially unchanged. It was popularised in the 1960s with the release of Letraset
-                                    sheets
-                                    containing Lorem Ipsum passages, and more recently with desktop publishing software like
-                                    Aldus PageMaker including versions of Lorem Ipsum.
-                                    <br>
-                                    <br>
-                                    messages.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    Lorem
-                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                                    printer took a galley of type and scrambled it to make a type specimen book. It has
-                                    survived
-                                    not only five centuries, but also the leap into electronic typesetting, remaining
-                                    essentially unchanged. It was popularised in the 1960s with the release of Letraset
-                                    sheets
-                                    containing Lorem Ipsum passages, and more recently with desktop publishing software like
-                                    Aldus PageMaker including versions of Lorem Ipsum.
-                                    <br>
-                                    <br>
-                                    messages.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    Lorem
-                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                                    printer took a galley of type and scrambled it to make a type specimen book. It has
-                                    survived
-                                    not only five centuries, but also the leap into electronic typesetting, remaining
-                                    essentially unchanged. It was popularised in the 1960s with the release of Letraset
-                                    sheets
-                                    containing Lorem Ipsum passages, and more recently with desktop publishing software like
-                                    Aldus PageMaker including versions of Lorem Ipsum.
-                                    <br>
-                                    <br>
-                                    messages.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    Lorem
-                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                                    printer took a galley of type and scrambled it to make a type specimen book. It has
-                                    survived
-                                    not only five centuries, but also the leap into electronic typesetting, remaining
-                                    essentially unchanged. It was popularised in the 1960s with the release of Letraset
-                                    sheets
-                                    containing Lorem Ipsum passages, and more recently with desktop publishing software like
-                                    Aldus PageMaker including versions of Lorem Ipsum.
+                                <h1>{{$blogdetails->title}}</h1>
+                                <p> {{$blogdetails->description}}
                                 </p>
 
                             </div>
@@ -83,7 +38,7 @@
                                     @for ($i = 0; $i < 5; $i++)
                                         <li>
                                             <div class="img">
-                                                <img src="http://127.0.0.1:8000/upload/web/1599559630.png" alt="" class="img-fluid">
+                                                <img src="{{ $blogdetails->featured_img }}" alt="" class="img-fluid">
                                             </div>
                                             <div class="content">
                                                 <h6><a href="{{ url('blog'). '/1' }}">Lorem Ipsum.</a></h6>
