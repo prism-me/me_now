@@ -428,6 +428,7 @@ return [
 		"Blog List"=>"Blog List",
 		"Delete"=>"Delete",
 		
+		
 		"Workshop"=>"Workshop",
 		"Sub-Title"=>"Sub-Title",
 		"Title"=>"Title",
@@ -437,6 +438,7 @@ return [
 		"Workshop List"=>"Workshop List",
 		"Delete"=>"Delete",
 		"Short Description"=>"Short Description",
+		"Description"=>"Description",
 		"Event Date"=>"Event Date",
 		"Event Type"=>"Event Type",
 

@@ -40,7 +40,7 @@
                                         @else
                                             <div class="services-part-box services-part2-box">
                                     @endif
-                                    <img src="{{ asset('front/img/department') . '/' . $s->image }}">
+                                    <img src="{{ $s->image }}">
                                     <div class="text-detail-box">
                                         <h4>{{ $s->name }}</h4>
                                         <p>{{ $s->description }}</p>

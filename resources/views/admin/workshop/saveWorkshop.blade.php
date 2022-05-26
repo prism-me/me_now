@@ -81,7 +81,7 @@
                         {{__('messages.Description')}}
                         <span class="reqfield">*</span>
                         </label>
-                        <textarea id="description" placeholder="{{__('messages.Enter').'  '.__('messages.Description')}}" class="form-control" required name="description" value="{{ isset($data->description)?$data->description:''}}">{{ isset($data->description)?$data->description:''}}</textarea>
+                        <textarea id="short_description" placeholder="{{__('messages.Enter').'  '.__('messages.Description')}}" class="form-control" required name="description" value="{{ isset($data->description)?$data->description:''}}">{{ isset($data->description)?$data->description:''}}</textarea>
                      </div>
                      
                      <div class="form-group">

@@ -43,7 +43,7 @@
 </head>
 
 <body onload="gettimezone()">
-    @include('front.firebase_config');
+    {{-- @include('front.firebase_config'); --}}
     {{-- @include('front.cssclass'); --}}
     @yield('loader')
 
@@ -130,14 +130,14 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="{{ url('gallery') }}">{{ __('messages.Women Empowerment') }}</a>
+                                    href="{{ url('women-empowerment') }}">{{ __('messages.Women Empowerment') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('pricing') }}">{{ __('messages.Become a Member') }}</a>
                             </li>
                             <li class="nav-item book-now-nav">
                                 <a class="nav-link" style="color:white !important; width: 104px"
-                                    href="{{ url('pricing') }}">{{ __('Book Now') }}</a>
+                                href="#" data-toggle="modal" data-target="#appointmentModal" >{{ __('Book Now') }}</a>
                             </li>
                         </ul>
                     </div>

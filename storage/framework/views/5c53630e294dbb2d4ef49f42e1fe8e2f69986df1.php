@@ -111,7 +111,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="<?php echo e(url('doctorlist')); ?>"><?php echo e(__('messages.Corporate Services')); ?></a>
+                                    href="#"><?php echo e(__('messages.Corporate Services')); ?></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"

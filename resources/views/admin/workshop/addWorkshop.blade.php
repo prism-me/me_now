@@ -71,15 +71,16 @@
                         {{__('messages.Short Description')}}
                         <span class="reqfield">*</span>
                         </label>
-                        <textarea id="description" placeholder="{{__('messages.Enter').'  '.__('messages.Short Description')}}" class="form-control" required name="short_description" value="{{ isset($data->short_description)?$data->short_description:''}}"></textarea>
+                        <textarea id="description" placeholder="{{__('messages.Enter').'  '.__('messages.Short Description')}}" class="form-control" required name="short_description" value="{{ isset($data->short_description)?$data->short_description:''}}">{{ isset($data->short_description)?$data->short_description:''}}</textarea>
                      </div>
                      <div class="form-group">
                         <label for="name" class=" form-control-label">
                         {{__('messages.Description')}}
                         <span class="reqfield">*</span>
                         </label>
-                        <textarea id="description" placeholder="{{__('messages.Enter').'  '.__('messages.Description')}}" class="form-control" required name="description" value="{{ isset($data->description)?$data->description:''}}"></textarea>
+                        <textarea id="short_description" placeholder="{{__('messages.Enter').'  '.__('messages.Description')}}" class="form-control" required name="description" value="{{ isset($data->description)?$data->description:''}}">{{ isset($data->description)?$data->description:''}}</textarea>
                      </div>
+                     
                      
                      <div class="form-group">
                          <label for="name" class=" form-control-label">

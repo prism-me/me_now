@@ -41,7 +41,7 @@
                                         <?php else: ?>
                                             <div class="services-part-box services-part2-box">
                                     <?php endif; ?>
-                                    <img src="<?php echo e(asset('front/img/department') . '/' . $s->image); ?>">
+                                    <img src="<?php echo e($s->image); ?>">
                                     <div class="text-detail-box">
                                         <h4><?php echo e($s->name); ?></h4>
                                         <p><?php echo e($s->description); ?></p>

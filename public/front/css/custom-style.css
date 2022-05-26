@@ -396,3 +396,44 @@ background-color: transparent;
 padding-left: 0px;
 
 }
+
+
+/* blog inner */
+
+
+.blogpg-part-main-box .meta_data{
+
+    display: flex;
+    align-items: center;
+}
+.blogpg-part-main-box .meta_data div{
+    margin: 1rem 1rem 1rem 0px;
+}
+.blogpg-part-main-box .content_area h1{
+font-size: 25px;
+font-weight: bold;
+}
+.popular_posts ul{
+    padding-left: 0px;
+    
+}
+.popular_posts ul li{
+    display: flex;
+    margin: 1.5rem 0px;
+    align-items: center;
+
+}
+.popular_posts ul li .content{
+    padding-left: 10px;
+}
+.popular_posts ul li img{
+    height: 66px;
+    width: 95px;
+}
+.popular_posts ul li h6{
+    font-size: 16px;
+    font-weight: bold;
+}
+.popular_posts ul li p{
+    font-size: 14px;
+}
