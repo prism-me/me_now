@@ -42,7 +42,7 @@
 </head>
 
 <body onload="gettimezone()">
-    <?php echo $__env->make('front.firebase_config', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>;
+    
     
     <?php echo $__env->yieldContent('loader'); ?>
 
@@ -127,14 +127,14 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="<?php echo e(url('gallery')); ?>"><?php echo e(__('messages.Women Empowerment')); ?></a>
+                                    href="<?php echo e(url('women-empowerment')); ?>"><?php echo e(__('messages.Women Empowerment')); ?></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="<?php echo e(url('pricing')); ?>"><?php echo e(__('messages.Become a Member')); ?></a>
                             </li>
                             <li class="nav-item book-now-nav">
                                 <a class="nav-link" style="color:white !important; width: 104px"
-                                    href="<?php echo e(url('pricing')); ?>"><?php echo e(__('Book Now')); ?></a>
+                                href="#" data-toggle="modal" data-target="#appointmentModal" ><?php echo e(__('Book Now')); ?></a>
                             </li>
                         </ul>
                     </div>
@@ -651,5 +651,4 @@
 
 </body>
 
-</html>
-<?php /**PATH D:\Projects\Menow\me_now\resources\views/front/layout.blade.php ENDPATH**/ ?>
+</html><?php /**PATH D:\Projects\Menow\me_now\resources\views/front/layout.blade.php ENDPATH**/ ?>
