@@ -1,21 +1,23 @@
-@extends('front.layout')
-@section('title')
-{{__('messages.Doctor Details')}}
-@stop
-@section('content')
+
+<?php $__env->startSection('title'); ?>
+<?php echo e(__('messages.Doctor Details')); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
 <div class="d-detailpg-main-box">
 <div class="container">
    <div class="d-detailpg-part-main-box">
       <div class="row">
          <div class="col-lg-9 col-md-12">
-            @if(Session::get("message"))
+            <?php if(Session::get("message")): ?>
             <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
-               {{Session::get("message")}}
+               <?php echo e(Session::get("message")); ?>
+
                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                <span aria-hidden="true">×</span>
                </button>
             </div>
-            @endif
+            <?php endif; ?>
             <div class="row">
                <div class="col-md-5">
                   <?php if ($doctorDetail->image) {
@@ -29,8 +31,8 @@
                </div>
                <div class="col-md-7">
                   <div class="doctor-detail-main-box">
-                     <h4>{{$doctorDetail->name}}</h4>
-                     <h6>{{isset($doctorDetail->department)?$doctorDetail->department->name:""}}</h6>
+                     <h4><?php echo e($doctorDetail->name); ?></h4>
+                     <h6><?php echo e(isset($doctorDetail->department)?$doctorDetail->department->name:""); ?></h6>
                      <span>
                         <?php
                            $arr = explode(".", $doctorDetail->ratting);
@@ -70,30 +72,28 @@
                         <?php
                            }
                            ?>
-                        <h3>( {{$doctorDetail->total_ratting}} {{__('messages.Rating')}} )</h3>
+                        <h3>( <?php echo e($doctorDetail->total_ratting); ?> <?php echo e(__('messages.Rating')); ?> )</h3>
                      </span>
-                     <p>{{substr($doctorDetail->about_us,0,250)}}</p>
+                     <p><?php echo e(substr($doctorDetail->about_us,0,250)); ?></p>
                      <div class="icons-images doctor-detail-icon-box">
                         <span class="facebook-doctorl">
-                        <a href="{{isset($doctorDetail->facebook_id)?$doctorDetail->facebook_id:''}}" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="<?php echo e(isset($doctorDetail->facebook_id)?$doctorDetail->facebook_id:''); ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         </span>
                         <span class="twitter-doctorl">
-                        <a href="{{isset($doctorDetail->twitter_id)?$doctorDetail->twitter_id:''}}" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="<?php echo e(isset($doctorDetail->twitter_id)?$doctorDetail->twitter_id:''); ?>" target="_blank"><i class="fab fa-twitter"></i></a>
                         </span>
                         <span class="gp-doctorl">
-                        <a href="{{isset($doctorDetail->google_id)?$doctorDetail->google_id:''}}" target="_blank"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="<?php echo e(isset($doctorDetail->google_id)?$doctorDetail->google_id:''); ?>" target="_blank"><i class="fab fa-google-plus-g"></i></a>
                         </span>
                         <span class="instagram-doctorl">
-                        <a href="{{isset($doctorDetail->instagram_id)?$doctorDetail->instagram_id:''}}" target="_blank"><img src="{{asset('front/img/instagram.png')}}"></a>
+                        <a href="<?php echo e(isset($doctorDetail->instagram_id)?$doctorDetail->instagram_id:''); ?>" target="_blank"><img src="<?php echo e(asset('front/img/instagram.png')); ?>"></a>
                         </span>
                      </div>
                      <div class="appo-btn-main-box">
                     
-                        <a href="#" data-toggle="modal" data-target="#appointmentModal" onclick="changedatamodelapp('{{$doctorDetail->department_id}}','{{$doctorDetail->department->name}}','{{$doctorDetail->user_id}}','{{$doctorDetail->name}}')">{{__('messages.Make an appointment')}}</a>
+                        <a href="#" data-toggle="modal" data-target="#appointmentModal" onclick="changedatamodelapp('<?php echo e($doctorDetail->department_id); ?>','<?php echo e($doctorDetail->department->name); ?>','<?php echo e($doctorDetail->user_id); ?>','<?php echo e($doctorDetail->name); ?>')"><?php echo e(__('messages.Make an appointment')); ?></a>
                        
-                        {{-- <a href="#" type="button" onclick="changehiddenstatus()" data-toggle="modal" data-target="#myModal">{{__('messages.Make an appointment')}}</a>
-                      
-                        <a href="{{url('chatarea/').'/'.$doctorDetail->user_id}}">{{__('messages.Chat with Doctor')}}</a> --}}
+                        
                      </div> 
                   </div>
                </div>
@@ -101,73 +101,73 @@
             <div class="d-detail-main-box">
                <div class="d-pricelist-main-box">
                   <div class="global-part-heading global-heading">
-                     <h3>{{__('messages.Working time')}}</h3>
+                     <h3><?php echo e(__('messages.Working time')); ?></h3>
                   </div>
                   <div class="row">
                      <div class="col-lg-6 col-md-6">
                         <div class="pricelist-part-detail-mainbox">
                            <?php $arr = [__('messages.Monday'), __('messages.Tuesday'), __('messages.Wednesday'), __('messages.Thursday'), __('messages.Friday'), __('messages.Saturday'), __('messages.Sunday')]; ?>
                            <div class="pricelist-part-detail-box">
-                              <p>{{$arr[0]}}</p>
+                              <p><?php echo e($arr[0]); ?></p>
                               <?php if (isset($doctorDetail->TimeTabledata[0])) {
                                  @$starttime = date_format(date_create($doctorDetail->TimeTabledata[0]->from), "H:i a");
                                  $endtime = date_format(date_create($doctorDetail->TimeTabledata[0]->to), "h:i a");
                                  } ?>
-                              <span>- {{@$starttime}} {{__('messages.To')}} {{$endtime}}</span>
+                              <span>- <?php echo e(@$starttime); ?> <?php echo e(__('messages.To')); ?> <?php echo e($endtime); ?></span>
                            </div>
                            <div class="pricelist-part-detail-box">
-                              <p>{{$arr[1]}}</p>
+                              <p><?php echo e($arr[1]); ?></p>
                               <?php if (isset($doctorDetail->TimeTabledata[1])) {
                                  $starttime = date_format(date_create($doctorDetail->TimeTabledata[1]->from), "H:i a");
                                  $endtime = date_format(date_create($doctor->TimeTabledata[1]->to), "h:i a");
                                  } ?>
-                              <span>- {{$starttime}} {{__('messages.To')}} {{$endtime}}</span>
+                              <span>- <?php echo e($starttime); ?> <?php echo e(__('messages.To')); ?> <?php echo e($endtime); ?></span>
                            </div>
                            <div class="pricelist-part-detail-box">
-                              <p>{{$arr[2]}}</p>
+                              <p><?php echo e($arr[2]); ?></p>
                               <?php if (isset($doctor->TimeTabledata[2])) {
                                  $starttime = date_format(date_create($doctor->TimeTabledata[2]->from), "H:i a");
                                  $endtime = date_format(date_create($doctor->TimeTabledata[2]->to), "h:i a");
                                  } ?>
-                              <span>- {{$starttime}} {{__('messages.To')}} {{$endtime}}</span>
+                              <span>- <?php echo e($starttime); ?> <?php echo e(__('messages.To')); ?> <?php echo e($endtime); ?></span>
                            </div>
                            <div class="pricelist-part-detail-box">
-                              <p>{{$arr[3]}}</p>
+                              <p><?php echo e($arr[3]); ?></p>
                               <?php if (isset($doctor->TimeTabledata[3])) {
                                  $starttime = date_format(date_create($doctor->TimeTabledata[3]->from), "H:i a");
                                  $endtime = date_format(date_create($doctor->TimeTabledata[3]->to), "h:i a");
                                  } ?>
-                              <span>- {{$starttime}} {{__('messages.To')}} {{$endtime}}</span>
+                              <span>- <?php echo e($starttime); ?> <?php echo e(__('messages.To')); ?> <?php echo e($endtime); ?></span>
                            </div>
                         </div>
                      </div>
                      <div class="col-lg-6 col-md-6">
                         <div class="pricelist-part-detail-mainbox">
                            <div class="pricelist-part-detail-box">
-                              <p>{{$arr[4]}}</p>
+                              <p><?php echo e($arr[4]); ?></p>
                               <?php if (isset($doctor->TimeTabledata[4])) {
                                  $starttime = date_format(date_create($doctor->TimeTabledata[4]->from), "H:i a");
                                  $endtime = date_format(date_create($doctor->TimeTabledata[4]->to), "h:i a");
                                  } ?>
-                              <span>- {{$starttime}} to {{$endtime}}</span>
+                              <span>- <?php echo e($starttime); ?> to <?php echo e($endtime); ?></span>
                            </div>
                            <div class="pricelist-part-detail-box">
-                              <p>{{$arr[5]}}</p>
+                              <p><?php echo e($arr[5]); ?></p>
                               <?php if (isset($doctor->TimeTabledata[5])) {
                                  $starttime = date_format(date_create($doctor->TimeTabledata[5]->from), "H:i a");
                                  $endtime = date_format(date_create($doctor->TimeTabledata[5]->to), "h:i a");
                                  }
                                  ?>
-                              <span>- {{$starttime}} to {{$endtime}}</span>
+                              <span>- <?php echo e($starttime); ?> to <?php echo e($endtime); ?></span>
                            </div>
                            <div class="pricelist-part-detail-box">
-                              <p>{{$arr[6]}}</p>
+                              <p><?php echo e($arr[6]); ?></p>
                               <?php if (isset($doctor->TimeTabledata[6])) {
                                  $starttime = date_format(date_create($doctor->TimeTabledata[6]->from), "H:i a");
                                  $endtime = date_format(date_create($doctor->TimeTabledata[6]->to), "h:i a");
                                  }
                                  ?>
-                              <span>- {{$starttime}} to {{$endtime}}</span>
+                              <span>- <?php echo e($starttime); ?> to <?php echo e($endtime); ?></span>
                            </div>
                         </div>
                      </div>
@@ -177,43 +177,46 @@
             <div class="doctorpg-tab-mainbox doctordetailpg-tab-mainbox">
                <section class="customer-logos slider tab">
                   <div class="slide tablinks" id="defaultOpen" onclick="openCity(event, 'aboutdoctor')">
-                     {{__('messages.About Doctor')}}
+                     <?php echo e(__('messages.About Doctor')); ?>
+
                   </div>
                   <div class="slide tablinks" onclick="openCity(event, 'services')">
-                     {{__('messages.Service')}}
+                     <?php echo e(__('messages.Service')); ?>
+
                   </div>
                   <div class="slide tablinks" onclick="openCity(event, 'addreview')">
-                     {{__('messages.Add review')}}
+                     <?php echo e(__('messages.Add review')); ?>
+
                   </div>
                </section>
             </div>
             <div id="aboutdoctor" class="tabcontent">
                <div class="dd-tab-part-mbox">
                   <div class="global-part-heading global-heading">
-                     <h3>{{__('messages.About us')}}</h3>
-                     <p>{{$doctor->about_us}}</p>
+                     <h3><?php echo e(__('messages.About us')); ?></h3>
+                     <p><?php echo e($doctor->about_us); ?></p>
                   </div>
                </div>
             </div>
             <div id="services" class="tabcontent">
                <div class="dd-tab-part-mbox">
                   <div class="global-part-heading global-heading">
-                     <h3>{{__('messages.Service')}}</h3>
-                     <p>{{$doctor->service}}</p>
+                     <h3><?php echo e(__('messages.Service')); ?></h3>
+                     <p><?php echo e($doctor->service); ?></p>
                   </div>
                </div>
             </div>
             <div id="addreview" class="tabcontent">
-               @if(Auth::id())
+               <?php if(Auth::id()): ?>
                <div class="dd-tab-part-mbox">
                   <div class="global-part-heading global-heading">
-                     <h3>{{__('messages.Add review')}}</h3>
+                     <h3><?php echo e(__('messages.Add review')); ?></h3>
                      <span id="loginerrorreview"></span>
-                     <form action="{{url('addreview')}}" method="post">
-                        {{csrf_field()}}  
-                        <input type="hidden" name="doctor_id" value="{{$id}}"> 
+                     <form action="<?php echo e(url('addreview')); ?>" method="post">
+                        <?php echo e(csrf_field()); ?>  
+                        <input type="hidden" name="doctor_id" value="<?php echo e($id); ?>"> 
                         <div class="yourrating-main-box">
-                           <h5>{{__("messages.Your rating")}}</h5>
+                           <h5><?php echo e(__("messages.Your rating")); ?></h5>
                            <span class="star-rating">
                            <input type="radio" id="5-stars" name="rating" value="5" />
                            <label for="5-stars" class="star"><i class="fas fa-star"></i></label>
@@ -228,98 +231,55 @@
                            </span>
                         </div>
                         <div class="yourrating-main-box">
-                           <h5>{{__('messages.Your review')}}</h5>
+                           <h5><?php echo e(__('messages.Your review')); ?></h5>
                            <textarea id="messages" name="messages" required=""></textarea>
                            <div class="appo-btn-main-box">
-                              @if(Auth::id())
-                              <button type="submit">{{__('messages.submit')}}</button>
-                              @else
-                              <button type="button" onclick="userloginalert()">{{__('messages.submit')}}</button>
-                              @endif
+                              <?php if(Auth::id()): ?>
+                              <button type="submit"><?php echo e(__('messages.submit')); ?></button>
+                              <?php else: ?>
+                              <button type="button" onclick="userloginalert()"><?php echo e(__('messages.submit')); ?></button>
+                              <?php endif; ?>
                            </div>
                         </div>
                      </form>
                   </div>
                </div>
-               @else
+               <?php else: ?>
                <p style="margin-top: 15px;">
-                  {{__("messages.Please")}} <a href="#" onclick="showloginmodel()" data-toggle="modal" data-target="#myModal">{{__("messages.Login")}}</a> {{__("messages.Your Account Then Try To Review")}}
-                  @endif
+                  <?php echo e(__("messages.Please")); ?> <a href="#" onclick="showloginmodel()" data-toggle="modal" data-target="#myModal"><?php echo e(__("messages.Login")); ?></a> <?php echo e(__("messages.Your Account Then Try To Review")); ?>
+
+                  <?php endif; ?>
                </p>
             </div>
          </div>
          <div class="col-lg-3 col-md-12">
             <div class="d-detail-emergency-mainbox">
-               <img src="{{asset('front/img/emergency.png')}}">
-               <p>{{__('messages.Emergency Number')}}</p>
-               <h4>{{$doctorDetail->phone_no}}</h4>
+               <img src="<?php echo e(asset('front/img/emergency.png')); ?>">
+               <p><?php echo e(__('messages.Emergency Number')); ?></p>
+               <h4><?php echo e($doctorDetail->phone_no); ?></h4>
             </div>
             <div class="d-detail-emergency-mainbox">
-               <img src="{{asset('front/img/mailoutline.png')}}">
-               <p>{{__('messages.Email address')}}</p>
-               <h4>{{$doctorDetail->email}}</h4>
+               <img src="<?php echo e(asset('front/img/mailoutline.png')); ?>">
+               <p><?php echo e(__('messages.Email address')); ?></p>
+               <h4><?php echo e($doctorDetail->email); ?></h4>
             </div>
-            {{-- <div class="d-detail-collapse-doctor">
-               <div class="accordion indicator-plus-before round-indicator" id="accordionH" aria-multiselectable="true">
-                  <div class="card m-b-0">
-                     @if($departmentdetails->doctor)
-                     <?php $i = 0; ?>
-                     @foreach($departmentdetails->doctor as $doc)
-                     @if($doc->user_id!=$id)
-                     <div class="card-header collapsed" role="tab" id="heading{{$i}}" href="#collapse{{$i}}" onclick="changedoctorblog('{{$i}}')" data-parent="#accordion{{$i}}" aria-expanded="false" aria-controls="collapse{{$i}}">
-                        <a class="card-title">
-                        {{ucwords(strtolower($doc->name))}}
-                        </a>
-                     </div>
-                     @if($i==0)
-                     <div class="collapse in" id="collapse{{$i}}" role="tabpanel" aria-labelledby="heading{{$i}}">
-                        @else
-                        <div class="collapse" id="collapse{{$i}}" role="tabpanel" aria-labelledby="heading{{$i}}">
-                           @endif
-                           <div class="card-body">
-                              <div class="doctorl-part-box">
-                                 <?php if ($doc->image) {
-                                    $image = asset('upload/doctor') . "/" . $doc->image;
-                                    } else {
-                                    $image = asset('upload/profile/profile.png');
-                                    } ?>
-                                 <div class="doctorl-dp-img doctorl-dp-img-1" style="margin-top: -1px;background-image: url('<?= $image ?>')"></div>
-                                 <div class="doctor-detail-part-11">
-                                    <div class="doctorl-part-detail">
-                                       <h4>{{$doc->name}}</h4>
-                                       <p>{{substr($doc->about_us,0,50)}}</p>
-                                    </div>
-
-                                 </div>
-                                 <button data-toggle="modal" data-target="#appointmentModal" class="under-doctor-appointment-button">Book an Appointment</button>
-                              </div>
-                           </div>
-                        </div>
-                        <?php $i++; ?>
-                        @endif
-                        @endforeach
-                        @endif	
-                        <input type="hidden" id="avilabledoctor" value="{{$i}}">
-                     </div>
-                  </div>
-               </div>
-            </div> --}}
+            
          </div>
          
       </div>
    </div>
 </div>
-@if(count($review)>0)
+<?php if(count($review)>0): ?>
 <div class="testimonial-main-box">
    <div class="container">
       <div class="global-heading">
-         <h2>{{__('messages.Patient Reviews')}}</h2>
-         <p>{{__('messages.reviewline')}}</p>
+         <h2><?php echo e(__('messages.Patient Reviews')); ?></h2>
+         <p><?php echo e(__('messages.reviewline')); ?></p>
       </div>
       <div class="testimonial-part-main-box">
          <div class="owl-carousel testimonial-carousel">
-            @foreach($review as $r)
-            @if(isset($r->users))
+            <?php $__currentLoopData = $review; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php if(isset($r->users)): ?>
            	<div class="single-testimonial">
 						    	<div class="testimonial-part-box"> 
 						    		<div class="testimonial-inner-images">
@@ -333,23 +293,24 @@
 									     	   		 $image=asset('upload/profile/profile.png');
 									     	   }
 						    			?>
-						    			<img src="{{$image}}" class="testimonial-profile-img">
+						    			<img src="<?php echo e($image); ?>" class="testimonial-profile-img">
 						    		    </div>
 						    		    <div class="col-md-9 testtext">
-						    		        	<p class="testip">{{$r->review}}</p>
+						    		        	<p class="testip"><?php echo e($r->review); ?></p>
 						    				<span class="testimonialspan"></span>
-						    			@if(isset($r->users->name))
-						    			<h3 class="testimonialh">- {{$r->users->name}}</h3>
-						    			@endif
+						    			<?php if(isset($r->users->name)): ?>
+						    			<h3 class="testimonialh">- <?php echo e($r->users->name); ?></h3>
+						    			<?php endif; ?>
 						    		    </div>
 						    		</div>
 						    	</div>
 						  	</div>
-            @endif
-            @endforeach
+            <?php endif; ?>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
          </div>
       </div>
    </div>
 </div>
-@endif	 
-@stop
+<?php endif; ?>	 
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('front.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Projects\Menow\me_now\resources\views/front/doctordetails.blade.php ENDPATH**/ ?>
