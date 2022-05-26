@@ -259,16 +259,14 @@
                <p>{{__('messages.Email address')}}</p>
                <h4>{{$doctorDetail->email}}</h4>
             </div>
-            {{-- <div class="d-detail-collapse-doctor">
+            <div class="d-detail-collapse-doctor">
                <div class="accordion indicator-plus-before round-indicator" id="accordionH" aria-multiselectable="true">
                   <div class="card m-b-0">
-                     @if($departmentdetails->doctor)
+                     @if($doctorDetail)
                      <?php $i = 0; ?>
-                     @foreach($departmentdetails->doctor as $doc)
-                     @if($doc->user_id!=$id)
                      <div class="card-header collapsed" role="tab" id="heading{{$i}}" href="#collapse{{$i}}" onclick="changedoctorblog('{{$i}}')" data-parent="#accordion{{$i}}" aria-expanded="false" aria-controls="collapse{{$i}}">
                         <a class="card-title">
-                        {{ucwords(strtolower($doc->name))}}
+                        {{ucwords(strtolower($doctorDetail->name))}}
                         </a>
                      </div>
                      @if($i==0)
@@ -278,16 +276,16 @@
                            @endif
                            <div class="card-body">
                               <div class="doctorl-part-box">
-                                 <?php if ($doc->image) {
-                                    $image = asset('upload/doctor') . "/" . $doc->image;
+                                 <?php if ($doctorDetail->image) {
+                                    $image = $doctorDetail->image;
                                     } else {
                                     $image = asset('upload/profile/profile.png');
                                     } ?>
                                  <div class="doctorl-dp-img doctorl-dp-img-1" style="margin-top: -1px;background-image: url('<?= $image ?>')"></div>
                                  <div class="doctor-detail-part-11">
                                     <div class="doctorl-part-detail">
-                                       <h4>{{$doc->name}}</h4>
-                                       <p>{{substr($doc->about_us,0,50)}}</p>
+                                       <h4>{{$doctorDetail->name}}</h4>
+                                       <p>{{substr($doctorDetail->about_us,0,50)}}</p>
                                     </div>
 
                                  </div>
@@ -296,14 +294,12 @@
                            </div>
                         </div>
                         <?php $i++; ?>
-                        @endif
-                        @endforeach
-                        @endif	
                         <input type="hidden" id="avilabledoctor" value="{{$i}}">
+                        @endif	
                      </div>
                   </div>
                </div>
-            </div> --}}
+            </div>
          </div>
          
       </div>

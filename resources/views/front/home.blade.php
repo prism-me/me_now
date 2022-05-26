@@ -80,7 +80,7 @@
                                 @else
                                     <div class="services-part-box services-part2-box">
                             @endif
-                            <img src="{{ asset('front/img/department') . '/' . $s->image }}">
+                            <img src="{{ $s->image }}">
                             <div class="text-detail-box">
                                 <h4>{{ $s->name }}</h4>
                                 <p>{{ $s->description }}</p>
@@ -250,47 +250,47 @@
             </div>
         </div>
     </div>
-    <div class="testimonial-main-box">
-        <div class="container">
-            <div class="global-heading">
-                <h2>{{ __('messages.Patient Reviews') }}</h2>
-                <p>{{ __('messages.Feedback is the breakfast of champions') }}</p>
-            </div>
-            <div class="testimonial-part-main-box">
-                <div class="owl-carousel testimonial-carousel">
-                    @if ($review)
-                        @foreach ($review as $r)
-                            <div class="single-testimonial">
-                                <div class="testimonial-part-box">
-                                    <div class="testimonial-inner-images">
-                                        <div class="col-md-3 testimage">
-                                            <?php
-                                            if ($r->users->profile_pic != '') {
-                                                $image = asset('upload/profile') . '/' . $r->users->profile_pic;
-                                            } elseif (isset($r->doctors) && isset($r->doctors->$image)) {
-                                                $image = asset('upload/doctor') . '/' . $r->doctors->image;
-                                            } else {
-                                                $image = asset('upload/profile/profile.png');
-                                            }
-                                            ?>
-                                            <img src="{{ $image }}" class="testimonial-profile-img">
-                                        </div>
-                                        <div class="col-md-9 testtext">
-                                            <p class="testip">{{ substr($r->review, 0, 165) }}</p>
-                                            <span class="testimonialspan"></span>
-                                            @if (isset($r->users->name))
-                                                <h3 class="testimonialh">- {{ $r->users->name }}</h3>
-                                            @endif
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    @endif
+<div class="testimonial-main-box">
+   <div class="container">
+      <div class="global-heading">
+         <h2>{{__('messages.Patient Reviews')}}</h2>
+         <p>{{__('messages.reviewline')}}</p>
+      </div>
+      <div class="testimonial-part-main-box">
+         <div class="owl-carousel testimonial-carousel">
+            @foreach($review as $r)
+            @if(isset($r->users))
+           	<div class="single-testimonial">
+                <div class="testimonial-part-box"> 
+                    <div class="testimonial-inner-images">
+                        <div class="col-md-3 testimage">
+                            <?php 
+                                if($r->users->profile_pic!=""){
+                                    $image=asset('upload/profile')."/".$r->users->profile_pic;
+                                }elseif(isset($r->doctors)&&isset($r->doctors-> $image)){
+                                    $image=asset('upload/doctor')."/".$r->doctors->image;
+                                }else{
+                                        $image=asset('upload/profile/profile.png');
+                                }
+                        ?>
+                        <img src="{{ $image }}" class="testimonial-profile-img" style="width:44%">
+                        </div>
+                        <div class="col-md-9 testtext">
+                                <p class="testip">{{$r->review}}</p>
+                            <span class="testimonialspan"></span>
+                        @if(isset($r->users->name))
+                        <h3 class="testimonialh">- {{$r->users->name}}</h3>
+                        @endif
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+            @endif
+            @endforeach
+         </div>
+      </div>
+   </div>
+</div>
 @stop
 
 

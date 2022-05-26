@@ -80,7 +80,7 @@
                                 <?php else: ?>
                                     <div class="services-part-box services-part2-box">
                             <?php endif; ?>
-                            <img src="<?php echo e(asset('front/img/department') . '/' . $s->image); ?>">
+                            <img src="<?php echo e($s->image); ?>">
                             <div class="text-detail-box">
                                 <h4><?php echo e($s->name); ?></h4>
                                 <p><?php echo e($s->description); ?></p>
@@ -236,47 +236,47 @@
             </div>
         </div>
     </div>
-    <div class="testimonial-main-box">
-        <div class="container">
-            <div class="global-heading">
-                <h2><?php echo e(__('messages.Patient Reviews')); ?></h2>
-                <p><?php echo e(__('messages.Feedback is the breakfast of champions')); ?></p>
-            </div>
-            <div class="testimonial-part-main-box">
-                <div class="owl-carousel testimonial-carousel">
-                    <?php if($review): ?>
-                        <?php $__currentLoopData = $review; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <div class="single-testimonial">
-                                <div class="testimonial-part-box">
-                                    <div class="testimonial-inner-images">
-                                        <div class="col-md-3 testimage">
-                                            <?php
-                                            if ($r->users->profile_pic != '') {
-                                                $image = asset('upload/profile') . '/' . $r->users->profile_pic;
-                                            } elseif (isset($r->doctors) && isset($r->doctors->$image)) {
-                                                $image = asset('upload/doctor') . '/' . $r->doctors->image;
-                                            } else {
-                                                $image = asset('upload/profile/profile.png');
-                                            }
-                                            ?>
-                                            <img src="<?php echo e($image); ?>" class="testimonial-profile-img">
-                                        </div>
-                                        <div class="col-md-9 testtext">
-                                            <p class="testip"><?php echo e(substr($r->review, 0, 165)); ?></p>
-                                            <span class="testimonialspan"></span>
-                                            <?php if(isset($r->users->name)): ?>
-                                                <h3 class="testimonialh">- <?php echo e($r->users->name); ?></h3>
-                                            <?php endif; ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    <?php endif; ?>
+<div class="testimonial-main-box">
+   <div class="container">
+      <div class="global-heading">
+         <h2><?php echo e(__('messages.Patient Reviews')); ?></h2>
+         <p><?php echo e(__('messages.reviewline')); ?></p>
+      </div>
+      <div class="testimonial-part-main-box">
+         <div class="owl-carousel testimonial-carousel">
+            <?php $__currentLoopData = $review; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php if(isset($r->users)): ?>
+           	<div class="single-testimonial">
+                <div class="testimonial-part-box"> 
+                    <div class="testimonial-inner-images">
+                        <div class="col-md-3 testimage">
+                            <?php 
+                                if($r->users->profile_pic!=""){
+                                    $image=asset('upload/profile')."/".$r->users->profile_pic;
+                                }elseif(isset($r->doctors)&&isset($r->doctors-> $image)){
+                                    $image=asset('upload/doctor')."/".$r->doctors->image;
+                                }else{
+                                        $image=asset('upload/profile/profile.png');
+                                }
+                        ?>
+                        <img src="<?php echo e($image); ?>" class="testimonial-profile-img" style="width:44%">
+                        </div>
+                        <div class="col-md-9 testtext">
+                                <p class="testip"><?php echo e($r->review); ?></p>
+                            <span class="testimonialspan"></span>
+                        <?php if(isset($r->users->name)): ?>
+                        <h3 class="testimonialh">- <?php echo e($r->users->name); ?></h3>
+                        <?php endif; ?>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+            <?php endif; ?>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+         </div>
+      </div>
+   </div>
+</div>
 <?php $__env->stopSection(); ?>
 
 

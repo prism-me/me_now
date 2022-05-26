@@ -91,7 +91,7 @@
                      </div>
                      <div class="appo-btn-main-box">
                     
-                        
+                        <a href="#" data-toggle="modal" data-target="#appointmentModal" onclick="changedatamodelapp('<?php echo e($doctorDetail->department_id); ?>','<?php echo e($doctorDetail->department->name); ?>','<?php echo e($doctorDetail->user_id); ?>','<?php echo e($doctorDetail->name); ?>')"><?php echo e(__('messages.Make an appointment')); ?></a>
                        
                         
                      </div> 
@@ -250,6 +250,60 @@
 
                   <?php endif; ?>
                </p>
+            </div>
+         </div>
+         <div class="col-lg-3 col-md-12">
+            <div class="d-detail-emergency-mainbox">
+               <img src="<?php echo e(asset('front/img/emergency.png')); ?>">
+               <p><?php echo e(__('messages.Emergency Number')); ?></p>
+               <h4><?php echo e($doctorDetail->phone_no); ?></h4>
+            </div>
+            <div class="d-detail-emergency-mainbox">
+               <img src="<?php echo e(asset('front/img/mailoutline.png')); ?>">
+               <p><?php echo e(__('messages.Email address')); ?></p>
+               <h4><?php echo e($doctorDetail->email); ?></h4>
+            </div>
+            <div class="d-detail-collapse-doctor">
+               <div class="accordion indicator-plus-before round-indicator" id="accordionH" aria-multiselectable="true">
+                  <div class="card m-b-0">
+                     <?php if($doctorDetail): ?>
+                     <?php $i = 0; ?>
+                     <div class="card-header collapsed" role="tab" id="heading<?php echo e($i); ?>" href="#collapse<?php echo e($i); ?>" onclick="changedoctorblog('<?php echo e($i); ?>')" data-parent="#accordion<?php echo e($i); ?>" aria-expanded="false" aria-controls="collapse<?php echo e($i); ?>">
+                        <a class="card-title">
+                        <?php echo e(ucwords(strtolower($doctorDetail->name))); ?>
+
+                        </a>
+                     </div>
+                     <?php if($i==0): ?>
+                     <div class="collapse in" id="collapse<?php echo e($i); ?>" role="tabpanel" aria-labelledby="heading<?php echo e($i); ?>">
+                        <?php else: ?>
+                        <div class="collapse" id="collapse<?php echo e($i); ?>" role="tabpanel" aria-labelledby="heading<?php echo e($i); ?>">
+                           <?php endif; ?>
+                           <div class="card-body">
+                              <div class="doctorl-part-box">
+                                 <?php if ($doctorDetail->image) {
+                                    $image = $doctorDetail->image;
+                                    } else {
+                                    $image = asset('upload/profile/profile.png');
+                                    } ?>
+                                 <div class="doctorl-dp-img doctorl-dp-img-1" style="margin-top: -1px;background-image: url('<?= $image ?>')"></div>
+                                 <div class="doctor-detail-part-11">
+                                    <div class="doctorl-part-detail">
+                                       <h4><?php echo e($doctorDetail->name); ?></h4>
+                                       <p><?php echo e(substr($doctorDetail->about_us,0,50)); ?></p>
+                                    </div>
+
+                                 </div>
+                                 <button data-toggle="modal" data-target="#appointmentModal" class="under-doctor-appointment-button">Book an Appointment</button>
+                              </div>
+                           </div>
+                        </div>
+                        <?php $i++; ?>
+                        <input type="hidden" id="avilabledoctor" value="<?php echo e($i); ?>">
+                        <?php endif; ?>	
+                     </div>
+                  </div>
+               </div>
             </div>
          </div>
          
