@@ -57,7 +57,7 @@
                         <tr>
                            <td><?php echo e(isset($d->id)?$d->id:""); ?></td>
                            <td><?php echo e(isset($d->title)?$d->title:""); ?></td>
-                           <td><?php echo e(isset($d->description)?$d->description:""); ?></td>
+                           <td><?php echo e(substr($d->short_description, 0,  70)); ?>...</td>
                            <td>
                                <img src="<?php echo e($d->featured_img); ?>" style="width:50px;height: 50px;" class="imgsize1"/>
                            </td>

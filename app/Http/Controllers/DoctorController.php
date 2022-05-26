@@ -19,6 +19,7 @@ class DoctorController extends UploadController
  
     public function index(){
         $data=Doctor::with('department')->get();
+        
         return view("admin.doctor.default")->with("data",$data);
     }
   
