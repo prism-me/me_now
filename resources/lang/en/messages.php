@@ -375,6 +375,7 @@ return [
 		
 		
 		"About"=>"About",
+		
 		"Me Now"=>"Me Now",
 		"Corporate Services"=>"Corporate Services",
 		"Doctors"=>"Doctors",
@@ -416,4 +417,26 @@ return [
 		"Designed and Managed by Prism"=>"Designed and Managed by Prism",
 		"Please Login Your Account"=>"Please Login Your Account",
 		"Thanks for subscribing we will inform you for Upcoming event"=>"Thanks for subscribing we will inform you for Upcoming event",
-];
+
+
+		"Blog"=>"Blog",
+		"Sub-Title"=>"Sub-Title",
+		"Title"=>"Title",
+		"Save Blog"=>"Save Blog",
+		"Posted By"=>"Posted By",
+		"View"=>"View",
+		"Blog List"=>"Blog List",
+		"Delete"=>"Delete",
+		
+		"Workshop"=>"Workshop",
+		"Sub-Title"=>"Sub-Title",
+		"Title"=>"Title",
+		"Save Workshop"=>"Save Workshop",
+		"Posted By"=>"Posted By",
+		"View"=>"View",
+		"Workshop List"=>"Workshop List",
+		"Delete"=>"Delete",
+		"Short Description"=>"Short Description",
+		"Event Date"=>"Event Date",
+
+	];

@@ -1,6 +1,6 @@
 
 <?php $__env->startSection('title'); ?>
-<?php echo e(__('messages.Gallery')); ?>
+<?php echo e(__('messages.Workshop')); ?>
 
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
@@ -8,7 +8,7 @@
    <div class="col-sm-4">
       <div class="page-header float-left">
          <div class="page-title">
-            <h1><?php echo e(__('messages.Gallery')); ?></h1>
+            <h1><?php echo e(__('messages.Workshop')); ?></h1>
          </div>
       </div>
    </div>
@@ -16,7 +16,7 @@
       <div class="page-header float-right">
          <div class="page-title">
             <ol class="breadcrumb text-right">
-               <li class="active"><?php echo e(__('messages.Gallery')); ?></li>
+               <li class="active"><?php echo e(__('messages.Workshop')); ?></li>
             </ol>
          </div>
       </div>
@@ -38,14 +38,16 @@
                   </div>
                   <?php endif; ?>
                   <div>
-                     <a href="<?php echo e(url('admin/savealbum/0')); ?>" class="btn btn-primary"><?php echo e(__('messages.Add Album')); ?></a>
+                     <a href="<?php echo e(URL::to('admin/workshops/create')); ?>" class="btn btn-primary"><?php echo e(__('messages.Add').' '.__('messages.Workshop')); ?></a>
                   </div>
                   <div class="table-responsive">
                   <table id="service" class="table  table-striped table-bordered">
                      <thead>
                         <tr>
                            <th><?php echo e(__('messages.Id')); ?></th>
-                           <th><?php echo e(__('messages.Name')); ?></th>
+                           <th><?php echo e(__('messages.Title')); ?></th>
+                           <th><?php echo e(__('messages.Description')); ?></th>
+                           <th><?php echo e(__('messages.Image')); ?></th>
                            <th><?php echo e(__('messages.Action')); ?></th>
                         </tr>
                      </thead>
@@ -53,14 +55,16 @@
                         <?php if(count($data)>0): ?>
                         <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
-                           <td><?php echo e($d->id); ?></td>
-                           <td><?php echo e($d->name); ?></td>
+                           <td><?php echo e(isset($d->id)?$d->id:""); ?></td>
+                           <td><?php echo e(isset($d->title)?$d->title:""); ?></td>
+                           <td><?php echo e(isset($d->description)?$d->description:""); ?></td>
                            <td>
-                               <a href="<?php echo e(url('admin/savealbum/').'/'.$d->id); ?>" class="btn btn-primary"><?php echo e(__('messages.Edit')); ?></a>
-                               <a href="javascript:deleterow('deletealbum','<?= $d->id ?>')" class="btn btn-danger"><?php echo e(__('messages.Delete')); ?></a>
-                               <a href="<?php echo e(url('admin/addphoto/').'/'.$d->id); ?>" class="btn btn-warning btndepartwarning"><?php echo e(__('messages.Add Photo')); ?>
-
-                               </a>
+                               <img src="<?php echo e($d->featured_img); ?>" style="width:50px;height: 50px;" class="imgsize1"/>
+                           </td>
+                           <td>
+                                <a href="<?php echo e(URL::to('admin/workshops/'.$d->id.'/edit')); ?>" class="btn btn-primary"><?php echo e(__('messages.Edit')); ?></a>
+                                <a href="<?php echo e(URL::to('admin/workshops/'.$d->id.'/show')); ?>" class="btn btn-success"><?php echo e(__('messages.View')); ?></a>
+                                <form action="<?php echo e(URL::to('admin/workshops/delete').'/'.$d->id); ?>"  novalidate="novalidate" ><?php echo e(csrf_field()); ?><?php echo e(method_field('Delete')); ?><input type="submit" class="btn btn-danger" name="Delete"></form>
                            </td>
                         </tr>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -75,4 +79,4 @@
    </div>
 </div>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('admin.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\meNow\resources\views/admin/gallery/default.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('admin.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\meNow\resources\views/admin/workshop/default.blade.php ENDPATH**/ ?>

@@ -16,7 +16,7 @@
                                 <div class="col-lg-3 col-md-4 col-sm-6">
                                     <div class="department-part-box">
                                         <div class="department-part-img">
-                                            <img src="{{ asset('front/img/department') . '/' . $d->image }}">
+                                            <img src="{{ $d->image }}">
                                         </div>
                                         <div class="text-detail-box">
 										<h4>{{ $d->name }}</h4>

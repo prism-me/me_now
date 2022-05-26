@@ -11,7 +11,7 @@
 
         <div class="container">
             <div class="global-heading">
-                <h2>{{ __('messages.Doctor List') }} </h2>
+                <h2>{{ __('messages.Workshop List') }} </h2>
                 <p>{{ __("messages.The best doctor is the one you run to and can't find") }}</p>
             </div>
 
@@ -21,9 +21,9 @@
                         {{ __('messages.All') }}
                     </div>
 
-                    @foreach ($department as $d)
+                    @foreach ($workshop as $d)
                         <div class="slide tablinks" onclick="openCity(event, '{{ $d->id }}')">
-                            {{ $d->name }}
+                            {{ $d->title }}
                         </div>
                     @endforeach
                 </section>
@@ -32,21 +32,22 @@
             <div class="doctorpg-part-main-box">
                 <div id="all" class="tabcontent">
                     <div class="row">
-                        @foreach ($doctor as $d)
+                        @foreach ($workshop as $d)
                             <div class="col-lg-4 col-md-4 col-sm-6 " data-aos="fade-up">
-                                <a href="{{ url('workshop/') . '/' . $d->user_id }}" class="denone">
+                                <a href="{{ url('workshop/') . '/' . $d->id }}" class="denone">
                                     <div class="d-detail-collapse-doctor">
                                         <div class="doctorl-part-box">
-                                            <?php
-                                            $image = asset('upload/doctor') . '/' . $d->image;
-                                            
-                                            ?>
+                                            <img src="{{ $d->image }}">
                                             <div class="doctorl-dp-img doctorl-dp-img-1"
-                                                style="background-image: url('<?= $image ?>')"></div>
+                                                style="background-image: url({{'<?= $d->image ?>'}})"></div>
 
                                             <div class="doctorl-part-detail">
-                                                <h4>{{ ucwords(strtolower($d->name)) }}</h4>
-                                                <p>Event Date:{{ $d->created_at->diffForHumans() }}</p>
+                                                <h4>{{ ucwords(strtolower($d->title)) }}</h4>
+                                                <p>Event Date:{{ $d->event_date }}</p>
+                                                <p style="color:rgb(108, 108, 108)">
+                                                    {{ substr($d->short_description, 0,  150) }}....
+                                            
+                                                <a href="{{ url('#'). '/'.$d->id }}" stle="color:#49B7C6;">Read More</a> </p>
                                                 <div class="book_appointment_doctor">
                                                     <button>Book Event</button>
                                                 </div>

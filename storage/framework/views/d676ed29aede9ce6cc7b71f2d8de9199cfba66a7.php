@@ -17,6 +17,7 @@
       <meta property="og:site_name" content="<?php echo e(__('messages.site name')); ?>"/>
       <meta property="og:description" content="<?php echo e(__('messages.meta_description_admin')); ?>"/>
       <meta property="og:keyword" content="<?php echo e(__('messages.meta_keyword')); ?>"/>
+      <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
       <?php echo $__env->yieldContent('meta_title'); ?>
       <link rel="shortcut icon" href="<?php echo e(asset('App_icon.png')); ?>">
       <link rel="stylesheet" href="<?php echo e(asset('adesign/vendors/bootstrap/dist/css/bootstrap.min.css')); ?>">
@@ -63,6 +64,12 @@
                   </li>
                   <li class="active">
                      <a href="<?php echo e(url('admin/package')); ?>"> <i class="menu-icon fa fa-user-md"></i><?php echo e(__('messages.Help Package')); ?></a>
+                  </li>
+                  <li class="active">
+                     <a href="<?php echo e(url('admin/blogs')); ?>"> <i class="menu-icon fa  fa-newspaper-o"></i><?php echo e(__('messages.Blog')); ?></a>
+                  </li>
+                  <li class="active">
+                     <a href="<?php echo e(url('admin/workshops')); ?>"> <i class="menu-icon fa  fa-newspaper-o"></i><?php echo e(__('messages.Workshop')); ?></a>
                   </li>
                   <li class="active">
                      <a href="<?php echo e(url('admin/chat')); ?>"> <i class="menu-icon fa fa-comment"></i><?php echo e(__('messages.Chat')); ?> </a>
@@ -114,7 +121,7 @@
                <div class="col-sm-5">
                   <div class="user-area dropdown float-right">
                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     <img class="user-avatar rounded-circle" src="<?php echo e(Session::get('profile_pic')); ?>" alt="User Avatar">
+                     <img class="user-avatar rounded-circle" src="<?php echo e(asset('front/img/logo.png')); ?>" alt="User Avatar">
                      </a>
                      <div class="user-menu dropdown-menu">
                         <a class="nav-link" href="<?php echo e(url('admin/editprofile')); ?>"><i class="fa fa-user"></i> <?php echo e(__('messages.My Profile')); ?></a>
@@ -239,5 +246,12 @@
       <script src="<?php echo e(asset('js/admin.js?v=1333324')); ?>"></script>
        <?php echo $__env->yieldContent('footer'); ?>
       
+       <script>
+         ClassicEditor
+         .create( document.querySelector( '#description' ) )
+         .catch( error => {
+         console.error( error );
+         } );
+         </script>
    </body>
 </html><?php /**PATH D:\Projects\Menow\me_now\resources\views/admin/layout.blade.php ENDPATH**/ ?>

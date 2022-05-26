@@ -56,13 +56,13 @@
                            <td>{{isset($d->id)?$d->id:""}}</td>
                            <td>{{isset($d->name)?$d->name:""}}</td>
                            <td>
-                               <img src="{{asset('public/upload/department').'/'.$d->image}}" class="imgsize1"/>
+                               <img src="{{ $d->image }}" class="imgsize1" style="width:50px;height:50px;"/>
                            </td>
                            <td>{{isset($d->emergency_no)?$d->emergency_no:""}}</td>
                            <td>
                                 <a href="{{url('admin/savedepartment/').'/'.$d->id}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
                                 <a href="javascript:deleterow('deletedepartment','<?= $d->id ?>')" class="btn btn-danger">{{__('messages.Delete')}}</a>
-                                <a href="{{url('admin/departmentservice/').'/'.$d->id}}"  class="btn btn-warning btndepartwarning">{{__('messages.Add Services')}}</a>
+                                <a href="{{ url('admin/departmentservice/').'/'.$d->id}}"  class="btn btn-warning btndepartwarning">{{__('messages.Add Services')}}</a>
                            </td>
                         </tr>
                         @endforeach

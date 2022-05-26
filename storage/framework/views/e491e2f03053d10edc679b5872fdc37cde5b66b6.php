@@ -164,7 +164,7 @@
                               <?php echo e(__('messages.Image')); ?><span class="reqfield" >*</span>
                               </label>
                               <?php if($doctor_id!=0): ?>
-                              <img src="<?php echo e(asset('public/upload/doctor').'/'.$data->image); ?>" class="imgsize1 btndepartwarning" /> 
+                              <img src="<?php echo e($data->image); ?>" class="imgsize1 btndepartwarning" /> 
                               <?php endif; ?>
                               <div>
                                  <input type="file" id="file" name="image" class="form-control-file" accept="image/*">
@@ -269,4 +269,4 @@
 </div>
 
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('admin.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Projects\Menow\me_now\resources\views/admin/doctor/savedoctor.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('admin.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\meNow\resources\views/admin/doctor/savedoctor.blade.php ENDPATH**/ ?>
