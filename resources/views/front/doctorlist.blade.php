@@ -36,7 +36,7 @@
                                 <a href="{{ url('doctordetails/') . '/' . $d->user_id }}" class="denone">
                                     <div class="d-detail-collapse-doctor">
                                         <div class="doctorl-part-box">
-                                           <img src="{{ $d->image }}" style="width:70px;height:70px;">
+                                           <img src="{{ $d->image }}" class="img-fluid">
                                             {{-- <div class="doctorl-dp-img doctorl-dp-img-1"
                                                 style=""></div> --}}
 

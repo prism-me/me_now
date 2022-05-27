@@ -213,7 +213,6 @@
       <input type="hidden" id="chkworkingtime" value="{{__('messages.Please Check You Working Time')}}"/>
       <input type="hidden" id="seldate" value="{{__('messages.Please Select Date')}}">
       
-       <script type="text/javascript" src="{{asset('ckeditor/ckeditor.js')}}"></script>
       <script type="text/javascript" src="{{asset('js/script.js')}}"></script>
       <script src="{{asset('adesign/vendors/jquery/dist/jquery.min.js')}}"></script>
       <script src="{{asset('adesign/vendors/popper.js/dist/umd/popper.min.js')}}"></script>
@@ -240,11 +239,12 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.23/moment-timezone-with-data-2012-2022.min.js"></script>
       
-
+      
       <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-     
+      
+      {{-- <script type="text/javascript" src="{{asset('ckeditor/ckeditor.js')}}"></script> --}}
       <script src="{{asset('js/admin.js?v=1333324')}}"></script>
-       @yield('footer')
+      @yield('footer')
       
        <script>
          ClassicEditor

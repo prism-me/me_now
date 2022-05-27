@@ -39,7 +39,7 @@
                                 <a href="<?php echo e(url('doctordetails/') . '/' . $d->user_id); ?>" class="denone">
                                     <div class="d-detail-collapse-doctor">
                                         <div class="doctorl-part-box">
-                                           <img src="<?php echo e($d->image); ?>" style="width:70px;height:70px;">
+                                           <img src="<?php echo e($d->image); ?>" class="img-fluid">
                                             
 
                                             <div class="doctorl-part-detail">

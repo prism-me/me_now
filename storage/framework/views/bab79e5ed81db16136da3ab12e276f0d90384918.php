@@ -43,12 +43,12 @@
                                     <?php endif; ?>
                                     <img src="<?php echo e($s->image); ?>">
                                     <div class="text-detail-box">
-                                        <h4><?php echo e($s->name); ?></h4>
-                                        <p><?php echo e($s->description); ?></p>
-                                    </div>
+                                        <h4><a href="<?php echo e(url('department')); ?>"><?php echo e($s->name); ?></a></h4>
+                                        <p><?php echo e(substr($s->short_description, 0, 70)); ?></p>
                                     </div>
                                 </div>
-                            <?php endif; ?>
+                </div>
+                <?php endif; ?>
 
                 <?php $i++; ?>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -73,21 +73,21 @@
                 <?php if(count($department) > 0): ?>
                     <?php $i = 0; ?>
                     <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $s): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <?php if($i > 5): ?>
-                        <div class="col-md-4 col-sm-6">
-                            <?php if($i % 2 == 0): ?>
-                                <div class="services-part-box services-part1-box">
-                                <?php else: ?>
-                                    <div class="services-part-box services-part2-box">
-                            <?php endif; ?>
-                            <img src="<?php echo e($s->image); ?>">
-                            <div class="text-detail-box">
-                                <h4><?php echo e($s->name); ?></h4>
-                                <p><?php echo e($s->description); ?></p>
+                        <?php if($i > 5): ?>
+                            <div class="col-md-4 col-sm-6">
+                                <?php if($i % 2 == 0): ?>
+                                    <div class="services-part-box services-part1-box">
+                                    <?php else: ?>
+                                        <div class="services-part-box services-part2-box">
+                                <?php endif; ?>
+                                <img src="<?php echo e($s->image); ?>">
+                                <div class="text-detail-box">
+                                    <h4><?php echo e($s->name); ?></h4>
+                                    <p><?php echo e($s->description); ?></p>
+                                </div>
                             </div>
-                        </div>
-                     </div>
-                     <?php endif; ?>
+            </div>
+            <?php endif; ?>
 
             <?php $i++; ?>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -101,37 +101,13 @@
             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
     </div>
-    <div class="pricing-main-box">
-        <div class="container">
-            
-            <div class="pricing-part-main-box">
-                <div class="row">
-                    <?php $__currentLoopData = $package; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $p): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <div class="col-md-4">
-                            <div class="pricing-all-content">
-                                <div class="pricing-part-box">
-                                    <h3><?php echo e($p->name); ?></h3>
-                                    <div class="pricing-cost">
-                                        <h3><?php echo e(Session::get('currency')); ?></h3>
-                                        <span><?php echo e($p->price); ?></span>
-                                        <h6>/ session</h6>
-                                    </div>
-                                    <p><?php echo e($p->description); ?></p>
-                                </div>
-                                <div class="pricing-part-btn">
-                                    <a class="btn"
-                                        href="<?php echo e(url('subscription') . '/' . $p->id); ?>"><?php echo e(__('messages.Order now')); ?></a>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                </div>
-            </div>
+   
+           
         </div>
     </div>
 
     <div class="numbers-counter-main-box">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <div class="numbers-counter-part-box">
@@ -200,10 +176,10 @@
                 <p><?php echo e(__('messages.Talent wins games, but teamwork and intelligence win championships')); ?></p>
             </div>
             <div class="row">
-                <?php if(count($doctorls) > 0): ?>
-                    <?php $__currentLoopData = $doctorls; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php if(count($doctor) > 0): ?>
+                    <?php $__currentLoopData = $doctor; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="col-lg-3 col-md-6 col-sm-6">
-                            <a href="<?php echo e(url('doctordetails/') . '/' . $d->user_id); ?>" class="anchor-doctor-image">
+                            <a href="<?php echo e(url('doctordetails/') . '/' . $d->user_id); ?>" class="img-fluid">
                                 <div class="doctorl-part-box">
                                     <?php
                                     if ($d->image) {
@@ -217,7 +193,7 @@
                                     <div class="doctorl-part-detail">
                                         <h4><?php echo e(ucwords(strtolower($d->name))); ?></h4>
                                         <p><?php echo e(substr(trim($d->about_us), 0, 135)); ?></p>
-                                        <div class="book_appointment_doctor text-center">
+                                        <div class="book_appointment_doctor">
                                             <button>Make an Appointment</button>
                                         </div>
                                     </div>
@@ -233,60 +209,70 @@
             </div>
         </div>
     </div>
-<div class="testimonial-main-box">
-   <div class="container">
-      <div class="global-heading">
-         <h2><?php echo e(__('messages.Patient Reviews')); ?></h2>
-         <p><?php echo e(__('messages.reviewline')); ?></p>
-      </div>
-      <div class="testimonial-part-main-box">
-         <div class="owl-carousel testimonial-carousel">
-            <?php $__currentLoopData = $review; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <?php if(isset($r->users)): ?>
-           	<div class="single-testimonial">
-                <div class="testimonial-part-box"> 
-                    <div class="testimonial-inner-images">
-                        <div class="col-md-3 testimage">
-                            <?php 
-                                if($r->users->profile_pic!=""){
-                                    $image=asset('upload/profile')."/".$r->users->profile_pic;
-                                }elseif(isset($r->doctors)&&isset($r->doctors-> $image)){
-                                    $image=asset('upload/doctor')."/".$r->doctors->image;
-                                }else{
-                                        $image=asset('upload/profile/profile.png');
-                                }
-                        ?>
-                        <img src="<?php echo e($image); ?>" class="testimonial-profile-img" style="width:44%">
-                        </div>
-                        <div class="col-md-9 testtext">
-                                <p class="testip"><?php echo e($r->review); ?></p>
-                            <span class="testimonialspan"></span>
-                        <?php if(isset($r->users->name)): ?>
-                        <h3 class="testimonialh">- <?php echo e($r->users->name); ?></h3>
+    <div class="testimonial-main-box">
+        <div class="container" style="padding-left: 0px ; padding-right: 0px;">
+            <div class="global-heading">
+                <h2><?php echo e(__('messages.Patient Reviews')); ?></h2>
+                <p><?php echo e(__('messages.reviewline')); ?></p>
+            </div>
+            <div class="testimonial-part-main-box">
+                <div class="owl-carousel testimonial-carousel patient-reviews-slider">
+                    <?php $__currentLoopData = $review; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php if(isset($r->users)): ?>
+                            <div class="single-testimonial">
+                                <div class="testimonial-part-box">
+                                    <div class="testimonial-inner-images">
+                                        <div class="col-md-3 testimage">
+                                            <?php
+                                            if ($r->users->profile_pic != '') {
+                                                $image = asset('upload/profile') . '/' . $r->users->profile_pic;
+                                            } elseif (isset($r->doctors) && isset($r->doctors->$image)) {
+                                                $image = asset('upload/doctor') . '/' . $r->doctors->image;
+                                            } else {
+                                                $image = asset('upload/profile/profile.png');
+                                            }
+                                            ?>
+                                            <img src="<?php echo e($image); ?>" class="testimonial-profile-img"
+                                                style="width:44%">
+                                        </div>
+                                        <div class="col-md-9 testtext">
+                                            <p class="testip"><?php echo e($r->review); ?></p>
+                                            <span class="testimonialspan"></span>
+                                            <?php if(isset($r->users->name)): ?>
+                                                <h3 class="testimonialh">- <?php echo e($r->users->name); ?></h3>
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         <?php endif; ?>
-                        </div>
-                    </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
             </div>
-            <?php endif; ?>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-         </div>
-      </div>
-   </div>
-</div>
+        </div>
+    </div>
 <?php $__env->stopSection(); ?>
 
 
 <?php $__env->startPush('scripts'); ?>
     <script>
+        $('.testimonial-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            items: 2,
+            dots: true,
+        })
+
         $('.owl-carousel').owlCarousel({
             loop: true,
-            animateOut: 'fadeOut',
             margin: 10,
             nav: true,
             items: 1,
             dots: false,
         })
+
+        // $('.patient-reviews-slider .owl-nav').removeClass('disabled');
     </script>
 <?php $__env->stopPush(); ?>
 

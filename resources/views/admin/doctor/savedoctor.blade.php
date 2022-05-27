@@ -135,11 +135,23 @@
                                  <input type="text" id="instagram_id" required placeholder="{{__('messages.Enter').' '.__('messages.Instagram ID')}}"  class="form-control"  name="instagram_id" value="{{ isset($data->instagram_id)?$data->instagram_id:''}}">
                               </div>
                            </div>
-                           <div class=" col-md-12 form-group">
+                           <div class="col-md-12 form-group">
                               <label for="email" class=" form-control-label">
-                              {{__('messages.About us')}}<span class="reqfield" >*</span>
+                              {{__('messages.Short Description')}}<span class="reqfield" >*</span>
                               </label>
-                              <textarea required id="description" name="aboutus" class="form-control">{{ isset($data->about_us)?$data->about_us:''}}</textarea>
+                              <textarea  id="short_description" name="short_description"  class="form-control">{{ isset($data->short_description)?$data->short_description:''}}</textarea>
+                           </div>
+                           <div class="col-md-12 form-group">
+                              <label for="email" class=" form-control-label">
+                              {{__('messages.Description')}}<span class="reqfield" >*</span>
+                              </label>
+                              <textarea  id="description" name="description"  class="form-control">{{ isset($data->description)?$data->description:''}}</textarea>
+                           </div>
+                           <div class="col-md-12 form-group">
+                              <label for="email" class=" form-control-label">
+                              {{__('messages.About')}}<span class="reqfield" >*</span>
+                              </label>
+                              <textarea  id="description" name="about_us"  class="form-control">{{ isset($data->about_us)?$data->about_us:''}}</textarea>
                            </div>
                            <div class="col-md-12 form-group">
                               <label for="email" class=" form-control-label">

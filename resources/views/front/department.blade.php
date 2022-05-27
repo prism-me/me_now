@@ -20,7 +20,7 @@
                                         </div>
                                         <div class="text-detail-box">
 										<h4>{{ $d->name }}</h4>
-                                            <p>{{ substr($d->description, 0, 75) }}</p>
+                                            <p>{{ substr($d->short_description, 0, 75) }}</p>
                                         </div>
                                         <div class="department-viewd-btn services-btn-main-box">
                                             <a
