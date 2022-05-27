@@ -18,15 +18,17 @@
                         <div class="d-detail-main-box">
                             <div class="global-part-heading global-heading">
                                 <h3><?php echo e(__('messages.About Department')); ?></h3>
-                                <p><?php echo e($departmentdetails->description); ?></p>
+                                
+                                <p><?php echo $departmentdetails->description; ?></p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-12">
                         
-                        <div class="department_wrappers">
-                            <ul>
-                                <?php if(count($subServices) > 1): ?>
+                        <?php if(count($subServices) > 1): ?>
+                            <div class="department_wrappers">
+                                <ul>
+
                                     <?php $i=1 ?>
                                     <?php $__currentLoopData = $subServices; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dp): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <li <?php
@@ -36,9 +38,10 @@
                                         ?>><?php echo e($dp->name); ?></li>
                                         <?php $i++ ?>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                <?php endif; ?>
-                            </ul>
-                        </div>
+
+                                </ul>
+                            </div>
+                        <?php endif; ?>
                         <div class="d-detail-collapse-doctor">
                             <div class="accordion indicator-plus-before round-indicator" id="accordionH"
                                 aria-multiselectable="true">
@@ -71,7 +74,7 @@
                                                 <div class="doctorl-part-box">
                                                     <?php
                                                     if ($doc->image) {
-                                                        $image = asset('public/upload/doctor') . '/' . $doc->image;
+                                                        $image = $doc->image;
                                                     } else {
                                                         $image = asset('public/upload/profile/profile.png');
                                                     }
@@ -121,6 +124,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
     </div>
 <?php $__env->stopSection(); ?>

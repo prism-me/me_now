@@ -21,7 +21,7 @@
                                         </div>
                                         <div class="text-detail-box">
 										<h4><?php echo e($d->name); ?></h4>
-                                            <p><?php echo e(substr($d->description, 0, 75)); ?></p>
+                                            <p><?php echo e(substr($d->short_description, 0, 75)); ?></p>
                                         </div>
                                         <div class="department-viewd-btn services-btn-main-box">
                                             <a

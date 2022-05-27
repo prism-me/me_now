@@ -92,7 +92,7 @@ class FrontController extends Controller
         return view("front.blog_inner")->with("blog",$blog)->with("review",$reviews)->with("doctor",$doctor)->with("departmentdetails",$departmentdetails)->with("id",$id)->with("setting",$setting)->with("blogdetails", $blogdetails);
     }
 
-
+    
 
     public function workshop(){
         if(!isset($_COOKIE['fload'])){
@@ -106,6 +106,20 @@ class FrontController extends Controller
          $setting=Setting::find(1);
          $reviews=Review::with('doctors','users')->get()->take(4);
         return view("front.workshop")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with("workshop",$workshop);
+    }
+
+    public function events(){
+        if(!isset($_COOKIE['fload'])){
+            setcookie('fload','1', time() + (86400 * 30), "/");
+         }
+         $service=Service::get()->take(8);
+         $workshop=Workshop::get()->take(8);
+         $package=Package::get()->take(3);
+         $doctor=Doctor::get()->take(4);
+         $department=Department::with('service')->get();
+         $setting=Setting::find(1);
+         $reviews=Review::with('doctors','users')->get()->take(4);
+        return view("front.events")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with("workshop",$workshop);
     }
 
     public function workshopdetail($id){
@@ -227,14 +241,14 @@ class FrontController extends Controller
            $department=Department::all();
             $setting=Setting::find(1);
            $departmentdetails=Department::with("doctor","service")->find($id);
-           $subServices = DepartService::where('department_id',$id)->get(); 
-                   
+           $subServices = DepartService::where('department_id',$id)->get();                    
            if($departmentdetails){
                return view("front.departmentdetails")->with('subServices',$subServices)->with("department",$department)->with("departmentdetails",$departmentdetails)->with("setting",$setting);
            }else{
                return redirect('/');
            }
        }
+
 
        public function contact_us(){
            $department=Department::all();

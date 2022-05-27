@@ -22,15 +22,16 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <div class="col-lg-3 col-md-12">
-                        <div class="d-detail-emergency-mainbox">
+                    <div class="col-lg-3 col-md-12">
+                        {{-- <div class="d-detail-emergency-mainbox">
 							<img src="{{ $departmentdetails->image}}">
 							<p>{{__('messages.Emergency Number')}}</p>
 							<h4>{{$departmentdetails->emergency_no}}</h4>
 						</div> --}}
-                        <div class="department_wrappers">
-                            <ul>
-                                @if (count($subServices) > 1)
+                        @if (count($subServices) > 1)
+                            <div class="department_wrappers">
+                                <ul>
+
                                     @php $i=1 @endphp
                                     @foreach ($subServices as $dp)
                                         <li @php
@@ -40,9 +41,10 @@
                                         @endphp>{{ $dp->name }}</li>
                                         @php $i++ @endphp
                                     @endforeach
-                                @endif
-                            </ul>
-                        </div>
+
+                                </ul>
+                            </div>
+                        @endif
                         <div class="d-detail-collapse-doctor">
                             <div class="accordion indicator-plus-before round-indicator" id="accordionH"
                                 aria-multiselectable="true">
@@ -123,6 +125,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
     </div>
 @stop

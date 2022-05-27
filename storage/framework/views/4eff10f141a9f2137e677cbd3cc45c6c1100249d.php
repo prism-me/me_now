@@ -1,5 +1,6 @@
 <div class="owl-carousel owl-theme banner-img">
-    <div class="item"><img src="<?php echo e(asset('upload/web/1599559630.png')); ?>" />
+    <div class="item"><img src="<?php echo e(asset('front/img/banner/banner-1.jpg')); ?>" alt="banner images"/>
+        <div class="overlay"></div>
         <div class="caption">
             <h1 class="heading">Personal care & healthy living</h1>
             <p>We provide best leading medicle service Nulla perferendis veniam deleniti <br> ipsum officia dolores
@@ -8,7 +9,8 @@
             <button>Book Now</button>
         </div>
     </div>
-    <div class="item"><img src="<?php echo e(asset('upload/web/1599559630.png')); ?>" />
+    <div class="item"><img src="<?php echo e(asset('front/img/banner/banner-2.jpg')); ?>" alt="banner images"/>
+        <div class="overlay"></div>
         <div class="caption">
             <h1 class="heading">Personal care & healthy living</h1>
             <p>We provide best leading medicle service Nulla perferendis veniam deleniti <br> ipsum officia dolores
@@ -17,7 +19,8 @@
             <button>Book Now</button>
         </div>
     </div>
-    <div class="item"><img src="<?php echo e(asset('upload/web/1599559630.png')); ?>" />
+    <div class="item"><img src="<?php echo e(asset('front/img/banner/banner-3.jpg')); ?>" alt="banner images"/>
+        <div class="overlay"></div>
         <div class="caption">
             <h1 class="heading">Personal care & healthy living</h1>
             <p>We provide best leading medicle service Nulla perferendis veniam deleniti <br> ipsum officia dolores

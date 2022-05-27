@@ -122,6 +122,10 @@
                                     href="<?php echo e(url('workshop')); ?>"><?php echo e(__('messages.Workshops')); ?></a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link"
+                                    href="<?php echo e(url('events')); ?>"><?php echo e(__('messages.Events')); ?></a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="<?php echo e(url('blog')); ?>"><?php echo e(__('messages.Blog')); ?></a>
                             </li>
                             <li class="nav-item">

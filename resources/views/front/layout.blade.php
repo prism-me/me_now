@@ -125,6 +125,10 @@
                                     href="{{ url('workshop') }}">{{ __('messages.Workshops') }}</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link"
+                                    href="{{ url('events') }}">{{ __('messages.Events') }}</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ url('blog') }}">{{ __('messages.Blog') }}</a>
                             </li>
                             <li class="nav-item">
