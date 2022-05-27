@@ -1,5 +1,6 @@
 <?php
 return [
+		'Events' =>'Events',
 		'Rooms' =>'Rooms',
 	    "About_Me_Now" => "About Me Now",
 		"site name"=>"Single Clinic",

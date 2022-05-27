@@ -23,8 +23,13 @@
                                             <img src="<?php echo e($service->image); ?>">
                                         </div>
                                         <div class="text-detail-box">
+<<<<<<< HEAD:storage/framework/views/35eea985c125cc5bca6987308f672d3197f13f85.php
 										<h4><?php echo e($service->name); ?></h4>
                                             <p><?php echo e(substr($service->short_description, 0, 75)); ?></p>
+=======
+										<h4><?php echo e($d->name); ?></h4>
+                                            <p><?php echo e(substr($d->short_description, 0, 75)); ?></p>
+>>>>>>> 372f266afb15eada2578f7c41f1c527389cd10fb:storage/framework/views/7a197ed0d3a9cf6f928a8b9cc06b6d96454be52a.php
                                         </div>
                                         <div class="department-viewd-btn services-btn-main-box">
                                             <a

@@ -1,5 +1,5 @@
 <div class="owl-carousel owl-theme banner-img">
-    <div class="item"><img src="{{ asset('front/img/banner/banner-1.jpg') }}" alt="banner images"/>
+    <div class="item"><img src="<?php echo e(asset('front/img/banner/banner-1.jpg')); ?>" alt="banner images"/>
         <div class="overlay"></div>
         <div class="caption">
             <h1 class="heading">Personal care & healthy living</h1>
@@ -9,7 +9,7 @@
             <button>Book Now</button>
         </div>
     </div>
-    <div class="item"><img src="{{ asset('front/img/banner/banner-2.jpg') }}" alt="banner images"/>
+    <div class="item"><img src="<?php echo e(asset('front/img/banner/banner-2.jpg')); ?>" alt="banner images"/>
         <div class="overlay"></div>
         <div class="caption">
             <h1 class="heading">Personal care & healthy living</h1>
@@ -19,7 +19,7 @@
             <button>Book Now</button>
         </div>
     </div>
-    <div class="item"><img src="{{ asset('front/img/banner/banner-3.jpg') }}" alt="banner images"/>
+    <div class="item"><img src="<?php echo e(asset('front/img/banner/banner-3.jpg')); ?>" alt="banner images"/>
         <div class="overlay"></div>
         <div class="caption">
             <h1 class="heading">Personal care & healthy living</h1>
@@ -30,3 +30,4 @@
         </div>
     </div>
 </div>
+<?php /**PATH D:\Projects\Menow\me_now\resources\views/front/banner_slider.blade.php ENDPATH**/ ?>
