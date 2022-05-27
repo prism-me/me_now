@@ -103,10 +103,7 @@
     </div>
     <div class="pricing-main-box">
         <div class="container">
-            <div class="global-heading">
-                <h2>{{ __('messages.Help Package') }}</h2>
-                <p>{{ __('messages.The easiest way to keep life on track') }}</p>
-            </div>
+            {{--   --}}
             <div class="pricing-part-main-box">
                 <div class="row">
                     @foreach ($package as $p)

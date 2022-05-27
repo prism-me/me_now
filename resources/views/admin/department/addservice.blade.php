@@ -58,7 +58,7 @@
                         </label>
                         <input type="text" id="name" placeholder="{{__('messages.Enter').'  '.__('messages.Name')}}" class="form-control" required name="name" value="{{ isset($data->name)?$data->name:''}}">
                      </div>
-                     <div class="form-group">
+                     {{-- <div class="form-group">
                         <label for="name" class=" form-control-label">
                         {{__('messages.Price For')}}
                         <span class="reqfield">*</span>
@@ -67,15 +67,27 @@
                            <option value="1" <?= isset($data->price_for) && $data->price_for == 1 ?: "selected='selected'" ?> >{{__('messages.Investigations')}}</option>
                            <option value="2" <?= isset($data->price_for) && $data->price_for == 2 ?: "selected='selected'" ?>>{{__('messages.Treatments')}}</option>
                         </select>
-                     </div>
-                     <div class="form-group">
+                     </div> --}}
+                     {{-- <div class="form-group">
                         <label for="name" class=" form-control-label">
                         {{__('messages.Price')}}
                         <span class="reqfield">*</span>
                         </label>
                         <input type="number" step="any" id="price" placeholder="{{__('messages.Enter').' '.__('messages.Price')}}" class="form-control" required name="price" value="{{ isset($data->price)?$data->price:''}}">
                      </div>
-                     <div>
+                     <div> --}}
+                     <div class="form-group">
+                        <label for="email" class=" form-control-label">
+                        {{__('messages.Short Description')}}<span class="reqfield" >*</span>
+                        </label>
+                        <textarea required id="short_description" name="short_description"  class="form-control">{{ isset($data->short_description)?$data->short_description:''}}</textarea>
+                     </div>
+                     <div class="form-group">
+                        <label for="email" class=" form-control-label">
+                        {{__('messages.Description')}}<span class="reqfield" >*</span>
+                        </label>
+                        <textarea required id="description" name="description"  class="form-control">{{ isset($data->description)?$data->description:''}}</textarea>
+                     </div>
                        
                         @if(Session::get("is_demo")=='1')
                            <button id="payment-button" type="button"  onclick="disablebtn()" class="btn btn-lg btn-info" >

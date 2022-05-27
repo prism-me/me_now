@@ -32,7 +32,6 @@
             <div class="doctorpg-part-main-box">
                 <div id="all" class="tabcontent">
                     <div class="row">
-                        @foreach ($workshop as $d)
                             <div class="col-lg-4 col-md-4 col-sm-6 " data-aos="fade-up">
                                 <a href="{{ url('workshop') . '/' . $d->id }}" class="denone">
                                     <div class="d-detail-collapse-doctor">
@@ -57,7 +56,6 @@
                                     </div>
                                 </a>
                             </div>
-                        @endforeach
                     </div>
                 </div>
             </div>

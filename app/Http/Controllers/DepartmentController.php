@@ -31,14 +31,11 @@ class DepartmentController extends UploadController
                 $request->validate([
                     'name' => 'required',
                     'description' => 'required|min:40',
-                    'emergency_no'=>'required'
                 ]);
               }else{
                 $request->validate([
                     'name' => 'required',
                     'description' => 'required|min:40',
-                    'emergency_no'=>'required',
-                    'image'=>'required'
                 ]);
              }
             if ($img = $request->hasFile('image')) {
@@ -59,8 +56,9 @@ class DepartmentController extends UploadController
 
             $store->name=$request->get("name");
             $store->description=$request->get("description");
-            $store->emergency_no=$request->get("emergency_no");
-            $store->image=$mediaUpload;
+            $store->short_description=$request->get("short_description");
+            $store->emergency_no = $request->get("emergency_no");
+            $store->image = isset( $mediaUpload ) ? $mediaUpload : " " ;
             $store->save(); 
             Session::flash('message',$msg); 
             Session::flash('alert-class', 'alert-success');
@@ -142,15 +140,11 @@ class DepartmentController extends UploadController
     public function updatedepartmentservice(Request $request){
         if($request->get("id")!="0"){
                 $request->validate([
-                    'name' => 'required',
-                    'price' => 'required',
-                    'price_for'=>'required'
+                    'name' => 'required'
                 ]);
               }else{
                 $request->validate([
-                    'name' => 'required',
-                    'price' => 'required',
-                    'price_for'=>'required'
+                    'name' => 'required'
                 ]);
              }         
 
@@ -163,9 +157,12 @@ class DepartmentController extends UploadController
             }
 
             $store->name=$request->get("name");
-            $store->price=$request->get("price");
-            $store->department_id=$request->get("depart_id");   
-            $store->price_for=$request->get("price_for");        
+            $store->price=isset( $store->price ) ? $store->price : " " ;
+            $store->department_id= $request->get("depart_id");   
+            $store->price= isset( $request->get['price'] ) ? $request->get['price'] : " " ;
+            $store->description= $request->get("description");
+            $store->short_description= $request->get("short_description");
+            $store->price_for=isset( $request->get['price_for'] ) ? $request->get['price_for'] : " " ;
             $store->save(); 
             Session::flash('message',$msg); 
             Session::flash('alert-class', 'alert-success');
