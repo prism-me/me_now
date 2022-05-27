@@ -232,63 +232,61 @@
             <p class="message"></p>
         </section>
     </div> -->
-    <input type="hidden" id="site_url" value="{{ url('/') }}" />
-    <input type="hidden" id="siteurl" value="{{ url('/') }}" />
-    <input type="hidden" id="admin_url" value="{{ url('/admin') }}" />
-    <input type="hidden" id="own_url" value="{{ url('admin') }}" />
-    <input type="hidden" id="currentusername" value="{{ Auth::user()->name }}">
-    <input type="hidden" id="mycurrentuser" value="{{ Auth::user()->id }}">
-    <input type="hidden" id="authprofile" value="{{ Session::get('profile_pic_path') }}">
-    <input type="hidden" id="usertype" value="{{ Auth::user()->usertype }}">
-    <input type="hidden" id="site_type" value="{{ Session::get('is_demo') }}">
-    <input type="hidden" id="delete_msg" value="{{ __('messages.Are sure want to delete this row') }}" />
-    <input type="hidden" id="samepwd" value="{{ __('messages.New password and Re enter password must be same') }}">
-    <input type="hidden" id="incorrectpwd" value="{{ __('messages.Please Enter Correct Password') }}">
-    <input type="hidden" id="invaildimg" value="{{ __('messages.Image Size Invaild') }}">
-    <input type="hidden" id="chkworkingtime" value="{{ __('messages.Please Check You Working Time') }}" />
-    <input type="hidden" id="seldate" value="{{ __('messages.Please Select Date') }}">
-
-    {{-- <script type="text/javascript" src="{{asset('ckeditor/ckeditor.js')}}"></script> --}}
-    <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
-    <script src="{{ asset('adesign/vendors/jquery/dist/jquery.min.js') }}"></script>
-    <script src="{{ asset('adesign/vendors/popper.js/dist/umd/popper.min.js') }}"></script>
-    <script src="{{ asset('adesign/vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('adesign/assets/js/main.js') }}"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="{{ asset('adesign/vendors/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('adesign/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
-    <script src="{{ asset('adesign/vendors/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
-    <script src="{{ asset('adesign/vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js') }}"></script>
-    <script src="{{ asset('adesign/vendors/jszip/dist/jszip.min.js') }}"></script>
-    <script src="{{ asset('adesign/vendors/pdfmake/build/pdfmake.min.js') }}"></script>
-    <script src="{{ asset('adesign/vendors/pdfmake/build/vfs_fonts.js') }}"></script>
-    <script src="{{ asset('adesign/vendors/datatables.net-buttons/js/buttons.html5.min.js') }}"></script>
-    <script src="{{ asset('adesign/vendors/datatables.net-buttons/js/buttons.print.min.js') }}"></script>
-    <script src="{{ asset('adesign/vendors/datatables.net-buttons/js/buttons.colVis.min.js') }}"></script>
-    <script src="{{ asset('fileupload/dist/js/jquery.dm-uploader.min.js') }}"></script>
-    <script src="{{ asset('fileupload/demo/demo-ui.js') }}"></script>
-    <script src="{{ asset('fileupload/demo/demo-config.js?v=296') }}"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.23/moment-timezone-with-data-2012-2022.min.js">
-    </script>
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-
-    <script src="{{ asset('js/admin.js?v=1333324') }}"></script>
-    @yield('footer')
-
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#description'))
-            .catch(error => {
-                console.error(error);
-            });
-    </script>
-</body>
-
+      <input type="hidden" id="site_url" value="{{url('/')}}" />
+      <input type="hidden" id="siteurl" value="{{url('/')}}" />
+      <input type="hidden" id="admin_url" value="{{url('/admin')}}" />
+      <input type="hidden" id="own_url" value="{{url('admin')}}" />
+      <input type="hidden" id="currentusername" value="{{Auth::user()->name}}">
+      <input type="hidden" id="mycurrentuser" value="{{Auth::user()->id}}">
+     <input type="hidden" id="authprofile" value="{{Session::get('profile_pic_path')}}">
+      <input type="hidden" id="usertype" value="{{Auth::user()->usertype}}">
+      <input type="hidden" id="site_type" value="{{Session::get('is_demo')}}">
+      <input type="hidden" id="delete_msg" value="{{__('messages.Are sure want to delete this row')}}"/>
+      <input type="hidden" id="samepwd" value="{{__('messages.New password and Re enter password must be same')}}">
+      <input type="hidden" id="incorrectpwd" value="{{__('messages.Please Enter Correct Password')}}">
+      <input type="hidden" id="invaildimg" value="{{__('messages.Image Size Invaild')}}">
+      <input type="hidden" id="chkworkingtime" value="{{__('messages.Please Check You Working Time')}}"/>
+      <input type="hidden" id="seldate" value="{{__('messages.Please Select Date')}}">
+      
+      <script type="text/javascript" src="{{asset('js/script.js')}}"></script>
+      <script src="{{asset('adesign/vendors/jquery/dist/jquery.min.js')}}"></script>
+      <script src="{{asset('adesign/vendors/popper.js/dist/umd/popper.min.js')}}"></script>
+      <script src="{{asset('adesign/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+      <script src="{{asset('adesign/assets/js/main.js')}}"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+      <script src="{{asset('adesign/vendors/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+      <script src="{{asset('adesign/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+      <script src="{{asset('adesign/vendors/datatables.net-buttons/js/dataTables.buttons.min.js')}}"></script>
+      <script src="{{asset('adesign/vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js')}}"></script>
+      <script src="{{asset('adesign/vendors/jszip/dist/jszip.min.js')}}"></script>
+      <script src="{{asset('adesign/vendors/pdfmake/build/pdfmake.min.js')}}"></script>
+      <script src="{{asset('adesign/vendors/pdfmake/build/vfs_fonts.js')}}"></script>
+      <script src="{{asset('adesign/vendors/datatables.net-buttons/js/buttons.html5.min.js')}}"></script>
+      <script src="{{asset('adesign/vendors/datatables.net-buttons/js/buttons.print.min.js')}}"></script>
+      <script src="{{asset('adesign/vendors/datatables.net-buttons/js/buttons.colVis.min.js')}}"></script>
+      <script src="{{asset('fileupload/dist/js/jquery.dm-uploader.min.js')}}"></script>
+      <script src="{{asset('fileupload/demo/demo-ui.js')}}"></script>
+      <script src="{{asset('fileupload/demo/demo-config.js?v=296')}}"></script>
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.23/moment-timezone-with-data-2012-2022.min.js"></script>
+      
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+      
+      {{-- <script type="text/javascript" src="{{asset('ckeditor/ckeditor.js')}}"></script> --}}
+      <script src="{{asset('js/admin.js?v=1333324')}}"></script>
+      @yield('footer')
+      
+       <script>
+         ClassicEditor
+         .create( document.querySelector( '#description' ) )
+         .catch( error => {
+         console.error( error );
+         } );
+         </script>
+   </body>
 </html>

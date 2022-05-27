@@ -110,34 +110,10 @@
             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
     </div>
-    {{-- <div class="pricing-main-box">
-        <div class="container">
-        
-    <div class="pricing-part-main-box">
-        <div class="row">
-            @foreach ($package as $p)
-                <div class="col-md-4">
-                    <div class="pricing-all-content">
-                        <div class="pricing-part-box">
-                            <h3>{{ $p->name }}</h3>
-                            <div class="pricing-cost">
-                                <h3>{{ Session::get('currency') }}</h3>
-                                <span>{{ $p->price }}</span>
-                                <h6>/ session</h6>
-                            </div>
-                            <p>{{ $p->description }}</p>
-                        </div>
-                        <div class="pricing-part-btn">
-                            <a class="btn"
-                                href="{{ url('subscription') . '/' . $p->id }}">{{ __('messages.Order now') }}</a>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
+   
+           
         </div>
     </div>
-    </div>
-    </div> --}}
 
     <div class="numbers-counter-main-box">
         <div class="container-fluid">
@@ -205,10 +181,10 @@
                 <p>{{ __('messages.Talent wins games, but teamwork and intelligence win championships') }}</p>
             </div>
             <div class="row">
-                @if (count($doctorls) > 0)
-                    @foreach ($doctorls as $d)
+                @if (count($doctor) > 0)
+                    @foreach ($doctor as $d)
                         <div class="col-lg-3 col-md-6 col-sm-6">
-                            <a href="{{ url('doctordetails/') . '/' . $d->user_id }}" class="anchor-doctor-image">
+                            <a href="{{ url('doctordetails/') . '/' . $d->user_id }}" class="img-fluid">
                                 <div class="doctorl-part-box">
                                     <?php
                                     if ($d->image) {

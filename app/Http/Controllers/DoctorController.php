@@ -39,7 +39,7 @@ class DoctorController extends UploadController
                     'name' => 'required',
                     'password'=>'required',
                     'phone_no'=>'required',
-                    'aboutus'=>'required',
+                    'about_us'=>'required',
                     'service'=>'required'
                 ]);
               }else{
@@ -49,7 +49,7 @@ class DoctorController extends UploadController
                     'email' => 'required|unique:users',
                     'password'=>'required',
                     'phone_no'=>'required',
-                    'aboutus'=>'required',
+                    'about_us'=>'required',
                     'service'=>'required',
                     'image'=>'required'
                 ]);
@@ -97,13 +97,14 @@ class DoctorController extends UploadController
             $store->email=$request->get("email");
             $store->password=$request->get("password");
             $store->phone_no=$request->get("phone_no");
-            $store->about_us=$request->get("aboutus");
+            $store->about_us=$request->get("about_us");
             $store->service=$request->get("service");
             $store->facebook_id=$request->get("facebook");
             $store->twitter_id=$request->get("twitter_id");
             $store->google_id=$request->get("google_id");
-            $store->instagram_id=$request->get("instagram_id");
-            $store->image=$mediaUpload;
+            $store->description = $request->get("description");
+            $store->short_description=$request->get("short_description");
+            $store->image=  isset($mediaUpload)? $mediaUpload :'' ;
             $store->save(); 
             return redirect("admin/savedoctor/".$store->id.'/2');
 

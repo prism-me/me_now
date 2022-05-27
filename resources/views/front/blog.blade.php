@@ -20,7 +20,7 @@
                             <div class="col-md-4">
                                 <div class="blog-single">
                                     <div class="img_wrapper">
-                                        <a href="{{ url('blog-detail'). '/'.$data->id }}"><img src="{{ $data->featured_img}}" alt="blog" style="height:100%;width:100%;"></a>
+                                        <a href="{{ url('blog-detail'). '/'.$data->id }}"><img src="{{ $data->featured_img}}" alt="blog" class="img-fluid"></a>
                                     </div>
                                     <div class="content_wrapper">
                                         <div class="date_time">
