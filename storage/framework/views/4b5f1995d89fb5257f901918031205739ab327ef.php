@@ -92,8 +92,11 @@
                                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Services </a>
                                 <ul class="dropdown-menu services-dropdown">
 
+                                   
+                                    
                                     <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $departments): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                        <li><a class="dropdown-item" href="<?php echo e(url('department')); ?>">
+                                    
+                                        <li><a class="dropdown-item" href="<?php echo e(url('department') . '/' . $departments->id); ?>">
                                                 <?php echo e($departments->name); ?> </a>
 
                                             <?php if(!blank($departments->service)): ?>

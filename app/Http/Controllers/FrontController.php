@@ -230,11 +230,14 @@ class FrontController extends Controller
            return view("front.facilites")->with("department",$department)->with("facilites",$service)->with("setting",$setting);
        }
 
-       public function department(){
-           $department=Department::all();
+        public function department($id){
+            $departmentService=DepartService::where("department_id",$id)->get();
+            
+            $department=Department::with('service')->get();
+    
            $setting=Setting::find(1);
-           return view("front.department")->with("department",$department)->with("setting",$setting);
-       }
+           return view("front.department")->with("department",$department)->with("setting",$setting)->with("departmentService",$departmentService);
+        }
 
 
         public function departmentdetail($id){
