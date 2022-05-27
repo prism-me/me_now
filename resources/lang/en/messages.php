@@ -1,5 +1,7 @@
 <?php
 return [
+
+	    "About_Me_Now" => "About Me Now",
 		"site name"=>"Single Clinic",
 		"meta_description_admin"=>"Single Web Clinic Admin",
 		"meta_keyword"=>"Single,Clinic,Hospital",
