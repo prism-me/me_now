@@ -1,4 +1,4 @@
-<div class="owl-carousel owl-theme">
+<div class="owl-carousel owl-theme banner-img">
     <div class="item"><img src="{{ asset('upload/web/1599559630.png') }}" />
         <div class="caption">
             <h1 class="heading">Personal care & healthy living</h1>

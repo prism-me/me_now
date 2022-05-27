@@ -296,14 +296,7 @@ a:hover{
     transform: translateY(0%);
 }
 
-.appointment-section .header-img {
-    background-image: url(../img/bg.png);
-    width: 100%;
-    height: 570px;
-    position: absolute;
-    background-size: cover;
-    background-position: center;
-}
+
 
 .header-appo-main-box {
     position: relative;

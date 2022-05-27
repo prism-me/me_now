@@ -360,11 +360,15 @@ p.testip {
 	
 	.owl-carousel .owl-item img {
     display: block;
-    height: 94px;
+    height: auto;
     width:auto;
     margin-bottom:5px;
 }
 
+	.banner-img .owl-item img{
+
+		height: 504px;
+	}
 	.appointment-section .header-img{
 		/*background-position: left;*/
 	}
@@ -445,18 +449,30 @@ p.testip {
 /*========== Max-width 576px ==========*/
 
 @media(max-width: 576px) {
+
+	
+	.video-section iframe {
+		height:300px;
+	}
+
 	.top-header .top-left-text {
 	    display: block;
 	}
+	.top-header p{
+		text-align: center;
+	}
+	.navigation-custom-single .navbar{
+		padding: 5px 0px;
+	}
 
 	.top-header .top-right-text {
-	    display: block;
+	    display: none;
 	    text-align: left;
 	    float: none;
 	}
 
 	.spacefor-global {
-	    height: 153px;
+	    height: 118px;
 	}
 
 	.appo-input-main-box input[type="text"] {
@@ -551,13 +567,22 @@ p.testip {
     padding: 15px;
     border: 1px solid #49B7C6;
     border-radius: 10px;
-    height: 195px;
+    height: 182px;
 }
 .doctor-detail-main-box h4 {
     font-size: 28px;
     color: black;
     font-family: 'Roboto', sans-serif ;
     margin-top: 5px;
+}
+
+.appointment-section .item .caption{
+	top: 20%;
+	text-align:center;
+    left: 0%;
+}
+.appointment-section .owl-nav{
+	display:none !important;
 }
 }
 

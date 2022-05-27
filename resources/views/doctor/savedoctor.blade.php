@@ -139,7 +139,7 @@
                               <label for="email" class=" form-control-label">
                               {{__('messages.About us')}}<span class="reqfield" >*</span>
                               </label>
-                              <textarea required id="description" name="aboutus" class="form-control">{{ isset($data->about_us)?$data->about_us:''}}</textarea>
+                              <textarea id="description" name="aboutus" class="form-control">{{ isset($data->about_us)?$data->about_us:''}}</textarea>
                            </div>
                            <div class="col-md-12 form-group">
                               <label for="email" class=" form-control-label">
@@ -224,7 +224,7 @@
                               </tbody>
                            </table>
                         </div>
-                           <button id="payment-button" type="submit" class="btn btn-lg btn-info floatright">
+                           <button id="payment-button" type="button" class="btn btn-lg btn-info floatright">
                            {{__('messages.Submit')}}
                            </button>
                         </form>

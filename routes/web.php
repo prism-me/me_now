@@ -32,6 +32,7 @@ Route::group(['prefix' => '/'], function () {
      Route::get("blog","FrontController@blog");
      Route::get("women-empowerment","FrontController@women_empowerment");
      Route::get("workshop","FrontController@workshop");
+     Route::get("rooms","FrontController@rooms");
      Route::get("workshop/{id}","FrontController@workshopdetail");
      Route::get("getserviceanddoctor/{id}","FrontController@getserviceanddoctor");
      Route::post("bookappoinment","FrontController@bookappoinment");

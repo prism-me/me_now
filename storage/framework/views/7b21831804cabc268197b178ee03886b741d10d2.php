@@ -83,7 +83,7 @@
                                 <img src="<?php echo e($s->image); ?>">
                                 <div class="text-detail-box">
                                     <h4><?php echo e($s->name); ?></h4>
-                                    <p><?php echo e($s->description); ?></p>
+                                    <p><?php echo e(substr($s->short_description, 0, 70)); ?></p>
                                 </div>
                             </div>
             </div>
@@ -93,7 +93,16 @@
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             <?php endif; ?>
         </div>
-    </div>
+
+        <div class="col-md-4 col-sm-6">
+            <div class="services-part-box services-part2-box">
+                <img src="https://menow.b-cdn.net/images/icon-165363374975.png" class="img-fluid">
+                <div class="text-detail-box">
+                    <h4><a href="<?php echo e(url('/rooms')); ?>">Rooms</a></h4>
+                    <p>Rooms descriptions</p>
+                </div>
+            </div>
+        </div>
     </div>
     </div>
     <div class="video-section">
@@ -102,31 +111,6 @@
             allowfullscreen></iframe>
     </div>
     
-            <div class="pricing-part-main-box">
-                <div class="row">
-                    <?php $__currentLoopData = $package; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $p): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <div class="col-md-4">
-                            <div class="pricing-all-content">
-                                <div class="pricing-part-box">
-                                    <h3><?php echo e($p->name); ?></h3>
-                                    <div class="pricing-cost">
-                                        <h3><?php echo e(Session::get('currency')); ?></h3>
-                                        <span><?php echo e($p->price); ?></span>
-                                        <h6>/ session</h6>
-                                    </div>
-                                    <p><?php echo e($p->description); ?></p>
-                                </div>
-                                <div class="pricing-part-btn">
-                                    <a class="btn"
-                                        href="<?php echo e(url('subscription') . '/' . $p->id); ?>"><?php echo e(__('messages.Order now')); ?></a>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                </div>
-            </div>
-        </div>
-    </div> --}}
 
     <div class="numbers-counter-main-box">
         <div class="container-fluid">
@@ -254,8 +238,8 @@
                                                 $image = asset('upload/profile/profile.png');
                                             }
                                             ?>
-                                            <img src="<?php echo e($image); ?>" class="testimonial-profile-img"
-                                                style="width:44%">
+                                            <img src="<?php echo e($image); ?>" class="testimonial-profile-img img-fluid"
+                                                >
                                         </div>
                                         <div class="col-md-9 testtext">
                                             <p class="testip"><?php echo e($r->review); ?></p>
@@ -282,8 +266,21 @@
             loop: true,
             margin: 10,
             nav: true,
-            items: 2,
             dots: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true
+                },
+                600: {
+                    items: 1,
+                    nav: false
+                },
+                1000: {
+                    items: 2,
+                    nav: true,
+                }
+            }
         })
 
         $('.owl-carousel').owlCarousel({

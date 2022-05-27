@@ -1,6 +1,6 @@
 <?php
 return [
-
+		'Rooms' =>'Rooms',
 	    "About_Me_Now" => "About Me Now",
 		"site name"=>"Single Clinic",
 		"meta_description_admin"=>"Single Web Clinic Admin",

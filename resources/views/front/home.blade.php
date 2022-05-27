@@ -83,7 +83,7 @@
                                 <img src="{{ $s->image }}">
                                 <div class="text-detail-box">
                                     <h4>{{ $s->name }}</h4>
-                                    <p>{{ $s->description }}</p>
+                                    <p>{{ substr($s->short_description, 0, 70) }}</p>
                                 </div>
                             </div>
             </div>
@@ -93,7 +93,16 @@
             @endforeach
             @endif
         </div>
-    </div>
+
+        <div class="col-md-4 col-sm-6">
+            <div class="services-part-box services-part2-box">
+                <img src="https://menow.b-cdn.net/images/icon-165363374975.png" class="img-fluid">
+                <div class="text-detail-box">
+                    <h4><a href="{{ url('/rooms') }}">Rooms</a></h4>
+                    <p>Rooms descriptions</p>
+                </div>
+            </div>
+        </div>
     </div>
     </div>
     <div class="video-section">
@@ -103,31 +112,31 @@
     </div>
     {{-- <div class="pricing-main-box">
         <div class="container">
-            {{--   --}}
-            <div class="pricing-part-main-box">
-                <div class="row">
-                    @foreach ($package as $p)
-                        <div class="col-md-4">
-                            <div class="pricing-all-content">
-                                <div class="pricing-part-box">
-                                    <h3>{{ $p->name }}</h3>
-                                    <div class="pricing-cost">
-                                        <h3>{{ Session::get('currency') }}</h3>
-                                        <span>{{ $p->price }}</span>
-                                        <h6>/ session</h6>
-                                    </div>
-                                    <p>{{ $p->description }}</p>
-                                </div>
-                                <div class="pricing-part-btn">
-                                    <a class="btn"
-                                        href="{{ url('subscription') . '/' . $p->id }}">{{ __('messages.Order now') }}</a>
-                                </div>
+        
+    <div class="pricing-part-main-box">
+        <div class="row">
+            @foreach ($package as $p)
+                <div class="col-md-4">
+                    <div class="pricing-all-content">
+                        <div class="pricing-part-box">
+                            <h3>{{ $p->name }}</h3>
+                            <div class="pricing-cost">
+                                <h3>{{ Session::get('currency') }}</h3>
+                                <span>{{ $p->price }}</span>
+                                <h6>/ session</h6>
                             </div>
+                            <p>{{ $p->description }}</p>
                         </div>
-                    @endforeach
+                        <div class="pricing-part-btn">
+                            <a class="btn"
+                                href="{{ url('subscription') . '/' . $p->id }}">{{ __('messages.Order now') }}</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            @endforeach
         </div>
+    </div>
+    </div>
     </div> --}}
 
     <div class="numbers-counter-main-box">
@@ -270,8 +279,8 @@
                                                 $image = asset('upload/profile/profile.png');
                                             }
                                             ?>
-                                            <img src="{{ $image }}" class="testimonial-profile-img"
-                                                style="width:44%">
+                                            <img src="{{ $image }}" class="testimonial-profile-img img-fluid"
+                                                >
                                         </div>
                                         <div class="col-md-9 testtext">
                                             <p class="testip">{{ $r->review }}</p>
@@ -298,8 +307,21 @@
             loop: true,
             margin: 10,
             nav: true,
-            items: 2,
             dots: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true
+                },
+                600: {
+                    items: 1,
+                    nav: false
+                },
+                1000: {
+                    items: 2,
+                    nav: true,
+                }
+            }
         })
 
         $('.owl-carousel').owlCarousel({

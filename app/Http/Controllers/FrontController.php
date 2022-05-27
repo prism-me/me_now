@@ -74,6 +74,8 @@ class FrontController extends Controller
     
     }
 
+
+
     public function blogdetails($id){
 
         $blog=Blog::all();
@@ -148,6 +150,20 @@ class FrontController extends Controller
          $reviews=Review::with('doctors','users')->get()->take(4);
        return view("front.women_empowerment")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department);
      
+    }
+    public function rooms(){
+
+        if(!isset($_COOKIE['fload'])){
+            setcookie('fload','1', time() + (86400 * 30), "/");
+         }
+         $service=Service::get()->take(8);
+         $package=Package::get()->take(3);
+         $doctor=Doctor::get()->take(4);
+         $department=Department::with('service')->get();
+         $setting=Setting::find(1);
+         $reviews=Review::with('doctors','users')->get()->take(4);
+       return view("front.rooms")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department);
+       
     }
     
 
