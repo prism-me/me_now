@@ -70,8 +70,8 @@ a:hover{
 .global-heading p {
     font-size: 16px;
     color: #767676;
-    margin-bottom: 4rem !important;
-    margin: 25px auto 0;
+    margin-bottom: 0rem !important;
+    margin: 0px auto 0;
     font-family: 'Roboto', sans-serif ;
     margin-bottom: 15px;
 }
@@ -137,7 +137,7 @@ a:hover{
 }
 
 .spacefor-global {
-    height: 108px;
+    height: 135px;
 }
 
 /* Loader */
@@ -569,7 +569,7 @@ a:hover{
 .numbers-counter-main-box {
     padding: 30px;
     background-color: #22242a;
-    margin: 80px 0px;
+    margin: 80px 0px 30px;
 }
 
 .numbers-counter-part-box .counter-value {
@@ -761,7 +761,7 @@ p.testip {
 }
 
 .footer-main-box {
-    padding: 50px;
+    padding: 50px 0px 0px;
     background-color: black;
     color: white;
 }
@@ -861,9 +861,15 @@ p.testip {
 }
 
 .footer-bottom-main-box {
-    text-align: center;
+    /* text-align: center; */
+    font-size: 14px;
 }
-
+.footer-bottom-left{
+text-align: left;
+}
+.footer-bottom-right{
+text-align: right;
+}
 .subcribe-button-box button {
     border: 0;
     color: white;

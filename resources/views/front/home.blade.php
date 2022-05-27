@@ -42,12 +42,12 @@
                                     @endif
                                     <img src="{{ $s->image }}">
                                     <div class="text-detail-box">
-                                        <h4>{{ $s->name }}</h4>
-                                        <p>{{ $s->description }}</p>
-                                    </div>
+                                        <h4><a href="{{ url('department') }}">{{ $s->name }}</a></h4>
+                                        <p>{{ substr($s->short_description, 0, 70) }}</p>
                                     </div>
                                 </div>
-                            @endif
+                </div>
+                @endif
 
                 <?php $i++; ?>
                 @endforeach
@@ -73,21 +73,21 @@
                 @if (count($department) > 0)
                     <?php $i = 0; ?>
                     @foreach ($department as $s)
-                    @if ($i > 5)
-                        <div class="col-md-4 col-sm-6">
-                            @if ($i % 2 == 0)
-                                <div class="services-part-box services-part1-box">
-                                @else
-                                    <div class="services-part-box services-part2-box">
-                            @endif
-                            <img src="{{ $s->image }}">
-                            <div class="text-detail-box">
-                                <h4>{{ $s->name }}</h4>
-                                <p>{{ $s->description }}</p>
+                        @if ($i > 5)
+                            <div class="col-md-4 col-sm-6">
+                                @if ($i % 2 == 0)
+                                    <div class="services-part-box services-part1-box">
+                                    @else
+                                        <div class="services-part-box services-part2-box">
+                                @endif
+                                <img src="{{ $s->image }}">
+                                <div class="text-detail-box">
+                                    <h4>{{ $s->name }}</h4>
+                                    <p>{{ $s->description }}</p>
+                                </div>
                             </div>
-                        </div>
-                     </div>
-                     @endif
+            </div>
+            @endif
 
             <?php $i++; ?>
             @endforeach
@@ -101,7 +101,7 @@
             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
     </div>
-    <div class="pricing-main-box">
+    {{-- <div class="pricing-main-box">
         <div class="container">
             <div class="global-heading">
                 <h2>{{ __('messages.Help Package') }}</h2>
@@ -131,10 +131,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <div class="numbers-counter-main-box">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <div class="numbers-counter-part-box">
@@ -216,7 +216,7 @@
                                     <div class="doctorl-part-detail">
                                         <h4>{{ ucwords(strtolower($d->name)) }}</h4>
                                         <p>{{ substr(trim($d->about_us), 0, 135) }}</p>
-                                        <div class="book_appointment_doctor text-center">
+                                        <div class="book_appointment_doctor">
                                             <button>Make an Appointment</button>
                                         </div>
                                     </div>
@@ -250,59 +250,69 @@
             </div>
         </div>
     </div>
-<div class="testimonial-main-box">
-   <div class="container">
-      <div class="global-heading">
-         <h2>{{__('messages.Patient Reviews')}}</h2>
-         <p>{{__('messages.reviewline')}}</p>
-      </div>
-      <div class="testimonial-part-main-box">
-         <div class="owl-carousel testimonial-carousel">
-            @foreach($review as $r)
-            @if(isset($r->users))
-           	<div class="single-testimonial">
-                <div class="testimonial-part-box"> 
-                    <div class="testimonial-inner-images">
-                        <div class="col-md-3 testimage">
-                            <?php 
-                                if($r->users->profile_pic!=""){
-                                    $image=asset('upload/profile')."/".$r->users->profile_pic;
-                                }elseif(isset($r->doctors)&&isset($r->doctors-> $image)){
-                                    $image=asset('upload/doctor')."/".$r->doctors->image;
-                                }else{
-                                        $image=asset('upload/profile/profile.png');
-                                }
-                        ?>
-                        <img src="{{ $image }}" class="testimonial-profile-img" style="width:44%">
-                        </div>
-                        <div class="col-md-9 testtext">
-                                <p class="testip">{{$r->review}}</p>
-                            <span class="testimonialspan"></span>
-                        @if(isset($r->users->name))
-                        <h3 class="testimonialh">- {{$r->users->name}}</h3>
+    <div class="testimonial-main-box">
+        <div class="container" style="padding-left: 0px ; padding-right: 0px;">
+            <div class="global-heading">
+                <h2>{{ __('messages.Patient Reviews') }}</h2>
+                <p>{{ __('messages.reviewline') }}</p>
+            </div>
+            <div class="testimonial-part-main-box">
+                <div class="owl-carousel testimonial-carousel patient-reviews-slider">
+                    @foreach ($review as $r)
+                        @if (isset($r->users))
+                            <div class="single-testimonial">
+                                <div class="testimonial-part-box">
+                                    <div class="testimonial-inner-images">
+                                        <div class="col-md-3 testimage">
+                                            <?php
+                                            if ($r->users->profile_pic != '') {
+                                                $image = asset('upload/profile') . '/' . $r->users->profile_pic;
+                                            } elseif (isset($r->doctors) && isset($r->doctors->$image)) {
+                                                $image = asset('upload/doctor') . '/' . $r->doctors->image;
+                                            } else {
+                                                $image = asset('upload/profile/profile.png');
+                                            }
+                                            ?>
+                                            <img src="{{ $image }}" class="testimonial-profile-img"
+                                                style="width:44%">
+                                        </div>
+                                        <div class="col-md-9 testtext">
+                                            <p class="testip">{{ $r->review }}</p>
+                                            <span class="testimonialspan"></span>
+                                            @if (isset($r->users->name))
+                                                <h3 class="testimonialh">- {{ $r->users->name }}</h3>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         @endif
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
-            @endif
-            @endforeach
-         </div>
-      </div>
-   </div>
-</div>
+        </div>
+    </div>
 @stop
 
 
 @push('scripts')
     <script>
+        $('.testimonial-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            items: 2,
+            dots: true,
+        })
+
         $('.owl-carousel').owlCarousel({
             loop: true,
-            animateOut: 'fadeOut',
             margin: 10,
             nav: true,
             items: 1,
             dots: false,
         })
+
+        // $('.patient-reviews-slider .owl-nav').removeClass('disabled');
     </script>
 @endpush

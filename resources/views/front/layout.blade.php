@@ -89,7 +89,7 @@
 			        			<a class="nav-link" href="{{url('/')}}">{{ __('messages.Home' )}}</a>
 			  				</li> --}}
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('about') }}">{{ __('messages.About')}}</a>
+                                <a class="nav-link" href="{{ url('about') }}">{{ __('messages.About') }}</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Services </a>
@@ -118,26 +118,26 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="{{ url('doctorlist') }}">{{ __('messages.Doctors')}}</a>
+                                    href="{{ url('doctorlist') }}">{{ __('messages.Doctors') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
                                     href="{{ url('workshop') }}">{{ __('messages.Workshops') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"
-                                    href="{{ url('blog') }}">{{ __('messages.Blog') }}</a>
+                                <a class="nav-link" href="{{ url('blog') }}">{{ __('messages.Blog') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
                                     href="{{ url('women-empowerment') }}">{{ __('messages.Women Empowerment') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('pricing') }}">{{ __('messages.Become a Member') }}</a>
+                                <a class="nav-link"
+                                    href="{{ url('pricing') }}">{{ __('messages.Become a Member') }}</a>
                             </li>
                             <li class="nav-item book-now-nav">
-                                <a class="nav-link" style="color:white !important; width: 104px"
-                                href="#" data-toggle="modal" data-target="#appointmentModal" >{{ __('Book Now') }}</a>
+                                <a class="nav-link" style="color:white !important; width: 104px" href="#"
+                                    data-toggle="modal" data-target="#appointmentModal">{{ __('Book Now') }}</a>
                             </li>
                         </ul>
                     </div>
@@ -310,7 +310,8 @@
                                         placeholder="{{ __('messages.Enter Your Full Name') }}"
                                         value="{{ Auth::user() ? Auth::user()->name : '' }}">
                                     <input type="text" required name="phone_no" id="phone_no"
-                                        placeholder="{{ __('messages.Enter Phone number') }}" class="appo-right-input"
+                                        placeholder="{{ __('messages.Enter Phone number') }}"
+                                        class="appo-right-input"
                                         value="{{ Auth::user() ? Auth::user()->phone_no : '' }}">
                                     <input type="date" required name="app_date" id="app_date" min="<?= date('Y-m-d') ?>"
                                         placeholder="dd/mm/yyyy">
@@ -389,7 +390,8 @@
                                     <div class="form-group col-md-4">
                                         <label for="amount">{{ __('messages.Amount') }}</label>
                                         <input type="text" class="form-control" id="amount" name="amount"
-                                            value="{{ isset($subscription->price) ? $subscription->price : '' }}" required>
+                                            value="{{ isset($subscription->price) ? $subscription->price : '' }}"
+                                            required>
 
 
                                     </div>
@@ -434,7 +436,7 @@
     </div>
 
     <div class="footer-main-box">
-        <div class="container">
+        <div class="container-fluid">
             <div class="footer-part-main-box">
                 <div class="row">
                     <div class="col-lg-4 col-md-4">
@@ -502,7 +504,8 @@
                                     <h3>{{ __('messages.Helpful links') }}</h3>
                                     <a href="{{ url('allfacilites') }}">{{ __('messages.Facilities') }}</a>
 
-                                    <a href="{{ url('termcondition') }}">{{ __('messages.Terms & Condition') }}</a>
+                                    <a
+                                        href="{{ url('termcondition') }}">{{ __('messages.Terms & Condition') }}</a>
                                     <a href="{{ url('privacypolicy') }}">{{ __('messages.Privacy Policy') }}</a>
                                     <a href="{{ url('contact_us') }}">{{ __('messages.Contact Us') }}</a>
                                 </div>
@@ -515,7 +518,8 @@
                             <div class="footer-r1-detail">
                                 <div class="footer-d1-box">
                                     <h3>{{ __('messages.Address') }}</h3>
-                                    <p>{{ isset($setting->address) ? $setting->address : Session::get('address') }}</p>
+                                    <p>{{ isset($setting->address) ? $setting->address : Session::get('address') }}
+                                    </p>
                                 </div>
                                 <div class="footer-d1-box">
                                     <p>{{ __('messages.Subscribe More Info') }}</p>
@@ -539,28 +543,32 @@
             <div class="footer-part2-main-box">
                 <div class="footer-bottom-main-box">
 
-                    <p>
-                        
-                        {{ __('messages.Designed and Managed by Prism') }}
-                    </p>
+                    <div class="row my-4">
 
-                    <div class="footer-icons-main-box">
-                        <p>{{ __('messages.All Right Reserved') }}</p>&nbsp;
-                        <p>{{ __('messages.Me Now') }}.</p>&nbsp;
-                        <p>{{ __('messages.Copyright') }} @ {{ date('Y') }}</p>&nbsp;
-                        <ul>
-                            <li>
-                                <a href="terms-of-service">{{ __('messages.Terms of Service') }}</a>&nbsp;
-                            </li>
-                            <li>
-                                <a href="privacy-policy">{{ __('messages.Privacy Policy') }}</a>&nbsp;
-                            </li>
-                            <li>
-                                <a href="copy-rights">{{ __('messages.Shipping Policy') }}</a>&nbsp;
-                            </li>
-                        </ul>
+                        <div class="col-md-9 footer-bottom-left">
+                            {{ __('messages.Copyright') }} @ {{ date('Y') }}
+                            {{ __('messages.Me Now') }} {{ __('messages.All Right Reserved') }}
+
+                            <span class="privacy_pages">
+                                <a href="terms-of-service">{{ __('messages.Terms of Service') }}</a>
+
+                                <a href="privacy-policy">{{ __('messages.Privacy Policy') }}</a>
+
+                                <a href="copy-rights">{{ __('messages.Shipping Policy') }}</a>
+                            </span>
+                        </div>
+
+                        <div class="col-md-3 footer-bottom-right">
+                            <a
+                                href="https://www.prism-me.com">{{ __('messages.Designed and Managed by Prism') }}</a>
+
+                        </div>
+
                     </div>
-                        {{-- <div class="footer-icon-box">
+
+
+
+                    {{-- <div class="footer-icon-box">
 							<a href="{{isset($setting->facebook_id)?$setting->facebook_id:''}}">
 								<i class="fab fa-facebook-f"></i>
 							</a>

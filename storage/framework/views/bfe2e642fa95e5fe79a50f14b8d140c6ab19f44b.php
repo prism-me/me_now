@@ -39,22 +39,15 @@
                                 <a href="<?php echo e(url('doctordetails/') . '/' . $d->user_id); ?>" class="denone">
                                     <div class="d-detail-collapse-doctor">
                                         <div class="doctorl-part-box">
-                                            <?php
-                                            if ($d->image) {
-                                                $d->image;
-                                            } else {
-                                                $image = asset('upload/profile/profile.png');
-                                            }
-                                            ?>
-                                            <div class="doctorl-dp-img doctorl-dp-img-1"
-                                                style="background-image: url({{'<?= $d->image ?>'}})"></div>
+                                           <img src="<?php echo e($d->image); ?>" style="width:70px;height:70px;">
+                                            
 
                                             <div class="doctorl-part-detail">
                                                 <h4><?php echo e(ucwords(strtolower($d->name))); ?></h4>
                                                 <p style="color:rgb(108, 108, 108)">
-                                                <?php echo e(substr($d->about_us, 0,  100)); ?>....
+                                                    <?php echo e(substr($d->about_us, 0,  100)); ?>....
                                         
-                                                <a href="<?php echo e(url('blog-detail'). '/'.$d->id); ?>" stle="color:#49B7C6;">Read More</a> </p>
+                                                <a href="<?php echo e(url('doctordetails'). '/'.$d->user_id); ?>" stle="color:#49B7C6;">Read More</a> </p>
                                                 <div class="book_appointment_doctor text-center">
                                                     <button>Make an Appointment</button>
                                                 </div>

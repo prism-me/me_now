@@ -10,7 +10,7 @@
 <?php $__env->startSection('content'); ?>
     <div class="container">
         <div class="global-heading">
-            <h2><?php echo e(__('messages.About Me Now')); ?> </h2>
+            <h2><?php echo e(__('messages.About_Me_Now')); ?> </h2>
             <p><?php echo e(__("messages.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                                                                                                                                                                                                     
                                                                                                                                                                                                                         ")); ?>
@@ -26,7 +26,7 @@
                 <div class="col-md-7">
                     <div class="who_we_are_cotent">
                         <h2>WHO WE ARE</h2>
-                        <h2>We Help To Get Solution</h2>
+                        <h2>We Help To Get Solutions</h2>
                         <p>
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsu
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsu
@@ -112,11 +112,11 @@
 
         <div class="about-content-widget">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-5">
                     <img src="https://lighthouse-media.s3.us-east-2.amazonaws.com/601679ac8e54020017840684/1640001095057_dreamstime_xxl_54964318%20%28Large%29.jpg"
                         class="img-fluid" alt="">
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-7">
                     <p>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                         industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
