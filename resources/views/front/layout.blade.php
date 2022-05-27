@@ -95,8 +95,11 @@
                                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Services </a>
                                 <ul class="dropdown-menu services-dropdown">
 
+                                   
+                                    
                                     @foreach ($department as $departments)
-                                        <li><a class="dropdown-item" href="{{ url('department') }}">
+                                    
+                                        <li><a class="dropdown-item" href="{{ url('department') . '/' . $departments->id }}">
                                                 {{ $departments->name }} </a>
 
                                             @if (!blank($departments->service))

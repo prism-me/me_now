@@ -11,24 +11,27 @@
             </div>
             <div class="department-part-main-box">
                 <div class="row">
-                    @if (count($department) > 0)
-                        @foreach ($department as $d)
+                    @if (count($department  ) > 0)
+                        
+                   
+                            @foreach ($departmentService as $service)
+                            
                                 <div class="col-lg-3 col-md-4 col-sm-6">
                                     <div class="department-part-box">
                                         <div class="department-part-img">
-                                            <img src="{{ $d->image }}">
+                                            <img src="{{ $service->image }}">
                                         </div>
                                         <div class="text-detail-box">
-										<h4>{{ $d->name }}</h4>
-                                            <p>{{ substr($d->short_description, 0, 75) }}</p>
+										<h4>{{ $service->name }}</h4>
+                                            <p>{{ substr($service->short_description, 0, 75) }}</p>
                                         </div>
                                         <div class="department-viewd-btn services-btn-main-box">
                                             <a
-                                                href="{{ url('departmentdetail') . '/' . $d->id }}">{{ __('messages.View Detail') }}</a>
+                                                href="{{ url('departmentdetail') . '/' . $service->id }}">{{ __('messages.View Detail') }}</a>
                                         </div>
                                     </div>
                                 </div>
-                        @endforeach
+                            @endforeach
                     @endif
                 </div>
             </div>

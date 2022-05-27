@@ -12,24 +12,27 @@
             </div>
             <div class="department-part-main-box">
                 <div class="row">
-                    <?php if(count($department) > 0): ?>
-                        <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <?php if(count($department  ) > 0): ?>
+                        
+                   
+                            <?php $__currentLoopData = $departmentService; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $service): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            
                                 <div class="col-lg-3 col-md-4 col-sm-6">
                                     <div class="department-part-box">
                                         <div class="department-part-img">
-                                            <img src="<?php echo e($d->image); ?>">
+                                            <img src="<?php echo e($service->image); ?>">
                                         </div>
                                         <div class="text-detail-box">
-										<h4><?php echo e($d->name); ?></h4>
-                                            <p><?php echo e(substr($d->description, 0, 75)); ?></p>
+										<h4><?php echo e($service->name); ?></h4>
+                                            <p><?php echo e(substr($service->short_description, 0, 75)); ?></p>
                                         </div>
                                         <div class="department-viewd-btn services-btn-main-box">
                                             <a
-                                                href="<?php echo e(url('departmentdetail') . '/' . $d->id); ?>"><?php echo e(__('messages.View Detail')); ?></a>
+                                                href="<?php echo e(url('departmentdetail') . '/' . $service->id); ?>"><?php echo e(__('messages.View Detail')); ?></a>
                                         </div>
                                     </div>
                                 </div>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     <?php endif; ?>
                 </div>
             </div>
@@ -38,4 +41,4 @@
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('front.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Projects\Menow\me_now\resources\views/front/department.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('front.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\meNow\resources\views/front/department.blade.php ENDPATH**/ ?>
