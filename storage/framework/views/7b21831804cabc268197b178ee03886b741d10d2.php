@@ -102,6 +102,31 @@
             allowfullscreen></iframe>
     </div>
     
+            <div class="pricing-part-main-box">
+                <div class="row">
+                    <?php $__currentLoopData = $package; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $p): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="col-md-4">
+                            <div class="pricing-all-content">
+                                <div class="pricing-part-box">
+                                    <h3><?php echo e($p->name); ?></h3>
+                                    <div class="pricing-cost">
+                                        <h3><?php echo e(Session::get('currency')); ?></h3>
+                                        <span><?php echo e($p->price); ?></span>
+                                        <h6>/ session</h6>
+                                    </div>
+                                    <p><?php echo e($p->description); ?></p>
+                                </div>
+                                <div class="pricing-part-btn">
+                                    <a class="btn"
+                                        href="<?php echo e(url('subscription') . '/' . $p->id); ?>"><?php echo e(__('messages.Order now')); ?></a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </div>
+            </div>
+        </div>
+    </div> --}}
 
     <div class="numbers-counter-main-box">
         <div class="container-fluid">

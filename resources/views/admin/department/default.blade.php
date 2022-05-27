@@ -58,7 +58,7 @@
                            <td>
                                <img src="{{ $d->image }}" class="imgsize1" style="width:50px;height:50px;"/>
                            </td>
-                           <td>{{isset($d->emergency_no)?$d->emergency_no:""}}</td>
+                           <td>{{ substr($d->short_description , 0,50)}}...</td>
                            <td>
                                 <a href="{{url('admin/savedepartment/').'/'.$d->id}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
                                 <a href="javascript:deleterow('deletedepartment','<?= $d->id ?>')" class="btn btn-danger">{{__('messages.Delete')}}</a>

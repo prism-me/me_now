@@ -20,7 +20,7 @@
                         {{ __('messages.All') }}
                     </div>
 
-                    @foreach ($doctor as $d)
+                    @foreach ($department as $d)
                         <div class="slide tablinks" onclick="openCity(event, '{{ $d->id }}')">
                             {{ $d->name }}
                         </div>
@@ -68,7 +68,7 @@
                                             <div class="doctorl-part-box">
                                                 <?php
                                                 if ($sa->image) {
-                                                    $image = asset('upload/doctor') . '/' . $sa->image;
+                                                    $image =  $sa->image;
                                                 } else {
                                                     $image = asset('upload/profile/profile.png');
                                                 }

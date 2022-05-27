@@ -34,61 +34,61 @@ use Mail;
 use validate;
 class FrontController extends Controller
 {
-       public function __construct(){
-          $setting = Setting::find(1);
-        //   Session::put("main_color","#000");
-        //   Session::put("text_color","#fff");
-        //   Session::put("headingtext_color","#0f4a86");
-        //   Session::put("lowbackground_box_color","#ededc2");
-        //   Session::put("slider_color","#f1f5ff");          
-          Session::put("main_banner",asset('upload/web').'/'.$setting->main_banner);
-       }
+    public function __construct(){
+        $setting = Setting::find(1);
+    //   Session::put("main_color","#000");
+    //   Session::put("text_color","#fff");
+    //   Session::put("headingtext_color","#0f4a86");
+    //   Session::put("lowbackground_box_color","#ededc2");
+    //   Session::put("slider_color","#f1f5ff");          
+        Session::put("main_banner",asset('upload/web').'/'.$setting->main_banner);
+    }
 
-       public function showhome(){
+    public function showhome(){
 
-           if(!isset($_COOKIE['fload'])){
-               setcookie('fload','1', time() + (86400 * 30), "/");
-            }
-            //$service=Service::get()->take(8);
-            $package= Package::get()->take(3);
-            $doctor= Doctor::get()->take(4);
-            $department= Department::with('service')->get();
-            $setting= Setting::find(1);
-            $reviews= Review::with('doctors','users')->get()->take(4);
-            return view("front.home")->with("package",$package)->with("setting",$setting)->with("department",$department)->with("review",$reviews)->with("doctorls",$doctor)->with("chatpage",'1');;
-       }
-
-       public function blog(){
-
-            if(!isset($_COOKIE['fload'])){
-                setcookie('fload','1', time() + (86400 * 30), "/");
-            }
-            $service=Service::get()->take(8);
-            $package=Package::get()->take(3);
-            $doctor=Doctor::get()->take(4);
-            $department=Department::with('service')->get();
-            $setting=Setting::find(1);
-            $blog= Blog::all();
-            $reviews=Review::with('doctors','users')->get()->take(4);
-            return view("front.blog")->with("services",$service)->with("setting",$setting)->with("department",$department)->with('blog',$blog);
-        
+        if(!isset($_COOKIE['fload'])){
+            setcookie('fload','1', time() + (86400 * 30), "/");
         }
+        //$service=Service::get()->take(8);
+        $package= Package::get()->take(3);
+        $doctor= Doctor::get()->take(4);
+        $department= Department::with('service')->get();
+        $setting= Setting::find(1);
+        $reviews= Review::with('doctors','users')->get()->take(4);
+        return view("front.home")->with("package",$package)->with("setting",$setting)->with("department",$department)->with("review",$reviews)->with("doctorls",$doctor)->with("chatpage",'1');;
+    }
 
-        public function blogdetails($id){
+    public function blog(){
 
-            $blog=Blog::all();
-            $doctor=Doctor::with('blog',"TimeTabledata")->where("user_id",$id)->first();
-            if(!$doctor) {
-                return redirect('/');
-            }
-            $blogdetails=Blog::with("doctor","service")->find($doctor->blog_id); 
-            $doctor->total_ratting=count(Review::where("doctor_id",$id)->get());
-            $doctor->ratting=Review::where("doctor_id",$id)->avg('ratting');
-            $reviews=Review::with('doctors','users')->where("doctor_id",$id)->get();
-            $blog = Blog::where('id',$id)->first();
-            $setting=Setting::find(1);
-            return view("front.blog_inner")->with("blog",$blog)->with("review",$reviews)->with("doctor",$doctor)->with("departmentdetails",$departmentdetails)->with("id",$id)->with("setting",$setting)->with("blogdetails", $blogdetails);
-       }
+        if(!isset($_COOKIE['fload'])){
+            setcookie('fload','1', time() + (86400 * 30), "/");
+        }
+        $service=Service::get()->take(8);
+        $package=Package::get()->take(3);
+        $doctor=Doctor::get()->take(4);
+        $department=Department::with('service')->get();
+        $setting=Setting::find(1);
+        $blog= Blog::all();
+        $reviews=Review::with('doctors','users')->get()->take(4);
+        return view("front.blog")->with("services",$service)->with("setting",$setting)->with("department",$department)->with('blog',$blog);
+    
+    }
+
+    public function blogdetails($id){
+
+        $blog=Blog::all();
+        $doctor=Doctor::with('blog',"TimeTabledata")->where("user_id",$id)->first();
+        if(!$doctor) {
+            return redirect('/');
+        }
+        $blogdetails=Blog::with("doctor","service")->find($doctor->blog_id); 
+        $doctor->total_ratting=count(Review::where("doctor_id",$id)->get());
+        $doctor->ratting=Review::where("doctor_id",$id)->avg('ratting');
+        $reviews=Review::with('doctors','users')->where("doctor_id",$id)->get();
+        $blog = Blog::where('id',$id)->first();
+        $setting=Setting::find(1);
+        return view("front.blog_inner")->with("blog",$blog)->with("review",$reviews)->with("doctor",$doctor)->with("departmentdetails",$departmentdetails)->with("id",$id)->with("setting",$setting)->with("blogdetails", $blogdetails);
+    }
 
 
 
@@ -106,7 +106,7 @@ class FrontController extends Controller
         return view("front.workshop")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with("workshop",$workshop);
     }
 
-    public function workshopdetail(){
+    public function workshopdetail($id){
         if(!isset($_COOKIE['fload'])){
             setcookie('fload','1', time() + (86400 * 30), "/");
          }
@@ -116,7 +116,8 @@ class FrontController extends Controller
          $department=Department::with('service')->get();
          $setting=Setting::find(1);
          $reviews=Review::with('doctors','users')->get()->take(4);
-       return view("front.workshops_inner")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department);
+         $workshop=Workshop::where('id',$id)->first();
+       return view("front.workshops_inner")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with('workshop',$workshop);
     }
 
 
@@ -205,6 +206,20 @@ class FrontController extends Controller
            return view("front.department")->with("department",$department)->with("setting",$setting);
        }
 
+
+        public function departmentdetail($id){
+           $department=Department::all();
+            $setting=Setting::find(1);
+           $departmentdetails=Department::with("doctor","service")->find($id);
+           $subServices = DepartService::where('department_id',$id)->get(); 
+                   
+           if($departmentdetails){
+               return view("front.departmentdetails")->with('subServices',$subServices)->with("department",$department)->with("departmentdetails",$departmentdetails)->with("setting",$setting);
+           }else{
+               return redirect('/');
+           }
+       }
+
        public function contact_us(){
            $department=Department::all();
            $setting=Setting::find(1);
@@ -287,6 +302,17 @@ class FrontController extends Controller
             return redirect()->back();
        }
 
+       
+       public function doctorlist(){
+           
+          $department=Department::all();
+          $doctor=Doctor::all();
+          $departmentdoctor=Department::with('doctor')->get();
+          $setting=Setting::find(1);
+          $department=Department::with('service')->get();
+          return view("front.doctorlist")->with("department",$department)->with("doctor",$doctor)->with("departmentdoctor",$departmentdoctor)->with("setting",$setting);
+       }
+
        public function doctordetails($id){
             $department=Department::all();
             $doctor=Doctor::with('department',"TimeTabledata")->where("user_id",$id)->first();
@@ -304,27 +330,6 @@ class FrontController extends Controller
             return view("front.doctordetails")->with("department",$department)->with("review",$reviews)->with("doctor",$doctor)->with("departmentdetails",$departmentdetails)->with("id",$id)->with("setting",$setting);
        }
 
-       public function departmentdetail($id){
-           $department=Department::all();
-            $setting=Setting::find(1);
-           $departmentdetails=Department::with("doctor","service")->find($id);
-           $subServices = DepartService::where('department_id',$id)->get(); 
-                   
-           if($departmentdetails){
-               return view("front.departmentdetails")->with('subServices',$subServices)->with("department",$department)->with("departmentdetails",$departmentdetails)->with("setting",$setting);
-           }else{
-               return redirect('/');
-           }
-       }
-
-       public function doctorlist(){
-           
-          $department=Department::all();
-          $doctor=Doctor::all();
-          $departmentdoctor=Department::with('doctor')->get();
-          $setting=Setting::find(1);
-          return view("front.doctorlist")->with("department",$department)->with("doctor",$doctor)->with("departmentdoctor",$departmentdoctor)->with("setting",$setting);
-       }
      
        public function gallery(){
            $department=Department::all();
@@ -519,6 +524,7 @@ class FrontController extends Controller
             return 0;
          }
        }
+
         public function resetpwd($code){
            $data=Resetpassword::where("code",$code)->get();
            $setting=Setting::find(1);
