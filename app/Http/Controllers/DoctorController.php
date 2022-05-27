@@ -19,7 +19,6 @@ class DoctorController extends UploadController
  
     public function index(){
         $data=Doctor::with('department')->get();
-        
         return view("admin.doctor.default")->with("data",$data);
     }
   
@@ -35,23 +34,11 @@ class DoctorController extends UploadController
             $setting=Setting::find(1);
             if($request->get("id")!="0"){
                 $request->validate([
-                    'department' => 'required',
                     'name' => 'required',
-                    'password'=>'required',
-                    'phone_no'=>'required',
-                    'aboutus'=>'required',
-                    'service'=>'required'
                 ]);
               }else{
                 $request->validate([
-                    'department' => 'required',
                     'name' => 'required',
-                    'email' => 'required|unique:users',
-                    'password'=>'required',
-                    'phone_no'=>'required',
-                    'aboutus'=>'required',
-                    'service'=>'required',
-                    'image'=>'required'
                 ]);
              }
 
