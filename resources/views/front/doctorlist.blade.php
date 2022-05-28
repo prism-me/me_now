@@ -44,9 +44,7 @@
                                                     class="denone">{{ ucwords(strtolower($d->name)) }}</a></h4>
                                             <p style="color:rgb(108, 108, 108)">
                                                 {{ substr($d->about_us, 0, 100) }}...
-                                                <br />
-                                                    <br />
-                                                <a href="{{ url('doctordetails'). '/'.$d->user_id  }}" stle="color:#49B7C6;">Read More</a> </p>
+                                                
                                             <div class="book_appointment_doctor">
                                                 <button>Make an Appointment</button>
                                             </div>
@@ -63,7 +61,7 @@
                     <div id="{{ $da->id }}" class="tabcontent">
                         <div class="row">
                             @foreach ($da->doctor as $sa)
-                                <a href="{{ url('doctordetails/') . '/' . $sa->user_id }}">
+                                <a href="{{ url('doctordetails/') . '/' . $sa->slug }}">
                                     <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up">
                                         <div class="d-detail-collapse-doctor">
                                             <div class="doctorl-part-box">

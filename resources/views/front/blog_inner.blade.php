@@ -1,6 +1,6 @@
 @extends('front.layout')
 @section('title')
-    {{ __('messages.Blog List') }}
+    {{ __('messages.Blog Detail') }}
 @stop
 @section('loader')
     <div id="overlayer"></div>
@@ -17,7 +17,7 @@
                     <div class="row">
                         <div class="col-md-9">
                             <div class="img_wrapper">
-                                <img src="{{ $blogdetails->featured_img }}" alt="" class="img-fluid">
+                                <img src="{{ $blogdetails->featured_img }}" alt=""  style="width:100%;">
                                 <div class="meta_data">
                                    <div> Posted at: 24, May 2014</div>
                                    <div>Author: Admin</div>
@@ -35,17 +35,17 @@
                             <div class="popular_posts">
                                 <h4> Popular Posts </h4>
                                 <ul>
-                                    @for ($i = 0; $i < 5; $i++)
+                                    @foreach($blog as $blogData)
                                         <li>
                                             <div class="img">
-                                                <img src="{{ $blogdetails->featured_img }}" alt="" class="img-fluid">
+                                                <img src="{{ $blogData->featured_img }}" alt="" class="img-fluid">
                                             </div>
                                             <div class="content">
-                                                <h6><a href="{{ url('blog'). '/1' }}">Lorem Ipsum.</a></h6>
-                                                <p>date : date here</p>
+                                                <h6><a href="{{ url('blogdetails'). '/' .$blogData->slug }}">Lorem Ipsum.</a></h6>
+                                                <p>Date : {{$blogData->created_at}}</p>
                                             </div>
                                         </li>
-                                    @endfor
+                                        @endforeach
                                 </ul>
                             </div>
                         </div>

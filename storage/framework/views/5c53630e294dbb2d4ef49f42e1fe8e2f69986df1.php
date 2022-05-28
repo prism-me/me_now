@@ -93,7 +93,6 @@
                                 <ul class="dropdown-menu services-dropdown">
 
 
-
                                     <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $departments): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <li><a class="dropdown-item"
                                                 href="<?php echo e(url('services') . '/' . $departments->slug); ?>">

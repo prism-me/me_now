@@ -28,17 +28,17 @@
                     @endforeach
                 </section>
             </div>
-
+            
             <div class="doctorpg-part-main-box">
                 <div id="all" class="tabcontent">
                     <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-6 " data-aos="fade-up">
-                                <a href="{{ url('workshop') . '/' . $d->id }}" class="denone">
+                        @foreach ($workshop as $d)
+                        <div class="col-lg-4 col-md-4 col-sm-6 " data-aos="fade-up">
+                                <a href="{{ url('workshop') . '/' . $d->slug }}" class="denone">
                                     <div class="d-detail-collapse-doctor">
                                         <div class="doctorl-part-box">
                                             <img src="{{ $d->featured_img }}" class="img-fluid">
-                                            {{-- <div class="doctorl-dp-img doctorl-dp-img-1"
-                                                style=""></div> --}}
+                                          
 
                                             <div class="doctorl-part-detail">
                                                 <h4>{{ ucwords(strtolower($d->title)) }}</h4>
@@ -46,7 +46,6 @@
                                                 <p style="color:rgb(108, 108, 108)">
                                                     {{ substr($d->short_description, 0,  150) }}....
                                             
-                                                <a href="{{ url('workshop') . '/' . $d->id }}" stle="color:#49B7C6;">Read More</a> </p>
                                                 <div class="book_appointment_doctor">
                                                     <button>Book Event</button>
                                                 </div>
@@ -56,7 +55,8 @@
                                     </div>
                                 </a>
                             </div>
-                    </div>
+                            @endforeach
+                        </div>
                 </div>
             </div>
         </div>

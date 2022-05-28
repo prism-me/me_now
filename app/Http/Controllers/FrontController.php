@@ -78,11 +78,12 @@ class FrontController extends Controller
 
     public function blogdetails($slug){
 
-        $blogdata = Blog::where('slug',$slug)->first();
-        $departmentdetails=Department::with('service')->get();
+        $blogdetails = Blog::where('slug',$slug)->first();
+        $blog = Blog::get()->take(4);
+        $department=Department::with('service')->get();
 
         $setting=Setting::find(1);
-        return view("front.blog_inner")->with("departmentdetails",$departmentdetails)->with("setting",$setting)->with("blogdetails", $blogdetails);
+        return view("front.blog_inner")->with("department",$department)->with("setting",$setting)->with("blogdetails", $blogdetails)->with('blog',$blog);
     }
 
     
@@ -247,7 +248,6 @@ class FrontController extends Controller
 
         public function departmentdetail($service,$subService){
             
-            //dropdown
             $department=Department::with('service')->get();
             
             //sub services

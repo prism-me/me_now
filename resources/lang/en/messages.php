@@ -425,6 +425,7 @@ return [
 
 
 		"Blog"=>"Blog",
+		"Blog Detail"=>"Blog Detail",
 		"Sub-Title"=>"Sub-Title",
 		"Title"=>"Title",
 		"Save Blog"=>"Save Blog",

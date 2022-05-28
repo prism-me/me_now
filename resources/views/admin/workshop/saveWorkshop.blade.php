@@ -83,6 +83,12 @@
                         </label>
                         <textarea id="short_description" placeholder="{{__('messages.Enter').'  '.__('messages.Description')}}" class="form-control" required name="description" value="{{ isset($data->description)?$data->description:''}}">{{ isset($data->description)?$data->description:''}}</textarea>
                      </div>
+                     <div class="form-group">
+                           <label for="name" class=" form-control-label">
+                           {{__('messages.Slug')}}
+                           </label>
+                           <input type="text" id="slug" required placeholder="{{__('messages.Enter').' '.__('messages.Slug')}}"  class="form-control"  name="slug" value="{{ isset($data->slug)?$data->slug:''}}">
+                        </div>
                      
                      <div class="form-group">
                          <label for="name" class=" form-control-label">

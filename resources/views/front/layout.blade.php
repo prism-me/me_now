@@ -96,7 +96,6 @@
                                 <ul class="dropdown-menu services-dropdown">
 
 
-
                                     @foreach ($department as $departments)
                                         <li><a class="dropdown-item"
                                                 href="{{ url('services') . '/' . $departments->slug }}">

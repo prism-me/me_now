@@ -58,6 +58,7 @@ class WorkshopController extends UploadController
                     'description' => $data['description'],
                     'short_description' => isset($data['short_description']) ?  : '',
                     'event_date' => $data['event_date'],
+                    'slug' => $data['slug'],
                     'featured_img' => $mediaUpload
         ));
         return redirect("admin/workshops");

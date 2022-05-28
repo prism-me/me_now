@@ -63,14 +63,14 @@
 								  <div class="col-lg-3 col-md-4 col-sm-6">
 									<div class="department-part-box">
 										<div class="department-part-img">
-											<img src="{{asset('public/upload/department').'/'.$d->image}}">
+											<img src="{{$d->image}}">
 										</div>
 										<div class="text-detail-box">
 											<h4>{{$d->name}}</h4>
-											<p>{{substr($d->description,0,75)}}</p>
+											<p>{{substr($d->short_description,0,75)}}</p>
 										</div>
 										<div class="department-viewd-btn services-btn-main-box">
-											<a href="{{url('departmentdetail').'/'.$d->id}}">{{__('messages.View Detail')}}</a>
+											<a href="{{url('departmentdetail').'/'.$d->slug}}">{{__('messages.View Detail')}}</a>
 										</div>
 									</div>
 								  </div>
