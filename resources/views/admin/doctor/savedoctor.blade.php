@@ -170,6 +170,13 @@
                                  <input type="file" id="file" name="image" class="form-control-file" accept="image/*">
                               </div>
                            </div>
+                           <div class="col-md-6">
+                              <label for="name" class=" form-control-label">
+                              {{__('messages.Slug')}}
+                              </label>
+                              <input type="text" id="slug" required placeholder="{{__('messages.Enter').' '.__('messages.Slug')}}"  class="form-control"  name="slug" value="{{ isset($data->slug)?$data->slug:''}}">
+                           </div>
+                           
                            <div>
                                @if(Session::get("is_demo")=='1')
                             <button id="payment-button" type="button" onclick="disablebtn()"  class="btn btn-lg btn-info floatright">

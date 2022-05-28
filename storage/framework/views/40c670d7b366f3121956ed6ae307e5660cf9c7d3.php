@@ -290,4 +290,4 @@
          </script>
    </body>
 </html>
-<?php /**PATH D:\Projects\Menow\me_now\resources\views/admin/layout.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\xampp\htdocs\meNow\resources\views/admin/layout.blade.php ENDPATH**/ ?>

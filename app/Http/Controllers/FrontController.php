@@ -76,20 +76,13 @@ class FrontController extends Controller
 
 
 
-    public function blogdetails($id){
+    public function blogdetails($slug){
 
-        $blog=Blog::all();
-        $doctor=Doctor::with('blog',"TimeTabledata")->where("user_id",$id)->first();
-        if(!$doctor) {
-            return redirect('/');
-        }
-        $blogdetails=Blog::with("doctor","service")->find($doctor->blog_id); 
-        $doctor->total_ratting=count(Review::where("doctor_id",$id)->get());
-        $doctor->ratting=Review::where("doctor_id",$id)->avg('ratting');
-        $reviews=Review::with('doctors','users')->where("doctor_id",$id)->get();
-        $blog = Blog::where('id',$id)->first();
+        $blogdata = Blog::where('slug',$slug)->first();
+        $departmentdetails=Department::with('service')->get();
+
         $setting=Setting::find(1);
-        return view("front.blog_inner")->with("blog",$blog)->with("review",$reviews)->with("doctor",$doctor)->with("departmentdetails",$departmentdetails)->with("id",$id)->with("setting",$setting)->with("blogdetails", $blogdetails);
+        return view("front.blog_inner")->with("departmentdetails",$departmentdetails)->with("id",$id)->with("setting",$setting)->with("blogdetails", $blogdetails);
     }
 
     

@@ -80,6 +80,13 @@
                         </label>
                         <input type="text" id="posted-by" placeholder="{{__('messages.Enter').'  '.__('messages.Posted By')}}" class="form-control" required name="posted_by" value="{{ isset($data->posted_by)?$data->posted_by:''}}">
                      </div>
+                     
+                     <div class="form-group">
+                           <label for="name" class=" form-control-label">
+                           {{__('messages.Slug')}}
+                           </label>
+                           <input type="text" id="slug" required placeholder="{{__('messages.Enter').' '.__('messages.Slug')}}"  class="form-control"  name="slug" value="{{ isset($data->slug)?$data->slug:''}}">
+                        </div>
                     
                      <div class="form-group">
                         <label for="file" class=" form-control-label">  
@@ -91,6 +98,7 @@
                         <input type="file" id="file" name="featured_img" class="form-control-file" accept="image/*">
                     
                      <div>
+                     
                      <div class="form-group">
                         @if(Session::get("is_demo")=='1')
                            <button id="payment-button" type="button"  onclick="disablebtn()" class="btn btn-lg btn-info" >

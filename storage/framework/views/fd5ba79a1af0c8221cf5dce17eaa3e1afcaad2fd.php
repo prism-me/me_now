@@ -21,7 +21,7 @@
                             <div class="col-md-4">
                                 <div class="blog-single">
                                     <div class="img_wrapper">
-                                        <a href="<?php echo e(url('blog-detail'). '/'.$data->id); ?>"><img src="<?php echo e($data->featured_img); ?>" alt="blog" class="img-fluid"></a>
+                                        <a href="<?php echo e(url('blog-detail'). '/'.$data->slug); ?>"><img src="<?php echo e($data->featured_img); ?>" alt="blog" class="img-fluid"></a>
                                     </div>
                                     <div class="content_wrapper">
                                         <div class="date_time">
@@ -31,11 +31,11 @@
                                             </div>
                                         </div>
                                         <div class="text_wrapper">
-                                            <h4><a href="<?php echo e(url('blog-detail'). '/'.$data->id); ?>"><?php echo e($data->title); ?></a></h4>
+                                            <h4><a href="<?php echo e(url('blog-detail'). '/'.$data->slug); ?>"><?php echo e($data->title); ?></a></h4>
                                             <p style="color:rgb(108, 108, 108)">
                                                 <?php echo e(substr($data->description, 0,  150)); ?>....
                                         
-                                            <a href="<?php echo e(url('blog-detail'). '/'.$data->id); ?>" stle="color:#49B7C6;">Read More</a> </p>
+                                            <a href="<?php echo e(url('blog-detail'). '/'.$data->slug); ?>" stle="color:#49B7C6;">Read More</a> </p>
                                         </div>
                                     </div>
                                 </div>
@@ -54,4 +54,4 @@
     </script>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('front.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Projects\Menow\me_now\resources\views/front/blog.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('front.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\meNow\resources\views/front/blog.blade.php ENDPATH**/ ?>

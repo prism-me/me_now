@@ -20,7 +20,7 @@
                             <div class="col-md-4">
                                 <div class="blog-single">
                                     <div class="img_wrapper">
-                                        <a href="{{ url('blog-detail'). '/'.$data->id }}"><img src="{{ $data->featured_img}}" alt="blog" class="img-fluid"></a>
+                                        <a href="{{ url('blog-detail'). '/'.$data->slug }}"><img src="{{ $data->featured_img}}" alt="blog" class="img-fluid"></a>
                                     </div>
                                     <div class="content_wrapper">
                                         <div class="date_time">
@@ -29,11 +29,11 @@
                                             </div>
                                         </div>
                                         <div class="text_wrapper">
-                                            <h4><a href="{{ url('blog-detail'). '/'.$data->id }}">{{ $data->title }}</a></h4>
+                                            <h4><a href="{{ url('blog-detail'). '/'.$data->slug }}">{{ $data->title }}</a></h4>
                                             <p style="color:rgb(108, 108, 108)">
                                                 {{ substr($data->description, 0,  150) }}....
                                         
-                                            <a href="{{ url('blog-detail'). '/'.$data->id }}" stle="color:#49B7C6;">Read More</a> </p>
+                                            <a href="{{ url('blog-detail'). '/'.$data->slug }}" stle="color:#49B7C6;">Read More</a> </p>
                                         </div>
                                     </div>
                                 </div>

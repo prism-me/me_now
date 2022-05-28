@@ -103,6 +103,7 @@ class DoctorController extends UploadController
             $store->twitter_id=$request->get("twitter_id");
             $store->google_id=$request->get("google_id");
             $store->description = $request->get("description");
+            $store->slug = $request->get("slug");
             $store->short_description=$request->get("short_description");
             $store->image=  isset($mediaUpload)? $mediaUpload :'' ;
             $store->save(); 

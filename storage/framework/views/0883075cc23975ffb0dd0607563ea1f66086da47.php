@@ -47,7 +47,9 @@
                                                     class="denone"><?php echo e(ucwords(strtolower($d->name))); ?></a></h4>
                                             <p style="color:rgb(108, 108, 108)">
                                                 <?php echo e(substr($d->about_us, 0, 100)); ?>...
-                                                
+                                                <br />
+                                                    <br />
+                                                <a href="<?php echo e(url('doctordetails'). '/'.$d->user_id); ?>" stle="color:#49B7C6;">Read More</a> </p>
                                             <div class="book_appointment_doctor">
                                                 <button>Make an Appointment</button>
                                             </div>

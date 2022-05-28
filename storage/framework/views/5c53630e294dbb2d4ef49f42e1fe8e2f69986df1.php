@@ -92,17 +92,18 @@
                                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Services </a>
                                 <ul class="dropdown-menu services-dropdown">
 
-                                   
-                                    
+
+
                                     <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $departments): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    
-                                        <li><a class="dropdown-item" href="<?php echo e(url('services') . '/' . $departments->slug); ?>">
+                                        <li><a class="dropdown-item"
+                                                href="<?php echo e(url('services') . '/' . $departments->slug); ?>">
                                                 <?php echo e($departments->name); ?> </a>
 
                                             <?php if(!blank($departments->service)): ?>
                                                 <ul class="submenu dropdown-menu">
                                                     <?php $__currentLoopData = $departments->service; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $subdepartment): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <li><a class="dropdown-item" href="<?php echo e(url('services') . '/' . $departments->slug .'/' . $subdepartment->slug); ?>">
+                                                        <li><a class="dropdown-item"
+                                                                href="<?php echo e(url('services') . '/' . $departments->slug . '/' . $subdepartment->slug); ?>">
                                                                 <?php echo e($subdepartment->name); ?></a>
                                                         </li>
                                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -478,12 +479,12 @@
                         <div class="footer-r1-box">
                             <div class="footer-r1-detail">
                                 <div class="footer-d1-box">
-                                    <h3><?php echo e(__('messages.Our department')); ?></h3>
+                                    <h3><?php echo e(__('messages.Our Services')); ?></h3>
                                     <?php $i = 0; ?>
                                     <?php if(isset($department)): ?>
                                         <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <?php if($i < 5): ?>
-                                                <a href="<?php echo e(url('departmentdetail') . '/' . $d->id); ?>"><?php echo e($d->name); ?>
+                                                <a href="<?php echo e(url('services') . '/' . $d->slug); ?>"><?php echo e($d->name); ?>
 
                                                     <?php echo e(__('messages.Department')); ?></a>
                                                 <?php $i++; ?>
@@ -493,7 +494,7 @@
                                         <?php if(Session::get('departmentlist')): ?>
                                             <?php $__currentLoopData = Session::get('departmentlist'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <?php if($i < 5): ?>
-                                                    <a href="<?php echo e(url('departmentdetail') . '/' . $d->id); ?>"><?php echo e($d->name); ?>
+                                                    <a href="<?php echo e(url('services') . '/' . $d->slug); ?>"><?php echo e($d->name); ?>
 
                                                         <?php echo e(__('messages.Department')); ?></a>
                                                     <?php $i++; ?>
@@ -511,12 +512,18 @@
                             <div class="footer-r1-detail">
                                 <div class="footer-d1-box">
                                     <h3><?php echo e(__('messages.Helpful links')); ?></h3>
-                                    <a href="<?php echo e(url('allfacilites')); ?>"><?php echo e(__('messages.Facilities')); ?></a>
 
+                                    <a href="<?php echo e(url('about')); ?>"><?php echo e(__('messages.About')); ?></a>
+                                    <a href="<?php echo e(url('events')); ?>"><?php echo e(__('messages.Events')); ?></a>
+                                    <a href="<?php echo e(url('workshop')); ?>"><?php echo e(__('messages.Workshops')); ?></a>
+                                    <a href="<?php echo e(url('blog')); ?>"><?php echo e(__('messages.Blog')); ?></a>
+                                    <a href="<?php echo e(url('faqs')); ?>"><?php echo e(__('messages.FAQs')); ?></a>
+                                    <a href="<?php echo e(url('contact_us')); ?>"><?php echo e(__('messages.Contact Us')); ?></a>
                                     <a
                                         href="<?php echo e(url('termcondition')); ?>"><?php echo e(__('messages.Terms & Condition')); ?></a>
+                                    <a
+                                        href="<?php echo e(url('women-empowerment')); ?>"><?php echo e(__('messages.Women Empowerment')); ?></a>
                                     <a href="<?php echo e(url('privacypolicy')); ?>"><?php echo e(__('messages.Privacy Policy')); ?></a>
-                                    <a href="<?php echo e(url('contact_us')); ?>"><?php echo e(__('messages.Contact Us')); ?></a>
                                 </div>
                             </div>
                         </div>
@@ -562,9 +569,9 @@
 
 
                             <span class="privacy_pages">
-                                <a href="terms-of-service"><?php echo e(__('messages.Terms of Service')); ?></a>
+                                <a href="termcondition"><?php echo e(__('messages.Terms of Service')); ?></a>
 
-                                <a href="privacy-policy"><?php echo e(__('messages.Privacy Policy')); ?></a>
+                                <a href="privacypolicy"><?php echo e(__('messages.Privacy Policy')); ?></a>
 
                                 <a href="copy-rights"><?php echo e(__('messages.Shipping Policy')); ?></a>
                             </span>

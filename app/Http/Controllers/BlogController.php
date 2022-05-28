@@ -59,7 +59,8 @@ class BlogController extends UploadController
                     'sub_title' => $data['sub_title'],
                 'description' => $data['description'],
                 'posted_by' => $data['posted_by'],
-                'featured_img' => $mediaUpload
+                'featured_img' => $mediaUpload,
+                'slug' => $data['slug']
                 ));
         return redirect("admin/blogs");
     }

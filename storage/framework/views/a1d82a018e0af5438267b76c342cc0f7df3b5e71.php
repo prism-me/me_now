@@ -51,4 +51,4 @@
         	});
        }
        
-    </script><?php /**PATH D:\Projects\Menow\me_now\resources\views/front/firebase_config.blade.php ENDPATH**/ ?>
+    </script><?php /**PATH C:\xampp\htdocs\meNow\resources\views/front/firebase_config.blade.php ENDPATH**/ ?>

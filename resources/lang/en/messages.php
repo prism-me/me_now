@@ -449,6 +449,7 @@ return [
 
 
 		"About Doctor" => "About Doctor",
+		"Slug" => "Slug",
 		"Frequently Asked Questions" => "Frequently Asked Questions",
 		
 
