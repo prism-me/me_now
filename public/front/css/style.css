@@ -611,7 +611,7 @@ a:hover{
     font-size: 14px;
     color: #767676;
     margin-bottom: 17px;
-    text-align: justify;
+    /* text-align: justify; */
     font-family: 'Roboto', sans-serif ;
 }
 
@@ -756,7 +756,7 @@ p.testip {
 .footer-main-box {
     padding: 50px 0px 0px;
     background-color: black;
-    color: white;
+    color: #767676;
 }
 
 .footer-logo-box img {
@@ -777,12 +777,13 @@ p.testip {
 
 .footer-r1-detail a {
     margin-bottom: 5px;
-    font-size: 12px;
+    font-size: 15px;
     font-family: 'Roboto', sans-serif ;
     cursor: pointer;
     display: inline-block;
-    color: white;
+    color: #767676;
     width: 90%;
+
 }
 
 .footer-d1-box {
@@ -798,7 +799,7 @@ p.testip {
     padding: 7px 10px 7px 40px;
     border: none;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 15px;
     width: 90%;
     outline: none;
 }
@@ -812,7 +813,7 @@ p.testip {
     position: absolute;
     left: 0;
     top: 5px;
-    font-size: 16px;
+    font-size: 15px;
     padding: 7px 12px;
     color: black;
     transition: 0.3s;

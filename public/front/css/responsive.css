@@ -629,6 +629,35 @@ display: none !important;
 .doctorl-part-box img{
 	width: 100%;
 }
+.who_we_are_cotent h2:nth-child(1){
+	margin:20px;
+}
+.who_we_are_cotent h2:nth-child(1):before{
+	margin-right: 0.5rem;
+}
+.who_we_are_cotent h2 {
+    margin: 1rem auto 10px;
+    font-size: 1.3rem;
+}
+.who_we_are_cotent{
+	text-align: center
+}
+.who_we_are_sub_section{
+	text-align: center;
+}
+.who_we_are_sub_section h4 {
+    margin-bottom: 9px;
+    margin-top: 16px;
+}
+.about_tiles .single-tile {
+    box-shadow: 0 0 12px #ddd;
+}
+.about_tiles {
+    margin: 40px auto;
+}
+.text-margin{
+	margin-top: 25px;
+}
 }
 
 /*========== Max-width 576px end ==========*/
@@ -642,3 +671,7 @@ display: none !important;
 }
 }
 
+p, .card-body{
+	color: #767676;
+	font-size: 15px !important;
+}

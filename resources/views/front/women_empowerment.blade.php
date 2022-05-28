@@ -1,3 +1,4 @@
+
 @extends('front.layout')
 @section('title')
     {{ __('messages.Workshops') }}
@@ -23,8 +24,8 @@
                 </div>
                 <div class="col-md-7">
                     <div class="who_we_are_cotent">
-                        <h2>WOMEN EMPOWERMENT</h2>
-                        <h2>We Help To Get Solution</h2>
+                        <h2>WHO WE ARE</h2>
+                        <h2>We Help To Get Solutions</h2>
                         <p>
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsu
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsu
@@ -110,12 +111,12 @@
 
         <div class="about-content-widget">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-5 col-sm-12">
                     <img src="https://lighthouse-media.s3.us-east-2.amazonaws.com/601679ac8e54020017840684/1640001095057_dreamstime_xxl_54964318%20%28Large%29.jpg"
                         class="img-fluid" alt="">
                 </div>
-                <div class="col-md-8">
-                    <p>
+                <div class="col-md-7 col-sm-12">
+                    <p class="text-margin">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                         industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
                         and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
@@ -125,7 +126,7 @@
 
                     </p>
                     <div class="row text-section-about">
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-12">
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
                                 been the
                                 industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
@@ -153,22 +154,22 @@
                     @if (count($doctor) > 0)
                         @foreach ($doctor as $d)
                             <div class="col-lg-3 col-md-6 col-sm-6">
-                                <a href="{{ url('doctordetails/') . '/' . $d->user_id }}" class="anchor-doctor-image">
-                                    <div class="doctorl-part-box">
-                                        <?php
+                                <div class="doctorl-part-box">
+                                    <?php
                                         if ($d->image) {
                                             $image = $d->image;
                                         } else {
                                             $image = asset('upload/profile/profile.png');
                                         }
                                         ?>
+                                        <a href="{{ url('doctordetails/') . '/' . $d->slug }}" class="anchor-doctor-image">
                                         <div class="doctorl-dp-img doctorl-dp-img-1"
-                                            style="background-image: url('<?= $image ?>')"></div>
+                                            style="background-image: url('<?= $image ?>')"></div></a>
                                         <div class="doctorl-part-detail">
-                                            <h4>{{ ucwords(strtolower($d->name)) }}</h4>
+                                            <h4><a href="{{ url('doctordetails/') . '/' . $d->slug }}" class="anchor-doctor-image">{{ ucwords(strtolower($d->name)) }}</a></h4>
                                             <p>{{ substr(trim($d->about_us), 0, 135) }}</p>
-                                            <div class="book_appointment_doctor text-center">
-                                                <button>Make an Appointment</button>
+                                            <div class="book_appointment_doctor">
+                                                <button data-toggle="modal" data-target="#appointmentModal">Make an Appointment</button>
                                             </div>
                                         </div>
                                         <div class="icons-images">
@@ -194,7 +195,7 @@
                                             </span> --}}
                                         </div>
                                     </div>
-                                </a>
+                                
                             </div>
                         @endforeach
                     @endif
@@ -267,81 +268,58 @@
             <h2>{{ __('messages.Frequently Asked Questions') }}</h2>
             <p>{{ __('messages.Talent wins games, but teamwork and intelligence win championships') }}</p>
         </div>
-        <div class="faq">
-            <div id="accordion">
+        <div class="faq my-5">
+            <div class="accordion" id="accordionExample">
                 <div class="card">
-                    <div class="card-header" id="headingOne">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
-                                aria-expanded="true" aria-controls="collapseOne">
-                                Collapsible Group Item #1
-                            </button>
-                        </h5>
+                    <div class="card-header collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true">
+                        <span class="title">Collapsible Group Item #1 </span>
+                        <span class="accicon"><i class="fas fa-angle-down rotate-icon"></i></span>
                     </div>
-
-                    <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordion">
+                    <div id="collapseOne" class="collapse" data-parent="#accordionExample">
                         <div class="card-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                            3
-                            wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                            laborum
-                            eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
-                            nulla
-                            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                            nesciunt
-                            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                            farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                            labore sustainable VHS.
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                            squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                            nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+                            single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+                            beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+                            lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you
+                            probably haven't heard of them accusamus labore sustainable VHS.
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-header" id="headingTwo">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
-                                aria-expanded="false" aria-controls="collapseTwo">
-                                Collapsible Group Item #2
-                            </button>
-                        </h5>
+                    <div class="card-header collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                        aria-expanded="false" aria-controls="collapseTwo">
+                        <span class="title">Collapsible Group Item #2</span>
+                        <span class="accicon"><i class="fas fa-angle-down rotate-icon"></i></span>
                     </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div id="collapseTwo" class="collapse" data-parent="#accordionExample">
                         <div class="card-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                            3
-                            wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                            laborum
-                            eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
-                            nulla
-                            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                            nesciunt
-                            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                            farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                            labore sustainable VHS.
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                            squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                            nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+                            single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+                            beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+                            lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you
+                            probably haven't heard of them accusamus labore sustainable VHS.
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-header" id="headingThree">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
-                                aria-expanded="false" aria-controls="collapseThree">
-                                Collapsible Group Item #3
-                            </button>
-                        </h5>
+                    <div class="card-header collapsed" data-toggle="collapse" data-target="#collapseThree"
+                        aria-expanded="false">
+                        <span class="title">Collapsible Group Item #3</span>
+                        <span class="accicon"><i class="fas fa-angle-down rotate-icon"></i></span>
                     </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div id="collapseThree" class="collapse" data-parent="#accordionExample">
                         <div class="card-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                            3
-                            wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                            laborum
-                            eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
-                            nulla
-                            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                            nesciunt
-                            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                            farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                            labore sustainable VHS.
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                            squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                            nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+                            single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+                            beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+                            lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you
+                            probably haven't heard of them accusamus labore sustainable VHS.
                         </div>
                     </div>
                 </div>

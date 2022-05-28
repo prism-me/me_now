@@ -112,12 +112,12 @@
 
         <div class="about-content-widget">
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-5 col-sm-12">
                     <img src="https://lighthouse-media.s3.us-east-2.amazonaws.com/601679ac8e54020017840684/1640001095057_dreamstime_xxl_54964318%20%28Large%29.jpg"
                         class="img-fluid" alt="">
                 </div>
-                <div class="col-md-7">
-                    <p>
+                <div class="col-md-7 col-sm-12">
+                    <p class="text-margin">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                         industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
                         and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
@@ -127,7 +127,7 @@
 
                     </p>
                     <div class="row text-section-about">
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-12">
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
                                 been the
                                 industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
@@ -155,22 +155,22 @@
                     <?php if(count($doctor) > 0): ?>
                         <?php $__currentLoopData = $doctor; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="col-lg-3 col-md-6 col-sm-6">
-                                <a href="<?php echo e(url('doctordetails/') . '/' . $d->slug); ?>" class="anchor-doctor-image">
-                                    <div class="doctorl-part-box">
-                                        <?php
+                                <div class="doctorl-part-box">
+                                    <?php
                                         if ($d->image) {
                                             $image = $d->image;
                                         } else {
                                             $image = asset('upload/profile/profile.png');
                                         }
                                         ?>
+                                        <a href="<?php echo e(url('doctordetails/') . '/' . $d->slug); ?>" class="anchor-doctor-image">
                                         <div class="doctorl-dp-img doctorl-dp-img-1"
-                                            style="background-image: url('<?= $image ?>')"></div>
+                                            style="background-image: url('<?= $image ?>')"></div></a>
                                         <div class="doctorl-part-detail">
-                                            <h4><?php echo e(ucwords(strtolower($d->name))); ?></h4>
+                                            <h4><a href="<?php echo e(url('doctordetails/') . '/' . $d->slug); ?>" class="anchor-doctor-image"><?php echo e(ucwords(strtolower($d->name))); ?></a></h4>
                                             <p><?php echo e(substr(trim($d->about_us), 0, 135)); ?></p>
-                                            <div class="book_appointment_doctor text-center">
-                                                <button>Make an Appointment</button>
+                                            <div class="book_appointment_doctor">
+                                                <button data-toggle="modal" data-target="#appointmentModal">Make an Appointment</button>
                                             </div>
                                         </div>
                                         <div class="icons-images">
@@ -178,7 +178,7 @@
                                             
                                         </div>
                                     </div>
-                                </a>
+                                
                             </div>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     <?php endif; ?>

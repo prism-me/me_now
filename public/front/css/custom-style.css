@@ -81,7 +81,7 @@ display: inline-block;
 .doctorl-part-detail{
     background: #DAF0FF;
     padding: 1rem;
-    height: 200px;
+    height: 230px;
 
 }
 
@@ -298,18 +298,18 @@ font-weight: bold;
     margin : 0px 1rem;
 }
 .privacy_pages a{
-    color: #fff;
+    color: #767676;
 }
 
 .privacy_pages a:nth-child(1){
 
-    border-right: 1px solid white;
+    border-right: 1px solid #767676;
     padding-right: 0.7rem;
 }
 
 .privacy_pages a:nth-child(2){
     
-    border-right: 1px solid white;
+    border-right: 1px solid #767676;
     padding-left: 0.7rem;
     padding-right: 0.7rem;
 }
@@ -317,7 +317,7 @@ font-weight: bold;
     padding-left: 0.7rem;
 }
 .footer-bottom-right a{
-    color: #fff;
+    color: #767676;
 }
 .department_wrappers{
     border:1px solid #48b7c6;
@@ -531,3 +531,32 @@ height:450px;
     width: 40px;
 }
 
+.termsmar{
+    line-height: 36px;
+}
+
+.rotate-icon{
+    color: #1B7081;
+}
+
+.faq .card-header{
+    background:transparent !important;
+}
+.faq .card-header .title {
+    font-size: 17px;
+    color: #000;
+}
+.faq .card-header .accicon {
+  float: right;
+  font-size: 20px;  
+  width: 1.2em;
+}
+.faq .card-header{
+  cursor: pointer;
+  border-bottom: none;
+}
+
+
+.faq .card-header:not(.collapsed) .rotate-icon {
+  transform: rotate(180deg);
+}
