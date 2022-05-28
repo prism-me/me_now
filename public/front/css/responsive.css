@@ -584,6 +584,51 @@ p.testip {
 .appointment-section .owl-nav{
 	display:none !important;
 }
+
+
+.testimonial-main-box .owl-carousel .owl-item img {
+
+	height:95px !important;
+	margin: 7px auto !important;
+}
+.testimonial-main-box .owl-carousel .owl-item p.testip {
+    text-align: center;
+    font-size: 14px;
+    padding-left: 10px;
+}
+.testimonial-main-box .owl-carousel .owl-item .testimonialh {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 0px;
+    float: none;
+    color: #49b7c6;
+	margin-bottom: 9px;
+}
+.footer-bottom-left {
+    text-align: center;
+    margin: 0.5rem;
+}
+.footer-bottom-right {
+    text-align: center;
+}
+.navbar-nav .dropdown-menu{
+	box-shadow: none;
+}
+
+.services-dropdown{
+	position: static !important;
+	margin: 0px;
+}
+.services-dropdown .dropdown-item{
+padding-left: 12px;
+}
+.services-dropdown .submenu{
+display: none !important;
+}
+
+.doctorl-part-box img{
+	width: 100%;
+}
 }
 
 /*========== Max-width 576px end ==========*/

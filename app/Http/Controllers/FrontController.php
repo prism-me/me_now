@@ -230,26 +230,36 @@ class FrontController extends Controller
            return view("front.facilites")->with("department",$department)->with("facilites",$service)->with("setting",$setting);
        }
 
-        public function department($id){
-            $departmentService=DepartService::where("department_id",$id)->get();
-            
+        public function department($service){
+            $departmentId = Department::where('slug' , $service)->first();
+            $departmentService=DepartService::where("department_id",$departmentId->id)->get();
             $department=Department::with('service')->get();
     
-           $setting=Setting::find(1);
-           return view("front.department")->with("department",$department)->with("setting",$setting)->with("departmentService",$departmentService);
+            $setting=Setting::find(1);
+            return view("front.department")->with("department",$department)->with("setting",$setting)->with("departmentService",$departmentService)->with('serviceSlug' , $service);
         }
 
 
-        public function departmentdetail($id){
-           $department=Department::all();
+        public function departmentdetail($service,$subService){
+            
+            //dropdown
+            $department=Department::with('service')->get();
+            
+            //sub services
+            $subServices = $department[0]->service;
+
+            //current sub service
+            $currentService = $department[0]->service->firstWhere('slug' , $subService);
+
+            //doctors and sub services of the selected service
+            $departmentdetails= Department::with("doctor")->where('slug' ,$service)->get();
+            //get doctors
+            $doctors = $departmentdetails[0]->doctor;
+                        
             $setting=Setting::find(1);
-           $departmentdetails=Department::with("doctor","service")->find($id);
-           $subServices = DepartService::where('department_id',$id)->get();                    
-           if($departmentdetails){
-               return view("front.departmentdetails")->with('subServices',$subServices)->with("department",$department)->with("departmentdetails",$departmentdetails)->with("setting",$setting);
-           }else{
-               return redirect('/');
-           }
+
+           return view("front.departmentdetails")->with('doctors',$doctors)->with('current',$currentService)->with('subServices',$subServices)->with("department",$department)->with("departmentdetails",$departmentdetails)->with("setting",$setting);
+
        }
 
 
@@ -346,21 +356,17 @@ class FrontController extends Controller
           return view("front.doctorlist")->with("department",$department)->with("doctor",$doctor)->with("departmentdoctor",$departmentdoctor)->with("setting",$setting);
        }
 
-       public function doctordetails($id){
-            $department=Department::all();
-            $doctor=Doctor::with('department',"TimeTabledata")->where("user_id",$id)->first();
+       public function doctordetails($slug){
 
-            if(!$doctor) {
-                return redirect('/');
-            }
+            $department=Department::all();
+            $doctor=Doctor::with("TimeTabledata")->where('slug',$slug)->first();
+
             $departmentdetails=Department::with("doctor","service")->find($doctor->department_id); 
-            $doctor->total_ratting=count(Review::where("doctor_id",$id)->get());
-            $doctor->ratting=Review::where("doctor_id",$id)->avg('ratting');
-            $reviews=Review::with('doctors','users')->where("doctor_id",$id)->get();
-            //echo "<pre>";print_r($reviews);exit;
+            $doctor->total_ratting=count(Review::where("doctor_id",$doctor->id)->get());
+            $doctor->ratting=Review::where("doctor_id",$doctor->id)->avg('ratting');
+            $reviews=Review::with('doctors','users')->where("doctor_id",$doctor->id)->get();
              $setting=Setting::find(1);
-           //  echo "<pre>";print_r($doctor);exit;
-            return view("front.doctordetails")->with("department",$department)->with("review",$reviews)->with("doctor",$doctor)->with("departmentdetails",$departmentdetails)->with("id",$id)->with("setting",$setting);
+            return view("front.doctordetails")->with("department",$department)->with("review",$reviews)->with("doctor",$doctor)->with("departmentdetails",$departmentdetails)->with("id",$doctor->id)->with("setting",$setting);
        }
 
      

@@ -15,6 +15,7 @@
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
         "kreait/firebase-php": "^5.24",
+        "lanin/laravel-api-debugger": "^4.0",
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",

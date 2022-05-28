@@ -11,7 +11,7 @@
             </div>
             <div class="department-part-main-box">
                 <div class="row">
-                    @if (count($department  ) > 0)
+                    @if (count($departmentService  ) > 0)
                         
                    
                             @foreach ($departmentService as $service)
@@ -27,7 +27,7 @@
                                         </div>
                                         <div class="department-viewd-btn services-btn-main-box">
                                             <a
-                                                href="{{ url('departmentdetail') . '/' . $service->id }}">{{ __('messages.View Detail') }}</a>
+                                                href="{{ url('services') . '/' . $serviceSlug .'/' . $service->slug }}">{{ __('messages.View Detail') }}</a>
                                         </div>
                                     </div>
                                 </div>

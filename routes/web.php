@@ -38,8 +38,8 @@ Route::group(['prefix' => '/'], function () {
      Route::get("getserviceanddoctor/{id}","FrontController@getserviceanddoctor");
      Route::post("bookappoinment","FrontController@bookappoinment");
      Route::get("allfacilites","FrontController@allfacilites");
-     Route::get("department/{id}","FrontController@department");
-     Route::get("departmentdetail/{id}","FrontController@departmentdetail");
+     Route::get("services/{service}","FrontController@department");
+     Route::get("services/{service}/{subservice}","FrontController@departmentdetail");
      Route::get("doctorlist","FrontController@doctorlist");
      Route::get("gallery","FrontController@gallery");
      Route::get("contact_us","FrontController@contact_us");
@@ -52,7 +52,7 @@ Route::group(['prefix' => '/'], function () {
      Route::get("postlogin","FrontController@postlogin");
      Route::get("userlogout","FrontController@userlogout");
      Route::get("postforgot","FrontController@postforgot");
-     Route::get("doctordetails/{id}","FrontController@doctordetails");
+     Route::get("doctordetails/{slug}","FrontController@doctordetails");
      Route::any("addreview","FrontController@addreview");
      Route::post("mediaupload","FrontController@mediaupload");
      Route::post("deletemedia","FrontController@deletemedia");
