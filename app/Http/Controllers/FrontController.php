@@ -82,7 +82,7 @@ class FrontController extends Controller
         $departmentdetails=Department::with('service')->get();
 
         $setting=Setting::find(1);
-        return view("front.blog_inner")->with("departmentdetails",$departmentdetails)->with("id",$id)->with("setting",$setting)->with("blogdetails", $blogdetails);
+        return view("front.blog_inner")->with("departmentdetails",$departmentdetails)->with("setting",$setting)->with("blogdetails", $blogdetails);
     }
 
     
