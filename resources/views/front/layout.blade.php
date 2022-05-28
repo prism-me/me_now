@@ -95,17 +95,18 @@
                                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Services </a>
                                 <ul class="dropdown-menu services-dropdown">
 
-                                   
-                                    
+
+
                                     @foreach ($department as $departments)
-                                    
-                                        <li><a class="dropdown-item" href="{{ url('services') . '/' . $departments->slug }}">
+                                        <li><a class="dropdown-item"
+                                                href="{{ url('services') . '/' . $departments->slug }}">
                                                 {{ $departments->name }} </a>
 
                                             @if (!blank($departments->service))
                                                 <ul class="submenu dropdown-menu">
                                                     @foreach ($departments->service as $subdepartment)
-                                                        <li><a class="dropdown-item" href="{{ url('services') . '/' . $departments->slug .'/' . $subdepartment->slug }}">
+                                                        <li><a class="dropdown-item"
+                                                                href="{{ url('services') . '/' . $departments->slug . '/' . $subdepartment->slug }}">
                                                                 {{ $subdepartment->name }}</a>
                                                         </li>
                                                     @endforeach
@@ -478,12 +479,12 @@
                         <div class="footer-r1-box">
                             <div class="footer-r1-detail">
                                 <div class="footer-d1-box">
-                                    <h3>{{ __('messages.Our department') }}</h3>
+                                    <h3>{{ __('messages.Our Services') }}</h3>
                                     <?php $i = 0; ?>
                                     @if (isset($department))
                                         @foreach ($department as $d)
                                             @if ($i < 5)
-                                                <a href="{{ url('departmentdetail') . '/' . $d->id }}">{{ $d->name }}
+                                                <a href="{{ url('services') . '/' . $d->slug }}">{{ $d->name }}
                                                     {{ __('messages.Department') }}</a>
                                                 <?php $i++; ?>
                                             @endif
@@ -492,7 +493,7 @@
                                         @if (Session::get('departmentlist'))
                                             @foreach (Session::get('departmentlist') as $d)
                                                 @if ($i < 5)
-                                                    <a href="{{ url('departmentdetail') . '/' . $d->id }}">{{ $d->name }}
+                                                    <a href="{{ url('services') . '/' . $d->slug }}">{{ $d->name }}
                                                         {{ __('messages.Department') }}</a>
                                                     <?php $i++; ?>
                                                 @endif
@@ -509,12 +510,18 @@
                             <div class="footer-r1-detail">
                                 <div class="footer-d1-box">
                                     <h3>{{ __('messages.Helpful links') }}</h3>
-                                    <a href="{{ url('allfacilites') }}">{{ __('messages.Facilities') }}</a>
 
+                                    <a href="{{ url('about') }}">{{ __('messages.About') }}</a>
+                                    <a href="{{ url('events') }}">{{ __('messages.Events') }}</a>
+                                    <a href="{{ url('workshop') }}">{{ __('messages.Workshops') }}</a>
+                                    <a href="{{ url('blog') }}">{{ __('messages.Blog') }}</a>
+                                    <a href="{{ url('faqs') }}">{{ __('messages.FAQs') }}</a>
+                                    <a href="{{ url('contact_us') }}">{{ __('messages.Contact Us') }}</a>
                                     <a
                                         href="{{ url('termcondition') }}">{{ __('messages.Terms & Condition') }}</a>
+                                    <a
+                                        href="{{ url('women-empowerment') }}">{{ __('messages.Women Empowerment') }}</a>
                                     <a href="{{ url('privacypolicy') }}">{{ __('messages.Privacy Policy') }}</a>
-                                    <a href="{{ url('contact_us') }}">{{ __('messages.Contact Us') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -557,9 +564,9 @@
                             {{ __('messages.Me Now') }} {{ __('messages.All Right Reserved') }}
 
                             <span class="privacy_pages">
-                                <a href="terms-of-service">{{ __('messages.Terms of Service') }}</a>
+                                <a href="termcondition">{{ __('messages.Terms of Service') }}</a>
 
-                                <a href="privacy-policy">{{ __('messages.Privacy Policy') }}</a>
+                                <a href="privacypolicy">{{ __('messages.Privacy Policy') }}</a>
 
                                 <a href="copy-rights">{{ __('messages.Shipping Policy') }}</a>
                             </span>

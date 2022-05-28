@@ -135,7 +135,19 @@ class FrontController extends Controller
          $workshop=Workshop::where('id',$id)->first();
        return view("front.workshops_inner")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with('workshop',$workshop);
     }
-
+    public function faqs(){
+        if(!isset($_COOKIE['fload'])){
+            setcookie('fload','1', time() + (86400 * 30), "/");
+         }
+         $service=Service::get()->take(8);
+         $package=Package::get()->take(3);
+         $doctor=Doctor::get()->take(4);
+         $department=Department::with('service')->get();
+         $setting=Setting::find(1);
+         $reviews=Review::with('doctors','users')->get()->take(4);
+       return view("front.faqs")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department);
+     
+    }
 
     public function about(){
         if(!isset($_COOKIE['fload'])){

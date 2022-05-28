@@ -1,5 +1,7 @@
 <?php
 return [
+		'FAQs' =>'FAQs',
+		'Our Services' =>'Our Services',
 		'Events' =>'Events',
 		'Rooms' =>'Rooms',
 	    "About_Me_Now" => "About Me Now",

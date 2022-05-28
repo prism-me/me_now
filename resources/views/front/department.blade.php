@@ -6,7 +6,7 @@
     <div class="departmentpg-main-box">
         <div class="container">
             <div class="global-heading">
-                <h2>{{ __('messages.Department') }}</h2>
+                <h2>{{ __('messages.Our Services') }}</h2>
                 <p>{{ __('messages.Goodness and hard work are rewarded with respect') }}</p>
             </div>
             <div class="department-part-main-box">
