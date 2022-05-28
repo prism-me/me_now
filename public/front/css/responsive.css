@@ -625,6 +625,10 @@ padding-left: 12px;
 .services-dropdown .submenu{
 display: none !important;
 }
+
+.doctorl-part-box img{
+	width: 100%;
+}
 }
 
 /*========== Max-width 576px end ==========*/

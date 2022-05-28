@@ -39,11 +39,11 @@
 
                                 <div class="d-detail-collapse-doctor">
                                     <div class="doctorl-part-box">
-                                        <a href="<?php echo e(url('doctordetails/') . '/' . $d->user_id); ?>" class="denone">
+                                        <a href="<?php echo e(url('doctordetails/') . '/' . $d->slug); ?>" class="denone">
                                             <img src="<?php echo e($d->image); ?>" class="img-fluid">
                                         </a>
                                         <div class="doctorl-part-detail">
-                                            <h4><a href="<?php echo e(url('doctordetails/') . '/' . $d->user_id); ?>"
+                                            <h4><a href="<?php echo e(url('doctordetails/') . '/' . $d->slug); ?>"
                                                     class="denone"><?php echo e(ucwords(strtolower($d->name))); ?></a></h4>
                                             <p style="color:rgb(108, 108, 108)">
                                                 <?php echo e(substr($d->about_us, 0, 100)); ?>...

@@ -52,7 +52,7 @@ Route::group(['prefix' => '/'], function () {
      Route::get("postlogin","FrontController@postlogin");
      Route::get("userlogout","FrontController@userlogout");
      Route::get("postforgot","FrontController@postforgot");
-     Route::get("doctordetails/{id}","FrontController@doctordetails");
+     Route::get("doctordetails/{slug}","FrontController@doctordetails");
      Route::any("addreview","FrontController@addreview");
      Route::post("mediaupload","FrontController@mediaupload");
      Route::post("deletemedia","FrontController@deletemedia");

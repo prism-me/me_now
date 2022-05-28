@@ -185,7 +185,7 @@
                 @if (count($doctor) > 0)
                     @foreach ($doctor as $d)
                         <div class="col-lg-3 col-md-6 col-sm-6">
-                            <a href="{{ url('doctordetails/') . '/' . $d->user_id }}" class="img-fluid">
+                            <a href="{{ url('doctordetails/') . '/' . $d->slug }}" class="img-fluid">
                                 <div class="doctorl-part-box">
                                     <?php
                                     if ($d->image) {

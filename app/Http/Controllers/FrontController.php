@@ -356,23 +356,17 @@ class FrontController extends Controller
           return view("front.doctorlist")->with("department",$department)->with("doctor",$doctor)->with("departmentdoctor",$departmentdoctor)->with("setting",$setting);
        }
 
-       public function doctordetails($id){
+       public function doctordetails($slug){
 
             $department=Department::all();
-            $doctor=Doctor::with('department',"TimeTabledata")->where("user_id",$id)->first();
+            $doctor=Doctor::with("TimeTabledata")->where('slug',$slug)->first();
 
-            dd($doctor[0]->TimeTabledata);
-            // if(!$doctor) {
-            //     return redirect('/');
-            // }
             $departmentdetails=Department::with("doctor","service")->find($doctor->department_id); 
-            $doctor->total_ratting=count(Review::where("doctor_id",$id)->get());
-            $doctor->ratting=Review::where("doctor_id",$id)->avg('ratting');
-            $reviews=Review::with('doctors','users')->where("doctor_id",$id)->get();
-            //echo "<pre>";print_r($reviews);exit;
+            $doctor->total_ratting=count(Review::where("doctor_id",$doctor->id)->get());
+            $doctor->ratting=Review::where("doctor_id",$doctor->id)->avg('ratting');
+            $reviews=Review::with('doctors','users')->where("doctor_id",$doctor->id)->get();
              $setting=Setting::find(1);
-           //  echo "<pre>";print_r($doctor);exit;
-            return view("front.doctordetails")->with("department",$department)->with("review",$reviews)->with("doctor",$doctor)->with("departmentdetails",$departmentdetails)->with("id",$id)->with("setting",$setting);
+            return view("front.doctordetails")->with("department",$department)->with("review",$reviews)->with("doctor",$doctor)->with("departmentdetails",$departmentdetails)->with("id",$doctor->id)->with("setting",$setting);
        }
 
      

@@ -36,11 +36,11 @@
 
                                 <div class="d-detail-collapse-doctor">
                                     <div class="doctorl-part-box">
-                                        <a href="{{ url('doctordetails/') . '/' . $d->user_id }}" class="denone">
+                                        <a href="{{ url('doctordetails/') . '/' . $d->slug }}" class="denone">
                                             <img src="{{ $d->image }}" class="img-fluid">
                                         </a>
                                         <div class="doctorl-part-detail">
-                                            <h4><a href="{{ url('doctordetails/') . '/' . $d->user_id }}"
+                                            <h4><a href="{{ url('doctordetails/') . '/' . $d->slug }}"
                                                     class="denone">{{ ucwords(strtolower($d->name)) }}</a></h4>
                                             <p style="color:rgb(108, 108, 108)">
                                                 {{ substr($d->about_us, 0, 100) }}...

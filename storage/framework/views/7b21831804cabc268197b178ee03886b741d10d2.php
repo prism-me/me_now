@@ -189,7 +189,7 @@
                 <?php if(count($doctor) > 0): ?>
                     <?php $__currentLoopData = $doctor; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="col-lg-3 col-md-6 col-sm-6">
-                            <a href="<?php echo e(url('doctordetails/') . '/' . $d->user_id); ?>" class="img-fluid">
+                            <a href="<?php echo e(url('doctordetails/') . '/' . $d->slug); ?>" class="img-fluid">
                                 <div class="doctorl-part-box">
                                     <?php
                                     if ($d->image) {

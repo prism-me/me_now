@@ -15,7 +15,7 @@ class Doctor extends Model
     }
 
     public function TimeTabledata(){
-    	return $this->hasmany('App\Model\TimeTable',"doctor_id","user_id");
+    	return $this->hasmany('App\Model\TimeTable',"doctor_id","id");
     }
     
 
