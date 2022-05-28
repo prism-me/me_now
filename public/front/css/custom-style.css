@@ -243,9 +243,9 @@ display: inline-block;
 
 
 @keyframes hoverAnimation {
-    0%   {background-color:#48b7c6; }
-    50%  {background-color:#1B7081; }
-    100%  {background-color:#48b7c6; }
+    0%   {background-color:#1B7081; }
+    50%  {background-color:#48b7c6; }
+    100%  {background-color:#1B7081; }
   }
 
 @media (min-width: 1200px){
@@ -330,12 +330,18 @@ font-weight: bold;
 
 .department_wrappers ul li{
     line-height: 50px;
-    padding-left: 12px;
+    /* padding-left: 12px; */
     display: block;
     border-bottom: 1px solid #a0a0a0;
 
 }
-
+.active-subservice{
+    background-color: #48b7c6;
+    /* color: #fff; */
+}
+.active-subservice a{
+    color: #fff;
+}
 .meta_content{
     display: flex;
     justify-content: flex-start;

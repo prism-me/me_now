@@ -7,7 +7,7 @@
     <div class="d-detailpg-main-box">
         <div class="container">
             <div class="global-heading">
-                <h2>{{ $departmentdetails->name }}</h2>
+                <h2>{{ $current->name }}</h2>
                 <p>{{ __('messages.The life so short, the craft so long to learn') }}</p>
             </div>
             <div class="d-detailpg-part-main-box">
@@ -16,9 +16,9 @@
 
                         <div class="d-detail-main-box">
                             <div class="global-part-heading global-heading">
-                                <h3>{{ __('messages.About Department') }}</h3>
+                                {{-- <h3>{{ __('messages.About Department') }}</h3> --}}
                                 {{-- <p>{{ strip_tags($departmentdetails->description) }}</p> --}}
-                                <p>{!! $departmentdetails->description !!}</p>
+                                <p>{!! $current->description !!}</p>
                             </div>
                         </div>
                     </div>
@@ -31,14 +31,15 @@
                         @if (count($subServices) > 1)
                             <div class="department_wrappers">
                                 <ul>
-
                                     @php $i=1 @endphp
                                     @foreach ($subServices as $dp)
                                         <li @php
-                                            if (count($subServices) === $i) {
-                                                echo "style='border-bottom:0px'";
-                                            }
-                                        @endphp>{{ $dp->name }}</li>
+                                            echo $current->slug === $dp->slug ? "class='active-subservice'" : '';
+                                            echo count($subServices) === $i ? "style='border-bottom:0px'" : ' ';
+                                            
+                                        @endphp><a class="dropdown-item"
+                                                href="{{ url('services') . '/' . $departmentdetails[0]->slug . '/' . $dp->slug }}">{{ $dp->name }}</a>
+                                        </li>
                                         @php $i++ @endphp
                                     @endforeach
 
@@ -49,10 +50,11 @@
                             <div class="accordion indicator-plus-before round-indicator" id="accordionH"
                                 aria-multiselectable="true">
                                 <div class="card m-b-0">
-                                    @if ($departmentdetails->doctor)
+                                    {{-- @dd($departmentdetails[0]->dcotor); --}}
+                                    @if (count($doctors) > 0)
                                         <?php $i = 0; ?>
 
-                                        @foreach ($departmentdetails->doctor as $doc)
+                                        @foreach ($doctors as $doc)
                                             <div class="card-header collapsed" role="tab" id="heading{{ $i }}"
                                                 href="#collapse{{ $i }}"
                                                 data-parent="#accordion{{ $i }}" aria-expanded="false"
@@ -83,13 +85,13 @@
                                                     ?>
                                                     <div class="doctorl-dp-img doctorl-dp-img-1"
                                                         style="background-image: url('<?= $image ?>')"></div>
-                                                    <div class="doctor-detail-part">
+                                                    <div class="doctor-detail-part1">
                                                         <div class="doctorl-part-detail">
                                                             <h4>{{ $doc->name }}</h4>
                                                             <p class="departdoc">{{ substr($doc->about_us, 0, 50) }}
                                                             </p>
                                                         </div>
-                                                        <div class="icons-images">
+                                                        {{-- <div class="icons-images">
                                                             <span class="facebook-doctorl">
                                                                 <a
                                                                     href="{{ isset($doc->facebook_id) ? $doc->facebook_id : '' }}"><i
@@ -110,7 +112,7 @@
                                                                     href="{{ isset($doc->instagram_id) ? $doc->instagram_id : '' }}"><img
                                                                         src="{{ asset('front/img/instagram.png') }}"></a>
                                                             </span>
-                                                        </div>
+                                                        </div> --}}
                                                     </div>
                                                 </div>
                                             </div>
