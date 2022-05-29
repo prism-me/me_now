@@ -55,26 +55,26 @@
                         {{__('messages.Name')}}
                         <span class="reqfield">*</span>
                         </label>
-                        <input type="text" id="name" placeholder="{{__('messages.Enter').' '.__('messages.Department Name')}}" class="form-control" required name="name" value="{{ isset($data->name)?$data->name:''}}">
+                        <input type="text" id="name" placeholder="{{__('messages.Enter').' '.__('messages.Department Name')}}" class="form-control"  name="name" value="{{ isset($data->name)?$data->name:''}}">
                      </div>
                      <div class="form-group">
                         <label for="name" class=" form-control-label">
                         {{__('messages.Emergency No')}}
                         <span class="reqfield" >*</span>
                         </label>
-                        <input type="text" id="emergency_no" placeholder="{{__('messages.Enter').' '.__('messages.Emergency No')}}" class="form-control" required name="emergency_no" value="{{ isset($data->emergency_no)?$data->emergency_no:''}}">
+                        <input type="text" id="emergency_no" placeholder="{{__('messages.Enter').' '.__('messages.Emergency No')}}" class="form-control"  name="emergency_no" value="{{ isset($data->emergency_no)?$data->emergency_no:''}}">
                      </div>
                      <div class="form-group">
                         <label for="email" class=" form-control-label">
                         {{__('messages.Short Description')}}<span class="reqfield" >*</span>
                         </label>
-                        <textarea required id="short_description" name="short_description"  class="form-control">{{ isset($data->short_description)?$data->short_description:''}}</textarea>
+                        <textarea  id="short_description" name="short_description"  class="form-control">{{ isset($data->short_description)?$data->short_description:''}}</textarea>
                      </div>
                      <div class="form-group">
                         <label for="email" class=" form-control-label">
                         {{__('messages.Description')}}<span class="reqfield" >*</span>
                         </label>
-                        <textarea required id="description" name="description"  class="form-control">{{ isset($data->description)?$data->description:''}}</textarea>
+                        <textarea  id="description" name="description"  class="form-control">{{ isset($data->description)?$data->description:''}}</textarea>
                      </div>
                      <div class="form-group">
                         <label for="file" class=" form-control-label">  

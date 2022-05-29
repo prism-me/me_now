@@ -65,7 +65,7 @@
                                  {{__('messages.Select Department')}}
                                  <span class="reqfield" >*</span>
                                  </label>
-                                 <select id="department" name="department" required class="form-control">
+                                 <select id="department" name="department"  class="form-control">
                                     <option value="">{{__('messages.Select Department')}}</option>
                                     @foreach($department as $d)
                                     <option value="{{$d->id}}" <?= isset($data->department_id) && $data->department_id == $d->id ? "selected='selected'" : "" ?> >{{$d->name}}</option>
@@ -77,7 +77,7 @@
                                  {{__('messages.Doctor Name')}}
                                  <span class="reqfield" >*</span>
                                  </label>
-                                 <input type="text" id="name" placeholder="{{__('messages.Enter').' '.__('messages.Doctor Name')}}" class="form-control" required name="name" value="{{ isset($data->name)?$data->name:''}}">
+                                 <input type="text" id="name" placeholder="{{__('messages.Enter').' '.__('messages.Doctor Name')}}" class="form-control"  name="name" value="{{ isset($data->name)?$data->name:''}}">
                               </div>
                            </div>
                            <div class="form-group">
@@ -86,14 +86,14 @@
                                  {{__('messages.Email')}}
                                  <span class="reqfield" >*</span>
                                  </label>
-                                 <input type="text" id="email" placeholder="{{__('messages.Enter').' '.__('messages.Email')}}" class="form-control" required name="email" value="{{ isset($data->email)?$data->email:''}}">
+                                 <input type="text" id="email" placeholder="{{__('messages.Enter').' '.__('messages.Email')}}" class="form-control"  name="email" value="{{ isset($data->email)?$data->email:''}}">
                               </div>
                               <div class="col-md-6">
                                  <label for="name" class=" form-control-label">
                                  {{__('messages.Password')}}
                                  <span class="reqfield" >*</span>
                                  </label>
-                                 <input type="text" id="password" placeholder="{{__('messages.Enter').' '.__('messages.Password')}}" class="form-control" required name="password" value="{{ isset($data->password)?$data->password:''}}">
+                                 <input type="text" id="password" placeholder="{{__('messages.Enter').' '.__('messages.Password')}}" class="form-control"  name="password" value="{{ isset($data->password)?$data->password:''}}">
                               </div>
                            </div>
                            <div class="form-group">
@@ -102,23 +102,23 @@
                                  {{__('messages.Phone No')}}
                                  <span class="reqfield" >*</span>
                                  </label>
-                                 <input type="text" id="phone_no" placeholder="{{__('messages.Enter').' '.__('messages.Phone No')}}" class="form-control" required name="phone_no" value="{{ isset($data->phone_no)?$data->phone_no:''}}">
+                                 <input type="text" id="phone_no" placeholder="{{__('messages.Enter').' '.__('messages.Phone No')}}" class="form-control"  name="phone_no" value="{{ isset($data->phone_no)?$data->phone_no:''}}">
                               </div>
                               <div class="col-md-6">
                               </div>
                            </div>
-                           <div class="form-group">
+                           {{-- <div class="form-group">
                               <div class="col-md-6">
                                  <label for="phone" class=" form-control-label">
                                  {{__('messages.Facebook ID')}}
                                  </label>
-                                 <input type="text" id="facebook" required placeholder="{{__('messages.Enter').' '.__('messages.Facebook ID')}}"  class="form-control"  name="facebook" value="{{ isset($data->facebook_id)?$data->facebook_id:''}}">
+                                 <input type="text" id="facebook"  placeholder="{{__('messages.Enter').' '.__('messages.Facebook ID')}}"  class="form-control"  name="facebook" value="{{ isset($data->facebook_id)?$data->facebook_id:''}}">
                               </div>
                               <div class="col-md-6">
                                  <label for="name" class=" form-control-label">
                                  {{__('messages.Twitter ID')}}
                                  </label>
-                                 <input type="text" id="twitter_id" required placeholder="{{__('messages.Enter').' '.__('messages.Twitter ID')}}"  class="form-control"  name="twitter_id" value="{{ isset($data->twitter_id)?$data->twitter_id:''}}">
+                                 <input type="text" id="twitter_id"  placeholder="{{__('messages.Enter').' '.__('messages.Twitter ID')}}"  class="form-control"  name="twitter_id" value="{{ isset($data->twitter_id)?$data->twitter_id:''}}">
                               </div>
                            </div>
                            <div class="form-group">
@@ -126,15 +126,15 @@
                                  <label for="phone" class=" form-control-label">
                                  {{__('messages.Google ID')}}
                                  </label>
-                                 <input type="text" id="google_id" required placeholder="{{__('messages.Enter').' '.__('messages.Google ID')}}"  class="form-control"  name="google_id" value="{{ isset($data->google_id)?$data->google_id:''}}">
+                                 <input type="text" id="google_id"  placeholder="{{__('messages.Enter').' '.__('messages.Google ID')}}"  class="form-control"  name="google_id" value="{{ isset($data->google_id)?$data->google_id:''}}">
                               </div>
                               <div class="col-md-6">
                                  <label for="name" class=" form-control-label">
                                  {{__('messages.Instagram ID')}}
                                  </label>
-                                 <input type="text" id="instagram_id" required placeholder="{{__('messages.Enter').' '.__('messages.Instagram ID')}}"  class="form-control"  name="instagram_id" value="{{ isset($data->instagram_id)?$data->instagram_id:''}}">
+                                 <input type="text" id="instagram_id"  placeholder="{{__('messages.Enter').' '.__('messages.Instagram ID')}}"  class="form-control"  name="instagram_id" value="{{ isset($data->instagram_id)?$data->instagram_id:''}}">
                               </div>
-                           </div>
+                           </div> --}}
                            <div class="col-md-12 form-group">
                               <label for="email" class=" form-control-label">
                               {{__('messages.Short Description')}}<span class="reqfield" >*</span>
@@ -157,7 +157,7 @@
                               <label for="email" class=" form-control-label">
                               {{__('messages.Service')}}<span class="reqfield" >*</span>
                               </label>
-                              <textarea required id="servicedoctor" name="service"  class="form-control">{{ isset($data->service)?$data->service:''}}</textarea>
+                              <textarea  id="servicedoctor" name="service"  class="form-control">{{ isset($data->service)?$data->service:''}}</textarea>
                            </div>
                            <div class="col-md-12 form-group">
                               <label for="file" class=" form-control-label">  
@@ -174,7 +174,7 @@
                               <label for="name" class=" form-control-label">
                               {{__('messages.Slug')}}
                               </label>
-                              <input type="text" id="slug" required placeholder="{{__('messages.Enter').' '.__('messages.Slug')}}"  class="form-control"  name="slug" value="{{ isset($data->slug)?$data->slug:''}}">
+                              <input type="text" id="slug"  placeholder="{{__('messages.Enter').' '.__('messages.Slug')}}"  class="form-control"  name="slug" value="{{ isset($data->slug)?$data->slug:''}}">
                            </div>
                            
                            <div>
@@ -229,8 +229,8 @@
                                        <span> {{$arr[6]}}</span>
                                        @endif
                                     </td>
-                                    <td><input type="time" required name="from[]" id="from{{$i}}" class="form-control" value="<?= isset($work->from) ? $work->from : "" ?>" /></td>
-                                    <td><input type="time" required name="to[]" id="to{{$i}}" value="<?= isset($work->to) ? $work->to : "" ?>" class="form-control" onchange="checktime(this.value,'{{$i}}')" /></td>
+                                    <td><input type="time"  name="from[]" id="from{{$i}}" class="form-control" value="<?= isset($work->from) ? $work->from : "" ?>" /></td>
+                                    <td><input type="time"  name="to[]" id="to{{$i}}" value="<?= isset($work->to) ? $work->to : "" ?>" class="form-control" onchange="checktime(this.value,'{{$i}}')" /></td>
                                  </tr>
                                  <?php $i++; ?>
                                  @endforeach  
@@ -241,8 +241,8 @@
                                     <td><input type="hidden" name="day[]" id="day{{$i}}" readonly="" value="{{$i+1}}" class="form-control" />
                                        <span>{{$a}}</span>
                                     </td>
-                                    <td><input type="time" required name="from[]" id="from{{$i}}" class="form-control" value="{{time()}}"  /></td>
-                                    <td><input type="time" required name="to[]" id="to{{$i}}" value="" class="form-control" onchange="checktime(this.value,'{{$i}}')"  /></td>
+                                    <td><input type="time"  name="from[]" id="from{{$i}}" class="form-control" value="{{time()}}"  /></td>
+                                    <td><input type="time"  name="to[]" id="to{{$i}}" value="" class="form-control" onchange="checktime(this.value,'{{$i}}')"  /></td>
                                  </tr>
                                  <?php $i++; ?>
                                  @endforeach 
