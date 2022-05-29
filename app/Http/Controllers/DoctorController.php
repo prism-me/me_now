@@ -99,9 +99,9 @@ class DoctorController extends UploadController
             $store->phone_no=$request->get("phone_no");
             $store->about_us=$request->get("about_us");
             $store->service=$request->get("service");
-            $store->facebook_id=$request->get("facebook");
-            $store->twitter_id=$request->get("twitter_id");
-            $store->google_id=$request->get("google_id");
+            // $store->facebook_id=$request->get("facebook");
+            // $store->twitter_id=$request->get("twitter_id");
+            // $store->google_id=$request->get("google_id");
             $store->description = $request->get("description");
             $store->slug = $request->get("slug");
             $store->short_description=$request->get("short_description");
