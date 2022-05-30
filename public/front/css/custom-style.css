@@ -110,10 +110,13 @@ display: inline-block;
 
 .appointment-section .item .caption {
     position: absolute;
-    top: 30%;
-    left: 9%;
+    top: 50%;
+    left: 50%;
     color: white !important;
+    text-align: center;
+    transform: translate(-50%, -50%);
 }
+
 .appointment-section .item .overlay{
     position: absolute;
     background: #1e1e1e2e;
@@ -362,6 +365,9 @@ font-weight: bold;
 margin-top: 3rem;
 
 }
+.who_we_are .row{
+    align-items: center;
+}
 
 .who_we_are_cotent h2:nth-child(1):before{
     content: "~";
@@ -395,21 +401,20 @@ margin-top: 3rem;
 }
 
 .about_tiles .single-tile{
-    height: 340px;
+    /* height: 340px; */
     padding: 0px 2rem;
-    text-align: center;
+    /* text-align: center; */
     margin: 1rem;
+     box-shadow: 0 0 12px #ddd;
     
 }
 .about_tiles .inner-single-title{
     border-top:5px solid #49B7C6;
     border-bottom:5px solid #49B7C6;
     height: 100%;
+    padding: 3rem 0px;
 }
 
-.about_tiles .middle{
-    box-shadow: 0 0 12px #ddd;
-}
 .about_tiles .inner-single-title img{
     width:50px;
     height:auto;
@@ -419,6 +424,30 @@ margin-top: 3rem;
 .about_tiles .inner-single-title h4{
     font-size: 20px;
     margin-bottom: 15px;
+    color: #1B7081;
+}
+
+.about_tiles .inner-single-title h5{
+    text-align: center;
+    font-size: 15px;
+    color: #767676;
+}
+.about_tiles .inner-single-title ul{
+padding-left: 0px;
+}
+.about_tiles .inner-single-title ul li span{
+
+    color: #1B7081;
+    font-size: 13px;
+
+}
+.about_tiles .inner-single-title ul li{
+
+    list-style: none;
+    color: #767676;
+}
+.about_tiles .inner-single-title ul li:before{
+    /* content : "\f00c"; */
 }
 .about_tiles .inner-single-title p{
     margin-bottom: 2rem;

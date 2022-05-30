@@ -119,7 +119,7 @@
     <div class="numbers-counter-main-box">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-3 col-sm-6 col-6">
                     <div class="numbers-counter-part-box">
                         <div id="counter">
                             <img src="<?php echo e(asset('front/img/n1.png')); ?>">
@@ -133,7 +133,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-3 col-sm-6 col-6">
                     <div class="numbers-counter-part-box">
                         <div id="counter">
                             <img src="<?php echo e(asset('front/img/n2.png')); ?>">
@@ -147,7 +147,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-3 col-sm-6 col-6">
                     <div class="numbers-counter-part-box">
                         <div id="counter">
                             <img src="<?php echo e(asset('front/img/n3.png')); ?>">
@@ -161,7 +161,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-3 col-sm-6 col-6">
                     <div class="numbers-counter-part-box">
                         <div id="counter">
                             <img src="<?php echo e(asset('front/img/n4.png')); ?>">

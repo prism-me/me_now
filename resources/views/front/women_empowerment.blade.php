@@ -1,4 +1,3 @@
-
 @extends('front.layout')
 @section('title')
     {{ __('messages.Workshops') }}
@@ -10,106 +9,113 @@
 @section('content')
     <div class="container">
         <div class="global-heading">
-            <h2>{{ __('messages.Women Empowerment') }} </h2>
-            <p>{{ __("messages.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                                                                                                                                                                                                    
-                                                                                                                                                                                                                        ") }}
+            <h2>Me Now Empowers Women</h2>
+            <p>At Me Now Center, we're doing our bit to support women and help them achieve their full
+                potential. It is a place where women can feel confident and fulfilled, physically, mentally, and
+                emotionally in all aspects of their lives. We are no less than a family dedicated to supporting
+                each other and building a community of like-minded, empowered women. Me Now has special
+                memberships for women that come with unlimited benefits including discounts on facilities, free
+                workshops, and much more
             </p>
         </div>
         <div class="who_we_are">
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-6">
                     <img src="https://lighthouse-media.s3.us-east-2.amazonaws.com/601679ac8e54020017840684/1640001095057_dreamstime_xxl_54964318%20%28Large%29.jpg"
                         alt="" class="img-fluid">
                 </div>
-                <div class="col-md-7">
+                <div class="col-md-6">
                     <div class="who_we_are_cotent">
-                        <h2>WHO WE ARE</h2>
-                        <h2>We Help To Get Solutions</h2>
+                        <h2>What Our Membership Holders Get</h2>
+                        {{-- <h2>We Help To Get Solutions</h2> --}}
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsu
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsu
+                            Our members get exclusive benefits including free access to all the workshops, and discounts on
+                            the center’s facilities, including anger rooms. Moreover, free drinks from the coffee corner as
+                            well. Our members also get to participate in our events which bring unlimited networking and
+                            socializing opportunities. This and much more is waiting yet to be explored by you. Join Me Now
+                            and start your journey towards a better, more happening, and fulfilled life.
                         </p>
                     </div>
-                    <div class="row who_we_are_sub_section">
-                        <div class="col-md-2">
-                            <img src="{{ asset('front/img/about-icon-1.png') }}" alt="">
 
-                        </div>
-                        <div class="col-md-10">
-                            <h4 class="">Lorem Ipsum</h4>
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsu
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row who_we_are_sub_section">
-                        <div class="col-md-2">
-                            <img src="{{ asset('front/img/about-icon-2.png') }}" alt="">
-
-                        </div>
-                        <div class="col-md-10">
-                            <h4 class="">Simply Dummy</h4>
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsu
-                            </p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
 
         <div class="about_tiles">
+            <div class="global-heading mb-4">
+                <h2>Our Membership Plans</h2>
+                <p>Me Now has three different membership plans that come with different and distinct benefits. You can opt
+                    for a 1-month membership or go for a tri-monthly or 6-month membership. Each membership plan comes with
+                    its own advantages. Explore the plans to know more.
+                </p>
+            </div>
             <div class="row">
                 <div class="col-md-4">
                     <div class="single-tile">
                         <div class="inner-single-title">
-                            <img src="{{ asset('front/img/about-icon-1.png') }}" alt="">
-                            <h4>
-                                Lorem Ipsum simply
+                            {{-- <img src="{{ asset('front/img/about-icon-1.png') }}" alt=""> --}}
+                            <h4 class="text-center">
+                                1 Month
                             </h4>
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsu
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsu
-
-                            </p>
+                            <h5 class="price">AED 3120 </h5>
+                            <ul>
+                                <li><span class="fa fa-check"></span> For private session /15% Discount</li>
+                                <li><span class="fa fa-check"></span> Access for all workshop</li>
+                                <li><span class="fa fa-check"></span> They can use anger release room</li>
+                                <li><span class="fa fa-check"></span> They can enjoy center coffee corner</li>
+                                <li><span class="fa fa-check"></span> They can use center library</li>
+                                <li><span class="fa fa-check"></span> Access to all center activities and events</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="single-tile middle">
                         <div class="inner-single-title">
-                            <img src="{{ asset('front/img/about-icon-2.png') }}" alt="">
-                            <h4>
-                                Lorem Ipsum simply
+                            {{-- <img src="{{ asset('front/img/about-icon-2.png') }}" alt=""> --}}
+                            <h4 class="text-center">
+                                3 Months
                             </h4>
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsu
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsu
+                            <h5 class="price"> AED 9,630 </h5>
+                            <ul>
 
-                            </p>
+                                <li><span class="fa fa-check"></span> They will get 10% Discount</li>
+                                <li><span class="fa fa-check"></span> Access for all workshop</li>
+                                <li><span class="fa fa-check"></span> They can use anger release room</li>
+                                <li><span class="fa fa-check"></span> They can enjoy center coffee corner</li>
+                                <li><span class="fa fa-check"></span> They can use center library</li>
+                                <li><span class="fa fa-check"></span> Access to all center activities and events</li>
+
+                            </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="single-tile">
                         <div class="inner-single-title">
-                            <img src="{{ asset('front/img/about-title-1.png') }}" alt="">
-                            <h4>
-                                Lorem Ipsum simply
+                            {{-- <img src="{{ asset('front/img/about-title-1.png') }}" alt=""> --}}
+                            <h4 class="text-center">
+                                6 Months
                             </h4>
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsu
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsu
-
-                            </p>
+                            <h5 class="price"> AED 16,050</h5>
+                            <ul>
+                                <li><span class="fa fa-check"></span> 1 month free</li>
+                                <li><span class="fa fa-check"></span> They will get 10% Discount</li>
+                                <li><span class="fa fa-check"></span> Access for all workshop</li>
+                                <li><span class="fa fa-check"></span> They can use anger release room</li>
+                                <li><span class="fa fa-check"></span> They can enjoy center coffee corner</li>
+                                <li><span class="fa fa-check"></span> They can use center library</li>
+                                <li><span class="fa fa-check"></span> Access to all center activities and events</li>
+                                <li><span class="fa fa-check"></span> 5 session free Holistic Therapy or Hypnosis Therapy
+                                    sessions</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="about-content-widget">
+        {{-- <div class="about-content-widget">
             <div class="row">
                 <div class="col-md-5 col-sm-12">
                     <img src="https://lighthouse-media.s3.us-east-2.amazonaws.com/601679ac8e54020017840684/1640001095057_dreamstime_xxl_54964318%20%28Large%29.jpg"
@@ -143,7 +149,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="doctorl-main-box">
             <div class="container">
                 <div class="global-heading">
@@ -153,30 +159,33 @@
                 <div class="row">
                     @if (count($doctor) > 0)
                         @foreach ($doctor as $d)
-                            <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="col-lg-3 col-md-6 col-sm-6 ">
                                 <div class="doctorl-part-box">
                                     <?php
-                                        if ($d->image) {
-                                            $image = $d->image;
-                                        } else {
-                                            $image = asset('upload/profile/profile.png');
-                                        }
-                                        ?>
-                                        <a href="{{ url('doctordetails/') . '/' . $d->slug }}" class="anchor-doctor-image">
+                                    if ($d->image) {
+                                        $image = $d->image;
+                                    } else {
+                                        $image = asset('upload/profile/profile.png');
+                                    }
+                                    ?>
+                                    <a href="{{ url('doctordetails/') . '/' . $d->slug }}" class="anchor-doctor-image">
                                         <div class="doctorl-dp-img doctorl-dp-img-1"
-                                            style="background-image: url('<?= $image ?>')"></div></a>
-                                        <div class="doctorl-part-detail">
-                                            <h4><a href="{{ url('doctordetails/') . '/' . $d->slug }}" class="anchor-doctor-image">{{ ucwords(strtolower($d->name)) }}</a></h4>
-                                            <p>{{ substr(trim($d->about_us), 0, 135) }}</p>
-                                            <div class="book_appointment_doctor">
-                                                <button data-toggle="modal" data-target="#appointmentModal">Make an Appointment</button>
-                                            </div>
+                                            style="background-image: url('<?= $image ?>')"></div>
+                                    </a>
+                                    <div class="doctorl-part-detail">
+                                        <h4><a href="{{ url('doctordetails/') . '/' . $d->slug }}"
+                                                class="anchor-doctor-image">{{ ucwords($d->name) }}</a></h4>
+                                        <p>{{ substr(trim($d->about_us), 0, 135) }} ... <a href="{{ url('doctordetails/') . '/' . $d->slug }}">Read More</a> </p>
+                                        <div class="book_appointment_doctor">
+                                            <button data-toggle="modal" data-target="#appointmentModal">Make an
+                                                Appointment</button>
                                         </div>
-                                        <div class="icons-images">
-                                            {{-- <div class="book_appointment_doctor">
+                                    </div>
+                                    <div class="icons-images">
+                                        {{-- <div class="book_appointment_doctor">
                                                 <button>Make an Appointment</button>
                                             </div> --}}
-                                            {{-- <span class="facebook-doctorl">
+                                        {{-- <span class="facebook-doctorl">
                                                 <a href="{{ isset($d->facebook_id) ? $d->facebook_id : '' }}" target="_blank"><i
                                                         class="fab fa-facebook-f"></i></a>
                                             </span>
@@ -193,9 +202,9 @@
                                                     target="_blank"><img
                                                         src="{{ asset('front/img/instagram.png') }}"></a>
                                             </span> --}}
-                                        </div>
                                     </div>
-                                
+                                </div>
+
                             </div>
                         @endforeach
                     @endif
@@ -207,7 +216,7 @@
     <div class="numbers-counter-main-box">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-3 col-sm-6 col-6">
                     <div class="numbers-counter-part-box">
                         <div id="counter">
                             <img src="{{ asset('front/img/n1.png') }}">
@@ -220,7 +229,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-3 col-sm-6 col-6">
                     <div class="numbers-counter-part-box">
                         <div id="counter">
                             <img src="{{ asset('front/img/n2.png') }}">
@@ -233,7 +242,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-3 col-sm-6 col-6">
                     <div class="numbers-counter-part-box">
                         <div id="counter">
                             <img src="{{ asset('front/img/n3.png') }}">
@@ -246,7 +255,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-3 col-sm-6 col-6">
                     <div class="numbers-counter-part-box">
                         <div id="counter">
                             <img src="{{ asset('front/img/n4.png') }}">
@@ -271,7 +280,8 @@
         <div class="faq my-5">
             <div class="accordion" id="accordionExample">
                 <div class="card">
-                    <div class="card-header collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true">
+                    <div class="card-header collapsed" data-toggle="collapse" data-target="#collapseOne"
+                        aria-expanded="true">
                         <span class="title">Collapsible Group Item #1 </span>
                         <span class="accicon"><i class="fas fa-angle-down rotate-icon"></i></span>
                     </div>
