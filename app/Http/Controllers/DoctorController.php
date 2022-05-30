@@ -66,12 +66,12 @@ class DoctorController extends UploadController
                
                 $store=Doctor::find($request->get("id"));
                 $msg=__('messages.Doctor Update Successfully');
-                $checkemail=User::where("email",$request->get("email"))->where("id",'!=',$store->user_id)->first();
-                if($checkemail){
-                        Session::flash('message',__('messages.Email Id Already Existe')); 
-                        Session::flash('alert-class', 'alert-danger'); 
-                        return redirect("admin/savedoctor/".$store->id.'/1');
-                }
+                // $checkemail=User::where("email",$request->get("email"))->where("id",'!=',$store->user_id)->first();
+                // if($checkemail){
+                //         Session::flash('message',__('messages.Email Id Already Existe')); 
+                //         Session::flash('alert-class', 'alert-danger'); 
+                //         return redirect("admin/savedoctor/".$store->id.'/1');
+                // }
                 $usd=User::find($store->user_id);
                 $usd->name=$request->get("name");
                 $usd->email=$request->get("email");
@@ -112,11 +112,11 @@ class DoctorController extends UploadController
     }
  
     public function updateworkinghours(Request $request){
-              if($request->get("id")=="0"){
-                    Session::flash('message',__('messages.Please Fill Up Basic Information First Then Process Ahead')); 
-                    Session::flash('alert-class', 'alert-danger');
-                    return redirect('admin/savedoctor/0/2');
-              }
+            //   if($request->get("id")=="0"){
+            //         Session::flash('message',__('messages.Please Fill Up Basic Information First Then Process Ahead')); 
+            //         Session::flash('alert-class', 'alert-danger');
+            //         return redirect('admin/savedoctor/0/2');
+            //   }
               $workid=$request->get("work_id");
               $day=$request->get("day");
               $from=$request->get("from");
