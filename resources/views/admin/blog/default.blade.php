@@ -61,7 +61,7 @@
                            </td>
                            <td>
                                 <a href="{{URL::to('admin/blogs/'.$d->id.'/edit')}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
-                                <a href="{{URL::to('admin/blogs/'.$d->id.'/show') }}" class="btn btn-success">{{__('messages.View')}}</a>
+                                {{-- <a href="{{URL::to('admin/blogs/'.$d->id.'/show') }}" class="btn btn-success">{{__('messages.View')}}</a> --}}
                                 <form action="{{ URL::to('admin/blogs/delete').'/'.$d->id }}"  novalidate="novalidate" >{{csrf_field()}}{{method_field('Delete')}}<input type="submit" class="btn btn-danger" name="Delete"></form>
                            </td>
                         </tr>
