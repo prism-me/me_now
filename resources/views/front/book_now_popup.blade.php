@@ -25,7 +25,11 @@
             <div class="appo-select-box">
                 <select id="doctors" required class="dropdown" name="doctors">
                     <option value="" disabled="disabled" selected="selected">-
-                        {{ __('messages.Select Doctors') }}</option>
+                        <option value="" disabled="disabled" selected="selected">
+                        {{ __('messages.Select Doctor') }}</option>
+                    @foreach ($doctor as $d)
+                        <option value="{{ $d->id }}">{{ $d->name }}</option>
+                    @endforeach
                 </select>
             </div>
             {{-- <div class="appo-select-box">

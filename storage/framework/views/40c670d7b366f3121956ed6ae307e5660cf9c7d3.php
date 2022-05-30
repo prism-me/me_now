@@ -72,10 +72,7 @@
                         <a href="<?php echo e(url('admin/patient')); ?>"> <i
                                 class="menu-icon fa fa-user"></i><?php echo e(__('messages.Patient')); ?></a>
                     </li>
-                    <li class="active">
-                        <a href="<?php echo e(url('admin/package')); ?>"> <i
-                                class="menu-icon fa fa-user-md"></i><?php echo e(__('messages.Help Package')); ?></a>
-                    </li>
+                    
                     <li class="active">
                         <a href="<?php echo e(url('admin/blogs')); ?>"> <i
                                 class="menu-icon fa  fa-newspaper-o"></i><?php echo e(__('messages.Blog')); ?></a>
@@ -84,14 +81,8 @@
                         <a href="<?php echo e(url('admin/workshops')); ?>"> <i
                                 class="menu-icon fa  fa-newspaper-o"></i><?php echo e(__('messages.Workshop')); ?></a>
                     </li>
-                    <li class="active">
-                        <a href="<?php echo e(url('admin/chat')); ?>"> <i
-                                class="menu-icon fa fa-comment"></i><?php echo e(__('messages.Chat')); ?> </a>
-                    </li>
-                    <li class="active">
-                        <a href="<?php echo e(url('admin/gallery')); ?>"> <i
-                                class="menu-icon fa fa-file-image-o"></i><?php echo e(__('messages.Gallery')); ?></a>
-                    </li>
+                    
+                    
                     <li class="active">
                         <a href="<?php echo e(url('admin/review')); ?>"> <i
                                 class="menu-icon fa fa-star"></i><?php echo e(__('messages.Review')); ?></a>
