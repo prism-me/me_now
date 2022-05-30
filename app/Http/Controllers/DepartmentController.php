@@ -57,10 +57,9 @@ class DepartmentController extends UploadController
             $store->name=$request->get("name");
             $store->description=$request->get("description");
             $store->short_description=$request->get("short_description");
+            $store->slug=$request->get("slug");
             $store->emergency_no = $request->get("emergency_no");
-            if($request->get('id') == "0"){
             $store->image = isset( $mediaUpload ) ? $mediaUpload : " " ;
-            }
             $store->save(); 
             Session::flash('message',$msg); 
             Session::flash('alert-class', 'alert-success');
@@ -157,14 +156,24 @@ class DepartmentController extends UploadController
                 $store=new DepartService();
                 $msg=__('messages.Department Service Add Successfully');
             }
+            if ($img = $request->hasFile('img')) {
+               
+                $media =  UploadController::upload_media($request->img);
+                $mediaUpload = $media['url'];
+
+            }
 
             $store->name=$request->get("name");
             $store->price=isset( $store->price ) ? $store->price : " " ;
             $store->department_id= $request->get("depart_id");   
             $store->price= isset( $request->get['price'] ) ? $request->get['price'] : " " ;
             $store->description= $request->get("description");
+            $store->slug= $request->get("slug");
+            $store->excerpt= $request->get("excerpt");
             $store->short_description= $request->get("short_description");
             $store->price_for=isset( $request->get['price_for'] ) ? $request->get['price_for'] : " " ;
+            $store->img = isset( $mediaUpload ) ? $mediaUpload : " " ;
+         
             $store->save(); 
             Session::flash('message',$msg); 
             Session::flash('alert-class', 'alert-success');

@@ -50,7 +50,7 @@
                     aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="{{ url('admin/dashboard') }}">{{ __('messages.Clinic') }}</a>
+                <a class="navbar-brand" href="{{ url('admin/dashboard') }}">{{ __('messages.Admin') }}</a>
                 <a class="navbar-brand hidden"
                     href="{{ url('admin/dashboard') }}">{{ __('messages.shortcode') }}</a>
             </div>
@@ -72,10 +72,10 @@
                         <a href="{{ url('admin/patient') }}"> <i
                                 class="menu-icon fa fa-user"></i>{{ __('messages.Patient') }}</a>
                     </li>
-                    <li class="active">
+                    {{-- <li class="active">
                         <a href="{{ url('admin/package') }}"> <i
                                 class="menu-icon fa fa-user-md"></i>{{ __('messages.Help Package') }}</a>
-                    </li>
+                    </li> --}}
                     <li class="active">
                         <a href="{{ url('admin/blogs') }}"> <i
                                 class="menu-icon fa  fa-newspaper-o"></i>{{ __('messages.Blog') }}</a>
@@ -84,14 +84,14 @@
                         <a href="{{ url('admin/workshops') }}"> <i
                                 class="menu-icon fa  fa-newspaper-o"></i>{{ __('messages.Workshop') }}</a>
                     </li>
-                    <li class="active">
+                    {{-- <li class="active">
                         <a href="{{ url('admin/chat') }}"> <i
                                 class="menu-icon fa fa-comment"></i>{{ __('messages.Chat') }} </a>
-                    </li>
-                    <li class="active">
+                    </li> --}}
+                    {{-- <li class="active">
                         <a href="{{ url('admin/gallery') }}"> <i
                                 class="menu-icon fa fa-file-image-o"></i>{{ __('messages.Gallery') }}</a>
-                    </li>
+                    </li> --}}
                     <li class="active">
                         <a href="{{ url('admin/review') }}"> <i
                                 class="menu-icon fa fa-star"></i>{{ __('messages.Review') }}</a>

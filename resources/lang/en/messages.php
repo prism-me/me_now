@@ -433,6 +433,8 @@ return [
 		"View"=>"View",
 		"Blog List"=>"Blog List",
 		"Delete"=>"Delete",
+		"Excerpt"=>"Excerpt",
+		"Icon"=>"Icon",
 		
 		
 		"Workshop"=>"Workshop",

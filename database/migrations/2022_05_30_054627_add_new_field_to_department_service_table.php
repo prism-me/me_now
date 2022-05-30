@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddFieldsToDepartmerntserviceTable extends Migration
+class AddNewFieldToDepartmentServiceTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,9 @@ class AddFieldsToDepartmerntserviceTable extends Migration
     public function up()
     {
         Schema::table('department_service', function (Blueprint $table) {
-            $table->text('description')->nullable()->after('name');
-            $table->text('short_description')->nullable()->after('name');
-            $table->text('slug')->nullable()->after('price');
+            $table->string('excerpt')->after('short_description');
+            $table->string('img')->after('slug');
+            
         });
     }
 
@@ -27,7 +27,7 @@ class AddFieldsToDepartmerntserviceTable extends Migration
      */
     public function down()
     {
-        Schema::table('departmerntservice', function (Blueprint $table) {
+        Schema::table('department_service', function (Blueprint $table) {
             //
         });
     }
