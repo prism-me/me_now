@@ -58,7 +58,9 @@ class DepartmentController extends UploadController
             $store->description=$request->get("description");
             $store->short_description=$request->get("short_description");
             $store->emergency_no = $request->get("emergency_no");
+            if($request->get('id') == "0"){
             $store->image = isset( $mediaUpload ) ? $mediaUpload : " " ;
+            }
             $store->save(); 
             Session::flash('message',$msg); 
             Session::flash('alert-class', 'alert-success');
