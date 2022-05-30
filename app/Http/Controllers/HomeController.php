@@ -100,8 +100,8 @@ class HomeController extends Controller
         $totaldepartment=count(Department::all());
         $totalservice=count(Service::all());
         $totaldoctor=count(Doctor::all());
-        $leastappointment=Appointment::with('doctors','services','department')->orderBy('id','DESC')->take(10)->get();
-        $leastreview=Review::with("doctors","users")->orderBy('id','DESC')->take(10)->get();
+        $leastappointment= Appointment::with('doctors','services','department')->orderBy('id','DESC')->take(10)->get();
+        $leastreview = Review::with("doctors","users")->orderBy('id','DESC')->take(10)->get();
     	return view("admin.dashboard")->with("totaldepartment",$totaldepartment)->with("totalservice",$totalservice)->with("totaldoctor",$totaldoctor)->with("leastappointment",$leastappointment)->with("leastreview",$leastreview);
     }
 

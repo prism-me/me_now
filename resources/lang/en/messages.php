@@ -435,6 +435,7 @@ return [
 		"Delete"=>"Delete",
 		"Excerpt"=>"Excerpt",
 		"Icon"=>"Icon",
+		"Subscriber"=>"Subscriber",
 		
 		
 		"Workshop"=>"Workshop",

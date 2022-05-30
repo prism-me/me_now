@@ -9,6 +9,7 @@ use App\Model\Department;
 use App\Model\TimeTable;
 use App\Model\Appointment;
 use App\Model\Token;
+use App\Model\Newsletter;
 use App\Model\Review;
 use App\User;
 use App\Model\Setting;
@@ -46,7 +47,7 @@ class DoctorController extends UploadController
                 $request->validate([
                     'department' => 'required',
                     'name' => 'required',
-                    'email' => 'required|unique:users',
+                    'email' => 'required',
                     'password'=>'required',
                     'phone_no'=>'required',
                     'about_us'=>'required',
@@ -192,6 +193,23 @@ class DoctorController extends UploadController
          Session::flash('message',__('messages.Review Delete Successfully')); 
           Session::flash('alert-class', 'alert-success');
           return redirect("admin/review");
+    }
+
+
+    public function subscribers()
+    {
+        $data = Newsletter::all();
+        return view("admin.subscriber")->with("data",$data);
+
+
+    }
+
+    public function subscriber_delete($id)
+    {
+        $data = Newsletter::where('id',$id)->delete();
+        return redirect("admin/subscribers");
+
+
     }
   
 }

@@ -675,4 +675,4 @@
 </body>
 
 </html>
-<?php /**PATH D:\Projects\Menow\me_now\resources\views/front/layout.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\xampp\htdocs\meNow\resources\views/front/layout.blade.php ENDPATH**/ ?>

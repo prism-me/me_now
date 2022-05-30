@@ -181,6 +181,10 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get("changepackagestatus/{status}/{id}","SubscriptionController@changepackagestatus");
         Route::any("chat","HomeController@showchat")->name("chat");
 
+        Route::get("subscribers","DoctorController@subscribers");
+        Route::any("subscriber-delete/{id}","DoctorController@subscriber_delete");
+
+
 
         #ARticle
         Route::resource('articles', 'ArticleController');
