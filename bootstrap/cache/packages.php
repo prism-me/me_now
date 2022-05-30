@@ -24,6 +24,17 @@
       0 => 'Fruitcake\\Cors\\CorsServiceProvider',
     ),
   ),
+  'lanin/laravel-api-debugger' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Lanin\\Laravel\\ApiDebugger\\ServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Debugger' => 'Lanin\\Laravel\\ApiDebugger\\Support\\Facade',
+    ),
+  ),
   'laravel/tinker' => 
   array (
     'providers' => 

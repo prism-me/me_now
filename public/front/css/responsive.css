@@ -658,6 +658,11 @@ display: none !important;
 .text-margin{
 	margin-top: 25px;
 }
+.numbers-counter-main-box {
+    padding: 30px 0px;
+    background-color: #22242a;
+    margin: 80px 0px 30px;
+}
 }
 
 /*========== Max-width 576px end ==========*/

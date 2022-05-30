@@ -14,7 +14,7 @@
                 <p>{{ __("messages.The best doctor is the one you run to and can't find") }}</p>
             </div>
 
-            <div class="doctorpg-tab-mainbox">
+            {{-- <div class="doctorpg-tab-mainbox">
                 <section class="customer-logos slider tab">
                     <div class="slide tablinks" id="defaultOpen" onclick="openCity(event, 'all')">
                         {{ __('messages.All') }}
@@ -26,7 +26,7 @@
                         </div>
                     @endforeach
                 </section>
-            </div>
+            </div> --}}
 
             <div class="doctorpg-part-main-box">
                 <div id="all" class="tabcontent">
@@ -41,7 +41,7 @@
                                         </a>
                                         <div class="doctorl-part-detail">
                                             <h4><a href="{{ url('doctordetails/') . '/' . $d->slug }}"
-                                                    class="denone">{{ ucwords(strtolower($d->name)) }}</a></h4>
+                                                    class="denone">{{ ucwords($d->name) }}</a></h4>
                                             <p style="color:rgb(108, 108, 108)">
                                                 {{ substr($d->about_us, 0, 100) }}...
                                                 
@@ -57,58 +57,6 @@
                         @endforeach
                     </div>
                 </div>
-                @foreach ($departmentdoctor as $da)
-                    <div id="{{ $da->id }}" class="tabcontent">
-                        <div class="row">
-                            @foreach ($da->doctor as $sa)
-                                <a href="{{ url('doctordetails/') . '/' . $sa->slug }}">
-                                    <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up">
-                                        <div class="d-detail-collapse-doctor">
-                                            <div class="doctorl-part-box">
-                                                <?php
-                                                if ($sa->image) {
-                                                    $image = $sa->image;
-                                                } else {
-                                                    $image = asset('upload/profile/profile.png');
-                                                }
-                                                ?>
-                                                <div class="doctorl-dp-img doctorl-dp-img-1"
-                                                    style="background-image: url('<?= $image ?>')"></div>
-                                                <div class="doctor-detail-part">
-                                                    <div class="doctorl-part-detail">
-                                                        <h5>{{ substr(ucwords(strtolower($sa->name)), 0, 20) }}</h5>
-                                                        <p>{{ substr($sa->about_us, 0, 125) }}</p>
-                                                    </div>
-                                                    <div class="icons-images">
-                                                        <span class="facebook-doctorl">
-                                                            <a
-                                                                href="{{ isset($sa->facebook_id) ? $sa->facebook_id : '' }}"><i
-                                                                    class="fab fa-facebook-f"></i></a>
-                                                        </span>
-                                                        <span class="twitter-doctorl">
-                                                            <a
-                                                                href="{{ isset($sa->twitter_id) ? $sa->twitter_id : '' }}"><i
-                                                                    class="fab fa-twitter"></i></a>
-                                                        </span>
-                                                        <span class="gp-doctorl">
-                                                            <a href="{{ isset($sa->google_id) ? $sa->google_id : '' }}"><i
-                                                                    class="fab fa-google-plus-g"></i></a>
-                                                        </span>
-                                                        <span class="instagram-doctorl">
-                                                            <a
-                                                                href="{{ isset($sa->instagram_id) ? $sa->instagram_id : '' }}"><img
-                                                                    src="{{ asset('front/img/instagram.png') }}"></a>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            @endforeach
-                        </div>
-                    </div>
-                @endforeach
             </div>
         </div>
 
