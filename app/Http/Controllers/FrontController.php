@@ -411,8 +411,11 @@ class FrontController extends Controller
        public function savesubscribe($email){
           $store=new NewsLetter();
           $store->email=$email;
-          $store->save();
-          return "done";
+          if($store->save()){
+          return "You have subscribed successfully.";
+          }else{
+            return "Server Error.";
+          }
        }
 
        public function pricing(){
