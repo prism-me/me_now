@@ -242,20 +242,22 @@ class FrontController extends Controller
             $department=Department::with('service')->get();
     
             $setting=Setting::find(1);
-            return view("front.department")->with("department",$department)->with("setting",$setting)->with("departmentService",$departmentService)->with('serviceSlug' , $service);
+            return view("front.department")->with("department",$department)->with("setting",$setting)->with("departmentService",$departmentService)->with('serviceSlug' , $service)->with('current',$departmentId);
         }
 
 
         public function departmentdetail($service,$subService){
             
-            $department=Department::with('service')->get();
+           $department = Department::with('service')->get();
             
-            //sub services
-            $subServices = $department[0]->service;
+           //current sub service
+           $currentService = DepartService::where("slug", $subService)->first();
 
-            //current sub service
-            $currentService = $department[0]->service->firstWhere('slug' , $subService);
 
+            //sub services            
+            $subServices =  DepartService::where('department_id', $currentService->department_id)->get();
+                        
+            // dd($subServices);    
             //doctors and sub services of the selected service
             $departmentdetails= Department::with("doctor")->where('slug' ,$service)->get();
             //get doctors
@@ -263,7 +265,7 @@ class FrontController extends Controller
                         
             $setting=Setting::find(1);
 
-           return view("front.departmentdetails")->with('doctors',$doctors)->with('current',$currentService)->with('subServices',$subServices)->with("department",$department)->with("departmentdetails",$departmentdetails)->with("setting",$setting);
+           return view("front.departmentdetails")->with('service_slug',$service)->with('doctors',$doctors)->with('current',$currentService)->with('subServices',$subServices)->with("department",$department)->with("departmentdetails",$departmentdetails)->with("setting",$setting);
 
        }
 

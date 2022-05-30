@@ -382,6 +382,7 @@ margin-top: 3rem;
 }
 .who_we_are_cotent h2{
     margin:1.5rem auto;
+    font-size: 1.5rem;
 }
 .who_we_are_cotent h2:nth-child(1){
     font-size: 30px;
@@ -404,7 +405,7 @@ margin-top: 3rem;
 }
 
 .about_tiles{
-    margin:80px auto;
+    margin:80px auto 0px;
 }
 
 .about_tiles .single-tile{
@@ -548,7 +549,9 @@ select.form-control:not([size]):not([multiple]) {
 .about-content-widget{
     margin-bottom: 3rem;
 }
-
+.about-content-widget .row{
+    align-items: center;
+}
 .rooms_slider{
     margin: 80px auto;
 }
@@ -596,4 +599,21 @@ height:450px;
 
 .faq .card-header:not(.collapsed) .rotate-icon {
   transform: rotate(180deg);
+}
+
+.services-content p{
+    text-align: left !important;
+}
+.services-content strong{
+    line-height: 37px;
+}
+
+.services-content{
+    text-align:left !important;
+    color: #767676;
+}
+
+.services-inner-content ul {
+    text-align:left !important;
+    color: #767676;
 }

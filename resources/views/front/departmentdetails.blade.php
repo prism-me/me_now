@@ -8,17 +8,16 @@
         <div class="container">
             <div class="global-heading">
                 <h2>{{ $current->name }}</h2>
-                <p>{{ __('messages.The life so short, the craft so long to learn') }}</p>
+                {{-- <p>{{ __('messages.The life so short, the craft so long to learn') }}</p> --}}
             </div>
             <div class="d-detailpg-part-main-box">
                 <div class="row">
                     <div class="col-lg-9 col-md-12">
-
                         <div class="d-detail-main-box">
                             <div class="global-part-heading global-heading">
                                 {{-- <h3>{{ __('messages.About Department') }}</h3> --}}
                                 {{-- <p>{{ strip_tags($departmentdetails->description) }}</p> --}}
-                                <p>{!! $current->description !!}</p>
+                                <div class="services-inner-content">{!! $current->description !!}</div>
                             </div>
                         </div>
                     </div>
@@ -28,7 +27,8 @@
 							<p>{{__('messages.Emergency Number')}}</p>
 							<h4>{{$departmentdetails->emergency_no}}</h4>
 						</div> --}}
-                        @if (count($subServices) > 1)
+                        {{-- @dd($subServices) --}}
+                        @if ($subServices)
                             <div class="department_wrappers">
                                 <ul>
                                     @php $i=1 @endphp
@@ -38,7 +38,7 @@
                                             echo count($subServices) === $i ? "style='border-bottom:0px'" : ' ';
                                             
                                         @endphp><a class="dropdown-item"
-                                                href="{{ url('services') . '/' . $departmentdetails[0]->slug . '/' . $dp->slug }}">{{ $dp->name }}</a>
+                                                href="{{ url('services') . '/' . $service_slug . '/' . $dp->slug }}">{{ $dp->name }}</a>
                                         </li>
                                         @php $i++ @endphp
                                     @endforeach

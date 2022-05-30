@@ -72,7 +72,8 @@
                 <nav class="navbar navbar-light bg-faded">
                     <a class="navbar-brand" href="<?php echo e(url('/')); ?>">
                         <?php if(isset($setting->logo)): ?>
-                            <img src="<?php echo e(asset('upload/images') . '/' . $setting->logo); ?>" class="logo-img">
+                            
+                            <img src="<?php echo e(asset('front/img/logo.png')); ?>" class="logo-img">
                         <?php else: ?>
                             <img src="<?php echo e(Session::get('logo')); ?>" class="logo-img">
                         <?php endif; ?>
@@ -148,8 +149,9 @@
 
 
     <div class="sticky_buttons">
-        <img src="<?php echo e(asset('front/img/whatsapp.png')); ?>" alt="Whatsapp Action">
-        <img src="<?php echo e(asset('front/img/call_now.png')); ?>" alt="Call Action">
+        <a href="https://api.whatsapp.com/send/?phone=00971565553483" target="_blank"><img
+                src="<?php echo e(asset('front/img/whatsapp.png')); ?>" alt="Whatsapp Action"></a>
+        <a href="tel:+971565553483"><img src="<?php echo e(asset('front/img/call_now.png')); ?>" alt="Call Action"></a>
     </div>
 
     <div class="spacefor-global">
@@ -444,7 +446,8 @@
                         <div class="footer-r1-box">
                             <div class="footer-logo-box">
                                 <?php if(isset($setting->logo)): ?>
-                                    <img src="<?php echo e(asset('upload/images') . '/' . $setting->logo); ?>">
+                                    <img src="<?php echo e(asset('front/img/logo.png')); ?>" class="logo-img">
+                                    
                                 <?php else: ?>
                                     <img src="<?php echo e(Session::get('logo')); ?>">
                                 <?php endif; ?>
@@ -453,7 +456,11 @@
                             <div class="footer-r1-detail">
                                 <div class="footer-d1-box">
                                     <h3><?php echo e(__('messages.About us')); ?></h3>
-                                    <p><?php echo e(__('messages.front_about')); ?></p>
+                                    
+                                    <p>
+                                        Me Now is a "haven" for well-being and mental health. We provide professional
+                                        services to Families, children, teenagers, couples, employers, and entrepreneurs
+                                    </p>
                                 </div>
                                 <div class="footer-d1-box">
                                     <h3><?php echo e(__('messages.Contact Us')); ?></h3>

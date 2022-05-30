@@ -21,8 +21,8 @@
         <div class="who_we_are">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="https://lighthouse-media.s3.us-east-2.amazonaws.com/601679ac8e54020017840684/1640001095057_dreamstime_xxl_54964318%20%28Large%29.jpg"
-                        alt="" class="img-fluid">
+                    <img src="{{ asset('front/img/woman-empowerment.jpg') }}" alt="" class="img-fluid">
+
                 </div>
                 <div class="col-md-6">
                     <div class="who_we_are_cotent">
@@ -150,67 +150,7 @@
                 </div>
             </div>
         </div> --}}
-        <div class="doctorl-main-box">
-            <div class="container">
-                <div class="global-heading">
-                    <h2>{{ __('messages.Meet Our Doctors') }}</h2>
-                    <p>{{ __('messages.Talent wins games, but teamwork and intelligence win championships') }}</p>
-                </div>
-                <div class="row">
-                    @if (count($doctor) > 0)
-                        @foreach ($doctor as $d)
-                            <div class="col-lg-3 col-md-6 col-sm-6 ">
-                                <div class="doctorl-part-box">
-                                    <?php
-                                    if ($d->image) {
-                                        $image = $d->image;
-                                    } else {
-                                        $image = asset('upload/profile/profile.png');
-                                    }
-                                    ?>
-                                    <a href="{{ url('doctordetails/') . '/' . $d->slug }}" class="anchor-doctor-image">
-                                        <div class="doctorl-dp-img doctorl-dp-img-1"
-                                            style="background-image: url('<?= $image ?>')"></div>
-                                    </a>
-                                    <div class="doctorl-part-detail">
-                                        <h4><a href="{{ url('doctordetails/') . '/' . $d->slug }}"
-                                                class="anchor-doctor-image">{{ ucwords($d->name) }}</a></h4>
-                                        <p>{{ substr(trim($d->about_us), 0, 135) }} ... <a href="{{ url('doctordetails/') . '/' . $d->slug }}">Read More</a> </p>
-                                        <div class="book_appointment_doctor">
-                                            <button data-toggle="modal" data-target="#appointmentModal">Make an
-                                                Appointment</button>
-                                        </div>
-                                    </div>
-                                    <div class="icons-images">
-                                        {{-- <div class="book_appointment_doctor">
-                                                <button>Make an Appointment</button>
-                                            </div> --}}
-                                        {{-- <span class="facebook-doctorl">
-                                                <a href="{{ isset($d->facebook_id) ? $d->facebook_id : '' }}" target="_blank"><i
-                                                        class="fab fa-facebook-f"></i></a>
-                                            </span>
-                                            <span class="twitter-doctorl">
-                                                <a href="{{ isset($d->twitter_id) ? $d->twitter_id : '' }}" target="_blank"><i
-                                                        class="fab fa-twitter"></i></a>
-                                            </span>
-                                            <span class="gp-doctorl">
-                                                <a href="{{ isset($d->google_id) ? $d->google_id : '' }}" target="_blank"><i
-                                                        class="fab fa-google-plus-g"></i></a>
-                                            </span>
-                                            <span class="instagram-doctorl">
-                                                <a href="{{ isset($d->instagram_id) ? $d->instagram_id : '' }}"
-                                                    target="_blank"><img
-                                                        src="{{ asset('front/img/instagram.png') }}"></a>
-                                            </span> --}}
-                                    </div>
-                                </div>
 
-                            </div>
-                        @endforeach
-                    @endif
-                </div>
-            </div>
-        </div>
     </div>
 
     <div class="numbers-counter-main-box">

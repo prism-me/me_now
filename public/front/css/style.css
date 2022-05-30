@@ -455,7 +455,7 @@ a:hover{
     padding: 25px;
     border-radius: 10px;
     margin-bottom: 30px;
-    height: 240px;
+    height: 250px;
 }
 
 .services-part1-box {
@@ -892,8 +892,8 @@ text-align: right;
 }
 
 .department-part-img img {
-    width: 80px;
-    height: auto;
+    width: 60px;
+    height: 60px;
 }
 
 .department-viewd-btn a {

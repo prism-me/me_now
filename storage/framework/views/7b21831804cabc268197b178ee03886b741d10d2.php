@@ -45,7 +45,9 @@
                                     <div class="text-detail-box">
 
                                         <h4><a href="<?php echo e(url('services') . '/' . $s->slug); ?>"><?php echo e($s->name); ?></a></h4>
-                                        <p><?php echo e($s->short_description); ?></p>
+                                        <p><?php echo e(substr($s->short_description, 0, 70)); ?>... <a
+                                                href="<?php echo e(url('services') . '/' . $s->slug); ?>">Read More</a>
+                                        </p>
                                     </div>
                                 </div>
                 </div>
@@ -83,8 +85,16 @@
                                 <?php endif; ?>
                                 <img src="<?php echo e($s->image); ?>">
                                 <div class="text-detail-box">
-                                    <h4><?php echo e($s->name); ?></h4>
-                                    <p><?php echo e(substr($s->short_description, 0, 70)); ?></p>
+                                    <h4>
+
+                                        <a href="<?php echo e(url('services') . '/' . $s->slug); ?>"><?php echo e($s->name); ?></a>
+                                    </h4>
+
+                                    <p><?php echo e(substr($s->short_description, 0, 70)); ?> ... <a
+                                            href="<?php echo e(url('services') . '/' . $s->slug); ?>">Read More</a>
+
+                                    </p>
+
                                 </div>
                             </div>
             </div>
@@ -95,15 +105,7 @@
             <?php endif; ?>
         </div>
 
-        <div class="col-md-4 col-sm-6">
-            <div class="services-part-box services-part2-box">
-                <img src="https://menow.b-cdn.net/images/icon-165363374975.png" class="img-fluid">
-                <div class="text-detail-box">
-                    <h4><a href="<?php echo e(url('/rooms')); ?>">Rooms</a></h4>
-                    <p>Rooms descriptions</p>
-                </div>
-            </div>
-        </div>
+        
     </div>
     </div>
     <div class="video-section">
@@ -185,8 +187,8 @@
     <div class="doctorl-main-box">
         <div class="container">
             <div class="global-heading">
-                <h2><?php echo e(__('messages.Meet Our Doctors')); ?></h2>
-                <p><?php echo e(__('messages.Talent wins games, but teamwork and intelligence win championships')); ?></p>
+                <h2>Me Now Team</h2>
+                
             </div>
             <div class="row">
                 <?php if(count($doctor) > 0): ?>
@@ -211,10 +213,6 @@
                                     <div class="book_appointment_doctor">
                                         <button>Make an Appointment</button>
                                     </div>
-                                </div>
-                                <div class="icons-images">
-                                    
-                                    
                                 </div>
                             </div>
 

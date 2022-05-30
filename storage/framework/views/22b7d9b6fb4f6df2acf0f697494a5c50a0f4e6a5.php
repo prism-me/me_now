@@ -22,8 +22,8 @@
         <div class="who_we_are">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="https://lighthouse-media.s3.us-east-2.amazonaws.com/601679ac8e54020017840684/1640001095057_dreamstime_xxl_54964318%20%28Large%29.jpg"
-                        alt="" class="img-fluid">
+                    <img src="<?php echo e(asset('front/img/woman-empowerment.jpg')); ?>" alt="" class="img-fluid">
+
                 </div>
                 <div class="col-md-6">
                     <div class="who_we_are_cotent">
@@ -117,49 +117,7 @@
         </div>
 
         
-        <div class="doctorl-main-box">
-            <div class="container">
-                <div class="global-heading">
-                    <h2><?php echo e(__('messages.Meet Our Doctors')); ?></h2>
-                    <p><?php echo e(__('messages.Talent wins games, but teamwork and intelligence win championships')); ?></p>
-                </div>
-                <div class="row">
-                    <?php if(count($doctor) > 0): ?>
-                        <?php $__currentLoopData = $doctor; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <div class="col-lg-3 col-md-6 col-sm-6 ">
-                                <div class="doctorl-part-box">
-                                    <?php
-                                    if ($d->image) {
-                                        $image = $d->image;
-                                    } else {
-                                        $image = asset('upload/profile/profile.png');
-                                    }
-                                    ?>
-                                    <a href="<?php echo e(url('doctordetails/') . '/' . $d->slug); ?>" class="anchor-doctor-image">
-                                        <div class="doctorl-dp-img doctorl-dp-img-1"
-                                            style="background-image: url('<?= $image ?>')"></div>
-                                    </a>
-                                    <div class="doctorl-part-detail">
-                                        <h4><a href="<?php echo e(url('doctordetails/') . '/' . $d->slug); ?>"
-                                                class="anchor-doctor-image"><?php echo e(ucwords($d->name)); ?></a></h4>
-                                        <p><?php echo e(substr(trim($d->about_us), 0, 135)); ?> ... <a href="<?php echo e(url('doctordetails/') . '/' . $d->slug); ?>">Read More</a> </p>
-                                        <div class="book_appointment_doctor">
-                                            <button data-toggle="modal" data-target="#appointmentModal">Make an
-                                                Appointment</button>
-                                        </div>
-                                    </div>
-                                    <div class="icons-images">
-                                        
-                                        
-                                    </div>
-                                </div>
 
-                            </div>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    <?php endif; ?>
-                </div>
-            </div>
-        </div>
     </div>
 
     <div class="numbers-counter-main-box">

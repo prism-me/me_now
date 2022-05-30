@@ -73,7 +73,8 @@
                 <nav class="navbar navbar-light bg-faded">
                     <a class="navbar-brand" href="{{ url('/') }}">
                         @if (isset($setting->logo))
-                            <img src="{{ asset('upload/images') . '/' . $setting->logo }}" class="logo-img">
+                            {{-- <img src="{{ asset('upload/images') . '/' . $setting->logo }}" class="logo-img"> --}}
+                            <img src="{{ asset('front/img/logo.png') }}" class="logo-img">
                         @else
                             <img src="{{ Session::get('logo') }}" class="logo-img">
                         @endif
@@ -151,8 +152,9 @@
 
 
     <div class="sticky_buttons">
-        <img src="{{ asset('front/img/whatsapp.png') }}" alt="Whatsapp Action">
-        <img src="{{ asset('front/img/call_now.png') }}" alt="Call Action">
+        <a href="https://api.whatsapp.com/send/?phone=00971565553483" target="_blank"><img
+                src="{{ asset('front/img/whatsapp.png') }}" alt="Whatsapp Action"></a>
+        <a href="tel:+971565553483"><img src="{{ asset('front/img/call_now.png') }}" alt="Call Action"></a>
     </div>
 
     <div class="spacefor-global">
@@ -446,7 +448,8 @@
                         <div class="footer-r1-box">
                             <div class="footer-logo-box">
                                 @if (isset($setting->logo))
-                                    <img src="{{ asset('upload/images') . '/' . $setting->logo }}">
+                                    <img src="{{ asset('front/img/logo.png') }}" class="logo-img">
+                                    {{-- <img src="{{ asset('upload/images') . '/' . $setting->logo }}"> --}}
                                 @else
                                     <img src="{{ Session::get('logo') }}">
                                 @endif
@@ -455,7 +458,11 @@
                             <div class="footer-r1-detail">
                                 <div class="footer-d1-box">
                                     <h3>{{ __('messages.About us') }}</h3>
-                                    <p>{{ __('messages.front_about') }}</p>
+                                    {{-- <p>{{ __('messages.front_about') }}</p> --}}
+                                    <p>
+                                        Me Now is a "haven" for well-being and mental health. We provide professional
+                                        services to Families, children, teenagers, couples, employers, and entrepreneurs
+                                    </p>
                                 </div>
                                 <div class="footer-d1-box">
                                     <h3>{{ __('messages.Contact Us') }}</h3>

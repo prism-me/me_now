@@ -44,7 +44,9 @@
                                     <div class="text-detail-box">
 
                                         <h4><a href="{{ url('services') . '/' . $s->slug }}">{{ $s->name }}</a></h4>
-                                        <p>{{ $s->short_description }}</p>
+                                        <p>{{ substr($s->short_description, 0, 70) }}... <a
+                                                href="{{ url('services') . '/' . $s->slug }}">Read More</a>
+                                        </p>
                                     </div>
                                 </div>
                 </div>
@@ -83,8 +85,16 @@
                                 @endif
                                 <img src="{{ $s->image }}">
                                 <div class="text-detail-box">
-                                    <h4>{{ $s->name }}</h4>
-                                    <p>{{ substr($s->short_description, 0, 70) }}</p>
+                                    <h4>
+
+                                        <a href="{{ url('services') . '/' . $s->slug }}">{{ $s->name }}</a>
+                                    </h4>
+
+                                    <p>{{ substr($s->short_description, 0, 70) }} ... <a
+                                            href="{{ url('services') . '/' . $s->slug }}">Read More</a>
+
+                                    </p>
+
                                 </div>
                             </div>
             </div>
@@ -95,7 +105,7 @@
             @endif
         </div>
 
-        <div class="col-md-4 col-sm-6">
+        {{-- <div class="col-md-4 col-sm-6">
             <div class="services-part-box services-part2-box">
                 <img src="https://menow.b-cdn.net/images/icon-165363374975.png" class="img-fluid">
                 <div class="text-detail-box">
@@ -103,7 +113,7 @@
                     <p>Rooms descriptions</p>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
     </div>
     <div class="video-section">
@@ -183,8 +193,8 @@
     <div class="doctorl-main-box">
         <div class="container">
             <div class="global-heading">
-                <h2>{{ __('messages.Meet Our Doctors') }}</h2>
-                <p>{{ __('messages.Talent wins games, but teamwork and intelligence win championships') }}</p>
+                <h2>Me Now Team</h2>
+                {{-- <p>{{ __('messages.Talent wins games, but teamwork and intelligence win championships') }}</p> --}}
             </div>
             <div class="row">
                 @if (count($doctor) > 0)
@@ -209,28 +219,6 @@
                                     <div class="book_appointment_doctor">
                                         <button>Make an Appointment</button>
                                     </div>
-                                </div>
-                                <div class="icons-images">
-                                    {{-- <div class="book_appointment_doctor">
-                                            <button>Make an Appointment</button>
-                                        </div> --}}
-                                    {{-- <span class="facebook-doctorl">
-                                            <a href="{{ isset($d->facebook_id) ? $d->facebook_id : '' }}" target="_blank"><i
-                                                    class="fab fa-facebook-f"></i></a>
-                                        </span>
-                                        <span class="twitter-doctorl">
-                                            <a href="{{ isset($d->twitter_id) ? $d->twitter_id : '' }}" target="_blank"><i
-                                                    class="fab fa-twitter"></i></a>
-                                        </span>
-                                        <span class="gp-doctorl">
-                                            <a href="{{ isset($d->google_id) ? $d->google_id : '' }}" target="_blank"><i
-                                                    class="fab fa-google-plus-g"></i></a>
-                                        </span>
-                                        <span class="instagram-doctorl">
-                                            <a href="{{ isset($d->instagram_id) ? $d->instagram_id : '' }}"
-                                                target="_blank"><img
-                                                    src="{{ asset('front/img/instagram.png') }}"></a>
-                                        </span> --}}
                                 </div>
                             </div>
 

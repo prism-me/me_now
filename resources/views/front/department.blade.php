@@ -6,8 +6,9 @@
     <div class="departmentpg-main-box">
         <div class="container">
             <div class="global-heading">
-                <h2>{{ __('messages.Our Services') }}</h2>
-                <p>{{ __('messages.Goodness and hard work are rewarded with respect') }}</p>
+                {{-- @dd($department) --}}
+                <h2>{{$current->name}}</h2>
+                <div class="services-content">{!!$current->description !!}</div>
             </div>
             <div class="department-part-main-box">
                 <div class="row">
@@ -15,11 +16,11 @@
                         
                    
                             @foreach ($departmentService as $service)
-                            
+
                                 <div class="col-lg-3 col-md-4 col-sm-6">
                                     <div class="department-part-box">
                                         <div class="department-part-img">
-                                            <img src="{{ $service->image }}">
+                                            <img src="{{ $service->img }}">
                                         </div>
                                         <div class="text-detail-box">
 										<h4>{{ $service->name }}</h4>
