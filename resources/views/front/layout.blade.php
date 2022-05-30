@@ -117,10 +117,6 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="{{ url('doctorlist') }}">{{ __('messages.Corporate Services') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link"
                                     href="{{ url('doctorlist') }}">{{ __('messages.Doctors') }}</a>
                             </li>
                             <li class="nav-item">
@@ -132,7 +128,7 @@
                                     href="{{ url('events') }}">{{ __('messages.Events') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('blog') }}">{{ __('messages.Blog') }}</a>
+                                <a class="nav-link" href="#">{{ __('messages.Blog') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
@@ -567,7 +563,7 @@
 
                                 <a href="privacypolicy">{{ __('messages.Privacy Policy') }}</a>
 
-                                <a href="copy-rights">{{ __('messages.Shipping Policy') }}</a>
+                                {{-- <a href="copy-rights">{{ __('messages.Shipping Policy') }}</a> --}}
                             </span>
                         </div>
 

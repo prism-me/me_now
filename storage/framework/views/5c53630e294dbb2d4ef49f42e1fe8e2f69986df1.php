@@ -114,10 +114,6 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="<?php echo e(url('doctorlist')); ?>"><?php echo e(__('messages.Corporate Services')); ?></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link"
                                     href="<?php echo e(url('doctorlist')); ?>"><?php echo e(__('messages.Doctors')); ?></a>
                             </li>
                             <li class="nav-item">
@@ -129,7 +125,7 @@
                                     href="<?php echo e(url('events')); ?>"><?php echo e(__('messages.Events')); ?></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?php echo e(url('blog')); ?>"><?php echo e(__('messages.Blog')); ?></a>
+                                <a class="nav-link" href="#"><?php echo e(__('messages.Blog')); ?></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
@@ -572,7 +568,7 @@
 
                                 <a href="privacypolicy"><?php echo e(__('messages.Privacy Policy')); ?></a>
 
-                                <a href="copy-rights"><?php echo e(__('messages.Shipping Policy')); ?></a>
+                                
                             </span>
                         </div>
 
