@@ -277,6 +277,7 @@ if (document.getElementById("defaultOpen")) {
 }
 
 function savesubscribe() {
+	// console.log("hello");
 	var email = $("#subscribeemail").val();
 	if (ValidateEmail(email) == "invaild") {
 		alert("Please Enter Vaild Email");
@@ -285,7 +286,7 @@ function savesubscribe() {
 			url: $("#siteurl").val() + "/savesubscribe" + "/" + email,
 			method: "get",
 			success: function (data) {
-				alert(__('messages.newsletteralert'));
+				alert(data);
 			}
 		});
 	}
