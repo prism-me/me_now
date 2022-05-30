@@ -66,6 +66,12 @@
                      
                      <div class="form-group">
                         <label for="email" class=" form-control-label">
+                        <?php echo e(__('messages.Excerpt')); ?><span class="reqfield" >*</span>
+                        </label>
+                        <textarea  id="excerpt" name="excerpt"  class="form-control"><?php echo e(isset($data->excerpt)?$data->excerpt:''); ?></textarea>
+                     </div>
+                     <div class="form-group">
+                        <label for="email" class=" form-control-label">
                         <?php echo e(__('messages.Short Description')); ?><span class="reqfield" >*</span>
                         </label>
                         <textarea  id="short_description" name="short_description"  class="form-control"><?php echo e(isset($data->short_description)?$data->short_description:''); ?></textarea>
@@ -75,6 +81,15 @@
                         <?php echo e(__('messages.Description')); ?><span class="reqfield" >*</span>
                         </label>
                         <textarea  id="description" name="description"  class="form-control"><?php echo e(isset($data->description)?$data->description:''); ?></textarea>
+                     </div>
+                      <div class="form-group">
+                        <label for="file" class=" form-control-label">  
+                        <?php echo e(__('messages.Image')); ?><span class="reqfield" >*</span>
+                        </label>
+                        <img src="<?php echo e(isset($data->img)?$data->img:''); ?>" class="imgsize1 departmentimg" style="width:50px;height:50px;"/> 
+                        <div>
+                           <input type="file" id="file" name="img" class="form-control-file" accept="img/*">
+                        </div>
                      </div>
                        
                         <?php if(Session::get("is_demo")=='1'): ?>

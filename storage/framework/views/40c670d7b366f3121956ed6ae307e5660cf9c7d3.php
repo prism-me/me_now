@@ -19,7 +19,6 @@
     <meta property="og:description" content="<?php echo e(__('messages.meta_description_admin')); ?>" />
     <meta property="og:keyword" content="<?php echo e(__('messages.meta_keyword')); ?>" />
     
-
     <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
 
     <?php echo $__env->yieldContent('meta_title'); ?>
@@ -51,8 +50,9 @@
                     aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="<?php echo e(url('admin/dashboard')); ?>"><?php echo e(__('messages.Clinic')); ?></a>
-                <a class="navbar-brand hidden" href="<?php echo e(url('admin/dashboard')); ?>"><?php echo e(__('messages.shortcode')); ?></a>
+                <a class="navbar-brand" href="<?php echo e(url('admin/dashboard')); ?>"><?php echo e(__('messages.Admin')); ?></a>
+                <a class="navbar-brand hidden"
+                    href="<?php echo e(url('admin/dashboard')); ?>"><?php echo e(__('messages.shortcode')); ?></a>
             </div>
             <div id="main-menu" class="main-menu collapse navbar-collapse admin-main-menu">
                 <ul class="nav navbar-nav">
@@ -232,62 +232,77 @@
             <p class="message"></p>
         </section>
     </div> -->
-      <input type="hidden" id="site_url" value="<?php echo e(url('/')); ?>" />
-      <input type="hidden" id="siteurl" value="<?php echo e(url('/')); ?>" />
-      <input type="hidden" id="admin_url" value="<?php echo e(url('/admin')); ?>" />
-      <input type="hidden" id="own_url" value="<?php echo e(url('admin')); ?>" />
-      <input type="hidden" id="currentusername" value="<?php echo e(Auth::user()->name); ?>">
-      <input type="hidden" id="mycurrentuser" value="<?php echo e(Auth::user()->id); ?>">
-     <input type="hidden" id="authprofile" value="<?php echo e(Session::get('profile_pic_path')); ?>">
-      <input type="hidden" id="usertype" value="<?php echo e(Auth::user()->usertype); ?>">
-      <input type="hidden" id="site_type" value="<?php echo e(Session::get('is_demo')); ?>">
-      <input type="hidden" id="delete_msg" value="<?php echo e(__('messages.Are sure want to delete this row')); ?>"/>
-      <input type="hidden" id="samepwd" value="<?php echo e(__('messages.New password and Re enter password must be same')); ?>">
-      <input type="hidden" id="incorrectpwd" value="<?php echo e(__('messages.Please Enter Correct Password')); ?>">
-      <input type="hidden" id="invaildimg" value="<?php echo e(__('messages.Image Size Invaild')); ?>">
-      <input type="hidden" id="chkworkingtime" value="<?php echo e(__('messages.Please Check You Working Time')); ?>"/>
-      <input type="hidden" id="seldate" value="<?php echo e(__('messages.Please Select Date')); ?>">
-      
-      <script type="text/javascript" src="<?php echo e(asset('js/script.js')); ?>"></script>
-      <script src="<?php echo e(asset('adesign/vendors/jquery/dist/jquery.min.js')); ?>"></script>
-      <script src="<?php echo e(asset('adesign/vendors/popper.js/dist/umd/popper.min.js')); ?>"></script>
-      <script src="<?php echo e(asset('adesign/vendors/bootstrap/dist/js/bootstrap.min.js')); ?>"></script>
-      <script src="<?php echo e(asset('adesign/assets/js/main.js')); ?>"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-      <script src="<?php echo e(asset('adesign/vendors/datatables.net/js/jquery.dataTables.min.js')); ?>"></script>
-      <script src="<?php echo e(asset('adesign/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js')); ?>"></script>
-      <script src="<?php echo e(asset('adesign/vendors/datatables.net-buttons/js/dataTables.buttons.min.js')); ?>"></script>
-      <script src="<?php echo e(asset('adesign/vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js')); ?>"></script>
-      <script src="<?php echo e(asset('adesign/vendors/jszip/dist/jszip.min.js')); ?>"></script>
-      <script src="<?php echo e(asset('adesign/vendors/pdfmake/build/pdfmake.min.js')); ?>"></script>
-      <script src="<?php echo e(asset('adesign/vendors/pdfmake/build/vfs_fonts.js')); ?>"></script>
-      <script src="<?php echo e(asset('adesign/vendors/datatables.net-buttons/js/buttons.html5.min.js')); ?>"></script>
-      <script src="<?php echo e(asset('adesign/vendors/datatables.net-buttons/js/buttons.print.min.js')); ?>"></script>
-      <script src="<?php echo e(asset('adesign/vendors/datatables.net-buttons/js/buttons.colVis.min.js')); ?>"></script>
-      <script src="<?php echo e(asset('fileupload/dist/js/jquery.dm-uploader.min.js')); ?>"></script>
-      <script src="<?php echo e(asset('fileupload/demo/demo-ui.js')); ?>"></script>
-      <script src="<?php echo e(asset('fileupload/demo/demo-config.js?v=296')); ?>"></script>
-      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-      <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
-      
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.23/moment-timezone-with-data-2012-2022.min.js"></script>
-      
-      
-      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-      
-      
-      <script src="<?php echo e(asset('js/admin.js?v=1333324')); ?>"></script>
-      <?php echo $__env->yieldContent('footer'); ?>
-      
-       <script>
-         ClassicEditor
-         .create( document.querySelector( '#description' ) )
-         .catch( error => {
-         console.error( error );
-         } );
-         </script>
-   </body>
+    <input type="hidden" id="site_url" value="<?php echo e(url('/')); ?>" />
+    <input type="hidden" id="siteurl" value="<?php echo e(url('/')); ?>" />
+    <input type="hidden" id="admin_url" value="<?php echo e(url('/admin')); ?>" />
+    <input type="hidden" id="own_url" value="<?php echo e(url('admin')); ?>" />
+    <input type="hidden" id="currentusername" value="<?php echo e(Auth::user()->name); ?>">
+    <input type="hidden" id="mycurrentuser" value="<?php echo e(Auth::user()->id); ?>">
+    <input type="hidden" id="authprofile" value="<?php echo e(Session::get('profile_pic_path')); ?>">
+    <input type="hidden" id="usertype" value="<?php echo e(Auth::user()->usertype); ?>">
+    <input type="hidden" id="site_type" value="<?php echo e(Session::get('is_demo')); ?>">
+    <input type="hidden" id="delete_msg" value="<?php echo e(__('messages.Are sure want to delete this row')); ?>" />
+    <input type="hidden" id="samepwd" value="<?php echo e(__('messages.New password and Re enter password must be same')); ?>">
+    <input type="hidden" id="incorrectpwd" value="<?php echo e(__('messages.Please Enter Correct Password')); ?>">
+    <input type="hidden" id="invaildimg" value="<?php echo e(__('messages.Image Size Invaild')); ?>">
+    <input type="hidden" id="chkworkingtime" value="<?php echo e(__('messages.Please Check You Working Time')); ?>" />
+    <input type="hidden" id="seldate" value="<?php echo e(__('messages.Please Select Date')); ?>">
+
+    <script type="text/javascript" src="<?php echo e(asset('js/script.js')); ?>"></script>
+    <script src="<?php echo e(asset('adesign/vendors/jquery/dist/jquery.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('adesign/vendors/popper.js/dist/umd/popper.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('adesign/vendors/bootstrap/dist/js/bootstrap.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('adesign/assets/js/main.js')); ?>"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="<?php echo e(asset('adesign/vendors/datatables.net/js/jquery.dataTables.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('adesign/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('adesign/vendors/datatables.net-buttons/js/dataTables.buttons.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('adesign/vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('adesign/vendors/jszip/dist/jszip.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('adesign/vendors/pdfmake/build/pdfmake.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('adesign/vendors/pdfmake/build/vfs_fonts.js')); ?>"></script>
+    <script src="<?php echo e(asset('adesign/vendors/datatables.net-buttons/js/buttons.html5.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('adesign/vendors/datatables.net-buttons/js/buttons.print.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('adesign/vendors/datatables.net-buttons/js/buttons.colVis.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('fileupload/dist/js/jquery.dm-uploader.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('fileupload/demo/demo-ui.js')); ?>"></script>
+    <script src="<?php echo e(asset('fileupload/demo/demo-config.js?v=296')); ?>"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.23/moment-timezone-with-data-2012-2022.min.js">
+    </script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    
+    <script src="<?php echo e(asset('js/admin.js?v=1333324')); ?>"></script>
+    <?php echo $__env->yieldContent('footer'); ?>
+
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#description'), {
+                toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ,'raw-loader' ],
+        heading: {
+            options: [
+                { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+                { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
+                { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
+                { model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
+                { model: 'heading5', view: 'h5', title: 'Heading 5', class: 'ck-heading_heading5' },
+                { model: 'heading6', view: 'h6', title: 'Heading 6', class: 'ck-heading_heading6' },
+            ]
+        }
+    })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+</body>
+
 </html>
 <?php /**PATH C:\xampp\htdocs\meNow\resources\views/admin/layout.blade.php ENDPATH**/ ?>

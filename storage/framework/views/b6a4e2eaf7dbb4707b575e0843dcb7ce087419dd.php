@@ -48,6 +48,7 @@
                            <th><?php echo e(__('messages.Id')); ?></th>
                            <th><?php echo e(__('messages.Name')); ?></th>
                            <th><?php echo e(__('messages.Description')); ?></th>
+                           <th><?php echo e(__('messages.Icon')); ?></th>
                            <th><?php echo e(__('messages.Action')); ?></th>
                         </tr>
                      </thead>
@@ -56,7 +57,9 @@
                         <tr>
                            <td><?php echo e($d->id); ?></td>
                            <td><?php echo e($d->name); ?></td>
-                          
+                           <td>
+                               <img src="<?php echo e($d->img); ?>" class="imgsize1" style="width:50px;height:50px;"/>
+                           </td>
                            <td><?php echo e(substr($d->short_description,0,50)); ?>..</td>
                            <td>
                               <a href="<?php echo e(url('admin/savedepartmentservice/').'/'.$d->department_id.'/'.$d->id); ?>" class="btn btn-primary"><?php echo e(__('messages.Edit')); ?></a>

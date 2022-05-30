@@ -50,7 +50,7 @@
                     aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="{{ url('admin/dashboard') }}">{{ __('messages.Clinic') }}</a>
+                <a class="navbar-brand" href="{{ url('admin/dashboard') }}">{{ __('messages.Admin') }}</a>
                 <a class="navbar-brand hidden"
                     href="{{ url('admin/dashboard') }}">{{ __('messages.shortcode') }}</a>
             </div>

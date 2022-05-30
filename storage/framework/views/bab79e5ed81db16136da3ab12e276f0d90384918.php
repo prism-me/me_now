@@ -43,9 +43,9 @@
                                     <?php endif; ?>
                                     <img src="<?php echo e($s->image); ?>">
                                     <div class="text-detail-box">
-                                        
+
                                         <h4><a href="<?php echo e(url('services') . '/' . $s->slug); ?>"><?php echo e($s->name); ?></a></h4>
-                                        <p><?php echo e(substr($s->short_description, 0, 70)); ?></p>
+                                        <p><?php echo e($s->short_description); ?></p>
                                     </div>
                                 </div>
                 </div>
@@ -111,9 +111,9 @@
             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
     </div>
-   
-           
-        </div>
+
+
+    </div>
     </div>
 
     <div class="numbers-counter-main-box">
@@ -189,30 +189,32 @@
                 <?php if(count($doctor) > 0): ?>
                     <?php $__currentLoopData = $doctor; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="col-lg-3 col-md-6 col-sm-6">
-                            <a href="<?php echo e(url('doctordetails/') . '/' . $d->slug); ?>" class="img-fluid">
-                                <div class="doctorl-part-box">
-                                    <?php
-                                    if ($d->image) {
-                                        $image = $d->image;
-                                    } else {
-                                        $image = asset('upload/profile/profile.png');
-                                    }
-                                    ?>
+                            <div class="doctorl-part-box">
+                                <?php
+                                if ($d->image) {
+                                    $image = $d->image;
+                                } else {
+                                    $image = asset('upload/profile/profile.png');
+                                }
+                                ?>
+                                <a href="<?php echo e(url('doctordetails/') . '/' . $d->slug); ?>" class="img-fluid">
                                     <div class="doctorl-dp-img doctorl-dp-img-1"
                                         style="background-image: url('<?= $image ?>')"></div>
-                                    <div class="doctorl-part-detail">
-                                        <h4><?php echo e(ucwords(strtolower($d->name))); ?></h4>
-                                        <p><?php echo e(substr(trim($d->about_us), 0, 135)); ?></p>
-                                        <div class="book_appointment_doctor">
-                                            <button>Make an Appointment</button>
-                                        </div>
-                                    </div>
-                                    <div class="icons-images">
-                                        
-                                        
+                                </a>
+                                <div class="doctorl-part-detail text-center">
+                                    <h4><?php echo e(ucwords($d->name)); ?></h4>
+                                    <p><?php echo e(substr(trim($d->about_us), 0, 135)); ?> ... <a
+                                            href="<?php echo e(url('doctordetails/') . '/' . $d->slug); ?>">Read More</a></p>
+                                    <div class="book_appointment_doctor">
+                                        <button>Make an Appointment</button>
                                     </div>
                                 </div>
-                            </a>
+                                <div class="icons-images">
+                                    
+                                    
+                                </div>
+                            </div>
+
                         </div>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 <?php endif; ?>
@@ -242,8 +244,7 @@
                                                 $image = asset('upload/profile/profile.png');
                                             }
                                             ?>
-                                            <img src="<?php echo e($image); ?>" class="testimonial-profile-img img-fluid"
-                                                >
+                                            <img src="<?php echo e($image); ?>" class="testimonial-profile-img img-fluid">
                                         </div>
                                         <div class="col-md-9 testtext">
                                             <p class="testip"><?php echo e($r->review); ?></p>

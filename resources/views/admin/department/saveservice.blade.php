@@ -46,6 +46,7 @@
                            <th>{{__('messages.Id')}}</th>
                            <th>{{__('messages.Name')}}</th>
                            <th>{{__('messages.Description')}}</th>
+                           <th>{{__('messages.Icon')}}</th>
                            <th>{{__('messages.Action')}}</th>
                         </tr>
                      </thead>
@@ -54,7 +55,9 @@
                         <tr>
                            <td>{{$d->id}}</td>
                            <td>{{$d->name}}</td>
-                          
+                           <td>
+                               <img src="{{ $d->img }}" class="imgsize1" style="width:50px;height:50px;"/>
+                           </td>
                            <td>{{ substr($d->short_description,0,50)}}..</td>
                            <td>
                               <a href="{{url('admin/savedepartmentservice/').'/'.$d->department_id.'/'.$d->id}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
