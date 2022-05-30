@@ -107,9 +107,14 @@
     </div>
     </div>
     <div class="video-section">
-        <iframe width="100%" height="600" src="https://www.youtube.com/embed/8sqaLSpp33w" title="YouTube video player"
+        {{-- <iframe width="100%" height="600" src="https://www.youtube.com/embed/8sqaLSpp33w" title="YouTube video player"
             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
+            allowfullscreen></iframe> --}}
+        <video controls>
+            <source src="https://menow.b-cdn.net/video/Me-Now-Ads-Final-Without-Audio-small.mp4" type="video/mp4">
+            <source src="https://menow.b-cdn.net/video/Me-Now-Ads-Final-Without-Audio-small.mp4" type="video/ogg">
+            Your browser does not support the video tag.
+        </video>
     </div>
 
 

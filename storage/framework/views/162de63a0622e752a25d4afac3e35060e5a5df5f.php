@@ -1,18 +1,20 @@
-@extends('front.layout')
-@section('title')
-    {{ __('messages.Workshops') }}
-@stop
-@section('loader')
+
+<?php $__env->startSection('title'); ?>
+    <?php echo e(__('messages.Workshops')); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('loader'); ?>
     <div id="overlayer"></div>
     <span class="loader"><span class="loader-inner"></span></span>
-@stop
-@section('content')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
     <div class="container">
         <div class="global-heading">
-            <h2>{{ __('messages.About_Me_Now') }} </h2>
-            <p>{{ __("messages.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            <h2><?php echo e(__('messages.About_Me_Now')); ?> </h2>
+            <p><?php echo e(__("messages.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                                                                                                                                                                                                     
-                                                                                                                                                                                                                        ") }}
+                                                                                                                                                                                                                        ")); ?>
+
             </p>
         </div>
         <div class="who_we_are">
@@ -32,7 +34,7 @@
                     </div>
                     <div class="row who_we_are_sub_section">
                         <div class="col-md-2">
-                            <img src="{{ asset('front/img/about-icon-1.png') }}" alt="">
+                            <img src="<?php echo e(asset('front/img/about-icon-1.png')); ?>" alt="">
 
                         </div>
                         <div class="col-md-10">
@@ -44,7 +46,7 @@
                     </div>
                     <div class="row who_we_are_sub_section">
                         <div class="col-md-2">
-                            <img src="{{ asset('front/img/about-icon-2.png') }}" alt="">
+                            <img src="<?php echo e(asset('front/img/about-icon-2.png')); ?>" alt="">
 
                         </div>
                         <div class="col-md-10">
@@ -63,7 +65,7 @@
                 <div class="col-md-4">
                     <div class="single-tile">
                         <div class="inner-single-title">
-                            <img src="{{ asset('front/img/about-icon-1.png') }}" alt="">
+                            <img src="<?php echo e(asset('front/img/about-icon-1.png')); ?>" alt="">
                             <h4>
                                 Lorem Ipsum simply
                             </h4>
@@ -78,7 +80,7 @@
                 <div class="col-md-4">
                     <div class="single-tile middle">
                         <div class="inner-single-title">
-                            <img src="{{ asset('front/img/about-icon-2.png') }}" alt="">
+                            <img src="<?php echo e(asset('front/img/about-icon-2.png')); ?>" alt="">
                             <h4>
                                 Lorem Ipsum simply
                             </h4>
@@ -93,7 +95,7 @@
                 <div class="col-md-4">
                     <div class="single-tile">
                         <div class="inner-single-title">
-                            <img src="{{ asset('front/img/about-title-1.png') }}" alt="">
+                            <img src="<?php echo e(asset('front/img/about-title-1.png')); ?>" alt="">
                             <h4>
                                 Lorem Ipsum simply
                             </h4>
@@ -111,7 +113,7 @@
         <div class="about-content-widget">
             <div class="row">
                 <div class="col-md-5 col-sm-12">
-                    <img src="{{ asset('front/img/about-us.png') }}" class="img-fluid" alt="">
+                    <img src="<?php echo e(asset('front/img/about-us.png')); ?>" class="img-fluid" alt="">
                 </div>
                 <div class="col-md-7 col-sm-12">
                     <p class="text-margin">
@@ -145,12 +147,12 @@
         <div class="doctorl-main-box">
             <div class="container">
                 <div class="global-heading">
-                    <h2>{{ __('messages.Meet Our Doctors') }}</h2>
-                    <p>{{ __('messages.Talent wins games, but teamwork and intelligence win championships') }}</p>
+                    <h2><?php echo e(__('messages.Meet Our Doctors')); ?></h2>
+                    <p><?php echo e(__('messages.Talent wins games, but teamwork and intelligence win championships')); ?></p>
                 </div>
                 <div class="row">
-                    @if (count($doctor) > 0)
-                        @foreach ($doctor as $d)
+                    <?php if(count($doctor) > 0): ?>
+                        <?php $__currentLoopData = $doctor; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="col-lg-3 col-md-6 col-sm-6">
                                 <div class="doctorl-part-box">
                                     <?php
@@ -160,43 +162,25 @@
                                             $image = asset('upload/profile/profile.png');
                                         }
                                         ?>
-                                        <a href="{{ url('doctordetails/') . '/' . $d->slug }}" class="anchor-doctor-image">
+                                        <a href="<?php echo e(url('doctordetails/') . '/' . $d->slug); ?>" class="anchor-doctor-image">
                                         <div class="doctorl-dp-img doctorl-dp-img-1"
                                             style="background-image: url('<?= $image ?>')"></div></a>
                                         <div class="doctorl-part-detail">
-                                            <h4><a href="{{ url('doctordetails/') . '/' . $d->slug }}" class="anchor-doctor-image">{{ ucwords(strtolower($d->name)) }}</a></h4>
-                                            <p>{{ substr(trim($d->about_us), 0, 135) }}</p>
+                                            <h4><a href="<?php echo e(url('doctordetails/') . '/' . $d->slug); ?>" class="anchor-doctor-image"><?php echo e(ucwords(strtolower($d->name))); ?></a></h4>
+                                            <p><?php echo e(substr(trim($d->about_us), 0, 135)); ?></p>
                                             <div class="book_appointment_doctor">
                                                 <button data-toggle="modal" data-target="#appointmentModal">Make an Appointment</button>
                                             </div>
                                         </div>
                                         <div class="icons-images">
-                                            {{-- <div class="book_appointment_doctor">
-                                                <button>Make an Appointment</button>
-                                            </div> --}}
-                                            {{-- <span class="facebook-doctorl">
-                                                <a href="{{ isset($d->facebook_id) ? $d->facebook_id : '' }}" target="_blank"><i
-                                                        class="fab fa-facebook-f"></i></a>
-                                            </span>
-                                            <span class="twitter-doctorl">
-                                                <a href="{{ isset($d->twitter_id) ? $d->twitter_id : '' }}" target="_blank"><i
-                                                        class="fab fa-twitter"></i></a>
-                                            </span>
-                                            <span class="gp-doctorl">
-                                                <a href="{{ isset($d->google_id) ? $d->google_id : '' }}" target="_blank"><i
-                                                        class="fab fa-google-plus-g"></i></a>
-                                            </span>
-                                            <span class="instagram-doctorl">
-                                                <a href="{{ isset($d->instagram_id) ? $d->instagram_id : '' }}"
-                                                    target="_blank"><img
-                                                        src="{{ asset('front/img/instagram.png') }}"></a>
-                                            </span> --}}
+                                            
+                                            
                                         </div>
                                     </div>
                                 
                             </div>
-                        @endforeach
-                    @endif
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -208,12 +192,13 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="numbers-counter-part-box">
                         <div id="counter">
-                            <img src="{{ asset('front/img/n1.png') }}">
+                            <img src="<?php echo e(asset('front/img/n1.png')); ?>">
                             <div class="counter-value" data-count="10200">
-                                {{ $setting->happy_client }}
+                                <?php echo e($setting->happy_client); ?>
+
                             </div>
                             <div class="counter-name">
-                                <p>{{ __('messages.Happy people') }}</p>
+                                <p><?php echo e(__('messages.Happy people')); ?></p>
                             </div>
                         </div>
                     </div>
@@ -221,12 +206,13 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="numbers-counter-part-box">
                         <div id="counter">
-                            <img src="{{ asset('front/img/n2.png') }}">
+                            <img src="<?php echo e(asset('front/img/n2.png')); ?>">
                             <div class="counter-value" data-count="700">
-                                {{ $setting->surgery_complete }}
+                                <?php echo e($setting->surgery_complete); ?>
+
                             </div>
                             <div class="counter-name">
-                                <p>{{ __('messages.SURGERY COMPLETED') }}</p>
+                                <p><?php echo e(__('messages.SURGERY COMPLETED')); ?></p>
                             </div>
                         </div>
                     </div>
@@ -234,12 +220,13 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="numbers-counter-part-box">
                         <div id="counter">
-                            <img src="{{ asset('front/img/n3.png') }}">
+                            <img src="<?php echo e(asset('front/img/n3.png')); ?>">
                             <div class="counter-value" data-count="189">
-                                {{ $setting->expert_doctor }}
+                                <?php echo e($setting->expert_doctor); ?>
+
                             </div>
                             <div class="counter-name">
-                                <p>{{ __('messages.Expert doctors') }}</p>
+                                <p><?php echo e(__('messages.Expert doctors')); ?></p>
                             </div>
                         </div>
                     </div>
@@ -247,12 +234,13 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="numbers-counter-part-box">
                         <div id="counter">
-                            <img src="{{ asset('front/img/n4.png') }}">
+                            <img src="<?php echo e(asset('front/img/n4.png')); ?>">
                             <div class="counter-value" data-count="11">
-                                {{ $setting->worldwide_branch }}
+                                <?php echo e($setting->worldwide_branch); ?>
+
                             </div>
                             <div class="counter-name">
-                                <p>{{ __('messages.World wide branch') }}</p>
+                                <p><?php echo e(__('messages.World wide branch')); ?></p>
                             </div>
                         </div>
                     </div>
@@ -263,8 +251,8 @@
 
     <div class="container">
         <div class="global-heading">
-            <h2>{{ __('messages.Frequently Asked Questions') }}</h2>
-            <p>{{ __('messages.Talent wins games, but teamwork and intelligence win championships') }}</p>
+            <h2><?php echo e(__('messages.Frequently Asked Questions')); ?></h2>
+            <p><?php echo e(__('messages.Talent wins games, but teamwork and intelligence win championships')); ?></p>
         </div>
         <div class="faq my-5">
             <div class="accordion" id="accordionExample">
@@ -333,9 +321,11 @@
 
 
 
-@stop
-@section('footer')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('footer'); ?>
     <script>
         AOS.init();
     </script>
-@stop
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('front.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Projects\Menow\me_now\resources\views/front/about.blade.php ENDPATH**/ ?>
