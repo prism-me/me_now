@@ -62,15 +62,15 @@
                             <ul>
 
 
-                                <li><span class="fa fa-check"></span> Free access to all Me Now workshops</li>
-                                <li><span class="fa fa-check"></span>15% off on all private sessions</li>
-                                <li><span class="fa fa-check"></span> Access to anger release room</li>
-                                <li><span class="fa fa-check"></span> Free beverages from the coffee corner</li>
-                                <li><span class="fa fa-check"></span> Access to the center’s liberary</li>
-                                <li><span class="fa fa-check"></span> Participation in all the Me Now events</li>
-                                <li><span class="fa fa-check"></span> Unlimited networking & socializing opportunities
+                                <li><span class="fa fa-check"></span>  Free access to all Me Now workshops</li>
+                                <li><span class="fa fa-check"></span>  15% off on all private sessions</li>
+                                <li><span class="fa fa-check"></span>  Access to anger release room</li>
+                                <li><span class="fa fa-check"></span>  Free beverages from the coffee corner</li>
+                                <li><span class="fa fa-check"></span>  Access to the center’s liberary</li>
+                                <li><span class="fa fa-check"></span>  Participation in all the Me Now events</li>
+                                <li><span class="fa fa-check"></span>  Unlimited networking & socializing opportunities
                                 </li>
-                                <li><span class="fa fa-check"></span> Be a part of an exclusive group, always ready to
+                                <li><span class="fa fa-check"></span>  Be a part of an exclusive group, always ready to
                                     help and be there for each other</li>
 
                             </ul>
@@ -89,15 +89,15 @@
                             <h5 class="price"> AED 9,630 </h5>
                             <ul>
 
-                                <li><span class="fa fa-check"></span> 10% discount on all the center’s facilities</li>
-                                <li><span class="fa fa-check"></span> Free access to all Me Now workshops</li>
-                                <li><span class="fa fa-check"></span> Access to anger release room</li>
-                                <li><span class="fa fa-check"></span> Free beverages from the coffee corner</li>
-                                <li><span class="fa fa-check"></span> Access to the center’s liberary</li>
-                                <li><span class="fa fa-check"></span> Participation in all the Me Now events</li>
-                                <li><span class="fa fa-check"></span> Unlimited networking & socializing opportunities
+                                <li><span class="fa fa-check"></span>  10% discount on all the center’s facilities</li>
+                                <li><span class="fa fa-check"></span>  Free access to all Me Now workshops</li>
+                                <li><span class="fa fa-check"></span>  Access to anger release room</li>
+                                <li><span class="fa fa-check"></span>  Free beverages from the coffee corner</li>
+                                <li><span class="fa fa-check"></span>  Access to the center’s liberary</li>
+                                <li><span class="fa fa-check"></span>  Participation in all the Me Now events</li>
+                                <li><span class="fa fa-check"></span>  Unlimited networking & socializing opportunities
                                 </li>
-                                <li><span class="fa fa-check"></span> Be a part of an exclusive group, always ready to
+                                <li><span class="fa fa-check"></span>  Be a part of an exclusive group, always ready to
                                     help and be there for each other.</li>
 
 
@@ -116,15 +116,15 @@
                             </h4>
                             <h5 class="price"> AED 16,050</h5>
                             <ul>
-                                <li><span class="fa fa-check"></span>Get 1 month free</li>
-                                <li><span class="fa fa-check"></span>Get 5 free sessions of Holistinc Therapy or hypnosis
+                                <li><span class="fa fa-check"></span> Get 1 month free</li>
+                                <li><span class="fa fa-check"></span> Get 5 free sessions of Holistinc Therapy or hypnosis
                                     therapy sessions</li>
-                                <li><span class="fa fa-check"></span>10% discount on all the center’s facilities</li>
-                                <li><span class="fa fa-check"></span>Free access to all Me Now workshops</li>
+                                <li><span class="fa fa-check"></span> 10% discount on all the center’s facilities</li>
+                                <li><span class="fa fa-check"></span> Free access to all Me Now workshops</li>
                                 <li><span class="fa fa-check"></span> Access to anger release room</li>
                                 <li><span class="fa fa-check"></span> Free beverages from the coffee corner</li>
                                 <li><span class="fa fa-check"></span> Access to the center’s liberary</li>
-                                <li><span class="fa fa-check"></span>Participation in all the Me Now events</li>
+                                <li><span class="fa fa-check"></span> Participation in all the Me Now events</li>
                                 <li><span class="fa fa-check"></span> Unlimited networking & socializing opportunities</li>
 
 

@@ -536,8 +536,7 @@
                             <div class="footer-r1-detail">
                                 <div class="footer-d1-box">
                                     <h3><?php echo e(__('messages.Address')); ?></h3>
-                                    <p><?php echo e(isset($setting->address) ? $setting->address : Session::get('address')); ?>
-
+                                    <p><a href="https://goo.gl/maps/drSGLMZA4i9jrNgB8"><?php echo e(isset($setting->address) ? $setting->address : Session::get('address')); ?></a>
                                     </p>
                                 </div>
                                 <div class="footer-d1-box">
