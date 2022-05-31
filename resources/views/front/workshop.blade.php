@@ -12,9 +12,9 @@
         <div class="container">
             <div class="global-heading">
                 <h2>{{ __('messages.Workshop List') }} </h2>
-                <p>{{ __("messages.The best doctor is the one you run to and can't find") }}</p>
+                {{-- <p>{{ __("messages.The best doctor is the one you run to and can't find") }}</p> --}}
             </div>
-
+{{-- 
             <div class="doctorpg-tab-mainbox">
                 <section class="customer-logos slider tab">
                     <div class="slide tablinks" id="defaultOpen" onclick="openCity(event, 'all')">
@@ -27,33 +27,32 @@
                         </div>
                     @endforeach
                 </section>
-            </div>
+            </div> --}}
             
-            <div class="doctorpg-part-main-box">
+            <div class="doctorpg-part-main-box mb-5">
                 <div id="all" class="tabcontent">
                     <div class="row">
                         @foreach ($workshop as $d)
-                        <div class="col-lg-4 col-md-4 col-sm-6 " data-aos="fade-up">
-                                <a href="{{ url('workshop') . '/' . $d->slug }}" class="denone">
-                                    <div class="d-detail-collapse-doctor">
-                                        <div class="doctorl-part-box">
-                                            <img src="{{ $d->featured_img }}" class="img-fluid">
-                                          
+                        <div class="col-lg-4 col-md-4 col-sm-6" data-aos="fade-up">
+                            <div class="d-detail-collapse-doctor">
+                                <div class="doctorl-part-box workshops-wrapper">
+                                    <a href="{{ url('workshop') . '/' . $d->slug }}" class="denone">
+                                    <img src="{{ $d->featured_img }}" class="img-fluid">
+                                    </a>    
 
                                             <div class="doctorl-part-detail">
-                                                <h4>{{ ucwords(strtolower($d->title)) }}</h4>
+                                                <h4><a href="{{ url('workshop') . '/' . $d->slug }}">{{ ucwords($d->title) }}</a></h4>
                                                 <p>Event Date:{{ $d->event_date }}</p>
                                                 <p style="color:rgb(108, 108, 108)">
-                                                    {{ substr($d->short_description, 0,  150) }}....
+                                                    {!! substr($d->short_description, 0,  90) !!}... <a href="{{ url('workshop') . '/' . $d->slug }}"> Read More</a> </p>
                                             
                                                 <div class="book_appointment_doctor">
-                                                    <button>Book Event</button>
+                                                    {{-- <button>Book Event</button> --}}
                                                 </div>
                                             </div>
 
                                         </div>
                                     </div>
-                                </a>
                             </div>
                             @endforeach
                         </div>

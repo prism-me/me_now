@@ -144,8 +144,8 @@
         <div class="doctorl-main-box">
             <div class="container">
                 <div class="global-heading">
-                    <h2>{{ __('messages.Meet Our Doctors') }}</h2>
-                    <p>{{ __('messages.Talent wins games, but teamwork and intelligence win championships') }}</p>
+                    <h2>Me Now Team</h2>
+                    {{-- <p>{{ __('messages.Talent wins games, but teamwork and intelligence win championships') }}</p> --}}
                 </div>
                 <div class="row">
                     @if (count($doctor) > 0)

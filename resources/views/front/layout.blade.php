@@ -289,7 +289,7 @@
                                         <select id="department" required class="dropdown" name="department"
                                             onchange="getserviceanddoctor(this.value)">
                                             <option value="" disabled="disabled" selected="selected">-
-                                                {{ __('messages.Select Department') }}</option>
+                                                Select Service</option>
                                             @if (isset($department))
                                                 @foreach ($department as $d)
                                                     <option value="{{ $d->id }}">{{ $d->name }}</option>
@@ -300,7 +300,7 @@
                                     <div class="appo-select-box">
                                         <select id="service" required class="dropdown" name="service">
                                             <option value="" disabled="disabled" selected="selected">-
-                                                {{ __('messages.Select Services') }}</option>
+                                                Select Sub Service</option>
                                         </select>
                                     </div>
                                     <div class="appo-select-box">

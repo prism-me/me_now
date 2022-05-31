@@ -11,11 +11,11 @@
 
         <div class="container">
             <div class="global-heading">
-                <h2>{{ __('messages.Workshop List') }} </h2>
-                <p>{{ __("messages.The best doctor is the one you run to and can't find") }}</p>
+                <h2>Events</h2>
+                {{-- <p>{{ __("messages.The best doctor is the one you run to and can't find") }}</p> --}}
             </div>
 
-            <div class="doctorpg-tab-mainbox">
+            {{-- <div class="doctorpg-tab-mainbox">
                 <section class="customer-logos slider tab">
                     <div class="slide tablinks" id="defaultOpen" onclick="openCity(event, 'all')">
                         {{ __('messages.All') }}
@@ -27,7 +27,7 @@
                         </div>
                     @endforeach
                 </section>
-            </div>
+            </div> --}}
 
             <div class="doctorpg-part-main-box">
                 <div id="all" class="tabcontent">

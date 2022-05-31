@@ -43,10 +43,12 @@
                                     <?php endif; ?>
                                     <img src="<?php echo e($s->image); ?>">
                                     <div class="text-detail-box">
-
-                                        <h4><a href="<?php echo e(url('services') . '/' . $s->slug); ?>"><?php echo e($s->name); ?></a></h4>
+                                        <?php $room_services = $s->is_room === "true" ? 'rooms' : 'services';  ?>
+                                        <h4><a
+                                                href="<?php echo e(url("$room_services") . '/' . $s->slug); ?>"><?php echo e($s->name); ?></a>
+                                        </h4>
                                         <p><?php echo e(substr($s->short_description, 0, 70)); ?>... <a
-                                                href="<?php echo e(url('services') . '/' . $s->slug); ?>">Read More</a>
+                                                href="<?php echo e(url("$room_services") . '/' . $s->slug); ?>">Read More</a>
                                         </p>
                                     </div>
                                 </div>

@@ -617,3 +617,39 @@ height:450px;
     text-align:left !important;
     color: #767676;
 }
+
+.workshops-wrapper img{
+    height: 414px;
+    width: 100%;
+}
+
+.banner-img img{
+
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+.facilitated .content img{
+    height: 100px;
+    width: 100px;
+}
+.facilitated h4{
+    font-weight: bold;
+    margin: 2rem 0px 1rem;
+}
+.facilitated .content h4{
+    font-size: 16px;
+    font-weight: bold;
+    margin: 1rem 0px 0.2rem;
+}
+
+.facilitated .content p{
+    margin-bottom: 0px;
+}
+.facilitated .content{
+    width: 20%;
+    background: #eee;
+    padding: 1rem;
+    text-align: center;
+    margin:1rem 0px;
+}

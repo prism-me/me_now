@@ -287,7 +287,7 @@
                                         <select id="department" required class="dropdown" name="department"
                                             onchange="getserviceanddoctor(this.value)">
                                             <option value="" disabled="disabled" selected="selected">-
-                                                <?php echo e(__('messages.Select Department')); ?></option>
+                                                Select Service</option>
                                             <?php if(isset($department)): ?>
                                                 <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <option value="<?php echo e($d->id); ?>"><?php echo e($d->name); ?></option>
@@ -298,7 +298,7 @@
                                     <div class="appo-select-box">
                                         <select id="service" required class="dropdown" name="service">
                                             <option value="" disabled="disabled" selected="selected">-
-                                                <?php echo e(__('messages.Select Services')); ?></option>
+                                                Select Sub Service</option>
                                         </select>
                                     </div>
                                     <div class="appo-select-box">

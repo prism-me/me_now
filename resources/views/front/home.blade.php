@@ -42,10 +42,12 @@
                                     @endif
                                     <img src="{{ $s->image }}">
                                     <div class="text-detail-box">
-
-                                        <h4><a href="{{ url('services') . '/' . $s->slug }}">{{ $s->name }}</a></h4>
+                                        @php $room_services = $s->is_room === "true" ? 'rooms' : 'services';  @endphp
+                                        <h4><a
+                                                href="{{ url("$room_services") . '/' . $s->slug }}">{{ $s->name }}</a>
+                                        </h4>
                                         <p>{{ substr($s->short_description, 0, 70) }}... <a
-                                                href="{{ url('services') . '/' . $s->slug }}">Read More</a>
+                                                href="{{ url("$room_services") . '/' . $s->slug }}">Read More</a>
                                         </p>
                                     </div>
                                 </div>

@@ -9,7 +9,7 @@
         <div class="container">
             <div class="global-heading">
                 <h2><?php echo e($current->name); ?></h2>
-                <p><?php echo e(__('messages.The life so short, the craft so long to learn')); ?></p>
+                
             </div>
             <div class="d-detailpg-part-main-box">
                 <div class="row">

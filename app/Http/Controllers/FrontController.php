@@ -126,7 +126,8 @@ class FrontController extends Controller
          $department=Department::with('service')->get();
          $setting=Setting::find(1);
          $reviews=Review::with('doctors','users')->get()->take(4);
-         $workshop=Workshop::where('id',$id)->first();
+         $workshop=Workshop::where('slug',$id)->first();
+        //  dd($workshop);
        return view("front.workshops_inner")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with('workshop',$workshop);
     }
     public function faqs(){
@@ -367,7 +368,6 @@ class FrontController extends Controller
 
             $department=Department::all();
             $doctor=Doctor::with("TimeTabledata")->where('slug',$slug)->first();
-
             $departmentdetails=Department::with("doctor","service")->find($doctor->department_id); 
             $doctor->total_ratting=count(Review::where("doctor_id",$doctor->id)->get());
             $doctor->ratting=Review::where("doctor_id",$doctor->id)->avg('ratting');

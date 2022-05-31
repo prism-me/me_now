@@ -59,13 +59,22 @@
                             </h4>
                             <h5 class="price">AED 3120 </h5>
                             <ul>
-                                <li><span class="fa fa-check"></span> For private session /15% Discount</li>
-                                <li><span class="fa fa-check"></span> Access for all workshop</li>
-                                <li><span class="fa fa-check"></span> They can use anger release room</li>
-                                <li><span class="fa fa-check"></span> They can enjoy center coffee corner</li>
-                                <li><span class="fa fa-check"></span> They can use center library</li>
-                                <li><span class="fa fa-check"></span> Access to all center activities and events</li>
+
+
+                                <li><span class="fa fa-check"></span>  Free access to all Me Now workshops</li>
+                                <li><span class="fa fa-check"></span>  15% off on all private sessions</li>
+                                <li><span class="fa fa-check"></span>  Access to anger release room</li>
+                                <li><span class="fa fa-check"></span>  Free beverages from the coffee corner</li>
+                                <li><span class="fa fa-check"></span>  Access to the center’s liberary</li>
+                                <li><span class="fa fa-check"></span>  Participation in all the Me Now events</li>
+                                <li><span class="fa fa-check"></span>  Unlimited networking & socializing opportunities
+                                </li>
+                                <li><span class="fa fa-check"></span>  Be a part of an exclusive group, always ready to
+                                    help and be there for each other</li>
+
                             </ul>
+                            <button class="btn btn-primary get-in-touch-button" data-toggle="modal"
+                                data-target="#appointmentModal">{{ __('Book Now') }}</button>
                         </div>
                     </div>
                 </div>
@@ -79,14 +88,21 @@
                             <h5 class="price"> AED 9,630 </h5>
                             <ul>
 
-                                <li><span class="fa fa-check"></span> They will get 10% Discount</li>
-                                <li><span class="fa fa-check"></span> Access for all workshop</li>
-                                <li><span class="fa fa-check"></span> They can use anger release room</li>
-                                <li><span class="fa fa-check"></span> They can enjoy center coffee corner</li>
-                                <li><span class="fa fa-check"></span> They can use center library</li>
-                                <li><span class="fa fa-check"></span> Access to all center activities and events</li>
+                                <li><span class="fa fa-check"></span>  10% discount on all the center’s facilities</li>
+                                <li><span class="fa fa-check"></span>  Free access to all Me Now workshops</li>
+                                <li><span class="fa fa-check"></span>  Access to anger release room</li>
+                                <li><span class="fa fa-check"></span>  Free beverages from the coffee corner</li>
+                                <li><span class="fa fa-check"></span>  Access to the center’s liberary</li>
+                                <li><span class="fa fa-check"></span>  Participation in all the Me Now events</li>
+                                <li><span class="fa fa-check"></span>  Unlimited networking & socializing opportunities
+                                </li>
+                                <li><span class="fa fa-check"></span>  Be a part of an exclusive group, always ready to
+                                    help and be there for each other.</li>
+
 
                             </ul>
+                            <button class="btn btn-primary get-in-touch-button" data-toggle="modal"
+                                data-target="#appointmentModal">{{ __('Book Now') }}</button>
                         </div>
                     </div>
                 </div>
@@ -99,16 +115,21 @@
                             </h4>
                             <h5 class="price"> AED 16,050</h5>
                             <ul>
-                                <li><span class="fa fa-check"></span> 1 month free</li>
-                                <li><span class="fa fa-check"></span> They will get 10% Discount</li>
-                                <li><span class="fa fa-check"></span> Access for all workshop</li>
-                                <li><span class="fa fa-check"></span> They can use anger release room</li>
-                                <li><span class="fa fa-check"></span> They can enjoy center coffee corner</li>
-                                <li><span class="fa fa-check"></span> They can use center library</li>
-                                <li><span class="fa fa-check"></span> Access to all center activities and events</li>
-                                <li><span class="fa fa-check"></span> 5 session free Holistic Therapy or Hypnosis Therapy
-                                    sessions</li>
+                                <li><span class="fa fa-check"></span> Get 1 month free</li>
+                                <li><span class="fa fa-check"></span> Get 5 free sessions of Holistinc Therapy or hypnosis
+                                    therapy sessions</li>
+                                <li><span class="fa fa-check"></span> 10% discount on all the center’s facilities</li>
+                                <li><span class="fa fa-check"></span> Free access to all Me Now workshops</li>
+                                <li><span class="fa fa-check"></span> Access to anger release room</li>
+                                <li><span class="fa fa-check"></span> Free beverages from the coffee corner</li>
+                                <li><span class="fa fa-check"></span> Access to the center’s liberary</li>
+                                <li><span class="fa fa-check"></span> Participation in all the Me Now events</li>
+                                <li><span class="fa fa-check"></span> Unlimited networking & socializing opportunities</li>
+
+
                             </ul>
+                            <button class="btn btn-primary get-in-touch-button" data-toggle="modal"
+                                data-target="#appointmentModal">{{ __('Book Now') }}</button>
                         </div>
                     </div>
                 </div>
