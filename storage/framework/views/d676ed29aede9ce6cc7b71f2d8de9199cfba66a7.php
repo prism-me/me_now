@@ -19,7 +19,11 @@
     <meta property="og:description" content="<?php echo e(__('messages.meta_description_admin')); ?>" />
     <meta property="og:keyword" content="<?php echo e(__('messages.meta_keyword')); ?>" />
     
-    <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
+    
+    
+    
+    
+    <script src="//cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
 
     <?php echo $__env->yieldContent('meta_title'); ?>
     <link rel="shortcut icon" href="<?php echo e(asset('App_icon.png')); ?>">
@@ -274,24 +278,43 @@
     <?php echo $__env->yieldContent('footer'); ?>
 
     <script>
-        ClassicEditor
-            .create(document.querySelector('#description'), {
-                toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ,'raw-loader' ],
-        heading: {
-            options: [
-                { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
-                { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
-                { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
-                { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
-                { model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
-                { model: 'heading5', view: 'h5', title: 'Heading 5', class: 'ck-heading_heading5' },
-                { model: 'heading6', view: 'h6', title: 'Heading 6', class: 'ck-heading_heading6' },
-            ]
-        }
-    })
-            .catch(error => {
-                console.error(error);
-            });
+         CKEDITOR.replace( 'description' );
+
+
+        // ClassicEditor
+        //     .create(document.querySelector('#description'), {
+        //         // plugins: [HtmlEmbed],
+        //         toolbar: {
+        //             items: ['heading', '|', 'imageUpload', 'bold', 'italic', 'underline', 'fontFamily', 'undo', 'redo',
+        //                 'fontSize', , 'htmlEmbed', 'link',
+        //                 'insertTable',
+        //                 'mediaEmbed', 'bulletedList', 'numberedList', '|', 'MathType', 'blockQuote',
+        //                 'specialCharacters'
+        //             ],
+        //             shouldNotGroupWhenFull: true
+        //         }
+
+                // items: [
+                //     'heading', '|',
+                //     'fontfamily', 'fontsize', '|',
+                //     'alignment', '|',
+                //     'fontColor', 'fontBackgroundColor', '|',
+                //     'bold', 'italic', 'strikethrough', 'underline', 'subscript', 'superscript', '|',
+                //     'link', '|',
+                //     'outdent', 'indent', '|',
+                //     'bulletedList', 'numberedList', 'todoList', '|',
+                //     'code', 'codeBlock', '|',
+                //     'insertTable', '|',
+                //     'uploadImage', 'blockQuote', '|',
+                //     'undo', 'redo',
+                //     ''
+                // ],
+                // shouldNotGroupWhenFull: true
+
+            // })
+            // .catch(error => {
+            //     console.error(error);
+            // });
     </script>
 </body>
 

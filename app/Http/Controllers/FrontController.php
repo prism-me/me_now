@@ -254,7 +254,6 @@ class FrontController extends Controller
            //current sub service
            $currentService = DepartService::where("slug", $subService)->first();
 
-
             //sub services            
             $subServices =  DepartService::where('department_id', $currentService->department_id)->get();
                         
