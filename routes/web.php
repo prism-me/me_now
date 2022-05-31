@@ -190,9 +190,21 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('edit-blog/{slug}', 'BlogController@edit');
         Route::post('delete-blog/{slug}', 'BlogController@delete');
         Route::post('update-blog/{slug}', 'BlogController@update');
+        Route::get('show-blog/{slug}', 'BlogController@show');
 
         #Workshop 
         Route::resource('workshops', 'WorkshopController');
+        Route::get('edit-workshop/{slug}', 'WorkshopController@edit');
+        Route::post('delete-workshop/{slug}', 'WorkshopController@delete');
+        Route::post('update-workshop/{slug}', 'WorkshopController@update');
+        Route::get('show-workshop/{slug}', 'WorkshopController@show');
+
+        #Room 
+        Route::resource('rooms', 'RoomController');
+        Route::get('edit-room/{slug}', 'RoomController@edit');
+        Route::post('delete-room/{slug}', 'RoomController@delete');
+        Route::post('update-room/{slug}', 'RoomController@update');
+        Route::get('show-room/{slug}', 'RoomController@show');
 
         #Subscriber 
         Route::get('subscribers', 'DoctorController@subscribers');

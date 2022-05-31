@@ -36,7 +36,7 @@
                   </div>
                   @endif
                   <div>
-                     <a href="{{ URL::to('admin/blogs/create')}}" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Blog')}}</a>
+                     <a href="{{ URL::to('admin/rooms/create')}}" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Room')}}</a>
                   </div>
                   <div class="table-responsive">
                   <table id="service" class="table  table-striped table-bordered">
@@ -61,7 +61,7 @@
                            </td>
                            <td>
                                 <a href="{{URL::to('admin/edit-blog') . '/' . $d->slug}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
-                                <a href="{{URL::to('admin/view') .'/' . $d->slug}}" class="btn btn-success">{{__('messages.View')}}</a>
+                                <a href="{{URL::to('admin/show-blog') .'/' . $d->slug}}" class="btn btn-success">{{__('messages.View')}}</a>
                                  <form action="{{ url('admin/delete-blog'.'/' . $d->slug)}}"  novalidate="novalidate"  method="POST"  >{{csrf_field()}}<input type="submit" class="btn btn-danger" value="{{__('messages.Delete')}}" name="Delete"></form>
                            </td>
                         </tr>

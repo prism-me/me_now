@@ -47,11 +47,10 @@
                   </div>
                   @endif  
                                          
-                  <form action="{{ URL::to('admin/workshops').'/'.$data->id }}" method="post" novalidate="novalidate" enctype="multipart/form-data">
-                     {{csrf_field()}}
+                  <form action="{{ URL::to('admin/update-workshop').'/'.$data->slug }}" method="post" novalidate="novalidate" enctype="multipart/form-data">
+                     @csrf
                      
                              
-                     {{method_field('PUT')}}
                       <div class="form-group">
                         <label for="name" class=" form-control-label">
                         {{__('messages.Title')}}

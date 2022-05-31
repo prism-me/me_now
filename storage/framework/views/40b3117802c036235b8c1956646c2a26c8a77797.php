@@ -63,7 +63,7 @@
                            </td>
                            <td>
                                 <a href="<?php echo e(URL::to('admin/edit-blog') . '/' . $d->slug); ?>" class="btn btn-primary"><?php echo e(__('messages.Edit')); ?></a>
-                                <a href="<?php echo e(URL::to('admin/view') .'/' . $d->slug); ?>" class="btn btn-success"><?php echo e(__('messages.View')); ?></a>
+                                <a href="<?php echo e(URL::to('admin/show-blog') .'/' . $d->slug); ?>" class="btn btn-success"><?php echo e(__('messages.View')); ?></a>
                                  <form action="<?php echo e(url('admin/delete-blog'.'/' . $d->slug)); ?>"  novalidate="novalidate"  method="POST"  ><?php echo e(csrf_field()); ?><input type="submit" class="btn btn-danger" value="<?php echo e(__('messages.Delete')); ?>" name="Delete"></form>
                            </td>
                         </tr>

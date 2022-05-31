@@ -56,12 +56,7 @@ class BlogController extends UploadController
         if($mediaUpload){
             $data['featured_img'] = $mediaUpload;
         }
-        $blogCreate = Blog::create(array('title' => $data['title'],
-                                    'short_description' => $data['short_description'],
-                                    'description' => $data['description'],
-                                    'posted_by' => $data['posted_by'],
-                                    'slug' => $data['slug']
-                ));
+        $blogCreate = Blog::create($data);
         return redirect("admin/blogs");
     }
   
@@ -72,9 +67,10 @@ class BlogController extends UploadController
      * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function show(Blog $blog)
+    public function show($slug)
     {
-        //
+        $data = Blog::where('slug',$slug)->first();
+        return view('admin.blog.show')->with('data', $data);
     }
 
     /**
@@ -123,10 +119,10 @@ class BlogController extends UploadController
      * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function delete(Blog $blog, $id)
+    public function delete(Blog $blog, $slug)
     {   
 
-        $blog = Blog::where('slug',$id)->delete();
+        $blog = Blog::where('slug',$slug)->delete();
          return redirect("admin/blogs");
       
         
