@@ -57,13 +57,13 @@
                         </label>
                         <input type="text" id="name" placeholder="{{__('messages.Enter').' '.__('messages.Department Name')}}" class="form-control"  name="name" value="{{ isset($data->name)?$data->name:''}}">
                      </div>
-                     <div class="form-group">
+                     {{-- <div class="form-group">
                         <label for="name" class=" form-control-label">
                         {{__('messages.Emergency No')}}
                         <span class="reqfield" >*</span>
                         </label>
                         <input type="text" id="emergency_no" placeholder="{{__('messages.Enter').' '.__('messages.Emergency No')}}" class="form-control"  name="emergency_no" value="{{ isset($data->emergency_no)?$data->emergency_no:''}}">
-                     </div>
+                     </div> --}}
                      <div class="form-group">
                         <label for="email" class=" form-control-label">
                         {{__('messages.Short Description')}}<span class="reqfield" >*</span>

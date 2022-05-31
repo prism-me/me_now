@@ -88,13 +88,7 @@
                                  </label>
                                  <input type="text" id="email" placeholder="{{__('messages.Enter').' '.__('messages.Email')}}" class="form-control"  name="email" value="{{ isset($data->email)?$data->email:''}}">
                               </div>
-                              <div class="col-md-6">
-                                 <label for="name" class=" form-control-label">
-                                 {{__('messages.Password')}}
-                                 <span class="reqfield" >*</span>
-                                 </label>
-                                 <input type="text" id="password" placeholder="{{__('messages.Enter').' '.__('messages.Password')}}" class="form-control"  name="password" value="{{ isset($data->password)?$data->password:''}}">
-                              </div>
+                              
                            </div>
                            <div class="form-group">
                               <div class="col-md-6">

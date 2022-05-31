@@ -38,7 +38,6 @@ class DoctorController extends UploadController
                 $request->validate([
                     'department' => 'required',
                     'name' => 'required',
-                    'password'=>'required',
                     'phone_no'=>'required',
                     'about_us'=>'required',
                     'service'=>'required'
@@ -47,8 +46,7 @@ class DoctorController extends UploadController
                 $request->validate([
                     'department' => 'required',
                     'name' => 'required',
-                    'email' => 'required|unique:users',
-                    'password'=>'required',
+                    'email' => 'required',
                     'phone_no'=>'required',
                     'about_us'=>'required',
                     'service'=>'required',
@@ -56,6 +54,7 @@ class DoctorController extends UploadController
                 ]);
              }
 
+            $mediaUpload ="";
             if ($img = $request->hasFile('image')) {
                
                 $media =  UploadController::upload_media($request->image);
@@ -88,6 +87,7 @@ class DoctorController extends UploadController
                 $usd->password=$request->get("password");
                 $usd->phone_no=$request->get("phone_no");
                 $usd->usertype='3';
+               
                 $usd->save();
                 $store->user_id=$usd->id;
                 $msg=__('messages.Doctor Add Successfully');
@@ -96,7 +96,6 @@ class DoctorController extends UploadController
             $store->department_id=$request->get("department");
             $store->name=$request->get("name");
             $store->email=$request->get("email");
-            $store->password=$request->get("password");
             $store->phone_no=$request->get("phone_no");
             $store->about_us=$request->get("about_us");
             $store->service=$request->get("service");
@@ -106,7 +105,9 @@ class DoctorController extends UploadController
             $store->description = $request->get("description");
             $store->slug = $request->get("slug");
             $store->short_description=$request->get("short_description");
-            $store->image=  isset($mediaUpload)? $mediaUpload :'' ;
+             if($mediaUpload){
+                    $usd->image = $mediaUpload;
+            }
             $store->save(); 
             return redirect("admin/savedoctor/".$store->id.'/2');
 

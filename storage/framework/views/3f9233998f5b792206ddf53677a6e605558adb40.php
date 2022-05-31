@@ -61,14 +61,7 @@
                         </label>
                         <input type="text" id="name" placeholder="<?php echo e(__('messages.Enter').' '.__('messages.Department Name')); ?>" class="form-control"  name="name" value="<?php echo e(isset($data->name)?$data->name:''); ?>">
                      </div>
-                     <div class="form-group">
-                        <label for="name" class=" form-control-label">
-                        <?php echo e(__('messages.Emergency No')); ?>
-
-                        <span class="reqfield" >*</span>
-                        </label>
-                        <input type="text" id="emergency_no" placeholder="<?php echo e(__('messages.Enter').' '.__('messages.Emergency No')); ?>" class="form-control"  name="emergency_no" value="<?php echo e(isset($data->emergency_no)?$data->emergency_no:''); ?>">
-                     </div>
+                     
                      <div class="form-group">
                         <label for="email" class=" form-control-label">
                         <?php echo e(__('messages.Short Description')); ?><span class="reqfield" >*</span>
@@ -80,6 +73,14 @@
                         <?php echo e(__('messages.Description')); ?><span class="reqfield" >*</span>
                         </label>
                         <textarea  id="description" name="description"  class="form-control"><?php echo e(isset($data->description)?$data->description:''); ?></textarea>
+                     </div>
+                     <div class="form-group">
+                        <label for="name" class=" form-control-label">
+                        <?php echo e(__('messages.Slug')); ?>
+
+                        <span class="reqfield">*</span>
+                        </label>
+                        <input type="text" id="slug" placeholder="<?php echo e(__('messages.Enter').'  '.__('messages.Slug')); ?>" class="form-control"  name="slug" value="<?php echo e(isset($data->slug)?$data->slug:''); ?>">
                      </div>
                      <div class="form-group">
                         <label for="file" class=" form-control-label">  

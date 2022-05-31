@@ -59,7 +59,7 @@ class DepartmentController extends UploadController
             $store->description=$request->get("description");
             $store->short_description=$request->get("short_description");
             $store->slug=$request->get("slug");
-            $store->emergency_no = $request->get("emergency_no");
+            // $store->emergency_no = $request->get("emergency_no");
             if($mediaUpload){
 
                 $store->image = $mediaUpload;
@@ -178,7 +178,7 @@ class DepartmentController extends UploadController
             $store->excerpt= $request->get("excerpt");
             $store->short_description= $request->get("short_description");
             $store->price_for=isset( $request->get['price_for'] ) ? $request->get['price_for'] : " " ;
-            $store->img = isset( $mediaUpload ) ? $mediaUpload : " " ;
+            
             if($mediaUpload){
 
                 $store->img = $mediaUpload;

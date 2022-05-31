@@ -44,7 +44,7 @@
                         <tr>
                            <th>{{__('messages.Id')}}</th>
                            <th>{{__('messages.Title')}}</th>
-                           <th>{{__('messages.Sub-Title')}}</th>
+                           <th>{{__('messages.Description')}}</th>
                            <th>{{__('messages.Image')}}</th>
                            <th>{{__('messages.Action')}}</th>
                         </tr>
@@ -55,7 +55,7 @@
                         <tr>
                            <td>{{isset($d->id)?$d->id:""}}</td>
                            <td>{{isset($d->title)?$d->title:""}}</td>
-                           <td>{{isset($d->sub_title)?$d->sub_title:""}}</td>
+                           <td>{{ substr($d->short_description, 0,50)}}..</td>
                            <td>
                                <img src="{{ $d->featured_img }}" style="width:50px;height: 50px;" class="imgsize1"/>
                            </td>

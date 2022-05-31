@@ -43,24 +43,24 @@ class BlogController extends UploadController
        
         $request->validate([
             'title'=>'required',
-            'sub_title'=>'required'
+            'short_description'=>'required'
         ]);
-
+        $mediaUpload = "";
         if ($img = $request->hasFile('featured_img')) {
                
            $media =  UploadController::upload_media($request->featured_img);
            $mediaUpload = $media['url'];
 
         }
-       
-
         $data  =$request->all();
+        if($mediaUpload){
+            $data['featured_img'] = $mediaUpload;
+        }
         $blogCreate = Blog::create(array('title' => $data['title'],
-                    'sub_title' => $data['sub_title'],
-                'description' => $data['description'],
-                'posted_by' => $data['posted_by'],
-                'featured_img' => $mediaUpload,
-                'slug' => $data['slug']
+                                    'short_description' => $data['short_description'],
+                                    'description' => $data['description'],
+                                    'posted_by' => $data['posted_by'],
+                                    'slug' => $data['slug']
                 ));
         return redirect("admin/blogs");
     }
@@ -99,15 +99,19 @@ class BlogController extends UploadController
     public function update(Request $request, Blog $blog)
     {
        
+        $mediaUpload = "";
         if ($img = $request->hasFile('featured_img')) {
                
            $media =  UploadController::upload_media($request->featured_img);
            $mediaUpload = $media['url'];
 
         }
+
         $data  =$request->all();
-       
-        $data['featured_img'] = isset( $mediaUpload->featured_img ) ? $mediaUpload ->featured_img : " " ;
+        if($mediaUpload){
+
+            $data['featured_img'] = $mediaUpload ;
+        }
         $blogCreate = Blog::update($data);
         return redirect("admin/blogs");
     }
