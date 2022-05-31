@@ -108,11 +108,7 @@ class WorkshopController extends UploadController
 
         }
         $data  =$request->all();
-        if($mediaUpload){
-            
-            $data['featured_img'] = $mediaUpload ;
-
-        }
+       
         if($mediaUpload){
 
             $data['featured_img'] = $mediaUpload ;
