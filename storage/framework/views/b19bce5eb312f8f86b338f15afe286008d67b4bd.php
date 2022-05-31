@@ -1,6 +1,6 @@
 
 <?php $__env->startSection('title'); ?>
-<?php echo e(__('messages.Department Service')); ?>
+<?php echo e(__('messages.Doctors')); ?>
 
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
@@ -8,7 +8,7 @@
    <div class="col-sm-4">
       <div class="page-header float-left">
          <div class="page-title">
-            <h1><?php echo e(__('messages.Department Service')); ?></h1>
+            <h1><?php echo e(__('messages.Doctors')); ?></h1>
          </div>
       </div>
    </div>
@@ -16,8 +16,7 @@
       <div class="page-header float-right">
          <div class="page-title">
             <ol class="breadcrumb text-right">
-               <li><a href="<?php echo e(url('admin/department')); ?>"><?php echo e(__('messages.Department')); ?></a></li>
-               <li class="active"><?php echo e(__('messages.Department Service')); ?></li>
+               <li class="active"><?php echo e(__('messages.Doctors')); ?></li>
             </ol>
          </div>
       </div>
@@ -39,34 +38,40 @@
                   </div>
                   <?php endif; ?>
                   <div>
-                     <a href="<?php echo e(url('admin/savedepartmentservice/').'/'.$department_id.'/0'); ?>" class="btn btn-primary"><?php echo e(__('messages.Add').' '.__('messages.Department Service')); ?>s</a>
+                     <a href="<?php echo e(url('admin/savedoctor/0/1')); ?>" class="btn btn-primary"><?php echo e(__('messages.Add').' '.__('messages.Doctors')); ?></a>
                   </div>
                   <div class="table-responsive">
-                  <table id="service" class="table  table-striped table-bordered">
+                    <table id="service" class="table  table-striped table-bordered">
                      <thead>
                         <tr>
                            <th><?php echo e(__('messages.Id')); ?></th>
+                           <th><?php echo e(__('messages.Image')); ?></th>
+                           <th><?php echo e(__('messages.Department')); ?></th>
                            <th><?php echo e(__('messages.Name')); ?></th>
-                           <th><?php echo e(__('messages.Description')); ?></th>
-                           <th><?php echo e(__('messages.Icon')); ?></th>
+                           <th><?php echo e(__('messages.Email')); ?></th>
+                           <th><?php echo e(__('messages.Phone No')); ?></th>
                            <th><?php echo e(__('messages.Action')); ?></th>
                         </tr>
                      </thead>
                      <tbody>
+                        <?php if(count($data)>0): ?>
                         <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
-                           <td><?php echo e($d->id); ?></td>
-                           <td><?php echo e($d->name); ?></td>
+                           <td><?php echo e(isset($d->id)?$d->id:""); ?></td>
                            <td>
-                               <img src="<?php echo e($d->img); ?>" class="imgsize1" style="width:50px;height:50px;"/>
+                                <img src="<?php echo e($d->image); ?>" class="imgsize1" style="height:50px;width: 50px;"/>
                            </td>
-                           <td><?php echo e(substr($d->short_description,0,50)); ?>..</td>
+                           <td><?php echo e($d->department->name); ?></td>
+                           <td><?php echo e($d->name); ?></td>
+                           <td><?php echo e($d->email); ?></td>
+                           <td><?php echo e($d->phone_no); ?></td>
                            <td>
-                              <a href="<?php echo e(url('admin/savedepartmentservice/').'/'.$d->department_id.'/'.$d->id); ?>" class="btn btn-primary"><?php echo e(__('messages.Edit')); ?></a>
-                              <a href="javascript:deleterow('deletedepartmentservice','<?= $d->id ?>')" class="btn btn-danger"><?php echo e(__('messages.Delete')); ?></a>
+                              <a href="<?php echo e(url('admin/savedoctor/').'/'.$d->id.'/1'); ?>" class="btn btn-primary"><?php echo e(__('messages.Edit')); ?></a>
+                              <a href="javascript:deleterow('deletedoctor','<?= $d->id ?>')" class="btn btn-danger"><?php echo e(__('messages.Delete')); ?></a>
                            </td>
                         </tr>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        <?php endif; ?>
                      </tbody>
                   </table>
                   </div>
@@ -77,4 +82,4 @@
    </div>
 </div>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('admin.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Projects\Menow\me_now\resources\views/admin/department/saveservice.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('admin.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\meNow\resources\views/admin/doctor/default.blade.php ENDPATH**/ ?>

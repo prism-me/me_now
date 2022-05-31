@@ -106,4 +106,4 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
       <script src="<?php echo e(asset('js/admin.js?v=88')); ?>"></script>
    </body>
-</html><?php /**PATH D:\Projects\Menow\me_now\resources\views/admin/login.blade.php ENDPATH**/ ?>
+</html><?php /**PATH C:\xampp\htdocs\meNow\resources\views/admin/login.blade.php ENDPATH**/ ?>
