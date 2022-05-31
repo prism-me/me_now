@@ -10,6 +10,7 @@ use App\Model\TimeTable;
 use App\Model\Appointment;
 use App\Model\Token;
 use App\Model\Review;
+use App\Model\NewsLetter;
 use App\User;
 use App\Model\Setting;
 use Session;
@@ -193,5 +194,21 @@ class DoctorController extends UploadController
           Session::flash('alert-class', 'alert-success');
           return redirect("admin/review");
     }
+
+
+    public function subscribers(){
+
+        $data  = NewsLetter::all();
+        return view('admin.subscribers')->with('data',$data);
+    }
+
+    public function deleteSubscriber($id){
+         $data  = NewsLetter::where('id',$id)->delete();
+        return redirect("admin/subscribers");
+
+    }
+
+
+
   
 }

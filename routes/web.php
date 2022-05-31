@@ -191,6 +191,10 @@ Route::group(['prefix' => 'admin'], function () {
         #Workshop 
         Route::resource('workshops', 'WorkshopController');
 
+        #Subscriber 
+        Route::get('subscribers', 'DoctorController@subscribers');
+        Route::post('delete-subscriber/{id}', 'DoctorController@deleteSubscriber');
+
 
 	 });
 

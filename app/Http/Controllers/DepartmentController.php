@@ -38,6 +38,7 @@ class DepartmentController extends UploadController
                     'description' => 'required|min:40',
                 ]);
              }
+            $mediaUpload = "" ;
             if ($img = $request->hasFile('image')) {
                
                 $media =  UploadController::upload_media($request->image);
@@ -59,7 +60,11 @@ class DepartmentController extends UploadController
             $store->short_description=$request->get("short_description");
             $store->slug=$request->get("slug");
             $store->emergency_no = $request->get("emergency_no");
-            $store->image = isset( $mediaUpload ) ? $mediaUpload : " " ;
+            if($mediaUpload){
+
+                $store->image = $mediaUpload;
+
+            }
             $store->save(); 
             Session::flash('message',$msg); 
             Session::flash('alert-class', 'alert-success');
@@ -156,6 +161,7 @@ class DepartmentController extends UploadController
                 $store=new DepartService();
                 $msg=__('messages.Department Service Add Successfully');
             }
+            $mediaUpload = "" ;
             if ($img = $request->hasFile('img')) {
                
                 $media =  UploadController::upload_media($request->img);
@@ -173,7 +179,11 @@ class DepartmentController extends UploadController
             $store->short_description= $request->get("short_description");
             $store->price_for=isset( $request->get['price_for'] ) ? $request->get['price_for'] : " " ;
             $store->img = isset( $mediaUpload ) ? $mediaUpload : " " ;
-         
+            if($mediaUpload){
+
+                $store->img = $mediaUpload;
+
+            }
             $store->save(); 
             Session::flash('message',$msg); 
             Session::flash('alert-class', 'alert-success');

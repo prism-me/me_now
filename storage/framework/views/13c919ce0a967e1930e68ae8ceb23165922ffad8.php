@@ -1,6 +1,6 @@
 
 <?php $__env->startSection('title'); ?>
-<?php echo e(__('messages.Department')); ?>
+<?php echo e(__('messages.All Subscriber')); ?>
 
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
@@ -8,7 +8,7 @@
    <div class="col-sm-4">
       <div class="page-header float-left">
          <div class="page-title">
-            <h1><?php echo e(__('messages.Department')); ?></h1>
+            <h1><?php echo e(__('messages.All Subscriber')); ?></h1>
          </div>
       </div>
    </div>
@@ -16,7 +16,7 @@
       <div class="page-header float-right">
          <div class="page-title">
             <ol class="breadcrumb text-right">
-               <li class="active"><?php echo e(__('messages.Department')); ?></li>
+               <li class="active"><?php echo e(__('messages.All Subscriber')); ?></li>
             </ol>
          </div>
       </div>
@@ -37,17 +37,13 @@
                      </button>
                   </div>
                   <?php endif; ?>
-                  <div>
-                     <a href="<?php echo e(url('admin/savedepartment/0')); ?>" class="btn btn-primary"><?php echo e(__('messages.Add').' '.__('messages.Department')); ?></a>
-                  </div>
+                  
                   <div class="table-responsive">
                   <table id="service" class="table  table-striped table-bordered">
                      <thead>
                         <tr>
                            <th><?php echo e(__('messages.Id')); ?></th>
-                           <th><?php echo e(__('messages.Name')); ?></th>
-                           <th><?php echo e(__('messages.Image')); ?></th>
-                           <th><?php echo e(__('messages.Emergency No')); ?></th>
+                           <th><?php echo e(__('messages.E-Mail')); ?></th>
                            <th><?php echo e(__('messages.Action')); ?></th>
                         </tr>
                      </thead>
@@ -56,15 +52,9 @@
                         <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
                            <td><?php echo e(isset($d->id)?$d->id:""); ?></td>
-                           <td><?php echo e(isset($d->name)?$d->name:""); ?></td>
+                           <td><?php echo e(isset($d->email)?$d->email:""); ?></td>
                            <td>
-                               <img src="<?php echo e($d->image); ?>" class="imgsize1" style="width:50px;height:50px;"/>
-                           </td>
-                           <td><?php echo e(substr($d->short_description , 0,50)); ?>...</td>
-                           <td>
-                                <a href="<?php echo e(url('admin/savedepartment/').'/'.$d->id); ?>" class="btn btn-primary"><?php echo e(__('messages.Edit')); ?></a>
-                                <a href="javascript:deleterow('deletedepartment','<?= $d->id ?>')" class="btn btn-danger"><?php echo e(__('messages.Delete')); ?></a>
-                                <a href="<?php echo e(url('admin/departmentservice/').'/'.$d->id); ?>"  class="btn btn-warning btndepartwarning"><?php echo e(__('messages.Add Services')); ?></a>
+                                <form action="<?php echo e(url('admin/delete-subscriber'.'/' . $d->id)); ?>"  novalidate="novalidate"  method="POST"  ><?php echo e(csrf_field()); ?><input type="submit" class="btn btn-danger" name="Delete"></form>
                            </td>
                         </tr>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -79,4 +69,4 @@
    </div>
 </div>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('admin.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Projects\Menow\me_now\resources\views/admin/department/default.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('admin.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\meNow\resources\views/admin/subscribers.blade.php ENDPATH**/ ?>

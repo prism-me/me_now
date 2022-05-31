@@ -92,30 +92,18 @@
                                 class="menu-icon fa fa-gift"></i><?php echo e(__('messages.Subscription')); ?></a>
                     </li>
                     <li class="active">
-                        <a href="<?php echo e(url('admin/news')); ?>"> <i
-                                class="menu-icon fa  fa-newspaper-o"></i><?php echo e(__('messages.news')); ?></a>
+                        <a href="<?php echo e(url('admin/subscribers')); ?>"> <i
+                                class="menu-icon fa fa-gift"></i><?php echo e(__('messages.Subscriber')); ?></a>
                     </li>
-                    <li class="active">
-                        <a href="<?php echo e(url('admin/contactus')); ?>"> <i
-                                class="menu-icon fa  fa-address-card"></i><?php echo e(__('messages.Contact Us')); ?></a>
-                    </li>
-                    <li class="active">
-                        <a href="<?php echo e(url('admin/service')); ?>"> <i
-                                class="menu-icon fa fa-book"></i><?php echo e(__('messages.Facilities')); ?></a>
-                    </li>
+                    
+                    
 
                     <li class="active">
                         <a href="<?php echo e(url('admin/department')); ?>"> <i
                                 class="menu-icon fa fa-eercast"></i><?php echo e(__('messages.Department')); ?></a>
                     </li>
-                    <li class="active">
-                        <a href="<?php echo e(url('admin/notification')); ?>"> <i
-                                class="menu-icon fa fa-bell"></i><?php echo e(__('messages.Notification')); ?></a>
-                    </li>
-                    <li class="active">
-                        <a href="<?php echo e(url('admin/paymentgateway')); ?>"> <i
-                                class="menu-icon fa fa-money"></i><?php echo e(__('messages.Payment Gateway')); ?></a>
-                    </li>
+                    
+                    
                     <li class="active">
                         <a href="<?php echo e(url('admin/setting/1')); ?>"> <i
                                 class="menu-icon fa fa-cogs"></i><?php echo e(__('messages.Setting')); ?></a>
@@ -296,4 +284,4 @@
 </body>
 
 </html>
-<?php /**PATH D:\Projects\Menow\me_now\resources\views/admin/layout.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\xampp\htdocs\meNow\resources\views/admin/layout.blade.php ENDPATH**/ ?>
