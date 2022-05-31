@@ -15,7 +15,6 @@
       <div class="page-header float-right">
          <div class="page-title">
             <ol class="breadcrumb text-right">
-               <li><a href="{{url('admin/blogs')}}">{{__('messages.Blog')}}</a></li>
                <li class="active">{{__('messages.Save Blog')}}</li>
             </ol>
          </div>
@@ -45,13 +44,10 @@
                         @endforeach
                      </ul>
                   </div>
-                  @endif  
-                                         
-                  <form action="{{ URL::to('admin/blogs').'/'.$data->id }}" method="post" novalidate="novalidate" enctype="multipart/form-data">
-                     {{csrf_field()}}
-                     
+                  @endif                              
+                  <form action="{{ URL::to('admin/update-blog' .'/'.$data->slug)}}" method="POST" novalidate="novalidate" enctype="multipart/form-data">
+                  @csrf
                              
-                     {{method_field('PUT')}}
                      <div class="form-group">
                         <label for="name" class=" form-control-label">
                         {{__('messages.Title')}}
@@ -64,14 +60,14 @@
                         {{__('messages.Short Description')}}
                         <span class="reqfield">*</span>
                         </label>
-                        <textarea id="short_description" placeholder="{{__('messages.Enter').'  '.__('messages.Short Description')}}" class="form-control" required name="short_description" value="{{ isset($data->short_description)?$data->short_description:''}}"></textarea>
+                        <textarea id="short_description" placeholder="{{__('messages.Enter').'  '.__('messages.Short Description')}}" class="form-control" required name="short_description" value="{{ isset($data->short_description)?$data->short_description:''}}">{{$data->short_description}}</textarea>
                      </div>
                      <div class="form-group">
                         <label for="name" class=" form-control-label">
                         {{__('messages.Description')}}
                         <span class="reqfield">*</span>
                         </label>
-                        <textarea id="description" placeholder="{{__('messages.Enter').'  '.__('messages.Description')}}" class="form-control" required name="description" value="{{ isset($data->description)?$data->description:''}}">{{ isset($data->description)?$data->description:''}}</textarea>
+                        <textarea id="description" placeholder="{{__('messages.Enter').'  '.__('messages.Description')}}" class="form-control" required name="description" value="{{ isset($data->description)?$data->description:''}}">{{$data->description}}</textarea>
                      </div>
                      <div class="form-group">
                         <label for="name" class=" form-control-label">
@@ -80,7 +76,6 @@
                         </label>
                         <input type="text" id="posted-by" placeholder="{{__('messages.Enter').'  '.__('messages.Posted By')}}" class="form-control" required name="posted_by" value="{{ isset($data->posted_by)?$data->posted_by:''}}">
                      </div>
-                     
                      <div class="form-group">
                            <label for="name" class=" form-control-label">
                            {{__('messages.Slug')}}
@@ -89,16 +84,14 @@
                         </div>
                     
                      <div class="form-group">
-                        <label for="file" class=" form-control-label">  
+                        <label for="file" class=" form-control-label"> 
+                        <img src="{{ isset($data->featured_img)?$data->featured_img:''}}" class="imgsize1 departmentimg" style="width:50px;height:50px;"/> 
+ 
                         {{__('messages.Image')}}<span class="reqfield" >*</span>
                         </label>
-                        @if($data->featured_img)
-                           <img src="{{ $data->featured_img}}" class="imgsize1 departmentimg"/> 
-                        @endif
-                        <input type="file" id="file" name="featured_img" class="form-control-file" accept="image/*">
+                           <input type="file" id="file" name="featured_img" class="form-control-file" accept="image/*">
                     
                      <div>
-                     
                      <div class="form-group">
                         @if(Session::get("is_demo")=='1')
                            <button id="payment-button" type="button"  onclick="disablebtn()" class="btn btn-lg btn-info" >

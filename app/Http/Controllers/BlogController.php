@@ -83,10 +83,11 @@ class BlogController extends UploadController
      * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function edit(Blog $blog)
+    public function edit(Blog $blog,$slug)
     {
        
-        return view('admin.blog.saveblog')->with('data', $blog);
+       $data = Blog::where('slug',$slug)->first();
+        return view('admin.blog.saveblog')->with('data', $data);
     }
 
     /**
@@ -96,7 +97,7 @@ class BlogController extends UploadController
      * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Blog $blog)
+    public function update(Request $request, Blog $blog, $slug)
     {
        
         $mediaUpload = "";
@@ -107,12 +108,12 @@ class BlogController extends UploadController
 
         }
 
-        $data  =$request->all();
+        $data  =$request->except('_token');
         if($mediaUpload){
 
             $data['featured_img'] = $mediaUpload ;
         }
-        $blogCreate = Blog::update($data);
+        $blogCreate = Blog::where('slug',$slug)->update($data);
         return redirect("admin/blogs");
     }
 
@@ -122,11 +123,10 @@ class BlogController extends UploadController
      * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Blog $blog, $id)
+    public function delete(Blog $blog, $id)
     {   
 
-        $blog = Blog::find($id);
-        $blog->delete();
+        $blog = Blog::where('slug',$id)->delete();
          return redirect("admin/blogs");
       
         

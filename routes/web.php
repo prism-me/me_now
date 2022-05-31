@@ -187,6 +187,9 @@ Route::group(['prefix' => 'admin'], function () {
 
         #Blog 
         Route::resource('blogs', 'BlogController');
+        Route::get('edit-blog/{slug}', 'BlogController@edit');
+        Route::post('delete-blog/{slug}', 'BlogController@delete');
+        Route::post('update-blog/{slug}', 'BlogController@update');
 
         #Workshop 
         Route::resource('workshops', 'WorkshopController');
