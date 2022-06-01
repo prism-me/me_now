@@ -442,6 +442,8 @@ return [
 		"Save Room"=>"Save Room",
 		"Event"=>"Event",
 		"Save Event"=>"Save Event",
+		"Banner Image"=>"Banner Image",
+		"Thumbnail Image"=>"Thumbnail Image",
 		"Featured Image"=>"Featured Image",
 		"Slider Image"=>"Slider Image",
 		"Addtional Image"=>"Addtional Image",

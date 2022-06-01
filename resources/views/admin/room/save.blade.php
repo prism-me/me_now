@@ -82,7 +82,7 @@
                            {{__('messages.Icon')}}<span class="reqfield" >*</span>
                         </label>
                         @if($data->icons)
-                                 <img src="{{$data->icons}}" class="imgsize1 btndepartwarning" /> 
+                                 <img src="{{$data->icons}}" class="img-fluid" /> 
                         @endif
                         <input type="file" id="file" name="icons" class="form-control-file" accept="image/*">
                      </div>
@@ -104,7 +104,7 @@
                         @if($data->slider_images)
                               <img src="{{$data->slider_images}}" class="img-fluid" /> 
                         @endif
-                            <input type="file" id="file" name="slider_images" class="form-control-file" accept="image/*">
+                            <input type="file" id="file" name="slider_images[]" class="form-control-file" accept="image/*" multiple>
                             
                     <div>
                      <div class="form-group">
@@ -114,7 +114,7 @@
                            @if($data->additional_images)
                               <img src="{{$data->additional_images}}" class="img-fluid" /> 
                            @endif
-                            <input type="file" id="file" name="additional_images" class="form-control-file" accept="image/*">
+                            <input type="file" id="file" name="additional_images[]" class="form-control-file" accept="image/*" multiple>
                             
                     <div>
                     <div class="form-group">

@@ -89,7 +89,7 @@
                            <?php echo e(__('messages.Icon')); ?><span class="reqfield" >*</span>
                         </label>
                         <?php if($data->icons): ?>
-                                 <img src="<?php echo e($data->icons); ?>" class="imgsize1 btndepartwarning" /> 
+                                 <img src="<?php echo e($data->icons); ?>" class="img-fluid" /> 
                         <?php endif; ?>
                         <input type="file" id="file" name="icons" class="form-control-file" accept="image/*">
                      </div>
@@ -111,7 +111,7 @@
                         <?php if($data->slider_images): ?>
                               <img src="<?php echo e($data->slider_images); ?>" class="img-fluid" /> 
                         <?php endif; ?>
-                            <input type="file" id="file" name="slider_images" class="form-control-file" accept="image/*">
+                            <input type="file" id="file" name="slider_images[]" class="form-control-file" accept="image/*" multiple>
                             
                     <div>
                      <div class="form-group">
@@ -121,7 +121,7 @@
                            <?php if($data->additional_images): ?>
                               <img src="<?php echo e($data->additional_images); ?>" class="img-fluid" /> 
                            <?php endif; ?>
-                            <input type="file" id="file" name="additional_images" class="form-control-file" accept="image/*">
+                            <input type="file" id="file" name="additional_images[]" class="form-control-file" accept="image/*" multiple>
                             
                     <div>
                     <div class="form-group">

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Model\Event;
 use Illuminate\Http\Request;
 
-class EventController extends Controller
+class EventController extends  UploadController
 {
     /**
      * Display a listing of the resource.
@@ -36,7 +36,30 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $mediaUpload = "";
+        $mediaUpload1 = "";
+        if ($img = $request->hasFile('banner_img')) {
+               
+           $media =  UploadController::upload_media($request->banner_img);
+           $mediaUpload = $media['url'];
+
+        }
+        if ($img = $request->hasFile('thumbnail_img')) {
+               
+           $media =  UploadController::upload_media($request->thumbnail_img);
+           $mediaUpload1 = $media['url'];
+
+        }
+        $data  =$request->all();
+        if($mediaUpload){
+            $data['banner_img'] = $mediaUpload;
+        }
+        if($mediaUpload1){
+            $data['thumbnail_img'] = $mediaUpload1;
+        }
+        $eventCreate = Event::create($data);
+        return redirect("admin/events");
     }
 
     /**
@@ -70,9 +93,31 @@ class EventController extends Controller
      * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Event $event)
+    public function update(Request $request,$slug)
     {
-        //
+        $mediaUpload = "";
+        $mediaUpload1 = "";
+        if ($img = $request->hasFile('banner_img')) {
+               
+           $media =  UploadController::upload_media($request->banner_img);
+           $mediaUpload = $media['url'];
+
+        }
+        if ($img = $request->hasFile('thumbnail_img')) {
+               
+           $media =  UploadController::upload_media($request->thumbnail_img);
+           $mediaUpload1 = $media['url'];
+
+        }
+        $data  =$request->except('_token');
+        if($mediaUpload){
+            $data['banner_img'] = $mediaUpload;
+        }
+        if($mediaUpload1){
+            $data['thumbnail_img'] = $mediaUpload1;
+        }
+        $eventCreate = Event::where('slug',$slug)->update($data);
+        return redirect("admin/events");
     }
 
     /**
@@ -84,7 +129,7 @@ class EventController extends Controller
     public function destroy($slug)
     {   
 
-        $event = REventoom::where('slug',$slug)->delete();
+        $event = Event::where('slug',$slug)->delete();
         return redirect("admin/events");
       
         
