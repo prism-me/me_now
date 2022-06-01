@@ -58,7 +58,6 @@ Route::group(['prefix' => '/'], function () {
      Route::post("mediaupload","FrontController@mediaupload");
      Route::post("deletemedia","FrontController@deletemedia");
      
-
      Route::get("myaccount","FrontController@myaccount");
      Route::post("updateprofile","FrontController@updateprofile");
      Route::get("checkcurrentpwd","FrontController@checkcurrentpwd");

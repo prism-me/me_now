@@ -246,7 +246,6 @@ class FrontController extends Controller
             return view("front.department")->with("department",$department)->with("setting",$setting)->with("departmentService",$departmentService)->with('serviceSlug' , $service)->with('current',$departmentId);
         }
 
-
         public function departmentdetail($service,$subService){
             
            $department = Department::with('service')->get();

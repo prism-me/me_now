@@ -145,8 +145,8 @@
         <div class="doctorl-main-box">
             <div class="container">
                 <div class="global-heading">
-                    <h2><?php echo e(__('messages.Meet Our Doctors')); ?></h2>
-                    <p><?php echo e(__('messages.Talent wins games, but teamwork and intelligence win championships')); ?></p>
+                    <h2>Me Now Team</h2>
+                    
                 </div>
                 <div class="row">
                     <?php if(count($doctor) > 0): ?>
