@@ -1,13 +1,13 @@
 @extends('admin.layout')
 @section('title')
-{{__('messages.Save Blog')}}
+{{__('messages.Save Room')}}
 @stop
 @section('content')
 <div class="breadcrumbs">
    <div class="col-sm-4">
       <div class="page-header float-left">
          <div class="page-title">
-            <h1>{{__('messages.Save Blog')}}</h1>
+            <h1>{{__('messages.Save Room')}}</h1>
          </div>
       </div>
    </div>
@@ -15,7 +15,7 @@
       <div class="page-header float-right">
          <div class="page-title">
             <ol class="breadcrumb text-right">
-               <li class="active">{{__('messages.Save Blog')}}</li>
+               <li class="active">{{__('messages.Save Room')}}</li>
             </ol>
          </div>
       </div>
@@ -45,8 +45,8 @@
                      </ul>
                   </div>
                   @endif                              
-                  <form action="{{ URL::to('admin/update-blog' .'/'.$data->slug)}}" method="POST" novalidate="novalidate" enctype="multipart/form-data">
-                  @csrf
+                  <form action="{{ URL::to('admin/rooms')}}" method="POST" novalidate="novalidate" enctype="multipart/form-data">
+                     {{csrf_field()}}
                              
                      <div class="form-group">
                         <label for="name" class=" form-control-label">
@@ -60,38 +60,57 @@
                         {{__('messages.Short Description')}}
                         <span class="reqfield">*</span>
                         </label>
-                        <textarea id="short_description" placeholder="{{__('messages.Enter').'  '.__('messages.Short Description')}}" class="form-control" required name="short_description" value="{{ isset($data->short_description)?$data->short_description:''}}">{{$data->short_description}}</textarea>
-                     </div>
+                        <textarea id="short_description" placeholder="{{__('messages.Enter').'  '.__('messages.Short Description')}}" class="form-control" required name="short_description" value="{{ isset($data->short_description)?$data->short_description:''}}"></textarea>
+                    </div>
+                    <div class="form-group">
+                       <label for="name" class=" form-control-label">
+                       {{__('messages.Description')}}
+                       <span class="reqfield">*</span>
+                       </label>
+                       <textarea id="description" placeholder="{{__('messages.Enter').'  '.__('messages.Description')}}" class="form-control" required name="description" value="{{ isset($data->description)?$data->description:''}}"></textarea>
+                    </div>
                      <div class="form-group">
                         <label for="name" class=" form-control-label">
-                        {{__('messages.Description')}}
+                        {{__('messages.Addtional Content')}}
                         <span class="reqfield">*</span>
                         </label>
-                        <textarea id="description" placeholder="{{__('messages.Enter').'  '.__('messages.Description')}}" class="form-control" required name="description" value="{{ isset($data->description)?$data->description:''}}">{{$data->description}}</textarea>
+                        <textarea id="description" placeholder="{{__('messages.Enter').'  '.__('messages.Addtional Content')}}" class="form-control" required name="additional_content" value="{{ isset($data->additional_content)?$data->additional_content:''}}"></textarea>
                      </div>
+  
+                     
                      <div class="form-group">
+                         <label for="file" class=" form-control-label">  
+                             {{__('messages.Icon')}}<span class="reqfield" >*</span>
+                            </label>
+                            <input type="file" id="file" name="icons" class="form-control-file" accept="image/*">
+                            
+                   
+                         <label for="file" class=" form-control-label">  
+                             {{__('messages.Featured Image')}}<span class="reqfield" >*</span>
+                            </label>
+                            <input type="file" id="file" name="featured_img" class="form-control-file" accept="image/*">
+                            
+                    <div>
+                     <div class="form-group">
+                         <label for="file" class=" form-control-label">  
+                             {{__('messages.Slider Image')}}<span class="reqfield" >*</span>
+                            </label>
+                            <input type="file" id="file" name="slider_images" class="form-control-file" accept="image/*">
+                            
+                    <div>
+                     <div class="form-group">
+                         <label for="file" class=" form-control-label">  
+                             {{__('messages.Addtional Image')}}<span class="reqfield" >*</span>
+                            </label>
+                            <input type="file" id="file" name="additional_images" class="form-control-file" accept="image/*">
+                            
+                    <div>
+                    <div class="form-group">
                         <label for="name" class=" form-control-label">
-                        {{__('messages.Posted By')}}
-                        <span class="reqfield">*</span>
+                        {{__('messages.Slug')}}
                         </label>
-                        <input type="text" id="posted-by" placeholder="{{__('messages.Enter').'  '.__('messages.Posted By')}}" class="form-control" required name="posted_by" value="{{ isset($data->posted_by)?$data->posted_by:''}}">
-                     </div>
-                     <div class="form-group">
-                           <label for="name" class=" form-control-label">
-                           {{__('messages.Slug')}}
-                           </label>
-                           <input type="text" id="slug" required placeholder="{{__('messages.Enter').' '.__('messages.Slug')}}"  class="form-control"  name="slug" value="{{ isset($data->slug)?$data->slug:''}}">
-                        </div>
-                    
-                     <div class="form-group">
-                        <label for="file" class=" form-control-label"> 
-                        <img src="{{ isset($data->featured_img)?$data->featured_img:''}}" class="imgsize1 departmentimg" style="width:50px;height:50px;"/> 
- 
-                        {{__('messages.Image')}}<span class="reqfield" >*</span>
-                        </label>
-                           <input type="file" id="file" name="featured_img" class="form-control-file" accept="image/*">
-                    
-                     <div>
+                        <input type="text" id="slug" required placeholder="{{__('messages.Enter').' '.__('messages.Slug')}}"  class="form-control"  name="slug" value="{{ isset($data->slug)?$data->slug:''}}">
+                </div>
                      <div class="form-group">
                         @if(Session::get("is_demo")=='1')
                            <button id="payment-button" type="button"  onclick="disablebtn()" class="btn btn-lg btn-info" >

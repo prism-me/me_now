@@ -76,10 +76,7 @@
                         <a href="{{ url('admin/patient') }}"> <i
                                 class="menu-icon fa fa-user"></i>{{ __('messages.Patient') }}</a>
                     </li>
-                    {{-- <li class="active">
-                        <a href="{{ url('admin/package') }}"> <i
-                                class="menu-icon fa fa-user-md"></i>{{ __('messages.Help Package') }}</a>
-                    </li> --}}
+                    
                     <li class="active">
                         <a href="{{ url('admin/blogs') }}"> <i
                                 class="menu-icon fa  fa-newspaper-o"></i>{{ __('messages.Blog') }}</a>
@@ -88,6 +85,22 @@
                         <a href="{{ url('admin/workshops') }}"> <i
                                 class="menu-icon fa  fa-newspaper-o"></i>{{ __('messages.Workshop') }}</a>
                     </li>
+                    <li class="active">
+                        <a href="{{ url('admin/department') }}"> <i
+                                class="menu-icon fa fa-eercast"></i>{{ __('messages.Department') }}</a>
+                    </li>
+                    <li class="active">
+                        <a href="{{ url('admin/rooms') }}"> <i
+                                class="menu-icon fa fa-home"></i>{{ __('messages.Room') }}</a>
+                    </li>
+                    <li class="active">
+                        <a href="{{ url('admin/events') }}"> <i
+                                class="menu-icon fa fa-calendar"></i>{{ __('messages.Event') }}</a>
+                    </li>
+                    {{-- <li class="active">
+                        <a href="{{ url('admin/package') }}"> <i
+                                class="menu-icon fa fa-user-md"></i>{{ __('messages.Help Package') }}</a>
+                    </li> --}}
                     {{-- <li class="active">
                         <a href="{{ url('admin/chat') }}"> <i
                                 class="menu-icon fa fa-comment"></i>{{ __('messages.Chat') }} </a>
@@ -105,30 +118,31 @@
                                 class="menu-icon fa fa-gift"></i>{{ __('messages.Subscription') }}</a>
                     </li>
                     <li class="active">
-                        <a href="{{ url('admin/news') }}"> <i
-                                class="menu-icon fa  fa-newspaper-o"></i>{{ __('messages.news') }}</a>
+                        <a href="{{ url('admin/subscribers') }}"> <i
+                                class="menu-icon fa fa-rocket"></i>{{ __('messages.Subscriber') }}</a>
                     </li>
-                    <li class="active">
+                    {{-- <li class="active">
+                        <a href="{{ url('admin/news') }}"> <i
+                                class="menu-icon fa  fa-newspaper-o"></i>{{ __('messages.News') }}</a>
+                    </li> --}}
+                    {{-- <li class="active">
                         <a href="{{ url('admin/contactus') }}"> <i
                                 class="menu-icon fa  fa-address-card"></i>{{ __('messages.Contact Us') }}</a>
                     </li>
                     <li class="active">
                         <a href="{{ url('admin/service') }}"> <i
                                 class="menu-icon fa fa-book"></i>{{ __('messages.Facilities') }}</a>
-                    </li>
+                    </li> --}}
 
-                    <li class="active">
-                        <a href="{{ url('admin/department') }}"> <i
-                                class="menu-icon fa fa-eercast"></i>{{ __('messages.Department') }}</a>
-                    </li>
-                    <li class="active">
+                    
+                    {{-- <li class="active">
                         <a href="{{ url('admin/notification') }}"> <i
                                 class="menu-icon fa fa-bell"></i>{{ __('messages.Notification') }}</a>
-                    </li>
-                    <li class="active">
+                    </li> --}}
+                    {{-- <li class="active">
                         <a href="{{ url('admin/paymentgateway') }}"> <i
                                 class="menu-icon fa fa-money"></i>{{ __('messages.Payment Gateway') }}</a>
-                    </li>
+                    </li> --}}
                     <li class="active">
                         <a href="{{ url('admin/setting/1') }}"> <i
                                 class="menu-icon fa fa-cogs"></i>{{ __('messages.Setting') }}</a>

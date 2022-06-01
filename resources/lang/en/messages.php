@@ -435,6 +435,17 @@ return [
 		"Delete"=>"Delete",
 		"Excerpt"=>"Excerpt",
 		"Icon"=>"Icon",
+		"Subscriber"=>"Subscriber",
+		"All Subscriber"=>"All Subscriber",
+		"E-Mail"=>"E-Mail",
+		"Room"=>"Room",
+		"Save Room"=>"Save Room",
+		"Event"=>"Event",
+		"Save Event"=>"Save Event",
+		"Featured Image"=>"Featured Image",
+		"Slider Image"=>"Slider Image",
+		"Addtional Image"=>"Addtional Image",
+		"Addtional Content"=>"Addtional Content",
 		
 		
 		"Workshop"=>"Workshop",

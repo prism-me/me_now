@@ -2,23 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\Blog;
+use App\Model\Room;
 use Illuminate\Http\Request;
-use App\Http\Controllers\UploadController;
 
-class BlogController extends UploadController
+class RoomController extends UploadController
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-  
     public function index()
     {
-        $blog = Blog::all();
-        return view("admin.blog.default")->with("data",$blog);
+      
+        $room = Room::all();
+       
+        return view("admin.room.default")->with("data",$room);
     }
 
     /**
@@ -28,8 +27,7 @@ class BlogController extends UploadController
      */
     public function create()
     {
-        return view("admin.blog.addBlog");
-
+         return view("admin.room.add");
     }
 
     /**
@@ -40,11 +38,7 @@ class BlogController extends UploadController
      */
     public function store(Request $request)
     {
-       
-        $request->validate([
-            'title'=>'required',
-            'short_description'=>'required'
-        ]);
+      
         $mediaUpload = "";
         if ($img = $request->hasFile('featured_img')) {
                
@@ -52,50 +46,71 @@ class BlogController extends UploadController
            $mediaUpload = $media['url'];
 
         }
+        if ($img = $request->hasFile('icons')) {
+               
+           $media =  UploadController::upload_media($request->icons);
+           $mediaUpload = $media['url'];
+
+        }
+        if ($img = $request->hasFile('slider_images')) {
+               
+           $media =  UploadController::upload_media($request->slider_images);
+           $mediaUpload = $media['url'];
+
+        }
+        if ($img = $request->hasFile('additional_images')) {
+               
+           $media =  UploadController::upload_media($request->additional_images);
+           $mediaUpload = $media['url'];
+
+        }
         $data  =$request->all();
         if($mediaUpload){
             $data['featured_img'] = $mediaUpload;
         }
-        $blogCreate = Blog::create($data);
-        return redirect("admin/blogs");
+        if($mediaUpload){
+            $data['slider_images'] = $mediaUpload;
+        }
+        if($mediaUpload){
+            $data['additional_images'] = $mediaUpload;
+        }
+        $roomCreate = Room::create($data);
+        return redirect("admin/rooms");
     }
-  
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Blog  $blog
+     * @param  \App\Room  $room
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show( $slug)
     {
-        $data = Blog::where('slug',$slug)->first();
-        return view('admin.blog.show')->with('data', $data);
+        $data = Room::where('slug',$slug)->first();
+        return view('admin.room.show')->with('data', $data);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Blog  $blog
+     * @param  \App\Room  $room
      * @return \Illuminate\Http\Response
      */
-    public function edit(Blog $blog,$slug)
+    public function edit($slug)
     {
-       
-       $data = Blog::where('slug',$slug)->first();
-        return view('admin.blog.saveblog')->with('data', $data);
+        $data = Room::where('slug',$slug)->first();
+        return view('admin.room.save')->with('data', $data);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Blog  $blog
+     * @param  \App\Room  $room
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Blog $blog, $slug)
+    public function update(Request $request, Room $slug)
     {
-       
         $mediaUpload = "";
         if ($img = $request->hasFile('featured_img')) {
                
@@ -109,21 +124,21 @@ class BlogController extends UploadController
 
             $data['featured_img'] = $mediaUpload ;
         }
-        $blogCreate = Blog::where('slug',$slug)->update($data);
-        return redirect("admin/blogs");
+        $blogCreate = Room::where('slug',$slug)->update($data);
+        return redirect("admin/rooms");
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Blog  $blog
+     * @param  \App\Room  $room
      * @return \Illuminate\Http\Response
      */
-    public function delete(Blog $blog, $slug)
+    public function destroy( $slug)
     {   
 
-        $blog = Blog::where('slug',$slug)->delete();
-         return redirect("admin/blogs");
+        $room = Room::where('slug',$slug)->delete();
+         return redirect("admin/rooms");
       
         
     }

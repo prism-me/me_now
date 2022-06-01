@@ -10,6 +10,7 @@ use App\Model\TimeTable;
 use App\Model\Appointment;
 use App\Model\Token;
 use App\Model\Review;
+use App\Model\NewsLetter;
 use App\User;
 use App\Model\Setting;
 use Session;
@@ -37,7 +38,6 @@ class DoctorController extends UploadController
                 $request->validate([
                     'department' => 'required',
                     'name' => 'required',
-                    'password'=>'required',
                     'phone_no'=>'required',
                     'about_us'=>'required',
                     'service'=>'required'
@@ -46,15 +46,15 @@ class DoctorController extends UploadController
                 $request->validate([
                     'department' => 'required',
                     'name' => 'required',
-                    'email' => 'required|unique:users',
-                    'password'=>'required',
+                    'email' => 'required',
                     'phone_no'=>'required',
                     'about_us'=>'required',
                     'service'=>'required',
-                    'image'=>'required'
+                    
                 ]);
              }
 
+            $mediaUpload ="";
             if ($img = $request->hasFile('image')) {
                
                 $media =  UploadController::upload_media($request->image);
@@ -87,6 +87,7 @@ class DoctorController extends UploadController
                 $usd->password=$request->get("password");
                 $usd->phone_no=$request->get("phone_no");
                 $usd->usertype='3';
+               
                 $usd->save();
                 $store->user_id=$usd->id;
                 $msg=__('messages.Doctor Add Successfully');
@@ -95,7 +96,6 @@ class DoctorController extends UploadController
             $store->department_id=$request->get("department");
             $store->name=$request->get("name");
             $store->email=$request->get("email");
-            $store->password=$request->get("password");
             $store->phone_no=$request->get("phone_no");
             $store->about_us=$request->get("about_us");
             $store->service=$request->get("service");
@@ -105,39 +105,15 @@ class DoctorController extends UploadController
             $store->description = $request->get("description");
             $store->slug = $request->get("slug");
             $store->short_description=$request->get("short_description");
-            $store->image=  isset($mediaUpload)? $mediaUpload :'' ;
+             if($mediaUpload){
+                    $usd->image = $mediaUpload;
+            }
             $store->save(); 
-            return redirect("admin/savedoctor/".$store->id.'/2');
+            return redirect("admin/doctor");
 
     }
  
-    public function updateworkinghours(Request $request){
-            //   if($request->get("id")=="0"){
-            //         Session::flash('message',__('messages.Please Fill Up Basic Information First Then Process Ahead')); 
-            //         Session::flash('alert-class', 'alert-danger');
-            //         return redirect('admin/savedoctor/0/2');
-            //   }
-              $workid=$request->get("work_id");
-              $day=$request->get("day");
-              $from=$request->get("from");
-              $to=$request->get("to");
-              for($i=0;$i<7;$i++){
-                    if($workid[$i]==0){
-                        $data=new TimeTable();
-                    }else{
-                        $data=TimeTable::find($workid[$i]);
-                    }
-                    $data->doctor_id=$request->get("id");
-                    $data->day=$day[$i];
-                    $data->from=$from[$i];
-                    $data->to=$to[$i];
-                    $data->save();
-              }
-            Session::flash('message',__('messages.Doctor Save Successfully')); 
-            Session::flash('alert-class', 'alert-success');
-            return redirect("admin/doctor");
-    }
-
+    
     public function deletedoctor($id){
           $data=Doctor::find($id);
           if($data){
@@ -193,5 +169,21 @@ class DoctorController extends UploadController
           Session::flash('alert-class', 'alert-success');
           return redirect("admin/review");
     }
+
+
+    public function subscribers(){
+
+        $data  = NewsLetter::all();
+        return view('admin.subscribers')->with('data',$data);
+    }
+
+    public function deleteSubscriber($id){
+         $data  = NewsLetter::where('id',$id)->delete();
+        return redirect("admin/subscribers");
+
+    }
+
+
+
   
 }

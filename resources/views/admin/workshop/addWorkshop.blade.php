@@ -62,8 +62,7 @@
                         <span class="reqfield">*</span>
                         </label>
                         <select id="title" placeholder="{{__('messages.Enter').'  '.__('messages.Title')}}" class="form-control" required name="event_type" value="{{ isset($data->event_type)?$data->event_type:''}}">
-                           <option value="lorem">Lorem</option>
-                           <option value="ipsum">Ipsum</option>
+                           <option value="counselling">Counselling</option>
                         </select>
                      </div>
                      <div class="form-group">

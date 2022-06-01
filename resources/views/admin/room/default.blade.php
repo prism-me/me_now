@@ -1,13 +1,13 @@
 @extends('admin.layout')
 @section('title')
-{{__('messages.Blog')}}
+{{__('messages.Room')}}
 @stop
 @section('content')
 <div class="breadcrumbs">
    <div class="col-sm-4">
       <div class="page-header float-left">
          <div class="page-title">
-            <h1>{{__('messages.Blog')}}</h1>
+            <h1>{{__('messages.Room')}}</h1>
          </div>
       </div>
    </div>
@@ -15,7 +15,7 @@
       <div class="page-header float-right">
          <div class="page-title">
             <ol class="breadcrumb text-right">
-               <li class="active">{{__('messages.Blog')}}</li>
+               <li class="active">{{__('messages.Room')}}</li>
             </ol>
          </div>
       </div>
@@ -45,7 +45,7 @@
                            <th>{{__('messages.Id')}}</th>
                            <th>{{__('messages.Title')}}</th>
                            <th>{{__('messages.Description')}}</th>
-                           <th>{{__('messages.Image')}}</th>
+                           <th>{{__('messages.Icon')}}</th>
                            <th>{{__('messages.Action')}}</th>
                         </tr>
                      </thead>
@@ -55,14 +55,13 @@
                         <tr>
                            <td>{{isset($d->id)?$d->id:""}}</td>
                            <td>{{isset($d->title)?$d->title:""}}</td>
-                           <td>{{ substr($d->short_description, 0,50)}}..</td>
+                           <td>{{ substr($d->short_description , 0,50)}}..</td>
+                           <td><img src="{{ $d->icons }}" class="img-fluid"></td>
+                           
                            <td>
-                               <img src="{{ $d->featured_img }}" style="width:50px;height: 50px;" class="imgsize1"/>
-                           </td>
-                           <td>
-                                <a href="{{URL::to('admin/edit-blog') . '/' . $d->slug}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
-                                <a href="{{URL::to('admin/show-blog') .'/' . $d->slug}}" class="btn btn-success">{{__('messages.View')}}</a>
-                                 <form action="{{ url('admin/delete-blog'.'/' . $d->slug)}}"  novalidate="novalidate"  method="POST"  >{{csrf_field()}}<input type="submit" class="btn btn-danger" value="{{__('messages.Delete')}}" name="Delete"></form>
+                                <a href="{{URL::to('admin/edit-room') . '/' . $d->slug}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
+                                <a href="{{URL::to('admin/show-room') .'/' . $d->slug}}" class="btn btn-success">{{__('messages.View')}}</a>
+                                 <form action="{{ url('admin/delete-room'.'/' . $d->slug)}}"  novalidate="novalidate"  method="POST"  >{{csrf_field()}}<input type="submit" class="btn btn-danger" value="{{__('messages.Delete')}}" name="Delete"></form>
                            </td>
                         </tr>
                         @endforeach

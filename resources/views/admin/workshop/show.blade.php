@@ -45,13 +45,10 @@
                         @endforeach
                      </ul>
                   </div>
-                  @endif  
-                                         
-                  <form action="{{ URL::to('admin/update-workshop').'/'.$data->slug }}" method="post" novalidate="novalidate" enctype="multipart/form-data">
-                     @csrf
-                     
+                  @endif                              
+                    
                              
-                      <div class="form-group">
+                     <div class="form-group">
                         <label for="name" class=" form-control-label">
                         {{__('messages.Title')}}
                         <span class="reqfield">*</span>
@@ -64,7 +61,8 @@
                         <span class="reqfield">*</span>
                         </label>
                         <select id="title" placeholder="{{__('messages.Enter').'  '.__('messages.Title')}}" class="form-control" required name="event_type" value="{{ isset($data->event_type)?$data->event_type:''}}">
-                           <option value="counselling">Counselling</option>
+                           <option value="lorem">Lorem</option>
+                           <option value="ipsum">Ipsum</option>
                         </select>
                      </div>
                      <div class="form-group">
@@ -88,37 +86,25 @@
                            <input type="text" id="slug" required placeholder="{{__('messages.Enter').' '.__('messages.Slug')}}"  class="form-control"  name="slug" value="{{ isset($data->slug)?$data->slug:''}}">
                         </div>
                      
+                     
                      <div class="form-group">
                          <label for="name" class=" form-control-label">
                               {{__('messages.Start Date')}}
                         </label>
-                        <input id="start_date" name="event_date" type="text" class="form-control" required value="{{ isset($event_date)&&$event_date!=0?$event_date:"" }}">
+                        <input id="start_date" name="event_date" type="text" class="form-control" required value="<?= isset($event_date)&&$event_date!=0?$event_date:""?>">
                      </div>
                     
                      <div class="form-group">
                         <label for="file" class=" form-control-label">  
                         {{__('messages.Image')}}<span class="reqfield" >*</span>
                         </label>
-                        @if($data->featured_img)
-                           <img src="{{ $data->featured_img}}" class="imgsize1 departmentimg"/> 
-                        @endif
-                        <input type="file" id="file" name="featured_img" class="form-control-file" accept="image/*">
+                           <input type="file" id="file" name="featured_img" class="form-control-file" accept="image/*">
                     
                      <div>
-                     <div class="form-group">
-                        @if(Session::get("is_demo")=='1')
-                           <button id="payment-button" type="button"  onclick="disablebtn()" class="btn btn-lg btn-info" >
-                              {{__('messages.Submit')}}
-                              </button>
-                        @else
-                            <button id="payment-button" type="submit" class="btn btn-lg btn-info" >
-                              {{__('messages.Submit')}}
-                              </button>
-                        @endif
-                     </div>
+                     
                        
                      </div>
-                  </form>
+                  
                </div>
             </div>
          </div>
@@ -126,7 +112,3 @@
    </div>
 </div>
 @stop
-
-
-
-

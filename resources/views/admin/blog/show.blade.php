@@ -45,8 +45,7 @@
                      </ul>
                   </div>
                   @endif                              
-                  <form action="{{ URL::to('admin/update-blog' .'/'.$data->slug)}}" method="POST" novalidate="novalidate" enctype="multipart/form-data">
-                  @csrf
+                 
                              
                      <div class="form-group">
                         <label for="name" class=" form-control-label">
@@ -83,29 +82,11 @@
                            <input type="text" id="slug" required placeholder="{{__('messages.Enter').' '.__('messages.Slug')}}"  class="form-control"  name="slug" value="{{ isset($data->slug)?$data->slug:''}}">
                         </div>
                     
-                     <div class="form-group">
-                        <label for="file" class=" form-control-label"> 
-                        <img src="{{ isset($data->featured_img)?$data->featured_img:''}}" class="imgsize1 departmentimg" style="width:50px;height:50px;"/> 
- 
-                        {{__('messages.Image')}}<span class="reqfield" >*</span>
-                        </label>
-                           <input type="file" id="file" name="featured_img" class="form-control-file" accept="image/*">
                     
-                     <div>
-                     <div class="form-group">
-                        @if(Session::get("is_demo")=='1')
-                           <button id="payment-button" type="button"  onclick="disablebtn()" class="btn btn-lg btn-info" >
-                              {{__('messages.Submit')}}
-                              </button>
-                        @else
-                            <button id="payment-button" type="submit" class="btn btn-lg btn-info" >
-                              {{__('messages.Submit')}}
-                              </button>
-                        @endif
-                     </div>
+                   
                        
                      </div>
-                  </form>
+                  
                </div>
             </div>
          </div>
