@@ -68,8 +68,7 @@
                         <span class="reqfield">*</span>
                         </label>
                         <select id="title" placeholder="<?php echo e(__('messages.Enter').'  '.__('messages.Title')); ?>" class="form-control" required name="event_type" value="<?php echo e(isset($data->event_type)?$data->event_type:''); ?>">
-                           <option value="lorem">Lorem</option>
-                           <option value="ipsum">Ipsum</option>
+                           <option value="counselling">Counselling</option>
                         </select>
                      </div>
                      <div class="form-group">
@@ -101,7 +100,7 @@
                               <?php echo e(__('messages.Start Date')); ?>
 
                         </label>
-                        <input id="start_date" name="event_date" type="text" class="form-control" required value="<?= isset($event_date)&&$event_date!=0?$event_date:""?>">
+                        <input id="start_date" name="event_date" type="text" class="form-control" required value="<?php echo e(isset($event_date)&&$event_date!=0?$event_date:""); ?>">
                      </div>
                     
                      <div class="form-group">

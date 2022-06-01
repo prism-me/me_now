@@ -45,7 +45,9 @@
                      <thead>
                         <tr>
                            <th><?php echo e(__('messages.Id')); ?></th>
-                          
+                           <th><?php echo e(__('messages.Title')); ?></th>
+                           <th><?php echo e(__('messages.Description')); ?></th>
+                           <th><?php echo e(__('messages.Icon')); ?></th>
                            <th><?php echo e(__('messages.Action')); ?></th>
                         </tr>
                      </thead>
@@ -54,6 +56,9 @@
                         <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
                            <td><?php echo e(isset($d->id)?$d->id:""); ?></td>
+                           <td><?php echo e(isset($d->title)?$d->title:""); ?></td>
+                           <td><?php echo e(substr($d->short_description , 0,50)); ?>..</td>
+                           <td><img src="<?php echo e($d->icons); ?>" class="img-fluid"></td>
                            
                            <td>
                                 <a href="<?php echo e(URL::to('admin/edit-room') . '/' . $d->slug); ?>" class="btn btn-primary"><?php echo e(__('messages.Edit')); ?></a>

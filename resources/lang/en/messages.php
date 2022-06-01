@@ -440,6 +440,8 @@ return [
 		"E-Mail"=>"E-Mail",
 		"Room"=>"Room",
 		"Save Room"=>"Save Room",
+		"Event"=>"Event",
+		"Save Event"=>"Save Event",
 		"Featured Image"=>"Featured Image",
 		"Slider Image"=>"Slider Image",
 		"Addtional Image"=>"Addtional Image",

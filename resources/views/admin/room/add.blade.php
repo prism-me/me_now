@@ -45,7 +45,7 @@
                      </ul>
                   </div>
                   @endif                              
-                  <form action="{{ URL::to('admin/room')}}" method="POST" novalidate="novalidate" enctype="multipart/form-data">
+                  <form action="{{ URL::to('admin/rooms')}}" method="POST" novalidate="novalidate" enctype="multipart/form-data">
                      {{csrf_field()}}
                              
                      <div class="form-group">
@@ -79,6 +79,12 @@
   
                      
                      <div class="form-group">
+                         <label for="file" class=" form-control-label">  
+                             {{__('messages.Icon')}}<span class="reqfield" >*</span>
+                            </label>
+                            <input type="file" id="file" name="icons" class="form-control-file" accept="image/*">
+                            
+                   
                          <label for="file" class=" form-control-label">  
                              {{__('messages.Featured Image')}}<span class="reqfield" >*</span>
                             </label>

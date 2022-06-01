@@ -88,7 +88,10 @@
                         <label for="file" class=" form-control-label">  
                         {{__('messages.Image')}}<span class="reqfield" >*</span>
                         </label>
-                           <input type="file" id="file" name="featured_img" class="form-control-file" accept="image/*">
+                        @if($data->featured_img)
+                              <img src="{{$data->featured_img}}" class="imgsize1 btndepartwarning" /> 
+                              @endif
+                        <input type="file" id="file" name="featured_img" class="form-control-file" accept="image/*">
                     
                      <div>
                      <div class="form-group">

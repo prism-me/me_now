@@ -49,14 +49,12 @@
                   <?php endif; ?>  
                   <ul class="nav nav-tabs" id="myTab" role="tablist">
                      <li class="nav-item">
-                        <a class="nav-link <?= $tab_id == 1 ? 'active' : "" ?>" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><?php echo e(__('messages.Basic Information')); ?></a>
+                        <?php echo e(__('messages.Basic Information')); ?>
+
                      </li>
-                     <li class="nav-item">
-                        <a class="nav-link <?= $tab_id == 2 ? 'active' : "" ?>" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><?php echo e(__('messages.Working Hours')); ?></a>
-                     </li>
+                    
                   </ul>
                   <div class="tab-content pl-3 p-1" id="myTabContent">
-                     <div class="tab-pane fade <?= $tab_id == 1 ? 'show active' : "" ?>" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <form action="<?php echo e(url('admin/updatedoctorprofile')); ?>" method="post"  enctype="multipart/form-data">
                            <?php echo e(csrf_field()); ?>
 
@@ -140,7 +138,6 @@
                               <?php if($doctor_id!=0): ?>
                               <img src="<?php echo e($data->image); ?>" class="imgsize1 btndepartwarning" /> 
                               <?php endif; ?>
-                              <div>
                                  <input type="file" id="file" name="image" class="form-control-file" accept="image/*">
                               </div>
                            </div>
@@ -151,97 +148,25 @@
                               </label>
                               <input type="text" id="slug"  placeholder="<?php echo e(__('messages.Enter').' '.__('messages.Slug')); ?>"  class="form-control"  name="slug" value="<?php echo e(isset($data->slug)?$data->slug:''); ?>">
                            </div>
-                           
-                           <div>
-                               <?php if(Session::get("is_demo")=='1'): ?>
-                            <button id="payment-button" type="button" onclick="disablebtn()"  class="btn btn-lg btn-info floatright">
+                                                   
+                           <div class="col-md-12 form-group">
+
+                              <?php if(Session::get("is_demo")=='1'): ?>
+                              <button id="payment-button" type="button" onclick="disablebtn()"  class="btn btn-lg btn-info floatright">
                               <?php echo e(__('messages.Submit')); ?>
 
                               </button>
-                        <?php else: ?>
-                             <button id="payment-button" type="submit" class="btn btn-lg btn-info floatright">
-                              <?php echo e(__('messages.Submit')); ?>
+                                 <?php else: ?>
+                                    <button id="payment-button" type="submit" class="btn btn-lg btn-info floatright">
+                                       <?php echo e(__('messages.Submit')); ?>
 
-                              </button>
-                        <?php endif; ?>
+                                       </button>
+                                 <?php endif; ?>
                              
                            </div>
                         </form>
                      </div>
-                     <div class="tab-pane fade <?= $tab_id == 2 ? 'show active' : "" ?> btnsaveoption" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <form action="<?php echo e(url('admin/updateworkinghours')); ?>" method="post"  enctype="multipart/form-data">
-                           <?php echo e(csrf_field()); ?>
-
-                           <input type="hidden" name="id" id="id" value="<?php echo e($doctor_id); ?>"/>
-                           <div class="table-responsive">
-                           <table class="table table-bordered">
-                              <thead>
-                                 <tr>
-                                    <th>#</th>
-                                    <th><?php echo e(__('messages.Day')); ?></th>
-                                    <th><?php echo e(__('messages.From')); ?></th>
-                                    <th><?php echo e(__('messages.To')); ?></th>
-                                 </tr>
-                              </thead>
-                              <tbody>
-                                 <?php $arr = [__('messages.Monday'), __('messages.Tuesday'), __('messages.Wednesday'), __('messages.Thursday'), __('messages.Friday'), __('messages.Saturday'), __('messages.Sunday')]; ?>
-                                 <?php $i = 0; ?>
-                                 <?php if(count($workinghour)>0): ?>
-                                 <?php $__currentLoopData = $workinghour; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $work): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                 <tr>
-                                    <td><input type="hidden" name="work_id[]" id="id<?php echo e($i); ?>" value="<?= isset($work->id) ? $work->id : 0 ?>"></td>
-                                    <td><input type="hidden" name="day[]" id="day<?php echo e($i); ?>" readonly="" value="<?php echo e($i+1); ?>" class="form-control" />
-                                       <?php if(($i+1)==1): ?>
-                                       <span><?php echo e($arr[0]); ?></span>
-                                       <?php elseif(($i+1)==2): ?>
-                                       <span> <?php echo e($arr[1]); ?></span>
-                                       <?php elseif(($i+1)==3): ?>
-                                       <span><?php echo e($arr[2]); ?></span>
-                                       <?php elseif(($i+1)==4): ?>
-                                       <span> <?php echo e($arr[3]); ?></span>
-                                       <?php elseif(($i+1)==5): ?>
-                                       <span> <?php echo e($arr[4]); ?></span>
-                                       <?php elseif(($i+1)==6): ?>
-                                       <span> <?php echo e($arr[5]); ?></span>
-                                       <?php else: ?>
-                                       <span> <?php echo e($arr[6]); ?></span>
-                                       <?php endif; ?>
-                                    </td>
-                                    <td><input type="time"  name="from[]" id="from<?php echo e($i); ?>" class="form-control" value="<?= isset($work->from) ? $work->from : "" ?>" /></td>
-                                    <td><input type="time"  name="to[]" id="to<?php echo e($i); ?>" value="<?= isset($work->to) ? $work->to : "" ?>" class="form-control" onchange="checktime(this.value,'<?php echo e($i); ?>')" /></td>
-                                 </tr>
-                                 <?php $i++; ?>
-                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>  
-                                 <?php else: ?>
-                                 <?php $__currentLoopData = $arr; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $a): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                 <tr>
-                                    <td><input type="hidden" name="work_id[]" id="id<?php echo e($i); ?>" value="0"></td>
-                                    <td><input type="hidden" name="day[]" id="day<?php echo e($i); ?>" readonly="" value="<?php echo e($i+1); ?>" class="form-control" />
-                                       <span><?php echo e($a); ?></span>
-                                    </td>
-                                    <td><input type="time"  name="from[]" id="from<?php echo e($i); ?>" class="form-control" value="<?php echo e(time()); ?>"  /></td>
-                                    <td><input type="time"  name="to[]" id="to<?php echo e($i); ?>" value="" class="form-control" onchange="checktime(this.value,'<?php echo e($i); ?>')"  /></td>
-                                 </tr>
-                                 <?php $i++; ?>
-                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
-                                 <?php endif; ?>
-                              </tbody>
-                           </table>
-                        </div>
-                         <?php if(Session::get("is_demo")=='1'): ?>
-                            <button id="payment-button" type="button" onclick="disablebtn()"  class="btn btn-lg btn-info floatright">
-                              <?php echo e(__('messages.Submit')); ?>
-
-                            </button>
-                        <?php else: ?>
-                             <button id="payment-button" type="submit" class="btn btn-lg btn-info floatright">
-                              <?php echo e(__('messages.Submit')); ?>
-
-                             </button>
-                        <?php endif; ?>
-                           
-                        </form>
-                     </div>
+                     
                   </div>
                </div>
             </div>

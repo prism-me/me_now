@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Room extends Model
 {
-    protected $table = 'review';
+    protected $table = 'rooms';
     protected $primaryKey = 'id';
+        protected $guarded = '';
     public function getRouteKeyName()
     {
         return 'slug';

@@ -20,7 +20,7 @@ class Doctor extends Model
     
 
 
- public function rattingdata()
+    public function rattingdata()
     {      
         return $this->hasmany('App\Model\Review', 'doctor_id', 'id');
     }

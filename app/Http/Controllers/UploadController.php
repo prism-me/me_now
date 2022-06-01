@@ -46,7 +46,6 @@ class UploadController extends Controller
 
         }else{
 
-
             $files = [];
             if($data )
             {

@@ -50,7 +50,7 @@ class DoctorController extends UploadController
                     'phone_no'=>'required',
                     'about_us'=>'required',
                     'service'=>'required',
-                    'image'=>'required'
+                    
                 ]);
              }
 
@@ -109,37 +109,11 @@ class DoctorController extends UploadController
                     $usd->image = $mediaUpload;
             }
             $store->save(); 
-            return redirect("admin/savedoctor/".$store->id.'/2');
+            return redirect("admin/doctor");
 
     }
  
-    public function updateworkinghours(Request $request){
-            //   if($request->get("id")=="0"){
-            //         Session::flash('message',__('messages.Please Fill Up Basic Information First Then Process Ahead')); 
-            //         Session::flash('alert-class', 'alert-danger');
-            //         return redirect('admin/savedoctor/0/2');
-            //   }
-              $workid=$request->get("work_id");
-              $day=$request->get("day");
-              $from=$request->get("from");
-              $to=$request->get("to");
-              for($i=0;$i<7;$i++){
-                    if($workid[$i]==0){
-                        $data=new TimeTable();
-                    }else{
-                        $data=TimeTable::find($workid[$i]);
-                    }
-                    $data->doctor_id=$request->get("id");
-                    $data->day=$day[$i];
-                    $data->from=$from[$i];
-                    $data->to=$to[$i];
-                    $data->save();
-              }
-            Session::flash('message',__('messages.Doctor Save Successfully')); 
-            Session::flash('alert-class', 'alert-success');
-            return redirect("admin/doctor");
-    }
-
+    
     public function deletedoctor($id){
           $data=Doctor::find($id);
           if($data){

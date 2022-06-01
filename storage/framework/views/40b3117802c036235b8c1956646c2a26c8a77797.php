@@ -38,7 +38,7 @@
                   </div>
                   <?php endif; ?>
                   <div>
-                     <a href="<?php echo e(URL::to('admin/blogs/create')); ?>" class="btn btn-primary"><?php echo e(__('messages.Add').' '.__('messages.Blog')); ?></a>
+                     <a href="<?php echo e(URL::to('admin/rooms/create')); ?>" class="btn btn-primary"><?php echo e(__('messages.Add').' '.__('messages.Room')); ?></a>
                   </div>
                   <div class="table-responsive">
                   <table id="service" class="table  table-striped table-bordered">

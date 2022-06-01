@@ -206,6 +206,13 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('update-room/{slug}', 'RoomController@update');
         Route::get('show-room/{slug}', 'RoomController@show');
 
+        #Events 
+        Route::resource('events', 'EventController');
+        Route::get('edit-event/{slug}', 'EventController@edit');
+        Route::post('delete-event/{slug}', 'EventController@delete');
+        Route::post('update-event/{slug}', 'EventController@update');
+        Route::get('show-event/{slug}', 'EventController@show');
+
         #Subscriber 
         Route::get('subscribers', 'DoctorController@subscribers');
         Route::post('delete-subscriber/{id}', 'DoctorController@deleteSubscriber');

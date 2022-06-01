@@ -14,7 +14,9 @@ class RoomController extends UploadController
      */
     public function index()
     {
+      
         $room = Room::all();
+       
         return view("admin.room.default")->with("data",$room);
     }
 
@@ -41,6 +43,12 @@ class RoomController extends UploadController
         if ($img = $request->hasFile('featured_img')) {
                
            $media =  UploadController::upload_media($request->featured_img);
+           $mediaUpload = $media['url'];
+
+        }
+        if ($img = $request->hasFile('icons')) {
+               
+           $media =  UploadController::upload_media($request->icons);
            $mediaUpload = $media['url'];
 
         }
@@ -103,7 +111,7 @@ class RoomController extends UploadController
      */
     public function update(Request $request, Room $slug)
     {
-       $mediaUpload = "";
+        $mediaUpload = "";
         if ($img = $request->hasFile('featured_img')) {
                
            $media =  UploadController::upload_media($request->featured_img);
@@ -116,7 +124,7 @@ class RoomController extends UploadController
 
             $data['featured_img'] = $mediaUpload ;
         }
-        $blogCreate = Blog::where('slug',$slug)->update($data);
+        $blogCreate = Room::where('slug',$slug)->update($data);
         return redirect("admin/rooms");
     }
 

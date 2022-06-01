@@ -47,14 +47,11 @@
                   @endif  
                   <ul class="nav nav-tabs" id="myTab" role="tablist">
                      <li class="nav-item">
-                        <a class="nav-link <?= $tab_id == 1 ? 'active' : "" ?>" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">{{__('messages.Basic Information')}}</a>
+                        {{__('messages.Basic Information')}}
                      </li>
-                     <li class="nav-item">
-                        <a class="nav-link <?= $tab_id == 2 ? 'active' : "" ?>" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">{{__('messages.Working Hours')}}</a>
-                     </li>
+                    
                   </ul>
                   <div class="tab-content pl-3 p-1" id="myTabContent">
-                     <div class="tab-pane fade <?= $tab_id == 1 ? 'show active' : "" ?>" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <form action="{{url('admin/updatedoctorprofile')}}" method="post"  enctype="multipart/form-data">
                            {{csrf_field()}}
                            <input type="hidden" name="id" id="id" value="{{$doctor_id}}"/>
@@ -101,34 +98,7 @@
                               <div class="col-md-6">
                               </div>
                            </div>
-                           {{-- <div class="form-group">
-                              <div class="col-md-6">
-                                 <label for="phone" class=" form-control-label">
-                                 {{__('messages.Facebook ID')}}
-                                 </label>
-                                 <input type="text" id="facebook"  placeholder="{{__('messages.Enter').' '.__('messages.Facebook ID')}}"  class="form-control"  name="facebook" value="{{ isset($data->facebook_id)?$data->facebook_id:''}}">
-                              </div>
-                              <div class="col-md-6">
-                                 <label for="name" class=" form-control-label">
-                                 {{__('messages.Twitter ID')}}
-                                 </label>
-                                 <input type="text" id="twitter_id"  placeholder="{{__('messages.Enter').' '.__('messages.Twitter ID')}}"  class="form-control"  name="twitter_id" value="{{ isset($data->twitter_id)?$data->twitter_id:''}}">
-                              </div>
-                           </div>
-                           <div class="form-group">
-                              <div class="col-md-6">
-                                 <label for="phone" class=" form-control-label">
-                                 {{__('messages.Google ID')}}
-                                 </label>
-                                 <input type="text" id="google_id"  placeholder="{{__('messages.Enter').' '.__('messages.Google ID')}}"  class="form-control"  name="google_id" value="{{ isset($data->google_id)?$data->google_id:''}}">
-                              </div>
-                              <div class="col-md-6">
-                                 <label for="name" class=" form-control-label">
-                                 {{__('messages.Instagram ID')}}
-                                 </label>
-                                 <input type="text" id="instagram_id"  placeholder="{{__('messages.Enter').' '.__('messages.Instagram ID')}}"  class="form-control"  name="instagram_id" value="{{ isset($data->instagram_id)?$data->instagram_id:''}}">
-                              </div>
-                           </div> --}}
+                           
                            <div class="col-md-12 form-group">
                               <label for="email" class=" form-control-label">
                               {{__('messages.Short Description')}}<span class="reqfield" >*</span>
@@ -160,7 +130,6 @@
                               @if($doctor_id!=0)
                               <img src="{{$data->image}}" class="imgsize1 btndepartwarning" /> 
                               @endif
-                              <div>
                                  <input type="file" id="file" name="image" class="form-control-file" accept="image/*">
                               </div>
                            </div>
@@ -170,92 +139,23 @@
                               </label>
                               <input type="text" id="slug"  placeholder="{{__('messages.Enter').' '.__('messages.Slug')}}"  class="form-control"  name="slug" value="{{ isset($data->slug)?$data->slug:''}}">
                            </div>
-                           
-                           <div>
-                               @if(Session::get("is_demo")=='1')
-                            <button id="payment-button" type="button" onclick="disablebtn()"  class="btn btn-lg btn-info floatright">
+                                                   
+                           <div class="col-md-12 form-group">
+
+                              @if(Session::get("is_demo")=='1')
+                              <button id="payment-button" type="button" onclick="disablebtn()"  class="btn btn-lg btn-info floatright">
                               {{__('messages.Submit')}}
                               </button>
-                        @else
-                             <button id="payment-button" type="submit" class="btn btn-lg btn-info floatright">
-                              {{__('messages.Submit')}}
-                              </button>
-                        @endif
+                                 @else
+                                    <button id="payment-button" type="submit" class="btn btn-lg btn-info floatright">
+                                       {{__('messages.Submit')}}
+                                       </button>
+                                 @endif
                              
                            </div>
                         </form>
                      </div>
-                     <div class="tab-pane fade <?= $tab_id == 2 ? 'show active' : "" ?> btnsaveoption" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <form action="{{url('admin/updateworkinghours')}}" method="post"  enctype="multipart/form-data">
-                           {{csrf_field()}}
-                           <input type="hidden" name="id" id="id" value="{{$doctor_id}}"/>
-                           <div class="table-responsive">
-                           <table class="table table-bordered">
-                              <thead>
-                                 <tr>
-                                    <th>#</th>
-                                    <th>{{__('messages.Day')}}</th>
-                                    <th>{{__('messages.From')}}</th>
-                                    <th>{{__('messages.To')}}</th>
-                                 </tr>
-                              </thead>
-                              <tbody>
-                                 <?php $arr = [__('messages.Monday'), __('messages.Tuesday'), __('messages.Wednesday'), __('messages.Thursday'), __('messages.Friday'), __('messages.Saturday'), __('messages.Sunday')]; ?>
-                                 <?php $i = 0; ?>
-                                 @if(count($workinghour)>0)
-                                 @foreach($workinghour as $work)
-                                 <tr>
-                                    <td><input type="hidden" name="work_id[]" id="id{{$i}}" value="<?= isset($work->id) ? $work->id : 0 ?>"></td>
-                                    <td><input type="hidden" name="day[]" id="day{{$i}}" readonly="" value="{{$i+1}}" class="form-control" />
-                                       @if(($i+1)==1)
-                                       <span>{{$arr[0]}}</span>
-                                       @elseif(($i+1)==2)
-                                       <span> {{$arr[1]}}</span>
-                                       @elseif(($i+1)==3)
-                                       <span>{{$arr[2]}}</span>
-                                       @elseif(($i+1)==4)
-                                       <span> {{$arr[3]}}</span>
-                                       @elseif(($i+1)==5)
-                                       <span> {{$arr[4]}}</span>
-                                       @elseif(($i+1)==6)
-                                       <span> {{$arr[5]}}</span>
-                                       @else
-                                       <span> {{$arr[6]}}</span>
-                                       @endif
-                                    </td>
-                                    <td><input type="time"  name="from[]" id="from{{$i}}" class="form-control" value="<?= isset($work->from) ? $work->from : "" ?>" /></td>
-                                    <td><input type="time"  name="to[]" id="to{{$i}}" value="<?= isset($work->to) ? $work->to : "" ?>" class="form-control" onchange="checktime(this.value,'{{$i}}')" /></td>
-                                 </tr>
-                                 <?php $i++; ?>
-                                 @endforeach  
-                                 @else
-                                 @foreach($arr as $a)
-                                 <tr>
-                                    <td><input type="hidden" name="work_id[]" id="id{{$i}}" value="0"></td>
-                                    <td><input type="hidden" name="day[]" id="day{{$i}}" readonly="" value="{{$i+1}}" class="form-control" />
-                                       <span>{{$a}}</span>
-                                    </td>
-                                    <td><input type="time"  name="from[]" id="from{{$i}}" class="form-control" value="{{time()}}"  /></td>
-                                    <td><input type="time"  name="to[]" id="to{{$i}}" value="" class="form-control" onchange="checktime(this.value,'{{$i}}')"  /></td>
-                                 </tr>
-                                 <?php $i++; ?>
-                                 @endforeach 
-                                 @endif
-                              </tbody>
-                           </table>
-                        </div>
-                         @if(Session::get("is_demo")=='1')
-                            <button id="payment-button" type="button" onclick="disablebtn()"  class="btn btn-lg btn-info floatright">
-                              {{__('messages.Submit')}}
-                            </button>
-                        @else
-                             <button id="payment-button" type="submit" class="btn btn-lg btn-info floatright">
-                              {{__('messages.Submit')}}
-                             </button>
-                        @endif
-                           
-                        </form>
-                     </div>
+                     
                   </div>
                </div>
             </div>

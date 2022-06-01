@@ -43,7 +43,9 @@
                      <thead>
                         <tr>
                            <th>{{__('messages.Id')}}</th>
-                          
+                           <th>{{__('messages.Title')}}</th>
+                           <th>{{__('messages.Description')}}</th>
+                           <th>{{__('messages.Icon')}}</th>
                            <th>{{__('messages.Action')}}</th>
                         </tr>
                      </thead>
@@ -52,6 +54,9 @@
                         @foreach($data as $d)
                         <tr>
                            <td>{{isset($d->id)?$d->id:""}}</td>
+                           <td>{{isset($d->title)?$d->title:""}}</td>
+                           <td>{{ substr($d->short_description , 0,50)}}..</td>
+                           <td><img src="{{ $d->icons }}" class="img-fluid"></td>
                            
                            <td>
                                 <a href="{{URL::to('admin/edit-room') . '/' . $d->slug}}" class="btn btn-primary">{{__('messages.Edit')}}</a>

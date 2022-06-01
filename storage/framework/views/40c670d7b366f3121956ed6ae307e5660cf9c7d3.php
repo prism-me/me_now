@@ -85,6 +85,19 @@
                         <a href="<?php echo e(url('admin/workshops')); ?>"> <i
                                 class="menu-icon fa  fa-newspaper-o"></i><?php echo e(__('messages.Workshop')); ?></a>
                     </li>
+                    <li class="active">
+                        <a href="<?php echo e(url('admin/department')); ?>"> <i
+                                class="menu-icon fa fa-eercast"></i><?php echo e(__('messages.Department')); ?></a>
+                    </li>
+                    <li class="active">
+                        <a href="<?php echo e(url('admin/rooms')); ?>"> <i
+                                class="menu-icon fa fa-home"></i><?php echo e(__('messages.Room')); ?></a>
+                    </li>
+                    <li class="active">
+                        <a href="<?php echo e(url('admin/events')); ?>"> <i
+                                class="menu-icon fa fa-calendar"></i><?php echo e(__('messages.Event')); ?></a>
+                    </li>
+                    
                     
                     
                     <li class="active">
@@ -102,14 +115,7 @@
                     
                     
 
-                    <li class="active">
-                        <a href="<?php echo e(url('admin/department')); ?>"> <i
-                                class="menu-icon fa fa-eercast"></i><?php echo e(__('messages.Department')); ?></a>
-                    </li>
-                    <li class="active">
-                        <a href="<?php echo e(url('admin/rooms')); ?>"> <i
-                                class="menu-icon fa fa-home"></i><?php echo e(__('messages.Room')); ?></a>
-                    </li>
+                    
                     
                     
                     <li class="active">
