@@ -13,6 +13,7 @@ use App\Model\Token;
 use App\Model\Workshop;
 use App\Model\Review;
 use App\Model\Blog;
+use App\Model\Room;
 use App\Model\Service;
 use App\Model\Setting;
 use App\Model\Package;
@@ -172,18 +173,21 @@ class FrontController extends Controller
        return view("front.women_empowerment")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department);
      
     }
-    public function rooms(){
+    public function rooms($slug){
 
         if(!isset($_COOKIE['fload'])){
             setcookie('fload','1', time() + (86400 * 30), "/");
          }
-         $service=Service::get()->take(8);
-         $package=Package::get()->take(3);
-         $doctor=Doctor::get()->take(4);
-         $department=Department::with('service')->get();
-         $setting=Setting::find(1);
-         $reviews=Review::with('doctors','users')->get()->take(4);
-       return view("front.rooms")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department);
+
+         $rooms = Room::where('slug',$slug)->first();
+
+         $service = Service::get()->take(8);
+        //  $package = Package::get()->take(3);
+        //  $doctor = Doctor::get()->take(4);
+         $department = Department::with('service')->get();
+         $setting = Setting::find(1);
+         $reviews = Review::with('doctors','users')->get()->take(4);
+       return view("front.rooms")->with('rooms',$rooms)->with("services",$service)->with("setting",$setting)->with("department",$department);
        
     }
     

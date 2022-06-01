@@ -104,7 +104,7 @@
                         @if($data->slider_images)
                               <img src="{{$data->slider_images}}" class="img-fluid" /> 
                         @endif
-                            <input type="file" id="file" name="slider_images" class="form-control-file" accept="image/*">
+                            <input type="file" id="file" name="slider_images" class="form-control-file" accept="image/*" multiple>
                             
                     <div>
                      <div class="form-group">

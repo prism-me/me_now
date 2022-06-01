@@ -95,14 +95,14 @@
                          <label for="file" class=" form-control-label">  
                              {{__('messages.Slider Image')}}<span class="reqfield" >*</span>
                             </label>
-                            <input type="file" id="file" name="slider_images" class="form-control-file" accept="image/*">
+                            <input type="file" id="file" name="slider_images" class="form-control-file" accept="image/*" multiple>
                             
                     <div>
                      <div class="form-group">
                          <label for="file" class=" form-control-label">  
                              {{__('messages.Addtional Image')}}<span class="reqfield" >*</span>
                             </label>
-                            <input type="file" id="file" name="additional_images" class="form-control-file" accept="image/*">
+                            <input type="file" id="file" name="additional_images" class="form-control-file" accept="image/*" >
                             
                     <div>
                     <div class="form-group">

@@ -600,7 +600,10 @@ height:450px;
 .faq .card-header:not(.collapsed) .rotate-icon {
   transform: rotate(180deg);
 }
-
+.services-content h3{
+    font-size: 20px;
+    color: #48b7c6;
+}
 .services-content p{
     text-align: left !important;
 }
