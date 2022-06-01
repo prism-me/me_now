@@ -71,6 +71,13 @@
                     </div>
                      <div class="form-group">
                         <label for="name" class=" form-control-label">
+                        {{__('messages.Excerpt')}}
+                        <span class="reqfield">*</span>
+                        </label>
+                        <textarea id="excerpt" placeholder="{{__('messages.Enter').'  '.__('messages.Excerpt')}}" class="form-control" required name="excerpt" value="{{ isset($data->excerpt)?$data->excerpt:''}}"></textarea>
+                    </div>
+                     <div class="form-group">
+                        <label for="name" class=" form-control-label">
                         {{__('messages.Addtional Content')}}
                         <span class="reqfield">*</span>
                         </label>
