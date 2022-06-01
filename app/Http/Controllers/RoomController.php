@@ -40,6 +40,9 @@ class RoomController extends UploadController
     {
       
         $mediaUpload = "";
+        $mediaUpload1 = "";
+        $mediaUpload2 = "";
+        $mediaUpload3 = "";
         if ($img = $request->hasFile('featured_img')) {
                
            $media =  UploadController::upload_media($request->featured_img);
@@ -49,30 +52,45 @@ class RoomController extends UploadController
         if ($img = $request->hasFile('icons')) {
                
            $media =  UploadController::upload_media($request->icons);
-           $mediaUpload = $media['url'];
+           $mediaUpload1 = $media['url'];
 
         }
         if ($img = $request->hasFile('slider_images')) {
-               
-           $media =  UploadController::upload_media($request->slider_images);
-           $mediaUpload = $media['url'];
+            $arr = [];
+            foreach ($request->slider_images as $image){
+                 $media =  UploadController::upload_media($image);
+                 $arr[] = $media['url'];
+            }
+          
+            
+           $mediaUpload2 = $arr;
 
         }
         if ($img = $request->hasFile('additional_images')) {
                
-           $media =  UploadController::upload_media($request->additional_images);
-           $mediaUpload = $media['url'];
+           $arr = [];
+            foreach ($request->additional_images as $image){
+                 $media =  UploadController::upload_media($image);
+                 $arr[] = $media['url'];
+            }
+          
+            
+           $mediaUpload3 = $arr;
 
         }
         $data  =$request->all();
         if($mediaUpload){
             $data['featured_img'] = $mediaUpload;
         }
-        if($mediaUpload){
-            $data['slider_images'] = $mediaUpload;
+
+        if($mediaUpload1){
+            $data['icons'] = $mediaUpload1;
         }
-        if($mediaUpload){
-            $data['additional_images'] = $mediaUpload;
+        if($mediaUpload2){
+            $data['slider_images'] = json_encode($mediaUpload2);
+        }
+        if($mediaUpload3){
+            $data['additional_images'] =json_encode($mediaUpload3);
         }
         $roomCreate = Room::create($data);
         return redirect("admin/rooms");
@@ -109,20 +127,60 @@ class RoomController extends UploadController
      * @param  \App\Room  $room
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Room $slug)
+    public function update(Request $request,  $slug)
     {
         $mediaUpload = "";
+        $mediaUpload1 = "";
+        $mediaUpload2 = "";
+        $mediaUpload3 = "";
         if ($img = $request->hasFile('featured_img')) {
                
            $media =  UploadController::upload_media($request->featured_img);
            $mediaUpload = $media['url'];
 
         }
+        if ($img = $request->hasFile('icons')) {
+               
+           $media =  UploadController::upload_media($request->icons);
+           $mediaUpload1 = $media['url'];
 
+        }
+        if ($img = $request->hasFile('slider_images')) {
+            $arr = [];
+            foreach ($request->slider_images as $image){
+                 $media =  UploadController::upload_media($image);
+                 $arr[] = $media['url'];
+            }
+          
+            
+           $mediaUpload2 = $arr;
+
+        }
+        if ($img = $request->hasFile('additional_images')) {
+               
+           $arr = [];
+            foreach ($request->additional_images as $image){
+                 $media =  UploadController::upload_media($image);
+                 $arr[] = $media['url'];
+            }
+          
+            
+           $mediaUpload3 = $arr;
+
+        }
         $data  =$request->except('_token');
         if($mediaUpload){
+            $data['featured_img'] = $mediaUpload;
+        }
 
-            $data['featured_img'] = $mediaUpload ;
+        if($mediaUpload1){
+            $data['icons'] = $mediaUpload1;
+        }
+        if($mediaUpload2){
+            $data['slider_images'] = json_encode($mediaUpload2);
+        }
+        if($mediaUpload3){
+            $data['additional_images'] =json_encode($mediaUpload3);
         }
         $blogCreate = Room::where('slug',$slug)->update($data);
         return redirect("admin/rooms");
@@ -134,7 +192,7 @@ class RoomController extends UploadController
      * @param  \App\Room  $room
      * @return \Illuminate\Http\Response
      */
-    public function destroy( $slug)
+    public function delete( $slug)
     {   
 
         $room = Room::where('slug',$slug)->delete();

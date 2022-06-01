@@ -47,7 +47,7 @@
                      </ul>
                   </div>
                   <?php endif; ?>                              
-                  <form action="<?php echo e(URL::to('admin/update-room').'/' . $data->slug); ?>" method="POST" novalidate="novalidate" enctype="multipart/form-data">
+                  <form action="<?php echo e(URL::to('admin/rooms')); ?>" method="POST" novalidate="novalidate" enctype="multipart/form-data">
                      <?php echo e(csrf_field()); ?>
 
                              
@@ -65,7 +65,7 @@
 
                         <span class="reqfield">*</span>
                         </label>
-                        <textarea id="short_description" placeholder="<?php echo e(__('messages.Enter').'  '.__('messages.Short Description')); ?>" class="form-control" required name="short_description" value="<?php echo e(isset($data->short_description)?$data->short_description:''); ?>"><?php echo e($data->short_description); ?></textarea>
+                        <textarea id="short_description" placeholder="<?php echo e(__('messages.Enter').'  '.__('messages.Short Description')); ?>" class="form-control" required name="short_description" value="<?php echo e(isset($data->short_description)?$data->short_description:''); ?>"></textarea>
                     </div>
                     <div class="form-group">
                        <label for="name" class=" form-control-label">
@@ -73,7 +73,7 @@
 
                        <span class="reqfield">*</span>
                        </label>
-                       <textarea id="description" placeholder="<?php echo e(__('messages.Enter').'  '.__('messages.Description')); ?>" class="form-control" required name="description" value="<?php echo e(isset($data->description)?$data->description:''); ?>"><?php echo e($data->description); ?></textarea>
+                       <textarea id="description" placeholder="<?php echo e(__('messages.Enter').'  '.__('messages.Description')); ?>" class="form-control" required name="description" value="<?php echo e(isset($data->description)?$data->description:''); ?>"></textarea>
                     </div>
                      <div class="form-group">
                         <label for="name" class=" form-control-label">
@@ -81,46 +81,34 @@
 
                         <span class="reqfield">*</span>
                         </label>
-                        <textarea id="description" placeholder="<?php echo e(__('messages.Enter').'  '.__('messages.Addtional Content')); ?>" class="form-control" required name="additional_content" value="<?php echo e(isset($data->additional_content)?$data->additional_content:''); ?>"><?php echo e($data->additional_content); ?></textarea>
+                        <textarea id="description" placeholder="<?php echo e(__('messages.Enter').'  '.__('messages.Addtional Content')); ?>" class="form-control" required name="additional_content" value="<?php echo e(isset($data->additional_content)?$data->additional_content:''); ?>"></textarea>
                      </div>
   
+                     
                      <div class="form-group">
-                        <label for="file" class=" form-control-label">  
-                           <?php echo e(__('messages.Icon')); ?><span class="reqfield" >*</span>
-                        </label>
-                        <?php if($data->icons): ?>
-                                 <img src="<?php echo e($data->icons); ?>" class="img-fluid" /> 
-                        <?php endif; ?>
-                        <input type="file" id="file" name="icons" class="form-control-file" accept="image/*">
-                     </div>
-                        
-                     <div class="form-group">
-                        <label for="file" class=" form-control-label">  
+                         <label for="file" class=" form-control-label">  
+                             <?php echo e(__('messages.Icon')); ?><span class="reqfield" >*</span>
+                            </label>
+                            <input type="file" id="file" name="icons" class="form-control-file" accept="image/*">
+                            
+                   
+                         <label for="file" class=" form-control-label">  
                              <?php echo e(__('messages.Featured Image')); ?><span class="reqfield" >*</span>
-                        </label>
-                        <?php if($data->featured_img): ?>
-                                 <img src="<?php echo e($data->featured_img); ?>" class="img-fluid" /> 
-                        <?php endif; ?>
+                            </label>
                             <input type="file" id="file" name="featured_img" class="form-control-file" accept="image/*">
                             
                     <div>
                      <div class="form-group">
-                        <label for="file" class=" form-control-label">  
-                           <?php echo e(__('messages.Slider Image')); ?><span class="reqfield" >*</span>
-                           </label>
-                        <?php if($data->slider_images): ?>
-                              <img src="<?php echo e($data->slider_images); ?>" class="img-fluid" /> 
-                        <?php endif; ?>
+                         <label for="file" class=" form-control-label">  
+                             <?php echo e(__('messages.Slider Image')); ?><span class="reqfield" >*</span>
+                            </label>
                             <input type="file" id="file" name="slider_images[]" class="form-control-file" accept="image/*" multiple>
                             
                     <div>
                      <div class="form-group">
-                           <label for="file" class=" form-control-label">  
+                         <label for="file" class=" form-control-label">  
                              <?php echo e(__('messages.Addtional Image')); ?><span class="reqfield" >*</span>
                             </label>
-                           <?php if($data->additional_images): ?>
-                              <img src="<?php echo e($data->additional_images); ?>" class="img-fluid" /> 
-                           <?php endif; ?>
                             <input type="file" id="file" name="additional_images[]" class="form-control-file" accept="image/*" multiple>
                             
                     <div>
@@ -154,4 +142,4 @@
    </div>
 </div>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('admin.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\meNow\resources\views/admin/room/save.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('admin.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\meNow\resources\views/admin/room/add.blade.php ENDPATH**/ ?>
