@@ -301,7 +301,9 @@
     @yield('footer')
 
     <script>
+        
          CKEDITOR.replace( 'description' );
+         CKEDITOR.replace( 'additional_description' );
 
 
         // ClassicEditor

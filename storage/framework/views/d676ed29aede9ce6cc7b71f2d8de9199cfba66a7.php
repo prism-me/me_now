@@ -276,7 +276,9 @@
     <?php echo $__env->yieldContent('footer'); ?>
 
     <script>
+        
          CKEDITOR.replace( 'description' );
+         CKEDITOR.replace( 'additional_description' );
 
 
         // ClassicEditor

@@ -74,7 +74,7 @@
                         {{__('messages.Addtional Content')}}
                         <span class="reqfield">*</span>
                         </label>
-                        <textarea id="description" placeholder="{{__('messages.Enter').'  '.__('messages.Addtional Content')}}" class="form-control" required name="additional_content" value="{{ isset($data->additional_content)?$data->additional_content:''}}">{{$data->additional_content}}</textarea>
+                        <textarea id="additional_description" placeholder="{{__('messages.Enter').'  '.__('messages.Addtional Content')}}" class="form-control" required name="additional_content" value="{{ isset($data->additional_content)?$data->additional_content:''}}">{{$data->additional_content}}</textarea>
                      </div>
   
                      <div class="form-group">
@@ -104,11 +104,7 @@
                         @if($data->slider_images)
                               <img src="{{$data->slider_images}}" class="img-fluid" /> 
                         @endif
-<<<<<<< HEAD
-                            <input type="file" id="file" name="slider_images" class="form-control-file" accept="image/*" multiple>
-=======
                             <input type="file" id="file" name="slider_images[]" class="form-control-file" accept="image/*" multiple>
->>>>>>> 67c633110d611549dd6154758aea70172342618f
                             
                     <div>
                      <div class="form-group">
