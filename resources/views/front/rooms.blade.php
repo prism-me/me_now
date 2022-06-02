@@ -34,31 +34,27 @@
 
         <div class="rooms_slider">
             <div class="owl-carousel owl-theme">
-
-
-                @php
-                @endphp
-
                 @foreach ($rooms->slider_images as $slider)
-                    @dd($slider)
+                    {{-- <img src="" lt="hello" /> --}}
+
                     <div class="item">
-                        <img src="{{ $slider }}" />
+                        <img src="{{ $slider }}" alt="slider image" />
                     </div>
                 @endforeach
-                {{-- <div class="item">
+                <div class="item">
                     <img
                         src="https://lighthouse-media.s3.us-east-2.amazonaws.com/601679ac8e54020017840684/1640001095057_dreamstime_xxl_54964318%20%28Large%29.jpg" />
                 </div>
                 <div class="item">
                     <img
                         src="https://lighthouse-media.s3.us-east-2.amazonaws.com/601679ac8e54020017840684/1640001095057_dreamstime_xxl_54964318%20%28Large%29.jpg" />
-                </div> --}}
+                </div>
             </div>
         </div>
         <div class="about-content-widget">
             <div class="row">
                 <div class="col-md-5">
-                    <img src="{{ $rooms->additional_images }}" class="img-fluid" alt="">
+                    {{-- <img src="{{ $rooms->additional_images }}" class="img-fluid" alt=""> --}}
                 </div>
                 <div class="col-md-7">
                     <div class="room_long_description">

@@ -140,7 +140,7 @@
                                     href="{{ url('pricing') }}">{{ __('messages.Become a Member') }}</a>
                             </li>
                             <li class="nav-item book-now-nav">
-                                <a class="nav-link" style="color:white !important; width: 104px" href="#"
+                                <a class="nav-link btn-hover color-9" style="color:white !important; width: 104px" href="#"
                                     data-toggle="modal" data-target="#appointmentModal">{{ __('Book Now') }}</a>
                             </li>
                         </ul>
@@ -328,7 +328,7 @@
                                     @if (Auth::id())
                                         <button type="submit">{{ __('messages.Book Appointment') }}</button>
                                     @else
-                                        <button type="button"
+                                        <button type="button" 
                                             onclick="userloginalert()">{{ __('messages.Book Appointment') }}</button>
                                     @endif
 

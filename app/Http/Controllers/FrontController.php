@@ -689,11 +689,12 @@ class FrontController extends Controller
 
     public function workshopBooking(Request $request){
 
-
-        $data = $request->all();
+        $emailData = $request->all();
+        $data = $request->except('name');
+       
         $add = WorkshopBooking::create($data);
         $userEmail = $request['email'];
-        $mail = Mail::to($userEmail)->send(new BookingMail($data));
+        $mail = Mail::to($userEmail)->send(new BookingMail($emailData));
 
         Session::flash('message',__('messages.Booking Done Successfully. Please Check Your Registered E-Mail to confirm the Booking.')); 
         Session::flash('alert-class', 'alert-success');           

@@ -463,6 +463,7 @@ return [
 		"Event Date"=>"Event Date",
 		"Event Type"=>"Event Type",
 		"Book Now!"=>"Book Now!",
+		"Contact Me Now"=>"Contact Me Now",
 
 
 		"About Doctor" => "About Doctor",

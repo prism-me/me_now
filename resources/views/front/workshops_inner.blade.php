@@ -21,7 +21,7 @@
         
                 <h3>{{ $workshop->title }}</h3>
                 <p>
-                    {{ $workshop->short_description }}
+                    {!! $workshop->short_description !!}
                 </p>
                 <p>
                     {{ $workshop->description }}
@@ -52,6 +52,7 @@
                         {{ csrf_field() }}
                         <div class="appo-input-main-box">
                             <input type="hidden" name="price" value="{{$workshop->price}}">
+                            <input type="hidden" name="name" value="{{$workshop->title}}">
                             <label class="text-sm text-gray-500">Number of attendees? <span class="text-red-500">*</span></label>
                             <input  type="number" name="attendees" min="1" max="5"  required value="1"><br><br>
                             <input type="text" required name="first_name" id="name" placeholder="Your First name">

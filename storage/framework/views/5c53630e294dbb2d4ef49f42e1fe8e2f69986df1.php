@@ -137,7 +137,7 @@
                                     href="<?php echo e(url('pricing')); ?>"><?php echo e(__('messages.Become a Member')); ?></a>
                             </li>
                             <li class="nav-item book-now-nav">
-                                <a class="nav-link" style="color:white !important; width: 104px" href="#"
+                                <a class="nav-link btn-hover color-9" style="color:white !important; width: 104px" href="#"
                                     data-toggle="modal" data-target="#appointmentModal"><?php echo e(__('Book Now')); ?></a>
                             </li>
                         </ul>
@@ -326,7 +326,7 @@
                                     <?php if(Auth::id()): ?>
                                         <button type="submit"><?php echo e(__('messages.Book Appointment')); ?></button>
                                     <?php else: ?>
-                                        <button type="button"
+                                        <button type="button" 
                                             onclick="userloginalert()"><?php echo e(__('messages.Book Appointment')); ?></button>
                                     <?php endif; ?>
 

@@ -114,13 +114,12 @@ a:hover{
     border: none;
     color: white;
     width: 100%;
-    padding: 15px;
+    padding: 14px 23px;  
     border-radius: 100px;
     outline: none;
     font-family: 'Roboto', sans-serif ;
     text-transform: uppercase;
     font-size: 13px;
-    display: block;
 }
 
 .appo-btn-main-box button {
@@ -421,8 +420,8 @@ a:hover{
 }
 
 .left-part-detail h2 {
-    font-size: 26px;
-    margin-bottom: 20px;
+    font-size: 19px;
+    margin-bottom: 7px;
     font-weight: bold;
 }
 
@@ -460,7 +459,11 @@ a:hover{
 
 .services-part1-box {
     background-color: #e6f0f5;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
+
+
 
 .text-detail-box h4 {
     font-size: 17px;

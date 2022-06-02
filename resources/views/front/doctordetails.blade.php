@@ -72,8 +72,8 @@
                            ?>
                         <h3>( {{$doctor->total_ratting}} {{__('messages.Rating')}} )</h3>
                      </span>
-                     <p>{{substr($doctor->about_us,0,250)}}</p>
-                     <div class="icons-images doctor-detail-icon-box">
+                     <p>{{ $doctor->about_us }}</p>
+                     {{-- <div class="icons-images doctor-detail-icon-box">
                         <span class="facebook-doctorl">
                         <a href="{{isset($doctor->facebook_id)?$doctor->facebook_id:''}}" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         </span>
@@ -86,10 +86,10 @@
                         <span class="instagram-doctorl">
                         <a href="{{isset($doctor->instagram_id)?$doctor->instagram_id:''}}" target="_blank"><img src="{{asset('front/img/instagram.png')}}"></a>
                         </span>
-                     </div>
+                     </div> --}}
                      <div class="appo-btn-main-box">
                     
-                        <a href="#" data-toggle="modal" data-target="#appointmentModal" onclick="changedatamodelapp('{{$doctor->department_id}}','{{$doctor->department->name}}','{{$doctor->user_id}}','{{$doctor->name}}')">{{__('messages.Make an appointment')}}</a>
+                        <a href="https://api.whatsapp.com/send/?phone=00971565553483" data-toggle="modal" >{{__('messages.Make an appointment')}}</a>
                        
                         {{-- <a href="#" type="button" onclick="changehiddenstatus()" data-toggle="modal" data-target="#myModal">{{__('messages.Make an appointment')}}</a>
                       
@@ -98,7 +98,7 @@
                   </div>
                </div>
             </div>
-            <div class="d-detail-main-box">
+            {{-- <div class="d-detail-main-box">
                <div class="d-pricelist-main-box">
                   <div class="global-part-heading global-heading">
                      <h3>{{__('messages.Working time')}}</h3>
@@ -173,7 +173,7 @@
                      </div>
                   </div>
                </div>
-            </div>
+            </div> --}}
             <div class="doctorpg-tab-mainbox doctorpg-tab-mainbox">
                <section class="customer-logos slider tab">
                   <div class="slide tablinks" id="defaultOpen" onclick="openCity(event, 'aboutdoctor')">
@@ -191,7 +191,7 @@
                <div class="dd-tab-part-mbox">
                   <div class="global-part-heading global-heading">
                      <h3>{{__('messages.About us')}}</h3>
-                     <p>{{$doctor->about_us}}</p>
+                     <p>{!! $doctor->description !!}</p>
                   </div>
                </div>
             </div>
@@ -199,7 +199,11 @@
                <div class="dd-tab-part-mbox">
                   <div class="global-part-heading global-heading">
                      <h3>{{__('messages.Service')}}</h3>
-                     <p>{{$doctor->service}}</p>
+                     <?php   $data = explode(',', $doctor->service); ?>
+                     @foreach ($data as $value )
+                     
+                           <li>{{ $value }}</li>
+                     @endforeach
                   </div>
                </div>
             </div>
@@ -251,7 +255,7 @@
          <div class="col-lg-3 col-md-12">
             <div class="d-detail-emergency-mainbox">
                <img src="{{asset('front/img/emergency.png')}}">
-               <p>{{__('messages.Emergency Number')}}</p>
+               <p>{{__('messages.Contact Me Now')}}</p>
                <h4>{{$doctor->phone_no}}</h4>
             </div>
             <div class="d-detail-emergency-mainbox">
@@ -285,11 +289,11 @@
                                  <div class="doctor-detail-part-11">
                                     <div class="doctorl-part-detail">
                                        <h4>{{$doctor->name}}</h4>
-                                       <p>{{substr($doctor->about_us,0,50)}}</p>
+                                       <p>{{ substr($doctor->short_description,0,50 )}}...</p>
                                     </div>
 
                                  </div>
-                                 <button data-toggle="modal" data-target="#appointmentModal" class="under-doctor-appointment-button">Book an Appointment</button>
+                                 <a href="https://api.whatsapp.com/send/?phone=00971565553483"  class="under-doctor-appointment-button">Book an Appointment</a>
                               </div>
                            </div>
                         </div>
