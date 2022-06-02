@@ -136,7 +136,7 @@ a:hover{
 }
 
 .spacefor-global {
-    height: 135px;
+    height: 155px;
 }
 
 /* Loader */
@@ -245,7 +245,7 @@ a:hover{
 }
 
 .navigation-custom-single .logo-img {
-    width: 150px;
+    width: 200px;
 }
 
 .navigation-custom-single .navbar-nav {
@@ -270,7 +270,7 @@ a:hover{
 }
 
 .navigation-custom-single .navbar {
-    padding: 15px 0px;
+    /* padding: 15px 0px; */
     background-color: white;
 }
 
@@ -483,6 +483,7 @@ a:hover{
 
 .services-part2-box {
     background-color: #f6f5f2;
+    cursor: pointer;
 }
 
 .services-part3-box {
@@ -600,7 +601,7 @@ a:hover{
 }
 
 .doctorl-part-box {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .doctorl-part-detail h4 {
@@ -643,9 +644,11 @@ a:hover{
 
 .doctorl-dp-img {
     height: 250px;
+    transition: 0.3s all ease-in-out;
 }
 
 .doctorl-dp-img-1 {
+
     background-image: url(../img/dp1.png);
 }
 

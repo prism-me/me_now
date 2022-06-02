@@ -22,9 +22,9 @@
 
     <div class="services-main-box">
         <div class="container">
-            <div class="services_home_container text-center">
+            <div class="services_home_container text-center global-heading">
                 <h2 class="my-3">Our Services</h2>
-                <p class="mb-4">We provide expert guidance and treatment for addictions and mental health concerns
+                <p class="py-5">We provide expert guidance and treatment for addictions and mental health concerns
                     using both innovative
                     and classic approaches.
                 </p>

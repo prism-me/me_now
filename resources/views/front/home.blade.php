@@ -21,17 +21,20 @@
 
     <div class="services-main-box">
         <div class="container">
-            <div class="services_home_container text-center">
+            <div class="services_home_container text-center global-heading">
                 <h2 class="my-3">Our Services</h2>
-                <p class="mb-4">We provide expert guidance and treatment for addictions and mental health concerns
-                    using both innovative
-                    and classic approaches.
+                <p class="py-5">We provide expert guidance and treatment for addictions and mental health concerns
+                    using both innovative and classic approaches.
+
                 </p>
             </div>
             <div class="services-left-part">
                 <div class="left-part-detail">
                     <h2>{{ __('messages.Personal care & healthy living') }}</h2>
-                    <p>{{ __('messages.facilitydetails') }}</p>
+                    <p>We provide effective and evidence-based therapy for a variety of mental health conditions in a safe
+                        and pleasant environment at Me Now. Our treatment center has a team of practitioners that are
+                        well-versed in a variety of therapy methods. We provide a variety of options to ensure that everyone
+                        lives their best life at home and at work, in their full-present life.</p>
                     <div class="services-btn-main-box">
                         <a href="{{ url('allfacilites') }}"
                             class="btn-hover color-9">{{ __('messages.Learn More') }}</a>
