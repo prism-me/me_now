@@ -15,20 +15,33 @@
         @include('front.banner_slider')
     </div>
 
+    <div class="about_container">
+        @include('front.about_section')
+    </div>
+
     <div class="services-main-box">
         <div class="container">
+            <div class="services_home_container text-center">
+                <h2 class="my-3">Our Services</h2>
+                <p class="mb-4">We provide expert guidance and treatment for addictions and mental health concerns
+                    using both innovative
+                    and classic approaches.
+                </p>
+            </div>
             <div class="services-left-part">
                 <div class="left-part-detail">
                     <h2>{{ __('messages.Personal care & healthy living') }}</h2>
                     <p>{{ __('messages.facilitydetails') }}</p>
                     <div class="services-btn-main-box">
-                        <a href="{{ url('allfacilites') }}">{{ __('messages.Learn More') }}</a>
+                        <a href="{{ url('allfacilites') }}"
+                            class="btn-hover color-9">{{ __('messages.Learn More') }}</a>
                     </div>
                     <div class="left-triangle">
                     </div>
                 </div>
             </div>
             <div class="services-right-part">
+
                 <div class="row">
                     @if (count($department) > 0)
                         <?php $i = 0; ?>
@@ -43,8 +56,7 @@
                                     <img src="{{ $s->image }}">
                                     <div class="text-detail-box">
                                         @php $room_services = $s->is_room === "true" ? 'rooms' : 'services';  @endphp
-                                        <h4><a
-                                                href="{{ url("$room_services") . '/' . $s->slug }}">{{ $s->name }}</a>
+                                        <h4><a href="{{ url("$room_services") . '/' . $s->slug }}">{{ $s->name }}</a>
                                         </h4>
                                         <p>{{ substr($s->short_description, 0, 70) }}... <a
                                                 href="{{ url("$room_services") . '/' . $s->slug }}">Read More</a>
@@ -60,14 +72,18 @@
             </div>
         </div>
     </div>
+    {{-- <button class="btn-hover color-9">BUTTON</button> --}}
 
     <div class="container">
         <div class="services-left-part services-2nd-box">
             <div class="left-part-detail">
-                <h2>{{ __('messages.Services') }}</h2>
-                <p>{{ __('messages.facilitydetails') }}</p>
+                <h2>Women, We See You, You’re at The Heart of Me Now</h2>
+                <p>Me Now is no less than a family dedicated to supporting each other and building a community of
+                    like-minded, empowered women. The center has special memberships for women that come with unlimited
+                    benefits including discounts on facilities, free workshops, and much more.
+                </p>
                 <div class="services-btn-main-box">
-                    <a href="{{ url('allfacilites') }}">{{ __('messages.Learn More') }}</a>
+                    <a href="{{ url('women-empowerment') }}" class="btn-hover color-9">Read More</a>
                 </div>
                 {{-- <div class="left-triangle">
 					</div> --}}
@@ -118,20 +134,58 @@
         </div> --}}
     </div>
     </div>
-    <div class="video-section">
-        {{-- <iframe width="100%" height="600" src="https://www.youtube.com/embed/8sqaLSpp33w" title="YouTube video player"
-            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe> --}}
+    {{-- <div class="video-section">
+
         <video controls>
             <source src="https://menow.b-cdn.net/video/Me-Now-Ads-Final-Without-Audio-small.mp4" type="video/mp4">
             <source src="https://menow.b-cdn.net/video/Me-Now-Ads-Final-Without-Audio-small.mp4" type="video/ogg">
             Your browser does not support the video tag.
         </video>
-    </div>
+    </div> --}}
 
 
     </div>
     </div>
+
+    <div class="doctorl-main-box">
+        <div class="container">
+            <div class="global-heading">
+                <h2>Me Now Team</h2>
+                {{-- <p>{{ __('messages.Talent wins games, but teamwork and intelligence win championships') }}</p> --}}
+            </div>
+            <div class="row">
+                @if (count($doctor) > 0)
+                    @foreach ($doctor as $d)
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="doctorl-part-box">
+                                <?php
+                                if ($d->image) {
+                                    $image = $d->image;
+                                } else {
+                                    $image = asset('upload/profile/profile.png');
+                                }
+                                ?>
+                                <a href="{{ url('doctordetails/') . '/' . $d->slug }}" class="img-fluid">
+                                    <div class="doctorl-dp-img doctorl-dp-img-1"
+                                        style="background-image: url('<?= $image ?>')"></div>
+                                </a>
+                                <div class="doctorl-part-detail text-center">
+                                    <h4>{{ ucwords($d->name) }}</h4>
+                                    <p>{{ substr(trim($d->about_us), 0, 135) }} ... <a
+                                            href="{{ url('doctordetails/') . '/' . $d->slug }}">Read More</a></p>
+                                    <div class="book_appointment_doctor">
+                                        {{-- <button>Make an Appointment</button> --}}
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    @endforeach
+                @endif
+            </div>
+        </div>
+    </div>
+
 
     <div class="numbers-counter-main-box">
         <div class="container-fluid">
@@ -188,45 +242,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="doctorl-main-box">
-        <div class="container">
-            <div class="global-heading">
-                <h2>Me Now Team</h2>
-                {{-- <p>{{ __('messages.Talent wins games, but teamwork and intelligence win championships') }}</p> --}}
-            </div>
-            <div class="row">
-                @if (count($doctor) > 0)
-                    @foreach ($doctor as $d)
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="doctorl-part-box">
-                                <?php
-                                if ($d->image) {
-                                    $image = $d->image;
-                                } else {
-                                    $image = asset('upload/profile/profile.png');
-                                }
-                                ?>
-                                <a href="{{ url('doctordetails/') . '/' . $d->slug }}" class="img-fluid">
-                                    <div class="doctorl-dp-img doctorl-dp-img-1"
-                                        style="background-image: url('<?= $image ?>')"></div>
-                                </a>
-                                <div class="doctorl-part-detail text-center">
-                                    <h4>{{ ucwords($d->name) }}</h4>
-                                    <p>{{ substr(trim($d->about_us), 0, 135) }} ... <a
-                                            href="{{ url('doctordetails/') . '/' . $d->slug }}">Read More</a></p>
-                                    <div class="book_appointment_doctor">
-                                        <button>Make an Appointment</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    @endforeach
-                @endif
             </div>
         </div>
     </div>
