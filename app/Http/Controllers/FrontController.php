@@ -10,6 +10,7 @@ use App\Model\TimeTable;
 use App\Model\Appointment;
 use App\Model\DepartService;
 use App\Model\Token;
+use App\Model\WorkshopBooking;
 use App\Model\Workshop;
 use App\Model\Review;
 use App\Model\Blog;
@@ -33,6 +34,7 @@ use DateTime;
 use DateTimeZone;
 use Mail;
 use validate;
+use App\Mail\BookingMail;
 class FrontController extends Controller
 {
     public function __construct(){
@@ -682,6 +684,23 @@ class FrontController extends Controller
                         }                        
                   }
                   return "done";
+    }
+
+
+    public function workshopBooking(Request $request){
+
+        $emailData = $request->all();
+        $data = $request->except('name');
+       
+        $add = WorkshopBooking::create($data);
+        $userEmail = $request['email'];
+        $mail = Mail::to($userEmail)->send(new BookingMail($emailData));
+
+        Session::flash('message',__('messages.Booking Done Successfully. Please Check Your Registered E-Mail to confirm the Booking.')); 
+        Session::flash('alert-class', 'alert-success');           
+        return redirect()->back();
+
+
     }
 
 

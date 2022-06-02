@@ -15,23 +15,21 @@
                 {{-- <p>{{ __("messages.The best doctor is the one you run to and can't find") }}</p> --}}
             </div>
 
-            {{-- <div class="doctorpg-tab-mainbox">
+             <div class="doctorpg-tab-mainbox">
                 <section class="customer-logos slider tab">
-                    <div class="slide tablinks" id="defaultOpen" onclick="openCity(event, 'all')">
-                        {{ __('messages.All') }}
-                    </div>
-
-                    @foreach ($workshop as $d)
-                        <div class="slide tablinks" onclick="openCity(event, '{{ $d->id }}')">
+                  
+                  
+                        {{-- <div class="slide tablinks" onclick="openCity(event, '{{ $d->id }}')">
                             {{ $d->title }}
-                        </div>
-                    @endforeach
+                        </div> --}}
+                    
                 </section>
-            </div> --}}
+            </div>
 
             <div class="doctorpg-part-main-box">
                 <div id="all" class="tabcontent">
                     <div class="row">
+                      @foreach ($workshop as $d)
                         <div class="col-lg-4 col-md-4 col-sm-6 " data-aos="fade-up">
                             <a href="{{ url('workshop') . '/' . $d->id }}" class="denone">
                                 <div class="d-detail-collapse-doctor">
@@ -58,6 +56,7 @@
                                 </div>
                             </a>
                         </div>
+                    @endforeach
                     </div>
                 </div>
             </div>

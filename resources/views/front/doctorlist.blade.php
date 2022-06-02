@@ -50,9 +50,9 @@
                                                 {{ substr($d->about_us, 0, 100) }}... <a
                                                     href="{{ url('doctordetails/') . '/' . $d->slug }}">Read More</a>
 
-                                            <div class="book_appointment_doctor">
+                                            {{-- <div class="book_appointment_doctor">
                                                 <button>Make an Appointment</button>
-                                            </div>
+                                            </div> --}}
                                         </div>
 
                                     </div>

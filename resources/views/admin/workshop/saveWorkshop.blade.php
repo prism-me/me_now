@@ -94,6 +94,13 @@
                         </label>
                         <input id="start_date" name="event_date" type="text" class="form-control" required value="{{ isset($event_date)&&$event_date!=0?$event_date:"" }}">
                      </div>
+                     <div class="form-group">
+                        <label for="name" class=" form-control-label">
+                        {{__('messages.Price')}}
+                        <span class="reqfield">*</span>
+                        </label>
+                        <input type="text" id="price" placeholder="{{__('messages.Enter').'  '.__('messages.Price')}}" class="form-control" required name="price" value="{{ isset($data->price)?$data->price:''}}">
+                     </div>
                     
                      <div class="form-group">
                         <label for="file" class=" form-control-label">  

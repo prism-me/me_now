@@ -129,7 +129,7 @@
                               <label for="email" class=" form-control-label">
                               <?php echo e(__('messages.Service')); ?><span class="reqfield" >*</span>
                               </label>
-                              <textarea  id="servicedoctor" name="service"  class="form-control"><?php echo e(isset($data->service)?$data->service:''); ?></textarea>
+                              <textarea  id="description" name="service"  class="form-control"><?php echo e(isset($data->service)?$data->service:''); ?></textarea>
                            </div>
                            <div class="col-md-12 form-group">
                               <label for="file" class=" form-control-label">  
