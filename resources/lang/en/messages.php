@@ -462,11 +462,13 @@ return [
 		"Description"=>"Description",
 		"Event Date"=>"Event Date",
 		"Event Type"=>"Event Type",
+		"Book Now!"=>"Book Now!",
 
 
 		"About Doctor" => "About Doctor",
 		"Slug" => "Slug",
 		"Frequently Asked Questions" => "Frequently Asked Questions",
+		"Booking Done Successfully. Please Check Your Registered E-Mail to confirm the Booking." => "Booking Done Successfully. Please Check Your Registered E-Mail to confirm the Booking.",
 		
 
 	];

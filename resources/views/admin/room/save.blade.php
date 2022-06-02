@@ -106,23 +106,24 @@
                     <div>
                      <div class="form-group">
                         <label for="file" class=" form-control-label">  
-                           {{__('messages.Slider Image')}}<span class="reqfield" >*</span>
-                           </label>
-                        @if($data->slider_images)
-                              <img src="{{$data->slider_images}}" class="img-fluid" /> 
-                        @endif
-                            <input type="file" id="file" name="slider_images[]" class="form-control-file" accept="image/*" multiple>
+                        {{__('messages.Slider Image')}}<span class="reqfield" >*</span>
+                        </label>
+                        
+                        @foreach($data->slider_images as $image)
+                           <img src="{{$image}}" class="img-fluid" /> 
+                        @endforeach
+                        
+                        <input type="file" id="file" name="slider_images[]" class="form-control-file" accept="image/*" multiple>
                             
                     <div>
                      <div class="form-group">
-                           <label for="file" class=" form-control-label">  
-                             {{__('messages.Addtional Image')}}<span class="reqfield" >*</span>
-                            </label>
-                           @if($data->additional_images)
-                              <img src="{{$data->additional_images}}" class="img-fluid" /> 
-                           @endif
-                            <input type="file" id="file" name="additional_images[]" class="form-control-file" accept="image/*" multiple>
-                            
+                        <label for="file" class=" form-control-label">  
+                           {{__('messages.Addtional Image')}}<span class="reqfield" >*</span>
+                           </label>
+                        @foreach($data->additional_images as $image)
+                           <img src="{{$image}}" class="img-fluid" /> 
+                        @endforeach
+                        <input type="file" id="file" name="additional_images[]" class="form-control-file" accept="image/*" multiple>
                     <div>
                     <div class="form-group">
                         <label for="name" class=" form-control-label">

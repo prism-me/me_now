@@ -472,11 +472,11 @@
       'smtp' => 
       array (
         'transport' => 'smtp',
-        'host' => '',
+        'host' => 'smtp.gmail.com',
         'port' => '465',
         'encryption' => 'ssl',
-        'username' => '',
-        'password' => '',
+        'username' => 'prism.marketing786@gmail.com',
+        'password' => 'Prism@2020#',
         'timeout' => NULL,
         'auth_mode' => NULL,
       ),
@@ -509,8 +509,8 @@
     ),
     'from' => 
     array (
-      'address' => 'hello@example.com',
-      'name' => '',
+      'address' => 'prism.marketing786@gmail.com',
+      'name' => 'MeNow',
     ),
     'markdown' => 
     array (

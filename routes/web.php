@@ -87,6 +87,7 @@ Route::group(['prefix' => '/'], function () {
      Route::Get("getcurrenttime/{offset}","HomeController@getcurrenttime");
      Route::get("blog","FrontController@blog");
      Route::get("blog-detail/{id}","FrontController@blogdetails");
+     Route::post("workshop-booking","FrontController@workshopBooking");
 
 
      

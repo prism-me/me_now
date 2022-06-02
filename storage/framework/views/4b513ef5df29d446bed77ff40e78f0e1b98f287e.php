@@ -1,30 +1,33 @@
-@extends('front.layout')
-@section('title')
-    {{ __('messages.Workshops') }}
-@stop
-@section('loader')
+
+<?php $__env->startSection('title'); ?>
+    <?php echo e(__('messages.Workshops')); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('loader'); ?>
     <div id="overlayer"></div>
     <span class="loader"><span class="loader-inner"></span></span>
-@stop
-@section('content')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
     <div class="container">
         <div class="banner-img">
-            <img src="{{ @$workshop->featured_img }}" alt="" class="img-fluid">
+            <img src="<?php echo e(@$workshop->featured_img); ?>" alt="" class="img-fluid">
         </div>
         <div class="meta_content">
-            <div class="meta1"> <b>Date:</b>&nbsp;{{ $workshop->event_date }}</div>
-            {{-- <div class="meta1"> <b>Time</b> : 6:00 pm to 7:00 pm </div> --}}
-            <div class="meta1"> <b>Event Type:</b>&nbsp;{{ ucfirst($workshop->event_type) }}</div>
+            <div class="meta1"> <b>Date:</b>&nbsp;<?php echo e($workshop->event_date); ?></div>
+            
+            <div class="meta1"> <b>Event Type:</b>&nbsp;<?php echo e(ucfirst($workshop->event_type)); ?></div>
         </div>
         <div class="form-group">
             <div class="col-md-7">
         
-                <h3>{{ $workshop->title }}</h3>
+                <h3><?php echo e($workshop->title); ?></h3>
                 <p>
-                    {{ $workshop->short_description }}
+                    <?php echo e($workshop->short_description); ?>
+
                 </p>
                 <p>
-                    {{ $workshop->description }}
+                    <?php echo e($workshop->description); ?>
+
                 </p>
                 <div class="facilitated">
                     <h4>Facilitated by</h4>
@@ -38,20 +41,22 @@
             <div class="col-md-5">
             
                <div class="header-appo-main-box">
-                    <h1>{{ __('messages.Book Now!') }}</h1>
-                    @if (Session::get('message'))
+                    <h1><?php echo e(__('messages.Book Now!')); ?></h1>
+                    <?php if(Session::get('message')): ?>
                         <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
-                            {{ Session::get('message') }}
+                            <?php echo e(Session::get('message')); ?>
+
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">×</span>
                             </button>
                         </div>
-                    @endif
+                    <?php endif; ?>
                     <span id="loginerrorreview"></span>
-                    <form action="{{ url('workshop-booking') }}" method="post">
-                        {{ csrf_field() }}
+                    <form action="<?php echo e(url('workshop-booking')); ?>" method="post">
+                        <?php echo e(csrf_field()); ?>
+
                         <div class="appo-input-main-box">
-                            <input type="hidden" name="price" value="{{$workshop->price}}">
+                            <input type="hidden" name="price" value="<?php echo e($workshop->price); ?>">
                             <label class="text-sm text-gray-500">Number of attendees? <span class="text-red-500">*</span></label>
                             <input  type="number" name="attendees" min="1" max="5"  required value="1"><br><br>
                             <input type="text" required name="first_name" id="name" placeholder="Your First name">
@@ -63,12 +68,12 @@
                             <textarea type="text" required name="message" placeholder="Your Message"></textarea>
                         </div>
                         <div class="appo-btn-main-box">
-                            @if (Auth::id())
-                                <button type="submit">{{ __('messages.Book Now') }}</button>
-                            @else
+                            <?php if(Auth::id()): ?>
+                                <button type="submit"><?php echo e(__('messages.Book Now')); ?></button>
+                            <?php else: ?>
                                 <button type="button" onclick="changehiddenstatus()" data-toggle="modal"
-                                    data-target="#myModal">{{ __('messages.Book Now') }}</button>
-                            @endif
+                                    data-target="#myModal"><?php echo e(__('messages.Book Now')); ?></button>
+                            <?php endif; ?>
 
                         </div>
                     </form>
@@ -82,9 +87,11 @@
 
     </div>
 
-@stop
-@section('footer')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('footer'); ?>
     <script>
         AOS.init();
     </script>
-@stop
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('front.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\meNow\resources\views/front/workshops_inner.blade.php ENDPATH**/ ?>
