@@ -5,20 +5,33 @@
 @section('content')
     <?php $res_curr = explode('-', $setting->currency); ?>
     <div class="d-detailpg-main-box">
+        <div class="department_background" style="background-image : url({{ asset('front/img/banner/banner-1.jpg') }}) ">
+
+        </div>
+        <div class="service_caption">
+            <h2>{{ $current->name }}</h2>
+            <br />
+            <button type="submit" class="btn-hover color-9" data-toggle="modal" data-target="#appointmentModal">Consult with
+                Us</button>
+        </div>
         <div class="container">
-            <div class="global-heading">
-                <h2>{{ $current->name }}</h2>
-                {{-- <p>{{ __('messages.The life so short, the craft so long to learn') }}</p> --}}
-            </div>
             <div class="d-detailpg-part-main-box">
                 <div class="row">
                     <div class="col-lg-9 col-md-12">
                         <div class="d-detail-main-box">
+
                             <div class="global-part-heading global-heading">
-                                {{-- <h3>{{ __('messages.About Department') }}</h3> --}}
-                                {{-- <p>{{ strip_tags($departmentdetails->description) }}</p> --}}
+                                <p>{{ $current->short_description }}</p>
+                                <br />
                                 <div class="services-inner-content">{!! $current->description !!}</div>
                             </div>
+                        </div>
+
+                        <div class="services-cta">
+                            <p>Learn more about our approach to treating mental health.</p>
+                            <button type="submit" class="btn-hover color-9" data-toggle="modal"
+                                data-target="#appointmentModal">Consult with
+                                Us</button>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-12">

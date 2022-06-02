@@ -22,13 +22,13 @@
                                     <div class="department-part-img">
                                         <img src="<?php echo e($service->img); ?>">
                                     </div>
-                                    <div class="text-detail-box">
+                                    <div class="text-detail-box sub-services-list">
                                         <h4><?php echo e($service->name); ?></h4>
-                                        <p><?php echo e(substr($service->short_description, 0, 75)); ?></p>
-                                    </div>
-                                    <div class="department-viewd-btn services-btn-main-box">
-                                        <a
-                                            href="<?php echo e(url('services') . '/' . $serviceSlug . '/' . $service->slug); ?>"><?php echo e(__('messages.View Detail')); ?></a>
+                                       
+                                        <p><?php echo e($service->excerpt); ?></p>
+
+                                        <a class="btn-hover color-9"
+                                            href="<?php echo e(url('services') . '/' . $serviceSlug . '/' . $service->slug); ?>">Read More</a>
                                     </div>
                                 </div>
                             </div>

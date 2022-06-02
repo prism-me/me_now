@@ -30,11 +30,9 @@
             </div>
             <div class="services-left-part">
                 <div class="left-part-detail">
-                    <h2>{{ __('messages.Personal care & healthy living') }}</h2>
+                    <h2>Even when you're at your worst, you deserve the best. </h2>
                     <p>We provide effective and evidence-based therapy for a variety of mental health conditions in a safe
-                        and pleasant environment at Me Now. Our treatment center has a team of practitioners that are
-                        well-versed in a variety of therapy methods. We provide a variety of options to ensure that everyone
-                        lives their best life at home and at work, in their full-present life.</p>
+                        and pleasant environment at Me Now.</p>
                     <div class="services-btn-main-box">
                         <a href="{{ url('allfacilites') }}"
                             class="btn-hover color-9">{{ __('messages.Learn More') }}</a>

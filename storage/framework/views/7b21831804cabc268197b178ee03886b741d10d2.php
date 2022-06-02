@@ -25,14 +25,15 @@
             <div class="services_home_container text-center global-heading">
                 <h2 class="my-3">Our Services</h2>
                 <p class="py-5">We provide expert guidance and treatment for addictions and mental health concerns
-                    using both innovative
-                    and classic approaches.
+                    using both innovative and classic approaches.
+
                 </p>
             </div>
             <div class="services-left-part">
                 <div class="left-part-detail">
-                    <h2><?php echo e(__('messages.Personal care & healthy living')); ?></h2>
-                    <p><?php echo e(__('messages.facilitydetails')); ?></p>
+                    <h2>Even when you're at your worst, you deserve the best. </h2>
+                    <p>We provide effective and evidence-based therapy for a variety of mental health conditions in a safe
+                        and pleasant environment at Me Now.</p>
                     <div class="services-btn-main-box">
                         <a href="<?php echo e(url('allfacilites')); ?>"
                             class="btn-hover color-9"><?php echo e(__('messages.Learn More')); ?></a>

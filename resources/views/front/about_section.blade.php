@@ -8,7 +8,7 @@
                     <p> With the goal of de-stigmatizing mental illness and providing patients with a variety of
                         treatment options, we're a group of compassionate, dedicated, and experienced practitioners who
                         want nothing more than to see "a different you" walk out the door after working with us. We
-                        believe and know that YOU can, and just as everyone needs a little push now and then, I Now will
+                        believe and know that YOU can, and just as everyone needs a little push now and then, Me Now will
                         be the push you need.
 
                     </p>

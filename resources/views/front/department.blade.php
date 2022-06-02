@@ -21,13 +21,13 @@
                                     <div class="department-part-img">
                                         <img src="{{ $service->img }}">
                                     </div>
-                                    <div class="text-detail-box">
+                                    <div class="text-detail-box sub-services-list">
                                         <h4>{{ $service->name }}</h4>
-                                        <p>{{ substr($service->short_description, 0, 75) }}</p>
-                                    </div>
-                                    <div class="department-viewd-btn services-btn-main-box">
-                                        <a
-                                            href="{{ url('services') . '/' . $serviceSlug . '/' . $service->slug }}">{{ __('messages.View Detail') }}</a>
+                                       
+                                        <p>{{ $service->excerpt }}</p>
+
+                                        <a class="btn-hover color-9"
+                                            href="{{ url('services') . '/' . $serviceSlug . '/' . $service->slug }}">Read More</a>
                                     </div>
                                 </div>
                             </div>
