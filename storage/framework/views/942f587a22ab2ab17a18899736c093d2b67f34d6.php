@@ -24,7 +24,7 @@
                 </div>
                 <div class="col-md-7">
                     <div class="who_we_are_cotent">
-                        <h2><?php echo e($rooms->title); ?></h2>
+                        
                         <div class="room_description">
                             <?php echo $rooms->description; ?>
 
@@ -37,17 +37,18 @@
 
         <div class="rooms_slider">
             <div class="owl-carousel owl-theme">
-                <div class="item">
-                    <img src="<?php echo e(asset('front/img/banner/discussion-room.jpg')); ?>" />
-                </div>
-                <div class="item">
-                    <img
-                        src="https://lighthouse-media.s3.us-east-2.amazonaws.com/601679ac8e54020017840684/1640001095057_dreamstime_xxl_54964318%20%28Large%29.jpg" />
-                </div>
-                <div class="item">
-                    <img
-                        src="https://lighthouse-media.s3.us-east-2.amazonaws.com/601679ac8e54020017840684/1640001095057_dreamstime_xxl_54964318%20%28Large%29.jpg" />
-                </div>
+
+                
+                <?php 
+                    @dd( $rooms->slider_images)
+                ?>
+
+                <?php $__currentLoopData = $rooms->slider_images; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $slider): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div class="item">
+                        <img src="<?php echo e($slider); ?>" />
+                    </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                
             </div>
         </div>
         <div class="about-content-widget">

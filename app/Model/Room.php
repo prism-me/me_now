@@ -14,4 +14,13 @@ class Room extends Model
     {
         return 'slug';
     }
+
+    protected $casts = [
+        
+        'slider_images' => 'array',
+        'additional_images' => 'array',
+
+        ];
+
+
 }

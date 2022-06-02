@@ -9,7 +9,7 @@
 @section('content')
     <div class="container">
         <div class="global-heading">
-            <h2>{{$rooms->title}}</h2>
+            <h2>{{ $rooms->title }}</h2>
             <div class="exerpt">
                 {{ $rooms->short_description }}
             </div>
@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-md-7">
                     <div class="who_we_are_cotent">
-                        <h2>{{ $rooms->title }}</h2>
+                        {{-- <h2>{{ $rooms->title }}</h2> --}}
                         <div class="room_description">
                             {!! $rooms->description !!}
                         </div>
@@ -34,17 +34,25 @@
 
         <div class="rooms_slider">
             <div class="owl-carousel owl-theme">
-                <div class="item">
-                    <img src="{{ asset('front/img/banner/discussion-room.jpg') }}" />
-                </div>
-                <div class="item">
+
+
+                @php
+                @endphp
+
+                @foreach ($rooms->slider_images as $slider)
+                    @dd($slider)
+                    <div class="item">
+                        <img src="{{ $slider }}" />
+                    </div>
+                @endforeach
+                {{-- <div class="item">
                     <img
                         src="https://lighthouse-media.s3.us-east-2.amazonaws.com/601679ac8e54020017840684/1640001095057_dreamstime_xxl_54964318%20%28Large%29.jpg" />
                 </div>
                 <div class="item">
                     <img
                         src="https://lighthouse-media.s3.us-east-2.amazonaws.com/601679ac8e54020017840684/1640001095057_dreamstime_xxl_54964318%20%28Large%29.jpg" />
-                </div>
+                </div> --}}
             </div>
         </div>
         <div class="about-content-widget">

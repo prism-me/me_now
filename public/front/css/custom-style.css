@@ -656,3 +656,8 @@ height:450px;
     text-align: center;
     margin:1rem 0px;
 }
+
+.room_description h3 , .room_long_description h3{
+    color: #48b7c6;
+    font-size: 20px;
+}
