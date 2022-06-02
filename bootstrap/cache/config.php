@@ -182,7 +182,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'D:\\Projects\\Menow\\me_now\\storage\\framework/cache/data',
+        'path' => 'C:\\xampp\\htdocs\\meNow\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -348,12 +348,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\Projects\\Menow\\me_now\\storage\\app',
+        'root' => 'C:\\xampp\\htdocs\\meNow\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\Projects\\Menow\\me_now\\storage\\app/public',
+        'root' => 'C:\\xampp\\htdocs\\meNow\\storage\\app/public',
         'url' => 'http://localhost/project/company/blank_script/blank_singleclinic_web/singleclinic//storage',
         'visibility' => 'public',
       ),
@@ -370,7 +370,7 @@
     ),
     'links' => 
     array (
-      'D:\\Projects\\Menow\\me_now\\public\\storage' => 'D:\\Projects\\Menow\\me_now\\storage\\app/public',
+      'C:\\xampp\\htdocs\\meNow\\public\\storage' => 'C:\\xampp\\htdocs\\meNow\\storage\\app/public',
     ),
   ),
   'hashing' => 
@@ -404,13 +404,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'D:\\Projects\\Menow\\me_now\\storage\\logs/laravel.log',
+        'path' => 'C:\\xampp\\htdocs\\meNow\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'D:\\Projects\\Menow\\me_now\\storage\\logs/laravel.log',
+        'path' => 'C:\\xampp\\htdocs\\meNow\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -460,7 +460,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'D:\\Projects\\Menow\\me_now\\storage\\logs/laravel.log',
+        'path' => 'C:\\xampp\\htdocs\\meNow\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -517,7 +517,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'D:\\Projects\\Menow\\me_now\\resources\\views/vendor/mail',
+        0 => 'C:\\xampp\\htdocs\\meNow\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -622,7 +622,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'D:\\Projects\\Menow\\me_now\\storage\\framework/sessions',
+    'files' => 'C:\\xampp\\htdocs\\meNow\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -651,9 +651,9 @@
   array (
     'paths' => 
     array (
-      0 => 'D:\\Projects\\Menow\\me_now\\resources\\views',
+      0 => 'C:\\xampp\\htdocs\\meNow\\resources\\views',
     ),
-    'compiled' => 'D:\\Projects\\Menow\\me_now\\storage\\framework\\views',
+    'compiled' => 'C:\\xampp\\htdocs\\meNow\\storage\\framework\\views',
   ),
   'flare' => 
   array (
@@ -800,7 +800,7 @@
     ),
     'temporary_files' => 
     array (
-      'local_path' => 'D:\\Projects\\Menow\\me_now\\storage\\framework/cache/laravel-excel',
+      'local_path' => 'C:\\xampp\\htdocs\\meNow\\storage\\framework/cache/laravel-excel',
       'remote_disk' => NULL,
       'remote_prefix' => NULL,
       'force_resync_remote' => NULL,
@@ -924,18 +924,6 @@
   array (
     'proxies' => NULL,
     'headers' => 94,
-  ),
-  'api-debugger' => 
-  array (
-    'enabled' => true,
-    'collections' => 
-    array (
-      0 => 'Lanin\\Laravel\\ApiDebugger\\Collections\\QueriesCollection',
-      1 => 'Lanin\\Laravel\\ApiDebugger\\Collections\\CacheCollection',
-      2 => 'Lanin\\Laravel\\ApiDebugger\\Collections\\ProfilingCollection',
-      3 => 'Lanin\\Laravel\\ApiDebugger\\Collections\\MemoryCollection',
-    ),
-    'response_key' => 'debug',
   ),
   'datatables-fractal' => 
   array (
