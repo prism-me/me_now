@@ -696,7 +696,7 @@ class FrontController extends Controller
         $userEmail = $request['email'];
         $mail = Mail::to($userEmail)->send(new BookingMail($emailData));
 
-        Session::flash('message',__('messages.Booking Done Successfully. Please Check Your Registered E-Mail to confirm the Booking.')); 
+        Session::flash('message',__('messages.Booking Done Successfully.Please Check Your Registered E-Mail to confirm the Booking.')); 
         Session::flash('alert-class', 'alert-success');           
         return redirect()->back();
 

@@ -24,6 +24,7 @@ Route::get("add_doctor_review","AuthenticatedoctorController@show_product_review
 Route::post("checkoutbrain","braintreeController@checkoutbrain");
 Route::get("sendnotification","FrontController@sendnotification");
 Route::get("privacy_policy","HomeController@privacy");
+
 Route::group(['prefix' => '/'], function () {
      Route::get('auth/{driver}', 'Auth\FacebookController@redirectToProvider')->name('social.oauth');
      Route::get('auth/{driver}/callback', 'Auth\FacebookController@handleProviderCallback')->name('social.callback');
@@ -222,38 +223,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 });
 
-Route::group(['prefix' => 'doctor'], function () {
 
-       Route::get("/","HomeController@doctorlogin");
-
-        Route::group(['middleware' => ['Doctorcheck']], function () {
-            Route::get("settimezone/{time}","HomeController@settimezone");
-           Route::get("dashboard","AuthenticatedoctorController@showdashboard");           
-           Route::get("logout","AuthenticatedoctorController@showlogout");
-
-           Route::any("chat","AuthenticatedoctorController@showchat")->name("chat");
-
-
-            Route::get("editprofile/{tab_id}","AuthenticatedoctorController@editprofile");
-            Route::any("updatedoctorprofile","AuthenticatedoctorController@updatedoctorprofile");
-            Route::post("updateworkinghours","AuthenticatedoctorController@updateworkinghours");
-           #Route::get("sendnotification","ChatsController@sendnotification");
-
-            Route::get("appointment","AppointmentController@showdoctorappointment");
-            Route::get("orderstatus/{order_id}/{appointment_id}","AppointmentController@changeorderstatus");
-            Route::any("apmreschedule","AppointmentController@apmreschedule");
-            Route::get("getreferdoctor/{id}","AppointmentController@getreferdoctor");
-            Route::any("apmrefer","AppointmentController@apmrefer");
-            Route::get("review","AuthenticatedoctorController@showreview");
-            Route::get('sender', function () {
-              
-                  event(new App\Events\FormSubmitted("hetal","New Messages"));
-            });
-
-
-       });
-       
-});
 
     
 Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}']], function () {
