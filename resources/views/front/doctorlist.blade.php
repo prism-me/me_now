@@ -40,7 +40,7 @@
 
                                 <div class="d-detail-collapse-doctor">
                                     <div class="doctorl-part-box">
-                                        <a href="{{ url('doctordetails/') . '/' . $d->slug }}" class="denone">
+                                        <a href="{{ url('doctordetails/') . '/' . $d->slug }}" class="denone box-container">
                                             <img src="{{ $d->image }}" class="img-fluid">
                                         </a>
                                         <div class="doctorl-part-detail text-center">

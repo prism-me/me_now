@@ -43,15 +43,13 @@ a:hover{
 }
 
 .global-heading h2::after {
-    content: '';
+    content: url('../img/icons/after.png');
     height: 8px;
-    width: 67px;
-    background-color: #49B7C6;
     position: absolute;
     bottom: 0;
     right: 0;
     left: 0;
-    margin: -18px auto;
+    margin: 0px auto;
 }
 
 .global-heading h2 {
@@ -670,7 +668,7 @@ a:hover{
 
 .doctorl-dp-img {
     width: 100%;
-    background-size: cover;
+    height: auto;
 }
 
 .testimonial-main-box {
