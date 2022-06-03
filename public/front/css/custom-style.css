@@ -830,3 +830,8 @@ height:450px;
     .services-inner-content p{
         margin: 12px 0 0 !important;
     }
+    .service-doctor{
+        margin-top: 2rem;
+        color: #767676;
+        padding-left: 16px;
+    }
