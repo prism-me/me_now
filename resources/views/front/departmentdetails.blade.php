@@ -22,12 +22,12 @@
 
                             <div class="global-part-heading global-heading">
                                 <p>{{ $current->short_description }}</p>
-                                <br />
+                                {{-- <br /> --}}
                                 <div class="services-inner-content">{!! $current->description !!}</div>
                             </div>
                         </div>
 
-                        <div class="services-cta">
+                        <div class="services-cta mb-5">
                             <p>Learn more about our approach to treating mental health.</p>
                             <button type="submit" class="btn-hover color-9" data-toggle="modal"
                                 data-target="#appointmentModal">Consult with

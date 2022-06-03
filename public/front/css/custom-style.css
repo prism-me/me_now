@@ -821,3 +821,12 @@ height:450px;
     .services-cta p{
         margin-bottom: 0px;
     }
+
+    .services-inner-content h3:after{
+        height: 0px !important;
+        background-color: none !important;
+
+    }
+    .services-inner-content p{
+        margin: 12px 0 0 !important;
+    }

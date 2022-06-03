@@ -23,12 +23,12 @@
 
                             <div class="global-part-heading global-heading">
                                 <p><?php echo e($current->short_description); ?></p>
-                                <br />
+                                
                                 <div class="services-inner-content"><?php echo $current->description; ?></div>
                             </div>
                         </div>
 
-                        <div class="services-cta">
+                        <div class="services-cta mb-5">
                             <p>Learn more about our approach to treating mental health.</p>
                             <button type="submit" class="btn-hover color-9" data-toggle="modal"
                                 data-target="#appointmentModal">Consult with
