@@ -134,7 +134,7 @@ a:hover{
 }
 
 .spacefor-global {
-    height: 155px;
+    height: 150px;
 }
 
 /* Loader */
@@ -268,7 +268,7 @@ a:hover{
 }
 
 .navigation-custom-single .navbar {
-    /* padding: 15px 0px; */
+    padding: 10px 0px;
     background-color: white;
 }
 
@@ -610,7 +610,7 @@ a:hover{
     margin: 0px 0px 10px;
     font-weight: bold;
     font-size: 18px;
-    color: black;
+    /* color: black; */
 }
 
 .doctorl-part-detail p {
@@ -619,8 +619,11 @@ a:hover{
     margin-bottom: 17px;
     /* text-align: justify; */
     font-family: 'Roboto', sans-serif ;
+    text-align: justify;
 }
-
+.doctorl-part-detail h4{
+    color: #1B7081;
+}
 .facebook-doctorl i {
     color: #3b5998;
 }
@@ -695,7 +698,7 @@ a:hover{
     padding: 15px;
     border: 1px solid #49B7C6;
     border-radius: 10px;
-    height: 150px;
+    height: 185px;
 }
 .testimage{
     padding-left:0px;

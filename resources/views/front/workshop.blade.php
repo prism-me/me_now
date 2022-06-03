@@ -40,12 +40,12 @@
                                     <img src="{{ $d->featured_img }}" class="img-fluid">
                                     </a>    
 
-                                            <div class="doctorl-part-detail">
+                                            <div class="workshop-part-detail">
                                                 <h4><a href="{{ url('workshop') . '/' . $d->slug }}">{{ ucwords($d->title) }}</a></h4>
                                                 <p>Event Date:{{ $d->event_date }}</p>
-                                                <p style="color:rgb(108, 108, 108)">
+                                                {{-- <p style="color:rgb(108, 108, 108)">
                                                     {!! substr($d->short_description, 0,  90) !!}... <a href="{{ url('workshop') . '/' . $d->slug }}"> Read More</a> </p>
-                                            
+                                             --}}
                                                 <div class="book_appointment_doctor">
                                                     {{-- <button>Book Event</button> --}}
                                                 </div>

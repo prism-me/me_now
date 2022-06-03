@@ -20,7 +20,7 @@
         <?php echo $__env->make('front.about_section', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     </div>
 
-    <div class="services-main-box" data-aos="fade-up">
+    <div class="services-main-box" data-aos="fade-up" data-aos-duration="3000">
         <div class="container-fluid">
             <div class="services_home_container text-center global-heading">
                 <h2 class="my-3">Our Services</h2>
@@ -49,7 +49,7 @@
                         <?php $i = 0; ?>
                         <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $s): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <?php if($i < 6): ?>
-                                <div class="col-md-4 col-sm-6">
+                                <div class="col-md-4 col-sm-6"  data-aos="zoom-in">
                                     <?php if($i % 2 == 0): ?>
                                         <div class="services-part-box services-part1-box">
                                         <?php else: ?>
@@ -133,7 +133,7 @@
     </div>
     </div>
 
-    <div class="doctorl-main-box">
+    <div class="doctorl-main-box " data-aos="zoom-in">
         <div class="container-fluid">
             <div class="global-heading">
                 <h2>Me Now Team</h2>
@@ -152,12 +152,17 @@
                                 }
                                 ?>
                                 <a href="<?php echo e(url('doctordetails/') . '/' . $d->slug); ?>" class="box-container">
-                                    <img class="doctorl-dp-img doctorl-dp-img-1" src="<?= $image ?>" />
+                                    <img class="doctorl-dp-img doctorl-dp-img-1 doctor_img_hover" src="<?= $image ?>" />
                                 </a>
                                 <div class="doctorl-part-detail text-center">
                                     <h4><?php echo e(ucwords($d->name)); ?></h4>
-                                    <p><?php echo e(substr(trim($d->about_us), 0, 135)); ?> ... <a
-                                            href="<?php echo e(url('doctordetails/') . '/' . $d->slug); ?>">Read More</a></p>
+                                    <div class="overlay_doctors">
+                                        <div class="inner_overlay_doctor">
+                                            <h4><?php echo e(ucwords($d->name)); ?></h4>
+                                            <p><?php echo e(substr(trim($d->about_us), 0, 250)); ?> ... <a
+                                                    href="<?php echo e(url('doctordetails/') . '/' . $d->slug); ?>">Read More</a></p>
+                                        </div>
+                                    </div>
                                     <div class="book_appointment_doctor">
                                         
                                     </div>
@@ -317,19 +322,20 @@
     </script>
 
     <script>
-        $(document).ready(function() {
+        // $(document).ready(function() {
 
-            $(".hover-doctor-portal").hover(function() {
+        //     $(".hover-doctor-portal").hover(function() {
 
-                $(this).attr("data-aos", "flip-left");
+        //         $(this).().attr("data-aos", "flip-left");
+        //         $(this).next().css({'display' : 'block'});
 
 
-            }, function() {
+        //     }, function() {
 
-                $(this).attr("data-aos", " ");
+        //         $(this).attr("data-aos", " ");
 
-            });
-        });
+        //     });
+        // });
     </script>
 <?php $__env->stopPush(); ?>
 

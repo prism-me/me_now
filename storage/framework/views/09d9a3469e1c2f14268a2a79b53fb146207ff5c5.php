@@ -28,7 +28,7 @@
                                     <img src="<?php echo e($d->featured_img); ?>" class="img-fluid">
                                     </a>    
 
-                                            <div class="doctorl-part-detail">
+                                            <div class="workshop-part-detail">
                                                 <h4><a href="<?php echo e(url('workshop') . '/' . $d->slug); ?>"><?php echo e(ucwords($d->title)); ?></a></h4>
                                                 <p>Event Date:<?php echo e($d->event_date); ?></p>
                                                 <p style="color:rgb(108, 108, 108)">
