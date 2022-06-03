@@ -136,7 +136,7 @@ a:hover{
 }
 
 .spacefor-global {
-    height: 135px;
+    height: 155px;
 }
 
 /* Loader */
@@ -245,7 +245,7 @@ a:hover{
 }
 
 .navigation-custom-single .logo-img {
-    width: 150px;
+    width: 200px;
 }
 
 .navigation-custom-single .navbar-nav {
@@ -270,7 +270,7 @@ a:hover{
 }
 
 .navigation-custom-single .navbar {
-    padding: 15px 0px;
+    /* padding: 15px 0px; */
     background-color: white;
 }
 
@@ -454,7 +454,7 @@ a:hover{
     padding: 25px;
     border-radius: 10px;
     margin-bottom: 30px;
-    height: 250px;
+    height: 265px;
 }
 
 .services-part1-box {
@@ -468,7 +468,7 @@ a:hover{
 .text-detail-box h4 {
     font-size: 17px;
     color: #356380;
-    margin: 20px 0px;
+    margin: 10px 0px;
     font-weight: bold;
     text-align: center;
 }
@@ -480,9 +480,14 @@ a:hover{
     font-family: 'Roboto', sans-serif ;
     text-align:center;
 }
+.services-inner-content h3{
+    color: #48b7c6;
+    margin-top: 1rem;
+}
 
 .services-part2-box {
     background-color: #f6f5f2;
+    cursor: pointer;
 }
 
 .services-part3-box {
@@ -600,7 +605,7 @@ a:hover{
 }
 
 .doctorl-part-box {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .doctorl-part-detail h4 {
@@ -643,9 +648,11 @@ a:hover{
 
 .doctorl-dp-img {
     height: 250px;
+    transition: 0.3s all ease-in-out;
 }
 
 .doctorl-dp-img-1 {
+
     background-image: url(../img/dp1.png);
 }
 
@@ -906,7 +913,7 @@ text-align: right;
 }
 
 .d-detailpg-main-box {
-    margin: 40px 0px;
+    /* margin: 40px 0px; */
 }
 
 .d-detail-img-box {

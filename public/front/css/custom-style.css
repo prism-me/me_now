@@ -203,6 +203,8 @@ display: inline-block;
     background-color: #1B7081;
     border:1px solid #1B7081;
     padding: .5rem 1rem;
+    position: absolute;
+    bottom: 50px;
 }
 
 .under-doctor-appointment-button{
@@ -418,7 +420,7 @@ margin-top: 3rem;
 }
 
 .about_tiles{
-    margin:80px auto 0px;
+    margin:50px auto 0px;
 }
 
 .about_tiles .single-tile{
@@ -426,20 +428,21 @@ margin-top: 3rem;
     padding: 0px 2rem;
     /* text-align: center; */
     margin: 1rem;
-     box-shadow: 0 0 12px #ddd;
+    box-shadow: 0 0 12px #ddd;
+    height:400px;
     
 }
 .about_tiles .inner-single-title{
     border-top:5px solid #49B7C6;
     border-bottom:5px solid #49B7C6;
     height: 100%;
-    padding: 3rem 0px;
+    padding: 2rem 0px;
 }
 
 .about_tiles .inner-single-title img{
     width:50px;
     height:auto;
-    padding:2.5rem 0px;
+    padding:0.5rem 0px;
 }
 
 .about_tiles .inner-single-title h4{
@@ -560,7 +563,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .about-content-widget{
-    margin-bottom: 3rem;
+    margin-bottom: 5rem 0px 3rem;
 }
 .about-content-widget .row{
     align-items: center;
@@ -753,4 +756,82 @@ height:450px;
     .services-main-box{
         background: #f9f9f9;
         padding: 50px 0px;
+    }
+
+    .about_content h2{
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+    .doctorl-dp-img:hover{
+        transform : scale(1.1);
+    }
+    .doctorl-part-box .img-fluid {
+
+        overflow: hidden;
+    }
+
+    .packages_women{
+        height:680px !important;
+    }
+    .women-empowerment- ul{
+        padding-left: 15px;
+    }
+    .women-empowerment- ul li {
+
+        color: #767676;
+
+
+    }
+    .who_we_are_cotent{
+        padding-left: 20px;
+    }
+
+    .who_we_are_sub_section img{
+        height:50px;
+    }
+    .sub-services-list p{
+        margin-bottom: 25px !important;
+    }
+
+    .department_background{
+        height: 500px;
+
+    }
+    .service_caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform:translate(-50% , -10%);
+        text-align:center;
+    }
+    .service_caption h2{
+        font-weight: bold;
+        color: white;
+    }   
+
+    .services-cta{
+        background-color:#eee;
+        
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .services-cta p{
+        margin-bottom: 0px;
+    }
+
+    .services-inner-content h3:after{
+        height: 0px !important;
+        background-color: none !important;
+
+    }
+    .services-inner-content p{
+        margin: 12px 0 0 !important;
+    }
+    .service-doctor{
+        margin-top: 2rem;
+        color: #767676;
+        padding-left: 16px;
     }
