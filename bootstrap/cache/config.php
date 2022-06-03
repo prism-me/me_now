@@ -510,7 +510,7 @@
     'from' => 
     array (
       'address' => 'prism.marketing786@gmail.com',
-      'name' => 'Example',
+      'name' => 'MeNow',
     ),
     'markdown' => 
     array (

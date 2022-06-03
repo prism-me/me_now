@@ -465,6 +465,7 @@ return [
 		"Book Now!"=>"Book Now!",
 		"Contact Me Now"=>"Contact Me Now",
 		"Banner Image"=>"Banner Image",
+		"Addtional Content-1"=>"Addtional Content-1",
 
 
 		"About Doctor" => "About Doctor",

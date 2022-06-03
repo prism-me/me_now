@@ -162,10 +162,17 @@ class DepartmentController extends UploadController
                 $msg=__('messages.Department Service Add Successfully');
             }
             $mediaUpload = "" ;
+            $mediaUpload1 = "" ;
             if ($img = $request->hasFile('img')) {
                
                 $media =  UploadController::upload_media($request->img);
                 $mediaUpload = $media['url'];
+
+            }
+            if ($img = $request->hasFile('banner_img')) {
+               
+                $media =  UploadController::upload_media($request->banner_img);
+                $mediaUpload1 = $media['url'];
 
             }
 
@@ -182,6 +189,11 @@ class DepartmentController extends UploadController
             if($mediaUpload){
 
                 $store->img = $mediaUpload;
+
+            }
+            if($mediaUpload1){
+
+                $store->banner_img = $mediaUpload1;
 
             }
             $store->save(); 

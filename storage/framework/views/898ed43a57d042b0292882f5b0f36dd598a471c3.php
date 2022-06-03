@@ -35,4 +35,4 @@
         </div>
     </div>
 </div>
-<?php /**PATH D:\Projects\Menow\me_now\resources\views/front/banner_slider.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\xampp\htdocs\meNow\resources\views/front/banner_slider.blade.php ENDPATH**/ ?>

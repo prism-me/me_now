@@ -83,6 +83,13 @@
                         </label>
                         <textarea id="additional_description" placeholder="{{__('messages.Enter').'  '.__('messages.Addtional Content')}}" class="form-control" required name="additional_content" value="{{ isset($data->additional_content)?$data->additional_content:''}}">{{$data->additional_content}}</textarea>
                      </div>
+                      <div class="form-group">
+                        <label for="name" class=" form-control-label">
+                        {{__('messages.Addtional Content-1')}}
+                        <span class="reqfield">*</span>
+                        </label>
+                        <textarea id="description" placeholder="{{__('messages.Enter').'  '.__('messages.Addtional Content-1')}}" class="form-control" required name="additional_content_1" value="{{ isset($data->additional_content_1)?$data->additional_content_1:''}}">{{ $data->additional_content_1 }}</textarea>
+                     </div>
   
                      <div class="form-group">
                         <label for="file" class=" form-control-label">  

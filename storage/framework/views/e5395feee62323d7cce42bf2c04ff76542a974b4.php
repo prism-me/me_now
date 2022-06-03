@@ -99,6 +99,15 @@
                            <input type="file" id="file" name="img" class="form-control-file" accept="img/*">
                         </div>
                      </div>
+                      <div class="form-group">
+                        <label for="file" class=" form-control-label">  
+                        <?php echo e(__('messages.Banner Image')); ?><span class="reqfield" >*</span>
+                        </label>
+                        <img src="<?php echo e(isset($data->banner_img)?$data->banner_img:''); ?>" class="imgsize1 departmentimg" style="width:50px;height:50px;"/> 
+                        <div>
+                           <input type="file" id="file" name="banner_img" class="form-control-file" accept="img/*">
+                        </div>
+                     </div>
                        
                         <?php if(Session::get("is_demo")=='1'): ?>
                            <button id="payment-button" type="button"  onclick="disablebtn()" class="btn btn-lg btn-info" >
