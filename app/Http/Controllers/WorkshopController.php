@@ -39,10 +39,17 @@ class WorkshopController extends UploadController
     {
        
         $mediaUpload = "";
+        $mediaUpload1 = "";
         if ($img = $request->hasFile('featured_img')) {
                
            $media =  UploadController::upload_media($request->featured_img);
            $mediaUpload = $media['url'];
+
+        }
+        if ($img = $request->hasFile('banner_img')) {
+               
+           $media =  UploadController::upload_media($request->banner_img);
+           $mediaUpload1 = $media['url'];
 
         }
        
@@ -51,6 +58,10 @@ class WorkshopController extends UploadController
         if($mediaUpload){
 
             $data['featured_img'] = $mediaUpload ;
+        }
+        if($mediaUpload1){
+
+            $data['banner_img'] = $mediaUpload1 ;
         }
         $workshopCreate = Workshop::create($data);
         return redirect("admin/workshops");
@@ -90,10 +101,17 @@ class WorkshopController extends UploadController
     public function update(Request $request, Workshop $workshop , $slug)
     {
         $mediaUpload = "";
+        $mediaUpload1 = "";
         if ($img = $request->hasFile('featured_img')) {
                
            $media =  UploadController::upload_media($request->featured_img);
            $mediaUpload = $media['url'];
+
+        }
+        if ($img = $request->hasFile('banner_img')) {
+               
+           $media =  UploadController::upload_media($request->banner_img);
+           $mediaUpload1 = $media['url'];
 
         }
 
@@ -101,6 +119,10 @@ class WorkshopController extends UploadController
         if($mediaUpload){
 
             $data['featured_img'] = $mediaUpload ;
+        }
+        if($mediaUpload1){
+
+            $data['banner_img'] = $mediaUpload1 ;
         }
         $workshopCreate = Workshop::where('slug',$slug)->update($data);
         return redirect("admin/workshops");

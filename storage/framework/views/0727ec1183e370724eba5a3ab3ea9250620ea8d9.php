@@ -6,20 +6,33 @@
 <?php $__env->startSection('content'); ?>
     <?php $res_curr = explode('-', $setting->currency); ?>
     <div class="d-detailpg-main-box">
+        <div class="department_background" style="background-image : url(<?php echo e(asset('front/img/banner/banner-1.jpg')); ?>) ">
+
+        </div>
+        <div class="service_caption">
+            <h2><?php echo e($current->name); ?></h2>
+            <br />
+            <button type="submit" class="btn-hover color-9" data-toggle="modal" data-target="#appointmentModal">Consult with
+                Us</button>
+        </div>
         <div class="container">
-            <div class="global-heading">
-                <h2><?php echo e($current->name); ?></h2>
-                
-            </div>
             <div class="d-detailpg-part-main-box">
                 <div class="row">
                     <div class="col-lg-9 col-md-12">
                         <div class="d-detail-main-box">
+
                             <div class="global-part-heading global-heading">
-                                
+                                <p><?php echo e($current->short_description); ?></p>
                                 
                                 <div class="services-inner-content"><?php echo $current->description; ?></div>
                             </div>
+                        </div>
+
+                        <div class="services-cta mb-5">
+                            <p>Learn more about our approach to treating mental health.</p>
+                            <button type="submit" class="btn-hover color-9" data-toggle="modal"
+                                data-target="#appointmentModal">Consult with
+                                Us</button>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-12">

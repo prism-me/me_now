@@ -10,7 +10,7 @@
 <?php $__env->startSection('content'); ?>
     <div class="container">
         <div class="banner-img">
-            <img src="<?php echo e(@$workshop->featured_img); ?>" alt="" class="img-fluid">
+            <img src="<?php echo e(@$workshop->banner_img); ?>" alt="" class="img-fluid">
         </div>
         <div class="meta_content">
             <div class="meta1"> <b>Date:</b>&nbsp;<?php echo e($workshop->event_date); ?></div>

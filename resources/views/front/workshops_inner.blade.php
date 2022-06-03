@@ -9,7 +9,7 @@
 @section('content')
     <div class="container">
         <div class="banner-img">
-            <img src="{{ @$workshop->featured_img }}" alt="" class="img-fluid">
+            <img src="{{ @$workshop->banner_img }}" alt="" class="img-fluid">
         </div>
         <div class="meta_content">
             <div class="meta1"> <b>Date:</b>&nbsp;{{ $workshop->event_date }}</div>

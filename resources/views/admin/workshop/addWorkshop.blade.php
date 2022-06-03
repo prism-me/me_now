@@ -109,6 +109,13 @@
                     
                      <div>
                      <div class="form-group">
+                        <label for="file" class=" form-control-label">  
+                        {{__('messages.Banner Image')}}<span class="reqfield" >*</span>
+                        </label>
+                           <input type="file" id="file" name="banner_img" class="form-control-file" accept="image/*">
+                    
+                     <div>
+                     <div class="form-group">
                         @if(Session::get("is_demo")=='1')
                            <button id="payment-button" type="button"  onclick="disablebtn()" class="btn btn-lg btn-info" >
                               {{__('messages.Submit')}}

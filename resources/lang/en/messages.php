@@ -464,12 +464,13 @@ return [
 		"Event Type"=>"Event Type",
 		"Book Now!"=>"Book Now!",
 		"Contact Me Now"=>"Contact Me Now",
+		"Banner Image"=>"Banner Image",
 
 
 		"About Doctor" => "About Doctor",
 		"Slug" => "Slug",
 		"Frequently Asked Questions" => "Frequently Asked Questions",
-		"Booking Done Successfully. Please Check Your Registered E-Mail to confirm the Booking." => "Booking Done Successfully. Please Check Your Registered E-Mail to confirm the Booking.",
+		"Booking Done Successfully.Please Check Your Registered E-Mail to confirm the Booking." => "Booking Done Successfully.Please Check Your Registered E-Mail to confirm the Booking.",
 		
 
 	];
