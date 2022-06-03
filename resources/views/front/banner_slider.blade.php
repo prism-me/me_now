@@ -2,14 +2,14 @@
     <div class="item"><img src="{{ asset('front/img/banner/banner-1.jpg') }}" alt="banner images" />
         <div class="overlay"></div>
         <div class="caption">
-            <h1 class="heading">Live, Heal and Breathe Again. </h1>
+            <h1 class="heading animated fadeIn ">Live, Heal and Breathe Again. </h1>
             <button type="submit" class="btn-hover color-9" data-toggle="modal" data-target="#appointmentModal">Book a consultation</button>
         </div>
     </div>
     <div class="item"><img src="{{ asset('front/img/banner/banner-2.jpg') }}" alt="banner images" />
         <div class="overlay"></div>
         <div class="caption">
-            <h1 class="heading">Your Mental Health is in Safe Hands </h1>
+            <h1 class="heading ">Your Mental Health is in Safe Hands </h1>
             <button type="submit" class="btn-hover color-9" data-toggle="modal" data-target="#appointmentModal">Consult with Us</button>
         </div>
     </div>

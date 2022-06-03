@@ -19,8 +19,8 @@
         @include('front.about_section')
     </div>
 
-    <div class="services-main-box">
-        <div class="container">
+    <div class="services-main-box" data-aos="fade-up">
+        <div class="container-fluid">
             <div class="services_home_container text-center global-heading">
                 <h2 class="my-3">Our Services</h2>
                 <p class="py-5">We provide expert guidance and treatment for addictions and mental health concerns
@@ -75,7 +75,7 @@
     </div>
     {{-- <button class="btn-hover color-9">BUTTON</button> --}}
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="services-left-part services-2nd-box">
             <div class="left-part-detail">
                 <h2>Women, We See You, You’re at The Heart of Me Now</h2>
@@ -149,7 +149,7 @@
     </div>
 
     <div class="doctorl-main-box">
-        <div class="container">
+        <div class="container-fluid">
             <div class="global-heading">
                 <h2>Me Now Team</h2>
                 {{-- <p>{{ __('messages.Talent wins games, but teamwork and intelligence win championships') }}</p> --}}
@@ -158,7 +158,7 @@
                 @if (count($doctor) > 0)
                     @foreach ($doctor as $d)
                         <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="doctorl-part-box">
+                            <div class="doctorl-part-box hover-doctor-portal">
                                 <?php
                                 if ($d->image) {
                                     $image = $d->image;
@@ -166,9 +166,8 @@
                                     $image = asset('upload/profile/profile.png');
                                 }
                                 ?>
-                                <a href="{{ url('doctordetails/') . '/' . $d->slug }}" class="img-fluid">
-                                    <div class="doctorl-dp-img doctorl-dp-img-1"
-                                        style="background-image: url('<?= $image ?>')"></div>
+                                <a href="{{ url('doctordetails/') . '/' . $d->slug }}" class="box-container">
+                                    <img class="doctorl-dp-img doctorl-dp-img-1" src="<?= $image ?>" />
                                 </a>
                                 <div class="doctorl-part-detail text-center">
                                     <h4>{{ ucwords($d->name) }}</h4>
@@ -247,7 +246,7 @@
         </div>
     </div>
     <div class="testimonial-main-box">
-        <div class="container" style="padding-left: 0px ; padding-right: 0px;">
+        <div class="container-fluid" style="padding-left: 0px ; padding-right: 0px;">
             <div class="global-heading">
                 <h2>{{ __('messages.Patient Reviews') }}</h2>
                 <p>{{ __('messages.reviewline') }}</p>
@@ -321,6 +320,29 @@
             dots: false,
         })
 
+
         // $('.patient-reviews-slider .owl-nav').removeClass('disabled');
     </script>
+    <script>
+        AOS.init();
+    </script>
+
+    <script>
+        $(document).ready(function() {
+
+            $(".hover-doctor-portal").hover(function() {
+
+                $(this).attr("data-aos", "flip-left");
+
+
+            }, function() {
+
+                $(this).attr("data-aos", " ");
+
+            });
+        });
+    </script>
 @endpush
+
+
+{{-- @section('footer') --}}

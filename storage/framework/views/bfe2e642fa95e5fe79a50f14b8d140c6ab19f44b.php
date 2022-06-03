@@ -29,7 +29,7 @@
 
                                 <div class="d-detail-collapse-doctor">
                                     <div class="doctorl-part-box">
-                                        <a href="<?php echo e(url('doctordetails/') . '/' . $d->slug); ?>" class="denone">
+                                        <a href="<?php echo e(url('doctordetails/') . '/' . $d->slug); ?>" class="denone box-container">
                                             <img src="<?php echo e($d->image); ?>" class="img-fluid">
                                         </a>
                                         <div class="doctorl-part-detail text-center">

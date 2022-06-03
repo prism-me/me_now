@@ -640,8 +640,11 @@ height:450px;
 .workshops-wrapper img{
     height: 414px;
     width: 100%;
+    transition: all .3s ease-in-out;
 }
-
+.workshops-wrapper img:hover{
+    transform: scale(1.1);
+}
 .banner-img img{
 
     width: 100%;
@@ -766,9 +769,10 @@ height:450px;
     .doctorl-dp-img:hover{
         transform : scale(1.1);
     }
-    .doctorl-part-box .img-fluid {
+    .doctorl-part-box .box-container {
 
         overflow: hidden;
+        display: block;
     }
 
     .packages_women{
@@ -834,4 +838,12 @@ height:450px;
         margin-top: 2rem;
         color: #767676;
         padding-left: 16px;
+    }
+    .doctorl-part-box{
+        transition: 0.3s all ease-in-out;
+        /* transition: 0.3s all ease-in-out; */
+    }
+    .doctorl-part-box img:hover{
+
+        transform : scale(1.1);
     }

@@ -20,6 +20,7 @@
     <meta property="og:keyword" content="{{ __('messages.meta_keyword') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('front/css/bootstrap.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('front/css/custom-style.css') }}">
+    
     {{-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> --}}
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -39,10 +40,17 @@
     <input type="hidden" id="authid" value="{{ Auth::id() }}">
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> --}}
+    {{-- <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+  /> --}}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
+  {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
 </head>
 
-<body onload="gettimezone()">
+<body onload="gettimezone()" class="animated fadeIn">
     {{-- @include('front.firebase_config'); --}}
     {{-- @include('front.cssclass'); --}}
     @yield('loader')
@@ -140,8 +148,9 @@
                                     href="{{ url('pricing') }}">{{ __('messages.Become a Member') }}</a>
                             </li>
                             <li class="nav-item book-now-nav">
-                                <a class="nav-link btn-hover color-9" style="color:white !important; width: 104px" href="#"
-                                    data-toggle="modal" data-target="#appointmentModal">{{ __('Book Now') }}</a>
+                                <a class="nav-link btn-hover color-9" style="color:white !important; width: 104px"
+                                    href="#" data-toggle="modal"
+                                    data-target="#appointmentModal">{{ __('Book Now') }}</a>
                             </li>
                         </ul>
                     </div>
@@ -328,7 +337,7 @@
                                     @if (Auth::id())
                                         <button type="submit">{{ __('messages.Book Appointment') }}</button>
                                     @else
-                                        <button type="button" 
+                                        <button type="button"
                                             onclick="userloginalert()">{{ __('messages.Book Appointment') }}</button>
                                     @endif
 
@@ -534,7 +543,8 @@
                             <div class="footer-r1-detail">
                                 <div class="footer-d1-box">
                                     <h3>{{ __('messages.Address') }}</h3>
-                                    <p><a href="https://goo.gl/maps/drSGLMZA4i9jrNgB8">{{ isset($setting->address) ? $setting->address : Session::get('address') }}</a>
+                                    <p><a
+                                            href="https://goo.gl/maps/drSGLMZA4i9jrNgB8">{{ isset($setting->address) ? $setting->address : Session::get('address') }}</a>
                                     </p>
                                 </div>
                                 <div class="footer-d1-box">

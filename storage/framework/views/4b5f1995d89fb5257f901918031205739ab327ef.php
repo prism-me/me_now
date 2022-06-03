@@ -21,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('front/css/bootstrap.css')); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('front/css/custom-style.css')); ?>">
     
+    
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <?php if(isset($setting->is_rtl) && $setting->is_rtl == '0'): ?>
         <link rel="stylesheet" type="text/css" href="<?php echo e(asset('front/css/rtl-style.css?v=5r12')); ?>">
@@ -38,10 +39,14 @@
     <input type="hidden" id="authid" value="<?php echo e(Auth::id()); ?>">
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
+  
 </head>
 
-<body onload="gettimezone()">
+<body onload="gettimezone()" class="animated fadeIn">
     
     
     <?php echo $__env->yieldContent('loader'); ?>
@@ -137,8 +142,9 @@
                                     href="<?php echo e(url('pricing')); ?>"><?php echo e(__('messages.Become a Member')); ?></a>
                             </li>
                             <li class="nav-item book-now-nav">
-                                <a class="nav-link btn-hover color-9" style="color:white !important; width: 104px" href="#"
-                                    data-toggle="modal" data-target="#appointmentModal"><?php echo e(__('Book Now')); ?></a>
+                                <a class="nav-link btn-hover color-9" style="color:white !important; width: 104px"
+                                    href="#" data-toggle="modal"
+                                    data-target="#appointmentModal"><?php echo e(__('Book Now')); ?></a>
                             </li>
                         </ul>
                     </div>
@@ -326,7 +332,7 @@
                                     <?php if(Auth::id()): ?>
                                         <button type="submit"><?php echo e(__('messages.Book Appointment')); ?></button>
                                     <?php else: ?>
-                                        <button type="button" 
+                                        <button type="button"
                                             onclick="userloginalert()"><?php echo e(__('messages.Book Appointment')); ?></button>
                                     <?php endif; ?>
 
@@ -536,7 +542,8 @@
                             <div class="footer-r1-detail">
                                 <div class="footer-d1-box">
                                     <h3><?php echo e(__('messages.Address')); ?></h3>
-                                    <p><a href="https://goo.gl/maps/drSGLMZA4i9jrNgB8"><?php echo e(isset($setting->address) ? $setting->address : Session::get('address')); ?></a>
+                                    <p><a
+                                            href="https://goo.gl/maps/drSGLMZA4i9jrNgB8"><?php echo e(isset($setting->address) ? $setting->address : Session::get('address')); ?></a>
                                     </p>
                                 </div>
                                 <div class="footer-d1-box">

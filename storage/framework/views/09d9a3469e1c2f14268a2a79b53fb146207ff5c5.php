@@ -24,7 +24,7 @@
                         <div class="col-lg-4 col-md-4 col-sm-6" data-aos="fade-up">
                             <div class="d-detail-collapse-doctor">
                                 <div class="doctorl-part-box workshops-wrapper">
-                                    <a href="<?php echo e(url('workshop') . '/' . $d->slug); ?>" class="denone">
+                                    <a href="<?php echo e(url('workshop') . '/' . $d->slug); ?>" class="denone box-container">
                                     <img src="<?php echo e($d->featured_img); ?>" class="img-fluid">
                                     </a>    
 
