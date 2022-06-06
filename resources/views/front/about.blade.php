@@ -7,22 +7,22 @@
     <span class="loader"><span class="loader-inner"></span></span>
 @stop
 @section('content')
-    <div class="container">
-        <div class="global-heading">
+    <div class="container-fluid">
+        <div class="global-heading" data-aos="fade-up">
             <h2>{{ __('messages.About_Me_Now') }} </h2>
             <p>Our goal is to provide high-quality treatment to everyone who wants help from us so that they can enjoy a
                 life free of addiction and mental illness.
             </p>
             </p>
         </div>
-        <div class="who_we_are">
+        <div class="who_we_are" data-aos="fade-up">
             <div class="row">
                 <div class="col-md-5">
-                    <img src="{{ asset('front/img/about-us.jpg') }}" alt="" class="img-fluid">
+                    <img src="{{ asset('front/img/about-us.jpg') }}" alt="" class="img-fluid side_img_about">
                 </div>
                 <div class="col-md-7">
                     <div class="who_we_are_cotent">
-                        <h2>WHO WE ARE</h2>
+                        <h2 data-aos="fade-up">WHO WE ARE</h2>
                         {{-- <h2>You have the power within YOU, we believe in YOU</h2> --}}
                         <p>
                             We are one of Dubai's premier private rehabilitation centers, providing world-class care for a
@@ -66,14 +66,14 @@
             </div>
         </div>
 
-        <div class="about_tiles mb-5 text-center">
+        <div class="about_tiles text-center">
             <div class="global-heading">
                 <h2> What we stand for</h2>
             </div>
             <div class="row">
                 <div class="col-md-4">
                     <div class="single-tile">
-                        <div class="inner-single-title">
+                        <div class="inner-single-title" data-aos="zoom-in">
                             <img src="{{ asset('front/img/icons/vision.png') }}" alt="">
                             <h4>
                                 Our Vision
@@ -90,7 +90,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="single-tile middle">
+                    <div class="single-tile middle" data-aos="zoom-in">
                         <div class="inner-single-title">
                             <img src="{{ asset('front/img/icons/mission.png') }}" alt="">
                             <h4>
@@ -108,7 +108,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="single-tile">
+                    <div class="single-tile" data-aos="zoom-in">
                         <div class="inner-single-title">
                             <img src="{{ asset('front/img/icons/value.png') }}" alt="">
                             <h4>
@@ -131,10 +131,10 @@
 
         <div class="about-content-widget">
             <div class="row">
-                <div class="col-md-5 col-sm-12">
-                    <img src="{{ asset('front/img/about-us.png') }}" class="img-fluid" alt="">
+                <div class="col-md-5 col-sm-12" data-aos="zoom-in">
+                    <img src="{{ asset('front/img/about-us.png') }}" class="img-fluid collageg_about_img" alt="">
                 </div>
-                <div class="col-md-7 col-sm-12">
+                <div class="col-md-7 col-sm-12 "  >
                     <p class="text-margin">
                         We Treat a wide range of mental health issues, including burnout, depression, anxiety, and PTSD and
                         these are just the tip of the Iceberg. Our practitioners have committed their lives to providing
@@ -145,14 +145,14 @@
 
                     </p>
                     <div class="row text-section-about">
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12" data-aos="zoom-in">
                             <p>Our therapies take place in a setting that fosters wellness, relaxation, and safety. We
                                 encourage our patients to express their frustrations and put their trust in us so that our
                                 practitioners can find the best treatment and assistance for them.
 
                             </p>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6" data-aos="zoom-in">
                             <p>We have wellness options for everyone, whether you're dealing with anxiety or depression, or
                                 simply need a safe place to vent and let off steam, we have therapies that address
                                 challenges related to your body and mind.
@@ -163,70 +163,9 @@
                 </div>
             </div>
         </div>
-        <div class="doctorl-main-box" style="margin-bottom: 40px">
-            <div class="container">
-                <div class="global-heading">
-                    <h2>Me Now Team</h2>
-                    <p>The treatment team is made up of medical and therapeutic practitioners who were chosen for their
-                        recognized expertise as well as empathy and understanding.
-                    </p>
-                    {{-- <p>{{ __('messages.Talent wins games, but teamwork and intelligence win championships') }}</p> --}}
-                </div>
-                <div class="row">
-                    @if (count($doctor) > 0)
-                        @foreach ($doctor as $d)
-                            <div class="col-lg-3 col-md-6 col-sm-6">
-                                <div class="doctorl-part-box">
-                                    <?php
-                                    if ($d->image) {
-                                        $image = $d->image;
-                                    } else {
-                                        $image = asset('upload/profile/profile.png');
-                                    }
-                                    ?>
-                                    <a href="{{ url('doctordetails/') . '/' . $d->slug }}" class="anchor-doctor-image">
-                                        <div class="doctorl-dp-img doctorl-dp-img-1"
-                                            style="background-image: url('<?= $image ?>')"></div>
-                                    </a>
-                                    <div class="doctorl-part-detail">
-                                        <h4><a href="{{ url('doctordetails/') . '/' . $d->slug }}"
-                                                class="anchor-doctor-image">{{ ucwords(strtolower($d->name)) }}</a></h4>
-                                        <p>{{ substr(trim($d->about_us), 0, 135) }} ... <a
-                                                href="{{ url('doctordetails/') . '/' . $d->slug }}">Read More</a></p>
-                                        <div class="book_appointment_doctor">
-                                            {{-- <button data-toggle="modal" data-target="#appointmentModal">Make an
-                                                Appointment</button> --}}
-                                        </div>
-                                    </div>
-                                    <div class="icons-images">
-                                        {{-- <div class="book_appointment_doctor">
-                                                <button>Make an Appointment</button>
-                                            </div> --}}
-                                        {{-- <span class="facebook-doctorl">
-                                                <a href="{{ isset($d->facebook_id) ? $d->facebook_id : '' }}" target="_blank"><i
-                                                        class="fab fa-facebook-f"></i></a>
-                                            </span>
-                                            <span class="twitter-doctorl">
-                                                <a href="{{ isset($d->twitter_id) ? $d->twitter_id : '' }}" target="_blank"><i
-                                                        class="fab fa-twitter"></i></a>
-                                            </span>
-                                            <span class="gp-doctorl">
-                                                <a href="{{ isset($d->google_id) ? $d->google_id : '' }}" target="_blank"><i
-                                                        class="fab fa-google-plus-g"></i></a>
-                                            </span>
-                                            <span class="instagram-doctorl">
-                                                <a href="{{ isset($d->instagram_id) ? $d->instagram_id : '' }}"
-                                                    target="_blank"><img
-                                                        src="{{ asset('front/img/instagram.png') }}"></a>
-                                            </span> --}}
-                                    </div>
-                                </div>
+        <div class="doctor-wrapper" style="margin-bottom: 65px">
+            @include('front.doctor_section')
 
-                            </div>
-                        @endforeach
-                    @endif
-                </div>
-            </div>
         </div>
     </div>
 

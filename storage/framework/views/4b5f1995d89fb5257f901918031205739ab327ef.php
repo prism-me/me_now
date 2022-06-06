@@ -20,7 +20,7 @@
     <meta property="og:keyword" content="<?php echo e(__('messages.meta_keyword')); ?>" />
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('front/css/bootstrap.css')); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('front/css/custom-style.css')); ?>">
-    
+
     
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <?php if(isset($setting->is_rtl) && $setting->is_rtl == '0'): ?>
@@ -37,13 +37,12 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <input type="hidden" id="authid" value="<?php echo e(Auth::id()); ?>">
-
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
-  
+    
 </head>
 
 <body onload="gettimezone()" class="animated fadeIn">
@@ -139,10 +138,10 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="<?php echo e(url('pricing')); ?>"><?php echo e(__('messages.Become a Member')); ?></a>
+                                    href="<?php echo e(url('become-a-member')); ?>"><?php echo e(__('messages.Become a Member')); ?></a>
                             </li>
                             <li class="nav-item book-now-nav">
-                                <a class="nav-link btn-hover color-9" style="color:white !important; width: 104px"
+                                <a class="nav-link btn-hover color-9" style="color:white !important; width: 132px;padding: 0.5rem !important;"
                                     href="#" data-toggle="modal"
                                     data-target="#appointmentModal"><?php echo e(__('Book Now')); ?></a>
                             </li>
@@ -155,7 +154,7 @@
 
 
     <div class="sticky_buttons">
-        <a href="https://api.whatsapp.com/send/?phone=00971565553483" target="_blank"><img
+        <a href="https://wa.me/+971565553483" target="_blank"><img
                 src="<?php echo e(asset('front/img/whatsapp.png')); ?>" alt="Whatsapp Action"></a>
         <a href="tel:+971565553483"><img src="<?php echo e(asset('front/img/call_now.png')); ?>" alt="Call Action"></a>
     </div>
@@ -444,6 +443,7 @@
         </div>
     </div>
 
+    <?php echo $__env->make('front.instagram_feeds', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <div class="footer-main-box">
         <div class="container-fluid">
             <div class="footer-part-main-box">
@@ -461,7 +461,7 @@
                             </div>
                             <div class="footer-r1-detail">
                                 <div class="footer-d1-box">
-                                    <h3><?php echo e(__('messages.About us')); ?></h3>
+                                    
                                     
                                     <p>
                                         Me Now is a "haven" for well-being and mental health. We provide professional
@@ -470,12 +470,12 @@
                                 </div>
                                 <div class="footer-d1-box">
                                     <h3><?php echo e(__('messages.Contact Us')); ?></h3>
-                                    <p><span><img
-                                                src="<?php echo e(asset('front/img/phone.png')); ?>"></span><?php echo e(isset($setting->email) ? $setting->email : Session::get('email')); ?>
+                                    <p><span
+                                            class="fa fa-phone phone-icon"></span><?php echo e(isset($setting->phone_no) ? $setting->phone_no : Session::get('phone_no')); ?>
 
                                     </p>
-                                    <p><span><img
-                                                src="<?php echo e(asset('front/img/mail.png')); ?>"></span><?php echo e(isset($setting->phone_no) ? $setting->phone_no : Session::get('phone')); ?>
+                                    <p><span
+                                            class="fa fa-envelope mail-icon"></span><?php echo e(isset($setting->email) ? $setting->email : Session::get('email')); ?>
 
                                     </p>
                                 </div>
@@ -654,6 +654,7 @@
     </script>
 
 
+<script src=<?php echo e(asset('js/share.js')); ?>></script>
 
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.3/js/bootstrap.js"></script>

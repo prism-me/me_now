@@ -15,7 +15,6 @@
                 <h2><?php echo e(__('messages.Workshop List')); ?> </h2>
                 
             </div>
-
             
             <div class="doctorpg-part-main-box mb-5">
                 <div id="all" class="tabcontent">
@@ -31,9 +30,7 @@
                                             <div class="workshop-part-detail">
                                                 <h4><a href="<?php echo e(url('workshop') . '/' . $d->slug); ?>"><?php echo e(ucwords($d->title)); ?></a></h4>
                                                 <p>Event Date:<?php echo e($d->event_date); ?></p>
-                                                <p style="color:rgb(108, 108, 108)">
-                                                    <?php echo substr($d->short_description, 0,  90); ?>... <a href="<?php echo e(url('workshop') . '/' . $d->slug); ?>"> Read More</a> </p>
-                                            
+                                                
                                                 <div class="book_appointment_doctor">
                                                     
                                                 </div>

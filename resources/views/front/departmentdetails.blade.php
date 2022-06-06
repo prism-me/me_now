@@ -14,7 +14,7 @@
             <button type="submit" class="btn-hover color-9" data-toggle="modal" data-target="#appointmentModal">Consult with
                 Us</button>
         </div>
-        <div class="container">
+        <div class="container-fluid">
             <div class="d-detailpg-part-main-box">
                 <div class="row">
                     <div class="col-lg-9 col-md-12">
