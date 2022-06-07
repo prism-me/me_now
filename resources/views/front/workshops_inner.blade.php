@@ -34,10 +34,10 @@
                 <div class="facilitated">
                     {{-- <h4>Facilitated by</h4> --}}
                     <div class="content">
-                        <img src="https://menow.b-cdn.net/images/d1-1-165390457334.jpg" class="img-circle"
+                        <img src="{{ $workshop->doctor->image }}" class="img-circle"
                             alt="profile">
-                        <h4>Dr. Aleksandra Shumar</h4>
-                        <p><span>Life Coaching Expert</span></p>
+                        <h4>{{ $workshop->doctor->name}}</h4>
+                        <p><span>{{ $workshop->doctor->service }}</span></p>
                     </div>
                 </div>
 

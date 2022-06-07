@@ -61,8 +61,17 @@
                         {{__('messages.Event Type')}}
                         <span class="reqfield">*</span>
                         </label>
-                        <select id="title" placeholder="{{__('messages.Enter').'  '.__('messages.Title')}}" class="form-control" required name="event_type" value="{{ isset($data->event_type)?$data->event_type:''}}">
-                           <option value="counselling">Counselling</option>
+                        <input type="text" id="title" placeholder="{{__('messages.Enter').'  '.__('messages.Event Type')}}" class="form-control" required name="title" value="{{ isset($data->event_type)?$data->event_type:''}}">
+                     </div>
+                     <div class="form-group">
+                        <label for="name" class=" form-control-label">
+                        {{__('messages.Doctor')}}
+                        <span class="reqfield">*</span>
+                        </label>
+                        <select id="title" placeholder="{{__('messages.Enter').'  '.__('messages.Doctor')}}" class="form-control" required name="doctor_id" >
+                           @foreach($doctor as $value)
+                           <option value="{{ $value['id']}}">{{ $value['name'] }}</option>
+                           @endforeach
                         </select>
                      </div>
                      <div class="form-group">

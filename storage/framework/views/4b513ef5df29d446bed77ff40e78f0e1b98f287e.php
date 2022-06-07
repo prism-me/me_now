@@ -34,10 +34,10 @@
                 <div class="facilitated">
                     
                     <div class="content">
-                        <img src="https://menow.b-cdn.net/images/d1-1-165390457334.jpg" class="img-circle"
+                        <img src="<?php echo e($workshop->doctor->image); ?>" class="img-circle"
                             alt="profile">
-                        <h4>Dr. Aleksandra Shumar</h4>
-                        <p><span>Life Coaching Expert</span></p>
+                        <h4><?php echo e($workshop->doctor->name); ?></h4>
+                        <p><span><?php echo e($workshop->doctor->service); ?></span></p>
                     </div>
                 </div>
 
@@ -140,4 +140,4 @@
     </script>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('front.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Projects\Menow\me_now\resources\views/front/workshops_inner.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('front.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\meNow\resources\views/front/workshops_inner.blade.php ENDPATH**/ ?>

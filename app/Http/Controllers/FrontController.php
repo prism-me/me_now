@@ -127,7 +127,7 @@ class FrontController extends Controller
             setcookie('fload','1', time() + (86400 * 30), "/");
          }
          $service=Service::get()->take(8);
-         $workshop=Workshop::get();
+         $workshop=Workshop::all();
          $package=Package::get()->take(3);
          $doctor=Doctor::get()->take(4);
          $rooms = Room::get()->take(3);
@@ -160,7 +160,8 @@ class FrontController extends Controller
          $setting=Setting::find(1);
          $reviews=Review::with('doctors','users')->get()->take(4);
          
-         $workshop=  Workshop::where('slug',$id)->first();
+         $workshop=  Workshop::where('slug',$id)->with('doctor')->first();
+         
         //  dd($workshop->short_description);
         //https://prismdigital.ae/why-do-business-websites-need-a-good-design/ - test url
          $social = \Share::page('http://127.0.0.1:8000/workshop/'. $workshop->slug , $workshop->title)->facebook()->linkedin()->whatsapp()->twitter();
@@ -748,7 +749,7 @@ class FrontController extends Controller
        
         $add = WorkshopBooking::create($data);
         $userEmail = $request['email'];
-        // $mail = Mail::to($userEmail)->send(new BookingMail($emailData));
+        $mail = Mail::to($userEmail)->send(new BookingMail($emailData));
 
         Session::flash('message',__('messages.Booking Done Successfully. Please Check Your Registered E-Mail to confirm the Booking.')); 
         Session::flash('alert-class', 'alert-success');           

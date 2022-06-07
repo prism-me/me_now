@@ -13,4 +13,14 @@ class Workshop extends Model
     protected $casts = [
         'event_date' => 'array',
     ];
+    
+    public function doctor()
+    {      
+        return $this->belongsTo('App\Model\Doctor', 'doctor_id', 'id');
+
+    }
+
+   
+
+
 }
