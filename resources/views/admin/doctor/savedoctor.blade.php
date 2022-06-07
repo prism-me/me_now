@@ -78,6 +78,13 @@
                               </div>
                            </div>
                            <div class="form-group">
+                              <div class="col-md-6"> 
+                                 <label for="name" class=" form-control-label">
+                                 {{__('messages.Doctor Designation')}}
+                                 <span class="reqfield" >*</span>
+                                 </label>
+                                 <input type="text" id="name" placeholder="{{__('messages.Enter').' '.__('messages.Doctor designation')}}" class="form-control"  name="designation" value="{{ isset($data->designation)?$data->designation:''}}">
+                              </div>
                               <div class="col-md-6">
                                  <label for="email" class=" form-control-label">
                                  {{__('messages.Email')}}

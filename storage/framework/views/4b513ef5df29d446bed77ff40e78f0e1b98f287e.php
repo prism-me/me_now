@@ -37,7 +37,7 @@
                         <img src="<?php echo e($workshop->doctor->image); ?>" class="img-circle"
                             alt="profile">
                         <h4><?php echo e($workshop->doctor->name); ?></h4>
-                        <p><span><?php echo e($workshop->doctor->service); ?></span></p>
+                        <p><span><?php echo e($workshop->doctor->designation); ?></span></p>
                     </div>
                 </div>
 

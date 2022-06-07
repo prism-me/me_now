@@ -30,7 +30,7 @@
                             <div class="col-md-7">
                                 <div class="doctor-detail-main-box">
                                     <h4>{{ $doctor->name }}</h4>
-                                    <h6>{{ isset($doctor->department) ? $doctor->department->name : '' }}</h6>
+                                    <h6>{{ $doctor->designation }}</h6>
                                     <span>
                                         <?php
                            $arr = explode(".", $doctor->ratting);
@@ -343,7 +343,7 @@
                                                         $image = asset('upload/profile/profile.png');
                                                     }
                                                     ?>
-                                                    <img src="{{ $image }}" class="testimonial-profile-img">
+                                                    <img src="{{ $r->img}}" class="testimonial-profile-img">
                                                 </div>
                                                 <div class="col-md-9 testtext">
                                                     <p class="testip">{{ $r->review }}</p>

@@ -37,7 +37,7 @@
                         <img src="{{ $workshop->doctor->image }}" class="img-circle"
                             alt="profile">
                         <h4>{{ $workshop->doctor->name}}</h4>
-                        <p><span>{{ $workshop->doctor->service }}</span></p>
+                        <p><span>{{ $workshop->doctor->designation }}</span></p>
                     </div>
                 </div>
 
