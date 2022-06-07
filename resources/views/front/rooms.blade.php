@@ -15,11 +15,11 @@
             </p>
         </div>
 
-        <div class="rooms_first_section">
+        <div class="rooms_first_section" data-aos="fade-up">
             <div class="row">
                 <div class="col-md-6">
                     <div class="who_we_are_cotent">
-                        <div class="room_description">
+                        <div class="room_description" data-aos="zoom-in">
                             {!! $room->description !!}
                             <a href="https://wa.me/+971565553483" class="btn-hover color-9 ">Contact Us</a>
                         </div>
@@ -28,14 +28,14 @@
 
                 </div>
                 <div class="col-md-6">
-                    <div class="room_main_img">
+                    <div class="room_main_img" data-aos="zoom-in">
                         <img src="{{ $room->featured_img }}" alt="" class="img-fluid">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="rooms_second_section">
+    <div class="rooms_second_section" data-aos="fade-up">
         <div class="row" style="margin-left: 0px;margin-right: 0px;">
             <div class="col-md-6">
                 <img src="{{ $room->featured_img2 }}" class="img-fluid" alt="">

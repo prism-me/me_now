@@ -534,10 +534,10 @@
 }
 
 select.form-control:not([size]):not([multiple]) {
-    height: calc(1.9rem + 2px);
+    /* height: calc(1.9rem + 2px); */
     color: white;
     border: 1px solid white;
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
 }
 #header form .form-group {
     margin-top: 0.28rem;
@@ -916,11 +916,11 @@ select.form-control:not([size]):not([multiple]) {
 .workshop_wrapper .workshop_inner_overlay {
     background-color: white;
     position: absolute;
-    top: 19%;
+    top: 14%;
     right: 0px;
     height: 100vh;
-    width: 350px;
-    padding: 1rem 2rem 0px 3rem;
+    width: 375px;
+    padding: 1rem 2rem 0px 2rem;
     transition: all 0.3s ease-in;
 }
 
@@ -1176,10 +1176,19 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .departmentpg-main-box_main {
-    height: 600px;
+    height: 500px;
+    background-repeat: no-repeat;
 }
 
-.services-content h1{
+.services-content h1 {
     text-align: center;
     font-size: 14px;
+}
+
+.dcotors-heading-effect h2 {
+    font-size: 25px;
+    margin: 1rem 0px;
+}
+.global-part-heading ul li {
+    color: #767676;
 }

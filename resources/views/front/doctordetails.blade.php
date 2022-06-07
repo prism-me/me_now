@@ -89,8 +89,8 @@
                      </div> --}}
                                     <div class="appo-btn-main-box">
 
-                                        <a href="https://api.whatsapp.com/send/?phone=00971565553483"
-                                            data-toggle="modal">{{ __('messages.Make an appointment') }}</a>
+                                        <button data-toggle="modal"
+                                            data-target="#appointmentModal">{{ __('messages.Make an appointment') }}</button>
 
                                         {{-- <a href="#" type="button" onclick="changehiddenstatus()" data-toggle="modal" data-target="#myModal">{{__('messages.Make an appointment')}}</a>
                       
@@ -178,7 +178,7 @@
                         <div class="doctorpg-tab-mainbox doctorpg-tab-mainbox">
                             <section class="customer-logos slider tab">
                                 <div class="slide tablinks" id="defaultOpen" onclick="openCity(event, 'aboutdoctor')">
-                                    {{ __('messages.About Doctor') }}
+                                    Experience
                                 </div>
                                 <div class="slide tablinks" onclick="openCity(event, 'services')">
                                     {{ __('messages.Service') }}
@@ -191,15 +191,15 @@
                         <div id="aboutdoctor" class="tabcontent">
                             <div class="dd-tab-part-mbox">
                                 <div class="global-part-heading global-heading">
-                                    <h3>{{ __('messages.About us') }}</h3>
-                                    <p>{!! $doctor->description !!}</p>
+                                    {{-- <h2>Experience</h2> --}}
+                                    <div>{!! $doctor->description !!}</div>
                                 </div>
                             </div>
                         </div>
                         <div id="services" class="tabcontent">
                             <div class="dd-tab-part-mbox">
                                 <div class="global-part-heading global-heading">
-                                    <h3>{{ __('messages.Service') }}</h3>
+                                    {{-- <h2>{{ __('messages.Service') }}</h2> --}}
                                     <?php $data = explode(',', $doctor->service); ?>
                                     <ul class="service-doctor">
                                         @foreach ($data as $value)
@@ -212,8 +212,8 @@
                         <div id="addreview" class="tabcontent">
                             @if (Auth::id())
                                 <div class="dd-tab-part-mbox">
-                                    <div class="global-part-heading global-heading">
-                                        <h3>{{ __('messages.Add review') }}</h3>
+                                    <div class="global-part-heading global-heading dcotors-heading-effect">
+                                        {{-- <h2>{{ __('messages.Add review') }}</h2> --}}
                                         <span id="loginerrorreview"></span>
                                         <form action="{{ url('addreview') }}" method="post">
                                             {{ csrf_field() }}
@@ -323,8 +323,9 @@
             <div class="testimonial-main-box">
                 <div class="container">
                     <div class="global-heading">
-                        <h2>{{ __('messages.Patient Reviews') }}</h2>
-                        <p>{{ __('messages.reviewline') }}</p>
+                        <h2>Client’s Reviews</h2>
+                        <p>See what our clients have to say about the Me Now Center and our
+                            mental health services</p>
                     </div>
                     <div class="testimonial-part-main-box">
                         <div class="owl-carousel testimonial-carousel">

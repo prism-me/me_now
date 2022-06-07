@@ -10,9 +10,9 @@
     <div class="container-fluid">
         <div class="global-heading" data-aos="fade-up">
             <h2>{{ __('messages.About_Me_Now') }} </h2>
-            <p>Our goal is to provide high-quality treatment to everyone who wants help from us so that they can enjoy a
+            {{-- <p>Our goal is to provide high-quality treatment to everyone who wants help from us so that they can enjoy a
                 life free of addiction and mental illness.
-            </p>
+            </p> --}}
             </p>
         </div>
         <div class="who_we_are" data-aos="fade-up">
@@ -25,10 +25,12 @@
                         <h2 data-aos="fade-up">WHO WE ARE</h2>
                         {{-- <h2>You have the power within YOU, we believe in YOU</h2> --}}
                         <p>
-                            We are one of Dubai's premier private rehabilitation centers, providing world-class care for a
-                            variety of addictions, mental health issues, physical ailments, and eating disorders. Our highly
-                            qualified Practitioners are committed to helping our clients improve their mental health by
-                            employing effective and clinically proven strategies.
+                            Me Now is a premier mental health center in Dubai working with a mission to de-stigmatize mental
+                            healthcare. The center boasts internationally certified practitioners having expertise in
+                            different therapeutic interventions, ready to help you improve your mental health. At Me Now,
+                            our experts guide you to discover yourself and your psychological conditttion. We work
+                            relentlessly to ensure that ‘a different you’ walk out the door after working with us.
+
 
 
                         </p>
@@ -45,6 +47,8 @@
                                 possible care and are empowered to take steps toward a complete and long-term recovery.
 
 
+
+
                             </p>
                         </div>
                     </div>
@@ -58,6 +62,7 @@
                                 At Me Now, we provide a safe environment where you can express yourself and let go of past
                                 and present traumas so that we can work together to get you back to the lively person you
                                 were, if not better.
+
 
                             </p>
                         </div>
@@ -80,9 +85,10 @@
                             </h4>
                             <p>
                                 Our Vision is to assist people who have been in and out of treatment to find a way back to
-                                health and recovery. We want to be the change by providing effective out-patient therapies
-                                for underlying psychological trauma, and mental illnesses. Me Now would like to help you
-                                love your best life.
+                                health and recovery. We want to be the source of the change that people need in their lives
+                                to be healthy, both mentally and physically. Me Now aims to provide you with a place where
+                                everyone can discover their inner self and reach their full potential
+
 
 
                             </p>
@@ -97,9 +103,10 @@
                                 Our mission
                             </h4>
                             <p>
-                                To inspire, create and provide you with the opportunity to uncover what lies within you-your
-                                strengths. To make mental health less stigmatizing and equip you with the resources you need
-                                to improve your personal and professional life.
+                                To inspire, create and provide you with the opportunity to uncover what lies within you and
+                                explore your inner strengths. To make mental health less stigmatizing and equip you with the
+                                resources you need to improve your personal and professional life.
+
 
 
 
@@ -122,6 +129,7 @@
 
 
 
+
                             </p>
                         </div>
                     </div>
@@ -134,12 +142,13 @@
                 <div class="col-md-5 col-sm-12" data-aos="zoom-in">
                     <img src="{{ asset('front/img/about-us.png') }}" class="img-fluid collageg_about_img" alt="">
                 </div>
-                <div class="col-md-7 col-sm-12 "  >
+                <div class="col-md-7 col-sm-12 ">
                     <p class="text-margin">
                         We Treat a wide range of mental health issues, including burnout, depression, anxiety, and PTSD and
-                        these are just the tip of the Iceberg. Our practitioners have committed their lives to providing
-                        outstanding therapeutical services and Professional Coaching Sessions in Dubai. Me Now is rooted in
-                        delivering quality treatment in every element of service.
+                        these are just the tip of the Iceberg. Our practitioners are committed to providing outstanding
+                        therapeutic services and professional coaching Sessions in Dubai. Me Now is rooted in delivering
+                        quality treatment plans and be with our clients every step of the way.
+
 
 
 
@@ -150,12 +159,15 @@
                                 encourage our patients to express their frustrations and put their trust in us so that our
                                 practitioners can find the best treatment and assistance for them.
 
+
+
                             </p>
                         </div>
                         <div class="col-md-6" data-aos="zoom-in">
                             <p>We have wellness options for everyone, whether you're dealing with anxiety or depression, or
                                 simply need a safe place to vent and let off steam, we have therapies that address
-                                challenges related to your body and mind.
+                                challenges related to both your body and mind.
+
 
                             </p>
                         </div>

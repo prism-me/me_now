@@ -6,7 +6,7 @@
 <?php $__env->startSection('content'); ?>
     <?php $res_curr = explode('-', $setting->currency); ?>
     <div class="d-detailpg-main-box">
-        <div class="department_background" style="background-image : url(<?php echo e($current->banner_image); ?>) ">
+        <div class="department_background" style="background-image : linear-gradient(#1f1f1fa8 , #4f4f4fab), url(<?php echo e($current->banner_image); ?>) ">
 
         </div>
         <div class="service_caption">

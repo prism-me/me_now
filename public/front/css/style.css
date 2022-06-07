@@ -43,7 +43,9 @@ a:hover {
 
 .global-heading h2::after,
 .services-content h2::after,
-.services-inner-content h2::after {
+.services-inner-content h2::after,
+.room_description h3::after,
+.room_long_description h3:after ,.dcotors-heading-effect h3::after{
     content: url("../img/icons/after.png");
     height: 8px;
     position: absolute;
@@ -55,7 +57,9 @@ a:hover {
 
 .global-heading h2,
 .services-content h2,
-.services-inner-content h2 {
+.services-inner-content h2,
+.room_description h3,
+.room_long_description h3 ,.dcotors-heading-effect h2 {
     margin: 3rem auto 4rem;
     display: inline-block;
     position: relative;
@@ -341,7 +345,7 @@ a:hover {
     border-radius: 10px;
     padding: 10px;
     font-size: 15px;
-    width: 48%;
+    /* width: 48%; */
     outline: none;
     margin-bottom: 15px;
 }
@@ -618,7 +622,7 @@ a:hover {
     margin-bottom: 17px;
     /* text-align: justify; */
     font-family: "Roboto", sans-serif;
-    text-align: justify;
+    text-align: left;
 }
 .doctorl-part-detail h4 {
     color: #1b7081;

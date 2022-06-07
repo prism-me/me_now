@@ -15,7 +15,8 @@
                     <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Date & Time:
                         </b>&nbsp;
                         @php $event_date = $workshop->event_date; @endphp
-                        <select name="date_time" id="" class="form-control" style="color:#000">
+                        <select name="date_time" id="" class="form-control" style="color:#000;width:80%;font-size: 13px;
+                            padding-left: 7px;">
 
                             @foreach ($event_date as $date)
                                 <option value="{{ $date }}">{{ date('m/d/Y H:i:s', strtotime($date)) }}</option>
@@ -25,7 +26,7 @@
                     {{-- <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Time: </b>&nbsp;10:00 AM to
                         11:00 AM </div> --}}
                     <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Event Type:
-                        </b>&nbsp;{{ ucfirst($workshop->title) }}</div>
+                        </b>&nbsp;{{ ucfirst($workshop->event_type) }}</div>
                     <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Age: </b>&nbsp; Adults (18
                         Yrs+) </div>
                     <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Facilitated by: </b></div>
@@ -34,9 +35,8 @@
                 <div class="facilitated">
                     {{-- <h4>Facilitated by</h4> --}}
                     <div class="content">
-                        <img src="{{ $workshop->doctor->image }}" class="img-circle"
-                            alt="profile">
-                        <h4>{{ $workshop->doctor->name}}</h4>
+                        <img src="{{ $workshop->doctor->image }}" class="img-circle" alt="profile">
+                        <h4>{{ $workshop->doctor->name }}</h4>
                         <p><span>{{ $workshop->doctor->service }}</span></p>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                 <div class="meta1"> <b>Date: </b>&nbsp;{{ $workshop->event_date }}</div>
                 <div class="meta1"> <b>Event Type: </b>&nbsp;{{ ucfirst($workshop->event_type) }}</div>
             </div> --}}
-            <div class="row workshop-inner-wrapper global-heading">
+            <div class="row workshop-inner-wrapper global-heading" data-aos="zoom-in">
                 <div class="col-md-7">
 
                     <h2 class="text-left">{{ $workshop->title }}</h2>
@@ -95,10 +95,11 @@
                                     class="appo-right-input">
                                 <input type="text" required name="phone_number" id="phone_no" placeholder="Phone Number">
                                 @php $event_date = $workshop->event_date; @endphp
-                                <select name="dob" id="" class="form-control" style="color:#000;width:90%;">
-        
+                                <select name="dob" id="" class="form-control" style="color:#000;width:100%;">
+
                                     @foreach ($event_date as $date)
-                                        <option value="{{ $date }}">{{ date('m/d/Y H:i:s', strtotime($date)) }}</option>
+                                        <option value="{{ $date }}">{{ date('m/d/Y H:i:s', strtotime($date)) }}
+                                        </option>
                                     @endforeach
                                 </select>
                                 <textarea type="text" required name="message" id="message_workshop" placeholder="Your Message"></textarea>

@@ -1,7 +1,7 @@
 <?php return array (
   'app' => 
   array (
-    'name' => 'MeNow',
+    'name' => 'Laravel',
     'env' => 'local',
     'debug' => true,
     'url' => 'http://localhost/project/company/blank_script/blank_singleclinic_web/singleclinic/',
@@ -184,7 +184,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\xampp\\htdocs\\meNow\\storage\\framework/cache/data',
+        'path' => 'D:\\Projects\\Menow\\me_now\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -223,7 +223,7 @@
         'endpoint' => NULL,
       ),
     ),
-    'prefix' => 'menow_cache',
+    'prefix' => 'laravel_cache',
   ),
   'cors' => 
   array (
@@ -269,7 +269,7 @@
       array (
         'driver' => 'mysql',
         'url' => NULL,
-        'host' => '156.67.64.5',
+        'host' => 'sql526.main-hosting.eu',
         'port' => '3306',
         'database' => 'u877734042_me_now',
         'username' => 'u877734042_meNow',
@@ -289,7 +289,7 @@
       array (
         'driver' => 'pgsql',
         'url' => NULL,
-        'host' => '156.67.64.5',
+        'host' => 'sql526.main-hosting.eu',
         'port' => '3306',
         'database' => 'u877734042_me_now',
         'username' => 'u877734042_meNow',
@@ -304,7 +304,7 @@
       array (
         'driver' => 'sqlsrv',
         'url' => NULL,
-        'host' => '156.67.64.5',
+        'host' => 'sql526.main-hosting.eu',
         'port' => '3306',
         'database' => 'u877734042_me_now',
         'username' => 'u877734042_meNow',
@@ -321,7 +321,7 @@
       'options' => 
       array (
         'cluster' => 'redis',
-        'prefix' => 'menow_database_',
+        'prefix' => 'laravel_database_',
       ),
       'default' => 
       array (
@@ -350,12 +350,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\xampp\\htdocs\\meNow\\storage\\app',
+        'root' => 'D:\\Projects\\Menow\\me_now\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\xampp\\htdocs\\meNow\\storage\\app/public',
+        'root' => 'D:\\Projects\\Menow\\me_now\\storage\\app/public',
         'url' => 'http://localhost/project/company/blank_script/blank_singleclinic_web/singleclinic//storage',
         'visibility' => 'public',
       ),
@@ -372,7 +372,7 @@
     ),
     'links' => 
     array (
-      'C:\\xampp\\htdocs\\meNow\\public\\storage' => 'C:\\xampp\\htdocs\\meNow\\storage\\app/public',
+      'D:\\Projects\\Menow\\me_now\\public\\storage' => 'D:\\Projects\\Menow\\me_now\\storage\\app/public',
     ),
   ),
   'hashing' => 
@@ -452,13 +452,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'C:\\xampp\\htdocs\\meNow\\storage\\logs/laravel.log',
+        'path' => 'D:\\Projects\\Menow\\me_now\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'C:\\xampp\\htdocs\\meNow\\storage\\logs/laravel.log',
+        'path' => 'D:\\Projects\\Menow\\me_now\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -508,7 +508,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'C:\\xampp\\htdocs\\meNow\\storage\\logs/laravel.log',
+        'path' => 'D:\\Projects\\Menow\\me_now\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -520,11 +520,11 @@
       'smtp' => 
       array (
         'transport' => 'smtp',
-        'host' => 'smtp.gmail.com',
+        'host' => '',
         'port' => '465',
         'encryption' => 'ssl',
-        'username' => 'prism.marketing786@gmail.com',
-        'password' => 'Prism@2020#',
+        'username' => '',
+        'password' => '',
         'timeout' => NULL,
         'auth_mode' => NULL,
       ),
@@ -557,15 +557,15 @@
     ),
     'from' => 
     array (
-      'address' => 'prism.marketing786@gmail.com',
-      'name' => 'Example',
+      'address' => 'hello@example.com',
+      'name' => '',
     ),
     'markdown' => 
     array (
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\xampp\\htdocs\\meNow\\resources\\views/vendor/mail',
+        0 => 'D:\\Projects\\Menow\\me_now\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -670,7 +670,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\xampp\\htdocs\\meNow\\storage\\framework/sessions',
+    'files' => 'D:\\Projects\\Menow\\me_now\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -679,7 +679,7 @@
       0 => 2,
       1 => 100,
     ),
-    'cookie' => 'menow_session',
+    'cookie' => 'laravel_session',
     'path' => '/',
     'domain' => NULL,
     'secure' => NULL,
@@ -699,9 +699,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\meNow\\resources\\views',
+      0 => 'D:\\Projects\\Menow\\me_now\\resources\\views',
     ),
-    'compiled' => 'C:\\xampp\\htdocs\\meNow\\storage\\framework\\views',
+    'compiled' => 'D:\\Projects\\Menow\\me_now\\storage\\framework\\views',
   ),
   'debugbar' => 
   array (
@@ -715,7 +715,7 @@
     array (
       'enabled' => true,
       'driver' => 'file',
-      'path' => 'C:\\xampp\\htdocs\\meNow\\storage\\debugbar',
+      'path' => 'D:\\Projects\\Menow\\me_now\\storage\\debugbar',
       'connection' => NULL,
       'provider' => '',
       'hostname' => '127.0.0.1',
@@ -954,7 +954,7 @@
     ),
     'temporary_files' => 
     array (
-      'local_path' => 'C:\\xampp\\htdocs\\meNow\\storage\\framework/cache/laravel-excel',
+      'local_path' => 'D:\\Projects\\Menow\\me_now\\storage\\framework/cache/laravel-excel',
       'remote_disk' => NULL,
       'remote_prefix' => NULL,
       'force_resync_remote' => NULL,

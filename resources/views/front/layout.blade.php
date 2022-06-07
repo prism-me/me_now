@@ -130,7 +130,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="{{ url('doctorlist') }}">{{ __('messages.Doctors') }}</a>
+                                    href="{{ url('doctorlist') }}">Our Team</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
