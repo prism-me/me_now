@@ -14,18 +14,18 @@
         </div>
     </div>
     <div class="container-fluid">
-        <div class="global-heading">
+        <div class="global-heading" data-aos="fade-right">
             {{-- @dd($department) --}}
             <h2>{{ $current->name }}</h2>
         </div>
-        <div class="services-content">{!! $current->description !!}</div>
+        <div class="services-content" data-aos="fade-up" >{!! $current->description !!}</div>
         <div class="department-part-main-box">
             <div class="row">
                 @if (count($departmentService) > 0)
 
 
                     @foreach ($departmentService as $service)
-                        <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in">
                             <div class="department-part-box">
                                 <div class="department-part-img">
                                     <img src="{{ $service->img }}">

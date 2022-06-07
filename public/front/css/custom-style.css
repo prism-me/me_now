@@ -359,6 +359,7 @@
     /* padding-left: 12px; */
     display: block;
     border-bottom: 1px solid #a0a0a0;
+    font-size: 13px;
 }
 .active-subservice {
     background-color: #48b7c6;
@@ -1176,4 +1177,9 @@ select.form-control:not([size]):not([multiple]) {
 
 .departmentpg-main-box_main {
     height: 600px;
+}
+
+.services-content h1{
+    text-align: center;
+    font-size: 14px;
 }
