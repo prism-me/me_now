@@ -113,9 +113,9 @@ class WorkshopController extends UploadController
            $mediaUpload = $media['url'];
 
         }
-        if ($img = $request->hasFile('featured_img')) {
+        if ($img = $request->hasFile('banner_img')) {
                
-           $media =  UploadController::upload_media($request->featured_img);
+           $media =  UploadController::upload_media($request->banner_img);
            $mediaUpload1 = $media['url'];
 
         }
