@@ -12,12 +12,20 @@
             <img src="{{ @$workshop->banner_img }}" alt="" class="img-fluid banner workshop-banner">
             <div class="workshop_inner_overlay" data-aos="fade-left">
                 <div class="meta_content">
-                    <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Date:
-                        </b>&nbsp;{{ $workshop->event_date }}</div>
-                    <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Time: </b>&nbsp;10:00 AM to
-                        11:00 AM </div>
+                    <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Date & Time:
+                        </b>&nbsp;
+                        @php $event_date = $workshop->event_date; @endphp
+                        <select name="date_time" id="" class="form-control" style="color:#000">
+
+                            @foreach ($event_date as $date)
+                                <option value="{{ $date }}">{{ date('m/d/Y H:i:s', strtotime($date)) }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    {{-- <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Time: </b>&nbsp;10:00 AM to
+                        11:00 AM </div> --}}
                     <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Event Type:
-                        </b>&nbsp;{{ ucfirst($workshop->event_type) }}</div>
+                        </b>&nbsp;{{ ucfirst($workshop->title) }}</div>
                     <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Age: </b>&nbsp; Adults (18
                         Yrs+) </div>
                     <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Facilitated by: </b></div>

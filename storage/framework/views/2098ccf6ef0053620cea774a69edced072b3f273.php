@@ -13,12 +13,19 @@
             <img src="<?php echo e(@$workshop->banner_img); ?>" alt="" class="img-fluid banner workshop-banner">
             <div class="workshop_inner_overlay" data-aos="fade-left">
                 <div class="meta_content">
-                    <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Date:
-                        </b>&nbsp;<?php echo e($workshop->event_date); ?></div>
-                    <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Time: </b>&nbsp;10:00 AM to
-                        11:00 AM </div>
+                    <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Date & Time:
+                        </b>&nbsp;
+                        <?php $event_date = $workshop->event_date; ?>
+                        <select name="date_time" id="" class="form-control" style="color:#000">
+
+                            <?php $__currentLoopData = $event_date; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $date): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <option value="<?php echo e($date); ?>"><?php echo e(date('m/d/Y H:i:s', strtotime($date))); ?></option>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </select>
+                    </div>
+                    
                     <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Event Type:
-                        </b>&nbsp;<?php echo e(ucfirst($workshop->event_type)); ?></div>
+                        </b>&nbsp;<?php echo e(ucfirst($workshop->title)); ?></div>
                     <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Age: </b>&nbsp; Adults (18
                         Yrs+) </div>
                     <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Facilitated by: </b></div>
