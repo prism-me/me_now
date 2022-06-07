@@ -134,7 +134,18 @@
                                     <input type="file" id="file" name="featured_img" class="form-control-file"
                                         accept="image/*">
 
-                                    <div>
+                                <div>
+                                <div class="form-group">
+                                    <label for="file" class=" form-control-label">
+                                        {{ __('messages.Image') }}<span class="reqfield">*</span>
+                                    </label>
+                                    @if ($data->banner_img)
+                                        <img src="{{ $data->banner_img }}" class="imgsize1 departmentimg" />
+                                    @endif
+                                    <input type="file" id="file" name="banner_img" class="form-control-file"
+                                        accept="image/*">
+
+                                <div>
                                         <div class="form-group">
                                             @if (Session::get('is_demo') == '1')
                                                 <button id="payment-button" type="button" onclick="disablebtn()"
