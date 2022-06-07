@@ -311,15 +311,27 @@
                                         </select>
                                     </div>
                                     <div class="appo-select-box">
-                                        <select id="service" required class="dropdown" name="service">
+                                        <select id="service"  class="dropdown" name="service">
                                             <option value="" disabled="disabled" selected="selected">-
                                                 Select Sub Service</option>
+                                               
+                                                @if (isset($department))
+                                                    @foreach ($department as $d)
+                                                        @if(!empty($d))
+
+                                                            <option value="{{ $d->id }}">{{ $d->name }}</option>
+                                                        @endif
+                                                    @endforeach
+                                                @endif
                                         </select>
                                     </div>
                                     <div class="appo-select-box">
-                                        <select id="doctors" required class="dropdown" name="doctors">
-                                            <option value="" disabled="disabled" selected="selected">-
+                                        <select id="doctors"  class="dropdown" name="doctors">
+
                                                 {{ __('messages.Select Doctors') }}</option>
+                                                 @foreach ($doctor as $d)
+                                                        <option value="{{ $d->name }}" disabled="disabled" selected="selected">{{ $d->name }}</option>
+                                                    @endforeach
                                         </select>
                                     </div>
                                 </div>

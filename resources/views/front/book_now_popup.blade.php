@@ -32,12 +32,7 @@
                     @endforeach
                 </select>
             </div>
-            {{-- <div class="appo-select-box">
-                <select id="service" required class="dropdown" name="service">
-                    <option value="" disabled="disabled" selected="selected">-
-                        {{ __('messages.Select Services') }}</option>
-                </select>
-            </div> --}}
+           
 
         </div>
         <div class="appo-input-main-box">

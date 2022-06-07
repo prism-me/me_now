@@ -1,1 +1,0 @@
-<?php /**PATH D:\Projects\Menow\me_now\resources\views\articles\article.blade.php ENDPATH**/ ?>
