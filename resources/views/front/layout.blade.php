@@ -121,6 +121,12 @@
                                             @endif
                                         </li>
                                     @endforeach
+                                    @foreach ($rooms as $room)
+                                        <li><a class="dropdown-item" href="{{ url('rooms') . '/' . $room->slug }}">
+                                                {{ $room->title }} </a>
+                                        </li>
+                                    @endforeach
+
                                 </ul>
                             </li>
                             <li class="nav-item">
@@ -147,9 +153,9 @@
                                     href="{{ url('become-a-member') }}">{{ __('messages.Become a Member') }}</a>
                             </li>
                             <li class="nav-item book-now-nav">
-                                <a class="nav-link btn-hover color-9" style="color:white !important; width: 132px;padding: 0.5rem !important;"
-                                    href="#" data-toggle="modal"
-                                    data-target="#appointmentModal">{{ __('Book Now') }}</a>
+                                <a class="nav-link btn-hover color-9"
+                                    style="color:white !important; width: 132px;padding: 0.5rem !important;" href="#"
+                                    data-toggle="modal" data-target="#appointmentModal">{{ __('Book Now') }}</a>
                             </li>
                         </ul>
                     </div>
@@ -160,8 +166,8 @@
 
 
     <div class="sticky_buttons">
-        <a href="https://wa.me/+971565553483" target="_blank"><img
-                src="{{ asset('front/img/whatsapp.png') }}" alt="Whatsapp Action"></a>
+        <a href="https://wa.me/+971565553483" target="_blank"><img src="{{ asset('front/img/whatsapp.png') }}"
+                alt="Whatsapp Action"></a>
         <a href="tel:+971565553483"><img src="{{ asset('front/img/call_now.png') }}" alt="Call Action"></a>
     </div>
 
@@ -449,6 +455,7 @@
     </div>
 
     @include('front.instagram_feeds')
+    
     <div class="footer-main-box">
         <div class="container-fluid">
             <div class="footer-part-main-box">
@@ -469,8 +476,10 @@
                                     {{-- <h3>{{ __('messages.About us') }}</h3> --}}
                                     {{-- <p>{{ __('messages.front_about') }}</p> --}}
                                     <p>
-                                        Me Now is a "haven" for well-being and mental health. We provide professional
-                                        services to Families, children, teenagers, couples, employers, and entrepreneurs
+                                        With the goal of de-stigmatizing mental illness and providing patients with a
+                                        variety of treatment options, we're a group of compassionate, dedicated, and
+                                        experienced practitioners who want nothing more than to see "a different you"
+                                        walk out the door after working with us.
                                     </p>
                                 </div>
                                 <div class="footer-d1-box">
@@ -689,7 +698,7 @@
     </script>
 
 
-<script src={{ asset('js/share.js') }}></script>
+    <script src={{ asset('js/share.js') }}></script>
 
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.3/js/bootstrap.js"></script>

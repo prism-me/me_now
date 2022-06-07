@@ -82,6 +82,8 @@
     background: #daf0ff;
     padding: 1rem;
     height: 57px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 /* banner slider */
@@ -681,6 +683,7 @@ select.form-control:not([size]):not([multiple]) {
     width: 100%;
     cursor: pointer;
     transition: all 0.3s ease-out;
+    border-radius: 10px;
 }
 .about_img_section img:hover {
     /* transform: scale(1.1); */
@@ -706,6 +709,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 .about_img_wrapper {
     overflow: hidden;
+    border-radius: 10px;
 }
 .about-section-logo {
     height: 90px;
@@ -863,6 +867,7 @@ select.form-control:not([size]):not([multiple]) {
     background-size: 100px;
     background-repeat: no-repeat;
     background-position: center 17px;
+    border-radius: 10px;
 }
 
 .hover-doctor-portal:hover .overlay_doctors {
@@ -1045,3 +1050,124 @@ select.form-control:not([size]):not([multiple]) {
 
     transform: scale(1.1);
 }
+.rooms_first_section{
+    margin: 3rem 0px;
+}
+.rooms_first_section .row{
+    align-items: center;
+}
+.room_description h3{
+    font-size: 25px;
+    margin-bottom: 1rem;
+}
+.room_description p {
+    padding-bottom: 1rem;
+}
+.room_main_img img{
+    height:480px;
+    padding-right: 20px;
+}
+.rooms_second_section{
+    background: #d5ffff;
+    padding: 4rem;
+    margin: 2rem auto 3rem;
+
+}
+.rooms_second_section h3{
+    font-size: 25px;
+    margin-bottom:1rem;
+    color: #000;
+}
+.rooms_second_section p{
+    margin-bottom: 1rem;
+}
+.rooms_second_section ul{
+    padding-left: 10px;
+}
+.rooms_second_section ul li{
+    color: #767676;
+}
+.rooms_second_section img{
+    height:480px;
+}
+.rooms_second_section .row{ align-items: center;}
+.rooms_second_section .room_long_description{ 
+    padding:3rem;
+}
+
+.hover-services {
+    position: relative;
+  }
+.services_content h4 {
+    color: #1a7081;
+    font-weight: bold;
+}
+.services_content p{
+    /* color: white !important; */
+}
+  .services_overlay {
+    background-repeat: no-repeat;
+    background-size: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background:url(../img/icons/d-back.png), #daf0ff;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+    background-size: 100px;
+    background-repeat: no-repeat;
+  }
+  
+  .hover-services:hover .services_overlay {
+    height: 100%;
+    border-radius: 10px;
+    padding: 1rem;
+
+  }
+  
+  .services_content {
+    padding: 2rem;
+    width: 100%;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .women_wrapper{
+    margin: 5rem 0px 0rem;
+    padding: 4rem 0px;
+  }
+  .women_wrapper  .row{
+      align-items: center;
+  }
+  .women_img_wrapper img{
+    height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .referral{
+      display: none !important;
+  }
+
+  .instagram_heading{
+      font-weight: bold;
+      font-family: 'Roboto', sans-serif ;
+      margin:1.5rem auto !important;
+  }
+  .outer_container_women_wrapper{
+      background:#eaf7ff;
+      /* padding:3rem 0px; */
+  }
+  .juicer-feed .j-paginate{
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif ;
+  }

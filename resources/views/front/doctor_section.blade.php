@@ -3,11 +3,12 @@
         <div class="global-heading">
             <h2>Me Now Team</h2>
 
-            <p>Me Now Center is rooted in the belief that all people deserve high-quality mental health care. We take
-                pride in offering the most comprehensive and holistic approach to mental health care and our team
-                includes licensed therapists, psychologists, and psychiatrists with expertise in ADHD, PTSD, and other
-                mental health-related problems. Our mental health practitioners are eager to help you in your battles
-                against mental health and to assist you in achieving mental wellbeing.</p>
+            <p>Me Now Center is rooted in the belief that all people deserve high-quality mental
+                health care. We take pride in offering the most comprehensive and holistic
+                approach to mental health and our team includes licensed therapists,
+                psychologists, and psychiatrists with expertise in their respective domains. Our
+                practitioners are eager to help you in your battles against mental health and
+                to assist you in achieving mental wellbeing. </p>
         </div>
         <div class="row">
             @if (count($doctor) > 0)

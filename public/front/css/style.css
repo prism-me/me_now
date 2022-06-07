@@ -49,7 +49,7 @@ a:hover{
     bottom: 0;
     right: 0;
     left: 0;
-    margin: 0px auto;
+    margin: -8px auto;
 }
 
 .global-heading h2 {
@@ -397,6 +397,7 @@ a:hover{
     z-index: 0;
     float: left;
     margin-right: 15px;
+    border-radius: 10px;
 }
 
 .services-main-box .services-left-part::after {
@@ -406,10 +407,11 @@ a:hover{
     right: 0;
     opacity: 0.8;
     position: absolute;
-    background-color: black;
+    background-color: #242222db;
     left: 0;
     top: 0;
     z-index: -1;
+    border-radius: 10px;
 }
 .left-part-detail h2 {
     font-size: 19px;
@@ -433,6 +435,7 @@ a:hover{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
 }
 
 .left-triangle {
@@ -589,8 +592,8 @@ a:hover{
 
 .services-part-box img {
     width: auto;
-    height: 60px;
-    margin: 0px auto;
+    height: 70px;
+    margin: 34px auto;
     display: block;
 
 }
@@ -648,6 +651,8 @@ a:hover{
 .doctorl-dp-img {
     height: 250px;
     transition: 0.3s all ease-in-out;
+     border-top-left-radius: 10px;
+     border-top-right-radius: 10px;
 }
 
 .doctorl-dp-img-1 {
@@ -673,9 +678,8 @@ a:hover{
 }
 
 .testimonial-main-box {
-    margin-top: 80px;
-    padding: 30px 0px;
-    background-color: #eaf7ff;
+    /* padding: 30px 0px; */
+    /* background-color: #eaf7ff; */
 }
 
 .testimonial-part-main-box {

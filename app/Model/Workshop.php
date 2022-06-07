@@ -9,4 +9,8 @@ class Workshop extends Model
 {
     use HasFactory;
     protected $guarded = '';
+
+    protected $casts = [
+        'event_date' => 'array',
+    ];
 }

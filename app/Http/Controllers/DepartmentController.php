@@ -39,10 +39,17 @@ class DepartmentController extends UploadController
                 ]);
              }
             $mediaUpload = "" ;
-            if ($img = $request->hasFile('image')) {
+            $mediaUpload_banner = "";
+            if ($img = $request->hasFile('image') ) {
                
                 $media =  UploadController::upload_media($request->image);
                 $mediaUpload = $media['url'];
+
+            }
+            if ($banner_image = $request->hasFile('banner_image') ) {
+               
+                $media =  UploadController::upload_media($request->banner_image);
+                $mediaUpload_banner = $media['url'];
 
             }
        
@@ -64,6 +71,9 @@ class DepartmentController extends UploadController
 
                 $store->image = $mediaUpload;
 
+            }
+            if($mediaUpload_banner){
+                $store->banner_image = $mediaUpload_banner;
             }
             $store->save(); 
             Session::flash('message',$msg); 
@@ -162,10 +172,17 @@ class DepartmentController extends UploadController
                 $msg=__('messages.Department Service Add Successfully');
             }
             $mediaUpload = "" ;
+            $mediaUpload_banner ="";
             if ($img = $request->hasFile('img')) {
                
                 $media =  UploadController::upload_media($request->img);
                 $mediaUpload = $media['url'];
+
+            }
+            if ($banner_image = $request->hasFile('banner_image') ) {
+               
+                $media =  UploadController::upload_media($request->banner_image);
+                $mediaUpload_banner = $media['url'];
 
             }
 
@@ -182,6 +199,11 @@ class DepartmentController extends UploadController
             if($mediaUpload){
 
                 $store->img = $mediaUpload;
+
+            }
+            if($mediaUpload_banner){
+
+                $store->banner_image = $mediaUpload_banner;
 
             }
             $store->save(); 

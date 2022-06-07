@@ -25,8 +25,37 @@
     </div> --}}
 
     @include('front.doctor_section')
+<div class="outer_container_women_wrapper">
+    <div class="container-fluid">
+        <div class="women_wrapper " data-aos="fade-up">
+            <div class="row">
+                <div class="col-md-5 text-center women_img_section">
+                    <div class="women_img_wrapper"><img src="{{ asset('front/img/women_background.jpeg') }}" class="img-fluid" alt="about us section">
+                    </div>
+                </div>
+                
+                <div class="col-md-7">
+                    <div class="about_content text-center">
+                        {{-- <img src="{{ asset('front/img/logo-background.png') }}" alt="logo" class="about-section-logo"> --}}
+                        <div class="services_home_container global-heading ">
+                            <h2 class="animated fadeInDown delay-2s ">Women, We See You, You’re at The Heart of Me Now</h2>
+                        </div>
+                        <p class="animated fadeInDown mb-5"> Me Now is no less than a family dedicated to supporting each other and building a community of
+                            like-minded, empowered women. The center has special memberships for women that come with unlimited
+                            benefits including discounts on facilities, free workshops, and much more.
+    
+                        </p>
+                        <a href="{{ url('women-empowerment') }}" class="btn-hover color-9">Read More</a>
+                    </div>
+                </div>
 
-    <div class="home_promo_banner" data-aos="fade-up">
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    {{-- <div class="home_promo_banner" data-aos="fade-up">
         <div class="container-fluid">
             <div class="home_promo_banner_inner">
                 <h2>Women, We See You, You’re at The Heart of Me Now</h2>
@@ -37,18 +66,18 @@
                 <div class="services-btn-main-box">
                     <a href="{{ url('women-empowerment') }}" class="btn-hover color-9">Read More</a>
                 </div>
-                {{-- <div class="left-triangle">
-					</div> --}}
+    
             </div>
 
         </div>
-    </div>
+    </div> --}}
 
     <div class="testimonial-main-box">
         <div class="container-fluid" style="padding-left: 0px ; padding-right: 0px;">
             <div class="global-heading">
-                <h2>{{ __('messages.Patient Reviews') }}</h2>
-                <p>{{ __('messages.reviewline') }}</p>
+                <h2>Client’s Reviews</h2>
+                <p>See what our clients have to say about the Me Now Center and our
+                    mental health services</p>
             </div>
             <div class="testimonial-part-main-box">
                 <div class="owl-carousel testimonial-carousel patient-reviews-slider">

@@ -4,10 +4,10 @@
             <div class="col-md-7">
                 <div class="about_content">
                     {{-- <img src="{{ asset('front/img/logo-background.png') }}" alt="logo" class="about-section-logo"> --}}
-                    <div class="services_home_container global-heading text-left">
+                    <div class="services_home_container global-heading text-center">
                         <h2 class="animated fadeInDown delay-2s ">About Me Now</h2>
                     </div>
-                    <p class="animated fadeInDown"> With the goal of de-stigmatizing mental illness and providing
+                    <p class="animated fadeInDown text-center"> With the goal of de-stigmatizing mental illness and providing
                         patients with a variety of
                         treatment options, we're a group of compassionate, dedicated, and experienced practitioners who
                         want nothing more than to see "a different you" walk out the door after working with us. We

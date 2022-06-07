@@ -25,29 +25,44 @@
     
 
     <?php echo $__env->make('front.doctor_section', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-
-    <div class="home_promo_banner" data-aos="fade-up">
-        <div class="container-fluid">
-            <div class="home_promo_banner_inner">
-                <h2>Women, We See You, You’re at The Heart of Me Now</h2>
-                <p>Me Now is no less than a family dedicated to supporting each other and building a community of
-                    like-minded, empowered women. The center has special memberships for women that come with unlimited
-                    benefits including discounts on facilities, free workshops, and much more.
-                </p>
-                <div class="services-btn-main-box">
-                    <a href="<?php echo e(url('women-empowerment')); ?>" class="btn-hover color-9">Read More</a>
+<div class="outer_container_women_wrapper">
+    <div class="container-fluid">
+        <div class="women_wrapper " data-aos="fade-up">
+            <div class="row">
+                <div class="col-md-5 text-center women_img_section">
+                    <div class="women_img_wrapper"><img src="<?php echo e(asset('front/img/women_background.jpeg')); ?>" class="img-fluid" alt="about us section">
+                    </div>
                 </div>
                 
-            </div>
+                <div class="col-md-7">
+                    <div class="about_content text-center">
+                        
+                        <div class="services_home_container global-heading ">
+                            <h2 class="animated fadeInDown delay-2s ">Women, We See You, You’re at The Heart of Me Now</h2>
+                        </div>
+                        <p class="animated fadeInDown mb-5"> Me Now is no less than a family dedicated to supporting each other and building a community of
+                            like-minded, empowered women. The center has special memberships for women that come with unlimited
+                            benefits including discounts on facilities, free workshops, and much more.
+    
+                        </p>
+                        <a href="<?php echo e(url('women-empowerment')); ?>" class="btn-hover color-9">Read More</a>
+                    </div>
+                </div>
 
+            </div>
         </div>
     </div>
+</div>
+
+    
+    
 
     <div class="testimonial-main-box">
         <div class="container-fluid" style="padding-left: 0px ; padding-right: 0px;">
             <div class="global-heading">
-                <h2><?php echo e(__('messages.Patient Reviews')); ?></h2>
-                <p><?php echo e(__('messages.reviewline')); ?></p>
+                <h2>Client’s Reviews</h2>
+                <p>See what our clients have to say about the Me Now Center and our
+                    mental health services</p>
             </div>
             <div class="testimonial-part-main-box">
                 <div class="owl-carousel testimonial-carousel patient-reviews-slider">

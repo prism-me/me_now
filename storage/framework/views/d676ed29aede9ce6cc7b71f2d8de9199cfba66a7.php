@@ -27,6 +27,8 @@
 
     <?php echo $__env->yieldContent('meta_title'); ?>
     <link rel="shortcut icon" href="<?php echo e(asset('App_icon.png')); ?>">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css"
+        rel="stylesheet" />
     <link rel="stylesheet" href="<?php echo e(asset('adesign/vendors/bootstrap/dist/css/bootstrap.min.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('adesign/vendors/font-awesome/css/font-awesome.min.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('adesign/vendors/themify-icons/css/themify-icons.css')); ?>">
@@ -76,7 +78,7 @@
                         <a href="<?php echo e(url('admin/patient')); ?>"> <i
                                 class="menu-icon fa fa-user"></i><?php echo e(__('messages.Patient')); ?></a>
                     </li>
-                    
+
                     <li class="active">
                         <a href="<?php echo e(url('admin/blogs')); ?>"> <i
                                 class="menu-icon fa  fa-newspaper-o"></i><?php echo e(__('messages.Blog')); ?></a>
@@ -115,7 +117,7 @@
                     
                     
 
-                    
+
                     
                     
                     <li class="active">
@@ -243,6 +245,8 @@
 
     <script type="text/javascript" src="<?php echo e(asset('js/script.js')); ?>"></script>
     <script src="<?php echo e(asset('adesign/vendors/jquery/dist/jquery.min.js')); ?>"></script>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
     <script src="<?php echo e(asset('adesign/vendors/popper.js/dist/umd/popper.min.js')); ?>"></script>
     <script src="<?php echo e(asset('adesign/vendors/bootstrap/dist/js/bootstrap.min.js')); ?>"></script>
     <script src="<?php echo e(asset('adesign/assets/js/main.js')); ?>"></script>
@@ -274,47 +278,11 @@
     
     <script src="<?php echo e(asset('js/admin.js?v=1333324')); ?>"></script>
     <?php echo $__env->yieldContent('footer'); ?>
-
+    <?php echo $__env->yieldPushContent('scripts'); ?>
     <script>
-        
-         CKEDITOR.replace( 'description' );
-         CKEDITOR.replace( 'additional_description' );
+        CKEDITOR.replace('description');
+        CKEDITOR.replace('additional_description');
 
-
-        // ClassicEditor
-        //     .create(document.querySelector('#description'), {
-        //         // plugins: [HtmlEmbed],
-        //         toolbar: {
-        //             items: ['heading', '|', 'imageUpload', 'bold', 'italic', 'underline', 'fontFamily', 'undo', 'redo',
-        //                 'fontSize', , 'htmlEmbed', 'link',
-        //                 'insertTable',
-        //                 'mediaEmbed', 'bulletedList', 'numberedList', '|', 'MathType', 'blockQuote',
-        //                 'specialCharacters'
-        //             ],
-        //             shouldNotGroupWhenFull: true
-        //         }
-
-                // items: [
-                //     'heading', '|',
-                //     'fontfamily', 'fontsize', '|',
-                //     'alignment', '|',
-                //     'fontColor', 'fontBackgroundColor', '|',
-                //     'bold', 'italic', 'strikethrough', 'underline', 'subscript', 'superscript', '|',
-                //     'link', '|',
-                //     'outdent', 'indent', '|',
-                //     'bulletedList', 'numberedList', 'todoList', '|',
-                //     'code', 'codeBlock', '|',
-                //     'insertTable', '|',
-                //     'uploadImage', 'blockQuote', '|',
-                //     'undo', 'redo',
-                //     ''
-                // ],
-                // shouldNotGroupWhenFull: true
-
-            // })
-            // .catch(error => {
-            //     console.error(error);
-            // });
     </script>
 </body>
 
