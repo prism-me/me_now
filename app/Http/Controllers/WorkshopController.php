@@ -14,6 +14,7 @@ class WorkshopController extends UploadController
      */
     public function index()
     {
+
         $workshop = Workshop::all();
         return view("admin.workshop.default")->with("data",$workshop);
     }
@@ -36,13 +37,9 @@ class WorkshopController extends UploadController
      */
     public function store(Request $request)
     {
-       $request->validate([
-            'title'=>'required',
-            'description'=>'required',
-            'featured_img'=>'required',
-            'event_date'=>'required',
-           
-        ]);
+       
+        $mediaUpload = "";
+        $mediaUpload1 = "";
 
         if ($img = $request->hasFile('featured_img')) {
                
@@ -50,17 +47,24 @@ class WorkshopController extends UploadController
            $mediaUpload = $media['url'];
 
         }
+        if ($img = $request->hasFile('featured_img')) {
+               
+           $media =  UploadController::upload_media($request->featured_img);
+           $mediaUpload1 = $media['url'];
+
+        }
        
 
         $data  =$request->all();
-        $blogCreate = Workshop::create(array(
-                    'title' => $data['title'],
-                    'description' => $data['description'],
-                    'short_description' => isset($data['short_description']) ?  : '',
-                    'event_date' => $data['event_date'],
-                    'slug' => $data['slug'],
-                    'featured_img' => $mediaUpload
-        ));
+        if($mediaUpload){
+
+            $data['featured_img'] = $mediaUpload ;
+        }
+        if($mediaUpload1){
+
+            $data['banner_img'] = $mediaUpload1 ;
+        }
+        $workshopCreate = Workshop::create($data);
         return redirect("admin/workshops");
     }
 
@@ -70,9 +74,10 @@ class WorkshopController extends UploadController
      * @param  \App\Workshop  $workshop
      * @return \Illuminate\Http\Response
      */
-    public function show(Workshop $workshop)
+    public function show($slug)
     {
-        //
+        $data = Workshop::where('slug',$slug)->first();
+        return view('admin.workshop.show')->with('data', $data);
     }
 
     /**
@@ -81,9 +86,10 @@ class WorkshopController extends UploadController
      * @param  \App\Workshop  $workshop
      * @return \Illuminate\Http\Response
      */
-    public function edit(Workshop $workshop)
+    public function edit(Workshop $workshop,$slug)
     {
-        return view('admin.workshop.saveWorkshop')->with('data', $workshop);
+        $data = Workshop::where('slug',$slug)->first();
+        return view('admin.workshop.saveWorkshop')->with('data', $data);
     }
 
     /**
@@ -93,18 +99,34 @@ class WorkshopController extends UploadController
      * @param  \App\Workshop  $workshop
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Workshop $workshop)
-    {
+    public function update(Request $request, Workshop $workshop , $slug)
+    {  
+        // dd($request->all()); 
+        $mediaUpload = "";
+        $mediaUpload1 = "";
         if ($img = $request->hasFile('featured_img')) {
                
            $media =  UploadController::upload_media($request->featured_img);
            $mediaUpload = $media['url'];
 
         }
-        $data  =$request->all();
-       
-        $data['featured_img'] = isset( $mediaUpload->featured_img ) ? $mediaUpload ->featured_img : " " ;
-        $blogCreate = Workshop::update($data);
+        if ($img = $request->hasFile('featured_img')) {
+               
+           $media =  UploadController::upload_media($request->featured_img);
+           $mediaUpload1 = $media['url'];
+
+        }
+
+        $data  =$request->except('_token');
+        if($mediaUpload){
+
+            $data['featured_img'] = $mediaUpload ;
+        }
+        if($mediaUpload1){
+
+            $data['banner_img'] = $mediaUpload1 ;
+        }
+        $workshopCreate = Workshop::where('slug',$slug)->update($data);
         return redirect("admin/workshops");
     }
 
@@ -114,10 +136,12 @@ class WorkshopController extends UploadController
      * @param  \App\Workshop  $workshop
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Workshop $workshop,$id)
-    {
-        $workshop = Workshop::find($id);
-        $workshop->delete();
-        return redirect("admin/workshops");
+    public function delete(Workshop $workshop,$slug)
+    {   
+
+        $blog = Workshop::where('slug',$slug)->delete();
+         return redirect("admin/workshops");
+      
+        
     }
 }

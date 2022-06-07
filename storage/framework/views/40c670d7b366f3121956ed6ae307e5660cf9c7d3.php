@@ -19,10 +19,16 @@
     <meta property="og:description" content="<?php echo e(__('messages.meta_description_admin')); ?>" />
     <meta property="og:keyword" content="<?php echo e(__('messages.meta_keyword')); ?>" />
     
-    <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
+    
+    
+    
+    
+    <script src="//cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
 
     <?php echo $__env->yieldContent('meta_title'); ?>
     <link rel="shortcut icon" href="<?php echo e(asset('App_icon.png')); ?>">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css"
+        rel="stylesheet" />
     <link rel="stylesheet" href="<?php echo e(asset('adesign/vendors/bootstrap/dist/css/bootstrap.min.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('adesign/vendors/font-awesome/css/font-awesome.min.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('adesign/vendors/themify-icons/css/themify-icons.css')); ?>">
@@ -72,7 +78,7 @@
                         <a href="<?php echo e(url('admin/patient')); ?>"> <i
                                 class="menu-icon fa fa-user"></i><?php echo e(__('messages.Patient')); ?></a>
                     </li>
-                    
+
                     <li class="active">
                         <a href="<?php echo e(url('admin/blogs')); ?>"> <i
                                 class="menu-icon fa  fa-newspaper-o"></i><?php echo e(__('messages.Blog')); ?></a>
@@ -81,6 +87,19 @@
                         <a href="<?php echo e(url('admin/workshops')); ?>"> <i
                                 class="menu-icon fa  fa-newspaper-o"></i><?php echo e(__('messages.Workshop')); ?></a>
                     </li>
+                    <li class="active">
+                        <a href="<?php echo e(url('admin/department')); ?>"> <i
+                                class="menu-icon fa fa-eercast"></i><?php echo e(__('messages.Department')); ?></a>
+                    </li>
+                    <li class="active">
+                        <a href="<?php echo e(url('admin/rooms')); ?>"> <i
+                                class="menu-icon fa fa-home"></i><?php echo e(__('messages.Room')); ?></a>
+                    </li>
+                    <li class="active">
+                        <a href="<?php echo e(url('admin/events')); ?>"> <i
+                                class="menu-icon fa fa-calendar"></i><?php echo e(__('messages.Event')); ?></a>
+                    </li>
+                    
                     
                     
                     <li class="active">
@@ -92,30 +111,15 @@
                                 class="menu-icon fa fa-gift"></i><?php echo e(__('messages.Subscription')); ?></a>
                     </li>
                     <li class="active">
-                        <a href="<?php echo e(url('admin/news')); ?>"> <i
-                                class="menu-icon fa  fa-newspaper-o"></i><?php echo e(__('messages.news')); ?></a>
+                        <a href="<?php echo e(url('admin/subscribers')); ?>"> <i
+                                class="menu-icon fa fa-rocket"></i><?php echo e(__('messages.Subscriber')); ?></a>
                     </li>
-                    <li class="active">
-                        <a href="<?php echo e(url('admin/contactus')); ?>"> <i
-                                class="menu-icon fa  fa-address-card"></i><?php echo e(__('messages.Contact Us')); ?></a>
-                    </li>
-                    <li class="active">
-                        <a href="<?php echo e(url('admin/service')); ?>"> <i
-                                class="menu-icon fa fa-book"></i><?php echo e(__('messages.Facilities')); ?></a>
-                    </li>
+                    
+                    
 
-                    <li class="active">
-                        <a href="<?php echo e(url('admin/department')); ?>"> <i
-                                class="menu-icon fa fa-eercast"></i><?php echo e(__('messages.Department')); ?></a>
-                    </li>
-                    <li class="active">
-                        <a href="<?php echo e(url('admin/notification')); ?>"> <i
-                                class="menu-icon fa fa-bell"></i><?php echo e(__('messages.Notification')); ?></a>
-                    </li>
-                    <li class="active">
-                        <a href="<?php echo e(url('admin/paymentgateway')); ?>"> <i
-                                class="menu-icon fa fa-money"></i><?php echo e(__('messages.Payment Gateway')); ?></a>
-                    </li>
+
+                    
+                    
                     <li class="active">
                         <a href="<?php echo e(url('admin/setting/1')); ?>"> <i
                                 class="menu-icon fa fa-cogs"></i><?php echo e(__('messages.Setting')); ?></a>
@@ -241,6 +245,8 @@
 
     <script type="text/javascript" src="<?php echo e(asset('js/script.js')); ?>"></script>
     <script src="<?php echo e(asset('adesign/vendors/jquery/dist/jquery.min.js')); ?>"></script>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
     <script src="<?php echo e(asset('adesign/vendors/popper.js/dist/umd/popper.min.js')); ?>"></script>
     <script src="<?php echo e(asset('adesign/vendors/bootstrap/dist/js/bootstrap.min.js')); ?>"></script>
     <script src="<?php echo e(asset('adesign/assets/js/main.js')); ?>"></script>
@@ -272,26 +278,11 @@
     
     <script src="<?php echo e(asset('js/admin.js?v=1333324')); ?>"></script>
     <?php echo $__env->yieldContent('footer'); ?>
-
+    <?php echo $__env->yieldPushContent('scripts'); ?>
     <script>
-        ClassicEditor
-            .create(document.querySelector('#description'), {
-                toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ,'raw-loader' ],
-        heading: {
-            options: [
-                { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
-                { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
-                { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
-                { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
-                { model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
-                { model: 'heading5', view: 'h5', title: 'Heading 5', class: 'ck-heading_heading5' },
-                { model: 'heading6', view: 'h6', title: 'Heading 6', class: 'ck-heading_heading6' },
-            ]
-        }
-    })
-            .catch(error => {
-                console.error(error);
-            });
+        CKEDITOR.replace('description');
+        CKEDITOR.replace('additional_description');
+
     </script>
 </body>
 

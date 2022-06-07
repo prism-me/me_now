@@ -575,11 +575,29 @@ p.testip {
     font-family: 'Roboto', sans-serif ;
     margin-top: 5px;
 }
-
+.testimonial-carousel .owl-item{
+	height:auto !important;
+}
+.testimonial-part-box{
+	height:auto !important;
+}
 .appointment-section .item .caption{
-	top: 20%;
+	top: 70%;
 	text-align:center;
     left: 0%;
+
+}
+.appointment-section{
+	margin-bottom: 0px;
+}
+.about_content p{
+	text-align:justify;
+}
+.global-heading p{
+	text-align:justify;
+}
+.appointment-section .item .caption h1{
+	font-size: 29px;
 }
 .appointment-section .owl-nav{
 	display:none !important;
@@ -663,6 +681,10 @@ display: none !important;
     background-color: #22242a;
     margin: 80px 0px 30px;
 }
+.owl-carousel .owl-item{
+    height: 400px;
+}
+
 }
 
 /*========== Max-width 576px end ==========*/

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Phpfastcache\Helper\Psr16Adapter;
 use Illuminate\Http\Request;
 use Auth;
 use App\Model\Doctor;
@@ -10,9 +11,12 @@ use App\Model\TimeTable;
 use App\Model\Appointment;
 use App\Model\DepartService;
 use App\Model\Token;
+use App\Model\WorkshopBooking;
 use App\Model\Workshop;
+use App\Model\Event;
 use App\Model\Review;
 use App\Model\Blog;
+use App\Model\Room;
 use App\Model\Service;
 use App\Model\Setting;
 use App\Model\Package;
@@ -32,8 +36,10 @@ use DateTime;
 use DateTimeZone;
 use Mail;
 use validate;
+use App\Mail\BookingMail;
 class FrontController extends Controller
-{
+{   
+    public $instagram_feed ;
     public function __construct(){
         $setting = Setting::find(1);
     //   Session::put("main_color","#000");
@@ -42,20 +48,47 @@ class FrontController extends Controller
     //   Session::put("lowbackground_box_color","#ededc2");
     //   Session::put("slider_color","#f1f5ff");          
         Session::put("main_banner",asset('upload/web').'/'.$setting->main_banner);
+        
+        // 'menowdubai', 'CXZ0988998565'
+        //$instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), 'muhammadbilal11203', 'Bilal$786', new Psr16Adapter('Files'));
+        // $instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
+        //$instagram->login(false , true); // will use cached session if you want to force login $instagram->login(true)
+        //$instagram->saveSession();  //DO NOT forget this in order to save the session, otherwise have no sense
+        //$account = $instagram->getAccount('menowdubai');
+        //dd($account);
+        // $this->instagram_feed = $instagram->medias;
+
+        
     }
 
-    public function showhome(){
+    public function instagram(){
 
+
+        // dd($accountMedias);
+        // foreach ($accountMedias as $key  => $accountMedia) {
+        //     $images[$key] = str_replace("&amp;","&", $accountMedia->getimageHighResolutionUrl());     
+        //     $path = $images[$key];
+        //     $imageName = $key.'.png';
+        //     $img = public_path('insta/images/') . $imageName;
+        //     file_put_contents($img, file_get_contents($path));
+        // }
+        // return view('gallery', compact('images'));
+    }
+    
+
+    public function showhome(){
         if(!isset($_COOKIE['fload'])){
             setcookie('fload','1', time() + (86400 * 30), "/");
         }
         //$service=Service::get()->take(8);
-        $package= Package::get()->take(3);
+        // $package= Package::get()->take(3);
+    
         $doctor= Doctor::get()->take(4);
+        $rooms = Room::get()->take(3);
         $department= Department::with('service')->get();
         $setting= Setting::find(1);
         $reviews= Review::with('doctors','users')->get()->take(4);
-        return view("front.home")->with("package",$package)->with("setting",$setting)->with("department",$department)->with("review",$reviews)->with("doctor",$doctor)->with("chatpage",'1');;
+        return view("front.home")->with('rooms',$rooms)->with("setting",$setting)->with("department",$department)->with("review",$reviews)->with("doctor",$doctor)->with("chatpage",'1');;
     }
 
     public function blog(){
@@ -66,11 +99,12 @@ class FrontController extends Controller
         $service=Service::get()->take(8);
         $package=Package::get()->take(3);
         $doctor=Doctor::get()->take(4);
+        $rooms = Room::get()->take(3);
         $department=Department::with('service')->get();
         $setting=Setting::find(1);
         $blog= Blog::all();
         $reviews=Review::with('doctors','users')->get()->take(4);
-        return view("front.blog")->with("services",$service)->with("setting",$setting)->with("department",$department)->with('blog',$blog);
+        return view("front.blog")->with('rooms' , $rooms)->with("services",$service)->with("setting",$setting)->with("department",$department)->with('blog',$blog);
     
     }
 
@@ -81,9 +115,9 @@ class FrontController extends Controller
         $blogdetails = Blog::where('slug',$slug)->first();
         $blog = Blog::get()->take(4);
         $department=Department::with('service')->get();
-
+        $rooms = Room::get()->take(3);
         $setting=Setting::find(1);
-        return view("front.blog_inner")->with("department",$department)->with("setting",$setting)->with("blogdetails", $blogdetails)->with('blog',$blog);
+        return view("front.blog_inner")->with('rooms',$rooms)->with("department",$department)->with("setting",$setting)->with("blogdetails", $blogdetails)->with('blog',$blog);
     }
 
     
@@ -93,54 +127,58 @@ class FrontController extends Controller
             setcookie('fload','1', time() + (86400 * 30), "/");
          }
          $service=Service::get()->take(8);
-         $workshop=Workshop::get()->take(8);
+         $workshop=Workshop::get();
          $package=Package::get()->take(3);
          $doctor=Doctor::get()->take(4);
+         $rooms = Room::get()->take(3);
          $department=Department::with('service')->get();
          $setting=Setting::find(1);
          $reviews=Review::with('doctors','users')->get()->take(4);
-        return view("front.workshop")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with("workshop",$workshop);
+        return view("front.workshop")->with('rooms',$rooms)->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with("workshop",$workshop);
     }
 
     public function events(){
         if(!isset($_COOKIE['fload'])){
             setcookie('fload','1', time() + (86400 * 30), "/");
          }
-         $service=Service::get()->take(8);
-         $workshop=Workshop::get()->take(8);
-         $package=Package::get()->take(3);
-         $doctor=Doctor::get()->take(4);
+         $rooms = Room::get()->take(3);
+         $events=Event::get();
          $department=Department::with('service')->get();
          $setting=Setting::find(1);
-         $reviews=Review::with('doctors','users')->get()->take(4);
-        return view("front.events")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with("workshop",$workshop);
+        return view("front.events")->with('rooms',$rooms)->with("setting",$setting)->with("department",$department)->with("events",$events);
     }
 
     public function workshopdetail($id){
         if(!isset($_COOKIE['fload'])){
             setcookie('fload','1', time() + (86400 * 30), "/");
          }
+         $rooms = Room::get()->take(3);
          $service=Service::get()->take(8);
          $package=Package::get()->take(3);
          $doctor=Doctor::get()->take(4);
          $department=Department::with('service')->get();
          $setting=Setting::find(1);
          $reviews=Review::with('doctors','users')->get()->take(4);
-         $workshop=Workshop::where('slug',$id)->first();
-        //  dd($workshop);
-       return view("front.workshops_inner")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with('workshop',$workshop);
+         
+         $workshop=  Workshop::where('slug',$id)->first();
+        //  dd($workshop->short_description);
+        //https://prismdigital.ae/why-do-business-websites-need-a-good-design/ - test url
+         $social = \Share::page('http://127.0.0.1:8000/workshop/'. $workshop->slug , $workshop->title)->facebook()->linkedin()->whatsapp()->twitter();
+        //   dd($social);
+       return view("front.workshops_inner")->with('rooms',$rooms)->with('social', $social)->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with('workshop',$workshop);
     }
     public function faqs(){
         if(!isset($_COOKIE['fload'])){
             setcookie('fload','1', time() + (86400 * 30), "/");
          }
+         $rooms = Room::get()->take(3);
          $service=Service::get()->take(8);
          $package=Package::get()->take(3);
          $doctor=Doctor::get()->take(4);
          $department=Department::with('service')->get();
          $setting=Setting::find(1);
          $reviews=Review::with('doctors','users')->get()->take(4);
-       return view("front.faqs")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department);
+       return view("front.faqs")->with('rooms',$rooms)->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department);
      
     }
 
@@ -148,47 +186,63 @@ class FrontController extends Controller
         if(!isset($_COOKIE['fload'])){
             setcookie('fload','1', time() + (86400 * 30), "/");
          }
+         $rooms = Room::get()->take(3);
          $service=Service::get()->take(8);
          $package=Package::get()->take(3);
          $doctor=Doctor::get()->take(4);
          $department=Department::with('service')->get();
          $setting=Setting::find(1);
          $reviews=Review::with('doctors','users')->get()->take(4);
-       return view("front.about")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department);
+       return view("front.about")->with('rooms',$rooms)->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department);
      
     }
     
-    
+    public function become_member(){
+        if(!isset($_COOKIE['fload'])){
+            setcookie('fload','1', time() + (86400 * 30), "/");
+         }
+         $rooms = Room::get()->take(3);
+        //  $service=Service::get()->take(8);
+         $department=Department::with('service')->get();
+         $setting=Setting::find(1);
+        //  $reviews=Review::with('doctors','users')->get()->take(4);
+       return view("front.become_member")->with('rooms',$rooms)->with("setting",$setting)->with("department",$department);
+     
+    }
+
     public function women_empowerment(){
         if(!isset($_COOKIE['fload'])){
             setcookie('fload','1', time() + (86400 * 30), "/");
          }
-         $service=Service::get()->take(8);
-         $package=Package::get()->take(3);
-         $doctor=Doctor::get()->take(4);
+         $rooms = Room::get()->take(3);
+        //  $service=Service::get()->take(8);
+        //  $doctor=Doctor::get()->take(4);
          $department=Department::with('service')->get();
          $setting=Setting::find(1);
-         $reviews=Review::with('doctors','users')->get()->take(4);
-       return view("front.women_empowerment")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department);
+        //  $reviews=Review::with('doctors','users')->get()->take(4);
+       return view("front.women_empowerment")->with('rooms',$rooms)->with("setting",$setting)->with("department",$department);
      
     }
-    public function rooms(){
+    public function rooms($slug){
 
         if(!isset($_COOKIE['fload'])){
             setcookie('fload','1', time() + (86400 * 30), "/");
          }
-         $service=Service::get()->take(8);
-         $package=Package::get()->take(3);
-         $doctor=Doctor::get()->take(4);
-         $department=Department::with('service')->get();
-         $setting=Setting::find(1);
-         $reviews=Review::with('doctors','users')->get()->take(4);
-       return view("front.rooms")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department);
+         $rooms = Room::get()->take(3);
+         $room = Room::where('slug',$slug)->first();
+         $service = Service::get()->take(8);
+        //  $package = Package::get()->take(3);
+        //  $doctor = Doctor::get()->take(4);
+         $department = Department::with('service')->get();
+         $setting = Setting::find(1);
+         $reviews = Review::with('doctors','users')->get()->take(4);
+       return view("front.rooms")->with('room',$room)->with('rooms',$rooms)->with("services",$service)->with("setting",$setting)->with("department",$department);
        
     }
     
 
        public function getserviceanddoctor($department_id){
+        $rooms = Room::get()->take(3);
            $departmentservice=DepartService::where("department_id",$department_id)->get();
            $doctorlist=Doctor::where("department_id",$department_id)->get();
            $data=array("service"=> $departmentservice,"doctor"=>$doctorlist);
@@ -234,26 +288,25 @@ class FrontController extends Controller
            $service=Service::all();
            $department=Department::all();
            $setting=Setting::find(1);
-           return view("front.facilites")->with("department",$department)->with("facilites",$service)->with("setting",$setting);
+           return view("front.facilites")->with('rooms',$rooms)->with("department",$department)->with("facilites",$service)->with("setting",$setting);
        }
 
         public function department($service){
+            $rooms = Room::get()->take(3);
             $departmentId = Department::where('slug' , $service)->first();
             $departmentService=DepartService::where("department_id",$departmentId->id)->get();
             $department=Department::with('service')->get();
     
             $setting=Setting::find(1);
-            return view("front.department")->with("department",$department)->with("setting",$setting)->with("departmentService",$departmentService)->with('serviceSlug' , $service)->with('current',$departmentId);
+            return view("front.department")->with('rooms',$rooms)->with("department",$department)->with("setting",$setting)->with("departmentService",$departmentService)->with('serviceSlug' , $service)->with('current',$departmentId);
         }
 
-
         public function departmentdetail($service,$subService){
-            
+            $rooms = Room::get()->take(3);
            $department = Department::with('service')->get();
             
            //current sub service
            $currentService = DepartService::where("slug", $subService)->first();
-
 
             //sub services            
             $subServices =  DepartService::where('department_id', $currentService->department_id)->get();
@@ -266,15 +319,16 @@ class FrontController extends Controller
                         
             $setting=Setting::find(1);
 
-           return view("front.departmentdetails")->with('service_slug',$service)->with('doctors',$doctors)->with('current',$currentService)->with('subServices',$subServices)->with("department",$department)->with("departmentdetails",$departmentdetails)->with("setting",$setting);
+           return view("front.departmentdetails")->with('rooms',$rooms)->with('service_slug',$service)->with('doctors',$doctors)->with('current',$currentService)->with('subServices',$subServices)->with("department",$department)->with("departmentdetails",$departmentdetails)->with("setting",$setting);
 
        }
 
 
        public function contact_us(){
+        $rooms = Room::get()->take(3);
            $department=Department::all();
            $setting=Setting::find(1);
-           return view("front.contactus")->with("department",$department)->with("setting",$setting);
+           return view("front.contactus")->with('rooms',$rooms)->with("department",$department)->with("setting",$setting);
        }
 
        public function myaccount(){
@@ -355,17 +409,17 @@ class FrontController extends Controller
 
        
        public function doctorlist(){
-           
+        $rooms = Room::get()->take(3);
           $department=Department::all();
           $doctor=Doctor::all();
           $departmentdoctor=Department::with('doctor')->get();
           $setting=Setting::find(1);
           $department=Department::with('service')->get();
-          return view("front.doctorlist")->with("department",$department)->with("doctor",$doctor)->with("departmentdoctor",$departmentdoctor)->with("setting",$setting);
+          return view("front.doctorlist")->with('rooms',$rooms)->with("department",$department)->with("doctor",$doctor)->with("departmentdoctor",$departmentdoctor)->with("setting",$setting);
        }
 
        public function doctordetails($slug){
-
+        $rooms = Room::get()->take(3);
             $department=Department::all();
             $doctor=Doctor::with("TimeTabledata")->where('slug',$slug)->first();
             $departmentdetails=Department::with("doctor","service")->find($doctor->department_id); 
@@ -373,19 +427,21 @@ class FrontController extends Controller
             $doctor->ratting=Review::where("doctor_id",$doctor->id)->avg('ratting');
             $reviews=Review::with('doctors','users')->where("doctor_id",$doctor->id)->get();
              $setting=Setting::find(1);
-            return view("front.doctordetails")->with("department",$department)->with("review",$reviews)->with("doctor",$doctor)->with("departmentdetails",$departmentdetails)->with("id",$doctor->id)->with("setting",$setting);
+            return view("front.doctordetails")->with('rooms',$rooms)->with("department",$department)->with("review",$reviews)->with("doctor",$doctor)->with("departmentdetails",$departmentdetails)->with("id",$doctor->id)->with("setting",$setting);
        }
 
      
        public function gallery(){
+        $rooms = Room::get()->take(3);
            $department=Department::all();
            $albumlist=Album::with("gallerydata")->get();
            $setting=Setting::find(1);
-           return view("front.gallery")->with("department",$department)->with("albumlist",$albumlist)->with("setting",$setting);
+           return view("front.gallery")->with('rooms',$rooms)->with("department",$department)->with("albumlist",$albumlist)->with("setting",$setting);
        }
 
        public function savecontact(Request $request){
           $store=new ContactUs();
+
           $store->name=$request->get("name");
           $store->email=$request->get("email");
           $store->topic=$request->get("topic");
@@ -428,15 +484,17 @@ class FrontController extends Controller
        }
 
        public function termcondition(){
+        $rooms = Room::get()->take(3);
           $department=Department::all();
            $setting=Setting::find(1);
-           return view("front.termcondition")->with("department",$department)->with("setting",$setting);
+           return view("front.termcondition")->with('rooms',$rooms)->with("department",$department)->with("setting",$setting);
        }
 
        public function privacypolicy(){
+        $rooms = Room::get()->take(3);
            $department=Department::all();
            $setting=Setting::find(1);
-           return view("front.privacypolicy")->with("department",$department)->with("setting",$setting);
+           return view("front.privacypolicy")->with('rooms',$rooms)->with("department",$department)->with("setting",$setting);
        }
 
        public function postregister(Request $request){
@@ -680,6 +738,23 @@ class FrontController extends Controller
                         }                        
                   }
                   return "done";
+    }
+
+
+    public function workshopBooking(Request $request){
+
+        $emailData = $request->all();
+        $data = $request->except('name');
+       
+        $add = WorkshopBooking::create($data);
+        $userEmail = $request['email'];
+        // $mail = Mail::to($userEmail)->send(new BookingMail($emailData));
+
+        Session::flash('message',__('messages.Booking Done Successfully. Please Check Your Registered E-Mail to confirm the Booking.')); 
+        Session::flash('alert-class', 'alert-success');           
+        return redirect()->back();
+
+
     }
 
 

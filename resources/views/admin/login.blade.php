@@ -37,11 +37,8 @@
                <div class="login-logo">
                   <a href="index.html">
                   <span>{{__('messages.site name')}}</span> 
-                  @if($type==2)
+  
                       <span>{{__('messages.Admin')}}</span>
-                  @else
-                     <span>{{__('messages.Doctors')}}</span>
-                  @endif
                  
                   </a>
                </div>
@@ -81,13 +78,7 @@
                         <input type="checkbox" id="rem_me" name="rem_me" value="1" <?php echo isset($_COOKIE['rem_me']) ? "checked" : ''; ?>> {{__('messages.Remember Me')}}
                         </label>                                    
                      </div>
-                     @if($type==2)
                          <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">{{__('messages.Admin').' '.__('messages.Sign in')}}</button>  
-                         <a href="{{url('doctor/')}}" class="btn btn-secondary btn-flat m-b-30 m-t-30 signin" >{{__('messages.Doctors').' '.__('messages.Sign in')}}</a> 
-                     @else
-                         <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">{{__('messages.Doctors').' '.__('messages.Sign in')}}</button>  
-                         <a href="{{url('admin/')}}" class="btn btn-secondary btn-flat m-b-30 m-t-30 signin">{{__('messages.Admin').' '.__('messages.Sign in')}}</a> 
-                     @endif
                                                 
                   </form>
                </div>

@@ -20,6 +20,7 @@
     <meta property="og:keyword" content="{{ __('messages.meta_keyword') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('front/css/bootstrap.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('front/css/custom-style.css') }}">
+
     {{-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> --}}
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -37,12 +38,18 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <input type="hidden" id="authid" value="{{ Auth::id() }}">
-
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> --}}
+    {{-- <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+  /> --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
 </head>
 
-<body onload="gettimezone()">
+<body onload="gettimezone()" class="animated fadeIn">
     {{-- @include('front.firebase_config'); --}}
     {{-- @include('front.cssclass'); --}}
     @yield('loader')
@@ -114,6 +121,12 @@
                                             @endif
                                         </li>
                                     @endforeach
+                                    @foreach ($rooms as $room)
+                                        <li><a class="dropdown-item" href="{{ url('rooms') . '/' . $room->slug }}">
+                                                {{ $room->title }} </a>
+                                        </li>
+                                    @endforeach
+
                                 </ul>
                             </li>
                             <li class="nav-item">
@@ -137,10 +150,11 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="{{ url('pricing') }}">{{ __('messages.Become a Member') }}</a>
+                                    href="{{ url('become-a-member') }}">{{ __('messages.Become a Member') }}</a>
                             </li>
                             <li class="nav-item book-now-nav">
-                                <a class="nav-link" style="color:white !important; width: 104px" href="#"
+                                <a class="nav-link btn-hover color-9"
+                                    style="color:white !important; width: 132px;padding: 0.5rem !important;" href="#"
                                     data-toggle="modal" data-target="#appointmentModal">{{ __('Book Now') }}</a>
                             </li>
                         </ul>
@@ -152,8 +166,8 @@
 
 
     <div class="sticky_buttons">
-        <a href="https://api.whatsapp.com/send/?phone=00971565553483" target="_blank"><img
-                src="{{ asset('front/img/whatsapp.png') }}" alt="Whatsapp Action"></a>
+        <a href="https://wa.me/+971565553483" target="_blank"><img src="{{ asset('front/img/whatsapp.png') }}"
+                alt="Whatsapp Action"></a>
         <a href="tel:+971565553483"><img src="{{ asset('front/img/call_now.png') }}" alt="Call Action"></a>
     </div>
 
@@ -440,6 +454,8 @@
         </div>
     </div>
 
+    @include('front.instagram_feeds')
+    
     <div class="footer-main-box">
         <div class="container-fluid">
             <div class="footer-part-main-box">
@@ -457,20 +473,22 @@
                             </div>
                             <div class="footer-r1-detail">
                                 <div class="footer-d1-box">
-                                    <h3>{{ __('messages.About us') }}</h3>
+                                    {{-- <h3>{{ __('messages.About us') }}</h3> --}}
                                     {{-- <p>{{ __('messages.front_about') }}</p> --}}
                                     <p>
-                                        Me Now is a "haven" for well-being and mental health. We provide professional
-                                        services to Families, children, teenagers, couples, employers, and entrepreneurs
+                                        With the goal of de-stigmatizing mental illness and providing patients with a
+                                        variety of treatment options, we're a group of compassionate, dedicated, and
+                                        experienced practitioners who want nothing more than to see "a different you"
+                                        walk out the door after working with us.
                                     </p>
                                 </div>
                                 <div class="footer-d1-box">
                                     <h3>{{ __('messages.Contact Us') }}</h3>
-                                    <p><span><img
-                                                src="{{ asset('front/img/phone.png') }}"></span>{{ isset($setting->email) ? $setting->email : Session::get('email') }}
+                                    <p><span
+                                            class="fa fa-phone phone-icon"></span>{{ isset($setting->phone_no) ? $setting->phone_no : Session::get('phone_no') }}
                                     </p>
-                                    <p><span><img
-                                                src="{{ asset('front/img/mail.png') }}"></span>{{ isset($setting->phone_no) ? $setting->phone_no : Session::get('phone') }}
+                                    <p><span
+                                            class="fa fa-envelope mail-icon"></span>{{ isset($setting->email) ? $setting->email : Session::get('email') }}
                                     </p>
                                 </div>
                             </div>
@@ -534,7 +552,8 @@
                             <div class="footer-r1-detail">
                                 <div class="footer-d1-box">
                                     <h3>{{ __('messages.Address') }}</h3>
-                                    <p>{{ isset($setting->address) ? $setting->address : Session::get('address') }}
+                                    <p><a
+                                            href="https://goo.gl/maps/drSGLMZA4i9jrNgB8">{{ isset($setting->address) ? $setting->address : Session::get('address') }}</a>
                                     </p>
                                 </div>
                                 <div class="footer-d1-box">
@@ -679,6 +698,7 @@
     </script>
 
 
+    <script src={{ asset('js/share.js') }}></script>
 
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.3/js/bootstrap.js"></script>

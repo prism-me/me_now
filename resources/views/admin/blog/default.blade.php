@@ -36,7 +36,7 @@
                   </div>
                   @endif
                   <div>
-                     <a href="{{ URL::to('admin/blogs/create')}}" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Blog')}}</a>
+                     <a href="{{ URL::to('admin/rooms/create')}}" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Room')}}</a>
                   </div>
                   <div class="table-responsive">
                   <table id="service" class="table  table-striped table-bordered">
@@ -44,7 +44,7 @@
                         <tr>
                            <th>{{__('messages.Id')}}</th>
                            <th>{{__('messages.Title')}}</th>
-                           <th>{{__('messages.Sub-Title')}}</th>
+                           <th>{{__('messages.Description')}}</th>
                            <th>{{__('messages.Image')}}</th>
                            <th>{{__('messages.Action')}}</th>
                         </tr>
@@ -55,14 +55,14 @@
                         <tr>
                            <td>{{isset($d->id)?$d->id:""}}</td>
                            <td>{{isset($d->title)?$d->title:""}}</td>
-                           <td>{{isset($d->sub_title)?$d->sub_title:""}}</td>
+                           <td>{{ substr($d->short_description, 0,50)}}..</td>
                            <td>
                                <img src="{{ $d->featured_img }}" style="width:50px;height: 50px;" class="imgsize1"/>
                            </td>
                            <td>
-                                <a href="{{URL::to('admin/blogs/'.$d->id.'/edit')}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
-                                <a href="{{URL::to('admin/blogs/'.$d->id.'/show') }}" class="btn btn-success">{{__('messages.View')}}</a>
-                                <form action="{{ URL::to('admin/blogs/delete').'/'.$d->id }}"  novalidate="novalidate" >{{csrf_field()}}{{method_field('Delete')}}<input type="submit" class="btn btn-danger" name="Delete"></form>
+                                <a href="{{URL::to('admin/edit-blog') . '/' . $d->slug}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
+                                <a href="{{URL::to('admin/show-blog') .'/' . $d->slug}}" class="btn btn-success">{{__('messages.View')}}</a>
+                                 <form action="{{ url('admin/delete-blog'.'/' . $d->slug)}}"  novalidate="novalidate"  method="POST"  >{{csrf_field()}}<input type="submit" class="btn btn-danger" value="{{__('messages.Delete')}}" name="Delete"></form>
                            </td>
                         </tr>
                         @endforeach

@@ -58,10 +58,10 @@
                      </div>
                      <div class="form-group">
                         <label for="name" class=" form-control-label">
-                        {{__('messages.Sub-Title')}}
+                        {{__('messages.Short Description')}}
                         <span class="reqfield">*</span>
                         </label>
-                        <input type="text" id="sub-title" placeholder="{{__('messages.Enter').'  '.__('messages.Sub-Title')}}" class="form-control" required name="sub_title" value="{{ isset($data->sub_title)?$data->sub_title:''}}">
+                        <textarea id="short_description" placeholder="{{__('messages.Enter').'  '.__('messages.Short Description')}}" class="form-control" required name="short_description" value="{{ isset($data->short_description)?$data->short_description:''}}"></textarea>
                      </div>
                      <div class="form-group">
                         <label for="name" class=" form-control-label">
@@ -88,7 +88,10 @@
                         <label for="file" class=" form-control-label">  
                         {{__('messages.Image')}}<span class="reqfield" >*</span>
                         </label>
-                           <input type="file" id="file" name="featured_img" class="form-control-file" accept="image/*">
+                        @if($data->featured_img)
+                              <img src="{{$data->featured_img}}" class="imgsize1 btndepartwarning" /> 
+                              @endif
+                        <input type="file" id="file" name="featured_img" class="form-control-file" accept="image/*">
                     
                      <div>
                      <div class="form-group">

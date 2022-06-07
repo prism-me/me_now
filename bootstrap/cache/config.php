@@ -1,7 +1,7 @@
 <?php return array (
   'app' => 
   array (
-    'name' => 'Laravel',
+    'name' => 'MeNow',
     'env' => 'local',
     'debug' => true,
     'url' => 'http://localhost/project/company/blank_script/blank_singleclinic_web/singleclinic/',
@@ -36,10 +36,11 @@
       19 => 'Illuminate\\Translation\\TranslationServiceProvider',
       20 => 'Illuminate\\Validation\\ValidationServiceProvider',
       21 => 'Illuminate\\View\\ViewServiceProvider',
-      22 => 'App\\Providers\\AppServiceProvider',
-      23 => 'App\\Providers\\AuthServiceProvider',
-      24 => 'App\\Providers\\EventServiceProvider',
-      25 => 'App\\Providers\\RouteServiceProvider',
+      22 => 'Jorenvh\\Share\\Providers\\ShareServiceProvider',
+      23 => 'App\\Providers\\AppServiceProvider',
+      24 => 'App\\Providers\\AuthServiceProvider',
+      25 => 'App\\Providers\\EventServiceProvider',
+      26 => 'App\\Providers\\RouteServiceProvider',
     ),
     'aliases' => 
     array (
@@ -79,6 +80,7 @@
       'URL' => 'Illuminate\\Support\\Facades\\URL',
       'Validator' => 'Illuminate\\Support\\Facades\\Validator',
       'View' => 'Illuminate\\Support\\Facades\\View',
+      'Share' => 'Jorenvh\\Share\\ShareFacade',
     ),
     'languages' => 
     array (
@@ -221,7 +223,7 @@
         'endpoint' => NULL,
       ),
     ),
-    'prefix' => 'laravel_cache',
+    'prefix' => 'menow_cache',
   ),
   'cors' => 
   array (
@@ -319,7 +321,7 @@
       'options' => 
       array (
         'cluster' => 'redis',
-        'prefix' => 'laravel_database_',
+        'prefix' => 'menow_database_',
       ),
       'default' => 
       array (
@@ -386,6 +388,52 @@
       'threads' => 2,
       'time' => 2,
     ),
+  ),
+  'laravel-share' => 
+  array (
+    'services' => 
+    array (
+      'facebook' => 
+      array (
+        'uri' => 'https://www.facebook.com/sharer/sharer.php?u=',
+      ),
+      'twitter' => 
+      array (
+        'uri' => 'https://twitter.com/intent/tweet',
+        'text' => 'Default share text',
+      ),
+      'linkedin' => 
+      array (
+        'uri' => 'https://www.linkedin.com/sharing/share-offsite',
+        'extra' => 
+        array (
+          'mini' => 'true',
+        ),
+      ),
+      'whatsapp' => 
+      array (
+        'uri' => 'https://wa.me/?text=',
+        'extra' => 
+        array (
+          'mini' => 'true',
+        ),
+      ),
+      'pinterest' => 
+      array (
+        'uri' => 'https://pinterest.com/pin/create/button/?url=',
+      ),
+      'reddit' => 
+      array (
+        'uri' => 'https://www.reddit.com/submit',
+        'text' => 'Default share text',
+      ),
+      'telegram' => 
+      array (
+        'uri' => 'https://telegram.me/share/url',
+        'text' => 'Default share text',
+      ),
+    ),
+    'fontAwesomeVersion' => 5,
   ),
   'logging' => 
   array (
@@ -472,11 +520,11 @@
       'smtp' => 
       array (
         'transport' => 'smtp',
-        'host' => '',
+        'host' => 'smtp.gmail.com',
         'port' => '465',
         'encryption' => 'ssl',
-        'username' => '',
-        'password' => '',
+        'username' => 'prism.marketing786@gmail.com',
+        'password' => 'Prism@2020#',
         'timeout' => NULL,
         'auth_mode' => NULL,
       ),
@@ -509,8 +557,8 @@
     ),
     'from' => 
     array (
-      'address' => 'hello@example.com',
-      'name' => '',
+      'address' => 'prism.marketing786@gmail.com',
+      'name' => 'Example',
     ),
     'markdown' => 
     array (
@@ -631,7 +679,7 @@
       0 => 2,
       1 => 100,
     ),
-    'cookie' => 'laravel_session',
+    'cookie' => 'menow_session',
     'path' => '/',
     'domain' => NULL,
     'secure' => NULL,
@@ -654,6 +702,112 @@
       0 => 'C:\\xampp\\htdocs\\meNow\\resources\\views',
     ),
     'compiled' => 'C:\\xampp\\htdocs\\meNow\\storage\\framework\\views',
+  ),
+  'debugbar' => 
+  array (
+    'enabled' => NULL,
+    'except' => 
+    array (
+      0 => 'telescope*',
+      1 => 'horizon*',
+    ),
+    'storage' => 
+    array (
+      'enabled' => true,
+      'driver' => 'file',
+      'path' => 'C:\\xampp\\htdocs\\meNow\\storage\\debugbar',
+      'connection' => NULL,
+      'provider' => '',
+      'hostname' => '127.0.0.1',
+      'port' => 2304,
+    ),
+    'editor' => 'phpstorm',
+    'remote_sites_path' => '',
+    'local_sites_path' => '',
+    'include_vendors' => true,
+    'capture_ajax' => true,
+    'add_ajax_timing' => false,
+    'error_handler' => false,
+    'clockwork' => false,
+    'collectors' => 
+    array (
+      'phpinfo' => true,
+      'messages' => true,
+      'time' => true,
+      'memory' => true,
+      'exceptions' => true,
+      'log' => true,
+      'db' => true,
+      'views' => true,
+      'route' => true,
+      'auth' => false,
+      'gate' => true,
+      'session' => true,
+      'symfony_request' => true,
+      'mail' => true,
+      'laravel' => false,
+      'events' => false,
+      'default_request' => false,
+      'logs' => false,
+      'files' => false,
+      'config' => false,
+      'cache' => false,
+      'models' => true,
+      'livewire' => true,
+    ),
+    'options' => 
+    array (
+      'auth' => 
+      array (
+        'show_name' => true,
+      ),
+      'db' => 
+      array (
+        'with_params' => true,
+        'backtrace' => true,
+        'backtrace_exclude_paths' => 
+        array (
+        ),
+        'timeline' => false,
+        'duration_background' => true,
+        'explain' => 
+        array (
+          'enabled' => false,
+          'types' => 
+          array (
+            0 => 'SELECT',
+          ),
+        ),
+        'hints' => false,
+        'show_copy' => false,
+      ),
+      'mail' => 
+      array (
+        'full_log' => false,
+      ),
+      'views' => 
+      array (
+        'timeline' => false,
+        'data' => false,
+      ),
+      'route' => 
+      array (
+        'label' => true,
+      ),
+      'logs' => 
+      array (
+        'file' => NULL,
+      ),
+      'cache' => 
+      array (
+        'values' => true,
+      ),
+    ),
+    'inject' => true,
+    'route_prefix' => '_debugbar',
+    'route_domain' => NULL,
+    'theme' => 'auto',
+    'debug_backtrace_limit' => 50,
   ),
   'flare' => 
   array (
@@ -924,6 +1078,18 @@
   array (
     'proxies' => NULL,
     'headers' => 94,
+  ),
+  'api-debugger' => 
+  array (
+    'enabled' => true,
+    'collections' => 
+    array (
+      0 => 'Lanin\\Laravel\\ApiDebugger\\Collections\\QueriesCollection',
+      1 => 'Lanin\\Laravel\\ApiDebugger\\Collections\\CacheCollection',
+      2 => 'Lanin\\Laravel\\ApiDebugger\\Collections\\ProfilingCollection',
+      3 => 'Lanin\\Laravel\\ApiDebugger\\Collections\\MemoryCollection',
+    ),
+    'response_key' => 'debug',
   ),
   'datatables-fractal' => 
   array (

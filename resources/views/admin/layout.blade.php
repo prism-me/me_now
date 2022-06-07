@@ -19,10 +19,16 @@
     <meta property="og:description" content="{{ __('messages.meta_description_admin') }}" />
     <meta property="og:keyword" content="{{ __('messages.meta_keyword') }}" />
     {{-- <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script> --}}
-    <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
+    {{-- <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script> --}}
+    {{-- <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script> --}}
+    {{-- <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script> --}}
+    {{-- <script src="//cdn.ckeditor.com/4.19.0/full/ckeditor.js"></script> --}}
+    <script src="//cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
 
     @yield('meta_title')
     <link rel="shortcut icon" href="{{ asset('App_icon.png') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css"
+        rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('adesign/vendors/bootstrap/dist/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('adesign/vendors/font-awesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('adesign/vendors/themify-icons/css/themify-icons.css') }}">
@@ -72,10 +78,7 @@
                         <a href="{{ url('admin/patient') }}"> <i
                                 class="menu-icon fa fa-user"></i>{{ __('messages.Patient') }}</a>
                     </li>
-                    {{-- <li class="active">
-                        <a href="{{ url('admin/package') }}"> <i
-                                class="menu-icon fa fa-user-md"></i>{{ __('messages.Help Package') }}</a>
-                    </li> --}}
+
                     <li class="active">
                         <a href="{{ url('admin/blogs') }}"> <i
                                 class="menu-icon fa  fa-newspaper-o"></i>{{ __('messages.Blog') }}</a>
@@ -84,6 +87,22 @@
                         <a href="{{ url('admin/workshops') }}"> <i
                                 class="menu-icon fa  fa-newspaper-o"></i>{{ __('messages.Workshop') }}</a>
                     </li>
+                    <li class="active">
+                        <a href="{{ url('admin/department') }}"> <i
+                                class="menu-icon fa fa-eercast"></i>{{ __('messages.Department') }}</a>
+                    </li>
+                    <li class="active">
+                        <a href="{{ url('admin/rooms') }}"> <i
+                                class="menu-icon fa fa-home"></i>{{ __('messages.Room') }}</a>
+                    </li>
+                    <li class="active">
+                        <a href="{{ url('admin/events') }}"> <i
+                                class="menu-icon fa fa-calendar"></i>{{ __('messages.Event') }}</a>
+                    </li>
+                    {{-- <li class="active">
+                        <a href="{{ url('admin/package') }}"> <i
+                                class="menu-icon fa fa-user-md"></i>{{ __('messages.Help Package') }}</a>
+                    </li> --}}
                     {{-- <li class="active">
                         <a href="{{ url('admin/chat') }}"> <i
                                 class="menu-icon fa fa-comment"></i>{{ __('messages.Chat') }} </a>
@@ -101,30 +120,31 @@
                                 class="menu-icon fa fa-gift"></i>{{ __('messages.Subscription') }}</a>
                     </li>
                     <li class="active">
-                        <a href="{{ url('admin/news') }}"> <i
-                                class="menu-icon fa  fa-newspaper-o"></i>{{ __('messages.news') }}</a>
+                        <a href="{{ url('admin/subscribers') }}"> <i
+                                class="menu-icon fa fa-rocket"></i>{{ __('messages.Subscriber') }}</a>
                     </li>
-                    <li class="active">
+                    {{-- <li class="active">
+                        <a href="{{ url('admin/news') }}"> <i
+                                class="menu-icon fa  fa-newspaper-o"></i>{{ __('messages.News') }}</a>
+                    </li> --}}
+                    {{-- <li class="active">
                         <a href="{{ url('admin/contactus') }}"> <i
                                 class="menu-icon fa  fa-address-card"></i>{{ __('messages.Contact Us') }}</a>
                     </li>
                     <li class="active">
                         <a href="{{ url('admin/service') }}"> <i
                                 class="menu-icon fa fa-book"></i>{{ __('messages.Facilities') }}</a>
-                    </li>
+                    </li> --}}
 
-                    <li class="active">
-                        <a href="{{ url('admin/department') }}"> <i
-                                class="menu-icon fa fa-eercast"></i>{{ __('messages.Department') }}</a>
-                    </li>
-                    <li class="active">
+
+                    {{-- <li class="active">
                         <a href="{{ url('admin/notification') }}"> <i
                                 class="menu-icon fa fa-bell"></i>{{ __('messages.Notification') }}</a>
-                    </li>
-                    <li class="active">
+                    </li> --}}
+                    {{-- <li class="active">
                         <a href="{{ url('admin/paymentgateway') }}"> <i
                                 class="menu-icon fa fa-money"></i>{{ __('messages.Payment Gateway') }}</a>
-                    </li>
+                    </li> --}}
                     <li class="active">
                         <a href="{{ url('admin/setting/1') }}"> <i
                                 class="menu-icon fa fa-cogs"></i>{{ __('messages.Setting') }}</a>
@@ -250,6 +270,8 @@
 
     <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
     <script src="{{ asset('adesign/vendors/jquery/dist/jquery.min.js') }}"></script>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
     <script src="{{ asset('adesign/vendors/popper.js/dist/umd/popper.min.js') }}"></script>
     <script src="{{ asset('adesign/vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('adesign/assets/js/main.js') }}"></script>
@@ -281,26 +303,11 @@
     {{-- <script type="text/javascript" src="{{asset('ckeditor/ckeditor.js')}}"></script> --}}
     <script src="{{ asset('js/admin.js?v=1333324') }}"></script>
     @yield('footer')
-
+    @stack('scripts')
     <script>
-        ClassicEditor
-            .create(document.querySelector('#description'), {
-                toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ,'raw-loader' ],
-        heading: {
-            options: [
-                { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
-                { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
-                { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
-                { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
-                { model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
-                { model: 'heading5', view: 'h5', title: 'Heading 5', class: 'ck-heading_heading5' },
-                { model: 'heading6', view: 'h6', title: 'Heading 6', class: 'ck-heading_heading6' },
-            ]
-        }
-    })
-            .catch(error => {
-                console.error(error);
-            });
+        CKEDITOR.replace('description');
+        CKEDITOR.replace('additional_description');
+
     </script>
 </body>
 

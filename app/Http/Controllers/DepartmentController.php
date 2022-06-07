@@ -38,10 +38,18 @@ class DepartmentController extends UploadController
                     'description' => 'required|min:40',
                 ]);
              }
-            if ($img = $request->hasFile('image')) {
+            $mediaUpload = "" ;
+            $mediaUpload_banner = "";
+            if ($img = $request->hasFile('image') ) {
                
                 $media =  UploadController::upload_media($request->image);
                 $mediaUpload = $media['url'];
+
+            }
+            if ($banner_image = $request->hasFile('banner_image') ) {
+               
+                $media =  UploadController::upload_media($request->banner_image);
+                $mediaUpload_banner = $media['url'];
 
             }
        
@@ -58,8 +66,15 @@ class DepartmentController extends UploadController
             $store->description=$request->get("description");
             $store->short_description=$request->get("short_description");
             $store->slug=$request->get("slug");
-            $store->emergency_no = $request->get("emergency_no");
-            $store->image = isset( $mediaUpload ) ? $mediaUpload : " " ;
+            // $store->emergency_no = $request->get("emergency_no");
+            if($mediaUpload){
+
+                $store->image = $mediaUpload;
+
+            }
+            if($mediaUpload_banner){
+                $store->banner_image = $mediaUpload_banner;
+            }
             $store->save(); 
             Session::flash('message',$msg); 
             Session::flash('alert-class', 'alert-success');
@@ -156,10 +171,18 @@ class DepartmentController extends UploadController
                 $store=new DepartService();
                 $msg=__('messages.Department Service Add Successfully');
             }
+            $mediaUpload = "" ;
+            $mediaUpload_banner ="";
             if ($img = $request->hasFile('img')) {
                
                 $media =  UploadController::upload_media($request->img);
                 $mediaUpload = $media['url'];
+
+            }
+            if ($banner_image = $request->hasFile('banner_image') ) {
+               
+                $media =  UploadController::upload_media($request->banner_image);
+                $mediaUpload_banner = $media['url'];
 
             }
 
@@ -172,8 +195,17 @@ class DepartmentController extends UploadController
             $store->excerpt= $request->get("excerpt");
             $store->short_description= $request->get("short_description");
             $store->price_for=isset( $request->get['price_for'] ) ? $request->get['price_for'] : " " ;
-            $store->img = isset( $mediaUpload ) ? $mediaUpload : " " ;
-         
+            
+            if($mediaUpload){
+
+                $store->img = $mediaUpload;
+
+            }
+            if($mediaUpload_banner){
+
+                $store->banner_image = $mediaUpload_banner;
+
+            }
             $store->save(); 
             Session::flash('message',$msg); 
             Session::flash('alert-class', 'alert-success');

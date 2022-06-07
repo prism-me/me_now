@@ -43,25 +43,20 @@ class BlogController extends UploadController
        
         $request->validate([
             'title'=>'required',
-            'sub_title'=>'required'
+            'short_description'=>'required'
         ]);
-
+        $mediaUpload = "";
         if ($img = $request->hasFile('featured_img')) {
                
            $media =  UploadController::upload_media($request->featured_img);
            $mediaUpload = $media['url'];
 
         }
-       
-
         $data  =$request->all();
-        $blogCreate = Blog::create(array('title' => $data['title'],
-                    'sub_title' => $data['sub_title'],
-                'description' => $data['description'],
-                'posted_by' => $data['posted_by'],
-                'featured_img' => $mediaUpload,
-                'slug' => $data['slug']
-                ));
+        if($mediaUpload){
+            $data['featured_img'] = $mediaUpload;
+        }
+        $blogCreate = Blog::create($data);
         return redirect("admin/blogs");
     }
   
@@ -72,9 +67,10 @@ class BlogController extends UploadController
      * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function show(Blog $blog)
+    public function show($slug)
     {
-        //
+        $data = Blog::where('slug',$slug)->first();
+        return view('admin.blog.show')->with('data', $data);
     }
 
     /**
@@ -83,10 +79,11 @@ class BlogController extends UploadController
      * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function edit(Blog $blog)
+    public function edit(Blog $blog,$slug)
     {
        
-        return view('admin.blog.saveblog')->with('data', $blog);
+       $data = Blog::where('slug',$slug)->first();
+        return view('admin.blog.saveblog')->with('data', $data);
     }
 
     /**
@@ -96,19 +93,23 @@ class BlogController extends UploadController
      * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Blog $blog)
+    public function update(Request $request, Blog $blog, $slug)
     {
        
+        $mediaUpload = "";
         if ($img = $request->hasFile('featured_img')) {
                
            $media =  UploadController::upload_media($request->featured_img);
            $mediaUpload = $media['url'];
 
         }
-        $data  =$request->all();
-       
-        $data['featured_img'] = isset( $mediaUpload->featured_img ) ? $mediaUpload ->featured_img : " " ;
-        $blogCreate = Blog::update($data);
+
+        $data  =$request->except('_token');
+        if($mediaUpload){
+
+            $data['featured_img'] = $mediaUpload ;
+        }
+        $blogCreate = Blog::where('slug',$slug)->update($data);
         return redirect("admin/blogs");
     }
 
@@ -118,11 +119,10 @@ class BlogController extends UploadController
      * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Blog $blog, $id)
+    public function delete(Blog $blog, $slug)
     {   
 
-        $blog = Blog::find($id);
-        $blog->delete();
+        $blog = Blog::where('slug',$slug)->delete();
          return redirect("admin/blogs");
       
         

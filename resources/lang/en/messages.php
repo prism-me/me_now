@@ -435,6 +435,19 @@ return [
 		"Delete"=>"Delete",
 		"Excerpt"=>"Excerpt",
 		"Icon"=>"Icon",
+		"Subscriber"=>"Subscriber",
+		"All Subscriber"=>"All Subscriber",
+		"E-Mail"=>"E-Mail",
+		"Room"=>"Room",
+		"Save Room"=>"Save Room",
+		"Event"=>"Event",
+		"Save Event"=>"Save Event",
+		"Banner Image"=>"Banner Image",
+		"Thumbnail Image"=>"Thumbnail Image",
+		"Featured Image"=>"Featured Image",
+		"Slider Image"=>"Slider Image",
+		"Addtional Image"=>"Addtional Image",
+		"Addtional Content"=>"Addtional Content",
 		
 		
 		"Workshop"=>"Workshop",
@@ -449,11 +462,14 @@ return [
 		"Description"=>"Description",
 		"Event Date"=>"Event Date",
 		"Event Type"=>"Event Type",
+		"Book Now!"=>"Book Now!",
+		"Contact Me Now"=>"Contact Me Now",
 
 
 		"About Doctor" => "About Doctor",
 		"Slug" => "Slug",
 		"Frequently Asked Questions" => "Frequently Asked Questions",
+		"Booking Done Successfully. Please Check Your Registered E-Mail to confirm the Booking." => "Booking Done Successfully. Please Check Your Registered E-Mail to confirm the Booking.",
 		
 
 	];

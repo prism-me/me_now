@@ -45,8 +45,8 @@ class UploadController extends Controller
         }
 
         }else{
-
-
+           
+            // dd($data);
             $files = [];
             if($data )
             {
@@ -55,20 +55,19 @@ class UploadController extends Controller
             
                 foreach($data as $d)
                 {                
-                    
 
-                $without_ext_name= $this->slugify(preg_replace('/\..+$/', '', $images[$i]->getClientOriginalName()));
+                $without_ext_name= $this->slugify(preg_replace('/\..+$/', '', $d->getClientOriginalName()));
 
-                $name = $without_ext_name .'-'. time().rand(1,100).'.'.$images[$i]->extension();
+                $name = $without_ext_name .'-'. time().rand(1,100).'.'.$d->extension();
                 $files[$i]['name'] = $name;
                 $files[$i]['url'] = 'https://menow.b-cdn.net/images/'. $name ;
                 $files[$i]['alt_tag'] = time().rand(1,100);
 
-                if($this->bunnyCDNStorage->uploadFile($images[$i]->getPathName() , $this->storageZone."/images/{$name}")){
+                if($this->bunnyCDNStorage->uploadFile($d->getPathName() , $this->storageZone."/images/{$name}")){
 
                 $isUploaded = Upload::create(['name'=> $name,'url' =>$files[$i]['url'] ,'alt_tag' => $files[$i]['alt_tag']]);
 
-                echo json_encode(['message' =>'media has uploaded.' , 'status' =>200 , 'data' => $isUploaded]);
+                return $isUploaded;
             
                 }else{
 

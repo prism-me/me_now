@@ -20,6 +20,8 @@ Route::get('/', function() {
 });
  Route::get("/brain","braintreeController@showbrain");
  
+ Route::get('instagram','FrontController@instagram');
+ 
 Route::get("add_doctor_review","AuthenticatedoctorController@show_product_review_user");
 Route::post("checkoutbrain","braintreeController@checkoutbrain");
 Route::get("sendnotification","FrontController@sendnotification");
@@ -32,9 +34,10 @@ Route::group(['prefix' => '/'], function () {
      Route::get("blog","FrontController@blog");
      Route::get("faqs","FrontController@faqs");
      Route::get("women-empowerment","FrontController@women_empowerment");
+     Route::get("become-a-member","FrontController@become_member");
      Route::get("workshop","FrontController@workshop");
      Route::get("events","FrontController@events");
-     Route::get("rooms","FrontController@rooms");
+     Route::get("rooms/{slug}","FrontController@rooms");
      Route::get("workshop/{id}","FrontController@workshopdetail");
      Route::get("getserviceanddoctor/{id}","FrontController@getserviceanddoctor");
      Route::post("bookappoinment","FrontController@bookappoinment");
@@ -58,7 +61,6 @@ Route::group(['prefix' => '/'], function () {
      Route::post("mediaupload","FrontController@mediaupload");
      Route::post("deletemedia","FrontController@deletemedia");
      
-
      Route::get("myaccount","FrontController@myaccount");
      Route::post("updateprofile","FrontController@updateprofile");
      Route::get("checkcurrentpwd","FrontController@checkcurrentpwd");
@@ -88,6 +90,7 @@ Route::group(['prefix' => '/'], function () {
      Route::Get("getcurrenttime/{offset}","HomeController@getcurrenttime");
      Route::get("blog","FrontController@blog");
      Route::get("blog-detail/{id}","FrontController@blogdetails");
+     Route::post("workshop-booking","FrontController@workshopBooking");
 
 
      
@@ -95,87 +98,87 @@ Route::group(['prefix' => '/'], function () {
 });
 
 Route::group(['prefix' => 'admin'], function () {
-	 Route::get("/","HomeController@showlogin");
-	 Route::post("postlogin","HomeController@postlogin");
-    
-     Route::group(['middleware' => ['admincheckexiste']], function () {
-		 Route::get("dashboard","HomeController@showdashboard")->name("dashboard");
-		 Route::get("logout","HomeController@logout");
-         Route::get("settimezone/{time}","HomeController@settimezone");
-		 #ervice
-		 Route::resource("service","ServiceController");
-		 Route::get("saveservice/{id}","ServiceController@saveservice");
-		 Route::post("updateservice","ServiceController@updateservice");
-		 Route::get("deleteservice/{id}","ServiceController@deleteservice");
-         Route::get("settimezone/{time}","HomeController@settimezone");
-		 #epartment
-		 Route::resource("department","DepartmentController");
-		 Route::get("savedepartment/{id}","DepartmentController@saveddepartment");
-		 Route::post("updatedepartment","DepartmentController@updatedepartment");
-		 Route::get("deletedepartment/{id}","DepartmentController@deletedepartment");
+        Route::get("/","HomeController@showlogin");
+        Route::post("postlogin","HomeController@postlogin");
 
-         
-		 Route::get("departmentservice/{id}","DepartmentController@departmentservice");
-		 Route::get("savedepartmentservice/{dept_id}/{id}","DepartmentController@savedepartmentservice");
-		 Route::post("updatedepartmentservice","DepartmentController@updatedepartmentservice");
-		 Route::get("deletedepartmentservice/{id}","DepartmentController@deletedepartmentservice");
+        Route::group(['middleware' => ['admincheckexiste']], function () {
+        Route::get("dashboard","HomeController@showdashboard")->name("dashboard");
+        Route::get("logout","HomeController@logout");
+        Route::get("settimezone/{time}","HomeController@settimezone");
+        #Service
+        Route::resource("service","ServiceController");
+        Route::get("saveservice/{id}","ServiceController@saveservice");
+        Route::post("updateservice","ServiceController@updateservice");
+        Route::get("deleteservice/{id}","ServiceController@deleteservice");
+        Route::get("settimezone/{time}","HomeController@settimezone");
+        #Department
+        Route::resource("department","DepartmentController");
+        Route::get("savedepartment/{id}","DepartmentController@saveddepartment");
+        Route::post("updatedepartment","DepartmentController@updatedepartment");
+        Route::get("deletedepartment/{id}","DepartmentController@deletedepartment");
 
-		 #octor
-		 Route::resource("doctor","DoctorController");
-		 Route::get("savedoctor/{id}/{tab_id}","DoctorController@savedoctor");
-		 Route::post("updatedoctorprofile","DoctorController@updatedoctorprofile");
-		 Route::get("deletedoctor/{id}","DoctorController@deletedoctor");
-		 Route::post("updateworkinghours","DoctorController@updateworkinghours");
 
-            Route::get("editprofile","HomeController@editprofile");
-            Route::post("updateprofile","HomeController@updateprofile");
-            Route::get("changepassword","HomeController@changepassword")->name("changepassword");
-            Route::get("samepwd/{id}","HomeController@check_password_same");
-         Route::post("updatepassword","HomeController@updatepassword");
+        Route::get("departmentservice/{id}","DepartmentController@departmentservice");
+        Route::get("savedepartmentservice/{dept_id}/{id}","DepartmentController@savedepartmentservice");
+        Route::post("updatedepartmentservice","DepartmentController@updatedepartmentservice");
+        Route::get("deletedepartmentservice/{id}","DepartmentController@deletedepartmentservice");
 
-         Route::resource("notification","NotificationController");
-         Route::post("savenotification","NotificationController@savenotification");
+        #Doctor
+        Route::resource("doctor","DoctorController");
+        Route::get("savedoctor/{id}/{tab_id}","DoctorController@savedoctor");
+        Route::post("updatedoctorprofile","DoctorController@updatedoctorprofile");
+        Route::get("deletedoctor/{id}","DoctorController@deletedoctor");
+        Route::post("updateworkinghours","DoctorController@updateworkinghours");
 
-         #lbum
-         Route::resource("gallery","GalleryController");
-         Route::get("savealbum/{id}","GalleryController@savealbum");
-         Route::post("updatealbum","GalleryController@updatealbum");
-         Route::get("deletealbum/{id}","GalleryController@deletealbum");
-         Route::get("addphoto/{album_id}","GalleryController@addphoto");
-         
+        Route::get("editprofile","HomeController@editprofile");
+        Route::post("updateprofile","HomeController@updateprofile");
+        Route::get("changepassword","HomeController@changepassword")->name("changepassword");
+        Route::get("samepwd/{id}","HomeController@check_password_same");
+        Route::post("updatepassword","HomeController@updatepassword");
 
-         Route::any("uploadimage/{album_id}","GalleryController@uploadimage");
-         Route::get("deletegalleryphoto/{id}","GalleryController@deletegalleryphoto");
+        Route::resource("notification","NotificationController");
+        Route::post("savenotification","NotificationController@savenotification");
 
-         Route::get("setting/{id}","NotificationController@showsetting");
-         Route::post("savebasicsetting","NotificationController@savebasicsetting");
-         Route::post("saveserverkey","NotificationController@saveserverkey");
-         Route::post("savesitesetting","NotificationController@savesitesetting");
-         Route::post("saveterms","NotificationController@saveterms");
-         Route::post("saveprivacy","NotificationController@saveprivacy");
-         Route::post("saveuploadsection","NotificationController@saveuploadsection");
+        #Album
+        Route::resource("gallery","GalleryController");
+        Route::get("savealbum/{id}","GalleryController@savealbum");
+        Route::post("updatealbum","GalleryController@updatealbum");
+        Route::get("deletealbum/{id}","GalleryController@deletealbum");
+        Route::get("addphoto/{album_id}","GalleryController@addphoto");
 
-         Route::get("appointment/{start_date}/{end_date}","AppointmentController@showappointment");
 
-         Route::resource("package","PackageController");
-         Route::get("savepackage/{id}","PackageController@savepackage");
-         Route::post("updatepackage","PackageController@updatepackage");
-         Route::get("deletepackage/{id}","PackageController@deletepackage");
-         Route::get("changesettingstatus/{fields}","NotificationController@changesettingstatus");
+        Route::any("uploadimage/{album_id}","GalleryController@uploadimage");
+        Route::get("deletegalleryphoto/{id}","GalleryController@deletegalleryphoto");
 
-         Route::get("review","DoctorController@showreview");
-         Route::get("deletereview/{id}","DoctorController@deletereview");
+        Route::get("setting/{id}","NotificationController@showsetting");
+        Route::post("savebasicsetting","NotificationController@savebasicsetting");
+        Route::post("saveserverkey","NotificationController@saveserverkey");
+        Route::post("savesitesetting","NotificationController@savesitesetting");
+        Route::post("saveterms","NotificationController@saveterms");
+        Route::post("saveprivacy","NotificationController@saveprivacy");
+        Route::post("saveuploadsection","NotificationController@saveuploadsection");
+
+        Route::get("appointment/{start_date}/{end_date}","AppointmentController@showappointment");
+
+        Route::resource("package","PackageController");
+        Route::get("savepackage/{id}","PackageController@savepackage");
+        Route::post("updatepackage","PackageController@updatepackage");
+        Route::get("deletepackage/{id}","PackageController@deletepackage");
+        Route::get("changesettingstatus/{fields}","NotificationController@changesettingstatus");
+
+        Route::get("review","DoctorController@showreview");
+        Route::get("deletereview/{id}","DoctorController@deletereview");
 
         Route::get("news","NotificationController@shownews");
         Route::post("sennews","NotificationController@sendnews");
         Route::get("contactus","HomeController@showcontactus");
 
         Route::get("patient","HomeController@showpatient");
-		
-		Route::get("paymentgateway","PackageController@getpaymentgateway");
-		Route::get("editpaymentgateway/{id}","PackageController@editpaymentgateway");
-		Route::post("updatepaymentgateway","PackageController@updatepaymentgateway");
-		Route::get("changestatuspayment/{pay_id}/{status}","PackageController@changestatuspayment");
+
+        Route::get("paymentgateway","PackageController@getpaymentgateway");
+        Route::get("editpaymentgateway/{id}","PackageController@editpaymentgateway");
+        Route::post("updatepaymentgateway","PackageController@updatepaymentgateway");
+        Route::get("changestatuspayment/{pay_id}/{status}","PackageController@changestatuspayment");
 
         Route::get("subscription","SubscriptionController@showsubscription");
         Route::get("changepackagestatus/{status}/{id}","SubscriptionController@changepackagestatus");
@@ -187,9 +190,35 @@ Route::group(['prefix' => 'admin'], function () {
 
         #Blog 
         Route::resource('blogs', 'BlogController');
+        Route::get('edit-blog/{slug}', 'BlogController@edit');
+        Route::post('delete-blog/{slug}', 'BlogController@delete');
+        Route::post('update-blog/{slug}', 'BlogController@update');
+        Route::get('show-blog/{slug}', 'BlogController@show');
 
         #Workshop 
         Route::resource('workshops', 'WorkshopController');
+        Route::get('edit-workshop/{slug}', 'WorkshopController@edit');
+        Route::post('delete-workshop/{slug}', 'WorkshopController@delete');
+        Route::post('update-workshop/{slug}', 'WorkshopController@update');
+        Route::get('show-workshop/{slug}', 'WorkshopController@show');
+
+        #Room 
+        Route::resource('rooms', 'RoomController');
+        Route::get('edit-room/{slug}', 'RoomController@edit');
+        Route::post('delete-room/{slug}', 'RoomController@delete');
+        Route::post('update-room/{slug}', 'RoomController@update');
+        Route::get('show-room/{slug}', 'RoomController@show');
+
+        #Events 
+        Route::resource('events', 'EventController');
+        Route::get('edit-event/{slug}', 'EventController@edit');
+        Route::post('delete-event/{slug}', 'EventController@destroy');
+        Route::post('update-event/{slug}', 'EventController@update');
+        Route::get('show-event/{slug}', 'EventController@show');
+
+        #Subscriber 
+        Route::get('subscribers', 'DoctorController@subscribers');
+        Route::post('delete-subscriber/{id}', 'DoctorController@deleteSubscriber');
 
 
 	 });

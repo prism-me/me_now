@@ -43,19 +43,17 @@ a:hover{
 }
 
 .global-heading h2::after {
-    content: '';
+    content: url('../img/icons/after.png');
     height: 8px;
-    width: 67px;
-    background-color: #49B7C6;
     position: absolute;
     bottom: 0;
     right: 0;
     left: 0;
-    margin: -18px auto;
+    margin: -8px auto;
 }
 
 .global-heading h2 {
-    margin:2rem auto;
+    margin:3rem auto;
     display: inline-block;
     position: relative;
     color: #356380;
@@ -114,13 +112,12 @@ a:hover{
     border: none;
     color: white;
     width: 100%;
-    padding: 15px;
+    padding: 14px 23px;  
     border-radius: 100px;
     outline: none;
     font-family: 'Roboto', sans-serif ;
     text-transform: uppercase;
     font-size: 13px;
-    display: block;
 }
 
 .appo-btn-main-box button {
@@ -137,7 +134,7 @@ a:hover{
 }
 
 .spacefor-global {
-    height: 135px;
+    height: 150px;
 }
 
 /* Loader */
@@ -246,7 +243,7 @@ a:hover{
 }
 
 .navigation-custom-single .logo-img {
-    width: 150px;
+    width: 200px;
 }
 
 .navigation-custom-single .navbar-nav {
@@ -271,7 +268,7 @@ a:hover{
 }
 
 .navigation-custom-single .navbar {
-    padding: 15px 0px;
+    padding: 10px 0px;
     background-color: white;
 }
 
@@ -304,7 +301,7 @@ a:hover{
     display: inline-block;
     padding: 30px;
     box-shadow: 0px 0px 5px #c3c3c3;
-    margin: 15px 0px;
+    /* margin: 15px 0px; */
     width: 450px;
 }
 
@@ -337,7 +334,7 @@ a:hover{
     width: 100%;
 }
 
-.appo-input-main-box input[type="text"] {
+.appo-input-main-box input[type="text"] , .appo-input-main-box select {
     border: none;
     background-color: #f2f2f2;
     border-radius: 10px;
@@ -373,7 +370,7 @@ a:hover{
 }
 
 .appo-input-main-box .appo-right-input {
-    margin-left: 10px;
+    /* margin-left: 10px; */
 }
 
 .appo-input-main-box textarea {
@@ -392,14 +389,15 @@ a:hover{
 }
 
 .services-main-box .services-left-part {
-    background-image: url(../img/services.png);
+    background-image: url(../img/left-banner.jpeg);
     width: 30%;
-    height: 513px;
+    height: 855px;
     background-size: cover;
     position: relative;
     z-index: 0;
     float: left;
     margin-right: 15px;
+    border-radius: 10px;
 }
 
 .services-main-box .services-left-part::after {
@@ -409,20 +407,15 @@ a:hover{
     right: 0;
     opacity: 0.8;
     position: absolute;
-    background-color: black;
+    background-color: #242222db;
     left: 0;
     top: 0;
     z-index: -1;
+    border-radius: 10px;
 }
-
-.left-part-detail {
-    color: white;
-    text-align: center;
-}
-
 .left-part-detail h2 {
-    font-size: 26px;
-    margin-bottom: 20px;
+    font-size: 19px;
+    margin-bottom: 7px;
     font-weight: bold;
 }
 
@@ -438,6 +431,11 @@ a:hover{
     text-align: center;
     padding: 125px 51px;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
 }
 
 .left-triangle {
@@ -455,17 +453,21 @@ a:hover{
     padding: 25px;
     border-radius: 10px;
     margin-bottom: 30px;
-    height: 250px;
+    height: 265px;
 }
 
 .services-part1-box {
     background-color: #e6f0f5;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
+
+
 
 .text-detail-box h4 {
     font-size: 17px;
     color: #356380;
-    margin: 20px 0px;
+    margin: 10px 0px;
     font-weight: bold;
     text-align: center;
 }
@@ -477,9 +479,14 @@ a:hover{
     font-family: 'Roboto', sans-serif ;
     text-align:center;
 }
+.services-inner-content h3{
+    color: #48b7c6;
+    margin-top: 1rem;
+}
 
 .services-part2-box {
     background-color: #f6f5f2;
+    cursor: pointer;
 }
 
 .services-part3-box {
@@ -585,8 +592,8 @@ a:hover{
 
 .services-part-box img {
     width: auto;
-    height: 60px;
-    margin: 0px auto;
+    height: 70px;
+    margin: 34px auto;
     display: block;
 
 }
@@ -597,14 +604,14 @@ a:hover{
 }
 
 .doctorl-part-box {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .doctorl-part-detail h4 {
     margin: 0px 0px 10px;
     font-weight: bold;
     font-size: 18px;
-    color: black;
+    /* color: black; */
 }
 
 .doctorl-part-detail p {
@@ -613,8 +620,11 @@ a:hover{
     margin-bottom: 17px;
     /* text-align: justify; */
     font-family: 'Roboto', sans-serif ;
+    text-align: justify;
 }
-
+.doctorl-part-detail h4{
+    color: #1B7081;
+}
 .facebook-doctorl i {
     color: #3b5998;
 }
@@ -640,9 +650,13 @@ a:hover{
 
 .doctorl-dp-img {
     height: 250px;
+    transition: 0.3s all ease-in-out;
+     border-top-left-radius: 10px;
+     border-top-right-radius: 10px;
 }
 
 .doctorl-dp-img-1 {
+
     background-image: url(../img/dp1.png);
 }
 
@@ -660,13 +674,12 @@ a:hover{
 
 .doctorl-dp-img {
     width: 100%;
-    background-size: cover;
+    height: auto;
 }
 
 .testimonial-main-box {
-    margin-top: 80px;
-    padding: 30px 0px;
-    background-color: #eaf7ff;
+    /* padding: 30px 0px; */
+    /* background-color: #eaf7ff; */
 }
 
 .testimonial-part-main-box {
@@ -687,7 +700,7 @@ a:hover{
     padding: 15px;
     border: 1px solid #49B7C6;
     border-radius: 10px;
-    height: 150px;
+    height: 185px;
 }
 .testimage{
     padding-left:0px;
@@ -755,7 +768,7 @@ p.testip {
 
 .footer-main-box {
     padding: 50px 0px 0px;
-    background-color: black;
+    background-color: #fff1d0;
     color: #767676;
 }
 
@@ -771,13 +784,13 @@ p.testip {
 
 .footer-r1-detail p {
     margin-bottom: 10px;
-    font-size: 15px;
+    font-size: 13px !important;
     font-family: 'Roboto', sans-serif ;
 }
 
 .footer-r1-detail a {
     margin-bottom: 5px;
-    font-size: 15px;
+    font-size: 13px;
     font-family: 'Roboto', sans-serif ;
     cursor: pointer;
     display: inline-block;
@@ -903,7 +916,7 @@ text-align: right;
 }
 
 .d-detailpg-main-box {
-    margin: 40px 0px;
+    /* margin: 40px 0px; */
 }
 
 .d-detail-img-box {
@@ -919,6 +932,7 @@ text-align: right;
 
 .d-detail-main-box {
     margin: 30px 0px;
+    padding-right: 2rem;
 }
 
 .pricelist-part-main-box {
@@ -1044,11 +1058,11 @@ text-align: right;
 }
 
 .doctorpg-main-box {
-    margin: 30px 0px;
+    margin-bottom: 60px;
 }
 
 .d-detail-collapse-doctor {
-    margin-top: 50px;
+    margin: 25px 0px;
 }
 
 .doctorpg-tab-mainbox .slick-list {

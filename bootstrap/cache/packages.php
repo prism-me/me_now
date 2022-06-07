@@ -1,4 +1,15 @@
 <?php return array (
+  'barryvdh/laravel-debugbar' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Barryvdh\\Debugbar\\ServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Debugbar' => 'Barryvdh\\Debugbar\\Facades\\Debugbar',
+    ),
+  ),
   'facade/ignition' => 
   array (
     'providers' => 
@@ -22,6 +33,28 @@
     'providers' => 
     array (
       0 => 'Fruitcake\\Cors\\CorsServiceProvider',
+    ),
+  ),
+  'jorenvanhocht/laravel-share' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Jorenvh\\Share\\Providers\\ShareServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Share' => 'Jorenvh\\Share\\ShareFacade',
+    ),
+  ),
+  'lanin/laravel-api-debugger' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Lanin\\Laravel\\ApiDebugger\\ServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Debugger' => 'Lanin\\Laravel\\ApiDebugger\\Support\\Facade',
     ),
   ),
   'laravel/tinker' => 

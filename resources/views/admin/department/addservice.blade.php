@@ -94,6 +94,21 @@
                         </label>
                         <textarea  id="description" name="description"  class="form-control">{{ isset($data->description)?$data->description:''}}</textarea>
                      </div>
+                     <div class="form-group">
+                        <label for="name" class=" form-control-label">
+                        {{__('messages.Slug')}}
+                        <span class="reqfield">*</span>
+                        </label>
+                        <input type="text" id="slug" placeholder="{{__('messages.Enter').'  '.__('messages.Slug')}}" class="form-control"  name="slug" value="{{ isset($data->slug)?$data->slug:''}}">
+                     </div>
+                     <div class="form-group">
+                        <label for="file" class=" form-control-label">  
+                        Banner Image<span class="reqfield" >*</span>
+                        </label>
+                        <div>
+                           <input type="file" id="file" name="banner_image" class="form-control-file" accept="image/*">
+                        </div>
+                     </div>
                       <div class="form-group">
                         <label for="file" class=" form-control-label">  
                         {{__('messages.Image')}}<span class="reqfield" >*</span>

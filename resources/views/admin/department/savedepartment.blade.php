@@ -57,13 +57,13 @@
                         </label>
                         <input type="text" id="name" placeholder="{{__('messages.Enter').' '.__('messages.Department Name')}}" class="form-control"  name="name" value="{{ isset($data->name)?$data->name:''}}">
                      </div>
-                     <div class="form-group">
+                     {{-- <div class="form-group">
                         <label for="name" class=" form-control-label">
                         {{__('messages.Emergency No')}}
                         <span class="reqfield" >*</span>
                         </label>
                         <input type="text" id="emergency_no" placeholder="{{__('messages.Enter').' '.__('messages.Emergency No')}}" class="form-control"  name="emergency_no" value="{{ isset($data->emergency_no)?$data->emergency_no:''}}">
-                     </div>
+                     </div> --}}
                      <div class="form-group">
                         <label for="email" class=" form-control-label">
                         {{__('messages.Short Description')}}<span class="reqfield" >*</span>
@@ -77,6 +77,13 @@
                         <textarea  id="description" name="description"  class="form-control">{{ isset($data->description)?$data->description:''}}</textarea>
                      </div>
                      <div class="form-group">
+                        <label for="name" class=" form-control-label">
+                        {{__('messages.Slug')}}
+                        <span class="reqfield">*</span>
+                        </label>
+                        <input type="text" id="slug" placeholder="{{__('messages.Enter').'  '.__('messages.Slug')}}" class="form-control"  name="slug" value="{{ isset($data->slug)?$data->slug:''}}">
+                     </div>
+                     <div class="form-group">
                         <label for="file" class=" form-control-label">  
                         {{__('messages.Image')}}<span class="reqfield" >*</span>
                         </label>
@@ -85,6 +92,18 @@
                         @endif
                         <div>
                            <input type="file" id="file" name="image" class="form-control-file" accept="image/*">
+                        </div>
+                     </div>
+
+                     <div class="form-group">
+                        <label for="file" class=" form-control-label">  
+                        Banner Image<span class="reqfield" >*</span>
+                        </label>
+                        @if($department_id!=0)
+                        <img src="{{$data->banner_image}}" class="imgsize1 departmentimg" style="width:50px;height:50px;"/> 
+                        @endif
+                        <div>
+                           <input type="file" id="file" name="banner_image" class="form-control-file" accept="image/*">
                         </div>
                      </div>
                      <div>
