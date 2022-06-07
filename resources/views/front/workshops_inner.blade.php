@@ -94,17 +94,13 @@
                                 <input type="text" required name="email" id="email" placeholder="Email"
                                     class="appo-right-input">
                                 <input type="text" required name="phone_number" id="phone_no" placeholder="Phone Number">
-                                <select name="dob" id="">
-                                    <option value="0">Select Date</option>
-                                    <option value="12-01-2022">30 May 2022</option>
-                                    <option value="11-01-2022">03 September 2022</option>
+                                @php $event_date = $workshop->event_date; @endphp
+                                <select name="dob" id="" class="form-control" style="color:#000;width:90%;">
+        
+                                    @foreach ($event_date as $date)
+                                        <option value="{{ $date }}">{{ date('m/d/Y H:i:s', strtotime($date)) }}</option>
+                                    @endforeach
                                 </select>
-                                <select name="time" id="">
-                                    <option value="0">Select Time</option>
-                                    <option value="4:00">4:00 PM</option>
-                                    <option value="6:00">6:00 PM</option>
-                                </select>
-
                                 <textarea type="text" required name="message" id="message_workshop" placeholder="Your Message"></textarea>
                             </div>
                             <div class="appo-btn-main-box">

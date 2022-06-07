@@ -56,13 +56,12 @@
 
 
     <div class="header-pinned" id="header">
-        <div class="top-header">
+        {{-- <div class="top-header">
             <div class="container-fluid">
                 <div class="top-left-text">
                     <p>{{ isset($setting->working_day) ? $setting->working_day : Session::get('working_day') }}</p>
                 </div>
                 <div class="top-right-text">
-                    {{-- <p>{{__('messages.Call us')}} : {{isset($setting->phone_no)?$setting->phone_no:Session::get("phone")}}</p> --}}
                     <form class="form-inline">
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Language</label>
@@ -74,7 +73,7 @@
                     </form>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="container-fluid">
             <div class="navigation-custom-single">
                 <nav class="navbar navbar-light bg-faded">
