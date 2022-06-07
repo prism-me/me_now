@@ -61,7 +61,7 @@
                            </td>
                            <td>
                                 <a href="{{URL::to('admin/edit-workshop') . '/' . $d->slug}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
-                                <a href="{{URL::to('admin/show-workshop') .'/' . $d->slug}}" class="btn btn-success">{{__('messages.View')}}</a>
+                                {{-- <a href="{{URL::to('admin/show-workshop') .'/' . $d->slug}}" class="btn btn-success">{{__('messages.View')}}</a> --}}
                                  <form action="{{ url('admin/delete-workshop'.'/' . $d->slug)}}"  novalidate="novalidate"  method="POST"  >{{csrf_field()}}<input type="submit" class="btn btn-danger" value="{{__('messages.Delete')}}" name="Delete"></form>
                            </td>
                         </tr>

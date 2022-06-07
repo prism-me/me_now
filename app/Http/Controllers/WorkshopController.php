@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\Workshop;
+use App\Model\Doctor;
 use Illuminate\Http\Request;
 
 class WorkshopController extends UploadController
@@ -26,7 +27,8 @@ class WorkshopController extends UploadController
      */
     public function create()
     {
-         return view("admin.workshop.addWorkshop");
+        $doctor  = Doctor::all();
+        return view("admin.workshop.addWorkshop")->with("doctor",$doctor);
     }
 
     /**
@@ -88,8 +90,9 @@ class WorkshopController extends UploadController
      */
     public function edit(Workshop $workshop,$slug)
     {
+         $doctor  = Doctor::all();
         $data = Workshop::where('slug',$slug)->first();
-        return view('admin.workshop.saveWorkshop')->with('data', $data);
+        return view('admin.workshop.saveWorkshop')->with('data', $data)->with('doctor', $doctor);
     }
 
     /**

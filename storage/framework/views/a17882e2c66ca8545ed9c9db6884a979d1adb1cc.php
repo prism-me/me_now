@@ -66,8 +66,18 @@
 
                         <span class="reqfield">*</span>
                         </label>
-                        <select id="title" placeholder="<?php echo e(__('messages.Enter').'  '.__('messages.Title')); ?>" class="form-control" required name="event_type" value="<?php echo e(isset($data->event_type)?$data->event_type:''); ?>">
-                           <option value="counselling">Counselling</option>
+                        <input type="text" id="title" placeholder="<?php echo e(__('messages.Enter').'  '.__('messages.Event Type')); ?>" class="form-control" required name="title" value="<?php echo e(isset($data->event_type)?$data->event_type:''); ?>">
+                     </div>
+                     <div class="form-group">
+                        <label for="name" class=" form-control-label">
+                        <?php echo e(__('messages.Doctor')); ?>
+
+                        <span class="reqfield">*</span>
+                        </label>
+                        <select id="title" placeholder="<?php echo e(__('messages.Enter').'  '.__('messages.Doctor')); ?>" class="form-control" required name="doctor_id" >
+                           <?php $__currentLoopData = $doctor; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                           <option value="<?php echo e($value['id']); ?>"><?php echo e($value['name']); ?></option>
+                           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </select>
                      </div>
                      <div class="form-group">
