@@ -10,59 +10,48 @@
 <?php $__env->startSection('content'); ?>
     <div class="container-fluid">
         <div class="global-heading">
-            <h2><?php echo e($rooms->title); ?></h2>
+            <h2><?php echo e($room->title); ?></h2>
             <div class="exerpt">
             </div>
             </p>
         </div>
-        <div class="who_we_are">
+
+        <div class="rooms_first_section">
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-md-6">
                     <div class="who_we_are_cotent">
                         <div class="room_description">
-                            <?php echo $rooms->description; ?>
+                            <?php echo $room->description; ?>
 
+                            <a href="https://wa.me/+971565553483" class="btn-hover color-9 ">Contact Us</a>
                         </div>
+
                     </div>
 
-                </div>
-                <div class="col-md-5">
-                    <img src="<?php echo e($rooms->featured_img); ?>" alt="" class="img-fluid">
-                </div>
-            </div>
-        </div>
-        <div class="about-content-widget">
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="<?php echo e($rooms->featured_img2); ?>" class="img-fluid" alt="">
                 </div>
                 <div class="col-md-6">
-                    <div class="room_long_description">
-                        <?php echo $rooms->description2; ?>
-
+                    <div class="room_main_img">
+                        <img src="<?php echo e($room->featured_img); ?>" alt="" class="img-fluid">
                     </div>
                 </div>
             </div>
         </div>
-        <div class="promo_section_rooms">
-            <div class="row">
-                <div class="col-lg-6">
-                    <img src="<?php echo e($rooms->more_img1); ?>" alt="" class="img-fluid">
-                    <div class="room_title">
-                        <h2><?php echo e($rooms->more_img_title1); ?></h2>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="room_title">
-                        <h2><?php echo e($rooms->more_img_title2); ?></h2>
-                    </div>
-                    <img src="<?php echo e($rooms->more_img2); ?>" alt="" class="img-fluid">
-
-                </div>
-            </div>
-        </div>
-
     </div>
+    <div class="rooms_second_section">
+        <div class="row" style="margin-left: 0px;margin-right: 0px;">
+            <div class="col-md-6">
+                <img src="<?php echo e($room->featured_img2); ?>" class="img-fluid" alt="">
+            </div>
+            <div class="col-md-6">
+                <div class="room_long_description">
+                    <?php echo $room->description2; ?>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('footer'); ?>
     <script>

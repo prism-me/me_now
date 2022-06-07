@@ -39,10 +39,17 @@ class DepartmentController extends UploadController
                 ]);
              }
             $mediaUpload = "" ;
-            if ($img = $request->hasFile('image')) {
+            $mediaUpload_banner = "";
+            if ($img = $request->hasFile('image') ) {
                
                 $media =  UploadController::upload_media($request->image);
                 $mediaUpload = $media['url'];
+
+            }
+            if ($banner_image = $request->hasFile('banner_image') ) {
+               
+                $media =  UploadController::upload_media($request->banner_image);
+                $mediaUpload_banner = $media['url'];
 
             }
        
@@ -64,6 +71,9 @@ class DepartmentController extends UploadController
 
                 $store->image = $mediaUpload;
 
+            }
+            if($mediaUpload_banner){
+                $store->banner_image = $mediaUpload_banner;
             }
             $store->save(); 
             Session::flash('message',$msg); 
@@ -162,17 +172,28 @@ class DepartmentController extends UploadController
                 $msg=__('messages.Department Service Add Successfully');
             }
             $mediaUpload = "" ;
+<<<<<<< HEAD
             $mediaUpload1 = "" ;
+=======
+            $mediaUpload_banner ="";
+>>>>>>> 672defd7d92f0ce5555f07428e40b4e757fc3b8f
             if ($img = $request->hasFile('img')) {
                
                 $media =  UploadController::upload_media($request->img);
                 $mediaUpload = $media['url'];
 
             }
+<<<<<<< HEAD
             if ($img = $request->hasFile('banner_img')) {
                
                 $media =  UploadController::upload_media($request->banner_img);
                 $mediaUpload1 = $media['url'];
+=======
+            if ($banner_image = $request->hasFile('banner_image') ) {
+               
+                $media =  UploadController::upload_media($request->banner_image);
+                $mediaUpload_banner = $media['url'];
+>>>>>>> 672defd7d92f0ce5555f07428e40b4e757fc3b8f
 
             }
 
@@ -191,9 +212,15 @@ class DepartmentController extends UploadController
                 $store->img = $mediaUpload;
 
             }
+<<<<<<< HEAD
             if($mediaUpload1){
 
                 $store->banner_img = $mediaUpload1;
+=======
+            if($mediaUpload_banner){
+
+                $store->banner_image = $mediaUpload_banner;
+>>>>>>> 672defd7d92f0ce5555f07428e40b4e757fc3b8f
 
             }
             $store->save(); 

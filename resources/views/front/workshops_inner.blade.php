@@ -9,7 +9,6 @@
 @section('content')
     <div class="workshop_wrapper">
         <div class="banner-img">
-<<<<<<< HEAD
             <img src="{{ @$workshop->banner_img }}" alt="" class="img-fluid">
         </div>
         <div class="meta_content">
@@ -27,22 +26,6 @@
                 <p>
                     {{ $workshop->description }}
                 </p>
-=======
-            <img src="{{ @$workshop->banner_img }}" alt="" class="img-fluid banner workshop-banner">
-            <div class="workshop_inner_overlay" data-aos="fade-left">
-                <div class="meta_content">
-                    <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Date:
-                        </b>&nbsp;{{ $workshop->event_date }}</div>
-                    <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Time: </b>&nbsp;10:00 AM to
-                        11:00 AM </div>
-                    <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Event Type:
-                        </b>&nbsp;{{ ucfirst($workshop->event_type) }}</div>
-                    <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Age: </b>&nbsp; Adults (18
-                        Yrs+) </div>
-                    <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Facilitated by: </b></div>
-
-                </div>
->>>>>>> 16475f23901803ac926f6390dc27fd85198f9a63
                 <div class="facilitated">
                     {{-- <h4>Facilitated by</h4> --}}
                     <div class="content">

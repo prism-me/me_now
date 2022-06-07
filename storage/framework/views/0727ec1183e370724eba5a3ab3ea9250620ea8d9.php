@@ -6,7 +6,7 @@
 <?php $__env->startSection('content'); ?>
     <?php $res_curr = explode('-', $setting->currency); ?>
     <div class="d-detailpg-main-box">
-        <div class="department_background" style="background-image : url(<?php echo e(asset('front/img/banner/banner-1.jpg')); ?>) ">
+        <div class="department_background" style="background-image : url(<?php echo e($current->banner_image); ?>) ">
 
         </div>
         <div class="service_caption">
@@ -56,64 +56,7 @@
                                 </ul>
                             </div>
                         <?php endif; ?>
-                        <div class="d-detail-collapse-doctor">
-                            <div class="accordion indicator-plus-before round-indicator" id="accordionH"
-                                aria-multiselectable="true">
-                                <div class="card m-b-0">
-                                    
-                                    <?php if(count($doctors) > 0): ?>
-                                        <?php $i = 0; ?>
 
-                                        <?php $__currentLoopData = $doctors; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $doc): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            <div class="card-header collapsed" role="tab" id="heading<?php echo e($i); ?>"
-                                                href="#collapse<?php echo e($i); ?>"
-                                                data-parent="#accordion<?php echo e($i); ?>" aria-expanded="false"
-                                                aria-controls="collapse<?php echo e($i); ?>"
-                                                onclick="changedoctorblog('<?php echo e($i); ?>')">
-                                                <a class="card-title">
-                                                    <?php echo e(ucwords(strtolower($doc->name))); ?>
-
-                                                </a>
-                                            </div>
-                                            <?php if($i == 0): ?>
-                                                <div class="collapse in" id="collapse<?php echo e($i); ?>"
-                                                    role="tabpanel" aria-labelledby="heading<?php echo e($i); ?>"
-                                                    aria-expanded="true">
-                                                <?php else: ?>
-                                                    <div class="collapse" id="collapse<?php echo e($i); ?>"
-                                                        role="tabpanel" aria-labelledby="heading<?php echo e($i); ?>"
-                                                        aria-expanded="false">
-                                            <?php endif; ?>
-
-                                            <div class="card-body">
-                                                <div class="doctorl-part-box">
-                                                    <?php
-                                                    if ($doc->image) {
-                                                        $image = $doc->image;
-                                                    } else {
-                                                        $image = asset('public/upload/profile/profile.png');
-                                                    }
-                                                    ?>
-                                                    <div class="doctorl-dp-img doctorl-dp-img-1"
-                                                        style="background-image: url('<?= $image ?>')"></div>
-                                                    <div class="doctor-detail-part1">
-                                                        <div class="doctorl-part-detail">
-                                                            <h4><?php echo e($doc->name); ?></h4>
-                                                            <p class="departdoc"><?php echo e(substr($doc->about_us, 0, 50)); ?>
-
-                                                            </p>
-                                                        </div>
-                                                        
-                                                    </div>
-                                                </div>
-                                            </div>
-                                </div>
-                                <?php $i++; ?>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                <?php endif; ?>
-                                <input type="hidden" id="avilabledoctor" value="<?php echo e($i); ?>">
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

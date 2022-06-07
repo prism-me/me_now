@@ -3,7 +3,6 @@
     {{ __('messages.Save Room') }}
 @stop
 @section('content')
-<<<<<<< HEAD
 <div class="breadcrumbs">
    <div class="col-sm-4">
       <div class="page-header float-left">
@@ -125,13 +124,6 @@
                         {{__('messages.Slug')}}
                         </label>
                         <input type="text" id="slug" required placeholder="{{__('messages.Enter').' '.__('messages.Slug')}}"  class="form-control"  name="slug" value="{{ isset($data->slug)?$data->slug:''}}">
-=======
-    <div class="breadcrumbs">
-        <div class="col-sm-4">
-            <div class="page-header float-left">
-                <div class="page-title">
-                    <h1>{{ __('messages.Save Room') }}</h1>
->>>>>>> 16475f23901803ac926f6390dc27fd85198f9a63
                 </div>
             </div>
         </div>

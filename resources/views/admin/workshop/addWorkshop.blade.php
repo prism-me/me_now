@@ -86,13 +86,14 @@
                            <input type="text" id="slug" required placeholder="{{__('messages.Enter').' '.__('messages.Slug')}}"  class="form-control"  name="slug" value="{{ isset($data->slug)?$data->slug:''}}">
                         </div>
                      
-                     
+                       
                      <div class="form-group">
                          <label for="name" class=" form-control-label">
                               {{__('messages.Start Date')}}
                         </label>
-                        <input id="start_date" name="event_date" type="text" class="form-control" required value="<?= isset($event_date)&&$event_date!=0?$event_date:""?>">
+                        <input id="" name="event_date" type="datetime-local" class="form-control" required value="<?= isset($event_date)&&$event_date!=0?$event_date:""?>">
                      </div>
+                     
                      <div class="form-group">
                         <label for="name" class=" form-control-label">
                         {{__('messages.Price')}}
@@ -135,4 +136,5 @@
       </div>
    </div>
 </div>
+
 @stop

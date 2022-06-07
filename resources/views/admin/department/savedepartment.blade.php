@@ -94,6 +94,18 @@
                            <input type="file" id="file" name="image" class="form-control-file" accept="image/*">
                         </div>
                      </div>
+
+                     <div class="form-group">
+                        <label for="file" class=" form-control-label">  
+                        Banner Image<span class="reqfield" >*</span>
+                        </label>
+                        @if($department_id!=0)
+                        <img src="{{$data->banner_image}}" class="imgsize1 departmentimg" style="width:50px;height:50px;"/> 
+                        @endif
+                        <div>
+                           <input type="file" id="file" name="banner_image" class="form-control-file" accept="image/*">
+                        </div>
+                     </div>
                      <div>
                         @if(Session::get("is_demo")=='1')
                            <button id="payment-button" type="button"  onclick="disablebtn()" class="btn btn-lg btn-info" >

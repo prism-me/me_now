@@ -99,7 +99,8 @@ class WorkshopController extends UploadController
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Workshop $workshop , $slug)
-    {
+    {  
+        // dd($request->all()); 
         $mediaUpload = "";
         $mediaUpload1 = "";
         if ($img = $request->hasFile('featured_img')) {
