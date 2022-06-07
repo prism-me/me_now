@@ -1,42 +1,42 @@
-@extends('front.layout')
-@section('title')
-    {{ __('messages.Home') }}
-@stop
-@section('loader')
+
+<?php $__env->startSection('title'); ?>
+    <?php echo e(__('messages.Home')); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('loader'); ?>
     <div id="overlayer"></div><span class="loader"><span class="loader-inner"></span></span>
-@stop
-@section('content')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
 
     <div class="appointment-section">
-        @include('front.banner_slider')
+        <?php echo $__env->make('front.banner_slider', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     </div>
 
     <div class="about_container">
-        @include('front.about_section')
+        <?php echo $__env->make('front.about_section', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     </div>
 
     <div class="service_section_container">
-        @include('front.services_section')
+        <?php echo $__env->make('front.services_section', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     </div>
 
 
 
-    {{-- </div>
-    </div> --}}
+    
 
-    @include('front.doctor_section')
+    <?php echo $__env->make('front.doctor_section', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <div class="outer_container_women_wrapper">
     <div class="container-fluid">
         <div class="women_wrapper " data-aos="fade-up">
             <div class="row">
                 <div class="col-md-5 text-center women_img_section">
-                    <div class="women_img_wrapper"><img src="{{ asset('front/img/women_background.jpeg') }}" class="img-fluid" alt="about us section">
+                    <div class="women_img_wrapper"><img src="<?php echo e(asset('front/img/women_background.jpeg')); ?>" class="img-fluid" alt="about us section">
                     </div>
                 </div>
                 
                 <div class="col-md-7">
                     <div class="about_content text-center">
-                        {{-- <img src="{{ asset('front/img/logo-background.png') }}" alt="logo" class="about-section-logo"> --}}
+                        
                         <div class="services_home_container global-heading ">
                             <h2 class="animated fadeInDown delay-2s ">Women, We See You, You’re at The Heart of Me Now</h2>
                         </div>
@@ -45,7 +45,7 @@
                             benefits including discounts on facilities, free workshops, and much more.
     
                         </p>
-                        <a href="{{ url('women-empowerment') }}" class="btn-hover color-9">Read More</a>
+                        <a href="<?php echo e(url('women-empowerment')); ?>" class="btn-hover color-9">Read More</a>
                     </div>
                 </div>
 
@@ -55,22 +55,7 @@
 </div>
 
     
-    {{-- <div class="home_promo_banner" data-aos="fade-up">
-        <div class="container-fluid">
-            <div class="home_promo_banner_inner">
-                <h2>Women, We See You, You’re at The Heart of Me Now</h2>
-                <p>Me Now is no less than a family dedicated to supporting each other and building a community of
-                    like-minded, empowered women. The center has special memberships for women that come with unlimited
-                    benefits including discounts on facilities, free workshops, and much more.
-                </p>
-                <div class="services-btn-main-box">
-                    <a href="{{ url('women-empowerment') }}" class="btn-hover color-9">Read More</a>
-                </div>
     
-            </div>
-
-        </div>
-    </div> --}}
 
     <div class="testimonial-main-box">
         <div class="container-fluid" style="padding-left: 0px ; padding-right: 0px;">
@@ -81,35 +66,35 @@
             </div>
             <div class="testimonial-part-main-box">
                 <div class="owl-carousel testimonial-carousel patient-reviews-slider">
-                    @foreach ($review as $r)
-                        @if (isset($r->users))
+                    <?php $__currentLoopData = $review; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php if(isset($r->users)): ?>
                             <div class="single-testimonial">
                                 <div class="testimonial-part-box">
                                     <div class="testimonial-inner-images">
                                         <div class="col-md-3 testimage">
                                             
-                                            <img src="{{ $r->img }}" class="testimonial-profile-img img-fluid">
+                                            <img src="<?php echo e($r->img); ?>" class="testimonial-profile-img img-fluid">
                                         </div>
                                         <div class="col-md-9 testtext">
-                                            <p class="testip">{{ $r->review }}</p>
+                                            <p class="testip"><?php echo e($r->review); ?></p>
                                             <span class="testimonialspan"></span>
-                                            @if (isset($r->users->name))
-                                                <h3 class="testimonialh">- {{ $r->users->name }}</h3>
-                                            @endif
+                                            <?php if(isset($r->users->name)): ?>
+                                                <h3 class="testimonialh">- <?php echo e($r->users->name); ?></h3>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        @endif
-                    @endforeach
+                        <?php endif; ?>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
             </div>
         </div>
     </div>
-@stop
+<?php $__env->stopSection(); ?>
 
 
-@push('scripts')
+<?php $__env->startPush('scripts'); ?>
     <script>
         $('.testimonial-carousel').owlCarousel({
             loop: true,
@@ -163,7 +148,9 @@
         //     });
         // });
     </script>
-@endpush
+<?php $__env->stopPush(); ?>
 
 
-{{-- @section('footer') --}}
+
+
+<?php echo $__env->make('front.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\meNow\resources\views/front/home.blade.php ENDPATH**/ ?>

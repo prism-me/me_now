@@ -1,6 +1,6 @@
 @extends('front.layout')
 @section('title')
-    {{ __('messages.Workshops') }}
+    {{ __('messages.Events') }}
 @stop
 @section('loader')
     <div id="overlayer"></div>
@@ -27,7 +27,7 @@
                     @endphp
                     <div class="col-lg-7 col-md-7 col-sm-6 {{$class}}" data-aos="fade-up">
                         <div class="events-detail">
-                            <h4>{{ $d->name }}</h4>
+                            <h2>{{ $d->name }}</h2>
                             <p>Event Date: {{ $d->created_at->diffForHumans() }}</p>
                             <div class="event-description">
                                 {!! $d->description !!}
