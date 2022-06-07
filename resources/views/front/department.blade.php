@@ -4,7 +4,7 @@
 @stop
 @section('content')
     <div class="departmentpg-main-box">
-        <div class="container">
+        <div class="container-fluid">
             <div class="global-heading">
                 {{-- @dd($department) --}}
                 <h2>{{ $current->name }}</h2>

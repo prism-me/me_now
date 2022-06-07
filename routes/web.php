@@ -20,6 +20,8 @@ Route::get('/', function() {
 });
  Route::get("/brain","braintreeController@showbrain");
  
+ Route::get('instagram','FrontController@instagram');
+ 
 Route::get("add_doctor_review","AuthenticatedoctorController@show_product_review_user");
 Route::post("checkoutbrain","braintreeController@checkoutbrain");
 Route::get("sendnotification","FrontController@sendnotification");
@@ -33,6 +35,7 @@ Route::group(['prefix' => '/'], function () {
      Route::get("blog","FrontController@blog");
      Route::get("faqs","FrontController@faqs");
      Route::get("women-empowerment","FrontController@women_empowerment");
+     Route::get("become-a-member","FrontController@become_member");
      Route::get("workshop","FrontController@workshop");
      Route::get("events","FrontController@events");
      Route::get("rooms/{slug}","FrontController@rooms");

@@ -1,0 +1,1 @@
+<?php /**PATH D:\Projects\Menow\me_now\resources\views/front/instagram_feeds.blade.php ENDPATH**/ ?>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Phpfastcache\Helper\Psr16Adapter;
 use Illuminate\Http\Request;
 use Auth;
 use App\Model\Doctor;
@@ -12,6 +13,7 @@ use App\Model\DepartService;
 use App\Model\Token;
 use App\Model\WorkshopBooking;
 use App\Model\Workshop;
+use App\Model\Event;
 use App\Model\Review;
 use App\Model\Blog;
 use App\Model\Room;
@@ -36,7 +38,8 @@ use Mail;
 use validate;
 use App\Mail\BookingMail;
 class FrontController extends Controller
-{
+{   
+    public $instagram_feed ;
     public function __construct(){
         $setting = Setting::find(1);
     //   Session::put("main_color","#000");
@@ -45,20 +48,46 @@ class FrontController extends Controller
     //   Session::put("lowbackground_box_color","#ededc2");
     //   Session::put("slider_color","#f1f5ff");          
         Session::put("main_banner",asset('upload/web').'/'.$setting->main_banner);
+        
+        // 'menowdubai', 'CXZ0988998565'
+        //$instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), 'muhammadbilal11203', 'Bilal$786', new Psr16Adapter('Files'));
+        // $instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
+        //$instagram->login(false , true); // will use cached session if you want to force login $instagram->login(true)
+        //$instagram->saveSession();  //DO NOT forget this in order to save the session, otherwise have no sense
+        //$account = $instagram->getAccount('menowdubai');
+        //dd($account);
+        // $this->instagram_feed = $instagram->medias;
+
+        
     }
 
-    public function showhome(){
+    public function instagram(){
 
+
+        // dd($accountMedias);
+        // foreach ($accountMedias as $key  => $accountMedia) {
+        //     $images[$key] = str_replace("&amp;","&", $accountMedia->getimageHighResolutionUrl());     
+        //     $path = $images[$key];
+        //     $imageName = $key.'.png';
+        //     $img = public_path('insta/images/') . $imageName;
+        //     file_put_contents($img, file_get_contents($path));
+        // }
+        // return view('gallery', compact('images'));
+    }
+    
+
+    public function showhome(){
         if(!isset($_COOKIE['fload'])){
             setcookie('fload','1', time() + (86400 * 30), "/");
         }
         //$service=Service::get()->take(8);
-        $package= Package::get()->take(3);
+        // $package= Package::get()->take(3);
         $doctor= Doctor::get()->take(4);
+        $rooms = Room::get()->take(3);
         $department= Department::with('service')->get();
         $setting= Setting::find(1);
         $reviews= Review::with('doctors','users')->get()->take(4);
-        return view("front.home")->with("package",$package)->with("setting",$setting)->with("department",$department)->with("review",$reviews)->with("doctor",$doctor)->with("chatpage",'1');;
+        return view("front.home")->with('rooms',$rooms)->with("setting",$setting)->with("department",$department)->with("review",$reviews)->with("doctor",$doctor)->with("chatpage",'1');;
     }
 
     public function blog(){
@@ -109,14 +138,10 @@ class FrontController extends Controller
         if(!isset($_COOKIE['fload'])){
             setcookie('fload','1', time() + (86400 * 30), "/");
          }
-         $service=Service::get()->take(8);
-         $workshop=Workshop::get()->take(8);
-         $package=Package::get()->take(3);
-         $doctor=Doctor::get()->take(4);
+         $events=Event::get()->take(8);
          $department=Department::with('service')->get();
          $setting=Setting::find(1);
-         $reviews=Review::with('doctors','users')->get()->take(4);
-        return view("front.events")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with("workshop",$workshop);
+        return view("front.events")->with("setting",$setting)->with("department",$department)->with("events",$events);
     }
 
     public function workshopdetail($id){
@@ -129,9 +154,13 @@ class FrontController extends Controller
          $department=Department::with('service')->get();
          $setting=Setting::find(1);
          $reviews=Review::with('doctors','users')->get()->take(4);
-         $workshop=Workshop::where('slug',$id)->first();
-        //  dd($workshop);
-       return view("front.workshops_inner")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with('workshop',$workshop);
+         
+         $workshop=  Workshop::where('slug',$id)->first();
+        //  dd($workshop->short_description);
+        //https://prismdigital.ae/why-do-business-websites-need-a-good-design/ - test url
+         $social = \Share::page('http://127.0.0.1:8000/workshop/'. $workshop->slug , $workshop->title)->facebook()->linkedin()->whatsapp()->twitter();
+        //   dd($social);
+       return view("front.workshops_inner")->with('social', $social)->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with('workshop',$workshop);
     }
     public function faqs(){
         if(!isset($_COOKIE['fload'])){
@@ -161,18 +190,28 @@ class FrontController extends Controller
      
     }
     
-    
+    public function become_member(){
+        if(!isset($_COOKIE['fload'])){
+            setcookie('fload','1', time() + (86400 * 30), "/");
+         }
+        //  $service=Service::get()->take(8);
+         $department=Department::with('service')->get();
+         $setting=Setting::find(1);
+        //  $reviews=Review::with('doctors','users')->get()->take(4);
+       return view("front.become_member")->with("setting",$setting)->with("department",$department);
+     
+    }
+
     public function women_empowerment(){
         if(!isset($_COOKIE['fload'])){
             setcookie('fload','1', time() + (86400 * 30), "/");
          }
-         $service=Service::get()->take(8);
-         $package=Package::get()->take(3);
-         $doctor=Doctor::get()->take(4);
+        //  $service=Service::get()->take(8);
+        //  $doctor=Doctor::get()->take(4);
          $department=Department::with('service')->get();
          $setting=Setting::find(1);
-         $reviews=Review::with('doctors','users')->get()->take(4);
-       return view("front.women_empowerment")->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department);
+        //  $reviews=Review::with('doctors','users')->get()->take(4);
+       return view("front.women_empowerment")->with("setting",$setting)->with("department",$department);
      
     }
     public function rooms($slug){
@@ -182,7 +221,7 @@ class FrontController extends Controller
          }
 
          $rooms = Room::where('slug',$slug)->first();
-
+         dd($rooms);
          $service = Service::get()->take(8);
         //  $package = Package::get()->take(3);
         //  $doctor = Doctor::get()->take(4);
@@ -694,7 +733,7 @@ class FrontController extends Controller
        
         $add = WorkshopBooking::create($data);
         $userEmail = $request['email'];
-        $mail = Mail::to($userEmail)->send(new BookingMail($emailData));
+        // $mail = Mail::to($userEmail)->send(new BookingMail($emailData));
 
         Session::flash('message',__('messages.Booking Done Successfully.Please Check Your Registered E-Mail to confirm the Booking.')); 
         Session::flash('alert-class', 'alert-success');           

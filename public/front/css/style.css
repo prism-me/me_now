@@ -53,7 +53,7 @@ a:hover{
 }
 
 .global-heading h2 {
-    margin:2rem auto;
+    margin:3rem auto;
     display: inline-block;
     position: relative;
     color: #356380;
@@ -134,7 +134,7 @@ a:hover{
 }
 
 .spacefor-global {
-    height: 155px;
+    height: 150px;
 }
 
 /* Loader */
@@ -268,7 +268,7 @@ a:hover{
 }
 
 .navigation-custom-single .navbar {
-    /* padding: 15px 0px; */
+    padding: 10px 0px;
     background-color: white;
 }
 
@@ -301,7 +301,7 @@ a:hover{
     display: inline-block;
     padding: 30px;
     box-shadow: 0px 0px 5px #c3c3c3;
-    margin: 15px 0px;
+    /* margin: 15px 0px; */
     width: 450px;
 }
 
@@ -334,7 +334,7 @@ a:hover{
     width: 100%;
 }
 
-.appo-input-main-box input[type="text"] {
+.appo-input-main-box input[type="text"] , .appo-input-main-box select {
     border: none;
     background-color: #f2f2f2;
     border-radius: 10px;
@@ -370,7 +370,7 @@ a:hover{
 }
 
 .appo-input-main-box .appo-right-input {
-    margin-left: 10px;
+    /* margin-left: 10px; */
 }
 
 .appo-input-main-box textarea {
@@ -389,9 +389,9 @@ a:hover{
 }
 
 .services-main-box .services-left-part {
-    background-image: url(../img/services.png);
+    background-image: url(../img/left-banner.jpeg);
     width: 30%;
-    height: 513px;
+    height: 855px;
     background-size: cover;
     position: relative;
     z-index: 0;
@@ -411,12 +411,6 @@ a:hover{
     top: 0;
     z-index: -1;
 }
-
-.left-part-detail {
-    color: white;
-    text-align: center;
-}
-
 .left-part-detail h2 {
     font-size: 19px;
     margin-bottom: 7px;
@@ -435,6 +429,10 @@ a:hover{
     text-align: center;
     padding: 125px 51px;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .left-triangle {
@@ -610,7 +608,7 @@ a:hover{
     margin: 0px 0px 10px;
     font-weight: bold;
     font-size: 18px;
-    color: black;
+    /* color: black; */
 }
 
 .doctorl-part-detail p {
@@ -619,8 +617,11 @@ a:hover{
     margin-bottom: 17px;
     /* text-align: justify; */
     font-family: 'Roboto', sans-serif ;
+    text-align: justify;
 }
-
+.doctorl-part-detail h4{
+    color: #1B7081;
+}
 .facebook-doctorl i {
     color: #3b5998;
 }
@@ -695,7 +696,7 @@ a:hover{
     padding: 15px;
     border: 1px solid #49B7C6;
     border-radius: 10px;
-    height: 150px;
+    height: 185px;
 }
 .testimage{
     padding-left:0px;
@@ -763,7 +764,7 @@ p.testip {
 
 .footer-main-box {
     padding: 50px 0px 0px;
-    background-color: black;
+    background-color: #fff1d0;
     color: #767676;
 }
 
@@ -779,13 +780,13 @@ p.testip {
 
 .footer-r1-detail p {
     margin-bottom: 10px;
-    font-size: 15px;
+    font-size: 13px !important;
     font-family: 'Roboto', sans-serif ;
 }
 
 .footer-r1-detail a {
     margin-bottom: 5px;
-    font-size: 15px;
+    font-size: 13px;
     font-family: 'Roboto', sans-serif ;
     cursor: pointer;
     display: inline-block;
@@ -927,6 +928,7 @@ text-align: right;
 
 .d-detail-main-box {
     margin: 30px 0px;
+    padding-right: 2rem;
 }
 
 .pricelist-part-main-box {
@@ -1052,11 +1054,11 @@ text-align: right;
 }
 
 .doctorpg-main-box {
-    margin: 30px 0px;
+    margin-bottom: 60px;
 }
 
 .d-detail-collapse-doctor {
-    margin-top: 50px;
+    margin: 25px 0px;
 }
 
 .doctorpg-tab-mainbox .slick-list {
