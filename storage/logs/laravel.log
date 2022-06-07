@@ -4991,3 +4991,19 @@ Did you mean this?
 #57 C:\\xampp\\htdocs\\meNow\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #58 {main}
 "} 
+[2022-06-07 07:47:27] local.ERROR: There are no commands defined in the "conifg" namespace.
+
+Did you mean this?
+    config {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"conifg\" namespace.
+
+Did you mean this?
+    config at C:\\xampp\\htdocs\\meNow\\vendor\\symfony\\console\\Application.php:648)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\meNow\\vendor\\symfony\\console\\Application.php(699): Symfony\\Component\\Console\\Application->findNamespace('conifg')
+#1 C:\\xampp\\htdocs\\meNow\\vendor\\symfony\\console\\Application.php(259): Symfony\\Component\\Console\\Application->find('conifg:cache')
+#2 C:\\xampp\\htdocs\\meNow\\vendor\\symfony\\console\\Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 C:\\xampp\\htdocs\\meNow\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 C:\\xampp\\htdocs\\meNow\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 C:\\xampp\\htdocs\\meNow\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
