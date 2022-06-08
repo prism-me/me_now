@@ -332,8 +332,9 @@
 }
 
 .privacy_pages a:nth-child(1) {
+    border-left: 1px solid #767676;
     border-right: 1px solid #767676;
-    padding-right: 0.7rem;
+    padding: 0px 0.7rem;
 }
 
 .privacy_pages a:nth-child(2) {
@@ -1227,4 +1228,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .workshop-part-detail h4 {
     font-size: 17px;
+}
+.who_we_are_cotent p{
+    text-align: justify;
 }
