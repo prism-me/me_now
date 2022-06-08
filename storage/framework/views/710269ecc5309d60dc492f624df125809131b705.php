@@ -24,6 +24,8 @@
 
 <?php $__env->slot('footer'); ?>
 <?php $__env->startComponent('mail::footer'); ?>
+Me Now State of Mind Development Center
+Address: 24-32 - 5 B St - Jumeirah - Jumeirah 1 - Dubai, UAE; Tel: 04 239 8448; Mob (Whatsapp): +971 56 555 3483 <br>
 © <?php echo e(date('Y')); ?> <?php echo e(config('app.name')); ?>. <?php echo app('translator')->get('All rights reserved.'); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php $__env->endSlot(); ?>
