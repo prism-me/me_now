@@ -116,9 +116,7 @@
                                 <a class="nav-link"
                                     href="<?php echo e(url('events')); ?>"><?php echo e(__('messages.Events')); ?></a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><?php echo e(__('messages.Blog')); ?></a>
-                            </li>
+                            
                             <li class="nav-item">
                                 <a class="nav-link"
                                     href="<?php echo e(url('women-empowerment')); ?>"><?php echo e(__('messages.Women Empowerment')); ?></a>
@@ -288,15 +286,27 @@
                                         </select>
                                     </div>
                                     <div class="appo-select-box">
-                                        <select id="service" required class="dropdown" name="service">
+                                        <select id="service"  class="dropdown" name="service">
                                             <option value="" disabled="disabled" selected="selected">-
                                                 Select Sub Service</option>
+                                               
+                                                <?php if(isset($department)): ?>
+                                                    <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                        <?php if(!empty($d)): ?>
+
+                                                            <option value="<?php echo e($d->id); ?>"><?php echo e($d->name); ?></option>
+                                                        <?php endif; ?>
+                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                <?php endif; ?>
                                         </select>
                                     </div>
                                     <div class="appo-select-box">
-                                        <select id="doctors" required class="dropdown" name="doctors">
-                                            <option value="" disabled="disabled" selected="selected">-
+                                        <select id="doctors"  class="dropdown" name="doctors">
+
                                                 <?php echo e(__('messages.Select Doctors')); ?></option>
+                                                 <?php $__currentLoopData = $doctor; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                        <option value="<?php echo e($d->name); ?>" disabled="disabled" selected="selected"><?php echo e($d->name); ?></option>
+                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </select>
                                     </div>
                                 </div>
@@ -461,12 +471,10 @@
                                 <div class="footer-d1-box">
                                     <h3><?php echo e(__('messages.Contact Us')); ?></h3>
                                     <p><span
-                                            class="fa fa-phone phone-icon"></span><?php echo e(isset($setting->phone_no) ? $setting->phone_no : Session::get('phone_no')); ?>
-
+                                            class="fa fa-phone phone-icon"></span><a href="tel:+97142398448"><?php echo e(isset($setting->phone_no) ? $setting->phone_no : Session::get('phone_no')); ?></a>
                                     </p>
                                     <p><span
-                                            class="fa fa-envelope mail-icon"></span><?php echo e(isset($setting->email) ? $setting->email : Session::get('email')); ?>
-
+                                            class="fa fa-envelope mail-icon"></span><a href="mailto:info@menow.me"><?php echo e(isset($setting->email) ? $setting->email : Session::get('email')); ?></a>
                                     </p>
                                 </div>
                             </div>
@@ -532,8 +540,7 @@
                             <div class="footer-r1-detail">
                                 <div class="footer-d1-box">
                                     <h3><?php echo e(__('messages.Address')); ?></h3>
-                                    <p><a href="https://maps.app.goo.gl/4DJn6E47x4QUAW5S6">24-32 - 5 B St - Jumeirah -
-                                            Jumeirah 1 - Dubai</a>
+                                    <p><a href="https://maps.app.goo.gl/4DJn6E47x4QUAW5S6">24-32 - 5 B St - Jumeirah - Jumeirah 1 - Dubai, UAE</a>
                                     </p>
                                 </div>
                                 <div class="footer-d1-box">

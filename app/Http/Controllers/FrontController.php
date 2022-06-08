@@ -88,6 +88,7 @@ class FrontController extends Controller
         $department= Department::with('service')->get();
         $setting= Setting::find(1);
         $reviews= Review::with('doctors','users')->get()->take(4);
+        
         return view("front.home")->with('rooms',$rooms)->with("setting",$setting)->with("department",$department)->with("review",$reviews)->with("doctor",$doctor)->with("chatpage",'1');;
     }
 

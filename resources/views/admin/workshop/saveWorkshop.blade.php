@@ -77,9 +77,14 @@
                                     <span class="reqfield">*</span>
                                     </label>
                                     <select id="title" placeholder="{{__('messages.Enter').'  '.__('messages.Doctor')}}" class="form-control" required name="doctor_id" >
-                                    @foreach($doctor as $value)
-                                    <option value="{{ $value['id']}}">{{ $value['name'] }}</option>
-                                    @endforeach
+                                        @foreach($doctor as $value)
+                                            @if ($data->doctor_id == $value->id)
+                                                <option value="{{ $value->id }}" selected>{{ $value->name }}</option>
+                                            @else
+                                                <option value="{{ $value->id }}">{{ $value->name }}</option>
+                                            @endif
+
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -89,7 +94,7 @@
                                     </label>
                                     <textarea id="description" placeholder="{{ __('messages.Enter') . '  ' . __('messages.Short Description') }}"
                                         class="form-control" required name="short_description"
-                                        value="{{ isset($data->short_description) ? $data->short_description : '' }}">{{ isset($data->short_description) ? $data->short_description : '' }}</textarea>
+                                        value="{{ isset($data->short_description) ? $data->short_description : '' }}">{{ $data->short_description }}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="name" class=" form-control-label">
@@ -114,8 +119,11 @@
                                     <label for="name" class=" form-control-label">
                                         {{ __('messages.Start Date') }}
                                     </label>
-                                    <input id="" name="event_date[]" type="datetime-local" class="form-control" required
+                                    {{-- @php dd($data->event_date); $event = explode(",","" , $data->event_date );@endphp --}}
+                                    @foreach($data->event_date as $event_date)
+                                        <input id="" name="event_date[]" type="datetime-local" class="form-control mb-2" required
                                         value="{{ isset($event_date) && $event_date != 0 ? $event_date : '' }}">
+                                    @endforeach
                                 </div>
                                 <button type="button" class="add_event_date">+</button>
                                 <div class="add_more_dates"></div>

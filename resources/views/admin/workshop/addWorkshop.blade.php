@@ -61,7 +61,7 @@
                         {{__('messages.Event Type')}}
                         <span class="reqfield">*</span>
                         </label>
-                        <input type="text" id="title" placeholder="{{__('messages.Enter').'  '.__('messages.Event Type')}}" class="form-control" required name="title" value="{{ isset($data->event_type)?$data->event_type:''}}">
+                        <input type="text" id="title" placeholder="{{__('messages.Enter').'  '.__('messages.Event Type')}}" class="form-control" required name="event_type" value="{{ isset($data->event_type)?$data->event_type:''}}">
                      </div>
                      <div class="form-group">
                         <label for="name" class=" form-control-label">

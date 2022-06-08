@@ -93,8 +93,8 @@
                                         <div class="col-md-9 testtext">
                                             <p class="testip">{{ $r->review }}</p>
                                             <span class="testimonialspan"></span>
-                                            @if (isset($r->users->name))
-                                                <h3 class="testimonialh">- {{ $r->users->name }}</h3>
+                                            @if (isset($r->name))
+                                                <h3 class="testimonialh">- {{ $r->name }}</h3>
                                             @endif
                                         </div>
                                     </div>

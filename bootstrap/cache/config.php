@@ -543,7 +543,7 @@
       'sendmail' => 
       array (
         'transport' => 'sendmail',
-        'path' => '/usr/sbin/sendmail -bs',
+        'path' => '/usr/sbin/sendmail -t -i',
       ),
       'log' => 
       array (
@@ -554,11 +554,20 @@
       array (
         'transport' => 'array',
       ),
+      'failover' => 
+      array (
+        'transport' => 'failover',
+        'mailers' => 
+        array (
+          0 => 'smtp',
+          1 => 'log',
+        ),
+      ),
     ),
     'from' => 
     array (
       'address' => 'prism.marketing786@gmail.com',
-      'name' => 'Example',
+      'name' => 'MeNow',
     ),
     'markdown' => 
     array (

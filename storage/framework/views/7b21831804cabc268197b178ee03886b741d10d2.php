@@ -78,8 +78,8 @@
                                         <div class="col-md-9 testtext">
                                             <p class="testip"><?php echo e($r->review); ?></p>
                                             <span class="testimonialspan"></span>
-                                            <?php if(isset($r->users->name)): ?>
-                                                <h3 class="testimonialh">- <?php echo e($r->users->name); ?></h3>
+                                            <?php if(isset($r->name)): ?>
+                                                <h3 class="testimonialh">- <?php echo e($r->name); ?></h3>
                                             <?php endif; ?>
                                         </div>
                                     </div>

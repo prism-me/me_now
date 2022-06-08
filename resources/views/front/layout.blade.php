@@ -139,9 +139,9 @@
                                 <a class="nav-link"
                                     href="{{ url('events') }}">{{ __('messages.Events') }}</a>
                             </li>
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a class="nav-link" href="#">{{ __('messages.Blog') }}</a>
-                            </li>
+                            </li> --}}
                             <li class="nav-item">
                                 <a class="nav-link"
                                     href="{{ url('women-empowerment') }}">{{ __('messages.Women Empowerment') }}</a>
@@ -310,15 +310,27 @@
                                         </select>
                                     </div>
                                     <div class="appo-select-box">
-                                        <select id="service" required class="dropdown" name="service">
+                                        <select id="service"  class="dropdown" name="service">
                                             <option value="" disabled="disabled" selected="selected">-
                                                 Select Sub Service</option>
+                                               
+                                                @if (isset($department))
+                                                    @foreach ($department as $d)
+                                                        @if(!empty($d))
+
+                                                            <option value="{{ $d->id }}">{{ $d->name }}</option>
+                                                        @endif
+                                                    @endforeach
+                                                @endif
                                         </select>
                                     </div>
                                     <div class="appo-select-box">
-                                        <select id="doctors" required class="dropdown" name="doctors">
-                                            <option value="" disabled="disabled" selected="selected">-
+                                        <select id="doctors"  class="dropdown" name="doctors">
+
                                                 {{ __('messages.Select Doctors') }}</option>
+                                                 @foreach ($doctor as $d)
+                                                        <option value="{{ $d->name }}" disabled="disabled" selected="selected">{{ $d->name }}</option>
+                                                    @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -483,10 +495,10 @@
                                 <div class="footer-d1-box">
                                     <h3>{{ __('messages.Contact Us') }}</h3>
                                     <p><span
-                                            class="fa fa-phone phone-icon"></span>{{ isset($setting->phone_no) ? $setting->phone_no : Session::get('phone_no') }}
+                                            class="fa fa-phone phone-icon"></span><a href="tel:+97142398448">{{ isset($setting->phone_no) ? $setting->phone_no : Session::get('phone_no') }}</a>
                                     </p>
                                     <p><span
-                                            class="fa fa-envelope mail-icon"></span>{{ isset($setting->email) ? $setting->email : Session::get('email') }}
+                                            class="fa fa-envelope mail-icon"></span><a href="mailto:info@menow.me">{{ isset($setting->email) ? $setting->email : Session::get('email') }}</a>
                                     </p>
                                 </div>
                             </div>
@@ -550,8 +562,7 @@
                             <div class="footer-r1-detail">
                                 <div class="footer-d1-box">
                                     <h3>{{ __('messages.Address') }}</h3>
-                                    <p><a href="https://maps.app.goo.gl/4DJn6E47x4QUAW5S6">24-32 - 5 B St - Jumeirah -
-                                            Jumeirah 1 - Dubai</a>
+                                    <p><a href="https://maps.app.goo.gl/4DJn6E47x4QUAW5S6">24-32 - 5 B St - Jumeirah - Jumeirah 1 - Dubai, UAE</a>
                                     </p>
                                 </div>
                                 <div class="footer-d1-box">
