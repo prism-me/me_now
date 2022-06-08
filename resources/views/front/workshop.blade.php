@@ -32,18 +32,22 @@
                                             </h4>
                                             <div class="workshop-schedule row">
 
-                                                <div class="col-md-4" style="padding-left:0px;">
-                                                    Event Date:
+                                                <div class="col-md-4 col-5" style="padding-left:0px;">
+                                                    <span>Workshop Date:</span>
                                                 </div>
-                                                <div class="col-md-8" style="padding-right:0px;">
+                                                <div class="col-md-8 col-7" style="padding-right:0px;">
                                                     @php $event_date = $d->event_date; @endphp
 
-                                                    <select name="dob" id="" class="form-control" style="color:#000;width:90%;">
+                                                    <select name="dob" id="" class="form-control"
+                                                        style="color:#000;width:90%;">
+                                                        <option value="0">Select Date and Time</option>
+                                                        @if (!is_null($event_date))
+                                                            @foreach ($event_date as $date)
+                                                                <option value="{{ $date }}">
+                                                                    {{ date('m/d/Y H:i:s', strtotime($date)) }}</option>
+                                                            @endforeach
+                                                        @endif
 
-                                                        @foreach ($event_date as $date)
-                                                            <option value="{{ $date }}">
-                                                                {{ date('m/d/Y H:i:s', strtotime($date)) }}</option>
-                                                        @endforeach
                                                     </select>
                                                 </div>
 

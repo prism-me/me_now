@@ -1,704 +1,795 @@
 /*========== Max-width 1200px ==========*/
 
-@media(max-width: 1200px) {
-	.navigation-custom-single .collapse {
-	    width: 82%;
-	}
+@media (max-width: 1200px) {
+    .navigation-custom-single .collapse {
+        width: 82%;
+    }
 
-	.left-part-detail {
-		padding: 135px 40px;
-	}
+    .left-part-detail {
+        padding: 135px 40px;
+    }
 
-	.services-part-box {
-		padding: 15px;
-	}
+    .services-part-box {
+        padding: 15px;
+    }
 
-	.services-main-box .services-left-part {
-		margin-right: 0px;
-		height: 473px;
-	}
+    .services-main-box .services-left-part {
+        margin-right: 0px;
+        height: 473px;
+    }
 
-	.left-part-detail h2 {
-		font-size: 20px;
-	}
+    .left-part-detail h2 {
+        font-size: 20px;
+    }
 
-	.left-part-detail p {
-    	font-size: 13px;
+    .left-part-detail p {
+        font-size: 13px;
     }
 
     .global-heading p {
-    	font-size: 17px;
+        font-size: 17px;
     }
 
     .global-heading h2 {
-    	font-size: 30px;
+        font-size: 30px;
     }
 
     .numbers-counter-part-box .counter-value {
-    	font-size: 45px;
+        font-size: 45px;
     }
 
     .counter-name p {
-    	font-size: 15px;
+        font-size: 15px;
     }
 
     .single-testimonial {
-	    margin: 0px 15px;
-	}
+        margin: 0px 15px;
+    }
 
-	.footer-r1-detail a {
-		font-size: 11px;
-		width: 100%;
-	}
+    .footer-r1-detail a {
+        font-size: 11px;
+        width: 100%;
+    }
 
-	.footer-r1-detail h3 {
-		font-size: 15px;
-	}
+    .footer-r1-detail h3 {
+        font-size: 15px;
+    }
 
-	.footer-part-main-box .footer-r1-box {
-		margin-left: 0px;
-	}
+    .footer-part-main-box .footer-r1-box {
+        margin-left: 0px;
+    }
 
-	.part1-part-box {
-	    padding: 0px 30px;
-	}
+    .part1-part-box {
+        padding: 0px 30px;
+    }
 
-	.myaccountpg-main-tabbox {
-		padding: 80px 30px;
-	}
+    .myaccountpg-main-tabbox {
+        padding: 80px 30px;
+    }
 
-	.myaccountpg-main-tabcontentbox {
-		padding: 80px 30px;
-	}
+    .myaccountpg-main-tabcontentbox {
+        padding: 80px 30px;
+    }
 
-	.tab-appointment-part-box {
-		display: block;
-	}
+    .tab-appointment-part-box {
+        display: block;
+    }
 
-	.tab-appointment-box {
-		width: 75%;
-		margin: 30px auto;
-	}
+    .tab-appointment-box {
+        width: 75%;
+        margin: 30px auto;
+    }
 
-	.tab-appointment-main-box h5 {
-		text-align: center;
-	}
+    .tab-appointment-main-box h5 {
+        text-align: center;
+    }
 
-	.tab-subcription-part-box {
-	    display: block;
-	    margin-bottom: 0px; 
-	}
+    .tab-subcription-part-box {
+        display: block;
+        margin-bottom: 0px;
+    }
 
-	.my-accountpg-main-box .tab-chpmainbox {
-		padding: 30px;
-	}
+    .my-accountpg-main-box .tab-chpmainbox {
+        padding: 30px;
+    }
 
-	.tab-profile-form-box {
-	    padding: 0px 15px;
-	}
+    .tab-profile-form-box {
+        padding: 0px 15px;
+    }
 
-	.tab-profileimg-main-box {
-	    width: 70%;
-	}
+    .tab-profileimg-main-box {
+        width: 70%;
+    }
 
-	.tab-chpmainbox .part-form-main-box button {
-	    width: 40%;
-	}
+    .tab-chpmainbox .part-form-main-box button {
+        width: 40%;
+    }
 
-	.tab-profileimg-main-box:after {
-		bottom: 30px;
-	}
+    .tab-profileimg-main-box:after {
+        bottom: 30px;
+    }
 
-	.tab-profile-main-box {
-	    display: block;
-	}
+    .tab-profile-main-box {
+        display: block;
+    }
 
-	.tab-profile-form-box {
-	    padding: 0px 0px;
-	}
+    .tab-profile-form-box {
+        padding: 0px 0px;
+    }
 
-	.tab-chpmainbox .part-form-main-box button {
-	    width: 100%;
-	}
+    .tab-chpmainbox .part-form-main-box button {
+        width: 100%;
+    }
 
-	.tab-profileimg-main-box {
-	    width: 50%;
-	}
-	p.testip {
-    text-align: justify;
-    font-size: 14px;
-}
+    .tab-profileimg-main-box {
+        width: 50%;
+    }
+    p.testip {
+        text-align: justify;
+        font-size: 14px;
+    }
 }
 
 /*========== Max-width 1200px end ==========*/
 
 /*========== Max-width 991px ==========*/
 
-@media(max-width: 991px) {
-	.navigation-custom-single .logo-img {
-	    width: 105px;
-	}
+@media (max-width: 991px) {
+    .navigation-custom-single .logo-img {
+        width: 105px;
+    }
 
-	.navigation-custom-single .nav-link {
-		padding: 0px 5px;
-		font-size: 13px;
-	}
+    .navigation-custom-single .nav-link {
+        padding: 0px 5px;
+        font-size: 13px;
+    }
 
-	.spacefor-global {
-	    height: 95px;
-	}
+    .spacefor-global {
+        height: 95px;
+    }
 
-	.services-main-box .services-left-part {
-		width: 100%;
-		height: 400px;
-		float: none;
-	}
-   
-   
+    .services-main-box .services-left-part {
+        width: 100%;
+        height: 400px;
+        float: none;
+    }
+
     .d-detail-emergency-mainbox {
-    text-align: center;
-    padding: 30px;
-    background-color: #fffce7;
-    border-radius: 10px;
-    margin-bottom: 30px;
-      width: 50%; 
-    margin: 20px auto;
-}
-	.left-triangle {
-	    top: inherit;
-	    bottom: 0;
-	    right: 50%;
-	    border-bottom: 30px solid white;
-	    border-right: 20px solid transparent;
-	    border-left: 20px solid transparent;
-	}
+        text-align: center;
+        padding: 30px;
+        background-color: #fffce7;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        width: 50%;
+        margin: 20px auto;
+    }
+    .left-triangle {
+        top: inherit;
+        bottom: 0;
+        right: 50%;
+        border-bottom: 30px solid white;
+        border-right: 20px solid transparent;
+        border-left: 20px solid transparent;
+    }
 
-	.left-part-detail {
-	    padding: 120px 40px;
-	}
+    .left-part-detail {
+        padding: 120px 40px;
+    }
 
-	.services-right-part {
-		margin-top: 50px;
-	}
+    .services-right-part {
+        margin-top: 50px;
+    }
 
-	.global-heading p {
-	    font-size: 14px;
-	}
+    .global-heading p {
+        font-size: 14px;
+    }
 
-	.pricing-main-box .pricing-part-box {
-		padding: 10px;
-	}
+    .pricing-main-box .pricing-part-box {
+        padding: 10px;
+    }
 
-	.pricing-cost span {
-		font-size: 35px;
-	}
+    .pricing-cost span {
+        font-size: 35px;
+    }
 
-	.pricing-part-box p {
-		width: 100%;
-		font-size: 11px;
-	}
+    .pricing-part-box p {
+        width: 100%;
+        font-size: 11px;
+    }
 
-	.numbers-counter-part-box .counter-value {
-	    font-size: 35px;
-	}
+    .numbers-counter-part-box .counter-value {
+        font-size: 35px;
+    }
 
-	.counter-name p {
-	    font-size: 12px;
-	}
+    .counter-name p {
+        font-size: 12px;
+    }
 
-	.single-testimonial {
-	    margin: 0px 5px;
-	}
-	
-.testimonial-part-box {
-    padding: 15px;
-    border: 1px solid #49B7C6;
-    border-radius: 10px;
-    height: 191px;
-}
-p.testip {
-    text-align: justify;
-    font-size: 14px;
-    padding-left: 15px;
-}
-.testimonialspan {
-    font-size: 12px;
-    float: left;
-}
-.testimonialh {
-    float: right;
-    font-size: 12px;
-    margin-top: 1px;
-}
-	.part2-part-main-box h3 {
-    	font-size: 16px;
+    .single-testimonial {
+        margin: 0px 5px;
+    }
+
+    .testimonial-part-box {
+        padding: 15px;
+        border: 1px solid #49b7c6;
+        border-radius: 10px;
+        height: 191px;
+    }
+    p.testip {
+        text-align: justify;
+        font-size: 14px;
+        padding-left: 15px;
+    }
+    .testimonialspan {
+        font-size: 12px;
+        float: left;
+    }
+    .testimonialh {
+        float: right;
+        font-size: 12px;
+        margin-top: 1px;
+    }
+    .part2-part-main-box h3 {
+        font-size: 16px;
     }
 
     .part2-part-main-box p {
-    	font-size: 15px;
+        font-size: 15px;
     }
 
     .d-detail-collapse-doctor {
-	    width: 50%;
-	    margin: 0 auto;
-	}
+        width: 50%;
+        margin: 0 auto;
+    }
 
-	.doctorpg-part-main-box .d-detail-collapse-doctor {
-	    width: 100%;
-	 	margin-top: 50px;
-	}
+    .doctorpg-part-main-box .d-detail-collapse-doctor {
+        width: 100%;
+        margin-top: 50px;
+    }
 
-	.doctorpg-tab-mainbox .slick-initialized .slick-slide {
-		font-size: 13px;
-	}
+    .doctorpg-tab-mainbox .slick-initialized .slick-slide {
+        font-size: 13px;
+    }
 
-	.facility-detail-box h3 {
-    	font-size: 20px;
+    .facility-detail-box h3 {
+        font-size: 20px;
     }
 
     .myaccountpg-main-tabbox {
-	    padding: 80px 15px;
-	    width: 45%;
-	}
+        padding: 80px 15px;
+        width: 45%;
+    }
 
-	.tab-appointment-box {
-	    width: 100%;
-	    margin: 30px auto;
-	}
+    .tab-appointment-box {
+        width: 100%;
+        margin: 30px auto;
+    }
 
-	.tab-profileimg-main-box:after {
-		width: 40px;
-		height: 40px;
-	}
-p.testip {
-    text-align: justify;
-    font-size: 14px;
-    padding-left: 15px;
-}
-.owl-carousel .owl-item img {
-    display: block;
-    width: auto;
-    height: 87px;
-}
+    .tab-profileimg-main-box:after {
+        width: 40px;
+        height: 40px;
+    }
+    p.testip {
+        text-align: justify;
+        font-size: 14px;
+        padding-left: 15px;
+    }
+    .owl-carousel .owl-item img {
+        display: block;
+        width: auto;
+        height: 87px;
+    }
 }
 
 /*========== Max-width 991px end ==========*/
 
 /*========== Max-width 767px ==========*/
 
-@media(max-width: 767px) {
-	.navigation-custom-single .logo-img {
-	    width: 150px;
-	}
-	
-	.testtext {
-    padding-right: 0px;
-    padding-left: 0px;
-}
+@media (max-width: 767px) {
+    .navigation-custom-single .logo-img {
+        width: 150px;
+    }
 
-.testimonial-part-box {
-    padding: 15px;
-    border: 1px solid #49B7C6;
-    border-radius: 10px;
-    height: 242px;
-}
+    .testtext {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
 
-	.navigation-custom-single .collapse {
-	    width: 100%;
-	}
+    .testimonial-part-box {
+        padding: 15px;
+        border: 1px solid #49b7c6;
+        border-radius: 10px;
+        height: 242px;
+    }
 
-	.navbar-toggleable-sm .navbar-nav .nav-item {
-	    float: left;
-	    margin-left: 0;
-	    width: 100%;
-	}
+    .navigation-custom-single .collapse {
+        width: 100%;
+    }
 
-	.navigation-custom-single .nav-link {
-	    padding: 10px 0px;
-	    font-size: 15px;
-	}
+    .navbar-toggleable-sm .navbar-nav .nav-item {
+        float: left;
+        margin-left: 0;
+        width: 100%;
+    }
 
-	.spacefor-global {
-	    height: 108px;
-	}
-	
-	p.testip {
-    text-align: justify;
-    font-size: 12px;
-	    padding-left: 0px;
-	}
+    .navigation-custom-single .nav-link {
+        padding: 10px 0px;
+        font-size: 15px;
+    }
 
-	.header-appo-main-box {
-		width: 100%;
-	}
+    .spacefor-global {
+        height: 87px;
+    }
 
-	.global-heading p {
-		width: 100%;
-	}
+    p.testip {
+        text-align: justify;
+        font-size: 12px;
+        padding-left: 0px;
+    }
 
-	.services-part-box {
-	    padding: 20px;
-	}
+    .header-appo-main-box {
+        width: 100%;
+    }
 
-	.pricing-cost span {
-	    font-size: 50px;
-	}
+    .global-heading p {
+        width: 100%;
+    }
 
-	.pricing-part-box p {
-	    font-size: 15px;
-	}
+    .services-part-box {
+        padding: 20px;
+    }
 
-	.pricing-main-box .pricing-part-box {
-	    padding: 30px;
-	}
+    .pricing-cost span {
+        font-size: 50px;
+    }
 
-	.numbers-counter-part-box {
-	    text-align: center;
-	    color: white;
-	    margin: 15px 0px;
-	}
-	
-	.owl-carousel .owl-item img {
-    display: block;
-    height: auto;
-    width:auto;
-    margin-bottom:5px;
-}
+    .pricing-part-box p {
+        font-size: 15px;
+    }
 
-	.banner-img .owl-item img{
+    .pricing-main-box .pricing-part-box {
+        padding: 30px;
+    }
 
-		height: 504px;
-	}
-	.appointment-section .header-img{
-		/*background-position: left;*/
-	}
+    .numbers-counter-part-box {
+        text-align: center;
+        color: white;
+        margin: 15px 0px;
+    }
 
-	.left-triangle {
-		right: 45%;
-	}
+    .owl-carousel .owl-item img {
+        display: block;
+        height: auto;
+        width: auto;
+        margin-bottom: 5px;
+    }
 
-	.footer-d1-box .inputWithIcon input[type="text"] {
-		width: 50%;
-	}
+    .banner-img .owl-item img {
+        height: 504px;
+    }
+    .appointment-section .header-img {
+        /*background-position: left;*/
+    }
 
-	.contactpg-main-box {
-	    display: block;
-	}
+    .left-triangle {
+        right: 45%;
+    }
 
-	.contactpg-part1-main-box {
-	    width: 100%;
-	}
+    .footer-d1-box .inputWithIcon input[type="text"] {
+        width: 50%;
+    }
 
-	.contactpg-part2-main-box {
-		width: 100%;
-	}
+    .contactpg-main-box {
+        display: block;
+    }
 
-	.part2-first-main-box{
-		padding: 80px 0px;
-	}
+    .contactpg-part1-main-box {
+        width: 100%;
+    }
 
-	.part1-part-main-box {
-	    margin: 80px 0px 0px;
-	}
+    .contactpg-part2-main-box {
+        width: 100%;
+    }
 
-	.pricelist-investigation-main-box {
-	    margin-top: 50px;
-	}
+    .part2-first-main-box {
+        padding: 80px 0px;
+    }
 
-	.navbar-responsive-button {
-	    display: block;
-	    width: 24%;
-	    text-align: right;
-	}
+    .part1-part-main-box {
+        margin: 80px 0px 0px;
+    }
 
-	.navbar-brand {
-		width: 70%;
-	}
+    .pricelist-investigation-main-box {
+        margin-top: 50px;
+    }
 
-	.myaccountpg-main-tabbox {
-		display: none;
-	}
+    .navbar-responsive-button {
+        display: block;
+        width: 24%;
+        text-align: right;
+    }
 
-	.myaccountpg-main-tabcontentbox {
-		width: 100%;
-	}
+    .navbar-brand {
+        width: 70%;
+    }
 
-	.myaccountpg-main-tabcontentbox .card-header {
-	    background-color: #1B7081;
-	    padding: 0;
-	}
+    .myaccountpg-main-tabbox {
+        display: none;
+    }
 
-	.myaccountpg-main-tabcontentbox .card-header a {
-	    color: #356380;
-	    font-size: 17px;
-	    display: block;
-	    padding: 15px;
-	}
+    .myaccountpg-main-tabcontentbox {
+        width: 100%;
+    }
 
-	.my-accountpg-main-box .tab-chpmainbox {
-	    padding: 15px;
-	    border: none;
-	}
-	.appointment-section .header-img {
-/*height: 315px;*/
-	}
+    .myaccountpg-main-tabcontentbox .card-header {
+        background-color: #1b7081;
+        padding: 0;
+    }
+
+    .myaccountpg-main-tabcontentbox .card-header a {
+        color: #356380;
+        font-size: 17px;
+        display: block;
+        padding: 15px;
+    }
+
+    .my-accountpg-main-box .tab-chpmainbox {
+        padding: 15px;
+        border: none;
+    }
+    .appointment-section .header-img {
+        /*height: 315px;*/
+    }
+
+    .women_img_wrapper img {
+        height: auto;
+    }
 }
 
 /*========== Max-width 767px end ==========*/
 
 /*========== Max-width 576px ==========*/
 
-@media(max-width: 576px) {
+@media (max-width: 576px) {
+    .video-section iframe {
+        height: 300px;
+    }
 
-	
-	.video-section iframe {
-		height:300px;
-	}
+    .top-header .top-left-text {
+        display: block;
+    }
+    .top-header p {
+        text-align: center;
+    }
+    .navigation-custom-single .navbar {
+        padding: 5px 0px;
+    }
 
-	.top-header .top-left-text {
-	    display: block;
-	}
-	.top-header p{
-		text-align: center;
-	}
-	.navigation-custom-single .navbar{
-		padding: 5px 0px;
-	}
+    .top-header .top-right-text {
+        display: none;
+        text-align: left;
+        float: none;
+    }
 
-	.top-header .top-right-text {
-	    display: none;
-	    text-align: left;
-	    float: none;
-	}
+    .spacefor-global {
+        height: 78px;
+    }
 
-	.spacefor-global {
-	    height: 118px;
-	}
+    .appo-input-main-box input[type="text"] {
+        width: 100%;
+    }
+    .d-detail-emergency-mainbox {
+        text-align: center;
+        padding: 30px;
+        background-color: #fffce7;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        width: 100%;
+        margin: 20px auto;
+    }
 
-	.appo-input-main-box input[type="text"] {
-		width: 100%;
-	}
-	  .d-detail-emergency-mainbox {
-    text-align: center;
-    padding: 30px;
-    background-color: #fffce7;
-    border-radius: 10px;
-    margin-bottom: 30px;
-      width: 100%; 
-    margin: 20px auto;
-}
+    .testimonial-part-box {
+        padding: 15px;
+        border: 1px solid #49b7c6;
+        border-radius: 10px;
+        height: 195px;
+    }
 
-	.testimonial-part-box {
-    padding: 15px;
-    border: 1px solid #49B7C6;
-    border-radius: 10px;
-    height: 195px;
-}
+    .header-appo-main-box {
+        padding: 10px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
 
-	.header-appo-main-box {
-		padding: 10px;
-		padding-bottom:0px;
-		    margin-bottom: 0px;
-	}
+    .appointment-section .header-img {
+        /*height: 248px;*/
+    }
 
-	.appointment-section .header-img {
-		/*height: 248px;*/
-	}
+    .appo-input-main-box .appo-right-input {
+        margin-left: 0px;
+    }
 
-	.appo-input-main-box .appo-right-input {
-		margin-left: 0px;
-	}
+    .loader {
+        top: 45%;
+        left: 45%;
+    }
 
-	.loader {
-		top: 45%;
-    	left: 45%;
-	}
-
-	.part-form-main-box input[type="text"] {
-    	width: 100%;
+    .part-form-main-box input[type="text"] {
+        width: 100%;
     }
 
     .footer-d1-box .inputWithIcon input[type="text"] {
-		width: 100%;
-	}
+        width: 100%;
+    }
 
-	.d-detail-collapse-doctor {
-	    width: 100%;
-	}
+    .d-detail-collapse-doctor {
+        width: 100%;
+    }
 
-/*	.pricelist-part-detail-box span {
+    /*	.pricelist-part-detail-box span {
 		float: none;
 	}*/
 
-	.global-heading h3 {
-		font-size: 20px;
+    .global-heading h3 {
+        font-size: 20px;
+    }
+
+    .footer-icons-main-box .footer-icon-box {
+        margin: 0px 4px;
+    }
+
+    .footer-bottom-main-box p {
+        float: none;
+    }
+
+    .myaccountpg-main-tabcontentbox {
+        padding: 80px 0px;
+    }
+
+    .myaccountpg-main-tabcontentbox .card-body {
+        padding: 15px 0px;
+        margin: 10px;
+    }
+
+    .tab-appointment-box .tab-part-box {
+        display: block;
+    }
+
+    .tab-appointment-box img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .tab-part-box .tab-timingd-box {
+        margin: 0;
+    }
+    .testimonial-part-box {
+        padding: 15px;
+        border: 1px solid #49b7c6;
+        border-radius: 10px;
+        height: 182px;
+    }
+    .doctor-detail-main-box h4 {
+        font-size: 28px;
+        color: black;
+        font-family: "Roboto", sans-serif;
+        margin-top: 5px;
+    }
+    .testimonial-carousel .owl-item {
+        height: auto !important;
+    }
+    .testimonial-part-box {
+        height: auto !important;
+    }
+    .appointment-section .item .caption {
+        top: 70%;
+        text-align: center;
+        left: 0%;
+    }
+    .appointment-section {
+        margin-bottom: 0px;
+    }
+    .about_content p {
+        text-align: justify !important;
+    }
+    .global-heading p {
+        text-align: justify;
+    }
+    .appointment-section .item .caption h1 {
+        font-size: 29px;
+    }
+    .appointment-section .owl-nav {
+        display: none !important;
+    }
+
+    .testimonial-main-box .owl-carousel .owl-item img {
+        height: 95px !important;
+        margin: 7px auto !important;
+    }
+    .testimonial-main-box .owl-carousel .owl-item p.testip {
+        text-align: center;
+        font-size: 14px;
+        padding-left: 10px;
+    }
+    .testimonial-main-box .owl-carousel .owl-item .testimonialh {
+        text-align: center;
+        font-size: 12px;
+        margin-top: 0px;
+        float: none;
+        color: #49b7c6;
+        margin-bottom: 9px;
+    }
+    .footer-bottom-left {
+        text-align: center;
+        margin: 0.5rem;
+    }
+    .footer-bottom-right {
+        text-align: center;
+    }
+    .navbar-nav .dropdown-menu {
+        box-shadow: none;
+    }
+
+    .services-dropdown {
+        position: static !important;
+        margin: 0px;
+    }
+    .services-dropdown .dropdown-item {
+        padding-left: 12px;
+    }
+    .services-dropdown .submenu {
+        display: none !important;
+    }
+
+    .doctorl-part-box img {
+        width: 100%;
+    }
+    .who_we_are_cotent h2:nth-child(1) {
+        margin: 20px;
+    }
+    .who_we_are_cotent h2:nth-child(1):before {
+        margin-right: 0.5rem;
+    }
+    .who_we_are_cotent h2 {
+        margin: 1rem auto 10px;
+        font-size: 1.3rem;
+    }
+    .who_we_are_cotent {
+        text-align: center;
+    }
+    .who_we_are_sub_section {
+        text-align: center;
+    }
+    .who_we_are_sub_section h4 {
+        margin-bottom: 9px;
+        margin-top: 16px;
+    }
+    .about_tiles .single-tile {
+        box-shadow: 0 0 12px #ddd;
+    }
+    .about_tiles {
+        margin: 0px auto;
+    }
+    .text-margin {
+        margin-top: 25px;
+    }
+    .numbers-counter-main-box {
+        padding: 30px 0px;
+        background-color: #22242a;
+        margin: 80px 0px 30px;
+    }
+    .owl-carousel .owl-item {
+        height: 400px;
+    }
+    .container-fluid,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+    }
+    .side_img_about {
+        height: auto;
+    }
+    .who_we_are_cotent {
+        padding-left: 0px;
+        text-align: justify;
+    }
+    .who_we_are_cotent p,
+    .who_we_are_sub_section p {
+        margin-top: 10px;
+    }
+    .who_we_are_sub_section {
+        padding: 1rem 0px 1rem;
+    }
+    .about_tiles .single-tile {
+        padding: 0px 1rem;
+        height: 380px;
+    }
+    .collageg_about_img {
+        margin-top: 2rem;
+        height: auto;
+    }
+    .about-content-widget .row,
+    .text-margin {
+        text-align: justify;
+    }
+    .packages_women {
+        height: auto !important;
+    }
+    .about_tiles .single-tile {
+        margin: 1rem 0px;
+    }
+    .side_woment_emp_img {
+        height: auto !important;
+    }
+    .who_we_are_cotent h2:nth-child(1) {
+        margin: 20px 0px;
+        font-size: 20px;
+    }
+    .get-in-touch-button {
+        position: relative;
+        bottom: 0px;
+    }
+    .event_rows .order {
+        order: 2;
+    }
+    .workshops-wrapper img {
+        height: auto;
+    }
+    .workshop_wrapper .banner-img .banner {
+        height: 200px;
+    }
+    .workshop_wrapper .workshop_inner_overlay {
+        position: relative;
+        width: auto;
+        height: auto;
+    }
+    .workshop-inner-wrapper {
+        margin: 0px;
+    }
+    .header-appo-main-box {
+        margin-top: 3rem;
+        padding: 25px;
+    }
+    .workshop-part-detail {
+        height: auto !important;
+    }
+    .service_caption {
+        transform: translate(-50%, -50%);
+        width: 100%;
+    }
+	.departmentpg-main-box_main{
+		height: 430px;
+    	background-position: center;
+
 	}
-
-	.footer-icons-main-box .footer-icon-box {
-		margin: 0px 4px;
+	.services-cta{
+		flex-direction: column;
+		text-align:center
 	}
-
-	.footer-bottom-main-box p {
-		float: none;
+	.services-cta p{
+		margin-bottom: 1rem;
 	}
-
-	.myaccountpg-main-tabcontentbox {
-		padding: 80px 0px;
+	.d-detail-main-box{
+		padding-right: 0px;
 	}
-
-	.myaccountpg-main-tabcontentbox .card-body {
-	    padding: 15px 0px;
-	    margin:10px;
-	}
-
-	.tab-appointment-box .tab-part-box {
-		display: block;
-	}
-
-	.tab-appointment-box img {
-	    display: block;
-	    margin: 0 auto;
-	}
-
-	.tab-part-box .tab-timingd-box {
-		margin: 0;
-	}
-	.testimonial-part-box {
-    padding: 15px;
-    border: 1px solid #49B7C6;
-    border-radius: 10px;
-    height: 182px;
-}
-.doctor-detail-main-box h4 {
-    font-size: 28px;
-    color: black;
-    font-family: 'Roboto', sans-serif ;
-    margin-top: 5px;
-}
-.testimonial-carousel .owl-item{
-	height:auto !important;
-}
-.testimonial-part-box{
-	height:auto !important;
-}
-.appointment-section .item .caption{
-	top: 70%;
-	text-align:center;
-    left: 0%;
-
-}
-.appointment-section{
-	margin-bottom: 0px;
-}
-.about_content p{
-	text-align:justify;
-}
-.global-heading p{
-	text-align:justify;
-}
-.appointment-section .item .caption h1{
-	font-size: 29px;
-}
-.appointment-section .owl-nav{
-	display:none !important;
-}
-
-
-.testimonial-main-box .owl-carousel .owl-item img {
-
-	height:95px !important;
-	margin: 7px auto !important;
-}
-.testimonial-main-box .owl-carousel .owl-item p.testip {
-    text-align: center;
-    font-size: 14px;
-    padding-left: 10px;
-}
-.testimonial-main-box .owl-carousel .owl-item .testimonialh {
-    text-align: center;
-    font-size: 12px;
-    margin-top: 0px;
-    float: none;
-    color: #49b7c6;
-	margin-bottom: 9px;
-}
-.footer-bottom-left {
-    text-align: center;
-    margin: 0.5rem;
-}
-.footer-bottom-right {
-    text-align: center;
-}
-.navbar-nav .dropdown-menu{
-	box-shadow: none;
-}
-
-.services-dropdown{
-	position: static !important;
-	margin: 0px;
-}
-.services-dropdown .dropdown-item{
-padding-left: 12px;
-}
-.services-dropdown .submenu{
-display: none !important;
-}
-
-.doctorl-part-box img{
-	width: 100%;
-}
-.who_we_are_cotent h2:nth-child(1){
-	margin:20px;
-}
-.who_we_are_cotent h2:nth-child(1):before{
-	margin-right: 0.5rem;
-}
-.who_we_are_cotent h2 {
-    margin: 1rem auto 10px;
-    font-size: 1.3rem;
-}
-.who_we_are_cotent{
-	text-align: center
-}
-.who_we_are_sub_section{
-	text-align: center;
-}
-.who_we_are_sub_section h4 {
-    margin-bottom: 9px;
-    margin-top: 16px;
-}
-.about_tiles .single-tile {
-    box-shadow: 0 0 12px #ddd;
-}
-.about_tiles {
-    margin: 40px auto;
-}
-.text-margin{
-	margin-top: 25px;
-}
-.numbers-counter-main-box {
-    padding: 30px 0px;
-    background-color: #22242a;
-    margin: 80px 0px 30px;
-}
-.owl-carousel .owl-item{
-    height: 400px;
-}
-
 }
 
 /*========== Max-width 576px end ==========*/
 
-@media(max-width: 420px) {
-	.testimonial-part-box {
-    padding: 15px;
-    border: 1px solid #49B7C6;
-    border-radius: 10px;
-    height: 223px;
-}
+@media (max-width: 420px) {
+    .testimonial-part-box {
+        padding: 15px;
+        border: 1px solid #49b7c6;
+        border-radius: 10px;
+        height: 223px;
+    }
 }
 
-p, .card-body{
-	color: #767676;
-	font-size: 15px !important;
+p,
+.card-body {
+    color: #767676;
+    font-size: 15px !important;
 }

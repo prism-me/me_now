@@ -128,7 +128,7 @@ class FrontController extends Controller
             setcookie('fload','1', time() + (86400 * 30), "/");
          }
          $service=Service::get()->take(8);
-         $workshop=Workshop::all();
+         $workshop=Workshop::orderBy('id','desc')->get();
          $package=Package::get()->take(3);
          $doctor=Doctor::get()->take(4);
          $rooms = Room::get()->take(3);

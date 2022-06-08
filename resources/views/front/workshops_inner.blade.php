@@ -17,7 +17,7 @@
                         @php $event_date = $workshop->event_date; @endphp
                         <select name="date_time" id="" class="form-control" style="color:#000;width:80%;font-size: 13px;
                             padding-left: 7px;">
-
+                            <option value="0">Select Date and Time</option>
                             @foreach ($event_date as $date)
                                 <option value="{{ $date }}">{{ date('m/d/Y H:i:s', strtotime($date)) }}</option>
                             @endforeach
@@ -25,7 +25,7 @@
                     </div>
                     {{-- <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Time: </b>&nbsp;10:00 AM to
                         11:00 AM </div> --}}
-                    <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Event Type:
+                    <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Workshop Type:
                         </b>&nbsp;{{ ucfirst($workshop->event_type) }}</div>
                     <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Age: </b>&nbsp; Adults (18
                         Yrs+) </div>
@@ -97,7 +97,7 @@
                                 <input type="text" required name="phone_number" id="phone_no" placeholder="Phone Number">
                                 @php $event_date = $workshop->event_date; @endphp
                                 <select name="dob" id="" class="form-control" style="color:#000;width:100%;">
-
+                                    <option value="0">Select Date and Time</option>
                                     @foreach ($event_date as $date)
                                         <option value="{{ $date }}">{{ date('m/d/Y H:i:s', strtotime($date)) }}
                                         </option>

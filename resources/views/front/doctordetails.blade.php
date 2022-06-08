@@ -4,7 +4,7 @@
 @stop
 @section('content')
     <div class="d-detailpg-main-box">
-        <div class="container">
+        <div class="container-fluid">
             <div class="d-detailpg-part-main-box">
                 <div class="row">
                     <div class="col-lg-9 col-md-12">

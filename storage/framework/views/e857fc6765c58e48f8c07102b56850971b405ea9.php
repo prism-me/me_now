@@ -1,4 +1,4 @@
-<div class="instagram_wrapper" data-aos="fade-up" data-aos-anchor-placement="center-center">
+<div class="instagram_wrapper">
     <script src="https://assets.juicer.io/embed.js" type="text/javascript"></script>
     <link href="https://assets.juicer.io/embed.css" media="all" rel="stylesheet" type="text/css" />
     <ul class="juicer-feed" data-feed-id="menowdubai" data-per="9">
@@ -9,4 +9,4 @@
         </div>
     </ul>
 </div>
-<?php /**PATH C:\xampp\htdocs\meNow\resources\views/front/instagram_feeds.blade.php ENDPATH**/ ?>
+<?php /**PATH D:\Projects\Menow\me_now\resources\views/front/instagram_feeds.blade.php ENDPATH**/ ?>
