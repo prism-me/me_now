@@ -21,7 +21,7 @@
                     if ($i % 2 == 0){
                         $class = 'order-2';
                     }else{
-                        $class = '';
+                        $class = 'order';
                     }
                     
                     @endphp

@@ -18,7 +18,9 @@
         <div class="who_we_are" data-aos="fade-up">
             <div class="row">
                 <div class="col-md-5">
-                    <img src="{{ asset('front/img/about-us.jpg') }}" alt="" class="img-fluid side_img_about">
+                    <div class="side_img_about_wrapper">
+                        <img src="{{ asset('front/img/about-us.jpg') }}" alt="" class="img-fluid side_img_about">
+                    </div>
                 </div>
                 <div class="col-md-7">
                     <div class="who_we_are_cotent">

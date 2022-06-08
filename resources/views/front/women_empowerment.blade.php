@@ -29,15 +29,15 @@
                         <h2>What Our Membership Holders Get</h2>
                         {{-- <h2>We Help To Get Solutions</h2> --}}
                         <div class="women-empowerment-" data-aos="zoom-in">
-                            <p>We utilize a custom-made strategy known as the '5 P Model’ that stands for five novel
+                            <p>We utilize a custom-made strategy known as the <strong>'5 P Model’</strong> that stands for five novel
                                 approaches
                                 to empower women:</p>
                             <ul>
-                                <li>Proud to be a woman with dignity, strength, and courage.</li>
-                                <li>Powerful to stand up for and with yourself and then stand up for your families.</li>
-                                <li>Preciousness that comes from the face you see in the mirror.</li>
-                                <li>Peace which comes with your smile.</li>
-                                <li>Potential which ss endless, do what you were created to do.</li>
+                                <li><strong>Proud</strong> to be a woman with dignity, strength, and courage.</li>
+                                <li><strong>Powerful</strong> to stand up for and with yourself and then stand up for your families.</li>
+                                <li><strong>Preciousness</strong> that comes from the face you see in the mirror.</li>
+                                <li><strong>Peace</strong> which comes with your smile.</li>
+                                <li><strong>Potential</strong> which is endless, do what you were created to do.</li>
                             </ul>
                         </div>
                     </div>

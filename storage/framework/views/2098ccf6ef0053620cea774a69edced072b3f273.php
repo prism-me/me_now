@@ -18,14 +18,14 @@
                         <?php $event_date = $workshop->event_date; ?>
                         <select name="date_time" id="" class="form-control" style="color:#000;width:80%;font-size: 13px;
                             padding-left: 7px;">
-
+                            <option value="0">Select Date and Time</option>
                             <?php $__currentLoopData = $event_date; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $date): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <option value="<?php echo e($date); ?>"><?php echo e(date('m/d/Y H:i:s', strtotime($date))); ?></option>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </select>
                     </div>
                     
-                    <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Event Type:
+                    <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Workshop Type:
                         </b>&nbsp;<?php echo e(ucfirst($workshop->event_type)); ?></div>
                     <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Age: </b>&nbsp; Adults (18
                         Yrs+) </div>
@@ -35,9 +35,10 @@
                 <div class="facilitated">
                     
                     <div class="content">
-                        <img src="<?php echo e($workshop->doctor->image); ?>" class="img-circle" alt="profile">
+                        <img src="<?php echo e($workshop->doctor->image); ?>" class="img-circle"
+                            alt="profile">
                         <h4><?php echo e($workshop->doctor->name); ?></h4>
-                        <p><span><?php echo e($workshop->doctor->service); ?></span></p>
+                        <p><span><?php echo e($workshop->doctor->designation); ?></span></p>
                     </div>
                 </div>
 
@@ -93,7 +94,7 @@
                                 <input type="text" required name="phone_number" id="phone_no" placeholder="Phone Number">
                                 <?php $event_date = $workshop->event_date; ?>
                                 <select name="dob" id="" class="form-control" style="color:#000;width:100%;">
-
+                                    <option value="0">Select Date and Time</option>
                                     <?php $__currentLoopData = $event_date; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $date): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <option value="<?php echo e($date); ?>"><?php echo e(date('m/d/Y H:i:s', strtotime($date))); ?>
 

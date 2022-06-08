@@ -47,7 +47,7 @@ a:hover {
 .room_description h3::after,
 .room_long_description h3:after,
 .dcotors-heading-effect h3::after,
-.services-inner-content h2::after,
+.services-inner-content h3::after,
 .events-detail h2::after {
     content: url("../img/icons/after.png");
     height: 8px;
@@ -64,7 +64,7 @@ a:hover {
 .room_description h3,
 .room_long_description h3,
 .dcotors-heading-effect h2,
-.services-inner-content h2,
+.services-inner-content h3,
 .events-detail h2 {
     margin: 3rem auto 4rem;
     display: inline-block;
@@ -488,10 +488,10 @@ a:hover {
     font-family: "Roboto", sans-serif;
     text-align: center;
 }
-.services-inner-content h3 {
+/* .services-inner-content h3 {
     color: #48b7c6;
     margin-top: 1rem;
-}
+} */
 
 .services-part2-box {
     background-color: #f6f5f2;
@@ -879,6 +879,7 @@ p.testip {
 }
 .footer-bottom-left {
     text-align: left;
+    font-size: 13px;
 }
 .footer-bottom-right {
     text-align: right;

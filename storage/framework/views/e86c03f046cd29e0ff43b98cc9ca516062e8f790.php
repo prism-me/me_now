@@ -5,7 +5,7 @@
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
     <div class="d-detailpg-main-box">
-        <div class="container">
+        <div class="container-fluid">
             <div class="d-detailpg-part-main-box">
                 <div class="row">
                     <div class="col-lg-9 col-md-12">
@@ -32,7 +32,7 @@
                             <div class="col-md-7">
                                 <div class="doctor-detail-main-box">
                                     <h4><?php echo e($doctor->name); ?></h4>
-                                    <h6><?php echo e(isset($doctor->department) ? $doctor->department->name : ''); ?></h6>
+                                    <h6><?php echo e($doctor->designation); ?></h6>
                                     <span>
                                         <?php
                            $arr = explode(".", $doctor->ratting);
@@ -106,7 +106,7 @@
                             <div class="dd-tab-part-mbox">
                                 <div class="global-part-heading global-heading">
                                     
-                                    <p><?php echo $doctor->description; ?></p>
+                                    <div><?php echo $doctor->description; ?></div>
                                 </div>
                             </div>
                         </div>
@@ -220,7 +220,7 @@
                                                         $image = asset('upload/profile/profile.png');
                                                     }
                                                     ?>
-                                                    <img src="<?php echo e($image); ?>" class="testimonial-profile-img">
+                                                    <img src="<?php echo e($r->img); ?>" class="testimonial-profile-img">
                                                 </div>
                                                 <div class="col-md-9 testtext">
                                                     <p class="testip"><?php echo e($r->review); ?></p>

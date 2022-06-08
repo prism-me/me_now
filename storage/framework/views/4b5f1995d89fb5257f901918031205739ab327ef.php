@@ -51,7 +51,7 @@
     <?php echo $__env->yieldContent('loader'); ?>
 
 
-    <div class="header-pinned" id="header">
+    <div class="header-pinned fixed-top" id="header">
         
         <div class="container-fluid">
             <div class="navigation-custom-single">
@@ -106,8 +106,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"
-                                    href="<?php echo e(url('doctorlist')); ?>">Our Team</a>
+                                <a class="nav-link" href="<?php echo e(url('doctorlist')); ?>">Our Team</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
@@ -432,7 +431,7 @@
     </div>
 
     <?php echo $__env->make('front.instagram_feeds', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-    
+
     <div class="footer-main-box">
         <div class="container-fluid">
             <div class="footer-part-main-box">
@@ -533,8 +532,8 @@
                             <div class="footer-r1-detail">
                                 <div class="footer-d1-box">
                                     <h3><?php echo e(__('messages.Address')); ?></h3>
-                                    <p><a
-                                            href="https://goo.gl/maps/drSGLMZA4i9jrNgB8"><?php echo e(isset($setting->address) ? $setting->address : Session::get('address')); ?></a>
+                                    <p><a href="https://maps.app.goo.gl/4DJn6E47x4QUAW5S6">24-32 - 5 B St - Jumeirah -
+                                            Jumeirah 1 - Dubai</a>
                                     </p>
                                 </div>
                                 <div class="footer-d1-box">

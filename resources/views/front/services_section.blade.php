@@ -17,7 +17,7 @@
                 <p>We provide effective and evidence-based therapy for a variety of mental health conditions in a safe
                     and pleasant environment at Me Now.</p>
                 <div class="services-btn-main-box">
-                    <a href="{{ url('allfacilites') }}" class="btn-hover color-9">{{ __('messages.Learn More') }}</a>
+                    <a href="{{ url('about') }}" class="btn-hover color-9">About Us</a>
                 </div>
                 <div class="left-triangle">
                 </div>
@@ -37,19 +37,18 @@
                                 @else
                                     <div class="services-part-box services-part2-box hover-services">
                             @endif
+
                             <img src="{{ $s->image }}">
                             <div class="text-detail-box">
                                 <h4><a href="{{ url('services') . '/' . $s->slug }}">{{ $s->name }}</a>
                                 </h4>
                                 <div class="services_overlay">
-                                    <a href="{{ url('services') . '/' . $s->slug }}">
-                                        <div class="services_content">
-                                            <h4><a
-                                                    href="{{ url('services') . '/' . $s->slug }}">{{ $s->name }}</a>
-                                            </h4>
-                                            <p>{{ $s->short_description }}</p>
-                                        </div>
-                                    </a>
+                                    <div class="services_content">
+                                        <h4><a href="{{ url('services') . '/' . $s->slug }}">{{ $s->name }}</a>
+                                        </h4>
+                                        <p>{{ $s->short_description }}</p>
+                                    </div>
+
                                 </div>
 
                             </div>
@@ -79,10 +78,11 @@
                                 <div class="services_content">
                                     <h4><a href="{{ url('rooms/') . '/' . $room->slug }}">{{ $room->title }}</a>
                                     </h4>
-                                    <p>{{$room->excerpt}}</p>
+                                    <p>{{ $room->excerpt }}</p>
                                 </div>
                             </div>
                         </div>
+
                     </div>
         </div>
         <?php $cc++; ?>

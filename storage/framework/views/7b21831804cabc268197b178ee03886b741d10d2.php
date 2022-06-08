@@ -72,16 +72,8 @@
                                 <div class="testimonial-part-box">
                                     <div class="testimonial-inner-images">
                                         <div class="col-md-3 testimage">
-                                            <?php
-                                            if ($r->users->profile_pic != '') {
-                                                $image = asset('upload/profile') . '/' . $r->users->profile_pic;
-                                            } elseif (isset($r->doctors) && isset($r->doctors->$image)) {
-                                                $image = asset('upload/doctor') . '/' . $r->doctors->image;
-                                            } else {
-                                                $image = asset('upload/profile/profile.png');
-                                            }
-                                            ?>
-                                            <img src="<?php echo e($image); ?>" class="testimonial-profile-img img-fluid">
+                                            
+                                            <img src="<?php echo e($r->img); ?>" class="testimonial-profile-img img-fluid">
                                         </div>
                                         <div class="col-md-9 testtext">
                                             <p class="testip"><?php echo e($r->review); ?></p>

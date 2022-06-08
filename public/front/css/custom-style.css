@@ -228,6 +228,7 @@
 .dropdown-menu li {
     position: relative;
     width: 100%;
+    font-size: 14px;
 }
 
 .nav-item .submenu {
@@ -345,6 +346,7 @@
 }
 .footer-bottom-right a {
     color: #767676;
+    font-size: 13px !important;
 }
 .department_wrappers {
     border: 1px solid #48b7c6;
@@ -385,7 +387,7 @@
 }
 
 .who_we_are {
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 .who_we_are .row {
     align-items: center;
@@ -429,6 +431,7 @@
     margin: 1rem;
     box-shadow: 0 0 12px #ddd;
     height: 360px;
+    border-radius: 10px;
 }
 .about_tiles .inner-single-title {
     border-top: 5px solid #49b7c6;
@@ -538,6 +541,7 @@ select.form-control:not([size]):not([multiple]) {
     color: white;
     border: 1px solid white;
     /* margin-left: 1rem; */
+    font-size: 13px;
 }
 #header form .form-group {
     margin-top: 0.28rem;
@@ -818,10 +822,10 @@ select.form-control:not([size]):not([multiple]) {
     margin-bottom: 0px;
 }
 
-.services-inner-content h3:after {
+/* .services-inner-content h3:after {
     height: 0px !important;
     background-color: none !important;
-}
+} */
 .services-inner-content p {
     margin: 12px 0 0 !important;
 }
@@ -1023,7 +1027,7 @@ select.form-control:not([size]):not([multiple]) {
     font-weight: bold;
 }
 .event_pic img {
-    border-radius:10px;
+    border-radius: 10px;
     object-fit: cover;
 }
 .event_rows {
@@ -1040,7 +1044,7 @@ select.form-control:not([size]):not([multiple]) {
     margin-top: 30px;
 }
 .event_pic {
-    border-radius:10px;
+    border-radius: 10px;
     overflow: hidden;
 }
 .event_pic img {
@@ -1193,14 +1197,34 @@ select.form-control:not([size]):not([multiple]) {
 .global-part-heading ul li {
     color: #767676;
 }
-.event-description h3{
-        font-size: 20px;
+.event-description h3 {
+    font-size: 20px;
 }
-.hover-img{
-    transform:0.3s all ease-in;
+.hover-img {
+    transform: 0.3s all ease-in;
 }
-.hover-img:hover{
-
+.hover-img:hover {
     transform: scale(1.1);
+}
+.side_img_about_wrapper {
+    overflow: hidden;
+    border-radius: 10px;
+}
+.side_img_about_wrapper img {
+    border-radius: 10px;
+    transition: 0.3s all ease-in;
+}
+.side_img_about_wrapper img:hover {
+    transform: scale(1.1);
+}
+.workshop-schedule span {
+    font-size: 13px;
+}
+.women-empowerment- ul li strong,
+.women-empowerment- p strong {
+    color: #49b7c6;
+}
 
+.workshop-part-detail h4 {
+    font-size: 17px;
 }

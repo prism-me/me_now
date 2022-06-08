@@ -55,7 +55,7 @@
     @yield('loader')
 
 
-    <div class="header-pinned" id="header">
+    <div class="header-pinned fixed-top" id="header">
         {{-- <div class="top-header">
             <div class="container-fluid">
                 <div class="top-left-text">
@@ -129,8 +129,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"
-                                    href="{{ url('doctorlist') }}">Our Team</a>
+                                <a class="nav-link" href="{{ url('doctorlist') }}">Our Team</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
@@ -454,7 +453,7 @@
     </div>
 
     @include('front.instagram_feeds')
-    
+
     <div class="footer-main-box">
         <div class="container-fluid">
             <div class="footer-part-main-box">
@@ -551,8 +550,8 @@
                             <div class="footer-r1-detail">
                                 <div class="footer-d1-box">
                                     <h3>{{ __('messages.Address') }}</h3>
-                                    <p><a
-                                            href="https://goo.gl/maps/drSGLMZA4i9jrNgB8">{{ isset($setting->address) ? $setting->address : Session::get('address') }}</a>
+                                    <p><a href="https://maps.app.goo.gl/4DJn6E47x4QUAW5S6">24-32 - 5 B St - Jumeirah -
+                                            Jumeirah 1 - Dubai</a>
                                     </p>
                                 </div>
                                 <div class="footer-d1-box">
