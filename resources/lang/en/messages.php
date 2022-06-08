@@ -470,6 +470,12 @@ return [
 		"Slug" => "Slug",
 		"Frequently Asked Questions" => "Frequently Asked Questions",
 		"Booking Done Successfully. Please Check Your Registered E-Mail to confirm the Booking." => "Booking Done Successfully. Please Check Your Registered E-Mail to confirm the Booking.",
-		"Doctor Designation" => "Doctor Designation"
+		"Doctor Designation" => "Doctor Designation",
+		"Image Title" => "Image Title",
+		"Image Title 2" => "Image Title 2",
+		"Image 1" => "Image 1",
+		"Image 2" => "Image 2",
+		"Featured Image" => "Featured Image",
+		"Featured Image 1" => "Featured Image 1",
 
 	];

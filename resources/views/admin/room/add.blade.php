@@ -58,35 +58,27 @@
                                     </label>
                                     <input type="text" id="title"
                                         placeholder="Title"
-                                        class="form-control" required name="title"
+                                        class="form-control"  name="title"
                                         value="{{ isset($data->title) ? $data->title : '' }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="name" class=" form-control-label">
-                                        {{ __('messages.Short Description') }}
+                                        {{ __('messages.Excerpt') }}
                                         <span class="reqfield">*</span>
                                     </label>
-                                    <textarea id="short_description" placeholder="Short Description"
-                                        class="form-control" required name="short_description"
-                                        value="{{ isset($data->short_description) ? $data->short_description : '' }}"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name" class=" form-control-label">
-                                        {{ __('messages.Short Description') }}
-                                        <span class="reqfield">*</span>
-                                    </label>
-                                    <textarea id="excerpt" placeholder="excerpt"
-                                        class="form-control" required name="excerpt"
+                                    <textarea id="excerpt" placeholder="Excerpt"
+                                        class="form-control"  name="excerpt"
                                         value="{{ isset($data->excerpt) ? $data->excerpt : '' }}"></textarea>
                                 </div>
+                               
                                 <div class="form-group">
                                     <label for="name" class=" form-control-label">
                                         {{ __('messages.Description') }}
                                         <span class="reqfield">*</span>
                                     </label>
                                     <textarea id="description" placeholder="Description 1"
-                                        class="form-control" required name="description1"
-                                        value="{{ isset($data->description1) ? $data->description1 : '' }}"></textarea>
+                                        class="form-control"  name="description"
+                                        value="{{ isset($data->description) ? $data->description : '' }}"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="name" class=" form-control-label">
@@ -94,10 +86,58 @@
                                         <span class="reqfield">*</span>
                                     </label>
                                     <textarea id="description1" placeholder="{{ __('messages.Enter') . '  ' . __('messages.Description 2') }}"
-                                        class="form-control" required name="description2"
+                                        class="form-control"  name="description2"
                                         value="{{ isset($data->description2) ? $data->description2 : '' }}"></textarea>
                                 </div>
+                                <div class="form-group">
+                                    <label for="name" class=" form-control-label">
+                                        {{ __('messages.Image Title') }}
+                                        <span class="reqfield">*</span>
+                                    </label>
+                                    <input type="text" id="title"
+                                        placeholder="Title"
+                                        class="form-control"  name="more_img_title1"
+                                        value="{{ isset($data->more_img_title1) ? $data->more_img_title1 : '' }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name" class=" form-control-label">
+                                        {{ __('messages.Image Title 2') }}
+                                        <span class="reqfield">*</span>
+                                    </label>
+                                    <input type="text" id="title"
+                                        placeholder="Title"
+                                        class="form-control"  name="more_img_title2"
+                                        value="{{ isset($data->more_img_title2) ? $data->more_img_title2 : '' }}">
+                                </div>
 
+                                <div class="form-group">
+                                    <label for="file" class=" form-control-label">
+                                        {{ __('messages.Image 1') }}<span class="reqfield">*</span>
+                                    </label>
+                                    <input type="file" id="file" name="more_img1" class="form-control-file" accept="image/*">
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="file" class=" form-control-label">
+                                        {{ __('messages.Image 2') }}<span class="reqfield">*</span>
+                                    </label>
+                                    <input type="file" id="file" name="more_img2" class="form-control-file" accept="image/*">
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="file" class=" form-control-label">
+                                        {{ __('messages.Featured Image') }}<span class="reqfield">*</span>
+                                    </label>
+                                    <input type="file" id="file" name="featured_img" class="form-control-file" accept="image/*">
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="file" class=" form-control-label">
+                                        {{ __('messages.Featured Image 1') }}<span class="reqfield">*</span>
+                                    </label>
+                                    <input type="file" id="file" name="featured_img2" class="form-control-file" accept="image/*">
+
+                                </div>
                                 <div class="form-group">
                                     <label for="file" class=" form-control-label">
                                         {{ __('messages.Icon') }}<span class="reqfield">*</span>
@@ -105,60 +145,12 @@
                                     <input type="file" id="file" name="icons" class="form-control-file" accept="image/*">
 
                                 </div>
-                                <div class="form-group">
-                                    <label for="file" class=" form-control-label">
-                                        {{ __('messages.Featured Image') }}<span class="reqfield">*</span>
-                                    </label>
-                                    <input type="file" id="file" name="featured_img" class="form-control-file"
-                                        accept="image/*">
-                                </div>
-                                <div class="form-group">
-                                    <label for="file" class=" form-control-label">
-                                        Featured Image 2<span class="reqfield">*</span>
-                                    </label>
-                                    <input type="file" id="file" name="featured_img2" class="form-control-file"
-                                        accept="image/*">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="file" class=" form-control-label">
-                                       More Image 1<span class="reqfield">*</span>
-                                    </label>
-                                    <input type="file" id="file" name="more_img1" class="form-control-file"
-                                        accept="image/*" multiple>
-
-                                </div>
-                                <div class="form-group">
-                                 <label for="text" class=" form-control-label">
-                                    Title 1<span class="reqfield">*</span>
-                                 </label>
-                                 <input type="text" id="title1" name="more_img_title1" class="form-control">
-                                 <br>
-                                 <textarea placeholder="More description 1" name="more_img_des1" class="form-control"></textarea> 
-
-                             </div>
-                                <div class="form-group">
-                                    <label for="file" class=" form-control-label">
-                                    More Image 2<span class="reqfield">*</span>
-                                    </label>
-                                    <input type="file" id="file" name="more_img2" class="form-control-file"
-                                        accept="image/*" multiple>
-
-                                </div>
-                                <div class="form-group">
-                                 <label for="text" class=" form-control-label">
-                                    Title 2<span class="reqfield">*</span>
-                                 </label>
-                                 <input type="text" id="title2" name="more_img_title2" class="form-control">
-                                 <br>
-                                 <textarea placeholder="More description 1" name="more_img_des2" class="form-control"></textarea> 
-
-                             </div>
+                                
                                 <div class="form-group">
                                     <label for="name" class=" form-control-label">
                                         {{ __('messages.Slug') }}
                                     </label>
-                                    <input type="text" id="slug" required
+                                    <input type="text" id="slug" 
                                         placeholder="{{ __('messages.Enter') . ' ' . __('messages.Slug') }}"
                                         class="form-control" name="slug"
                                         value="{{ isset($data->slug) ? $data->slug : '' }}">

@@ -1,117 +1,115 @@
-@extends('front.layout')
-@section('title')
-    {{ __('messages.Workshops') }}
-@stop
-@section('loader')
+
+<?php $__env->startSection('title'); ?>
+    <?php echo e(__('messages.Workshops')); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('loader'); ?>
     <div id="overlayer"></div>
     <span class="loader"><span class="loader-inner"></span></span>
-@stop
-@section('content')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
     <div class="workshop_wrapper">
         <div class="banner-img">
-            <img src="{{ @$workshop->banner_img }}" alt="" class="img-fluid banner workshop-banner">
+            <img src="<?php echo e(@$workshop->banner_img); ?>" alt="" class="img-fluid banner workshop-banner">
             <div class="workshop_inner_overlay" data-aos="fade-left">
                 <div class="meta_content">
                     <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Date & Time:
                         </b>&nbsp;
-                        @php $event_date = $workshop->event_date; @endphp
+                        <?php $event_date = $workshop->event_date; ?>
                         <select name="date_time" id="" class="form-control" style="color:#000;width:80%;font-size: 13px;
                             padding-left: 7px;">
                             <option value="0">Select Date and Time</option>
-                            @foreach ($event_date as $date)
-                                <option value="{{ $date }}">{{ date('m/d/Y H:i:s', strtotime($date)) }}</option>
-                            @endforeach
+                            <?php $__currentLoopData = $event_date; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $date): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <option value="<?php echo e($date); ?>"><?php echo e(date('m/d/Y H:i:s', strtotime($date))); ?></option>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </select>
                     </div>
-                    {{-- <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Time: </b>&nbsp;10:00 AM to
-                        11:00 AM </div> --}}
+                    
                     <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Workshop Type:
-                        </b>&nbsp;{{ ucfirst($workshop->event_type) }}</div>
+                        </b>&nbsp;<?php echo e(ucfirst($workshop->event_type)); ?></div>
                     <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Age: </b>&nbsp; Adults (18
                         Yrs+) </div>
                     <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Facilitated by: </b></div>
 
                 </div>
                 <div class="facilitated">
-                    {{-- <h4>Facilitated by</h4> --}}
+                    
                     <div class="content">
-                        <img src="{{ $workshop->doctor->image }}" class="img-circle"
+                        <img src="<?php echo e($workshop->doctor->image); ?>" class="img-circle"
                             alt="profile">
-                        <h4>{{ $workshop->doctor->name}}</h4>
-                        <p><span>{{ $workshop->doctor->designation }}</span></p>
+                        <h4><?php echo e($workshop->doctor->name); ?></h4>
+                        <p><span><?php echo e($workshop->doctor->designation); ?></span></p>
                     </div>
                 </div>
 
                 <span class="workshop-share"><b>Share:</b></span>
-                {!! $social !!}
+                <?php echo $social; ?>
 
 
-                {{-- <a
-                    href="https://www.facebook.com/sharer/sharer.php?u=http://127.0.0.1:8080/{{$workshop->slug }}&picture={{ $workshop->featured_img }}&title={{ $workshop->title }}&quote={!! $workshop->short_description !!}">Fb</a>
-                <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fstackoverflow.com%2Fq%2F20956229%2F1101509&picture=http%3A%2F%2Fwww.applezein.net%2Fwordpress%2Fwp-content%2Fuploads%2F2015%2F03%2Ffacebook-logo.jpg&title=A+nice+question+about+Facebook&quote=Does+anyone+know+if+there+have+been+recent+changes+which+could+have+suddenly+stopped+this+from+working%3F&description=Apparently%2C+the+accepted+answer+is+not+correct.">Stack</a> --}}
+
+                
             </div>
         </div>
 
         <div class="container-fluid">
 
-            {{-- <div class="banner-img"></div> --}}
+            
 
-            {{-- <div class="meta_content">
-                <div class="meta1"> <b>Date: </b>&nbsp;{{ $workshop->event_date }}</div>
-                <div class="meta1"> <b>Event Type: </b>&nbsp;{{ ucfirst($workshop->event_type) }}</div>
-            </div> --}}
+            
             <div class="row workshop-inner-wrapper global-heading" data-aos="zoom-in">
                 <div class="col-md-7">
 
-                    <h2 class="text-left">{{ $workshop->title }}</h2>
+                    <h2 class="text-left"><?php echo e($workshop->title); ?></h2>
                     <div class="text-justify">
-                        {!! $workshop->description !!}
+                        <?php echo $workshop->description; ?>
+
                     </div>
 
                 </div>
                 <div class="col-md-5">
 
                     <div class="header-appo-main-box ">
-                        <h1>{{ __('messages.Book Now!') }}</h1>
-                        @if (Session::get('message'))
+                        <h1><?php echo e(__('messages.Book Now!')); ?></h1>
+                        <?php if(Session::get('message')): ?>
                             <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
-                                {{ Session::get('message') }}
+                                <?php echo e(Session::get('message')); ?>
+
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">×</span>
                                 </button>
                             </div>
-                        @endif
+                        <?php endif; ?>
                         <span id="loginerrorreview"></span>
-                        <form action="{{ url('workshop-booking') }}" method="post">
-                            {{ csrf_field() }}
+                        <form action="<?php echo e(url('workshop-booking')); ?>" method="post">
+                            <?php echo e(csrf_field()); ?>
+
                             <div class="appo-input-main-box">
-                                <input type="hidden" name="price" value="{{ $workshop->price }}">
-                                <input type="hidden" name="name" value="{{ $workshop->title }}">
-                                {{-- <label class="text-sm text-gray-500">Number of attendees? <span
-                                        class="text-red-500">*</span></label>
-                                <input type="number" name="attendees" min="1" max="5" required value="1"><br><br> --}}
+                                <input type="hidden" name="price" value="<?php echo e($workshop->price); ?>">
+                                <input type="hidden" name="name" value="<?php echo e($workshop->title); ?>">
+                                
                                 <input type="text" required name="first_name" id="name" placeholder="First Name">
                                 <input type="text" required name="last_name" id="name" placeholder="Last Name">
                                 <input type="text" required name="email" id="email" placeholder="Email"
                                     class="appo-right-input">
                                 <input type="text" required name="phone_number" id="phone_no" placeholder="Phone Number">
-                                @php $event_date = $workshop->event_date; @endphp
+                                <?php $event_date = $workshop->event_date; ?>
                                 <select name="date" id="" class="form-control" style="color:#000;width:100%;">
                                     <option value="0">Select Date and Time</option>
-                                    @foreach ($event_date as $date)
-                                        <option value="{{ $date }}">{{ date('m/d/Y H:i:s', strtotime($date)) }}
+                                    <?php $__currentLoopData = $event_date; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $date): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <option value="<?php echo e($date); ?>"><?php echo e(date('m/d/Y H:i:s', strtotime($date))); ?>
+
                                         </option>
-                                    @endforeach
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </select>
                                 <textarea type="text" required name="message" id="message_workshop" placeholder="Your Message"></textarea>
                             </div>
                             <div class="appo-btn-main-box">
-                                @if (Auth::id())
-                                    <button type="submit">{{ __('messages.Book Now') }}</button>
-                                @else
+                                <?php if(Auth::id()): ?>
+                                    <button type="submit"><?php echo e(__('messages.Book Now')); ?></button>
+                                <?php else: ?>
                                     <button type="button" onclick="changehiddenstatus()" data-toggle="modal"
-                                        data-target="#myModal">{{ __('messages.Book Now') }}</button>
-                                @endif
+                                        data-target="#myModal"><?php echo e(__('messages.Book Now')); ?></button>
+                                <?php endif; ?>
 
                             </div>
                         </form>
@@ -123,8 +121,8 @@
         </div>
     </div>
 
-@stop
-@section('footer')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('footer'); ?>
     <script>
         // $(document).ready(function() {
 
@@ -143,4 +141,6 @@
 
         AOS.init();
     </script>
-@stop
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('front.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\meNow\resources\views/front/workshops_inner.blade.php ENDPATH**/ ?>

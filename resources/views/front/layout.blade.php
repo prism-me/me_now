@@ -298,7 +298,7 @@
                                 {{ csrf_field() }}
                                 <div class="appo-select-main-box">
                                     <div class="appo-select-box">
-                                        <select id="department" required class="dropdown" name="department"
+                                        <select id="department" required class="dropdown" name="department_id"
                                             onchange="getserviceanddoctor(this.value)">
                                             <option value="" disabled="disabled" selected="selected">-
                                                 Select Service</option>
@@ -310,7 +310,7 @@
                                         </select>
                                     </div>
                                     <div class="appo-select-box">
-                                        <select id="service"  class="dropdown" name="service">
+                                        <select id="service"  class="dropdown" name="service_id">
                                             <option value="" disabled="disabled" selected="selected">-
                                                 Select Sub Service</option>
                                                
@@ -324,7 +324,7 @@
                                                 @endif
                                         </select>
                                     </div>
-                                    <div class="appo-select-box">
+                                    {{-- <div class="appo-select-box">
                                         <select id="doctors"  class="dropdown" name="doctors">
 
                                                 {{ __('messages.Select Doctors') }}</option>
@@ -332,7 +332,7 @@
                                                         <option value="{{ $d->name }}" disabled="disabled" selected="selected">{{ $d->name }}</option>
                                                     @endforeach
                                         </select>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <div class="appo-input-main-box">
                                     <input type="text" required name="name" id="name"
@@ -342,9 +342,9 @@
                                         placeholder="{{ __('messages.Enter Phone number') }}"
                                         class="appo-right-input"
                                         value="{{ Auth::user() ? Auth::user()->phone_no : '' }}">
-                                    <input type="date" required name="app_date" id="app_date" min="<?= date('Y-m-d') ?>"
+                                    <input type="date" required name="date" id="app_date" min="<?= date('Y-m-d') ?>"
                                         placeholder="dd/mm/yyyy">
-                                    <input type="time" required name="app_time" placeholder="Time"
+                                    <input type="time" required name="time" placeholder="Time"
                                         class="appo-right-input">
                                     <textarea rows="3" required name="messages" placeholder="{{ __('messages.Enter Your Messages') }}"></textarea>
                                 </div>

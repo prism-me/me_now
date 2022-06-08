@@ -30,8 +30,9 @@
                                 <div class="overlay_doctors">
                                     <div class="inner_overlay_doctor">
                                         <h4><?php echo e(ucwords($d->name)); ?></h4>
-                                        <p><?php echo e(substr(trim($d->about_us), 0, 250)); ?> ... <a
-                                                href="<?php echo e(url('doctordetails/') . '/' . $d->slug); ?>">Read More</a></p>
+                                        <p><?php echo e(substr(trim($d->about_us), 0, 300)); ?> ...</p>
+                                        <a href="<?php echo e(url('doctordetails/') . '/' . $d->slug); ?>"
+                                            class="btn-hover color-9 mt-3">Read More</a>
                                     </div>
                                 </div>
                             </div>

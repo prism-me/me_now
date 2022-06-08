@@ -17,7 +17,7 @@
                 <p>We provide effective and evidence-based therapy for a variety of mental health conditions in a safe
                     and pleasant environment at Me Now.</p>
                 <div class="services-btn-main-box">
-                    <a href="<?php echo e(url('allfacilites')); ?>" class="btn-hover color-9"><?php echo e(__('messages.Learn More')); ?></a>
+                    <a href="<?php echo e(url('about')); ?>" class="btn-hover color-9">About Us</a>
                 </div>
                 <div class="left-triangle">
                 </div>
@@ -37,19 +37,18 @@
                                 <?php else: ?>
                                     <div class="services-part-box services-part2-box hover-services">
                             <?php endif; ?>
+
                             <img src="<?php echo e($s->image); ?>">
                             <div class="text-detail-box">
                                 <h4><a href="<?php echo e(url('services') . '/' . $s->slug); ?>"><?php echo e($s->name); ?></a>
                                 </h4>
                                 <div class="services_overlay">
-                                    <a href="<?php echo e(url('services') . '/' . $s->slug); ?>">
-                                        <div class="services_content">
-                                            <h4><a
-                                                    href="<?php echo e(url('services') . '/' . $s->slug); ?>"><?php echo e($s->name); ?></a>
-                                            </h4>
-                                            <p><?php echo e($s->short_description); ?></p>
-                                        </div>
-                                    </a>
+                                    <div class="services_content">
+                                        <h4><a href="<?php echo e(url('services') . '/' . $s->slug); ?>"><?php echo e($s->name); ?></a>
+                                        </h4>
+                                        <p><?php echo e($s->short_description); ?></p>
+                                    </div>
+
                                 </div>
 
                             </div>
@@ -83,6 +82,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
         </div>
         <?php $cc++; ?>

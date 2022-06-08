@@ -274,7 +274,7 @@
 
                                 <div class="appo-select-main-box">
                                     <div class="appo-select-box">
-                                        <select id="department" required class="dropdown" name="department"
+                                        <select id="department" required class="dropdown" name="department_id"
                                             onchange="getserviceanddoctor(this.value)">
                                             <option value="" disabled="disabled" selected="selected">-
                                                 Select Service</option>
@@ -286,7 +286,7 @@
                                         </select>
                                     </div>
                                     <div class="appo-select-box">
-                                        <select id="service"  class="dropdown" name="service">
+                                        <select id="service"  class="dropdown" name="service_id">
                                             <option value="" disabled="disabled" selected="selected">-
                                                 Select Sub Service</option>
                                                
@@ -300,15 +300,7 @@
                                                 <?php endif; ?>
                                         </select>
                                     </div>
-                                    <div class="appo-select-box">
-                                        <select id="doctors"  class="dropdown" name="doctors">
-
-                                                <?php echo e(__('messages.Select Doctors')); ?></option>
-                                                 <?php $__currentLoopData = $doctor; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <option value="<?php echo e($d->name); ?>" disabled="disabled" selected="selected"><?php echo e($d->name); ?></option>
-                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                        </select>
-                                    </div>
+                                    
                                 </div>
                                 <div class="appo-input-main-box">
                                     <input type="text" required name="name" id="name"
@@ -318,9 +310,9 @@
                                         placeholder="<?php echo e(__('messages.Enter Phone number')); ?>"
                                         class="appo-right-input"
                                         value="<?php echo e(Auth::user() ? Auth::user()->phone_no : ''); ?>">
-                                    <input type="date" required name="app_date" id="app_date" min="<?= date('Y-m-d') ?>"
+                                    <input type="date" required name="date" id="app_date" min="<?= date('Y-m-d') ?>"
                                         placeholder="dd/mm/yyyy">
-                                    <input type="time" required name="app_time" placeholder="Time"
+                                    <input type="time" required name="time" placeholder="Time"
                                         class="appo-right-input">
                                     <textarea rows="3" required name="messages" placeholder="<?php echo e(__('messages.Enter Your Messages')); ?>"></textarea>
                                 </div>
@@ -682,4 +674,4 @@
 </body>
 
 </html>
-<?php /**PATH D:\Projects\Menow\me_now\resources\views/front/layout.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\xampp\htdocs\meNow\resources\views/front/layout.blade.php ENDPATH**/ ?>
