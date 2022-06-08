@@ -140,9 +140,9 @@
                                 <a class="nav-link"
                                     href="{{ url('events') }}">{{ __('messages.Events') }}</a>
                             </li>
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a class="nav-link" href="#">{{ __('messages.Blog') }}</a>
-                            </li>
+                            </li> --}}
                             <li class="nav-item">
                                 <a class="nav-link"
                                     href="{{ url('women-empowerment') }}">{{ __('messages.Women Empowerment') }}</a>

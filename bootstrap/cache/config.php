@@ -522,9 +522,9 @@
         'transport' => 'smtp',
         'host' => 'smtp.gmail.com',
         'port' => '587',
-        'encryption' => 'ssl',
-        'username' => 'prism.marketing786@gmail.com',
-        'password' => 'Prism@2020#',
+        'encryption' => 'tls',
+        'username' => 'info@pigeonarabia.com',
+        'password' => 'hccoucualrvpiooj',
         'timeout' => NULL,
         'auth_mode' => NULL,
       ),
@@ -543,7 +543,7 @@
       'sendmail' => 
       array (
         'transport' => 'sendmail',
-        'path' => '/usr/sbin/sendmail -bs',
+        'path' => '/usr/sbin/sendmail -t -i',
       ),
       'log' => 
       array (
@@ -554,11 +554,20 @@
       array (
         'transport' => 'array',
       ),
+      'failover' => 
+      array (
+        'transport' => 'failover',
+        'mailers' => 
+        array (
+          0 => 'smtp',
+          1 => 'log',
+        ),
+      ),
     ),
     'from' => 
     array (
-      'address' => 'prism.marketing786@gmail.com',
-      'name' => 'Example',
+      'address' => 'info@pigeonarabia.com',
+      'name' => 'MeNow',
     ),
     'markdown' => 
     array (
