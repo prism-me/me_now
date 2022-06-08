@@ -112,13 +112,13 @@ class FrontController extends Controller
 
 
     public function blogdetails($slug){
-
+        $doctor=Doctor::get()->take(4);
         $blogdetails = Blog::where('slug',$slug)->first();
         $blog = Blog::get()->take(4);
         $department=Department::with('service')->get();
         $rooms = Room::get()->take(3);
         $setting=Setting::find(1);
-        return view("front.blog_inner")->with('rooms',$rooms)->with("department",$department)->with("setting",$setting)->with("blogdetails", $blogdetails)->with('blog',$blog);
+        return view("front.blog_inner")->with('doctor',$doctor)->with('rooms',$rooms)->with("department",$department)->with("setting",$setting)->with("blogdetails", $blogdetails)->with('blog',$blog);
     }
 
     
@@ -144,9 +144,10 @@ class FrontController extends Controller
          }
          $rooms = Room::get()->take(3);
          $events=Event::get();
+         $doctor=Doctor::get()->take(4);
          $department=Department::with('service')->get();
          $setting=Setting::find(1);
-        return view("front.events")->with('rooms',$rooms)->with("setting",$setting)->with("department",$department)->with("events",$events);
+        return view("front.events")->with('doctor',$doctor)->with('rooms',$rooms)->with("setting",$setting)->with("department",$department)->with("events",$events);
     }
 
     public function workshopdetail($id){
@@ -205,10 +206,11 @@ class FrontController extends Controller
          }
          $rooms = Room::get()->take(3);
         //  $service=Service::get()->take(8);
+        $doctor=Doctor::get()->take(4);
          $department=Department::with('service')->get();
          $setting=Setting::find(1);
         //  $reviews=Review::with('doctors','users')->get()->take(4);
-       return view("front.become_member")->with('rooms',$rooms)->with("setting",$setting)->with("department",$department);
+       return view("front.become_member")->with('doctor',$doctor)->with('rooms',$rooms)->with("setting",$setting)->with("department",$department);
      
     }
 
@@ -218,11 +220,11 @@ class FrontController extends Controller
          }
          $rooms = Room::get()->take(3);
         //  $service=Service::get()->take(8);
-        //  $doctor=Doctor::get()->take(4);
+         $doctor=Doctor::get()->take(4);
          $department=Department::with('service')->get();
          $setting=Setting::find(1);
         //  $reviews=Review::with('doctors','users')->get()->take(4);
-       return view("front.women_empowerment")->with('rooms',$rooms)->with("setting",$setting)->with("department",$department);
+       return view("front.women_empowerment")->with('doctor',$doctor)->with('rooms',$rooms)->with("setting",$setting)->with("department",$department);
      
     }
     public function rooms($slug){
@@ -233,12 +235,13 @@ class FrontController extends Controller
          $rooms = Room::get()->take(3);
          $room = Room::where('slug',$slug)->first();
          $service = Service::get()->take(8);
+         $doctor=Doctor::get()->take(4);
         //  $package = Package::get()->take(3);
         //  $doctor = Doctor::get()->take(4);
          $department = Department::with('service')->get();
          $setting = Setting::find(1);
          $reviews = Review::with('doctors','users')->get()->take(4);
-       return view("front.rooms")->with('room',$room)->with('rooms',$rooms)->with("services",$service)->with("setting",$setting)->with("department",$department);
+       return view("front.rooms")->with('doctor',$doctor)->with('room',$room)->with('rooms',$rooms)->with("services",$service)->with("setting",$setting)->with("department",$department);
        
     }
     
@@ -298,9 +301,9 @@ class FrontController extends Controller
             $departmentId = Department::where('slug' , $service)->first();
             $departmentService=DepartService::where("department_id",$departmentId->id)->get();
             $department=Department::with('service')->get();
-    
+            $doctor=Doctor::get()->take(4);
             $setting=Setting::find(1);
-            return view("front.department")->with('rooms',$rooms)->with("department",$department)->with("setting",$setting)->with("departmentService",$departmentService)->with('serviceSlug' , $service)->with('current',$departmentId);
+            return view("front.department")->with('dcotor',$doctor)->with('rooms',$rooms)->with("department",$department)->with("setting",$setting)->with("departmentService",$departmentService)->with('serviceSlug' , $service)->with('current',$departmentId);
         }
 
         public function departmentdetail($service,$subService){
@@ -318,19 +321,23 @@ class FrontController extends Controller
             $departmentdetails= Department::with("doctor")->where('slug' ,$service)->get();
             //get doctors
             $doctors = $departmentdetails[0]->doctor;
-                        
+             
+            $doctor=Doctor::get()->take(4);
+
             $setting=Setting::find(1);
 
-           return view("front.departmentdetails")->with('rooms',$rooms)->with('service_slug',$service)->with('doctors',$doctors)->with('current',$currentService)->with('subServices',$subServices)->with("department",$department)->with("departmentdetails",$departmentdetails)->with("setting",$setting);
+           return view("front.departmentdetails")->with('doctor',$doctor)->with('rooms',$rooms)->with('service_slug',$service)->with('doctors',$doctors)->with('current',$currentService)->with('subServices',$subServices)->with("department",$department)->with("departmentdetails",$departmentdetails)->with("setting",$setting);
 
        }
 
 
        public function contact_us(){
         $rooms = Room::get()->take(3);
+
            $department=Department::all();
+           $doctor=Doctor::get()->take(4);
            $setting=Setting::find(1);
-           return view("front.contactus")->with('rooms',$rooms)->with("department",$department)->with("setting",$setting);
+           return view("front.contactus")->with('doctor',$doctor)->with('rooms',$rooms)->with("department",$department)->with("setting",$setting);
        }
 
        public function myaccount(){

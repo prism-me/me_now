@@ -300,15 +300,7 @@
                                                 <?php endif; ?>
                                         </select>
                                     </div>
-                                    <div class="appo-select-box">
-                                        <select id="doctors"  class="dropdown" name="doctors">
-
-                                                <?php echo e(__('messages.Select Doctors')); ?></option>
-                                                 <?php $__currentLoopData = $doctor; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <option value="<?php echo e($d->name); ?>" disabled="disabled" selected="selected"><?php echo e($d->name); ?></option>
-                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                        </select>
-                                    </div>
+                                    
                                 </div>
                                 <div class="appo-input-main-box">
                                     <input type="text" required name="name" id="name"
@@ -526,10 +518,10 @@
                                     <a href="<?php echo e(url('faqs')); ?>"><?php echo e(__('messages.FAQs')); ?></a>
                                     <a href="<?php echo e(url('contact_us')); ?>"><?php echo e(__('messages.Contact Us')); ?></a>
                                     <a
-                                        href="<?php echo e(url('termcondition')); ?>"><?php echo e(__('messages.Terms & Condition')); ?></a>
+                                        href="#"><?php echo e(__('messages.Terms & Condition')); ?></a>
                                     <a
                                         href="<?php echo e(url('women-empowerment')); ?>"><?php echo e(__('messages.Women Empowerment')); ?></a>
-                                    <a href="<?php echo e(url('privacypolicy')); ?>"><?php echo e(__('messages.Privacy Policy')); ?></a>
+                                    <a href="#"><?php echo e(__('messages.Privacy Policy')); ?></a>
                                 </div>
                             </div>
                         </div>

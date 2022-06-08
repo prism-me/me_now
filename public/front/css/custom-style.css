@@ -1232,3 +1232,7 @@ select.form-control:not([size]):not([multiple]) {
 .who_we_are_cotent p{
     text-align: justify;
 }
+.get-in-touch-button:hover{
+    background-color: #48b7c6;
+    border:none !important;
+}

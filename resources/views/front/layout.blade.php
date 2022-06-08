@@ -324,7 +324,7 @@
                                                 @endif
                                         </select>
                                     </div>
-                                    <div class="appo-select-box">
+                                    {{-- <div class="appo-select-box">
                                         <select id="doctors"  class="dropdown" name="doctors">
 
                                                 {{ __('messages.Select Doctors') }}</option>
@@ -332,7 +332,7 @@
                                                         <option value="{{ $d->name }}" disabled="disabled" selected="selected">{{ $d->name }}</option>
                                                     @endforeach
                                         </select>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <div class="appo-input-main-box">
                                     <input type="text" required name="name" id="name"
@@ -548,10 +548,10 @@
                                     <a href="{{ url('faqs') }}">{{ __('messages.FAQs') }}</a>
                                     <a href="{{ url('contact_us') }}">{{ __('messages.Contact Us') }}</a>
                                     <a
-                                        href="{{ url('termcondition') }}">{{ __('messages.Terms & Condition') }}</a>
+                                        href="#">{{ __('messages.Terms & Condition') }}</a>
                                     <a
                                         href="{{ url('women-empowerment') }}">{{ __('messages.Women Empowerment') }}</a>
-                                    <a href="{{ url('privacypolicy') }}">{{ __('messages.Privacy Policy') }}</a>
+                                    <a href="#">{{ __('messages.Privacy Policy') }}</a>
                                 </div>
                             </div>
                         </div>
