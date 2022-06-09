@@ -57,7 +57,7 @@
 
             
             <div class="row workshop-inner-wrapper global-heading" data-aos="zoom-in">
-                <div class="col-md-7">
+                <div class="col-md-7 col-sm-12 col-12">
 
                     <h2 class="text-left"><?php echo e($workshop->title); ?></h2>
                     <div class="text-justify">
@@ -66,7 +66,7 @@
                     </div>
 
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-5 col-sm-12 col-12">
 
                     <div class="header-appo-main-box ">
                         <h1><?php echo e(__('messages.Book Now!')); ?></h1>

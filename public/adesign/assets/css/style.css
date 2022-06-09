@@ -3212,3 +3212,12 @@ nav.navbar.navbar-expand-sm.navbar-default {
   width: 50px;
   border-radius:4px;
 }
+.btn, .button {
+  border-radius: 15px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #4caf50;
+    border-color: #4caf50;
+}

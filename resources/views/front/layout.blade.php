@@ -76,7 +76,7 @@
         </div> --}}
         <div class="container-fluid">
             <div class="navigation-custom-single">
-                <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+                <nav class="navbar navbar-light bg-faded">
                     <a class="navbar-brand" href="{{ url('/') }}">
                         @if (isset($setting->logo))
                             {{-- <img src="{{ asset('upload/images') . '/' . $setting->logo }}" class="logo-img"> --}}
@@ -85,12 +85,13 @@
                             <img src="{{ Session::get('logo') }}" class="logo-img">
                         @endif
                     </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#CollapsingNavbar"
-                        aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse"
+                        data-target="#CollapsingNavbar" aria-controls="exCollapsingNavbar2" aria-expanded="false"
+                        aria-label="Toggle navigation">
                         &#9776;
                     </button>
-                    <div class="collapse navbar-collapse navbar-toggleable-sm" id="CollapsingNavbar">
-                        <ul class="nav navbar-nav ml-auto">
+                    <div class="collapse navbar-toggleable-sm" id="CollapsingNavbar">
+                        <ul class="nav navbar-nav pull-sm-right">
                             {{-- <li class="nav-item">
 			        			<a class="nav-link" href="{{url('/')}}">{{ __('messages.Home' )}}</a>
 			  				</li> --}}
@@ -170,22 +171,8 @@
                 alt="Whatsapp Action"></a>
         <a href="tel:+971565553483"><img src="{{ asset('front/img/call_now.png') }}" alt="Call Action"></a>
     </div>
-    <div class="sticky_bottom">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-6">
-                    <button type="submit" class="btn-hover color-9" data-toggle="modal"
-                        data-target="#appointmentModal">Book Now</button>
-                </div>
-                <div class="col-3">
-                    <img src="{{ asset('front/img/call_now.png') }}" alt="">
-                </div>
-                <div class="col-3">
-                    <img src="{{ asset('front/img/whatsapp.png') }}" alt="Whatsapp Action"
-                        class="static_whatsapp_icon">
-                </div>
-            </div>
-        </div>
+
+    <div class="spacefor-global">
     </div>
     @yield('content')
 
@@ -329,15 +316,15 @@
                                         <select id="service" class="dropdown appo-select-box" name="service_id">
                                             <option value="" disabled="disabled" selected="selected">-
                                                 Select Sub Service</option>
+                                               
+                                                @if (isset($department))
+                                                    @foreach ($department as $d)
+                                                        @if(!empty($d))
 
-                                            @if (isset($department))
-                                                @foreach ($department as $d)
-                                                    @if (!empty($d))
-                                                        <option value="{{ $d->id }}">{{ $d->name }}
-                                                        </option>
-                                                    @endif
-                                                @endforeach
-                                            @endif
+                                                            <option value="{{ $d->id }}">{{ $d->name }}</option>
+                                                        @endif
+                                                    @endforeach
+                                                @endif
                                         </select>
                                     </div>
                                     {{-- <div class="appo-select-box">
@@ -360,7 +347,8 @@
                                         value="">
                                     <input type="date" required name="date" id="app_date" min="<?= date('Y-m-d') ?>"
                                         placeholder="dd/mm/yyyy">
-                                    <input type="time" required name="time" placeholder="Time" class="appo-right-input">
+                                    <input type="time" required name="time" placeholder="Time"
+                                        class="appo-right-input">
                                     <textarea rows="3" required name="messages" placeholder="{{ __('messages.Enter Your Messages') }}"></textarea>
                                 </div>
                                 <div class="appo-btn-main-box">
@@ -509,11 +497,11 @@
                                 </div>
                                 <div class="footer-d1-box">
                                     <h3>{{ __('messages.Contact Us') }}</h3>
-                                    <p><span class="fa fa-phone phone-icon"></span><a
-                                            href="tel:+97142398448">{{ isset($setting->phone_no) ? $setting->phone_no : Session::get('phone_no') }}</a>
+                                    <p><span
+                                            class="fa fa-phone phone-icon"></span><a href="tel:+97142398448">{{ isset($setting->phone_no) ? $setting->phone_no : Session::get('phone_no') }}</a>
                                     </p>
-                                    <p><span class="fa fa-envelope mail-icon"></span><a
-                                            href="mailto:info@menow.me">{{ isset($setting->email) ? $setting->email : Session::get('email') }}</a>
+                                    <p><span
+                                            class="fa fa-envelope mail-icon"></span><a href="mailto:info@menow.me">{{ isset($setting->email) ? $setting->email : Session::get('email') }}</a>
                                     </p>
                                 </div>
                             </div>
@@ -562,10 +550,11 @@
                                     {{-- <a href="{{ url('blog') }}">{{ __('messages.Blog') }}</a> --}}
                                     <a href="{{ url('faqs') }}">{{ __('messages.FAQs') }}</a>
                                     <a href="{{ url('contact_us') }}">{{ __('messages.Contact Us') }}</a>
-                                    <a href="#">{{ __('messages.Terms & Condition') }}</a>
+                                    <a
+                                        href="{{ url('termcondition') }}">{{ __('messages.Terms & Condition') }}</a>
                                     <a
                                         href="{{ url('women-empowerment') }}">{{ __('messages.Women Empowerment') }}</a>
-                                    <a href="#">{{ __('messages.Privacy Policy') }}</a>
+                                    <a href="{{ url('privacypolicy') }}">{{ __('messages.Privacy Policy') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -576,8 +565,7 @@
                             <div class="footer-r1-detail">
                                 <div class="footer-d1-box">
                                     <h3>{{ __('messages.Address') }}</h3>
-                                    <p><a href="https://maps.app.goo.gl/4DJn6E47x4QUAW5S6">24-32 - 5 B St - Jumeirah -
-                                            Jumeirah 1 - Dubai, UAE</a>
+                                    <p><a href="https://maps.app.goo.gl/4DJn6E47x4QUAW5S6">24-32 - 5 B St - Jumeirah - Jumeirah 1 - Dubai, UAE</a>
                                     </p>
                                 </div>
                                 <div class="footer-d1-box">
