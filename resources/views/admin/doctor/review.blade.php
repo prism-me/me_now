@@ -57,7 +57,11 @@
                                <td>{{$d->review}}</td>
                                <td>{{$d->ratting}}</td>
                                <td>
-                                  <a href="javascript:deleterow('deletereview','<?=$d->id?>')" class="btn btn-danger">{{__('messages.Delete')}}</a>
+                                  <div class="group">
+                                    <a href="javascript:deleterow('deletereview','<?=$d->id?>')">
+                                          <i class='fa fa-trash fa-lg'></i>
+                                    </a>
+                                 </div>
                                </td>
                             </tr>
                             @endforeach

@@ -1,13 +1,13 @@
 @extends('admin.layout')
 @section('title')
-{{__('messages.Gallery')}}
+{{__('messages.Faq')}}
 @stop
 @section('content')
 <div class="breadcrumbs">
    <div class="col-sm-4">
       <div class="page-header float-left">
          <div class="page-title">
-            <h1>{{__('messages.Gallery')}}</h1>
+            <h1>{{__('messages.Faq')}}</h1>
          </div>
       </div>
    </div>
@@ -15,7 +15,7 @@
       <div class="page-header float-right">
          <div class="page-title">
             <ol class="breadcrumb text-right">
-               <li class="active">{{__('messages.Gallery')}}</li>
+               <li class="active">{{__('messages.Faq')}}</li>
             </ol>
          </div>
       </div>
@@ -36,14 +36,15 @@
                   </div>
                   @endif
                   <div>
-                     <a href="{{url('admin/savealbum/0')}}" class="btn btn-primary">{{__('messages.Add Album')}}</a>
+                     <a href="{{ URL::to('admin/faqs/create')}}" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Faq')}}</a>
                   </div>
                   <div class="table-responsive">
                   <table id="service" class="table  table-striped table-bordered">
                      <thead>
                         <tr>
                            <th>{{__('messages.Id')}}</th>
-                           <th>{{__('messages.Name')}}</th>
+                           <th>{{__('messages.Title')}}</th>
+                           <th>{{__('messages.Description')}}</th>
                            <th>{{__('messages.Action')}}</th>
                         </tr>
                      </thead>
@@ -51,13 +52,21 @@
                         @if(count($data)>0)
                         @foreach($data as $d)
                         <tr>
-                           <td>{{$d->id}}</td>
-                           <td>{{$d->name}}</td>
+                           <td>{{isset($d->id)?$d->id:""}}</td>
+                           <td>{{substr($d->title, 0,  20)}}</td>
+                           <td>{{  substr($d->description, 0,  50) }}...</td>
                            <td>
-                               <a href="{{url('admin/savealbum/').'/'.$d->id}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
-                               <a href="javascript:deleterow('deletealbum','<?= $d->id ?>')" class="btn btn-danger">{{__('messages.Delete')}}</a>
-                               <a href="{{url('admin/addphoto/').'/'.$d->id}}" class="btn btn-warning btndepartwarning">{{__('messages.Add Photo')}}
-                               </a>
+                              <div class="group">
+                                <a href="{{URL::to('admin/edit-faq') . '/' . $d->slug}}" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
+                              </div>
+                              <div class="group">
+                                <form action="{{ url('admin/delete-faq'.'/' . $d->slug)}}"  novalidate="novalidate"  method="POST"  > 
+                                {{csrf_field()}}
+                                 <button class='btn btn-default' type='submit' value='submit'>
+                                   <i class='fa fa-trash fa-lg'></i>
+                                 </button>
+                                </form>
+                              </div>
                            </td>
                         </tr>
                         @endforeach
@@ -72,3 +81,8 @@
    </div>
 </div>
 @stop
+<style>
+
+
+
+</style>

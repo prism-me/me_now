@@ -560,7 +560,7 @@
                                     <a href="{{ url('about') }}">{{ __('messages.About') }}</a>
                                     <a href="{{ url('events') }}">{{ __('messages.Events') }}</a>
                                     <a href="{{ url('workshop') }}">{{ __('messages.Workshops') }}</a>
-                                    <a href="{{ url('blog') }}">{{ __('messages.Blog') }}</a>
+                                    {{-- <a href="{{ url('blog') }}">{{ __('messages.Blog') }}</a> --}}
                                     <a href="{{ url('faqs') }}">{{ __('messages.FAQs') }}</a>
                                     <a href="{{ url('contact_us') }}">{{ __('messages.Contact Us') }}</a>
                                     <a href="#">{{ __('messages.Terms & Condition') }}</a>

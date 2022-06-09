@@ -27,8 +27,8 @@ class DoctorController extends UploadController
     public function savedoctor($id,$tab_id){
         $department=Department::all();
         $data=Doctor::find($id);
-        $workinghour=TimeTable::where("doctor_id",$id)->get();
-        return view("admin.doctor.savedoctor")->with("doctor_id",$id)->with("department",$department)->with("data",$data)->with("tab_id",$tab_id)->with("workinghour",$workinghour);
+    
+        return view("admin.doctor.savedoctor")->with("doctor_id",$id)->with("department",$department)->with("data",$data)->with("tab_id",$tab_id);
     }
 
     public function updatedoctorprofile(Request $request){
@@ -66,30 +66,9 @@ class DoctorController extends UploadController
                
                 $store=Doctor::find($request->get("id"));
                 $msg=__('messages.Doctor Update Successfully');
-                // $checkemail=User::where("email",$request->get("email"))->where("id",'!=',$store->user_id)->first();
-                // if($checkemail){
-                //         Session::flash('message',__('messages.Email Id Already Existe')); 
-                //         Session::flash('alert-class', 'alert-danger'); 
-                //         return redirect("admin/savedoctor/".$store->id.'/1');
-                // }
-                $usd=User::find($store->user_id);
-                $usd->name=$request->get("name");
-                $usd->email=$request->get("email");
-                $usd->password=$request->get("password");
-                $usd->phone_no=$request->get("phone_no");
-                $usd->usertype='3';
-                $usd->save();
+               
             }else{
                 $store=new Doctor();
-                $usd=new User();
-                $usd->name=$request->get("name");
-                $usd->email=$request->get("email");
-                $usd->password=$request->get("password");
-                $usd->phone_no=$request->get("phone_no");
-                $usd->usertype='3';
-               
-                $usd->save();
-                $store->user_id=$usd->id;
                 $msg=__('messages.Doctor Add Successfully');
 
             }
@@ -99,14 +78,13 @@ class DoctorController extends UploadController
             $store->phone_no=$request->get("phone_no");
             $store->about_us=$request->get("about_us");
             $store->service=$request->get("service");
-            // $store->facebook_id=$request->get("facebook");
-            // $store->twitter_id=$request->get("twitter_id");
-            // $store->google_id=$request->get("google_id");
             $store->description = $request->get("description");
+            $store->designation = $request->get("designation");
+            $store->excerpt = $request->get("excerpt");
             $store->slug = $request->get("slug");
             $store->short_description=$request->get("short_description");
              if($mediaUpload){
-                    $usd->image = $mediaUpload;
+                    $store->image = $mediaUpload;
             }
             $store->save(); 
             return redirect("admin/doctor");
@@ -115,46 +93,14 @@ class DoctorController extends UploadController
  
     
     public function deletedoctor($id){
-          $data=Doctor::find($id);
-          if($data){
-                     $deletereview=Review::where("doctor_id",$id)->get();
-                     if(count($deletereview)>0){
-                        foreach ($deletereview as $d) {
-                              $d->delete();//delete doctor review
-                        }
-                     }
-                     $gettimetable=TimeTable::where("doctor_id",$id)->get();
-                     if(count($gettimetable)>0){
-                        foreach ($gettimetable as $d) {
-                              $d->delete();//delete doctor working hour
-                        }
-                     }
-                     $removetoken=Token::where("doctor_id",$id)->get();
-                     if(count($removetoken)>0){
-                        foreach ($removetoken as $d) {
-                              $d->delete();//delete doctor token
-                        }
-                     }
-                     $removetoken=Appointment::where("doc_id",$id)->get();
-                     if(count($removetoken)>0){
-                        foreach ($removetoken as $d) {
-                              $d->delete();//delete doctor token
-                        }
-                     }
-                      $image_path = public_path() ."/upload/doctor/".$data->image;
-                      if(file_exists($image_path)&&$data->image!="") {
-                            try {
-                                   unlink($image_path);
-                            }
-                            catch(Exception $e) {
-                            }                        
-                      }
-                      $data->delete();
-          }
-         
-          Session::flash('message',__('messages.Doctor Delete Successfully')); 
-          Session::flash('alert-class', 'alert-success');
-          return redirect("admin/doctor");
+        $data=Doctor::find($id);
+        if($data){
+        $data->delete();
+        }
+        
+        Session::flash('message',__('messages.Doctor Delete Successfully')); 
+        Session::flash('alert-class', 'alert-success');
+        return redirect("admin/doctor");
     }
 
     public function showreview(){
@@ -178,7 +124,7 @@ class DoctorController extends UploadController
     }
 
     public function deleteSubscriber($id){
-         $data  = NewsLetter::where('id',$id)->delete();
+        $data  = NewsLetter::where('id',$id)->delete();
         return redirect("admin/subscribers");
 
     }

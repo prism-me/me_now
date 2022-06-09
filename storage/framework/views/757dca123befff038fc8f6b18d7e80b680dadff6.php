@@ -62,7 +62,7 @@
                                     </label>
                                     <input type="text" id="title"
                                         placeholder="Title"
-                                        class="form-control" required name="title"
+                                        class="form-control"  name="title"
                                         value="<?php echo e(isset($data->title) ? $data->title : ''); ?>">
                                 </div>
                                 <div class="form-group">
@@ -72,7 +72,7 @@
                                         <span class="reqfield">*</span>
                                     </label>
                                     <textarea id="excerpt" placeholder="Excerpt"
-                                        class="form-control" required name="excerpt"
+                                        class="form-control"  name="excerpt"
                                         value="<?php echo e(isset($data->excerpt) ? $data->excerpt : ''); ?>"></textarea>
                                 </div>
                                
@@ -83,7 +83,7 @@
                                         <span class="reqfield">*</span>
                                     </label>
                                     <textarea id="description" placeholder="Description 1"
-                                        class="form-control" required name="description"
+                                        class="form-control"  name="description"
                                         value="<?php echo e(isset($data->description) ? $data->description : ''); ?>"></textarea>
                                 </div>
                                 <div class="form-group">
@@ -93,7 +93,7 @@
                                         <span class="reqfield">*</span>
                                     </label>
                                     <textarea id="description1" placeholder="<?php echo e(__('messages.Enter') . '  ' . __('messages.Description 2')); ?>"
-                                        class="form-control" required name="description2"
+                                        class="form-control"  name="description2"
                                         value="<?php echo e(isset($data->description2) ? $data->description2 : ''); ?>"></textarea>
                                 </div>
                                 <div class="form-group">
@@ -104,7 +104,7 @@
                                     </label>
                                     <input type="text" id="title"
                                         placeholder="Title"
-                                        class="form-control" required name="more_img_title1"
+                                        class="form-control"  name="more_img_title1"
                                         value="<?php echo e(isset($data->more_img_title1) ? $data->more_img_title1 : ''); ?>">
                                 </div>
                                 <div class="form-group">
@@ -115,7 +115,7 @@
                                     </label>
                                     <input type="text" id="title"
                                         placeholder="Title"
-                                        class="form-control" required name="more_img_title2"
+                                        class="form-control"  name="more_img_title2"
                                         value="<?php echo e(isset($data->more_img_title2) ? $data->more_img_title2 : ''); ?>">
                                 </div>
 
@@ -130,7 +130,7 @@
                                     <label for="file" class=" form-control-label">
                                         <?php echo e(__('messages.Image 2')); ?><span class="reqfield">*</span>
                                     </label>
-                                    <input type="file" id="file" name="more_img1" class="form-control-file" accept="image/*">
+                                    <input type="file" id="file" name="more_img2" class="form-control-file" accept="image/*">
 
                                 </div>
                                 <div class="form-group">
@@ -147,13 +147,20 @@
                                     <input type="file" id="file" name="featured_img2" class="form-control-file" accept="image/*">
 
                                 </div>
+                                <div class="form-group">
+                                    <label for="file" class=" form-control-label">
+                                        <?php echo e(__('messages.Icon')); ?><span class="reqfield">*</span>
+                                    </label>
+                                    <input type="file" id="file" name="icons" class="form-control-file" accept="image/*">
+
+                                </div>
                                 
                                 <div class="form-group">
                                     <label for="name" class=" form-control-label">
                                         <?php echo e(__('messages.Slug')); ?>
 
                                     </label>
-                                    <input type="text" id="slug" required
+                                    <input type="text" id="slug" 
                                         placeholder="<?php echo e(__('messages.Enter') . ' ' . __('messages.Slug')); ?>"
                                         class="form-control" name="slug"
                                         value="<?php echo e(isset($data->slug) ? $data->slug : ''); ?>">

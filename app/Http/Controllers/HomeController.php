@@ -182,7 +182,7 @@ class HomeController extends Controller
        }
        
        public function showpatient(){
-           $data=User::where("usertype",'1')->get();
+           $data= User::where("usertype",'1')->get();
            return view("admin.patient")->with("data",$data);
        }
        

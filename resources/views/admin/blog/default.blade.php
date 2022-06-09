@@ -57,12 +57,20 @@
                            <td>{{isset($d->title)?$d->title:""}}</td>
                            <td>{{ substr($d->short_description, 0,50)}}..</td>
                            <td>
-                               <img src="{{ $d->featured_img }}" style="width:50px;height: 50px;" class="imgsize1"/>
+                               <img src="{{ $d->featured_img }}"  class="imgList"/>
                            </td>
                            <td>
-                                <a href="{{URL::to('admin/edit-blog') . '/' . $d->slug}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
-                                <a href="{{URL::to('admin/show-blog') .'/' . $d->slug}}" class="btn btn-success">{{__('messages.View')}}</a>
-                                 <form action="{{ url('admin/delete-blog'.'/' . $d->slug)}}"  novalidate="novalidate"  method="POST"  >{{csrf_field()}}<input type="submit" class="btn btn-danger" value="{{__('messages.Delete')}}" name="Delete"></form>
+                              <div class="group">
+                                <a href="{{URL::to('admin/edit-blog') . '/' . $d->slug}}" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
+                              </div>
+                              <div class="group">
+                                <form action="{{ url('admin/delete-blog'.'/' . $d->slug)}}"  novalidate="novalidate"  method="POST"  > 
+                                {{csrf_field()}}
+                                 <button class='btn btn-default' type='submit' value='submit'>
+                                   <i class='fa fa-trash fa-lg'></i>
+                                 </button>
+                                </form>
+                              </div>
                            </td>
                         </tr>
                         @endforeach

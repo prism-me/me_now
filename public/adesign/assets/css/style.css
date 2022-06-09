@@ -3189,3 +3189,26 @@ nav.navbar.navbar-expand-sm.navbar-default {
 	width: 100px;
 	height: 100px
 }
+
+.group {
+  display: inline-block;
+ 
+}
+.fa-plus-circle:before {
+    content: "\f055";
+    color: green;
+}
+.fa-trash:before {
+    content: "\f1f8";
+    color: red;
+}
+.fa-pencil:before {
+    content: "\f040";
+    color: #2c2c9f;
+}
+
+.imgList{
+  height:50px;
+  width: 50px;
+  border-radius:4px;
+}

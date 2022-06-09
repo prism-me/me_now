@@ -1,13 +1,14 @@
-@extends('admin.layout')
-@section('title')
- {{__('messages.Patient')}}
-@stop
-@section('content')
+
+<?php $__env->startSection('title'); ?>
+ <?php echo e(__('messages.Patient')); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
  <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>{{__('messages.Patient')}}</h1>
+                        <h1><?php echo e(__('messages.Patient')); ?></h1>
                     </div>
                 </div>
             </div>
@@ -15,7 +16,7 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li class="active">{{__('messages.Patient')}}</li>
+                            <li class="active"><?php echo e(__('messages.Patient')); ?></li>
                         </ol>
                     </div>
                 </div>
@@ -29,35 +30,36 @@
                     <div class="col-md-12">
                         <div class="card">                         
                             <div class="card-body"> 
-                             @if(Session::get("message"))
+                             <?php if(Session::get("message")): ?>
                                   <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
-                                     {{Session::get("message")}}
+                                     <?php echo e(Session::get("message")); ?>
+
                                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                      <span aria-hidden="true">×</span>
                                      </button>
                                   </div>
-                              @endif                              
+                              <?php endif; ?>                              
                                 
                                 <div class="table-responsive">
                                 <table id="service" class="table  table-striped table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>{{__('messages.Id')}}</th>
-                                            <th>{{__('messages.Name')}}</th>
-                                            <th>{{__('messages.Email')}}</th>
-                                            <th>{{__('messages.Phone No')}}</th>
-                                            <th>{{__('messages.Action')}}</th>
+                                            <th><?php echo e(__('messages.Id')); ?></th>
+                                            <th><?php echo e(__('messages.Name')); ?></th>
+                                            <th><?php echo e(__('messages.Email')); ?></th>
+                                            <th><?php echo e(__('messages.Phone No')); ?></th>
+                                            <th><?php echo e(__('messages.Action')); ?></th>
                                         </tr>
                                     </thead> 
                                     <tbody>  
-                                @if(count($data)>0)
-                                        @foreach($data as $d)
+                                <?php if(count($data)>0): ?>
+                                        <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <tr>
-                                                 <td>{{isset($d->id)?$d->id:""}}</td>
-                                                 <td>{{isset($d->name)?$d->name:""}}</td>
+                                                 <td><?php echo e(isset($d->id)?$d->id:""); ?></td>
+                                                 <td><?php echo e(isset($d->name)?$d->name:""); ?></td>
                                                
-                                                <td>{{isset($d->email)?$d->email:""}}</td>
-                                                <td>{{isset($d->phone_no)?$d->phone_no:""}}</td>
+                                                <td><?php echo e(isset($d->email)?$d->email:""); ?></td>
+                                                <td><?php echo e(isset($d->phone_no)?$d->phone_no:""); ?></td>
                                                 <td>
                                                    
                                                    <div class="group">
@@ -67,8 +69,8 @@
                                                     </div>
                                                 </td>
                                         </tr>
-                                        @endforeach
-                                  @endif
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                  <?php endif; ?>
                                     </tbody>                                  
                                 </table>
                                 </div>
@@ -78,4 +80,5 @@
                 </div>
             </div>
         </div>
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\meNow\resources\views/admin/patient.blade.php ENDPATH**/ ?>

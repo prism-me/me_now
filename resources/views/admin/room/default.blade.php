@@ -59,8 +59,17 @@
                            <td><img src="{{ $d->icons }}" class="img-fluid"></td>
                            
                            <td>
-                                <a href="{{URL::to('admin/edit-room') . '/' . $d->slug}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
-                                 <form action="{{ url('admin/delete-room'.'/' . $d->slug)}}"  novalidate="novalidate"  method="POST"  >{{csrf_field()}}<input type="submit" class="btn btn-danger" value="{{__('messages.Delete')}}" name="Delete"></form>
+                              <div class="group">
+                                <a href="{{URL::to('admin/edit-room') . '/' . $d->slug}}" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
+                              </div>
+                              <div class="group">
+                                <form action="{{ url('admin/delete-room'.'/' . $d->slug)}}"  novalidate="novalidate"  method="POST"  > 
+                                {{csrf_field()}}
+                                 <button class='btn btn-default' type='submit' value='submit'>
+                                   <i class='fa fa-trash fa-lg'></i>
+                                 </button>
+                                </form>
+                              </div>
                            </td>
                         </tr>
                         @endforeach
