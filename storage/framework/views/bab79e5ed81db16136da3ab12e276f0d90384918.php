@@ -9,7 +9,8 @@
 <?php $__env->startSection('content'); ?>
 
     <div class="appointment-section">
-        <?php echo $__env->make('front.banner_slider', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        <?php echo $__env->make('front.banner_static', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        
     </div>
 
     <div class="about_container">

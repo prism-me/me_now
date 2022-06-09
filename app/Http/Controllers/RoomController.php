@@ -43,7 +43,7 @@ class RoomController extends UploadController
         $mediaUpload1 = "";
         $mediaUpload2 = "";
         $mediaUpload3 = "";
-        $mediaUploa4  = "";
+        $mediaUpload4  = "";
         if ($img = $request->hasFile('more_img1')) {
                
            $media =  UploadController::upload_media($request->more_img1);
@@ -143,7 +143,7 @@ class RoomController extends UploadController
         $mediaUpload1 = "";
         $mediaUpload2 = "";
         $mediaUpload3 = "";
-        $mediaUploa4  = "";
+        $mediaUpload4  = "";
         if ($img = $request->hasFile('more_img1')) {
                
            $media =  UploadController::upload_media($request->more_img1);
@@ -193,6 +193,7 @@ class RoomController extends UploadController
         if($mediaUpload3){
             $data['featured_img'] =$mediaUpload3;
         }
+
         if($mediaUpload4){
             $data['featured_img2'] =$mediaUpload4;
         }

@@ -249,7 +249,7 @@ class FrontController extends Controller
     
 
        public function getserviceanddoctor($department_id){
-        $rooms = Room::get()->take(3);
+            $rooms = Room::get()->take(3);
            $departmentservice=DepartService::where("department_id",$department_id)->get();
            $doctorlist=Doctor::where("department_id",$department_id)->get();
            $data=array("service"=> $departmentservice,"doctor"=>$doctorlist);

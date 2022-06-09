@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="about_wrapper " data-aos="fade-up">
         <div class="row">
-            <div class="col-md-7">
+            <div class="col-md-7 col-sm-6 col-12">
                 <div class="about_content">
                     
                     <div class="services_home_container global-heading text-center">
@@ -18,7 +18,7 @@
                     </p>
                 </div>
             </div>
-            <div class="col-md-5 text-center about_img_section">
+            <div class="col-md-5 col-sm-6 col-12 text-center about_img_section">
                 <div class="about_img_wrapper"><img src="<?php echo e(asset('front/img/about-us.jpg')); ?>" alt="about us section">
                 </div>
             </div>
