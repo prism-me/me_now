@@ -142,7 +142,7 @@
         <div class="about-content-widget">
             <div class="row">
                 <div class="col-md-5 col-sm-12" data-aos="zoom-in">
-                    <img src="{{ asset('front/img/about-us.png') }}" class="img-fluid collageg_about_img" alt="">
+                    <img src="{{ asset('front/img/about-main.jpg') }}" class="img-fluid collageg_about_img" alt="">
                 </div>
                 <div class="col-md-7 col-sm-12 ">
                     <p class="text-margin">

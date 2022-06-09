@@ -988,6 +988,7 @@ select.form-control:not([size]):not([multiple]) {
     height: 430px !important;
 }
 .collageg_about_img {
+    border-radius: 10px;
     height: 400px !important;
 }
 .mail-icon,
@@ -1093,6 +1094,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 .rooms_second_section img {
     height: 480px;
+    border-radius: 10px;
 }
 .rooms_second_section .row {
     align-items: center;
