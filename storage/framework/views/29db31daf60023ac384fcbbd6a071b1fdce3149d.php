@@ -55,24 +55,20 @@
                         <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
                            <td><?php echo e(isset($d->id)?$d->id:""); ?></td>
-                           <td><?php echo e(isset($d->title)?$d->title:""); ?></td>
-                           <td><?php echo e(substr($d->description, 0,  70)); ?>...</td>
-                         
+                           <td><?php echo e(substr($d->title, 0,  20)); ?></td>
+                           <td><?php echo e(substr($d->description, 0,  50)); ?>...</td>
                            <td>
-                              <div class="action">
                               <div class="group">
-                                <a href="<?php echo e(URL::to('admin/edit-faq') . '/' . $d->slug); ?>" > <i class='fa fa-plus-circle fa-lg' aria-hidden="true"> </i> </a>
+                                <a href="<?php echo e(URL::to('admin/edit-faq') . '/' . $d->slug); ?>" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
                               </div>
-                                <div class="group">
+                              <div class="group">
                                 <form action="<?php echo e(url('admin/delete-faq'.'/' . $d->slug)); ?>"  novalidate="novalidate"  method="POST"  > 
                                 <?php echo e(csrf_field()); ?>
 
                                  <button class='btn btn-default' type='submit' value='submit'>
                                    <i class='fa fa-trash fa-lg'></i>
-
                                  </button>
                                 </form>
-                              </div>
                               </div>
                            </td>
                         </tr>

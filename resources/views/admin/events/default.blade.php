@@ -1,13 +1,13 @@
 @extends('admin.layout')
 @section('title')
-{{__('messages.Faq')}}
+{{__('messages.Event')}}
 @stop
 @section('content')
 <div class="breadcrumbs">
    <div class="col-sm-4">
       <div class="page-header float-left">
          <div class="page-title">
-            <h1>{{__('messages.Faq')}}</h1>
+            <h1>{{__('messages.Event')}}</h1>
          </div>
       </div>
    </div>
@@ -15,7 +15,7 @@
       <div class="page-header float-right">
          <div class="page-title">
             <ol class="breadcrumb text-right">
-               <li class="active">{{__('messages.Faq')}}</li>
+               <li class="active">{{__('messages.Event')}}</li>
             </ol>
          </div>
       </div>
@@ -36,15 +36,16 @@
                   </div>
                   @endif
                   <div>
-                     <a href="{{ URL::to('admin/faqs/create')}}" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Faq')}}</a>
+                     <a href="{{ URL::to('admin/events/create')}}" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Event')}}</a>
                   </div>
                   <div class="table-responsive">
                   <table id="service" class="table  table-striped table-bordered">
                      <thead>
                         <tr>
                            <th>{{__('messages.Id')}}</th>
-                           <th>{{__('messages.Title')}}</th>
+                           <th>{{__('messages.Name')}}</th>
                            <th>{{__('messages.Description')}}</th>
+                           <th>{{__('messages.Image')}}</th>
                            <th>{{__('messages.Action')}}</th>
                         </tr>
                      </thead>
@@ -53,20 +54,14 @@
                         @foreach($data as $d)
                         <tr>
                            <td>{{isset($d->id)?$d->id:""}}</td>
-                           <td>{{substr($d->title, 0,  20)}}</td>
-                           <td>{{  substr($d->description, 0,  50) }}...</td>
+                           <td>{{isset($d->name)?$d->name:""}}</td>
+                           <td>{{ substr($d->short_description, 0,50)}}..</td>
                            <td>
-                              <div class="group">
-                                <a href="{{URL::to('admin/edit-faq') . '/' . $d->slug}}" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
-                              </div>
-                              <div class="group">
-                                <form action="{{ url('admin/delete-faq'.'/' . $d->slug)}}"  novalidate="novalidate"  method="POST"  > 
-                                {{csrf_field()}}
-                                 <button class='btn btn-default' type='submit' value='submit'>
-                                   <i class='fa fa-trash fa-lg'></i>
-                                 </button>
-                                </form>
-                              </div>
+                               <img src="{{ $d->thumbnail_img }}" style="width:50px;height: 50px;" class="imgsize1"/>
+                           </td>
+                           <td>
+                                <a href="{{URL::to('admin/edit-event') . '/' . $d->slug}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
+                                 <form action="{{ url('admin/delete-event'.'/' . $d->slug)}}"  novalidate="novalidate"  method="POST"  >{{csrf_field()}}<input type="submit" class="btn btn-danger" value="{{__('messages.Delete')}}" name="Delete"></form>
                            </td>
                         </tr>
                         @endforeach
@@ -81,8 +76,3 @@
    </div>
 </div>
 @stop
-<style>
-
-
-
-</style>

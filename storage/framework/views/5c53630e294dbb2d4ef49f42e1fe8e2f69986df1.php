@@ -514,7 +514,7 @@
                                     <a href="<?php echo e(url('about')); ?>"><?php echo e(__('messages.About')); ?></a>
                                     <a href="<?php echo e(url('events')); ?>"><?php echo e(__('messages.Events')); ?></a>
                                     <a href="<?php echo e(url('workshop')); ?>"><?php echo e(__('messages.Workshops')); ?></a>
-                                    <a href="<?php echo e(url('blog')); ?>"><?php echo e(__('messages.Blog')); ?></a>
+                                    
                                     <a href="<?php echo e(url('faqs')); ?>"><?php echo e(__('messages.FAQs')); ?></a>
                                     <a href="<?php echo e(url('contact_us')); ?>"><?php echo e(__('messages.Contact Us')); ?></a>
                                     <a

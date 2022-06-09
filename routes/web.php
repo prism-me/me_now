@@ -78,6 +78,7 @@ Route::group(['prefix' => '/'], function () {
      Route::get("blog","FrontController@blog");
      Route::get("blog-detail/{id}","FrontController@blogdetails");
      Route::post("workshop-booking","FrontController@workshopBooking");
+      Route::get("events","FrontController@events");
 
 
      
@@ -194,6 +195,14 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('delete-faq/{slug}', 'FaqController@delete');
         Route::post('update-faq/{slug}', 'FaqController@update');
         Route::get('show-faq/{slug}', 'FaqController@show');
+
+
+        #Events 
+        Route::resource('events', 'EventController');
+        Route::get('edit-event/{slug}', 'EventController@edit');
+        Route::post('delete-event/{slug}', 'EventController@destroy');
+        Route::post('update-event/{slug}', 'EventController@update');
+        Route::get('show-event/{slug}', 'EventController@show');
 
 
 	 });

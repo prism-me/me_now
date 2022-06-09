@@ -68,7 +68,7 @@
 
                         <span class="reqfield">*</span>
                         </label>
-                        <textarea id="short_description" placeholder="<?php echo e(__('messages.Enter').'  '.__('messages.Description')); ?>" class="form-control" required name="description" value="<?php echo e(isset($data->description)?$data->description:''); ?>"><?php echo e(isset($data->description)?$data->description:''); ?></textarea>
+                        <textarea id="description" placeholder="<?php echo e(__('messages.Enter').'  '.__('messages.Description')); ?>" class="form-control" required name="description" value="<?php echo e(isset($data->description)?$data->description:''); ?>"><?php echo e(isset($data->description)?$data->description:''); ?></textarea>
                      </div>
                      <div class="form-group">
                         <label for="name" class=" form-control-label">

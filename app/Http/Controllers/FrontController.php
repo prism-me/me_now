@@ -432,7 +432,7 @@ class FrontController extends Controller
        public function doctordetails($slug){
         $rooms = Room::get()->take(3);
             $department=Department::all();
-            $doctor=Doctor::with("TimeTabledata")->where('slug',$slug)->first();
+            $doctor=Doctor::where('slug',$slug)->first();
             $departmentdetails=Department::with("doctor","service")->find($doctor->department_id); 
             $doctor->total_ratting=count(Review::where("doctor_id",$doctor->id)->get());
             $doctor->ratting=Review::where("doctor_id",$doctor->id)->avg('ratting');
