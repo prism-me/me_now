@@ -1,6 +1,6 @@
 
 <?php $__env->startSection('title'); ?>
-<?php echo e(__('messages.Room')); ?>
+<?php echo e(__('messages.Department')); ?>
 
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
@@ -8,7 +8,7 @@
    <div class="col-sm-4">
       <div class="page-header float-left">
          <div class="page-title">
-            <h1><?php echo e(__('messages.Room')); ?></h1>
+            <h1><?php echo e(__('messages.Department')); ?></h1>
          </div>
       </div>
    </div>
@@ -16,7 +16,7 @@
       <div class="page-header float-right">
          <div class="page-title">
             <ol class="breadcrumb text-right">
-               <li class="active"><?php echo e(__('messages.Room')); ?></li>
+               <li class="active"><?php echo e(__('messages.Department')); ?></li>
             </ol>
          </div>
       </div>
@@ -38,16 +38,16 @@
                   </div>
                   <?php endif; ?>
                   <div>
-                     <a href="<?php echo e(URL::to('admin/rooms/create')); ?>" class="btn btn-primary"><?php echo e(__('messages.Add').' '.__('messages.Room')); ?></a>
+                     <a href="<?php echo e(url('admin/savedepartment/0')); ?>" class="btn btn-primary"><?php echo e(__('messages.Add').' '.__('messages.Department')); ?></a>
                   </div>
                   <div class="table-responsive">
                   <table id="service" class="table  table-striped table-bordered">
                      <thead>
                         <tr>
                            <th><?php echo e(__('messages.Id')); ?></th>
-                           <th><?php echo e(__('messages.Title')); ?></th>
-                           <th><?php echo e(__('messages.Description')); ?></th>
-                           <th><?php echo e(__('messages.Icon')); ?></th>
+                           <th><?php echo e(__('messages.Name')); ?></th>
+                           <th><?php echo e(__('messages.Image')); ?></th>
+                           <th><?php echo e(__('messages.Emergency No')); ?></th>
                            <th><?php echo e(__('messages.Action')); ?></th>
                         </tr>
                      </thead>
@@ -56,24 +56,24 @@
                         <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
                            <td><?php echo e(isset($d->id)?$d->id:""); ?></td>
-                           <td><?php echo e(isset($d->title)?$d->title:""); ?></td>
-                           <td><?php echo e(substr($d->excerpt, 0,50)); ?>..</td>
-                           <td><img src="<?php echo e($d->icons); ?>" class="img-fluid"></td>
-                           
+                           <td><?php echo e(isset($d->name)?$d->name:""); ?></td>
+                           <td>
+                               <img src="<?php echo e($d->image); ?>" class="imgsize1" style="width:50px;height:50px;"/>
+                           </td>
+                           <td><?php echo e(substr($d->short_description , 0,50)); ?>...</td>
                            <td>
                               <div class="group">
-                                <a href="<?php echo e(URL::to('admin/edit-room') . '/' . $d->slug); ?>" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
+                                <a href="<?php echo e(url('admin/savedepartment/').'/'.$d->id); ?>" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
                               </div>
                               <div class="group">
-                                <form action="<?php echo e(url('admin/delete-room'.'/' . $d->slug)); ?>"  novalidate="novalidate"  method="POST"  > 
-                                <?php echo e(csrf_field()); ?>
-
-                                 <button class='btn btn-default' type='submit' value='submit'>
-                                   <i class='fa fa-trash fa-lg'></i>
-                                 </button>
-                                </form>
+                                <a href="<?php echo e(url('admin/departmentservice/').'/'.$d->id); ?>" > <i class='fa fa-plus-circle fa-lg' aria-hidden="true"> </i> </a>
+                              </div>
+                              <div class="group">
+                                 <a href="javascript:deleterow('deletedepartment','<?= $d->id ?>')" >
+                                   <i class='fa fa-trash fa-lg'></i></a>
                               </div>
                            </td>
+                           
                         </tr>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         <?php endif; ?>
@@ -87,4 +87,4 @@
    </div>
 </div>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('admin.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\meNow\resources\views/admin/room/default.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('admin.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\meNow\resources\views/admin/department/default.blade.php ENDPATH**/ ?>

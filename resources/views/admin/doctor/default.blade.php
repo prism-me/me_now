@@ -57,15 +57,23 @@
                         <tr>
                            <td>{{isset($d->id)?$d->id:""}}</td>
                            <td>
-                                <img src="{{ $d->image}}" class="imgsize1" style="height:50px;width: 50px;"/>
+                                <img src="{{ $d->image}}" class="imgList"/>
                            </td>
                            <td>{{$d->department->name}}</td>
                            <td>{{$d->name}}</td>
                            <td>{{$d->email}}</td>
                            <td>{{$d->phone_no}}</td>
                            <td>
-                              <a href="{{url('admin/savedoctor/').'/'.$d->id.'/1'}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
-                              <a href="javascript:deleterow('deletedoctor','<?= $d->id ?>')" class="btn btn-danger">{{__('messages.Delete')}}</a>
+                              <div class="group">
+                                <a href="{{url('admin/savedoctor/').'/'.$d->id.'/1'}}" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
+                              </div>
+                              <div class="group">
+                                
+                                 <a href="javascript:deleterow('deletedoctor','<?= $d->id ?>')" >
+                                   <i class='fa fa-trash fa-lg'></i>
+                                 </a>
+                                </form>
+                              </div>
                            </td>
                         </tr>
                         @endforeach

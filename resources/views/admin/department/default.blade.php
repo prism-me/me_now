@@ -60,10 +60,18 @@
                            </td>
                            <td>{{ substr($d->short_description , 0,50)}}...</td>
                            <td>
-                                <a href="{{url('admin/savedepartment/').'/'.$d->id}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
-                                <a href="javascript:deleterow('deletedepartment','<?= $d->id ?>')" class="btn btn-danger">{{__('messages.Delete')}}</a>
-                                <a href="{{ url('admin/departmentservice/').'/'.$d->id}}"  class="btn btn-warning btndepartwarning">{{__('messages.Add Services')}}</a>
+                              <div class="group">
+                                <a href="{{url('admin/savedepartment/').'/'.$d->id}}" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
+                              </div>
+                              <div class="group">
+                                <a href="{{url('admin/departmentservice/').'/'.$d->id}}" > <i class='fa fa-plus-circle fa-lg' aria-hidden="true"> </i> </a>
+                              </div>
+                              <div class="group">
+                                 <a href="javascript:deleterow('deletedepartment','<?= $d->id ?>')" >
+                                   <i class='fa fa-trash fa-lg'></i></a>
+                              </div>
                            </td>
+                           
                         </tr>
                         @endforeach
                         @endif

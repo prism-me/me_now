@@ -95,9 +95,10 @@
                         <a href="{{ url('admin/rooms') }}"> <i
                                 class="menu-icon fa fa-home"></i>{{ __('messages.Room') }}</a>
                     </li>
+                  
                     <li class="active">
-                        <a href="{{ url('admin/events') }}"> <i
-                                class="menu-icon fa fa-calendar"></i>{{ __('messages.Event') }}</a>
+                        <a href="{{ url('admin/faqs') }}"> <i
+                                class="menu-icon fa fa-question-circle"></i>{{ __('messages.Faq') }}</a>
                     </li>
                     {{-- <li class="active">
                         <a href="{{ url('admin/package') }}"> <i

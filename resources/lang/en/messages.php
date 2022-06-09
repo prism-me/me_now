@@ -477,5 +477,9 @@ return [
 		"Image 2" => "Image 2",
 		"Featured Image" => "Featured Image",
 		"Featured Image 1" => "Featured Image 1",
+		"Faq" => "Faq",
+		"FAQ" => "FAQ",
+		"Save FAQ" => "Save FAQ",
+		"Save Faq" => "Save Faq",
 
 	];

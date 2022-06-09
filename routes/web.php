@@ -66,25 +66,12 @@ Route::group(['prefix' => '/'], function () {
      Route::get("checkcurrentpwd","FrontController@checkcurrentpwd");
      Route::any("changepasswords","FrontController@changepasswords");
 
-     Route::any("chat/{id}","ChatsController@showchat");
-     Route::any("chatarea","FrontController@show_chat_area");
-     Route::get("getchannelmessage/{channel_id}/{second_id}","ChatsController@getchannelmessage");
-    #Route::any("chatmediaupload","ChatsController@chatmediaupload");
-     Route::any("createchannel/{id}","ChatsController@createchannel");
-     Route::get("token","ChatsController@gettoken");
-     #oute::get("sendnotification","ChatsController@sendnotification");
-     Route::get("deletechatmsg/{msg_id}/{channel_id}/{type}/{irow}","ChatsController@deletechatmsg");
-     Route::get("updatechannelmsg","ChatsController@updatechannelmsg");
-	 Route::get("getchannelmember","ChatsController@getchannelmember");
-	 Route::get("timeformat","ChatsController@timeformatfront");
 	 Route::get("settimezone/{time}","HomeController@settimezone");
-	 Route::get("getmessagebody/{msg_id}/{channel_id}","ChatsController@getmessagebody");
 
      Route::get("subscription/{package_id}","SubscriptionController@showorderpage");
      Route::post("userlogin","FrontController@userlogin");
 
      Route::post("paymentsubscription","SubscriptionController@paymentsubscription");
-     Route::get("videosendnotification","ChatsController@videosendnotification");
      Route::get("resetpassword/{code}","FrontController@resetpwd");
      Route::any("resetnewpwd","FrontController@resetpassword");
      Route::Get("getcurrenttime/{offset}","HomeController@getcurrenttime");
@@ -105,12 +92,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get("dashboard","HomeController@showdashboard")->name("dashboard");
         Route::get("logout","HomeController@logout");
         Route::get("settimezone/{time}","HomeController@settimezone");
-        #Service
-        Route::resource("service","ServiceController");
-        Route::get("saveservice/{id}","ServiceController@saveservice");
-        Route::post("updateservice","ServiceController@updateservice");
-        Route::get("deleteservice/{id}","ServiceController@deleteservice");
-        Route::get("settimezone/{time}","HomeController@settimezone");
+   
         #Department
         Route::resource("department","DepartmentController");
         Route::get("savedepartment/{id}","DepartmentController@saveddepartment");
@@ -139,16 +121,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource("notification","NotificationController");
         Route::post("savenotification","NotificationController@savenotification");
 
-        #Album
-        Route::resource("gallery","GalleryController");
-        Route::get("savealbum/{id}","GalleryController@savealbum");
-        Route::post("updatealbum","GalleryController@updatealbum");
-        Route::get("deletealbum/{id}","GalleryController@deletealbum");
-        Route::get("addphoto/{album_id}","GalleryController@addphoto");
-
-
-        Route::any("uploadimage/{album_id}","GalleryController@uploadimage");
-        Route::get("deletegalleryphoto/{id}","GalleryController@deletegalleryphoto");
+      
 
         Route::get("setting/{id}","NotificationController@showsetting");
         Route::post("savebasicsetting","NotificationController@savebasicsetting");
@@ -209,54 +182,25 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('update-room/{slug}', 'RoomController@update');
         Route::get('show-room/{slug}', 'RoomController@show');
 
-        #Events 
-        Route::resource('events', 'EventController');
-        Route::get('edit-event/{slug}', 'EventController@edit');
-        Route::post('delete-event/{slug}', 'EventController@destroy');
-        Route::post('update-event/{slug}', 'EventController@update');
-        Route::get('show-event/{slug}', 'EventController@show');
-
+      
         #Subscriber 
         Route::get('subscribers', 'DoctorController@subscribers');
         Route::post('delete-subscriber/{id}', 'DoctorController@deleteSubscriber');
+
+
+        #FAQ 
+        Route::resource('faqs', 'FaqController');
+        Route::get('edit-faq/{slug}', 'FaqController@edit');
+        Route::post('delete-faq/{slug}', 'FaqController@delete');
+        Route::post('update-faq/{slug}', 'FaqController@update');
+        Route::get('show-faq/{slug}', 'FaqController@show');
 
 
 	 });
 
 });
 
-Route::group(['prefix' => 'doctor'], function () {
 
-       Route::get("/","HomeController@doctorlogin");
-
-        Route::group(['middleware' => ['Doctorcheck']], function () {
-            Route::get("settimezone/{time}","HomeController@settimezone");
-           Route::get("dashboard","AuthenticatedoctorController@showdashboard");           
-           Route::get("logout","AuthenticatedoctorController@showlogout");
-
-           Route::any("chat","AuthenticatedoctorController@showchat")->name("chat");
-
-
-            Route::get("editprofile/{tab_id}","AuthenticatedoctorController@editprofile");
-            Route::any("updatedoctorprofile","AuthenticatedoctorController@updatedoctorprofile");
-            Route::post("updateworkinghours","AuthenticatedoctorController@updateworkinghours");
-           #Route::get("sendnotification","ChatsController@sendnotification");
-
-            Route::get("appointment","AppointmentController@showdoctorappointment");
-            Route::get("orderstatus/{order_id}/{appointment_id}","AppointmentController@changeorderstatus");
-            Route::any("apmreschedule","AppointmentController@apmreschedule");
-            Route::get("getreferdoctor/{id}","AppointmentController@getreferdoctor");
-            Route::any("apmrefer","AppointmentController@apmrefer");
-            Route::get("review","AuthenticatedoctorController@showreview");
-            Route::get('sender', function () {
-              
-                  event(new App\Events\FormSubmitted("hetal","New Messages"));
-            });
-
-
-       });
-       
-});
 
     
 Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}']], function () {

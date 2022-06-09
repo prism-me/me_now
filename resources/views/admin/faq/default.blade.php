@@ -1,13 +1,13 @@
 @extends('admin.layout')
 @section('title')
-{{__('messages.Room')}}
+{{__('messages.Faq')}}
 @stop
 @section('content')
 <div class="breadcrumbs">
    <div class="col-sm-4">
       <div class="page-header float-left">
          <div class="page-title">
-            <h1>{{__('messages.Room')}}</h1>
+            <h1>{{__('messages.Faq')}}</h1>
          </div>
       </div>
    </div>
@@ -15,7 +15,7 @@
       <div class="page-header float-right">
          <div class="page-title">
             <ol class="breadcrumb text-right">
-               <li class="active">{{__('messages.Room')}}</li>
+               <li class="active">{{__('messages.Faq')}}</li>
             </ol>
          </div>
       </div>
@@ -36,7 +36,7 @@
                   </div>
                   @endif
                   <div>
-                     <a href="{{ URL::to('admin/rooms/create')}}" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Room')}}</a>
+                     <a href="{{ URL::to('admin/faqs/create')}}" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Faq')}}</a>
                   </div>
                   <div class="table-responsive">
                   <table id="service" class="table  table-striped table-bordered">
@@ -45,7 +45,6 @@
                            <th>{{__('messages.Id')}}</th>
                            <th>{{__('messages.Title')}}</th>
                            <th>{{__('messages.Description')}}</th>
-                           <th>{{__('messages.Icon')}}</th>
                            <th>{{__('messages.Action')}}</th>
                         </tr>
                      </thead>
@@ -55,15 +54,13 @@
                         <tr>
                            <td>{{isset($d->id)?$d->id:""}}</td>
                            <td>{{isset($d->title)?$d->title:""}}</td>
-                           <td>{{ substr($d->excerpt, 0,50)}}..</td>
-                           <td><img src="{{ $d->icons }}" class="img-fluid"></td>
-                           
+                           <td>{{  substr($d->description, 0,  70) }}...</td>
                            <td>
                               <div class="group">
-                                <a href="{{URL::to('admin/edit-room') . '/' . $d->slug}}" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
+                                <a href="{{URL::to('admin/edit-faq') . '/' . $d->slug}}" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
                               </div>
                               <div class="group">
-                                <form action="{{ url('admin/delete-room'.'/' . $d->slug)}}"  novalidate="novalidate"  method="POST"  > 
+                                <form action="{{ url('admin/delete-faq'.'/' . $d->slug)}}"  novalidate="novalidate"  method="POST"  > 
                                 {{csrf_field()}}
                                  <button class='btn btn-default' type='submit' value='submit'>
                                    <i class='fa fa-trash fa-lg'></i>
@@ -84,3 +81,8 @@
    </div>
 </div>
 @stop
+<style>
+
+
+
+</style>

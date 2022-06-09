@@ -120,6 +120,12 @@
                            </div>
                            <div class="col-md-12 form-group">
                               <label for="email" class=" form-control-label">
+                              {{__('messages.Excerpt')}}<span class="reqfield" >*</span>
+                              </label>
+                              <textarea  id="excerpt" name="excerpt"  class="form-control">{{ isset($data->excerpt)?$data->excerpt:''}}</textarea>
+                           </div>
+                           <div class="col-md-12 form-group">
+                              <label for="email" class=" form-control-label">
                               {{__('messages.About')}}<span class="reqfield" >*</span>
                               </label>
                               <textarea  id="description" name="about_us"  class="form-control">{{ isset($data->about_us)?$data->about_us:''}}</textarea>

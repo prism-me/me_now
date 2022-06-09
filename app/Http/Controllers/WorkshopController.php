@@ -90,7 +90,7 @@ class WorkshopController extends UploadController
      */
     public function edit(Workshop $workshop,$slug)
     {
-         $doctor  = Doctor::all();
+        $doctor  = Doctor::all();
         $data = Workshop::where('slug',$slug)->first();
         return view('admin.workshop.saveWorkshop')->with('data', $data)->with('doctor', $doctor);
     }
@@ -104,7 +104,7 @@ class WorkshopController extends UploadController
      */
     public function update(Request $request, Workshop $workshop , $slug)
     {  
-        // dd($request->all()); 
+       
         $mediaUpload = "";
         $mediaUpload1 = "";
         if ($img = $request->hasFile('featured_img')) {

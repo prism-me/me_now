@@ -57,22 +57,25 @@ class RoomController extends UploadController
 
         }
         if ($img = $request->hasFile('icons')) {
-               
-           $media =  UploadController::upload_media($request->icons);
-           $mediaUpload2 = $media['icons'];
+
+            $media =  UploadController::upload_media($request->icons);
+            $mediaUpload2 = $media['url'];  
 
         }
 
         if ($img = $request->hasFile('featured_img')) {
-               
-           $media =  UploadController::upload_media($request->featured_img);
-           $mediaUpload3 = $media['featured_img'];
+
+            $media =  UploadController::upload_media($request->featured_img);
+            $mediaUpload3 = $media['url'];  
 
         }
+
         if ($img = $request->hasFile('featured_img2')) {
-               
-           $media =  UploadController::upload_media($request->featured_img2);
-           $mediaUpload4 = $media['featured_img2'];
+
+            $media =  UploadController::upload_media($request->featured_img2);
+            $mediaUpload3 = $media['url'];
+
+          
 
         }
        
@@ -88,7 +91,9 @@ class RoomController extends UploadController
         }
 
         if($mediaUpload2){
-            $data['icons'] = $mediaUpload3;
+           
+            $data['icons'] = $mediaUpload2;
+            
         }
 
         if($mediaUpload3){
@@ -154,24 +159,23 @@ class RoomController extends UploadController
         if ($img = $request->hasFile('icons')) {
                
            $media =  UploadController::upload_media($request->icons);
-           $mediaUpload2 = $media['icons'];
+           $mediaUpload2 = $media['url'];
 
         }
 
         if ($img = $request->hasFile('featured_img')) {
                
            $media =  UploadController::upload_media($request->featured_img);
-           $mediaUpload3 = $media['featured_img'];
+           $mediaUpload3 = $media['url'];
 
         }
         if ($img = $request->hasFile('featured_img2')) {
                
            $media =  UploadController::upload_media($request->featured_img2);
-           $mediaUpload4 = $media['featured_img2'];
+           $mediaUpload4 = $media['url'];
 
         }
-       
-      
+             
         
         $data  =$request->except('_token');
         if($mediaUpload){
@@ -183,7 +187,7 @@ class RoomController extends UploadController
         }
 
         if($mediaUpload2){
-            $data['icons'] = $mediaUpload3;
+            $data['icons'] = $mediaUpload2;
         }
 
         if($mediaUpload3){

@@ -56,12 +56,19 @@
                            <td>{{$d->id}}</td>
                            <td>{{$d->name}}</td>
                            <td>
-                               <img src="{{ $d->img }}" class="imgsize1" style="width:50px;height:50px;"/>
+                               <img src="{{ $d->img }}" class="imgList" style="width:50px;height:50px;"/>
                            </td>
                            <td>{{ substr($d->short_description,0,50)}}..</td>
                            <td>
-                              <a href="{{url('admin/savedepartmentservice/').'/'.$d->department_id.'/'.$d->id}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
-                              <a href="javascript:deleterow('deletedepartmentservice','<?= $d->id ?>')" class="btn btn-danger">{{__('messages.Delete')}}</a>
+                              <div class="group">
+                                <a href="{{url('admin/savedepartmentservice/').'/'.$d->department_id.'/'.$d->id}}" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
+                              </div>
+                              <div class="group">
+                                <a href="javascript:deleterow('deletedepartmentservice','<?= $d->id ?>')">
+                                   <i class='fa fa-trash fa-lg'></i>
+                                </a>
+                              
+                              </div>
                            </td>
                         </tr>
                         @endforeach
