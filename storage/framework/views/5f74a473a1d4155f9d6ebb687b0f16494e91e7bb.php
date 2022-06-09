@@ -3,7 +3,7 @@
     <thead>
     </thead>
     <tbody>
-        <h2 style="text-align: center;">Hi <?php echo e(ucfirst($clientMailData['first_name']) . ' ' .ucfirst($clientMailData['last_name'])); ?>, Thank you for your interst in the workshop "<?php echo e($clientMailData['name']); ?>".</h2><br>
+        <h2 style="text-align: center;">Hi <?php echo e(ucfirst( $clientMailData['first_name']) . ' ' .ucfirst( $clientMailData['last_name'])); ?>, Thank you for your interst in the workshop "<?php echo e($clientMailData['name']); ?>".</h2><br>
         <h3 style="text-align: center;">Date: <?php echo e($clientMailData['date']); ?></h3>
         <h4 style="text-align: center;color:rgb(222, 68, 68);">Please click below to confirm your booking.</h4><br>
         <?php $title =  $clientMailData['name']; ?>
