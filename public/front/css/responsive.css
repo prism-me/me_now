@@ -346,12 +346,38 @@
     }
 }
 
+
 /*========== Max-width 991px end ==========*/
 
 /*========== Max-width 767px ==========*/
 
 @media (max-width: 767px) {
-    .services-content h2{
+    .global-heading h2,
+    .services-content h2,
+    .services-inner-content h2,
+    .room_description h3,
+    .room_long_description h3,
+    .dcotors-heading-effect h2,
+    .services-inner-content h3,
+    .events-detail h2 {
+        font-size: 23px;
+        text-align: center !important;
+        display: block;
+    }
+
+    .rooms_first_section .mobile-align {
+        order: 2;
+    }
+    .rooms_second_section,
+    .rooms_second_section .room_long_description {
+        padding: 0px;
+    }
+    .room_main_img img,
+    .rooms_second_section img {
+        margin-top: 2rem;
+        height: auto !important;
+    }
+    .services-content h2 {
         text-align: center !important;
         display: block;
     }

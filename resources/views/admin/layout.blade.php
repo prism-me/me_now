@@ -307,7 +307,9 @@
     @stack('scripts')
     <script>
         CKEDITOR.replace('description');
+        CKEDITOR.replace('description1');
         CKEDITOR.replace('additional_description');
+        
 
     </script>
 </body>

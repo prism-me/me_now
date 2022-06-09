@@ -95,9 +95,10 @@
                         <a href="<?php echo e(url('admin/rooms')); ?>"> <i
                                 class="menu-icon fa fa-home"></i><?php echo e(__('messages.Room')); ?></a>
                     </li>
+                  
                     <li class="active">
-                        <a href="<?php echo e(url('admin/events')); ?>"> <i
-                                class="menu-icon fa fa-calendar"></i><?php echo e(__('messages.Event')); ?></a>
+                        <a href="<?php echo e(url('admin/faqs')); ?>"> <i
+                                class="menu-icon fa fa-question-circle"></i><?php echo e(__('messages.Faq')); ?></a>
                     </li>
                     
                     
@@ -281,7 +282,9 @@
     <?php echo $__env->yieldPushContent('scripts'); ?>
     <script>
         CKEDITOR.replace('description');
+        CKEDITOR.replace('description1');
         CKEDITOR.replace('additional_description');
+        
 
     </script>
 </body>

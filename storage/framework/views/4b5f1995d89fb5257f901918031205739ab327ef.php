@@ -137,7 +137,6 @@
     </div>
 
 
-
     <div class="spacefor-global">
     </div>
 
@@ -165,120 +164,8 @@
     </div>
     <?php echo $__env->yieldContent('content'); ?>
 
-    <div class="modal" id="myModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div id="loginmodel">
-                        <h2><?php echo e(__('messages.Login')); ?></h2>
-                        <div class="part-form-main-box">
-                            <form>
-                                <span id="login_error" class="dangerrequired"></span>
-                                <input type="text" class="modelemail" name="login_email"
-                                    placeholder="<?php echo e(__('messages.Enter Your Email')); ?>" id="login_email">
-                                <span id="login_email_error" class="dangerrequired"></span>
-                                <input type="password" id="login_password" name="login_password"
-                                    placeholder="<?php echo e(__('messages.Enter Your Password')); ?>">
-                                <span id="login_password_error" class="dangerrequired"></span>
-                                <button type="button" onclick="Postlogin()"><?php echo e(__('messages.Login')); ?></button>
-                            </form>
-                            <div class="forgot-pass-modal">
-                                <a href="javascript:showforgotmodel()"><?php echo e(__('messages.Forgot password')); ?></a>
-                            </div>
-                            <p><?php echo e(__("messages.Don't have an account?")); ?> <a
-                                    href="javascript:showregmodel()"><?php echo e(__('messages.Register Now')); ?></a></p>
-                            <div class="login-soical">
-                                <?php if(isset($setting->facebook_active) && $setting->facebook_active == '1'): ?>
-                                    <div class="button-facebook">
-                                        <a href="<?php echo e(url('auth/facebook')); ?>">
-                                            <img src="<?php echo e(asset('front/img/facebook.png')); ?>">
-                                        </a>
-                                <?php endif; ?>
-                                <?php if(isset($setting->google_active) && $setting->google_active == '1'): ?>
-                                    <a href="<?php echo e(url('auth/google')); ?>">
-                                        <img src="<?php echo e(asset('front/img/google.png')); ?>">
-                                    </a>
-                            </div>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                </div>
-                <div id="registermodel">
-                    <h2><?php echo e(__('messages.Register')); ?></h2>
-                    <span id="reg_list"></span>
-                    <div class="part-form-main-box">
-                        <form>
-                            <input type="text" name="reg_name" id="reg_name"
-                                placeholder="<?php echo e(__('messages.Enter Your Full Name')); ?>">
-                            <span id="reg_name_error" class="dangerrequired"></span>
-                            <input type="text" name="reg_email" id="reg_email"
-                                placeholder="<?php echo e(__('messages.Enter Your Email')); ?>">
-                            <span id="reg_email_error" class="dangerrequired"></span>
-                            <input type="text" name="reg_phone" id="reg_phone"
-                                placeholder="<?php echo e(__('messages.Enter Your Phone No')); ?>">
-                            <span id="reg_phone_error" class="dangerrequired"></span>
-                            <input type="password" name="reg_pwd" id="reg_pwd"
-                                placeholder="<?php echo e(__('messages.Enter Your Password')); ?>">
-                            <span id="reg_password_error" class="dangerrequired"></span>
-                            <input type="password" name="reg_cpwd" id="reg_cpwd"
-                                placeholder="<?php echo e(__('messages.Re Enter Your Password')); ?>"
-                                onchange="checkbothpwd(this.value)">
-                            <span id="reg_cpwd_error" class="dangerrequired"></span>
-                            <button type="button" onclick="PostRegister()"><?php echo e(__('messages.Register')); ?></button>
-                        </form>
-
-                        <p><?php echo e(__('messages.Already have an account')); ?> <a
-                                href="javascript:showloginmodel()"><?php echo e(__('messages.Login')); ?></a></p>
-                    </div>
-                </div>
-                <div id="forgotmodel">
-                    <h2><?php echo e(__('messages.Forgot Password')); ?></h2>
-                    <div class="part-form-main-box">
-                        <form>
-                            <span id="forgot_email_success" class="successemail"></span>
-                            <span id="forgot_email_error" class="dangerrequired"></span>
-                            <input type="text" class="modelemail" name="forgot_email" id="forgot_email"
-                                placeholder="Enter Your Email">
-
-                            <button type="button" onclick="Postforgot()"><?php echo e(__('messages.Forgot')); ?></button>
-                        </form>
-
-                        <p><a href="javascript:showloginmodel()"><?php echo e(__('messages.Login')); ?></a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    <div id="chat_new" class="modal">
-        <div class="modal-dialog modal-md modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title"><?php echo e(__('messages.Search Doctor')); ?></h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="input-group">
-                        <input type="text" class="form-control search border-right-0 transparent-bg pr-0"
-                            id="search-contact1" placeholder="Search users...">
-                        <div class="input-group-append">
-                            <div class="input-group-text transparent-bg border-left-0" role="button">
-                                <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sidebar-body" id="chatsidebar1">
-                        <ul class="user-list" id="userchatlistall"
-                            style="padding: 15px;list-style: none;height: 375px;overflow-y: auto;">
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
+    
     <div class="modal" id="appointmentModal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -302,8 +189,8 @@
                                             <?php endif; ?>
                                         </select>
                                     </div>
-                                    <div class="appo-select-box">
-                                        <select id="service" class="dropdown" name="service_id">
+                                    <div class="appo-select-box11">
+                                        <select id="service" class="dropdown appo-select-box" name="service_id">
                                             <option value="" disabled="disabled" selected="selected">-
                                                 Select Sub Service</option>
 
@@ -323,11 +210,11 @@
                                 <div class="appo-input-main-box">
                                     <input type="text" required name="name" id="name"
                                         placeholder="<?php echo e(__('messages.Enter Your Full Name')); ?>"
-                                        value="<?php echo e(Auth::user() ? Auth::user()->name : ''); ?>">
+                                        value="">
                                     <input type="text" required name="phone_no" id="phone_no"
                                         placeholder="<?php echo e(__('messages.Enter Phone number')); ?>"
                                         class="appo-right-input"
-                                        value="<?php echo e(Auth::user() ? Auth::user()->phone_no : ''); ?>">
+                                        value="">
                                     <input type="date" required name="date" id="app_date" min="<?= date('Y-m-d') ?>"
                                         placeholder="dd/mm/yyyy">
                                     <input type="time" required name="time" placeholder="Time" class="appo-right-input">
@@ -352,102 +239,7 @@
     </div>
 
 
-    <div class="modal" id="autoization">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div id="loginmodel">
-                        <h2><?php echo e(__('messages.Order Pay')); ?></h2>
-                        <div class="part-form-main-box">
-                            <?php
-                                $months = [1 => 'Jan', 2 => 'Feb', 3 => 'Mar', 4 => 'Apr', 5 => 'May', 6 => 'Jun', 7 => 'Jul', 8 => 'Aug', 9 => 'Sep', 10 => 'Oct', 11 => 'Nov', 12 => 'Dec'];
-                            ?>
-                            <form id="payment-card-info" method="post" action="<?php echo e(url('paymentsubscription')); ?>">
-                                <?php echo csrf_field(); ?>
-                                <input type="hidden" name="package_id"
-                                    value="<?php echo e(isset($subscription->id) ? $subscription->id : ''); ?>">
-                                <div class="row">
-                                    <div class="form-group owner col-md-8">
-                                        <label for="owner"><?php echo e(__('messages.date')); ?></label>
-                                        <input type="date" class="form-control" id="package_date" name="package_date"
-                                            value="" required>
-
-                                    </div>
-                                    <div class="form-group CVV col-md-4">
-                                        <label for="cvv"><?php echo e(__('messages.time')); ?></label>
-                                        <input type="time" class="form-control" id="package_time" name="package_time"
-                                            value="" required>
-
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group owner col-md-8">
-                                        <label for="owner"><?php echo e(__('messages.Name')); ?></label>
-                                        <input type="text" class="form-control" id="owner" name="owner"
-                                            value="<?php echo e(old('owner')); ?>" required>
-
-                                    </div>
-                                    <div class="form-group CVV col-md-4">
-                                        <label for="cvv"><?php echo e(__('messages.CVV')); ?></label>
-                                        <input type="number" class="form-control" id="cvv" name="cvv"
-                                            value="<?php echo e(old('cvv')); ?>" required>
-
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-8" id="card-number-field">
-                                        <label for="cardNumber"><?php echo e(__('messages.Card Number')); ?></label>
-                                        <input type="text" class="form-control" id="cardNumber" name="cardNumber"
-                                            value="<?php echo e(old('cardNumber')); ?>" required>
-
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="amount"><?php echo e(__('messages.Amount')); ?></label>
-                                        <input type="text" class="form-control" id="amount" name="amount"
-                                            value="<?php echo e(isset($subscription->price) ? $subscription->price : ''); ?>"
-                                            required>
-
-
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-6" id="expiration-date">
-                                        <label>Expiration Date</label><br />
-                                        <select class="form-control expritionmonth" id="expiration-month"
-                                            name="expiration-month">
-                                            <?php $__currentLoopData = $months; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $k => $v): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                <option value="<?php echo e($k); ?>"
-                                                    <?= old('expiration-month') == $k ? 'selected' : '' ?>>
-                                                    <?php echo e($v); ?></option>
-                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                        </select>
-                                        <select class="form-control expriationyear" id="expiration-year"
-                                            name="expiration-year">
-
-                                            <?php for($i = date('Y'); $i <= date('Y') + 15; $i++): ?>
-                                                <option value="<?php echo e($i); ?>"><?php echo e($i); ?></option>
-                                            <?php endfor; ?>
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-md-6 btnsaveoption" id="credit_cards">
-                                        <img src="<?php echo e(asset('upload/payment/featured-image.gif')); ?>" id="visa"
-                                            class="payimg">
-
-                                    </div>
-                                </div>
-
-                                <br />
-                                <div class="form-group" id="pay-now">
-                                    <button type="submit" class="btn btn-success themeButton"
-                                        id="confirm-purchase"><?php echo e(__('messages.Confirm Payment')); ?></button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
     <?php echo $__env->make('front.instagram_feeds', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
