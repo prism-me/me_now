@@ -115,7 +115,7 @@
     color: white !important;
     text-align: left;
     transform: translate(0%, -67%);
-    width: 100%;
+    /* width: 100%; */
 }
 
 .appointment-section .item .overlay {
@@ -1229,10 +1229,54 @@ select.form-control:not([size]):not([multiple]) {
 .workshop-part-detail h4 {
     font-size: 17px;
 }
-.who_we_are_cotent p{
+.who_we_are_cotent p {
     text-align: justify;
 }
-.get-in-touch-button:hover{
+.get-in-touch-button:hover {
     background-color: #48b7c6;
-    border:none !important;
+    border: none !important;
+}
+#myVideo {
+    width: 100%;
+}
+.sticky_bottom {
+    display: none !important;
+}
+.workshops-wrapper img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.workshop-part-detail {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.side_woment_emp_img {
+    border-radius: 10px;
+}
+
+.women-empowerment- .blockquote .fa-quote-left,
+.women-empowerment- .blockquote .fa-quote-right {
+    color: #49b7c6;
+    font-size: 1rem;
+    line-height: 0;
+    top: -10px;
+    left: 30px;
+}
+.women-empowerment- .blockquote .fa-quote-right:before {
+    position: absolute;
+}
+.women-empowerment- .blockquote-footer {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+.women-empowerment- .blockquote {
+    font-size: 15px;
+    font-style: italic;
+    color: #767676;
+    margin-top: 2rem;
+    text-align: justify;
+}
+.global-heading h2{
+    display: block;
 }

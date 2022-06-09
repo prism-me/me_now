@@ -57,7 +57,7 @@
 
             
             <div class="row workshop-inner-wrapper global-heading" data-aos="zoom-in">
-                <div class="col-md-7">
+                <div class="col-md-7 col-sm-12 col-12">
 
                     <h2 class="text-left"><?php echo e($workshop->title); ?></h2>
                     <div class="text-justify">
@@ -66,7 +66,7 @@
                     </div>
 
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-5 col-sm-12 col-12">
 
                     <div class="header-appo-main-box ">
                         <h1><?php echo e(__('messages.Book Now!')); ?></h1>
@@ -93,7 +93,7 @@
                                     class="appo-right-input">
                                 <input type="text" required name="phone_number" id="phone_no" placeholder="Phone Number">
                                 <?php $event_date = $workshop->event_date; ?>
-                                <select name="dob" id="" class="form-control" style="color:#000;width:100%;">
+                                <select name="date" id="" class="form-control" style="color:#000;width:100%;">
                                     <option value="0">Select Date and Time</option>
                                     <?php $__currentLoopData = $event_date; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $date): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <option value="<?php echo e($date); ?>"><?php echo e(date('m/d/Y H:i:s', strtotime($date))); ?>

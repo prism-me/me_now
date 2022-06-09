@@ -55,7 +55,7 @@
         
         <div class="container-fluid">
             <div class="navigation-custom-single">
-                <nav class="navbar navbar-light bg-faded">
+                <nav class="navbar navbar-expand-lg navbar-light fixed-top">
                     <a class="navbar-brand" href="<?php echo e(url('/')); ?>">
                         <?php if(isset($setting->logo)): ?>
                             
@@ -64,13 +64,12 @@
                             <img src="<?php echo e(Session::get('logo')); ?>" class="logo-img">
                         <?php endif; ?>
                     </a>
-                    <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse"
-                        data-target="#CollapsingNavbar" aria-controls="exCollapsingNavbar2" aria-expanded="false"
-                        aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#CollapsingNavbar"
+                        aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
                         &#9776;
                     </button>
-                    <div class="collapse navbar-toggleable-sm" id="CollapsingNavbar">
-                        <ul class="nav navbar-nav pull-sm-right">
+                    <div class="collapse navbar-collapse navbar-toggleable-sm" id="CollapsingNavbar">
+                        <ul class="nav navbar-nav ml-auto">
                             
                             <li class="nav-item">
                                 <a class="nav-link" href="<?php echo e(url('about')); ?>"><?php echo e(__('messages.About')); ?></a>
@@ -138,13 +137,31 @@
     </div>
 
 
+
+    <div class="spacefor-global">
+    </div>
+
     <div class="sticky_buttons">
         <a href="https://wa.me/+971565553483" target="_blank"><img src="<?php echo e(asset('front/img/whatsapp.png')); ?>"
                 alt="Whatsapp Action"></a>
         <a href="tel:+971565553483"><img src="<?php echo e(asset('front/img/call_now.png')); ?>" alt="Call Action"></a>
     </div>
-
-    <div class="spacefor-global">
+    <div class="sticky_bottom">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6">
+                    <button type="submit" class="btn-hover color-9" data-toggle="modal"
+                        data-target="#appointmentModal">Book Now</button>
+                </div>
+                <div class="col-3">
+                    <img src="<?php echo e(asset('front/img/call_now.png')); ?>" alt="">
+                </div>
+                <div class="col-3">
+                    <img src="<?php echo e(asset('front/img/whatsapp.png')); ?>" alt="Whatsapp Action"
+                        class="static_whatsapp_icon">
+                </div>
+            </div>
+        </div>
     </div>
     <?php echo $__env->yieldContent('content'); ?>
 
@@ -274,7 +291,7 @@
 
                                 <div class="appo-select-main-box">
                                     <div class="appo-select-box">
-                                        <select id="department" required class="dropdown" name="department"
+                                        <select id="department" required class="dropdown" name="department_id"
                                             onchange="getserviceanddoctor(this.value)">
                                             <option value="" disabled="disabled" selected="selected">-
                                                 Select Service</option>
@@ -286,18 +303,19 @@
                                         </select>
                                     </div>
                                     <div class="appo-select-box">
-                                        <select id="service"  class="dropdown" name="service">
+                                        <select id="service" class="dropdown" name="service_id">
                                             <option value="" disabled="disabled" selected="selected">-
                                                 Select Sub Service</option>
-                                               
-                                                <?php if(isset($department)): ?>
-                                                    <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <?php if(!empty($d)): ?>
 
-                                                            <option value="<?php echo e($d->id); ?>"><?php echo e($d->name); ?></option>
-                                                        <?php endif; ?>
-                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                                <?php endif; ?>
+                                            <?php if(isset($department)): ?>
+                                                <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <?php if(!empty($d)): ?>
+                                                        <option value="<?php echo e($d->id); ?>"><?php echo e($d->name); ?>
+
+                                                        </option>
+                                                    <?php endif; ?>
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                            <?php endif; ?>
                                         </select>
                                     </div>
                                     
@@ -310,10 +328,9 @@
                                         placeholder="<?php echo e(__('messages.Enter Phone number')); ?>"
                                         class="appo-right-input"
                                         value="<?php echo e(Auth::user() ? Auth::user()->phone_no : ''); ?>">
-                                    <input type="date" required name="app_date" id="app_date" min="<?= date('Y-m-d') ?>"
+                                    <input type="date" required name="date" id="app_date" min="<?= date('Y-m-d') ?>"
                                         placeholder="dd/mm/yyyy">
-                                    <input type="time" required name="app_time" placeholder="Time"
-                                        class="appo-right-input">
+                                    <input type="time" required name="time" placeholder="Time" class="appo-right-input">
                                     <textarea rows="3" required name="messages" placeholder="<?php echo e(__('messages.Enter Your Messages')); ?>"></textarea>
                                 </div>
                                 <div class="appo-btn-main-box">
@@ -462,11 +479,11 @@
                                 </div>
                                 <div class="footer-d1-box">
                                     <h3><?php echo e(__('messages.Contact Us')); ?></h3>
-                                    <p><span
-                                            class="fa fa-phone phone-icon"></span><a href="tel:+97142398448"><?php echo e(isset($setting->phone_no) ? $setting->phone_no : Session::get('phone_no')); ?></a>
+                                    <p><span class="fa fa-phone phone-icon"></span><a
+                                            href="tel:+97142398448"><?php echo e(isset($setting->phone_no) ? $setting->phone_no : Session::get('phone_no')); ?></a>
                                     </p>
-                                    <p><span
-                                            class="fa fa-envelope mail-icon"></span><a href="mailto:info@menow.me"><?php echo e(isset($setting->email) ? $setting->email : Session::get('email')); ?></a>
+                                    <p><span class="fa fa-envelope mail-icon"></span><a
+                                            href="mailto:info@menow.me"><?php echo e(isset($setting->email) ? $setting->email : Session::get('email')); ?></a>
                                     </p>
                                 </div>
                             </div>
@@ -517,8 +534,7 @@
                                     <a href="<?php echo e(url('blog')); ?>"><?php echo e(__('messages.Blog')); ?></a>
                                     <a href="<?php echo e(url('faqs')); ?>"><?php echo e(__('messages.FAQs')); ?></a>
                                     <a href="<?php echo e(url('contact_us')); ?>"><?php echo e(__('messages.Contact Us')); ?></a>
-                                    <a
-                                        href="#"><?php echo e(__('messages.Terms & Condition')); ?></a>
+                                    <a href="#"><?php echo e(__('messages.Terms & Condition')); ?></a>
                                     <a
                                         href="<?php echo e(url('women-empowerment')); ?>"><?php echo e(__('messages.Women Empowerment')); ?></a>
                                     <a href="#"><?php echo e(__('messages.Privacy Policy')); ?></a>
@@ -532,7 +548,8 @@
                             <div class="footer-r1-detail">
                                 <div class="footer-d1-box">
                                     <h3><?php echo e(__('messages.Address')); ?></h3>
-                                    <p><a href="https://maps.app.goo.gl/4DJn6E47x4QUAW5S6">24-32 - 5 B St - Jumeirah - Jumeirah 1 - Dubai, UAE</a>
+                                    <p><a href="https://maps.app.goo.gl/4DJn6E47x4QUAW5S6">24-32 - 5 B St - Jumeirah -
+                                            Jumeirah 1 - Dubai, UAE</a>
                                     </p>
                                 </div>
                                 <div class="footer-d1-box">

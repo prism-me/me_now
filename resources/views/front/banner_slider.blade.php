@@ -1,7 +1,7 @@
 <div class="owl-carousel owl-theme banner-img home_banner_bullets">
     <div class="item">
         <video autoplay muted loop id="myVideo">
-            <source src="https://menow.b-cdn.net/video/banner_video.mp4" type="video/mp4">
+            <source src="https://menow.b-cdn.net/video/banner-video.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
         </video>
         <div class="overlay"></div>

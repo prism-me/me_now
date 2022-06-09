@@ -263,7 +263,7 @@ a:hover {
 }
 
 .navigation-custom-single .collapse {
-    width: 85%;
+    /* width: 85%; */
 }
 
 .navigation-custom-single .nav-link {
@@ -625,10 +625,10 @@ a:hover {
 .doctorl-part-detail p {
     font-size: 14px;
     color: #767676;
-    margin-bottom: 17px;
+    margin: 1rem 0px 2rem;
     /* text-align: justify; */
     font-family: "Roboto", sans-serif;
-    text-align: left;
+    text-align: center;
 }
 .doctorl-part-detail h4 {
     color: #1b7081;
@@ -907,11 +907,17 @@ p.testip {
     padding: 30px;
     text-align: center;
     margin-bottom: 30px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .department-part-img img {
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: auto;
+    margin-bottom: 1rem;
 }
 
 .department-viewd-btn a {

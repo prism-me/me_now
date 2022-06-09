@@ -8,7 +8,8 @@
 @section('content')
 
     <div class="appointment-section">
-        @include('front.banner_slider')
+        @include('front.banner_static')
+        {{-- @include('front.banner_slider') --}}
     </div>
 
     <div class="about_container">

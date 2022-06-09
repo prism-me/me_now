@@ -29,16 +29,30 @@
                         <h2>What Our Membership Holders Get</h2>
                         {{-- <h2>We Help To Get Solutions</h2> --}}
                         <div class="women-empowerment-" data-aos="zoom-in">
-                            <p>We utilize a custom-made strategy known as the <strong>'5 P Model’</strong> that stands for five novel
+                            <p>We utilize a custom-made strategy known as the <strong>'5 P Model’</strong> that stands for
+                                five novel
                                 approaches
                                 to empower women:</p>
                             <ul>
                                 <li><strong>Proud</strong> to be a woman with dignity, strength, and courage.</li>
-                                <li><strong>Powerful</strong> to stand up for and with yourself and then stand up for your families.</li>
+                                <li><strong>Powerful</strong> to stand up for and with yourself and then stand up for your
+                                    families.</li>
                                 <li><strong>Preciousness</strong> that comes from the face you see in the mirror.</li>
                                 <li><strong>Peace</strong> which comes with your smile.</li>
                                 <li><strong>Potential</strong> which is endless, do what you were created to do.</li>
                             </ul>
+                            <blockquote class="blockquote">
+                                <span class="fa fa-quote-left"></span>
+                                Women, you’re the game-changers. Raising generations, driving entrepreneurship, and
+                                building homes, there is nothing you can’t do. We believe that a woman, armed with the
+                                right mindset, can break all barriers and achieve greatness. Me Now strives to offer
+                                women a community that they can be proud to be a part of. We will make sure to put you
+                                on the right path to success by giving you hope, a clear vision, and meaningful social
+                                life where you can feel comfortable, happy and fulfilled.
+                                <span class="fa fa-quote-right"></span>
+                                <footer class="blockquote-footer">CEO Message</footer>
+                            </blockquote>
+                            </p>
                         </div>
                     </div>
 

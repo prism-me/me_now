@@ -8,6 +8,7 @@ class Appointment extends Model
 {
     protected $table = 'appointment';
     protected $primaryKey = 'id';
+    protected $guarded = '';
 
       public function doctors()
     {      

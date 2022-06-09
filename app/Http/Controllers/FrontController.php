@@ -37,6 +37,8 @@ use DateTimeZone;
 use Mail;
 use validate;
 use App\Mail\BookingMail;
+use App\Mail\AppoinmentMail;
+
 class FrontController extends Controller
 {   
     public $instagram_feed ;
@@ -593,21 +595,28 @@ class FrontController extends Controller
        }
 
        public function bookappoinment(Request $request){
-                       $data=new Appointment();
-                       $data->department_id=$request->get("department");
-                       $data->service_id=$request->get("service");
-                       $data->doc_id=$request->get("doctors");
-                       $data->name=$request->get("name");
-                       $data->phone_no=$request->get("phone_no");
-                       $data->user_id=Auth::id();
-                       $data->date=$request->get("app_date");
-                       $data->time=$request->get("app_time");
-                       $data->messages=$request->get("messages");   
-                       $data->status=1;              
-                       $data->save();
-                        Session::flash('message',__('messages.Appointement Book Successfully')); 
-                        Session::flash('alert-class', 'alert-success'); 
-                        return redirect()->back();
+                    //    $data=new Appointment();
+                    //    $data->department_id=$request->get("department");
+                    //    $data->service_id=$request->get("service");
+                    // //    $data->doc_id=$request->get("doctors");
+                    //    $data->name=$request->get("name");
+                    //    $data->phone_no=$request->get("phone_no");
+                    //    $data->user_id=Auth::id();
+                    //    $data->date=$request->get("app_date");
+                    //    $data->time=$request->get("app_time");
+                    //    $data->messages=$request->get("messages");   
+                    //    $data->status=1; 
+            $emailData = $request->all();
+            $data = $request->except('_token');
+        
+            $add = Appointment::create($data);
+            $userEmail = "devteam5@prism-me.com";
+            $mail = Mail::to($userEmail)->send(new AppoinmentMail($emailData));
+
+
+            Session::flash('message',__('messages.Appointement Book Successfully')); 
+            Session::flash('alert-class', 'alert-success'); 
+            return redirect()->back();
        }
 
        public function postforgot(Request $request){

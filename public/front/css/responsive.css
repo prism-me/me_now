@@ -1,8 +1,16 @@
 /*========== Max-width 1200px ==========*/
 
 @media (max-width: 1200px) {
+    .about_tiles .single-tile {
+        height: auto !important;
+    }
+
+    .side_img_about_wrapper img,
+    .collageg_about_img {
+        height: auto !important;
+    }
     .navigation-custom-single .collapse {
-        width: 82%;
+        /* width: 82%; */
     }
 
     .left-part-detail {
@@ -32,6 +40,7 @@
 
     .global-heading h2 {
         font-size: 30px;
+        display: block;
     }
 
     .numbers-counter-part-box .counter-value {
@@ -145,7 +154,7 @@
     }
 
     .spacefor-global {
-        height: 95px;
+        height: 70px;
     }
 
     .services-main-box .services-left-part {
@@ -277,7 +286,63 @@
     .owl-carousel .owl-item img {
         display: block;
         width: auto;
-        height: 87px;
+        /* height: 87px; */
+    }
+}
+
+@media (max-width: 1200px) {
+    .header-appo-main-box {
+        width: 100%;
+    }
+    .appo-input-main-box input[type="text"],
+    .appo-input-main-box select {
+        width: 48%;
+    }
+    .workshop-part-detail {
+        height: auto !important;
+    }
+    .workshops-wrapper img {
+        height: auto !important;
+    }
+    .navbar-header {
+        float: none;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+
+    .navbar-collapse.collapse.in {
+        display: block !important;
+    }
+
+    .navbar-nav {
+        float: none !important;
+        margin: 7.5px -15px;
+    }
+
+    .navbar-nav > li {
+        float: none;
+    }
+
+    .navbar-nav > li > a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-toggler {
+        display: block !important;
+        position: absolute;
+        right: 15px;
+        top: 15px;
     }
 }
 
@@ -286,6 +351,19 @@
 /*========== Max-width 767px ==========*/
 
 @media (max-width: 767px) {
+    .services-content h2{
+        text-align: center !important;
+        display: block;
+    }
+    .header-appo-main-box {
+        margin-top: 3rem;
+        padding: 25px !important;
+    }
+    .workshop_wrapper .workshop_inner_overlay {
+        position: relative;
+        width: auto;
+        height: auto;
+    }
     .navigation-custom-single .logo-img {
         width: 150px;
     }
@@ -303,7 +381,8 @@
     }
 
     .navigation-custom-single .collapse {
-        width: 100%;
+        /* width: 100%;
+         */
     }
 
     .navbar-toggleable-sm .navbar-nav .nav-item {
@@ -444,6 +523,13 @@
     .women_img_wrapper img {
         height: auto;
     }
+
+    #myVideo {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        object-position: center;
+    }
 }
 
 /*========== Max-width 767px end ==========*/
@@ -451,6 +537,41 @@
 /*========== Max-width 576px ==========*/
 
 @media (max-width: 576px) {
+    .who_we_are_cotent h2:nth-child(1) {
+        text-align: center;
+    }
+    .collageg_about_img {
+        height: auto !important;
+    }
+    .side_img_about {
+        height: auto !important;
+    }
+    .sticky_buttons {
+        display: none;
+    }
+    .sticky_bottom {
+        box-shadow: 0px 0px 10px #b1b1b1;
+        padding: 0.5rem;
+        position: fixed;
+        bottom: 0px;
+        z-index: 999999999;
+        background: #daf0ff;
+        width: 100%;
+        display: block !important;
+    }
+    .sticky_bottom button {
+        width: 126px;
+        padding: 0.4rem 20px;
+    }
+    .sticky_bottom img {
+        height: 40px;
+    }
+    .static_whatsapp_icon {
+        height: 35px !important;
+    }
+    .appointment-section .item .caption {
+        display: none;
+    }
     .video-section iframe {
         height: 300px;
     }
@@ -741,18 +862,11 @@
     .workshop_wrapper .banner-img .banner {
         height: 200px;
     }
-    .workshop_wrapper .workshop_inner_overlay {
-        position: relative;
-        width: auto;
-        height: auto;
-    }
+
     .workshop-inner-wrapper {
         margin: 0px;
     }
-    .header-appo-main-box {
-        margin-top: 3rem;
-        padding: 25px;
-    }
+
     .workshop-part-detail {
         height: auto !important;
     }
@@ -760,21 +874,20 @@
         transform: translate(-50%, -50%);
         width: 100%;
     }
-	.departmentpg-main-box_main{
-		height: 430px;
-    	background-position: center;
-
-	}
-	.services-cta{
-		flex-direction: column;
-		text-align:center
-	}
-	.services-cta p{
-		margin-bottom: 1rem;
-	}
-	.d-detail-main-box{
-		padding-right: 0px;
-	}
+    .departmentpg-main-box_main {
+        height: 430px;
+        background-position: center;
+    }
+    .services-cta {
+        flex-direction: column;
+        text-align: center;
+    }
+    .services-cta p {
+        margin-bottom: 1rem;
+    }
+    .d-detail-main-box {
+        padding-right: 0px;
+    }
 }
 
 /*========== Max-width 576px end ==========*/

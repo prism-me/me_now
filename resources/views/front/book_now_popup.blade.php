@@ -13,7 +13,7 @@
         {{ csrf_field() }}
         <div class="appo-select-main-box">
             <div class="appo-select-box">
-                <select id="department" required class="dropdown" name="department"
+                <select id="department" required class="dropdown" name="department_id"
                     onchange="getserviceanddoctor(this.value)">
                     <option value="" disabled="disabled" selected="selected">
                         {{ __('messages.Select Services') }}</option>
@@ -40,9 +40,9 @@
                 value="{{ Auth::user() ? Auth::user()->name : '' }}">
             <input type="text" required name="phone_no" id="phone_no" placeholder="Phone number"
                 class="appo-right-input" value="{{ Auth::user() ? Auth::user()->phone_no : '' }}">
-            <input type="date" required name="app_date" id="app_date" data-date-inline-picker="true"
+            <input type="date" required name="date" id="app_date" data-date-inline-picker="true"
                 min="<?= date('Y-m-d') ?>" placeholder="dd/mm/yyyy">
-            <input type="time" required name="app_time" placeholder="Time" class="appo-right-input">
+            <input type="time" required name="time" placeholder="Time" class="appo-right-input">
             <textarea rows="3" required name="messages" placeholder="Message"></textarea>
         </div>
         <div class="appo-btn-main-box">

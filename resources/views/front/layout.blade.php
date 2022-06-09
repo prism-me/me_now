@@ -76,7 +76,7 @@
         </div> --}}
         <div class="container-fluid">
             <div class="navigation-custom-single">
-                <nav class="navbar navbar-light bg-faded">
+                <nav class="navbar navbar-expand-lg navbar-light fixed-top">
                     <a class="navbar-brand" href="{{ url('/') }}">
                         @if (isset($setting->logo))
                             {{-- <img src="{{ asset('upload/images') . '/' . $setting->logo }}" class="logo-img"> --}}
@@ -85,13 +85,12 @@
                             <img src="{{ Session::get('logo') }}" class="logo-img">
                         @endif
                     </a>
-                    <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse"
-                        data-target="#CollapsingNavbar" aria-controls="exCollapsingNavbar2" aria-expanded="false"
-                        aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#CollapsingNavbar"
+                        aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
                         &#9776;
                     </button>
-                    <div class="collapse navbar-toggleable-sm" id="CollapsingNavbar">
-                        <ul class="nav navbar-nav pull-sm-right">
+                    <div class="collapse navbar-collapse navbar-toggleable-sm" id="CollapsingNavbar">
+                        <ul class="nav navbar-nav ml-auto">
                             {{-- <li class="nav-item">
 			        			<a class="nav-link" href="{{url('/')}}">{{ __('messages.Home' )}}</a>
 			  				</li> --}}
@@ -163,13 +162,31 @@
     </div>
 
 
+
+    <div class="spacefor-global">
+    </div>
+
     <div class="sticky_buttons">
         <a href="https://wa.me/+971565553483" target="_blank"><img src="{{ asset('front/img/whatsapp.png') }}"
                 alt="Whatsapp Action"></a>
         <a href="tel:+971565553483"><img src="{{ asset('front/img/call_now.png') }}" alt="Call Action"></a>
     </div>
-
-    <div class="spacefor-global">
+    <div class="sticky_bottom">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6">
+                    <button type="submit" class="btn-hover color-9" data-toggle="modal"
+                        data-target="#appointmentModal">Book Now</button>
+                </div>
+                <div class="col-3">
+                    <img src="{{ asset('front/img/call_now.png') }}" alt="">
+                </div>
+                <div class="col-3">
+                    <img src="{{ asset('front/img/whatsapp.png') }}" alt="Whatsapp Action"
+                        class="static_whatsapp_icon">
+                </div>
+            </div>
+        </div>
     </div>
     @yield('content')
 
@@ -298,7 +315,7 @@
                                 {{ csrf_field() }}
                                 <div class="appo-select-main-box">
                                     <div class="appo-select-box">
-                                        <select id="department" required class="dropdown" name="department"
+                                        <select id="department" required class="dropdown" name="department_id"
                                             onchange="getserviceanddoctor(this.value)">
                                             <option value="" disabled="disabled" selected="selected">-
                                                 Select Service</option>
@@ -310,18 +327,18 @@
                                         </select>
                                     </div>
                                     <div class="appo-select-box">
-                                        <select id="service"  class="dropdown" name="service">
+                                        <select id="service" class="dropdown" name="service_id">
                                             <option value="" disabled="disabled" selected="selected">-
                                                 Select Sub Service</option>
-                                               
-                                                @if (isset($department))
-                                                    @foreach ($department as $d)
-                                                        @if(!empty($d))
 
-                                                            <option value="{{ $d->id }}">{{ $d->name }}</option>
-                                                        @endif
-                                                    @endforeach
-                                                @endif
+                                            @if (isset($department))
+                                                @foreach ($department as $d)
+                                                    @if (!empty($d))
+                                                        <option value="{{ $d->id }}">{{ $d->name }}
+                                                        </option>
+                                                    @endif
+                                                @endforeach
+                                            @endif
                                         </select>
                                     </div>
                                     {{-- <div class="appo-select-box">
@@ -342,10 +359,9 @@
                                         placeholder="{{ __('messages.Enter Phone number') }}"
                                         class="appo-right-input"
                                         value="{{ Auth::user() ? Auth::user()->phone_no : '' }}">
-                                    <input type="date" required name="app_date" id="app_date" min="<?= date('Y-m-d') ?>"
+                                    <input type="date" required name="date" id="app_date" min="<?= date('Y-m-d') ?>"
                                         placeholder="dd/mm/yyyy">
-                                    <input type="time" required name="app_time" placeholder="Time"
-                                        class="appo-right-input">
+                                    <input type="time" required name="time" placeholder="Time" class="appo-right-input">
                                     <textarea rows="3" required name="messages" placeholder="{{ __('messages.Enter Your Messages') }}"></textarea>
                                 </div>
                                 <div class="appo-btn-main-box">
@@ -494,11 +510,11 @@
                                 </div>
                                 <div class="footer-d1-box">
                                     <h3>{{ __('messages.Contact Us') }}</h3>
-                                    <p><span
-                                            class="fa fa-phone phone-icon"></span><a href="tel:+97142398448">{{ isset($setting->phone_no) ? $setting->phone_no : Session::get('phone_no') }}</a>
+                                    <p><span class="fa fa-phone phone-icon"></span><a
+                                            href="tel:+97142398448">{{ isset($setting->phone_no) ? $setting->phone_no : Session::get('phone_no') }}</a>
                                     </p>
-                                    <p><span
-                                            class="fa fa-envelope mail-icon"></span><a href="mailto:info@menow.me">{{ isset($setting->email) ? $setting->email : Session::get('email') }}</a>
+                                    <p><span class="fa fa-envelope mail-icon"></span><a
+                                            href="mailto:info@menow.me">{{ isset($setting->email) ? $setting->email : Session::get('email') }}</a>
                                     </p>
                                 </div>
                             </div>
@@ -547,8 +563,7 @@
                                     <a href="{{ url('blog') }}">{{ __('messages.Blog') }}</a>
                                     <a href="{{ url('faqs') }}">{{ __('messages.FAQs') }}</a>
                                     <a href="{{ url('contact_us') }}">{{ __('messages.Contact Us') }}</a>
-                                    <a
-                                        href="#">{{ __('messages.Terms & Condition') }}</a>
+                                    <a href="#">{{ __('messages.Terms & Condition') }}</a>
                                     <a
                                         href="{{ url('women-empowerment') }}">{{ __('messages.Women Empowerment') }}</a>
                                     <a href="#">{{ __('messages.Privacy Policy') }}</a>
@@ -562,7 +577,8 @@
                             <div class="footer-r1-detail">
                                 <div class="footer-d1-box">
                                     <h3>{{ __('messages.Address') }}</h3>
-                                    <p><a href="https://maps.app.goo.gl/4DJn6E47x4QUAW5S6">24-32 - 5 B St - Jumeirah - Jumeirah 1 - Dubai, UAE</a>
+                                    <p><a href="https://maps.app.goo.gl/4DJn6E47x4QUAW5S6">24-32 - 5 B St - Jumeirah -
+                                            Jumeirah 1 - Dubai, UAE</a>
                                     </p>
                                 </div>
                                 <div class="footer-d1-box">

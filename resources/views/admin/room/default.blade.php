@@ -55,12 +55,11 @@
                         <tr>
                            <td>{{isset($d->id)?$d->id:""}}</td>
                            <td>{{isset($d->title)?$d->title:""}}</td>
-                           <td>{{ substr($d->short_description , 0,50)}}..</td>
+                           <td>{{ substr($d->excerpt, 0,50)}}..</td>
                            <td><img src="{{ $d->icons }}" class="img-fluid"></td>
                            
                            <td>
                                 <a href="{{URL::to('admin/edit-room') . '/' . $d->slug}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
-                                <a href="{{URL::to('admin/show-room') .'/' . $d->slug}}" class="btn btn-success">{{__('messages.View')}}</a>
                                  <form action="{{ url('admin/delete-room'.'/' . $d->slug)}}"  novalidate="novalidate"  method="POST"  >{{csrf_field()}}<input type="submit" class="btn btn-danger" value="{{__('messages.Delete')}}" name="Delete"></form>
                            </td>
                         </tr>

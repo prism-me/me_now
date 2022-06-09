@@ -99,49 +99,49 @@ function changedoctorblog(idata) {
 
 
 var lastScrollTop = 0;
-$(window).scroll(function (event) {
-	var $header = $('#header');
-	var headerPinned = 'header-pinned';
-	var headerUnpinned = 'header-unpinned';
-	var scroll = $(this).scrollTop();
-	var os = $header.offset().top;
-	var ht = $header.height();
-	if (scroll > lastScrollTop) {
-		if (scroll > ht) {
-			$header.addClass(headerUnpinned).removeClass(headerPinned);
-		}
-	} else {
-		$header.addClass(headerPinned).removeClass(headerUnpinned);
-	}
-	lastScrollTop = scroll;
-});
+// $(window).scroll(function (event) {
+// 	var $header = $('#header');
+// 	var headerPinned = 'header-pinned';
+// 	var headerUnpinned = 'header-unpinned';
+// 	var scroll = $(this).scrollTop();
+// 	var os = $header.offset().top;
+// 	var ht = $header.height();
+// 	if (scroll > lastScrollTop) {
+// 		if (scroll > ht) {
+// 			$header.addClass(headerUnpinned).removeClass(headerPinned);
+// 		}
+// 	} else {
+// 		$header.addClass(headerPinned).removeClass(headerUnpinned);
+// 	}
+// 	lastScrollTop = scroll;
+// });
 var a = 0;
-$(window).scroll(function () {
-	if (document.getElementById("counter")) {
-		var oTop = $('#counter').offset().top - window.innerHeight;
-		if (a == 0 && $(window).scrollTop() > oTop) {
-			$('.counter-value').each(function () {
-				var $this = $(this),
-					countTo = $this.attr('data-count');
-				$({
-					countNum: $this.text()
-				}).animate({
-					countNum: countTo
-				}, {
-					duration: 2000,
-					easing: 'swing',
-					step: function () {
-						$this.text(Math.floor(this.countNum));
-					},
-					complete: function () {
-						$this.text(this.countNum);
-					}
-				});
-			});
-			a = 1;
-		}
-	}
-});
+// $(window).scroll(function () {
+// 	if (document.getElementById("counter")) {
+// 		var oTop = $('#counter').offset().top - window.innerHeight;
+// 		if (a == 0 && $(window).scrollTop() > oTop) {
+// 			$('.counter-value').each(function () {
+// 				var $this = $(this),
+// 					countTo = $this.attr('data-count');
+// 				$({
+// 					countNum: $this.text()
+// 				}).animate({
+// 					countNum: countTo
+// 				}, {
+// 					duration: 2000,
+// 					easing: 'swing',
+// 					step: function () {
+// 						$this.text(Math.floor(this.countNum));
+// 					},
+// 					complete: function () {
+// 						$this.text(this.countNum);
+// 					}
+// 				});
+// 			});
+// 			a = 1;
+// 		}
+// 	}
+// });
 
 
 $(function () {
