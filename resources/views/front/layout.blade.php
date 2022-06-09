@@ -163,12 +163,9 @@
     </div>
 
 
-<<<<<<< HEAD
-=======
     <div class="spacefor-global">
     </div>
 
->>>>>>> 69ecf952a58fd5a8ecb41c144ec474c0d9309f2f
     <div class="sticky_buttons">
         <a href="https://wa.me/+971565553483" target="_blank"><img src="{{ asset('front/img/whatsapp.png') }}"
                 alt="Whatsapp Action"></a>

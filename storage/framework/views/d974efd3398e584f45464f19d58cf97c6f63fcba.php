@@ -21,14 +21,15 @@
             <td style="text-align:left;">Time</td>
             <td style="text-align:right;font-wight:15px"><?php echo e($clientMailData['time']); ?></td>
         </tr>
+         <tr style="padding:.5rem 0px;">
+            <td style="text-align:left;">Service</td>
+            <td style="text-align:right;font-wight:15px"><?php echo e($clientMailData['service']); ?>  ,<?php echo e(@$clientMailData['sub_service']); ?></td>
+        </tr>
         <tr style="padding:.5rem 0px;">
             <td style="text-align:left;">Message</td>
             <td style="text-align:right;font-wight:15px"><?php echo e($clientMailData['messages']); ?></td>
         </tr>
-        <tr style="padding:.5rem 0px;">
-            <td style="text-align:left;">Service</td>
-            <td style="text-align:right;font-wight:15px"><?php echo e($clientMailData['service']); ?>  {{$clientMailData['sub_service']}}</td>
-        </tr>
+       
        
     </tbody></table><br><br>
         
