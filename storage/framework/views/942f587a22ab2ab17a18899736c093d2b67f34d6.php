@@ -18,7 +18,7 @@
 
         <div class="rooms_first_section" data-aos="fade-up">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 col-sm-12 col-12 mobile-align">
                     <div class="who_we_are_cotent">
                         <div class="room_description" data-aos="zoom-in">
                             <?php echo $room->description; ?>
@@ -29,7 +29,7 @@
                     </div>
 
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 col-sm-12 col-12">
                     <div class="room_main_img" data-aos="zoom-in">
                         <img src="<?php echo e($room->featured_img); ?>" alt="" class="img-fluid">
                     </div>
@@ -39,10 +39,10 @@
     </div>
     <div class="rooms_second_section" data-aos="fade-up">
         <div class="row" style="margin-left: 0px;margin-right: 0px;">
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-12 col-12">
                 <img src="<?php echo e($room->featured_img2); ?>" class="img-fluid" alt="">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-12 col-12">
                 <div class="room_long_description">
                     <?php echo $room->description2; ?>
 

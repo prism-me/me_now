@@ -162,7 +162,6 @@
     </div>
 
 
-
     <div class="spacefor-global">
     </div>
 
@@ -190,7 +189,7 @@
     </div>
     @yield('content')
 
-    <div class="modal" id="myModal">
+    {{-- <div class="modal" id="myModal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
@@ -274,8 +273,8 @@
             </div>
         </div>
     </div>
-    </div>
-    <div id="chat_new" class="modal">
+    </div> --}}
+    {{-- <div id="chat_new" class="modal">
         <div class="modal-dialog modal-md modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -303,7 +302,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <div class="modal" id="appointmentModal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -326,8 +325,8 @@
                                             @endif
                                         </select>
                                     </div>
-                                    <div class="appo-select-box">
-                                        <select id="service" class="dropdown" name="service_id">
+                                    <div class="appo-select-box11">
+                                        <select id="service" class="dropdown appo-select-box" name="service_id">
                                             <option value="" disabled="disabled" selected="selected">-
                                                 Select Sub Service</option>
 
@@ -354,11 +353,11 @@
                                 <div class="appo-input-main-box">
                                     <input type="text" required name="name" id="name"
                                         placeholder="{{ __('messages.Enter Your Full Name') }}"
-                                        value="{{ Auth::user() ? Auth::user()->name : '' }}">
+                                        value="">
                                     <input type="text" required name="phone_no" id="phone_no"
                                         placeholder="{{ __('messages.Enter Phone number') }}"
                                         class="appo-right-input"
-                                        value="{{ Auth::user() ? Auth::user()->phone_no : '' }}">
+                                        value="">
                                     <input type="date" required name="date" id="app_date" min="<?= date('Y-m-d') ?>"
                                         placeholder="dd/mm/yyyy">
                                     <input type="time" required name="time" placeholder="Time" class="appo-right-input">
@@ -383,7 +382,7 @@
     </div>
 
 
-    <div class="modal" id="autoization">
+    {{-- <div class="modal" id="autoization">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
@@ -478,7 +477,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     @include('front.instagram_feeds')
 

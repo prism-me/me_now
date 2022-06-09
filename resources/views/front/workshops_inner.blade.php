@@ -16,7 +16,7 @@
                         </b>&nbsp;
                         @php $event_date = $workshop->event_date; @endphp
                         <select name="date_time" id="" class="form-control" style="color:#000;width:80%;font-size: 13px;
-                            padding-left: 7px;">
+                                padding-left: 7px;">
                             <option value="0">Select Date and Time</option>
                             @foreach ($event_date as $date)
                                 <option value="{{ $date }}">{{ date('m/d/Y H:i:s', strtotime($date)) }}</option>
@@ -35,9 +35,8 @@
                 <div class="facilitated">
                     {{-- <h4>Facilitated by</h4> --}}
                     <div class="content">
-                        <img src="{{ $workshop->doctor->image }}" class="img-circle"
-                            alt="profile">
-                        <h4>{{ $workshop->doctor->name}}</h4>
+                        <img src="{{ $workshop->doctor->image }}" class="img-circle" alt="profile">
+                        <h4>{{ $workshop->doctor->name }}</h4>
                         <p><span>{{ $workshop->doctor->designation }}</span></p>
                     </div>
                 </div>
@@ -106,12 +105,9 @@
                                 <textarea type="text" required name="message" id="message_workshop" placeholder="Your Message"></textarea>
                             </div>
                             <div class="appo-btn-main-box">
-                                @if (Auth::id())
-                                    <button type="submit">{{ __('messages.Book Now') }}</button>
-                                @else
-                                    <button type="button" onclick="changehiddenstatus()" data-toggle="modal"
-                                        data-target="#myModal">{{ __('messages.Book Now') }}</button>
-                                @endif
+
+                                <button type="submit" >{{ __('messages.Book Now') }}</button>
+
 
                             </div>
                         </form>

@@ -1277,6 +1277,32 @@ select.form-control:not([size]):not([multiple]) {
     margin-top: 2rem;
     text-align: justify;
 }
-.global-heading h2{
+.global-heading h2 {
     display: block;
+}
+.juicer-feed.slider .slick-prev:before,
+.juicer-feed.slider .slick-next:before {
+    font-size: 2rem !important;
+}
+
+.juicer-feed.slider .slick-prev,
+.juicer-feed.slider .slick-next {
+    height: 70px !important;
+}
+.testimonial-carousel .owl-nav button span {
+    display: none;
+}
+.testimonial-carousel .owl-nav .owl-prev::after,
+.testimonial-carousel .owl-nav .owl-next::after {
+    content: "\f104";
+    font-family: "fontawesome-5-juicer";
+    font-size: 1.5rem;
+}
+.testimonial-carousel .owl-nav .owl-next::after {
+    content: "\f105";
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
 }
