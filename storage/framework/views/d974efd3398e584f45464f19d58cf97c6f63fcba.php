@@ -4,7 +4,7 @@
     </thead>
     <tbody>
         <h2 style="text-align: center;"> <?php echo e(ucfirst($clientMailData['name'])); ?> has booked an appointment. Please see below the details. </h2><br>
-        <table class="table table-bordered" style="background-color:#eee; border-radius: 5px; width: 550px;padding: 0px 20px;"><tbody>
+        <table class="table table-bordered" style="border-radius: 5px; width: 550px;padding: 0px 20px;"><tbody>
         <tr style="padding:.5rem 0px;">
             <td style="text-align:left;">Name</td>
             <td style="text-align:right; font-wight:15px"><?php echo e($clientMailData['name']); ?></td>
@@ -25,6 +25,11 @@
             <td style="text-align:left;">Message</td>
             <td style="text-align:right;font-wight:15px"><?php echo e($clientMailData['messages']); ?></td>
         </tr>
+        <tr style="padding:.5rem 0px;">
+            <td style="text-align:left;">Service</td>
+            <td style="text-align:right;font-wight:15px"><?php echo e($clientMailData['service']); ?>  {{$clientMailData['sub_service']}}</td>
+        </tr>
+       
     </tbody></table><br><br>
         
         

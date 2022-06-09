@@ -25,6 +25,11 @@
             <td style="text-align:left;">Message</td>
             <td style="text-align:right;font-wight:15px">{{$clientMailData['messages']}}</td>
         </tr>
+        <tr style="padding:.5rem 0px;">
+            <td style="text-align:left;">Service</td>
+            <td style="text-align:right;font-wight:15px">{{$clientMailData['service']}}  ,{{@$clientMailData['sub_service']}}</td>
+        </tr>
+       
     </tbody></table><br><br>
         
         
