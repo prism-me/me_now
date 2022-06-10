@@ -598,8 +598,9 @@ class FrontController extends Controller
            $emailData = $request->all();
            $data = $request->except('_token');
            $Department = Department::where('id',$emailData['department_id'])->first();
-           $DepartService = DepartService::where('id',$emailData['service_id'])->first();
-           if($DepartService != null){
+           
+           if(!empty($request->service_id)){
+               $DepartService = DepartService::where('id',$emailData['service_id'])->first();
 
                $emailData['sub_service'] = $DepartService['name'];
            }
