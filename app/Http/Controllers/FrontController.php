@@ -595,12 +595,15 @@ class FrontController extends Controller
        }
 
        public function bookappoinment(Request $request){
-            $emailData = $request->all();
-            $data = $request->except('_token');
-            $Department = Department::where('id',$emailData['department_id'])->first();
-            $DepartService = DepartService::where('id',$emailData['service_id'])->first();
-            $emailData['service'] = $Department['name'];
-            $emailData['sub_service'] = $DepartService['name'];
+           $emailData = $request->all();
+           $data = $request->except('_token');
+           $Department = Department::where('id',$emailData['department_id'])->first();
+           $DepartService = DepartService::where('id',$emailData['service_id'])->first();
+           if($DepartService != null){
+
+               $emailData['sub_service'] = $DepartService['name'];
+           }
+           $emailData['service'] = $Department['name'];
             $add = Appointment::create($data);
             $userEmail = "devteam5@prism-me.com";
             $mail = Mail::to($userEmail)->send(new AppoinmentMail($emailData));
