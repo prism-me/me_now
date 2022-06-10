@@ -1,6 +1,6 @@
 
 <?php $__env->startSection('title'); ?>
-    <?php echo e(__('messages.Workshops')); ?>
+    <?php echo e(__('messages.About_Me_Now')); ?>
 
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('loader'); ?>
@@ -189,4 +189,4 @@
     </script>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('front.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Projects\Menow\me_now\resources\views/front/about.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('front.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Projects\Menow\me_now\resources\views\front\about.blade.php ENDPATH**/ ?>

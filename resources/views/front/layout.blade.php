@@ -76,7 +76,7 @@
         </div> --}}
         <div class="container-fluid">
             <div class="navigation-custom-single">
-                <nav class="navbar navbar-light bg-faded">
+                <nav class="navbar navbar-expand-lg navbar-light fixed-top">
                     <a class="navbar-brand" href="{{ url('/') }}">
                         @if (isset($setting->logo))
                             {{-- <img src="{{ asset('upload/images') . '/' . $setting->logo }}" class="logo-img"> --}}
@@ -85,13 +85,12 @@
                             <img src="{{ Session::get('logo') }}" class="logo-img">
                         @endif
                     </a>
-                    <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse"
-                        data-target="#CollapsingNavbar" aria-controls="exCollapsingNavbar2" aria-expanded="false"
-                        aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#CollapsingNavbar"
+                        aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
                         &#9776;
                     </button>
-                    <div class="collapse navbar-toggleable-sm" id="CollapsingNavbar">
-                        <ul class="nav navbar-nav pull-sm-right">
+                    <div class="collapse navbar-collapse navbar-toggleable-sm" id="CollapsingNavbar">
+                        <ul class="nav navbar-nav ml-auto">
                             {{-- <li class="nav-item">
 			        			<a class="nav-link" href="{{url('/')}}">{{ __('messages.Home' )}}</a>
 			  				</li> --}}
@@ -169,127 +168,28 @@
     <div class="sticky_buttons">
         <a href="https://wa.me/+971565553483" target="_blank"><img src="{{ asset('front/img/whatsapp.png') }}"
                 alt="Whatsapp Action"></a>
-        <a href="tel:+971565553483"><img src="{{ asset('front/img/call_now.png') }}" alt="Call Action"></a>
+        <a href="tel:+97142398448"><img src="{{ asset('front/img/call_now.png') }}" alt="Call Action"></a>
     </div>
-
-    <div class="spacefor-global">
+    <div class="sticky_bottom">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6">
+                    <button type="submit" class="btn-hover color-9" data-toggle="modal"
+                        data-target="#appointmentModal">Book Now</button>
+                </div>
+                <div class="col-3">
+                    <a href="tel:+97142398448"><img src="{{ asset('front/img/call_now.png') }}" alt=""></a>
+                </div>
+                <div class="col-3">
+                    <a href="https://wa.me/+971565553483" target="_blank"><img
+                            src="{{ asset('front/img/whatsapp.png') }}" alt="Whatsapp Action"
+                            class="static_whatsapp_icon"></a>
+                </div>
+            </div>
+        </div>
     </div>
     @yield('content')
 
-    {{-- <div class="modal" id="myModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div id="loginmodel">
-                        <h2>{{ __('messages.Login') }}</h2>
-                        <div class="part-form-main-box">
-                            <form>
-                                <span id="login_error" class="dangerrequired"></span>
-                                <input type="text" class="modelemail" name="login_email"
-                                    placeholder="{{ __('messages.Enter Your Email') }}" id="login_email">
-                                <span id="login_email_error" class="dangerrequired"></span>
-                                <input type="password" id="login_password" name="login_password"
-                                    placeholder="{{ __('messages.Enter Your Password') }}">
-                                <span id="login_password_error" class="dangerrequired"></span>
-                                <button type="button" onclick="Postlogin()">{{ __('messages.Login') }}</button>
-                            </form>
-                            <div class="forgot-pass-modal">
-                                <a href="javascript:showforgotmodel()">{{ __('messages.Forgot password') }}</a>
-                            </div>
-                            <p>{{ __("messages.Don't have an account?") }} <a
-                                    href="javascript:showregmodel()">{{ __('messages.Register Now') }}</a></p>
-                            <div class="login-soical">
-                                @if (isset($setting->facebook_active) && $setting->facebook_active == '1')
-                                    <div class="button-facebook">
-                                        <a href="{{ url('auth/facebook') }}">
-                                            <img src="{{ asset('front/img/facebook.png') }}">
-                                        </a>
-                                @endif
-                                @if (isset($setting->google_active) && $setting->google_active == '1')
-                                    <a href="{{ url('auth/google') }}">
-                                        <img src="{{ asset('front/img/google.png') }}">
-                                    </a>
-                            </div>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-                <div id="registermodel">
-                    <h2>{{ __('messages.Register') }}</h2>
-                    <span id="reg_list"></span>
-                    <div class="part-form-main-box">
-                        <form>
-                            <input type="text" name="reg_name" id="reg_name"
-                                placeholder="{{ __('messages.Enter Your Full Name') }}">
-                            <span id="reg_name_error" class="dangerrequired"></span>
-                            <input type="text" name="reg_email" id="reg_email"
-                                placeholder="{{ __('messages.Enter Your Email') }}">
-                            <span id="reg_email_error" class="dangerrequired"></span>
-                            <input type="text" name="reg_phone" id="reg_phone"
-                                placeholder="{{ __('messages.Enter Your Phone No') }}">
-                            <span id="reg_phone_error" class="dangerrequired"></span>
-                            <input type="password" name="reg_pwd" id="reg_pwd"
-                                placeholder="{{ __('messages.Enter Your Password') }}">
-                            <span id="reg_password_error" class="dangerrequired"></span>
-                            <input type="password" name="reg_cpwd" id="reg_cpwd"
-                                placeholder="{{ __('messages.Re Enter Your Password') }}"
-                                onchange="checkbothpwd(this.value)">
-                            <span id="reg_cpwd_error" class="dangerrequired"></span>
-                            <button type="button" onclick="PostRegister()">{{ __('messages.Register') }}</button>
-                        </form>
-
-                        <p>{{ __('messages.Already have an account') }} <a
-                                href="javascript:showloginmodel()">{{ __('messages.Login') }}</a></p>
-                    </div>
-                </div>
-                <div id="forgotmodel">
-                    <h2>{{ __('messages.Forgot Password') }}</h2>
-                    <div class="part-form-main-box">
-                        <form>
-                            <span id="forgot_email_success" class="successemail"></span>
-                            <span id="forgot_email_error" class="dangerrequired"></span>
-                            <input type="text" class="modelemail" name="forgot_email" id="forgot_email"
-                                placeholder="Enter Your Email">
-
-                            <button type="button" onclick="Postforgot()">{{ __('messages.Forgot') }}</button>
-                        </form>
-
-                        <p><a href="javascript:showloginmodel()">{{ __('messages.Login') }}</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div> --}}
-    {{-- <div id="chat_new" class="modal">
-        <div class="modal-dialog modal-md modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">{{ __('messages.Search Doctor') }}</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="input-group">
-                        <input type="text" class="form-control search border-right-0 transparent-bg pr-0"
-                            id="search-contact1" placeholder="Search users...">
-                        <div class="input-group-append">
-                            <div class="input-group-text transparent-bg border-left-0" role="button">
-                                <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sidebar-body" id="chatsidebar1">
-                        <ul class="user-list" id="userchatlistall"
-                            style="padding: 15px;list-style: none;height: 375px;overflow-y: auto;">
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
     <div class="modal" id="appointmentModal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -316,15 +216,15 @@
                                         <select id="service" class="dropdown appo-select-box" name="service_id">
                                             <option value="" disabled="disabled" selected="selected">-
                                                 Select Sub Service</option>
-                                               
-                                                @if (isset($department))
-                                                    @foreach ($department as $d)
-                                                        @if(!empty($d))
 
-                                                            <option value="{{ $d->id }}">{{ $d->name }}</option>
-                                                        @endif
-                                                    @endforeach
-                                                @endif
+                                            @if (isset($department))
+                                                @foreach ($department as $d)
+                                                    @if (!empty($d))
+                                                        <option value="{{ $d->id }}">{{ $d->name }}
+                                                        </option>
+                                                    @endif
+                                                @endforeach
+                                            @endif
                                         </select>
                                     </div>
                                     {{-- <div class="appo-select-box">
@@ -339,26 +239,17 @@
                                 </div>
                                 <div class="appo-input-main-box">
                                     <input type="text" required name="name" id="name"
-                                        placeholder="{{ __('messages.Enter Your Full Name') }}"
-                                        value="">
+                                        placeholder="{{ __('messages.Enter Your Full Name') }}" value="">
                                     <input type="text" required name="phone_no" id="phone_no"
                                         placeholder="{{ __('messages.Enter Phone number') }}"
-                                        class="appo-right-input"
-                                        value="">
+                                        class="appo-right-input" value="">
                                     <input type="date" required name="date" id="app_date" min="<?= date('Y-m-d') ?>"
                                         placeholder="dd/mm/yyyy">
-                                    <input type="time" required name="time" placeholder="Time"
-                                        class="appo-right-input">
+                                    <input type="time" required name="time" placeholder="Time" class="appo-right-input">
                                     <textarea rows="3" required name="messages" placeholder="{{ __('messages.Enter Your Messages') }}"></textarea>
                                 </div>
                                 <div class="appo-btn-main-box">
-                                    @if (Auth::id())
-                                        <button type="submit">{{ __('messages.Book Appointment') }}</button>
-                                    @else
-                                        <button type="button"
-                                            onclick="userloginalert()">{{ __('messages.Book Appointment') }}</button>
-                                    @endif
-
+                                    <button type="submit"> {{ __('messages.Book Appointment') }}</button>
                                 </div>
                             </form>
                         </div>
@@ -368,104 +259,6 @@
             </div>
         </div>
     </div>
-
-
-    {{-- <div class="modal" id="autoization">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div id="loginmodel">
-                        <h2>{{ __('messages.Order Pay') }}</h2>
-                        <div class="part-form-main-box">
-                            @php
-                                $months = [1 => 'Jan', 2 => 'Feb', 3 => 'Mar', 4 => 'Apr', 5 => 'May', 6 => 'Jun', 7 => 'Jul', 8 => 'Aug', 9 => 'Sep', 10 => 'Oct', 11 => 'Nov', 12 => 'Dec'];
-                            @endphp
-                            <form id="payment-card-info" method="post" action="{{ url('paymentsubscription') }}">
-                                @csrf
-                                <input type="hidden" name="package_id"
-                                    value="{{ isset($subscription->id) ? $subscription->id : '' }}">
-                                <div class="row">
-                                    <div class="form-group owner col-md-8">
-                                        <label for="owner">{{ __('messages.date') }}</label>
-                                        <input type="date" class="form-control" id="package_date" name="package_date"
-                                            value="" required>
-
-                                    </div>
-                                    <div class="form-group CVV col-md-4">
-                                        <label for="cvv">{{ __('messages.time') }}</label>
-                                        <input type="time" class="form-control" id="package_time" name="package_time"
-                                            value="" required>
-
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group owner col-md-8">
-                                        <label for="owner">{{ __('messages.Name') }}</label>
-                                        <input type="text" class="form-control" id="owner" name="owner"
-                                            value="{{ old('owner') }}" required>
-
-                                    </div>
-                                    <div class="form-group CVV col-md-4">
-                                        <label for="cvv">{{ __('messages.CVV') }}</label>
-                                        <input type="number" class="form-control" id="cvv" name="cvv"
-                                            value="{{ old('cvv') }}" required>
-
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-8" id="card-number-field">
-                                        <label for="cardNumber">{{ __('messages.Card Number') }}</label>
-                                        <input type="text" class="form-control" id="cardNumber" name="cardNumber"
-                                            value="{{ old('cardNumber') }}" required>
-
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="amount">{{ __('messages.Amount') }}</label>
-                                        <input type="text" class="form-control" id="amount" name="amount"
-                                            value="{{ isset($subscription->price) ? $subscription->price : '' }}"
-                                            required>
-
-
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-6" id="expiration-date">
-                                        <label>Expiration Date</label><br />
-                                        <select class="form-control expritionmonth" id="expiration-month"
-                                            name="expiration-month">
-                                            @foreach ($months as $k => $v)
-                                                <option value="{{ $k }}"
-                                                    <?= old('expiration-month') == $k ? 'selected' : '' ?>>
-                                                    {{ $v }}</option>
-                                            @endforeach
-                                        </select>
-                                        <select class="form-control expriationyear" id="expiration-year"
-                                            name="expiration-year">
-
-                                            @for ($i = date('Y'); $i <= date('Y') + 15; $i++)
-                                                <option value="{{ $i }}">{{ $i }}</option>
-                                            @endfor
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-md-6 btnsaveoption" id="credit_cards">
-                                        <img src="{{ asset('upload/payment/featured-image.gif') }}" id="visa"
-                                            class="payimg">
-
-                                    </div>
-                                </div>
-
-                                <br />
-                                <div class="form-group" id="pay-now">
-                                    <button type="submit" class="btn btn-success themeButton"
-                                        id="confirm-purchase">{{ __('messages.Confirm Payment') }}</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
 
     @include('front.instagram_feeds')
 
@@ -497,11 +290,11 @@
                                 </div>
                                 <div class="footer-d1-box">
                                     <h3>{{ __('messages.Contact Us') }}</h3>
-                                    <p><span
-                                            class="fa fa-phone phone-icon"></span><a href="tel:+97142398448">{{ isset($setting->phone_no) ? $setting->phone_no : Session::get('phone_no') }}</a>
+                                    <p><span class="fa fa-phone phone-icon"></span><a
+                                            href="tel:+97142398448">{{ isset($setting->phone_no) ? $setting->phone_no : Session::get('phone_no') }}</a>
                                     </p>
-                                    <p><span
-                                            class="fa fa-envelope mail-icon"></span><a href="mailto:info@menow.me">{{ isset($setting->email) ? $setting->email : Session::get('email') }}</a>
+                                    <p><span class="fa fa-envelope mail-icon"></span><a
+                                            href="mailto:info@menow.me">{{ isset($setting->email) ? $setting->email : Session::get('email') }}</a>
                                     </p>
                                 </div>
                             </div>
@@ -565,7 +358,8 @@
                             <div class="footer-r1-detail">
                                 <div class="footer-d1-box">
                                     <h3>{{ __('messages.Address') }}</h3>
-                                    <p><a href="https://maps.app.goo.gl/4DJn6E47x4QUAW5S6">24-32 - 5 B St - Jumeirah - Jumeirah 1 - Dubai, UAE</a>
+                                    <p><a href="https://maps.app.goo.gl/4DJn6E47x4QUAW5S6">24-32 - 5 B St - Jumeirah -
+                                            Jumeirah 1 - Dubai, UAE</a>
                                     </p>
                                 </div>
                                 <div class="footer-d1-box">
@@ -606,8 +400,7 @@
                         </div>
 
                         <div class="col-md-3 footer-bottom-right">
-                            <a
-                                href="https://www.prism-me.com">{{ __('messages.Designed and Managed by Prism') }}</a>
+                            <a href="https://www.prism-me.com">{{ __('messages.Designed and Managed by Prism') }}</a>
 
                         </div>
 
@@ -724,17 +517,17 @@
         });
 
         // make it as accordion for smaller screens
-        if ($(window).width() < 992) {
-            $('.dropdown-menu a').click(function(e) {
-                e.preventDefault();
-                if ($(this).next('.submenu').length) {
-                    $(this).next('.submenu').toggle();
-                }
-                $('.dropdown').on('hide.bs.dropdown', function() {
-                    $(this).find('.submenu').hide();
-                })
-            });
-        }
+        // if ($(window).width() < 992) {
+        //     $('.dropdown-menu a').click(function(e) {
+        //         e.preventDefault();
+        //         if ($(this).next('.submenu').length) {
+        //             $(this).next('.submenu').toggle();
+        //         }
+        //         $('.dropdown').on('hide.bs.dropdown', function() {
+        //             $(this).find('.submenu').hide();
+        //         })
+        //     });
+        // }
     </script>
     <script type="text/javascript" src="{{ asset('js/front.js?v=4543543') }}"></script>
 

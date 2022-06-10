@@ -1,0 +1,1 @@
+<?php /**PATH D:\Projects\Menow\me_now\resources\views\front\events_inner.blade.php ENDPATH**/ ?>
