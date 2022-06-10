@@ -357,9 +357,7 @@
     .service_caption{
         top: 38%;
     }
-    .appointment-section .item .caption {
-        display: none;
-    }
+
     .global-heading h2,
     .services-content h2,
     .services-inner-content h2,
@@ -560,7 +558,7 @@
 
     #myVideo {
         width: 100%;
-        height: 200px;
+        height: 700px;
         object-fit: cover;
         object-position: center;
     }
@@ -735,7 +733,7 @@
         height: auto !important;
     }
     .appointment-section .item .caption {
-        top: 70%;
+        top: 65%;
         text-align: center;
         left: 0%;
     }
@@ -749,7 +747,7 @@
         text-align: justify;
     }
     .appointment-section .item .caption h1 {
-        font-size: 29px;
+        font-size: 45px;
     }
     .appointment-section .owl-nav {
         display: none !important;
