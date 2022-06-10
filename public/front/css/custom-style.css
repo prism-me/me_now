@@ -1308,3 +1308,6 @@ select.form-control:not([size]):not([multiple]) {
     padding-left: 0.8rem;
     padding-right: 0.8rem;
 }
+/* .navbar-toggler{
+    display: none !important;
+} */

@@ -328,6 +328,7 @@
     .navbar-nav {
         float: none !important;
         margin: 7.5px -15px;
+        /* display: none; */
     }
 
     .navbar-nav > li {
@@ -344,6 +345,7 @@
         right: 15px;
         top: 15px;
     }
+
 }
 
 
@@ -352,6 +354,12 @@
 /*========== Max-width 767px ==========*/
 
 @media (max-width: 767px) {
+    .service_caption{
+        top: 38%;
+    }
+    .appointment-section .item .caption {
+        display: none;
+    }
     .global-heading h2,
     .services-content h2,
     .services-inner-content h2,
@@ -595,9 +603,7 @@
     .static_whatsapp_icon {
         height: 35px !important;
     }
-    .appointment-section .item .caption {
-        display: none;
-    }
+
     .video-section iframe {
         height: 300px;
     }
