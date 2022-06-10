@@ -1,6 +1,6 @@
 
 <?php $__env->startSection('title'); ?>
-    <?php echo e(__('messages.Workshops')); ?>
+    <?php echo e(__('messages.Become a Member')); ?>
 
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('loader'); ?>

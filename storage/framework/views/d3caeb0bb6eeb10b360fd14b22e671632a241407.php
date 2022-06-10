@@ -95,7 +95,6 @@
                      <thead>
                         <tr>
                            <th><?php echo e(__('messages.Id')); ?></th>
-                           <th><?php echo e(__('messages.Doctor').' '.__('messages.Name')); ?></th>
                            <th><?php echo e(__('messages.Patient').' '.__('messages.Name')); ?></th>
                            <th><?php echo e(__('messages.Department').' '.__('messages.Name')); ?></th>
                         </tr>
@@ -105,7 +104,6 @@
                             <?php $__currentLoopData = $leastappointment; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                   <tr>
                                      <td><?php echo e($d->id); ?></td>
-                                     <td><?php echo e(isset($d->doctors)?$d->doctors->name:""); ?></td>
                                      <td><?php echo e(isset($d->name)?$d->name:""); ?></td>
                                      <td><?php echo e(isset($d->department)?$d->department->name:""); ?></td>
                                   </tr>

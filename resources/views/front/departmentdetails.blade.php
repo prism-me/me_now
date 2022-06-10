@@ -1,6 +1,6 @@
 @extends('front.layout')
 @section('title')
-    {{ __('messages.Department Details') }}
+    {{ __('messages.Service Details') }}
 @stop
 @section('content')
     <?php $res_curr = explode('-', $setting->currency); ?>

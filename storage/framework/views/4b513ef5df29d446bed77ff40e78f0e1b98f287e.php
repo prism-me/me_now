@@ -17,7 +17,7 @@
                         </b>&nbsp;
                         <?php $event_date = $workshop->event_date; ?>
                         <select name="date_time" id="" class="form-control" style="color:#000;width:80%;font-size: 13px;
-                            padding-left: 7px;">
+                                padding-left: 7px;">
                             <option value="0">Select Date and Time</option>
                             <?php $__currentLoopData = $event_date; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $date): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <option value="<?php echo e($date); ?>"><?php echo e(date('m/d/Y H:i:s', strtotime($date))); ?></option>
@@ -35,8 +35,7 @@
                 <div class="facilitated">
                     
                     <div class="content">
-                        <img src="<?php echo e($workshop->doctor->image); ?>" class="img-circle"
-                            alt="profile">
+                        <img src="<?php echo e($workshop->doctor->image); ?>" class="img-circle" alt="profile">
                         <h4><?php echo e($workshop->doctor->name); ?></h4>
                         <p><span><?php echo e($workshop->doctor->designation); ?></span></p>
                     </div>
@@ -104,12 +103,9 @@
                                 <textarea type="text" required name="message" id="message_workshop" placeholder="Your Message"></textarea>
                             </div>
                             <div class="appo-btn-main-box">
-                                <?php if(Auth::id()): ?>
-                                    <button type="submit"><?php echo e(__('messages.Book Now')); ?></button>
-                                <?php else: ?>
-                                    <button type="button" onclick="changehiddenstatus()" data-toggle="modal"
-                                        data-target="#myModal"><?php echo e(__('messages.Book Now')); ?></button>
-                                <?php endif; ?>
+
+                                <button type="submit" ><?php echo e(__('messages.Book Now')); ?></button>
+
 
                             </div>
                         </form>

@@ -93,7 +93,6 @@
                      <thead>
                         <tr>
                            <th>{{__('messages.Id')}}</th>
-                           <th>{{__('messages.Doctor').' '.__('messages.Name')}}</th>
                            <th>{{__('messages.Patient').' '.__('messages.Name')}}</th>
                            <th>{{__('messages.Department').' '.__('messages.Name')}}</th>
                         </tr>
@@ -103,7 +102,6 @@
                             @foreach($leastappointment as $d)
                                   <tr>
                                      <td>{{$d->id}}</td>
-                                     <td>{{isset($d->doctors)?$d->doctors->name:""}}</td>
                                      <td>{{isset($d->name)?$d->name:""}}</td>
                                      <td>{{isset($d->department)?$d->department->name:""}}</td>
                                   </tr>

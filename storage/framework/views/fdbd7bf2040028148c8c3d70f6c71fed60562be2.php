@@ -55,7 +55,6 @@
                                     <tr>
                                         <th><?php echo e(__('messages.Id')); ?></th>
                                         <th><?php echo e(__('messages.Department Name')); ?></th>
-                                        <th><?php echo e(__('messages.Doctor Name')); ?></th>
                                         <th><?php echo e(__('messages.Service Name')); ?></th>
                                         <th><?php echo e(__('messages.Patient Name')); ?></th>
                                         <th><?php echo e(__('messages.Timing')); ?></th>
@@ -69,7 +68,6 @@
                                           <tr>
                                               <td><?php echo e($d->id); ?></td>
                                               <td><?php echo e(isset($d->department)?$d->department->name:""); ?></td>
-                                              <td><?php echo e(isset($d->doctors)?$d->doctors->name:""); ?></td>
                                               <td><?php echo e(isset($d->services)?$d->services->name:""); ?></td>
                                               <td><?php echo e($d->name); ?></td>
                                               <td><?php echo e($d->date.' '.$d->time); ?></td>

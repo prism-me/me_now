@@ -76,12 +76,11 @@
                     </li>
                     <li class="active">
                         <a href="<?php echo e(url('admin/patient')); ?>"> <i
-                                class="menu-icon fa fa-user"></i><?php echo e(__('messages.Patient')); ?></a>
+                                class="menu-icon fa fa-grav"></i><?php echo e(__('messages.Patient')); ?></a>
                     </li>
-
                     <li class="active">
                         <a href="<?php echo e(url('admin/blogs')); ?>"> <i
-                                class="menu-icon fa  fa-newspaper-o"></i><?php echo e(__('messages.Blog')); ?></a>
+                                class="menu-icon fa  fa-handshake-o"></i><?php echo e(__('messages.Blog')); ?></a>
                     </li>
                     <li class="active">
                         <a href="<?php echo e(url('admin/workshops')); ?>"> <i
@@ -282,7 +281,9 @@
     <?php echo $__env->yieldPushContent('scripts'); ?>
     <script>
         CKEDITOR.replace('description');
+        CKEDITOR.replace('description1');
         CKEDITOR.replace('additional_description');
+        
 
     </script>
 </body>

@@ -76,12 +76,11 @@
                     </li>
                     <li class="active">
                         <a href="{{ url('admin/patient') }}"> <i
-                                class="menu-icon fa fa-user"></i>{{ __('messages.Patient') }}</a>
+                                class="menu-icon fa fa-grav"></i>{{ __('messages.Patient') }}</a>
                     </li>
-
                     <li class="active">
                         <a href="{{ url('admin/blogs') }}"> <i
-                                class="menu-icon fa  fa-newspaper-o"></i>{{ __('messages.Blog') }}</a>
+                                class="menu-icon fa  fa-handshake-o"></i>{{ __('messages.Blog') }}</a>
                     </li>
                     <li class="active">
                         <a href="{{ url('admin/workshops') }}"> <i

@@ -1,6 +1,6 @@
 
 <?php $__env->startSection('title'); ?>
-    <?php echo e(__('messages.Doctor List')); ?>
+    <?php echo e(__('messages.Our Team')); ?>
 
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('loader'); ?>

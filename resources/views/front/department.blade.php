@@ -1,6 +1,6 @@
 @extends('front.layout')
 @section('title')
-    {{ __('messages.Department') }}
+    {{ __('messages.Services') }}
 @stop
 @section('content')
     <div class="departmentpg-main-box_main"

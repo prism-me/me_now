@@ -481,5 +481,9 @@ return [
 		"FAQ" => "FAQ",
 		"Save FAQ" => "Save FAQ",
 		"Save Faq" => "Save Faq",
+		"Service Details" => "Service Details",
+		"Our Team" => "Our Team",
+		"Women Empowerment" => "Women Empowerment",
+		"Become a Member" => "Become a Member",
 
 	];

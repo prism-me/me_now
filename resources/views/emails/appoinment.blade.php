@@ -29,12 +29,6 @@
             <td style="text-align:left;">Message</td>
             <td style="text-align:right;font-wight:15px">{{$clientMailData['messages']}}</td>
         </tr>
-       
-       
-    </tbody></table><br><br>
-        
-        
-
 </tbody>
 </table>
 @endcomponent

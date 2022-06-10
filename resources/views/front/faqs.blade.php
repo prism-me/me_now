@@ -1,6 +1,6 @@
 @extends('front.layout')
 @section('title')
-    {{ __('messages.Blog List') }}
+    {{ __('messages.FAQ') }}
 @stop
 @section('loader')
     <div id="overlayer"></div>

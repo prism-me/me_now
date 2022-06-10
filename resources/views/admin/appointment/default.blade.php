@@ -52,7 +52,6 @@
                                     <tr>
                                         <th>{{__('messages.Id')}}</th>
                                         <th>{{__('messages.Department Name')}}</th>
-                                        <th>{{__('messages.Doctor Name')}}</th>
                                         <th>{{__('messages.Service Name')}}</th>
                                         <th>{{__('messages.Patient Name')}}</th>
                                         <th>{{__('messages.Timing')}}</th>
@@ -66,7 +65,6 @@
                                           <tr>
                                               <td>{{$d->id}}</td>
                                               <td>{{isset($d->department)?$d->department->name:""}}</td>
-                                              <td>{{isset($d->doctors)?$d->doctors->name:""}}</td>
                                               <td>{{isset($d->services)?$d->services->name:""}}</td>
                                               <td>{{$d->name}}</td>
                                               <td>{{$d->date.' '.$d->time}}</td>
