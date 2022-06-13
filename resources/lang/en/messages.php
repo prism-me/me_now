@@ -487,5 +487,11 @@ return [
 		"Become a Member" => "Become a Member",
 		"Pages" => "Pages",
 		"About Us" => "About Us",
-
+		"Save About Us" => "Save About Us",
+		"Icon 1" => "Icon 1",
+		"Icon 2" => "Icon 2",
+		"Description  2" => "Description  2",
+		"Description  1" => "Description  1",
+		"Featured Img" => "Featured Img",
+		"Women" => "Women",
 	];

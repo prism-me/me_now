@@ -1,13 +1,13 @@
 @extends('admin.layout')
 @section('title')
-{{__('messages.Blog')}}
+{{__('messages.About Us')}}
 @stop
 @section('content')
 <div class="breadcrumbs">
    <div class="col-sm-4">
       <div class="page-header float-left">
          <div class="page-title">
-            <h1>{{__('messages.Blog')}}</h1>
+            <h1>{{__('messages.About Us')}}</h1>
          </div>
       </div>
    </div>
@@ -15,7 +15,7 @@
       <div class="page-header float-right">
          <div class="page-title">
             <ol class="breadcrumb text-right">
-               <li class="active">{{__('messages.Blog')}}</li>
+               <li class="active">{{__('messages.About Us')}}</li>
             </ol>
          </div>
       </div>
@@ -36,7 +36,7 @@
                   </div>
                   @endif
                   <div>
-                     <a href="{{ URL::to('admin/about/create')}}" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Room')}}</a>
+                     <a href="{{ URL::to('admin/about/create')}}" class="btn btn-primary">{{__('messages.Add').' '.__('messages.About Us')}}</a>
                   </div>
                   <div class="table-responsive">
                   <table id="service" class="table  table-striped table-bordered">
@@ -44,8 +44,8 @@
                         <tr>
                            <th>{{__('messages.Id')}}</th>
                            <th>{{__('messages.Title')}}</th>
-                           <th>{{__('messages.Icon')}}</th>
                            <th>{{__('messages.Description')}}</th>
+                           <th>{{__('messages.Icon')}}</th>
                            <th>{{__('messages.Action')}}</th>
                         </tr>
                      </thead>
@@ -55,22 +55,15 @@
                         <tr>
                            <td>{{isset($d->id)?$d->id:""}}</td>
                            <td>{{isset($d->title)?$d->title:""}}</td>
-                           <td>{{ substr($d->short_description, 0,50)}}..</td>
+                           <td>{{ substr($d->description1, 0,50)}}..</td>
                            <td>
-                               <img src="{{ $d->featured_img }}"  class="imgList"/>
+                               <img src="{{ $d->icon1 }}"  class="imgList"/>
                            </td>
                            <td>
                               <div class="group">
-                                <a href="{{URL::to('admin/edit-blog') . '/' . $d->slug}}" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
+                                <a href="{{URL::to('admin/edit-about') . '/' . $d->slug}}" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
                               </div>
-                              <div class="group">
-                                <form action="{{ url('admin/delete-blog'.'/' . $d->slug)}}"  novalidate="novalidate"  method="POST"  > 
-                                {{csrf_field()}}
-                                 <button class='btn btn-default' type='submit' value='submit'>
-                                   <i class='fa fa-trash fa-lg'></i>
-                                 </button>
-                                </form>
-                              </div>
+                              
                            </td>
                         </tr>
                         @endforeach

@@ -7,10 +7,12 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Model\Doctor;
 use App\Model\Department;
+use App\Model\WomenEmpowerment;
 use App\Model\TimeTable;
 use App\Model\Appointment;
 use App\Model\DepartService;
 use App\Model\Token;
+use App\Model\About;
 use App\Model\WorkshopBooking;
 use App\Model\Workshop;
 use App\Model\Event;
@@ -82,8 +84,7 @@ class FrontController extends Controller
         if(!isset($_COOKIE['fload'])){
             setcookie('fload','1', time() + (86400 * 30), "/");
         }
-        //$service=Service::get()->take(8);
-        // $package= Package::get()->take(3);
+      
     
         $doctor= Doctor::get()->take(4);
         $rooms = Room::get()->take(3);
@@ -198,7 +199,8 @@ class FrontController extends Controller
          $department=Department::with('service')->get();
          $setting=Setting::find(1);
          $reviews=Review::with('doctors','users')->get()->take(4);
-       return view("front.about")->with('rooms',$rooms)->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department);
+         $about  = About::all();
+       return view("front.about")->with('rooms',$rooms)->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with('about',$about);
      
     }
     
@@ -221,12 +223,13 @@ class FrontController extends Controller
             setcookie('fload','1', time() + (86400 * 30), "/");
          }
          $rooms = Room::get()->take(3);
+         $women = WomenEmpowerment::all();
         //  $service=Service::get()->take(8);
          $doctor=Doctor::get()->take(4);
          $department=Department::with('service')->get();
          $setting=Setting::find(1);
         //  $reviews=Review::with('doctors','users')->get()->take(4);
-       return view("front.women_empowerment")->with('doctor',$doctor)->with('rooms',$rooms)->with("setting",$setting)->with("department",$department);
+       return view("front.women_empowerment")->with('doctor',$doctor)->with('rooms',$rooms)->with("setting",$setting)->with("department",$department)->with('women',$women);
      
     }
     public function rooms($slug){
@@ -770,6 +773,10 @@ class FrontController extends Controller
 
 
     }
+
+
+
+
 
 
 

@@ -1,9 +1,7 @@
 <div class="about_tiles" >
     <div class="global-heading mb-4">
-        <h2>Our Membership Plans</h2>
-        <p>Me Now has three different membership plans that come with different and distinct benefits. You can opt
-            for a 1-month membership or go for a tri-monthly or 6-month membership. Each membership plan comes with
-            its own advantages. Explore the plans to know more.
+        <h2>{{$women[3]['title']}}</h2>
+        <p>{!! ($women[3]['description']) !!}
         </p>
     </div>
     <div class="row">
@@ -12,12 +10,9 @@
                 <div class="inner-single-title">
                     {{-- <img src="{{ asset('front/img/about-icon-1.png') }}" alt=""> --}}
                     <h4 class="text-center">
-                        1 Month Membership
+                        {{$women[4]['title']}}
                     </h4>
                     <ul>
-
-
-
                         <li><span class="fa fa-check"></span> Free access to all Me Now workshops</li>
                         <li><span class="fa fa-check"></span> 15% off on all private sessions</li>
                         <li><span class="fa fa-check"></span> Access to anger release room</li>
@@ -28,7 +23,6 @@
                         </li>
                         <li><span class="fa fa-check"></span> Be a part of an exclusive group, always ready to
                             help and be there for each other.</li>
-
 
                     </ul>
                     <a  href="https://api.whatsapp.com/send/?phone=00971565553483" class="btn btn-primary get-in-touch-button"
@@ -41,7 +35,7 @@
                 <div class="inner-single-title">
                     {{-- <img src="{{ asset('front/img/about-icon-2.png') }}" alt=""> --}}
                     <h4 class="text-center">
-                        3 Months Membership
+                       {{$women[5]['title']}}
                     </h4>
                     <ul>
 
@@ -69,7 +63,7 @@
                 <div class="inner-single-title">
                     {{-- <img src="{{ asset('front/img/about-title-1.png') }}" alt=""> --}}
                     <h4 class="text-center">
-                        6 Months Membership
+                      {{$women[6]['title']}}
                     </h4>
                     <ul>
                         <li><span class="fa fa-check"></span> Get 1 month free</li>

@@ -205,11 +205,14 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('show-event/{slug}', 'EventController@show');
 
         #About Us  
-        Route::get('about', 'AboutController@index');
-        // Route::get('edit-about/{slug}', 'AboutUsController@edit');
-        // Route::post('delete-about/{slug}', 'AboutUsController@delete');
-        // Route::post('update-about/{slug}', 'AboutUsController@update');
-        // Route::get('show-about/{slug}', 'AboutUsController@show');
+        Route::resource('about', 'AboutController');
+        Route::get('edit-about/{slug}', 'AboutController@edit');
+        Route::post('update-about/{slug}', 'AboutController@update');
+
+        #Women Empoerment  
+        Route::resource('women', 'WomenEmpowermentController');
+        Route::get('edit-women/{slug}', 'WomenEmpowermentController@edit');
+        Route::post('update-women/{slug}', 'WomenEmpowermentController@update');
 
 
 	 });

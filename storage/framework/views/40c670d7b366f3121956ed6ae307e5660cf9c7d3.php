@@ -95,8 +95,12 @@
                                 class="menu-icon fa fa-home"></i><?php echo e(__('messages.Room')); ?></a>
                     </li>
                     <li class="active">
-                        <a href="<?php echo e(url('admin/about-us')); ?>"> <i
+                        <a href="<?php echo e(url('admin/about')); ?>"> <i
                                 class="menu-icon fa fa-info"></i><?php echo e(__('messages.About Us')); ?></a>
+                    </li>
+                    <li class="active">
+                        <a href="<?php echo e(url('admin/women')); ?>"> <i
+                                class="menu-icon fa fa-female"></i><?php echo e(__('messages.Women')); ?></a>
                     </li>
                   
                     <li class="active">

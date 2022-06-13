@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Model\About;
 use Illuminate\Http\Request;
+use App\Http\Controllers\UploadController;
 
-class AboutController extends Controller
+class AboutController  extends UploadController
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,8 @@ class AboutController extends Controller
      */
     public function index()
     {
-        dd('hi');
-        $data  = AboutUs::all();
+       
+        $data  = About::all();
         return view("admin.about.default")->with("data",$data);
     }
 
@@ -26,7 +27,7 @@ class AboutController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.about.add");
     }
 
     /**
@@ -37,7 +38,41 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $mediaUpload = "";
+        $mediaUpload1 = "";
+        $mediaUpload2 = "";
+        if ($img = $request->hasFile('icon1')) {
+               
+           $media =  UploadController::upload_media($request->icon1);
+           $mediaUpload = $media['url'];
+
+        }
+        if ($img = $request->hasFile('icon2')) {
+               
+           $media =  UploadController::upload_media($request->icon2);
+           $mediaUpload1 = $media['url'];
+
+        }
+        if ($img = $request->hasFile('featured_img')) {
+               
+           $media =  UploadController::upload_media($request->featured_img);
+           $mediaUpload2 = $media['url'];
+
+        }
+        $data  =$request->all();
+        
+        if($mediaUpload){
+            $data['icon1'] = $mediaUpload;
+        }
+        if($mediaUpload1){
+            $data['icon2'] = $mediaUpload1;
+        }
+        if($mediaUpload2){
+            $data['featured_img'] = $mediaUpload2;
+        }
+       
+        $create = About::create($data);
+        return redirect("admin/about");
     }
 
     /**
@@ -57,9 +92,10 @@ class AboutController extends Controller
      * @param  \App\Model\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function edit(About $about)
+    public function edit(About $about,$slug)
     {
-        //
+        $data = About::where('slug',$slug)->first();
+        return view('admin.about.save')->with('data', $data);
     }
 
     /**
@@ -71,7 +107,41 @@ class AboutController extends Controller
      */
     public function update(Request $request, About $about)
     {
-        //
+        $mediaUpload = "";
+        $mediaUpload1 = "";
+        $mediaUpload2 = "";
+        if ($img = $request->hasFile('icon1')) {
+               
+           $media =  UploadController::upload_media($request->icon1);
+           $mediaUpload = $media['url'];
+
+        }
+        if ($img = $request->hasFile('icon2')) {
+               
+           $media =  UploadController::upload_media($request->icon2);
+           $mediaUpload1 = $media['url'];
+
+        }
+        if ($img = $request->hasFile('featured_img')) {
+               
+           $media =  UploadController::upload_media($request->featured_img);
+           $mediaUpload2 = $media['url'];
+
+        }
+        $data  =$request->except('_token');
+        
+        if($mediaUpload){
+            $data['icon1'] = $mediaUpload;
+        }
+        if($mediaUpload1){
+            $data['icon2'] = $mediaUpload1;
+        }
+        if($mediaUpload2){
+            $data['featured_img'] = $mediaUpload2;
+        }
+       
+        $create = About::update($data);
+        return redirect("admin/about");
     }
 
     /**
@@ -80,8 +150,12 @@ class AboutController extends Controller
      * @param  \App\Model\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function destroy(About $about)
-    {
-        //
+     public function delete( $slug)
+    {   
+
+        // $about = About::where('slug',$slug)->delete();
+        //  return redirect("admin/about");
+      
+        
     }
 }
