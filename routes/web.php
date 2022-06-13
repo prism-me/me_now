@@ -15,7 +15,7 @@ use App\Http\Controllers\LanguageController;
 */
 
 Route::get('/', function() {
-   Artisan::call('config:cache');
+   Artisan::call('optimize');
     return redirect('home');
 });
  
@@ -107,7 +107,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get("deletedepartmentservice/{id}","DepartmentController@deletedepartmentservice");
 
         #Doctor
-        Route::post("doctor","DoctorController@index");
+        Route::get("doctor","DoctorController@index");
         Route::get("savedoctor/{id}/{tab_id}","DoctorController@savedoctor");
         Route::post("updatedoctorprofile","DoctorController@updatedoctorprofile");
         Route::get("deletedoctor/{id}","DoctorController@deletedoctor");

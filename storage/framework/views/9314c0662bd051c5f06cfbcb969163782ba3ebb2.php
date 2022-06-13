@@ -48,7 +48,7 @@
                      </ul>
                   </div>
                   <?php endif; ?>                              
-                    <form action="<?php echo e(URL::to('admin/update-about'.'/'.$data->slug)); ?>" method="POST" novalidate="novalidate"
+                    <form action="<?php echo e(URL::to('admin/update-women'.'/'.$data->slug)); ?>" method="POST" novalidate="novalidate"
                                 enctype="multipart/form-data">
                                 <?php echo e(csrf_field()); ?>
 
@@ -59,12 +59,12 @@
 
                         <span class="reqfield">*</span>
                         </label>
-                        <input type="text" id="title" placeholder="<?php echo e(__('messages.Enter').'  '.__('messages.Title')); ?>" class="form-control" value=<?php echo e($data->title); ?> required name="title" >
+                        <input type="text" id="title" placeholder="<?php echo e(__('messages.Enter').'  '.__('messages.Title')); ?>" class="form-control" required name="title" value="<?php echo e($data['title']); ?>" >
                      </div>
                     <div class="form-group">
-                        <label for="file" class=" form-control-label"> 
-                        <img src="<?php echo e(isset($data->featured_img)?$data->featured_img:''); ?>" class="imgsize1 departmentimg" style="width:50px;height:50px;"/> 
- 
+                        <label for="file" class=" form-control-label">  
+                        <img src="<?php echo e(isset($data->icon2)?$data->icon2:''); ?>" class="imgsize1 departmentimg" style="width:50px;height:50px;"/> 
+
                         <?php echo e(__('messages.Featured Img')); ?><span class="reqfield" >*</span>
                         </label>
                         <input type="file" id="file" name="featured_img" class="form-control-file" accept="image/*">
@@ -76,49 +76,15 @@
 
                         <span class="reqfield">*</span>
                         </label>
-                        <textarea id="description1" placeholder="<?php echo e(__('messages.Enter').'  '.__('messages.Description')); ?>" class="form-control" required name="description" ><?php echo e($data->description); ?></textarea>
+                        <textarea id="description" placeholder="<?php echo e(__('messages.Enter').'  '.__('messages.Description')); ?>" class="form-control" required name="description" ><?php echo e($data['description']); ?></textarea>
                      </div>
-                     <div class="form-group">
-                        <label for="file" class=" form-control-label">  
-                        <img src="<?php echo e(isset($data->icon1)?$data->icon1:''); ?>" class="imgsize1 departmentimg" style="width:50px;height:50px;"/> 
-
-                        <?php echo e(__('messages.Icon 1')); ?><span class="reqfield" >*</span>
-                        </label>
-                        <input type="file" id="file" name="icon1" class="form-control-file" accept="image/*">
-                    
-                     <div>
-                     <div class="form-group">
-                        <label for="name" class=" form-control-label">
-                        <?php echo e(__('messages.Description')); ?>
-
-                        <span class="reqfield">*</span>
-                        </label>
-                        <textarea id="description1" placeholder="<?php echo e(__('messages.Enter').'  '.__('messages.Description')); ?>" class="form-control" required name="description1" ><?php echo e($data->description1); ?></textarea>
-                     </div>
-                     <div class="form-group">
-                        <label for="file" class=" form-control-label">  
-                        <img src="<?php echo e(isset($data->icon2)?$data->icon2:''); ?>" class="imgsize1 departmentimg" style="width:50px;height:50px;"/> 
-
-                        <?php echo e(__('messages.Icon 2')); ?><span class="reqfield" >*</span>
-                        </label>
-                        <input type="file" id="file" name="icon2" class="form-control-file" accept="image/*">
-                    
-                     <div>
-                        <div class="form-group">
-                        <label for="name" class=" form-control-label">
-                        <?php echo e(__('messages.Description')); ?>
-
-                        <span class="reqfield">*</span>
-                        </label>
-                        <textarea id="description1" placeholder="<?php echo e(__('messages.Enter').'  '.__('messages.Description')); ?>" class="form-control" required name="description2" ><?php echo e($data->description2); ?></textarea>
-                     </div>
-                     
+                   
                      <div class="form-group">
                            <label for="name" class=" form-control-label">
                            <?php echo e(__('messages.Slug')); ?>
 
                            </label>
-                           <input type="text" id="slug" required placeholder="<?php echo e(__('messages.Enter').' '.__('messages.Slug')); ?>"  class="form-control"  name="slug" value="<?php echo e($data->slug); ?>" >
+                           <input type="text" id="slug" required placeholder="<?php echo e(__('messages.Enter').' '.__('messages.Slug')); ?>"  class="form-control"  name="slug"  value="<?php echo e($data['slug']); ?>">
                      </div>
                    
                      <div class="form-group">

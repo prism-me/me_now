@@ -39,7 +39,7 @@
                                 <span class="fa fa-quote-left"></span>
                                     {!! $women[2]['description'] !!}.
                                 <span class="fa fa-quote-right"></span>
-                                <footer class="blockquote-footer">CEO Message</footer>
+                                <footer class="blockquote-footer">CEO's Message</footer>
                             </blockquote>
                             </p>
                         </div>

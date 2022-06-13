@@ -43,17 +43,7 @@
                   <?php endif; ?>
                   <div>
                      <a href="<?php echo e(url('admin/savedoctor/0/1')); ?>" class="btn btn-primary"><?php echo e(__('messages.Add').' '.__('messages.Doctors')); ?></a>
-                     <form action="<?php echo e(url('admin/doctor')); ?>" class="selectLang" >
-
-                        <select id="title"  class="form-control" required name="isArabic" onchange="fetch_select(this.value);"><i class="fa fa-language" aria-hidden="true"></i>
-                          
-                           <option > &#xf042;</option>
-                           <option value="0">English</option>
-                           <option value="1">Arabic</option>
-                           
-                        </select>
                      
-                     </form>
                   
                      </div>
                   <div class="table-responsive">
@@ -107,24 +97,5 @@
 </div>
 <?php $__env->stopSection(); ?>
 
-<script src="http://code.jquery.com/jquery-latest.min.js"
-        type="text/javascript"></script>
-        <script type="text/javascript">
-        function fetch_select (val){
-         
-         
-            $.ajax({
-               headers: {
-                    'X-CSRF-Token': token 
-               },
-                type: 'post',
-                url: '/admin/doctor',
-                datatype:'json',
-                data: { option:val },
-                success: function (response) {
-                    alert(response);
-                }
-            });
-        }
-    </script>
+
 <?php echo $__env->make('admin.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\meNow\resources\views/admin/doctor/default.blade.php ENDPATH**/ ?>

@@ -105,7 +105,7 @@ class AboutController  extends UploadController
      * @param  \App\Model\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, About $about)
+    public function update(Request $request, About $about,$slug)
     {
         $mediaUpload = "";
         $mediaUpload1 = "";
@@ -128,7 +128,7 @@ class AboutController  extends UploadController
            $mediaUpload2 = $media['url'];
 
         }
-        $data  =$request->except('_token');
+        $data  = $request->except('_token');
         
         if($mediaUpload){
             $data['icon1'] = $mediaUpload;
@@ -140,7 +140,7 @@ class AboutController  extends UploadController
             $data['featured_img'] = $mediaUpload2;
         }
        
-        $create = About::update($data);
+        $create = About::where('slug',$slug)->update($data);
         return redirect("admin/about");
     }
 

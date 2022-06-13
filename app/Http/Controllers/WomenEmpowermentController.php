@@ -51,7 +51,7 @@ class WomenEmpowermentController extends UploadController
         return view('admin.women.save')->with('data', $data);
     }
 
-    public function update(Request $request, WomenEmpowerment $womenEmpowerment)
+    public function update(Request $request, WomenEmpowerment $womenEmpowerment,$slug)
     {
          $mediaUpload = "";
        
@@ -70,7 +70,7 @@ class WomenEmpowermentController extends UploadController
         }
      
        
-        $create = WomenEmpowerment::update($data);
+        $create = WomenEmpowerment::where('slug',$slug)->update($data);
         return redirect("admin/women");
     }
 

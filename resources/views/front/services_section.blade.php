@@ -14,7 +14,7 @@
         <div class="services-left-part">
             <div class="left-part-detail">
                 <h2>Even when you're at your worst, you deserve the best. </h2>
-                <p>We provide effective and evidence-based therapy for a variety of mental health conditions in a safe
+                <p class="serviceContent">We provide effective and evidence-based therapy for a variety of mental health conditions in a safe
                     and pleasant environment at Me Now.</p>
                 <div class="services-btn-main-box">
                     <a href="{{ url('about') }}" class="btn-hover color-9">About Us</a>

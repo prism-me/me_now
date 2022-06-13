@@ -18,19 +18,18 @@ use validate;
 class DoctorController extends UploadController
 {
  
-    public function index(Request $request){
+    public function index(){
        
-        
-        if($request->option == 1){
+        // if($request->option == 1){
            
-            $data=Doctor::with('department')->where('isArabic','1')->get();
+        //     $data=Doctor::with('department')->where('isArabic','1')->get();
            
-            return view("admin.doctor.default")->with("data",$data);
-        }else{
+        //     return view("admin.doctor.default")->with("data",$data);
+        // }else{
             
             $data=Doctor::with('department')->get();
             return view("admin.doctor.default")->with("data",$data);
-        }
+        // }
     }
   
     public function savedoctor($id,$tab_id){

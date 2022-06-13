@@ -1311,3 +1311,7 @@ select.form-control:not([size]):not([multiple]) {
 /* .navbar-toggler{
     display: none !important;
 } */
+.serviceContent{
+
+    color:#d9d3d3
+}

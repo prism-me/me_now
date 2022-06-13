@@ -41,7 +41,7 @@
                   @endif
                   <div>
                      <a href="{{url('admin/savedoctor/0/1')}}" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Doctors')}}</a>
-                     <form action="{{ url('admin/doctor')}}" class="selectLang" >
+                     {{-- <form action="{{ url('admin/doctor')}}" class="selectLang" >
 
                         <select id="title"  class="form-control" required name="isArabic" onchange="fetch_select(this.value);"><i class="fa fa-language" aria-hidden="true"></i>
                           
@@ -51,7 +51,7 @@
                            
                         </select>
                      
-                     </form>
+                     </form> --}}
                   
                      </div>
                   <div class="table-responsive">
@@ -105,7 +105,7 @@
 </div>
 @stop
 
-<script src="http://code.jquery.com/jquery-latest.min.js"
+{{-- <script src="http://code.jquery.com/jquery-latest.min.js"
         type="text/javascript"></script>
         <script type="text/javascript">
         function fetch_select (val){
@@ -124,4 +124,4 @@
                 }
             });
         }
-    </script>
+    </script> --}}
