@@ -72,7 +72,7 @@
                         <ul class="nav navbar-nav ml-auto">
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="<?php echo e(url('about')); ?>"><?php echo e(__('messages.About')); ?></a>
+                                <a class="nav-link" href="<?php echo e(url('about-us')); ?>"><?php echo e(__('messages.About')); ?></a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Services </a>
@@ -122,7 +122,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="<?php echo e(url('become-a-member')); ?>"><?php echo e(__('messages.Become a Member')); ?></a>
+                                    href="<?php echo e(url('special-membership-for-women')); ?>"><?php echo e(__('messages.Become a Member')); ?></a>
                             </li>
                             <li class="nav-item book-now-nav">
                                 <a class="nav-link btn-hover color-9"
@@ -308,12 +308,12 @@
                                 <div class="footer-d1-box">
                                     <h3><?php echo e(__('messages.Helpful links')); ?></h3>
 
-                                    <a href="<?php echo e(url('about')); ?>"><?php echo e(__('messages.About')); ?></a>
+                                    <a href="<?php echo e(url('about-us')); ?>"><?php echo e(__('messages.About')); ?></a>
                                     <a href="<?php echo e(url('events')); ?>"><?php echo e(__('messages.Events')); ?></a>
                                     <a href="<?php echo e(url('workshop')); ?>"><?php echo e(__('messages.Workshops')); ?></a>
                                     
                                     <a href="<?php echo e(url('faqs')); ?>"><?php echo e(__('messages.FAQs')); ?></a>
-                                    <a href="<?php echo e(url('contact_us')); ?>"><?php echo e(__('messages.Contact Us')); ?></a>
+                                    <a href="<?php echo e(url('contact-us')); ?>"><?php echo e(__('messages.Contact Us')); ?></a>
                                     <a
                                         href="<?php echo e(url('termcondition')); ?>"><?php echo e(__('messages.Terms & Condition')); ?></a>
                                     <a

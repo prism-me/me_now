@@ -1,17 +1,18 @@
-@extends('admin.layout')
+
 <style>
    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet"/>
 
 </style>
-@section('title')
-{{__('messages.Doctors')}}
-@stop
-@section('content')
+<?php $__env->startSection('title'); ?>
+<?php echo e(__('messages.Doctors')); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
 <div class="breadcrumbs">
    <div class="col-sm-4">
       <div class="page-header float-left">
          <div class="page-title">
-            <h1>{{__('messages.Doctors')}}</h1>
+            <h1><?php echo e(__('messages.Doctors')); ?></h1>
          </div>
       </div>
    </div>
@@ -19,7 +20,7 @@
       <div class="page-header float-right">
          <div class="page-title">
             <ol class="breadcrumb text-right">
-               <li class="active">{{__('messages.Doctors')}}</li>
+               <li class="active"><?php echo e(__('messages.Doctors')); ?></li>
             </ol>
          </div>
       </div>
@@ -31,17 +32,18 @@
          <div class="col-md-12">
             <div class="card">
                <div class="card-body">
-                  @if(Session::get("message"))
+                  <?php if(Session::get("message")): ?>
                   <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
-                     {{Session::get("message")}}
+                     <?php echo e(Session::get("message")); ?>
+
                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                      <span aria-hidden="true">×</span>
                      </button>
                   </div>
-                  @endif
+                  <?php endif; ?>
                   <div>
-                     <a href="{{url('admin/savedoctor/0/1')}}" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Doctors')}}</a>
-                     <form action="{{ url('admin/doctor')}}" class="selectLang" >
+                     <a href="<?php echo e(url('admin/savedoctor/0/1')); ?>" class="btn btn-primary"><?php echo e(__('messages.Add').' '.__('messages.Doctors')); ?></a>
+                     <form action="<?php echo e(url('admin/doctor')); ?>" class="selectLang" >
 
                         <select id="title"  class="form-control" required name="isArabic" onchange="fetch_select(this.value);"><i class="fa fa-language" aria-hidden="true"></i>
                           
@@ -58,30 +60,30 @@
                     <table id="service" class="table  table-striped table-bordered">
                      <thead>
                         <tr>
-                           <th>{{__('messages.Id')}}</th>
-                           <th>{{__('messages.Image')}}</th>
-                           <th>{{__('messages.Department')}}</th>
-                           <th>{{__('messages.Name')}}</th>
-                           <th>{{__('messages.Email')}}</th>
-                           <th>{{__('messages.Phone No')}}</th>
-                           <th>{{__('messages.Action')}}</th>
+                           <th><?php echo e(__('messages.Id')); ?></th>
+                           <th><?php echo e(__('messages.Image')); ?></th>
+                           <th><?php echo e(__('messages.Department')); ?></th>
+                           <th><?php echo e(__('messages.Name')); ?></th>
+                           <th><?php echo e(__('messages.Email')); ?></th>
+                           <th><?php echo e(__('messages.Phone No')); ?></th>
+                           <th><?php echo e(__('messages.Action')); ?></th>
                         </tr>
                      </thead>
                      <tbody>
-                        @if(count($data)>0)
-                        @foreach($data as $d)
+                        <?php if(count($data)>0): ?>
+                        <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
-                           <td>{{isset($d->id)?$d->id:""}}</td>
+                           <td><?php echo e(isset($d->id)?$d->id:""); ?></td>
                            <td>
-                                <img src="{{ $d->image}}" class="imgList"/>
+                                <img src="<?php echo e($d->image); ?>" class="imgList"/>
                            </td>
-                           <td>{{$d->department->name}}</td>
-                           <td>{{$d->name}}</td>
-                           <td>{{$d->email}}</td>
-                           <td>{{$d->phone_no}}</td>
+                           <td><?php echo e($d->department->name); ?></td>
+                           <td><?php echo e($d->name); ?></td>
+                           <td><?php echo e($d->email); ?></td>
+                           <td><?php echo e($d->phone_no); ?></td>
                            <td>
                               <div class="group">
-                                <a href="{{url('admin/savedoctor/').'/'.$d->id.'/1'}}" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
+                                <a href="<?php echo e(url('admin/savedoctor/').'/'.$d->id.'/1'); ?>" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
                               </div>
                               <div class="group">
                                 
@@ -92,8 +94,8 @@
                               </div>
                            </td>
                         </tr>
-                        @endforeach
-                        @endif
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        <?php endif; ?>
                      </tbody>
                   </table>
                   </div>
@@ -103,7 +105,7 @@
       </div>
    </div>
 </div>
-@stop
+<?php $__env->stopSection(); ?>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"
         type="text/javascript"></script>
@@ -125,3 +127,4 @@
             });
         }
     </script>
+<?php echo $__env->make('admin.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\meNow\resources\views/admin/doctor/default.blade.php ENDPATH**/ ?>

@@ -3221,3 +3221,6 @@ nav.navbar.navbar-expand-sm.navbar-default {
     background-color: #4caf50;
     border-color: #4caf50;
 }
+.selectLang{
+  float: right;
+}

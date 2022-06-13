@@ -18,10 +18,19 @@ use validate;
 class DoctorController extends UploadController
 {
  
-    public function index(){
-        $data=Doctor::with('department')->get();
+    public function index(Request $request){
+       
         
-        return view("admin.doctor.default")->with("data",$data);
+        if($request->option == 1){
+           
+            $data=Doctor::with('department')->where('isArabic','1')->get();
+           
+            return view("admin.doctor.default")->with("data",$data);
+        }else{
+            
+            $data=Doctor::with('department')->get();
+            return view("admin.doctor.default")->with("data",$data);
+        }
     }
   
     public function savedoctor($id,$tab_id){
@@ -128,6 +137,9 @@ class DoctorController extends UploadController
         return redirect("admin/subscribers");
 
     }
+
+
+    
 
 
 

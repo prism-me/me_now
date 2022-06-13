@@ -94,6 +94,10 @@
                         <a href="{{ url('admin/rooms') }}"> <i
                                 class="menu-icon fa fa-home"></i>{{ __('messages.Room') }}</a>
                     </li>
+                    <li class="active">
+                        <a href="{{ url('admin/about') }}"> <i
+                                class="menu-icon fa fa-info"></i>{{ __('messages.About Us') }}</a>
+                    </li>
                   
                     <li class="active">
                         <a href="{{ url('admin/faqs') }}"> <i
@@ -122,6 +126,10 @@
                     <li class="active">
                         <a href="{{ url('admin/subscribers') }}"> <i
                                 class="menu-icon fa fa-rocket"></i>{{ __('messages.Subscriber') }}</a>
+                    </li>
+                    <li class="active">
+                        <a href="{{ url('admin/pages') }}"> <i
+                                class="menu-icon fa fa-pagelines"></i>{{ __('messages.Pages') }}</a>
                     </li>
                     {{-- <li class="active">
                         <a href="{{ url('admin/news') }}"> <i

@@ -18,7 +18,6 @@ Route::get('/', function() {
    Artisan::call('config:cache');
     return redirect('home');
 });
- Route::get("/brain","braintreeController@showbrain");
  
  Route::get('instagram','FrontController@instagram');
  
@@ -30,11 +29,12 @@ Route::group(['prefix' => '/'], function () {
      Route::get('auth/{driver}', 'Auth\FacebookController@redirectToProvider')->name('social.oauth');
      Route::get('auth/{driver}/callback', 'Auth\FacebookController@handleProviderCallback')->name('social.callback');
      Route::get("/","FrontController@showhome");
-     Route::get("about","FrontController@about");
+     Route::get("about-us","FrontController@about");
      Route::get("blog","FrontController@blog");
+     Route::get("services","FrontController@services");
      Route::get("faqs","FrontController@faqs");
      Route::get("women-empowerment","FrontController@women_empowerment");
-     Route::get("become-a-member","FrontController@become_member");
+     Route::get("special-membership-for-women","FrontController@become_member");
      Route::get("workshop","FrontController@workshop");
      Route::get("events","FrontController@events");
      Route::get("rooms/{slug}","FrontController@rooms");
@@ -46,7 +46,7 @@ Route::group(['prefix' => '/'], function () {
      Route::get("services/{service}/{subservice}","FrontController@departmentdetail");
      Route::get("doctorlist","FrontController@doctorlist");
      Route::get("gallery","FrontController@gallery");
-     Route::get("contact_us","FrontController@contact_us");
+     Route::get("contact-us","FrontController@contact_us");
      Route::any("savecontact","FrontController@savecontact");
      Route::any("savesubscribe/{email}","FrontController@savesubscribe");
      Route::any("pricing","FrontController@pricing");
@@ -78,7 +78,7 @@ Route::group(['prefix' => '/'], function () {
      Route::get("blog","FrontController@blog");
      Route::get("blog-detail/{id}","FrontController@blogdetails");
      Route::post("workshop-booking","FrontController@workshopBooking");
-      Route::get("events","FrontController@events");
+     Route::get("events","FrontController@events");
 
 
      
@@ -107,7 +107,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get("deletedepartmentservice/{id}","DepartmentController@deletedepartmentservice");
 
         #Doctor
-        Route::resource("doctor","DoctorController");
+        Route::post("doctor","DoctorController@index");
         Route::get("savedoctor/{id}/{tab_id}","DoctorController@savedoctor");
         Route::post("updatedoctorprofile","DoctorController@updatedoctorprofile");
         Route::get("deletedoctor/{id}","DoctorController@deletedoctor");
@@ -203,6 +203,13 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('delete-event/{slug}', 'EventController@destroy');
         Route::post('update-event/{slug}', 'EventController@update');
         Route::get('show-event/{slug}', 'EventController@show');
+
+        #About Us  
+        Route::get('about', 'AboutController@index');
+        // Route::get('edit-about/{slug}', 'AboutUsController@edit');
+        // Route::post('delete-about/{slug}', 'AboutUsController@delete');
+        // Route::post('update-about/{slug}', 'AboutUsController@update');
+        // Route::get('show-about/{slug}', 'AboutUsController@show');
 
 
 	 });

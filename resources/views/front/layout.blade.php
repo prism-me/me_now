@@ -95,7 +95,7 @@
 			        			<a class="nav-link" href="{{url('/')}}">{{ __('messages.Home' )}}</a>
 			  				</li> --}}
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('about') }}">{{ __('messages.About') }}</a>
+                                <a class="nav-link" href="{{ url('about-us') }}">{{ __('messages.About') }}</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Services </a>
@@ -147,7 +147,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="{{ url('become-a-member') }}">{{ __('messages.Become a Member') }}</a>
+                                    href="{{ url('special-membership-for-women') }}">{{ __('messages.Become a Member') }}</a>
                             </li>
                             <li class="nav-item book-now-nav">
                                 <a class="nav-link btn-hover color-9"
@@ -337,12 +337,12 @@
                                 <div class="footer-d1-box">
                                     <h3>{{ __('messages.Helpful links') }}</h3>
 
-                                    <a href="{{ url('about') }}">{{ __('messages.About') }}</a>
+                                    <a href="{{ url('about-us') }}">{{ __('messages.About') }}</a>
                                     <a href="{{ url('events') }}">{{ __('messages.Events') }}</a>
                                     <a href="{{ url('workshop') }}">{{ __('messages.Workshops') }}</a>
                                     {{-- <a href="{{ url('blog') }}">{{ __('messages.Blog') }}</a> --}}
                                     <a href="{{ url('faqs') }}">{{ __('messages.FAQs') }}</a>
-                                    <a href="{{ url('contact_us') }}">{{ __('messages.Contact Us') }}</a>
+                                    <a href="{{ url('contact-us') }}">{{ __('messages.Contact Us') }}</a>
                                     <a
                                         href="{{ url('termcondition') }}">{{ __('messages.Terms & Condition') }}</a>
                                     <a

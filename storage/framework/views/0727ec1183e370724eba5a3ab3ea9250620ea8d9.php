@@ -1,16 +1,17 @@
-@extends('front.layout')
-@section('title')
-    {{ __('messages.Service Details') }}
-@stop
-@section('content')
+
+<?php $__env->startSection('title'); ?>
+    <?php echo e(__('messages.Service Details')); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
     <?php $res_curr = explode('-', $setting->currency); ?>
     
     <div class="d-detailpg-main-box">
-        <div class="department_background" style="background-image : linear-gradient(#1f1f1fa8 , #4f4f4fab), url({{ $current->banner_image }}) ">
+        <div class="department_background" style="background-image : linear-gradient(#1f1f1fa8 , #4f4f4fab), url(<?php echo e($current->banner_image); ?>) ">
 
         </div>
         <div class="service_caption">
-            <h2>{{ $current->title }}</h2>
+            <h2><?php echo e($current->title); ?></h2>
             <br />
             <button type="submit" class="btn-hover color-9" data-toggle="modal" data-target="#appointmentModal">Consult with
                 Us</button>
@@ -21,10 +22,10 @@
                     <div class="col-lg-9 col-md-12">
                         <div class="d-detail-main-box">
                             <div class="global-part-heading global-heading" data-aos="fade-in">
-                                <p>{{ $current->short_description }}</p>
+                                <p><?php echo e($current->short_description); ?></p>
 
-                                {{-- <br /> --}}
-                                <div class="services-inner-content">{!! $current->description !!}</div>
+                                
+                                <div class="services-inner-content"><?php echo $current->description; ?></div>
 
                             </div>
                         </div>
@@ -37,31 +38,27 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-12">
-                        {{-- <div class="d-detail-emergency-mainbox">
-							<img src="{{ $departmentdetails->image}}">
-							<p>{{__('messages.Emergency Number')}}</p>
-							<h4>{{$departmentdetails->emergency_no}}</h4>
-						</div> --}}
-                        {{-- @dd($subServices) --}}
-                        @if (($subServices))
+                        
+                        
+                        <?php if(($subServices)): ?>
 
                             <div class="department_wrappers">
                                 <ul>
-                                    @php $i=1 @endphp
-                                    @foreach ($subServices as $dp)
-                                        <li @php
+                                    <?php $i=1 ?>
+                                    <?php $__currentLoopData = $subServices; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dp): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <li <?php
                                             echo $current->slug === $dp->slug ? "class='active-subservice'" : '';
                                             echo count($subServices) === $i ? "style='border-bottom:0px'" : ' ';
                                             
-                                        @endphp><a class="dropdown-item"
-                                                href="{{ url('services') . '/' . $service_slug . '/' . $dp->slug }}">{{ $dp->name }}</a>
+                                        ?>><a class="dropdown-item"
+                                                href="<?php echo e(url('services') . '/' . $service_slug . '/' . $dp->slug); ?>"><?php echo e($dp->name); ?></a>
                                         </li>
-                                        @php $i++ @endphp
-                                    @endforeach
+                                        <?php $i++ ?>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                                 </ul>
                             </div>
-                        @endif
+                        <?php endif; ?>
 
                     </div>
                 </div>
@@ -70,4 +67,6 @@
     </div>
     </div>
     </div>
-@stop
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('front.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\meNow\resources\views/front/departmentdetails.blade.php ENDPATH**/ ?>

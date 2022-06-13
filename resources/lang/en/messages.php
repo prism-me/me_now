@@ -485,5 +485,7 @@ return [
 		"Our Team" => "Our Team",
 		"Women Empowerment" => "Women Empowerment",
 		"Become a Member" => "Become a Member",
+		"Pages" => "Pages",
+		"About Us" => "About Us",
 
 	];

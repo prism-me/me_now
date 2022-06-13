@@ -218,7 +218,7 @@
                                     <textarea rows="3" required name="messages" placeholder="<?php echo e(__('messages.Enter Your Messages')); ?>"></textarea>
                                 </div>
                                 <div class="appo-btn-main-box">
-                                    <button type="button"> <?php echo e(__('messages.Book Appointment')); ?></button>
+                                    <button type="submit"> <?php echo e(__('messages.Book Appointment')); ?></button>
                                 </div>
                             </form>
                         </div>
