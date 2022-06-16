@@ -42,7 +42,7 @@
                       {{$women[6]['title']}}
 
                     </h4>
-                    {!!$women[6]['description']!!}
+                    {!! $women[6]['description'] !!}
                     
                     <a  href="https://api.whatsapp.com/send/?phone=00971565553483" class="btn btn-primary get-in-touch-button"
                         >{{ __('Book Now') }}</a>

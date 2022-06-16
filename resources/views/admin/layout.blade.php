@@ -102,6 +102,10 @@
                         <a href="{{ url('admin/women') }}"> <i
                                 class="menu-icon fa fa-female"></i>{{ __('messages.Women') }}</a>
                     </li>
+                    <li class="active">
+                        <a href="{{ url('admin/home-section') }}"> <i
+                                class="menu-icon fa fa-home"></i>{{ __('messages.Home') }}</a>
+                    </li>
                   
                     <li class="active">
                         <a href="{{ url('admin/faqs') }}"> <i
@@ -119,10 +123,10 @@
                         <a href="{{ url('admin/gallery') }}"> <i
                                 class="menu-icon fa fa-file-image-o"></i>{{ __('messages.Gallery') }}</a>
                     </li> --}}
-                    <li class="active">
-                        <a href="{{ url('admin/review') }}"> <i
-                                class="menu-icon fa fa-star"></i>{{ __('messages.Review') }}</a>
-                    </li>
+                    <!--<li class="active">-->
+                    <!--    <a href="{{ url('admin/review') }}"> <i-->
+                    <!--            class="menu-icon fa fa-star"></i>{{ __('messages.Review') }}</a>-->
+                    <!--</li>-->
                     <li class="active">
                         <a href="{{ url('admin/subscription') }}"> <i
                                 class="menu-icon fa fa-gift"></i>{{ __('messages.Subscription') }}</a>

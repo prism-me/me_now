@@ -1,1 +1,0 @@
-<?php /**PATH C:\xampp\htdocs\meNow\resources\views\front\events_inner.blade.php ENDPATH**/ ?>

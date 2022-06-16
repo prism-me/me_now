@@ -36,7 +36,7 @@ class DoctorController extends UploadController
         $department=Department::all();
         $data=Doctor::find($id);
     
-        return view("admin.doctor.savedoctor")->with("doctor_id",$id)->with("department",$department)->with("data",$data)->with("tab_id",$tab_id);
+        return view("admin.doctor.savedoctor")->with("doctor_id",$id)->with("department",$department)->with("data",$data);
     }
 
     public function updatedoctorprofile(Request $request){

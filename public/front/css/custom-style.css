@@ -470,6 +470,7 @@
     line-height: 35px;
     list-style: none;
     color: #767676;
+    padding-left: 0.5rem;
 }
 .about_tiles .inner-single-title ul li:before {
     /* content : "\f00c"; */
@@ -1315,3 +1316,24 @@ select.form-control:not([size]):not([multiple]) {
 
     color:#d9d3d3
 }
+
+.packages_women ul li::marker {
+  content: '✓';
+color: #1b7081;
+    font-size: 13px;
+  
+}
+.services-inner-content p strong { 
+    color : #48b7c6
+
+}
+
+.testimonial-carousel .owl-nav button img {
+    display: none;
+}
+
+
+
+
+
+

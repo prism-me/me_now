@@ -10,7 +10,7 @@
 
         </div>
         <div class="service_caption">
-            <h2>{{ $current->title }}</h2>
+            <h2>{{ $current->name }}</h2>
             <br />
             <button type="submit" class="btn-hover color-9" data-toggle="modal" data-target="#appointmentModal">Consult with
                 Us</button>
@@ -21,6 +21,7 @@
                     <div class="col-lg-9 col-md-12">
                         <div class="d-detail-main-box">
                             <div class="global-part-heading global-heading" data-aos="fade-in">
+                                <h2>{{ $current->name }}</h2>
                                 <p>{{ $current->short_description }}</p>
 
                                 {{-- <br /> --}}
@@ -30,7 +31,7 @@
                         </div>
 
                         <div class="services-cta mb-5">
-                            <p>Learn more about our approach to treating mental health.</p>
+                            <p>Learn more about our therapeutical approaches.</p>
                             <button type="submit" class="btn-hover color-9" data-toggle="modal"
                                 data-target="#appointmentModal">Consult with
                                 Us</button>

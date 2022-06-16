@@ -5,7 +5,7 @@
     'env' => 'local',
     'debug' => false,
     'url' => 'http://localhost/project/company/blank_script/blank_singleclinic_web/singleclinic/',
-    'asset_url' => NULL,
+    'asset_url' => '/public',
     'timezone' => 'UTC',
     'locale' => 'en',
     'fallback_locale' => 'en',
@@ -184,7 +184,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\xampp\\htdocs\\meNow\\storage\\framework/cache/data',
+        'path' => '/home/u877734042/domains/menow.ae/public_html/storage/framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -350,12 +350,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\xampp\\htdocs\\meNow\\storage\\app',
+        'root' => '/home/u877734042/domains/menow.ae/public_html/storage/app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\xampp\\htdocs\\meNow\\storage\\app/public',
+        'root' => '/home/u877734042/domains/menow.ae/public_html/storage/app/public',
         'url' => 'http://localhost/project/company/blank_script/blank_singleclinic_web/singleclinic//storage',
         'visibility' => 'public',
       ),
@@ -372,7 +372,7 @@
     ),
     'links' => 
     array (
-      'C:\\xampp\\htdocs\\meNow\\public\\storage' => 'C:\\xampp\\htdocs\\meNow\\storage\\app/public',
+      '/home/u877734042/domains/menow.ae/public_html/public/storage' => '/home/u877734042/domains/menow.ae/public_html/storage/app/public',
     ),
   ),
   'hashing' => 
@@ -452,13 +452,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'C:\\xampp\\htdocs\\meNow\\storage\\logs/laravel.log',
+        'path' => '/home/u877734042/domains/menow.ae/public_html/storage/logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'C:\\xampp\\htdocs\\meNow\\storage\\logs/laravel.log',
+        'path' => '/home/u877734042/domains/menow.ae/public_html/storage/logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -508,7 +508,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'C:\\xampp\\htdocs\\meNow\\storage\\logs/laravel.log',
+        'path' => '/home/u877734042/domains/menow.ae/public_html/storage/logs/laravel.log',
       ),
     ),
   ),
@@ -574,7 +574,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\xampp\\htdocs\\meNow\\resources\\views/vendor/mail',
+        0 => '/home/u877734042/domains/menow.ae/public_html/resources/views/vendor/mail',
       ),
     ),
   ),
@@ -679,7 +679,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\xampp\\htdocs\\meNow\\storage\\framework/sessions',
+    'files' => '/home/u877734042/domains/menow.ae/public_html/storage/framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -708,9 +708,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\meNow\\resources\\views',
+      0 => '/home/u877734042/domains/menow.ae/public_html/resources/views',
     ),
-    'compiled' => 'C:\\xampp\\htdocs\\meNow\\storage\\framework\\views',
+    'compiled' => '/home/u877734042/domains/menow.ae/public_html/storage/framework/views',
   ),
   'debugbar' => 
   array (
@@ -724,7 +724,7 @@
     array (
       'enabled' => true,
       'driver' => 'file',
-      'path' => 'C:\\xampp\\htdocs\\meNow\\storage\\debugbar',
+      'path' => '/home/u877734042/domains/menow.ae/public_html/storage/debugbar',
       'connection' => NULL,
       'provider' => '',
       'hostname' => '127.0.0.1',
@@ -923,7 +923,7 @@
     ),
     'temporary_files' => 
     array (
-      'local_path' => 'C:\\xampp\\htdocs\\meNow\\storage\\framework/cache/laravel-excel',
+      'local_path' => '/home/u877734042/domains/menow.ae/public_html/storage/framework/cache/laravel-excel',
       'remote_disk' => NULL,
       'remote_prefix' => NULL,
       'force_resync_remote' => NULL,

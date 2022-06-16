@@ -15,7 +15,7 @@
             </p> --}}
             </p>
         </div>
-        {{-- @foreach ($about  as $value ) --}}
+    
        
 
             
@@ -23,13 +23,12 @@
                 <div class="row">
                     <div class="col-md-5 col-sm-12 col-12">
                         <div class="side_img_about_wrapper">
-                            <img src="{{ asset('front/img/about-us.jpg') }}" alt="" class="img-fluid side_img_about">
+                            <img src={{ $about[0]['featured_img'] }} alt="" class="img-fluid side_img_about">
                         </div>
                     </div>
                     <div class="col-md-7 col-sm-12 col-12">
                         <div class="who_we_are_cotent">
                             <h2 data-aos="fade-up">{{ $about[0]['title'] }}</h2>
-                            {{-- <h2>You have the power within YOU, we believe in YOU</h2> --}}
                             <p>
                                {{ $about[0]['description'] }}
 

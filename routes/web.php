@@ -209,10 +209,16 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('edit-about/{slug}', 'AboutController@edit');
         Route::post('update-about/{slug}', 'AboutController@update');
 
-        #Women Empoerment  
+        #Women Empowerment  
         Route::resource('women', 'WomenEmpowermentController');
         Route::get('edit-women/{slug}', 'WomenEmpowermentController@edit');
         Route::post('update-women/{slug}', 'WomenEmpowermentController@update');
+        
+        #Home
+        Route::resource('home-section', 'HomeSectionController');
+        Route::get('edit-home/{slug}', 'HomeSectionController@edit');
+        Route::post('update-home/{slug}', 'HomeSectionController@update');
+            
 
 
 	 });
