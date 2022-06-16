@@ -218,10 +218,20 @@ use App\Http\Controllers\LanguageController;
         Route::get('edit-about/{slug}', 'AboutController@edit');
         Route::post('update-about/{slug}', 'AboutController@update');
 
+<<<<<<< HEAD
         #Women Empowerment
+=======
+        #Women Empowerment  
+>>>>>>> 9bbc82386610b5adabf885f7235e8a266bb33d8e
         Route::resource('women', 'WomenEmpowermentController');
         Route::get('edit-women/{slug}', 'WomenEmpowermentController@edit');
         Route::post('update-women/{slug}', 'WomenEmpowermentController@update');
+        
+        #Home
+        Route::resource('home-section', 'HomeSectionController');
+        Route::get('edit-home/{slug}', 'HomeSectionController@edit');
+        Route::post('update-home/{slug}', 'HomeSectionController@update');
+            
 
         #Home
         Route::resource('home-section', 'HomeSectionController');

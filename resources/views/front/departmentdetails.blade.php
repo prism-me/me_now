@@ -21,6 +21,7 @@
                     <div class="col-lg-9 col-md-12">
                         <div class="d-detail-main-box">
                             <div class="global-part-heading global-heading" data-aos="fade-in">
+                                <h2>{{ $current->name }}</h2>
                                 <p>{{ $current->short_description }}</p>
 
                                 {{-- <br /> --}}

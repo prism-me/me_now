@@ -2,20 +2,15 @@
     <div class="container-fluid">
         <div class="services_home_container text-center global-heading">
             <h2 class="">Our Services</h2>
-            <p class="pb-5">We at Me Now are
-                passionate about helping all those suffering from mental illnesses. Our
-                certified and highly trained experts provide a variety of therapeutic interventions
-                including Holistic therapies, Tomatis Listening Programs & other programs
-                that help you achieve mental stability. Talk to our experts and ensure that
-                your mind receives the treatment it deserves.
+            <p class="pb-5">At Me Now, we are passionate about helping all those suffering from mental illnesses. Our licensed and highly qualified practitioners provide a variety of therapeutic treatments, including holistic therapies, Tomatis Listening Programs, and body therapies to help with mental and physical wellness. To begin your journey to well-being, speak with one of our Practitioners.
+
 
             </p>
         </div>
         <div class="services-left-part">
             <div class="left-part-detail">
-                <h2>Even when you're at your worst, you deserve the best. </h2>
-                <p class="serviceContent">We provide effective and evidence-based therapy for a variety of mental health conditions in a safe
-                    and pleasant environment at Me Now.</p>
+                <h2><?php echo e($home[1]['title']); ?> </h2>
+                <p class="serviceContent"><?php echo $home[1]['description']; ?></p>
                 <div class="services-btn-main-box">
                     <a href="<?php echo e(url('about')); ?>" class="btn-hover color-9">About Us</a>
                 </div>
@@ -94,4 +89,8 @@
 
 </div>
 </div> 
+<<<<<<<< HEAD:storage/framework/views/b265dc3174d9493ff0694244aa1a7741daf6399d.php
 <?php /**PATH C:\xampp\htdocs\meNow1\resources\views/front/services_section.blade.php ENDPATH**/ ?>
+========
+<?php /**PATH /home/u877734042/domains/menow.ae/public_html/resources/views/front/services_section.blade.php ENDPATH**/ ?>
+>>>>>>>> 9bbc82386610b5adabf885f7235e8a266bb33d8e:storage/framework/views/0580f4647d3c138f66ace07e6024efeffe3ad0bd.php

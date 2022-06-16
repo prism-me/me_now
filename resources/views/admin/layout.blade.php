@@ -123,10 +123,10 @@
                         <a href="{{ url('admin/gallery') }}"> <i
                                 class="menu-icon fa fa-file-image-o"></i>{{ __('messages.Gallery') }}</a>
                     </li> --}}
-                    <li class="active">
-                        <a href="{{ url('admin/review') }}"> <i
-                                class="menu-icon fa fa-star"></i>{{ __('messages.Review') }}</a>
-                    </li>
+                    <!--<li class="active">-->
+                    <!--    <a href="{{ url('admin/review') }}"> <i-->
+                    <!--            class="menu-icon fa fa-star"></i>{{ __('messages.Review') }}</a>-->
+                    <!--</li>-->
                     <li class="active">
                         <a href="{{ url('admin/subscription') }}"> <i
                                 class="menu-icon fa fa-gift"></i>{{ __('messages.Subscription') }}</a>

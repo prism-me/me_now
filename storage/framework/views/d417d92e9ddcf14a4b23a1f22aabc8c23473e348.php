@@ -14,4 +14,8 @@
         </div>
     </div>
 </div>
+<<<<<<<< HEAD:storage/framework/views/d417d92e9ddcf14a4b23a1f22aabc8c23473e348.php
 <?php /**PATH C:\xampp\htdocs\meNow1\resources\views/front/banner_static.blade.php ENDPATH**/ ?>
+========
+<?php /**PATH /home/u877734042/domains/menow.ae/public_html/resources/views/front/banner_static.blade.php ENDPATH**/ ?>
+>>>>>>>> 9bbc82386610b5adabf885f7235e8a266bb33d8e:storage/framework/views/0810ee515ea2eee5e33669016bfda581ec35be71.php

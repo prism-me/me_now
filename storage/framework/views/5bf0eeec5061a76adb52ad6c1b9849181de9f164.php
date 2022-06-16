@@ -3,12 +3,9 @@
         <div class="global-heading">
             <h2>Me Now Team</h2>
 
-            <p>Me Now Center is rooted in the belief that all people deserve high-quality mental
-                health care. We take pride in offering the most comprehensive and holistic
-                approach to mental health and our team includes licensed therapists,
-                psychologists, and psychiatrists with expertise in their respective domains. Our
-                practitioners are eager to help you in your battles against mental health and
-                to assist you in achieving mental wellbeing. </p>
+            <p>Our team is rooted in the belief that all people deserve high-quality mental health care. We take pride in offering the most comprehensive and holistic approach to mental health and our Practitioners include licensed therapists, psychologists, and psychiatrists with expertise in their respective domains. They are eager to help you in your battles against mental health and to assist you in achieving mental wellbeing.
+
+</p>
         </div>
         <div class="row">
             <?php if(count($doctor) > 0): ?>
@@ -44,4 +41,8 @@
         </div>
     </div>
 </div>
+<<<<<<<< HEAD:storage/framework/views/5bf0eeec5061a76adb52ad6c1b9849181de9f164.php
 <?php /**PATH C:\xampp\htdocs\meNow1\resources\views/front/doctor_section.blade.php ENDPATH**/ ?>
+========
+<?php /**PATH /home/u877734042/domains/menow.ae/public_html/resources/views/front/doctor_section.blade.php ENDPATH**/ ?>
+>>>>>>>> 9bbc82386610b5adabf885f7235e8a266bb33d8e:storage/framework/views/1d5bb7eb9f42ff648d30606d5546c765172fde82.php

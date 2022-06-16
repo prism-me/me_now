@@ -31,21 +31,25 @@
         <div class="women_wrapper " data-aos="fade-up">
             <div class="row">
                 <div class="col-md-5 text-center women_img_section">
-                    <div class="women_img_wrapper"><img src="<?php echo e(asset('front/img/women_background.jpeg')); ?>" class="img-fluid" alt="about us section">
+                    <div class="women_img_wrapper"><img src=<?php echo e($home[2]['featured_img']); ?> class="img-fluid" alt="about us section">
                     </div>
                 </div>
                 
                 <div class="col-md-7">
                     <div class="about_content text-center">
                         
+<<<<<<<< HEAD:storage/framework/views/3a513456d5d7ea5df6780cf8a287e772113bbd31.php
                         <div class="services_home_container global-heading ">'
                          <p><?php echo e(trans('message.workshop')); ?></p>
 '
                             <h2 class="animated fadeInDown delay-2s ">Women, We See You, You’re at The Heart of Me Now</h2>
+========
+                        <div class="services_home_container global-heading ">
+                            <h2 class="animated fadeInDown delay-2s "><?php echo e($home[2]['title']); ?></h2>
+>>>>>>>> 9bbc82386610b5adabf885f7235e8a266bb33d8e:storage/framework/views/23017604941eaec569155e3e70ff9b3529ee101d.php
                         </div>
-                        <p class="animated fadeInDown mb-5"> Me Now is no less than a family dedicated to supporting each other and building a community of
-                            like-minded, empowered women. The center has special memberships for women that come with unlimited
-                            benefits including discounts on facilities, free workshops, and much more.
+                        <p class="animated fadeInDown mb-5"><?php echo $home[2]['description']; ?>
+
     
                         </p>
                         <a href="<?php echo e(url('women-empowerment')); ?>" class="btn-hover color-9">Read More</a>
@@ -156,4 +160,8 @@
 
 
 
+<<<<<<<< HEAD:storage/framework/views/3a513456d5d7ea5df6780cf8a287e772113bbd31.php
 <?php echo $__env->make('front.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\meNow1\resources\views/front/home.blade.php ENDPATH**/ ?>
+========
+<?php echo $__env->make('front.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/u877734042/domains/menow.ae/public_html/resources/views/front/home.blade.php ENDPATH**/ ?>
+>>>>>>>> 9bbc82386610b5adabf885f7235e8a266bb33d8e:storage/framework/views/23017604941eaec569155e3e70ff9b3529ee101d.php

@@ -1322,4 +1322,22 @@ select.form-control:not([size]):not([multiple]) {
 color: #1b7081;
     font-size: 13px;
   
+<<<<<<< HEAD
 }
+=======
+}
+.services-inner-content p strong { 
+    color : #48b7c6
+
+}
+
+.testimonial-carousel .owl-nav button img {
+    display: none;
+}
+
+
+
+
+
+
+>>>>>>> 9bbc82386610b5adabf885f7235e8a266bb33d8e

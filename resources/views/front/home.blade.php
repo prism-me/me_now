@@ -31,21 +31,25 @@
         <div class="women_wrapper " data-aos="fade-up">
             <div class="row">
                 <div class="col-md-5 text-center women_img_section">
-                    <div class="women_img_wrapper"><img src="{{ asset('front/img/women_background.jpeg') }}" class="img-fluid" alt="about us section">
+                    <div class="women_img_wrapper"><img src={{ $home[2]['featured_img']}} class="img-fluid" alt="about us section">
                     </div>
                 </div>
                 
                 <div class="col-md-7">
                     <div class="about_content text-center">
+<<<<<<< HEAD
                         {{-- <img src="{{ asset('front/img/logo-background.png') }}" alt="logo" class="about-section-logo"> --}}
                         <div class="services_home_container global-heading ">'
                          <p>{{ trans('message.workshop')}}</p>
 '
                             <h2 class="animated fadeInDown delay-2s ">Women, We See You, You’re at The Heart of Me Now</h2>
+=======
+                        {{-- <img src={{ $home[2]['fatured_img']}} alt="logo" class="about-section-logo"> --}}
+                        <div class="services_home_container global-heading ">
+                            <h2 class="animated fadeInDown delay-2s ">{{ $home[2]['title']}}</h2>
+>>>>>>> 9bbc82386610b5adabf885f7235e8a266bb33d8e
                         </div>
-                        <p class="animated fadeInDown mb-5"> Me Now is no less than a family dedicated to supporting each other and building a community of
-                            like-minded, empowered women. The center has special memberships for women that come with unlimited
-                            benefits including discounts on facilities, free workshops, and much more.
+                        <p class="animated fadeInDown mb-5">{!! $home[2]['description'] !!}
     
                         </p>
                         <a href="{{ url('women-empowerment') }}" class="btn-hover color-9">Read More</a>

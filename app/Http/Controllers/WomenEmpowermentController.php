@@ -78,5 +78,72 @@ class WomenEmpowermentController extends UploadController
 
 
 
+<<<<<<< HEAD
+=======
+    // Home Section
+    public function all()
+    {
+        $data  = Home::all();
+        return view("admin.home.default")->with("data",$data);
+    }
+
+    public function homeCreate()
+    {
+        return view("admin.home.add");
+    }
+
+    public function homeStore(Request $request)
+    {
+        $mediaUpload = "";
+       
+        if ($img = $request->hasFile('featured_img')) {
+               
+           $media =  UploadController::upload_media($request->featured_img);
+           $mediaUpload = $media['url'];
+
+        }
+       
+       
+        $data  =$request->all();
+        
+        if($mediaUpload){
+            $data['featured_img'] = $mediaUpload;
+        }
+     
+       
+        $create = Home::create($data);
+        return redirect("admin/home");
+    }
+
+ 
+    public function homeEdit($slug)
+    {
+        $data = Home::where('slug',$slug)->first();
+        return view('admin.home.save')->with('data', $data);
+    }
+
+    public function homeUpdate(Request $request, $slug)
+    {
+         $mediaUpload = "";
+       
+        if ($img = $request->hasFile('featured_img')) {
+               
+           $media =  UploadController::upload_media($request->featured_img);
+           $mediaUpload = $media['url'];
+
+        }
+       
+       
+        $data  =$request->except('_token');
+        
+        if($mediaUpload){
+            $data['featured_img'] = $mediaUpload;
+        }
+     
+       
+        $create = Home::where('slug',$slug)->update($data);
+        return redirect("admin/home");
+    }
+>>>>>>> 9bbc82386610b5adabf885f7235e8a266bb33d8e
 
 }
