@@ -15,11 +15,26 @@ class Localization
      * @param  \Closure  $next
      * @return mixed
      */
+
+
     public function handle(Request $request, Closure $next)
-    {
-        if (Session::has('locale')) {
-            App::setLocale(Session::get('locale'));
+    {   
+       
+
+        $locale = $request->segment(1);
+        
+        if (in_array($locale, ['en' , 'ar'])) {
+            \App::setLocale($locale);
+            return $next($request);
         }
-        return $next($request);
+
+    
+        if (!in_array($locale, ['en' , 'ar'])) {
+
+            $segments = $request->segments();
+            $segments[0] = config('en');
+            return redirect('en');
+        }
+    
     }
 }

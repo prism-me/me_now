@@ -53,7 +53,7 @@
 <body onload="gettimezone()" class="animated fadeIn">
     {{-- @include('front.firebase_config'); --}}
     {{-- @include('front.cssclass'); --}}
-    @yield('loader')
+    {{-- @yield('loader') --}}
 
 
     <div class="header-pinned fixed-top" id="header">
@@ -80,11 +80,8 @@
                 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{-- @if (isset($setting->logo)) --}}
-                            {{-- <img src="{{ asset('upload/images') . '/' . $setting->logo }}" class="logo-img"> --}}
-                            {{-- <img src="{{ asset('front/img/logo.png') }}" class="logo-img">
-                        @else --}}
-                            <img src="{{ Session::get('logo') }}" class="logo-img">
-                        {{-- @endif --}}
+                        {{-- <img src="{{ asset('upload/images') . '/' . $setting->logo }}" class="logo-img"> --}}
+                        <img src="{{ asset('front/img/logo.png') }}" class="logo-img">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#CollapsingNavbar"
                         aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
@@ -136,8 +133,7 @@
                                     href="{{ url('workshop') }}">{{ trans('messages.Workshops') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"
-                                    href="{{ url('events') }}">{{ __('messages.Events') }}</a>
+                                <a class="nav-link" href="{{ url('events') }}">{{ __('messages.Events') }}</a>
                             </li>
                             {{-- <li class="nav-item">
                                 <a class="nav-link" href="#">{{ __('messages.Blog') }}</a>
@@ -152,19 +148,21 @@
                             </li>
                             <li class="nav-item book-now-nav">
                                 <a class="nav-link btn-hover color-9"
-                                    style="color:white !important; width: 132px;padding: 0.5rem !important;" href="#"
-                                    data-toggle="modal" data-target="#appointmentModal">{{ __('Book Now') }}</a>
+                                    style="color:white !important; width: 132px;padding: 0.5rem !important;"
+                                    href="#" data-toggle="modal"
+                                    data-target="#appointmentModal">{{ __('Book Now') }}</a>
                             </li>
                             <ul class="navbar-nav ml-auto">
                                 @php $locale = session()->get('locale'); @endphp
                                 <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false" v-pre>
                                         Language <span class="caret"></span>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</a>
-                                        <a class="dropdown-item" value="ar" {{ session()->get('locale') == 'ar' ? 'selected' : '' }}>Arabic</a>
-                                    </div>
+                                    </a> --}}
+                                    <a class="dropdown-item" href="{{ url('lang/change?lang=en') }}">English</a>
+                                    <a class="dropdown-item" href="{{ url('lang/change?lang=ar') }}">Arabic</a>
+
                                 </li>
                             </ul>
                     </div>
@@ -190,7 +188,8 @@
                         data-target="#appointmentModal">Book Now</button>
                 </div>
                 <div class="col-3">
-                    <a href="tel:+97142398448"><img src="{{ asset('front/img/call_now.png') }}" alt=""></a>
+                    <a href="tel:+97142398448"><img src="{{ asset('front/img/call_now.png') }}"
+                            alt=""></a>
                 </div>
                 <div class="col-3">
                     <a href="https://wa.me/+971565553483" target="_blank"><img
@@ -255,9 +254,10 @@
                                     <input type="text" required name="phone_no" id="phone_no"
                                         placeholder="{{ __('messages.Enter Phone number') }}"
                                         class="appo-right-input" value="">
-                                    <input type="date" required name="date" id="app_date" min="<?= date('Y-m-d') ?>"
-                                        placeholder="dd/mm/yyyy">
-                                    <input type="time" required name="time" placeholder="Time" class="appo-right-input">
+                                    <input type="date" required name="date" id="app_date"
+                                        min="<?= date('Y-m-d') ?>" placeholder="dd/mm/yyyy">
+                                    <input type="time" required name="time" placeholder="Time"
+                                        class="appo-right-input">
                                     <textarea rows="3" required name="messages" placeholder="{{ __('messages.Enter Your Messages') }}"></textarea>
                                 </div>
                                 <div class="appo-btn-main-box">
@@ -412,7 +412,8 @@
                         </div>
 
                         <div class="col-md-3 footer-bottom-right">
-                            <a href="https://www.prism-me.com">{{ __('messages.Designed and Managed by Prism') }}</a>
+                            <a
+                                href="https://www.prism-me.com">{{ __('messages.Designed and Managed by Prism') }}</a>
 
                         </div>
 

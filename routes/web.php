@@ -16,14 +16,13 @@ use App\Http\Controllers\LanguageController;
 
     Route::get('/', function() {
     Artisan::call('optimize');
-        return redirect('/home');
+        return redirect('/en');
     });
 
     
 
 
-        Route::get('lang/home', 'LangController@index');
-        Route::get('lang/change', 'LangController@change')->name('changeLang');
+    
 
 
 
@@ -34,12 +33,11 @@ use App\Http\Controllers\LanguageController;
     Route::get("privacy_policy","HomeController@privacy");
 
 
-    Route::group(['prefix' => '/'] , function(){
-      
+    Route::group([ 'prefix' => App::getLocale() , 'middleware' => \App\Http\Middleware\Localization::class ] , function () { 
+
      Route::get('auth/{driver}', 'Auth\FacebookController@redirectToProvider')->name('social.oauth');
      Route::get('auth/{driver}/callback', 'Auth\FacebookController@handleProviderCallback')->name('social.callback');
-     Route::get("/","FrontController@showhome");
-
+     Route::get("/en","FrontController@showhome");
      Route::get("/about-us","FrontController@about");
      Route::get("blog","FrontController@blog");
      Route::get("services","FrontController@services");

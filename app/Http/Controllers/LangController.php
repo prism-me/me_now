@@ -23,7 +23,8 @@ class LangController extends Controller
      * @return \Illuminate\Http\Response
     */
     public function change(Request $request)
-    {
+    {   
+        
         if($request->lang){
             
             App::setLocale($request->lang);
