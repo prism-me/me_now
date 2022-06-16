@@ -160,8 +160,8 @@
                                         aria-expanded="false" v-pre>
                                         Language <span class="caret"></span>
                                     </a> --}}
-                                    <a class="dropdown-item" href="{{ url('lang/change?lang=en') }}">English</a>
-                                    <a class="dropdown-item" href="{{ url('lang/change?lang=ar') }}">Arabic</a>
+                                    <a class="dropdown-item" href="{{ url('en') }}">English</a>
+                                    <a class="dropdown-item" href="{{ url('ar') }}">Arabic</a>
 
                                 </li>
                             </ul>

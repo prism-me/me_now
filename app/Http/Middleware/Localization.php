@@ -20,6 +20,9 @@ class Localization
     public function handle(Request $request, Closure $next)
     {   
        
+        // app()->setLocale($request->segment(1));
+        // return $next($request);
+
 
         $locale = $request->segment(1);
         
@@ -30,11 +33,13 @@ class Localization
 
     
         if (!in_array($locale, ['en' , 'ar'])) {
-
             $segments = $request->segments();
-            $segments[0] = config('en');
-            return redirect('en');
+            $lang_push = \App::getLocale();
+            //$route = array_merge(array_slice($segments, 0 , 0), array($lang_push), array_slice($segments, 0));
+            //return redirect(implode('/', $segments));
+            return $next($request);
         }
+
     
     }
 }

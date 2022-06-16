@@ -16,7 +16,7 @@ use App\Http\Controllers\LanguageController;
 
     Route::get('/', function() {
     Artisan::call('optimize');
-        return redirect('/en');
+        return redirect('/');
     });
 
     
@@ -33,11 +33,11 @@ use App\Http\Controllers\LanguageController;
     Route::get("privacy_policy","HomeController@privacy");
 
 
-    Route::group([ 'prefix' => App::getLocale() , 'middleware' => \App\Http\Middleware\Localization::class ] , function () { 
+    Route::group([ 'prefix' => '{locale}', 'middleware' => 'setLocale'] , function () { 
 
      Route::get('auth/{driver}', 'Auth\FacebookController@redirectToProvider')->name('social.oauth');
      Route::get('auth/{driver}/callback', 'Auth\FacebookController@handleProviderCallback')->name('social.callback');
-     Route::get("/en","FrontController@showhome");
+     Route::get("/","FrontController@showhome");
      Route::get("/about-us","FrontController@about");
      Route::get("blog","FrontController@blog");
      Route::get("services","FrontController@services");

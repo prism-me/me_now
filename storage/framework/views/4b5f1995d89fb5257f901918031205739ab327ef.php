@@ -131,8 +131,8 @@
                                 <?php $locale = session()->get('locale'); ?>
                                 <li class="nav-item dropdown">
                                     
-                                    <a class="dropdown-item" href="<?php echo e(url('lang/change?lang=en')); ?>">English</a>
-                                    <a class="dropdown-item" href="<?php echo e(url('lang/change?lang=ar')); ?>">Arabic</a>
+                                    <a class="dropdown-item" href="<?php echo e(url('en')); ?>">English</a>
+                                    <a class="dropdown-item" href="<?php echo e(url('ar')); ?>">Arabic</a>
 
                                 </li>
                             </ul>

@@ -174,7 +174,7 @@ class FrontController extends Controller
          
         //  dd($workshop->short_description);
         //https://prismdigital.ae/why-do-business-websites-need-a-good-design/ - test url
-         $social = \Share::page('http://127.0.0.1:8000/workshop/'. $workshop->slug , $workshop->title)->facebook()->linkedin()->whatsapp()->twitter();
+         $social = \Share::page('http://127.0.0.1:8000/en/workshop/'. $workshop->slug , $workshop->title)->facebook()->linkedin()->whatsapp()->twitter();
         //   dd($social);
        return view("front.workshops_inner")->with('rooms',$rooms)->with('social', $social)->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with('workshop',$workshop);
     }
