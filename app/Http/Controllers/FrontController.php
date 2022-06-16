@@ -13,6 +13,7 @@ use App\Model\Appointment;
 use App\Model\DepartService;
 use App\Model\Token;
 use App\Model\About;
+use App\Model\Home;
 use App\Model\WorkshopBooking;
 use App\Model\Workshop;
 use App\Model\Event;
@@ -90,9 +91,11 @@ class FrontController extends Controller
         $rooms = Room::get()->take(3);
         $department= Department::with('service')->get();
         $setting= Setting::find(1);
-        $reviews= Review::with('doctors','users')->get()->take(4);
         
-        return view("front.home")->with('rooms',$rooms)->with("setting",$setting)->with("department",$department)->with("review",$reviews)->with("doctor",$doctor)->with("chatpage",'1');;
+        $reviews= Review::with('doctors','users')->get()->take(4);
+        $home= Home::all();
+        
+        return view("front.home")->with('rooms',$rooms)->with("setting",$setting)->with("department",$department)->with('home',$home);
     }
 
     public function blog(){
@@ -213,8 +216,9 @@ class FrontController extends Controller
         $doctor=Doctor::get()->take(4);
          $department=Department::with('service')->get();
          $setting=Setting::find(1);
+            $women = WomenEmpowerment::all();
         //  $reviews=Review::with('doctors','users')->get()->take(4);
-       return view("front.become_member")->with('doctor',$doctor)->with('rooms',$rooms)->with("setting",$setting)->with("department",$department);
+       return view("front.become_member")->with('doctor',$doctor)->with('rooms',$rooms)->with("setting",$setting)->with("department",$department)->with('women',$women);
      
     }
 

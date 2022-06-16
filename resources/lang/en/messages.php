@@ -494,4 +494,6 @@ return [
 		"Description  1" => "Description  1",
 		"Featured Img" => "Featured Img",
 		"Women" => "Women",
+		"Home" => "Home",
+		"Save Home" => "Save Home",
 	];

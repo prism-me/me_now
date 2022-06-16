@@ -38,7 +38,9 @@
                 <div class="col-md-7">
                     <div class="about_content text-center">
                         {{-- <img src="{{ asset('front/img/logo-background.png') }}" alt="logo" class="about-section-logo"> --}}
-                        <div class="services_home_container global-heading ">
+                        <div class="services_home_container global-heading ">'
+                         <p>{{ trans('message.workshop')}}</p>
+'
                             <h2 class="animated fadeInDown delay-2s ">Women, We See You, You’re at The Heart of Me Now</h2>
                         </div>
                         <p class="animated fadeInDown mb-5"> Me Now is no less than a family dedicated to supporting each other and building a community of

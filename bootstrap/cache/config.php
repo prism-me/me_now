@@ -3,11 +3,16 @@
   array (
     'name' => 'MeNow',
     'env' => 'local',
-    'debug' => false,
+    'debug' => true,
     'url' => 'http://localhost/project/company/blank_script/blank_singleclinic_web/singleclinic/',
     'asset_url' => NULL,
     'timezone' => 'UTC',
     'locale' => 'en',
+    'available_locales' => 
+    array (
+      0 => 'en',
+      1 => 'ar',
+    ),
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
     'key' => 'base64:mA8orYiUnV4NQwmB1wD4woU+8fYCADwovi463e5cS+U=',
@@ -184,7 +189,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\xampp\\htdocs\\meNow\\storage\\framework/cache/data',
+        'path' => 'C:\\xampp\\htdocs\\meNow1\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -350,12 +355,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\xampp\\htdocs\\meNow\\storage\\app',
+        'root' => 'C:\\xampp\\htdocs\\meNow1\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\xampp\\htdocs\\meNow\\storage\\app/public',
+        'root' => 'C:\\xampp\\htdocs\\meNow1\\storage\\app/public',
         'url' => 'http://localhost/project/company/blank_script/blank_singleclinic_web/singleclinic//storage',
         'visibility' => 'public',
       ),
@@ -372,7 +377,7 @@
     ),
     'links' => 
     array (
-      'C:\\xampp\\htdocs\\meNow\\public\\storage' => 'C:\\xampp\\htdocs\\meNow\\storage\\app/public',
+      'C:\\xampp\\htdocs\\meNow1\\public\\storage' => 'C:\\xampp\\htdocs\\meNow1\\storage\\app/public',
     ),
   ),
   'hashing' => 
@@ -452,13 +457,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'C:\\xampp\\htdocs\\meNow\\storage\\logs/laravel.log',
+        'path' => 'C:\\xampp\\htdocs\\meNow1\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'C:\\xampp\\htdocs\\meNow\\storage\\logs/laravel.log',
+        'path' => 'C:\\xampp\\htdocs\\meNow1\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -508,7 +513,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'C:\\xampp\\htdocs\\meNow\\storage\\logs/laravel.log',
+        'path' => 'C:\\xampp\\htdocs\\meNow1\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -574,7 +579,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\xampp\\htdocs\\meNow\\resources\\views/vendor/mail',
+        0 => 'C:\\xampp\\htdocs\\meNow1\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -679,7 +684,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\xampp\\htdocs\\meNow\\storage\\framework/sessions',
+    'files' => 'C:\\xampp\\htdocs\\meNow1\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -708,9 +713,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\meNow\\resources\\views',
+      0 => 'C:\\xampp\\htdocs\\meNow1\\resources\\views',
     ),
-    'compiled' => 'C:\\xampp\\htdocs\\meNow\\storage\\framework\\views',
+    'compiled' => 'C:\\xampp\\htdocs\\meNow1\\storage\\framework\\views',
   ),
   'debugbar' => 
   array (
@@ -724,7 +729,7 @@
     array (
       'enabled' => true,
       'driver' => 'file',
-      'path' => 'C:\\xampp\\htdocs\\meNow\\storage\\debugbar',
+      'path' => 'C:\\xampp\\htdocs\\meNow1\\storage\\debugbar',
       'connection' => NULL,
       'provider' => '',
       'hostname' => '127.0.0.1',
@@ -923,7 +928,7 @@
     ),
     'temporary_files' => 
     array (
-      'local_path' => 'C:\\xampp\\htdocs\\meNow\\storage\\framework/cache/laravel-excel',
+      'local_path' => 'C:\\xampp\\htdocs\\meNow1\\storage\\framework/cache/laravel-excel',
       'remote_disk' => NULL,
       'remote_prefix' => NULL,
       'force_resync_remote' => NULL,
@@ -1050,7 +1055,7 @@
   ),
   'api-debugger' => 
   array (
-    'enabled' => false,
+    'enabled' => true,
     'collections' => 
     array (
       0 => 'Lanin\\Laravel\\ApiDebugger\\Collections\\QueriesCollection',

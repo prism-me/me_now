@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
+
 <head>
     <title id="changeunreadcount">@yield('title')</title>
     @yield('meta_title')
@@ -78,12 +79,12 @@
             <div class="navigation-custom-single">
                 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        @if (isset($setting->logo))
+                        {{-- @if (isset($setting->logo)) --}}
                             {{-- <img src="{{ asset('upload/images') . '/' . $setting->logo }}" class="logo-img"> --}}
-                            <img src="{{ asset('front/img/logo.png') }}" class="logo-img">
-                        @else
+                            {{-- <img src="{{ asset('front/img/logo.png') }}" class="logo-img">
+                        @else --}}
                             <img src="{{ Session::get('logo') }}" class="logo-img">
-                        @endif
+                        {{-- @endif --}}
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#CollapsingNavbar"
                         aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
@@ -132,7 +133,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="{{ url('workshop') }}">{{ __('messages.Workshops') }}</a>
+                                    href="{{ url('workshop') }}">{{ trans('messages.Workshops') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
@@ -154,7 +155,18 @@
                                     style="color:white !important; width: 132px;padding: 0.5rem !important;" href="#"
                                     data-toggle="modal" data-target="#appointmentModal">{{ __('Book Now') }}</a>
                             </li>
-                        </ul>
+                            <ul class="navbar-nav ml-auto">
+                                @php $locale = session()->get('locale'); @endphp
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        Language <span class="caret"></span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</a>
+                                        <a class="dropdown-item" value="ar" {{ session()->get('locale') == 'ar' ? 'selected' : '' }}>Arabic</a>
+                                    </div>
+                                </li>
+                            </ul>
                     </div>
                 </nav>
             </div>
@@ -339,7 +351,7 @@
 
                                     <a href="{{ url('about-us') }}">{{ __('messages.About') }}</a>
                                     <a href="{{ url('events') }}">{{ __('messages.Events') }}</a>
-                                    <a href="{{ url('workshop') }}">{{ __('messages.Workshops') }}</a>
+                                    <a href="{{ url('workshop') }}">{{ trans('messages.Workshops') }}</a>
                                     {{-- <a href="{{ url('blog') }}">{{ __('messages.Blog') }}</a> --}}
                                     <a href="{{ url('faqs') }}">{{ __('messages.FAQs') }}</a>
                                     <a href="{{ url('contact-us') }}">{{ __('messages.Contact Us') }}</a>
@@ -529,7 +541,15 @@
         //     });
         // }
     </script>
-    <script type="text/javascript" src="{{ asset('js/front.js?v=4543543') }}"></script>
+    {{-- <script type="text/javascript">
+  
+        var url = "{{ route('changeLang') }}";
+    
+        $(".changeLang").change(function(){
+            window.location.href = url + "?lang="+ $(this).val();
+        });
+    
+    </script> --}}
 
 </body>
 

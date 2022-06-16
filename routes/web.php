@@ -14,22 +14,33 @@ use App\Http\Controllers\LanguageController;
 |
 */
 
-Route::get('/', function() {
-   Artisan::call('optimize');
-    return redirect('home');
-});
- 
- Route::get('instagram','FrontController@instagram');
- 
-Route::get("add_doctor_review","AuthenticatedoctorController@show_product_review_user");
-Route::post("checkoutbrain","braintreeController@checkoutbrain");
-Route::get("sendnotification","FrontController@sendnotification");
-Route::get("privacy_policy","HomeController@privacy");
-Route::group(['prefix' => '/'], function () {
+    Route::get('/', function() {
+    Artisan::call('optimize');
+        return redirect('/home');
+    });
+
+    
+
+
+        Route::get('lang/home', 'LangController@index');
+        Route::get('lang/change', 'LangController@change')->name('changeLang');
+
+
+
+    Route::get('instagram','FrontController@instagram');
+    Route::get("add_doctor_review","AuthenticatedoctorController@show_product_review_user");
+    Route::post("checkoutbrain","braintreeController@checkoutbrain");
+    Route::get("sendnotification","FrontController@sendnotification");
+    Route::get("privacy_policy","HomeController@privacy");
+
+
+    Route::group(['prefix' => '/'] , function(){
+      
      Route::get('auth/{driver}', 'Auth\FacebookController@redirectToProvider')->name('social.oauth');
      Route::get('auth/{driver}/callback', 'Auth\FacebookController@handleProviderCallback')->name('social.callback');
      Route::get("/","FrontController@showhome");
-     Route::get("about-us","FrontController@about");
+
+     Route::get("/about-us","FrontController@about");
      Route::get("blog","FrontController@blog");
      Route::get("services","FrontController@services");
      Route::get("faqs","FrontController@faqs");
@@ -60,7 +71,7 @@ Route::group(['prefix' => '/'], function () {
      Route::any("addreview","FrontController@addreview");
      Route::post("mediaupload","FrontController@mediaupload");
      Route::post("deletemedia","FrontController@deletemedia");
-     
+
      Route::get("myaccount","FrontController@myaccount");
      Route::post("updateprofile","FrontController@updateprofile");
      Route::get("checkcurrentpwd","FrontController@checkcurrentpwd");
@@ -80,12 +91,10 @@ Route::group(['prefix' => '/'], function () {
      Route::post("workshop-booking","FrontController@workshopBooking");
      Route::get("events","FrontController@events");
 
+    });
 
-     
-     
-});
-
-Route::group(['prefix' => 'admin'], function () {
+    Route::group(['prefix' => 'admin'], function () {
+        
         Route::get("/","HomeController@showlogin");
         Route::post("postlogin","HomeController@postlogin");
 
@@ -93,7 +102,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get("dashboard","HomeController@showdashboard")->name("dashboard");
         Route::get("logout","HomeController@logout");
         Route::get("settimezone/{time}","HomeController@settimezone");
-   
+
         #Department
         Route::resource("department","DepartmentController");
         Route::get("savedepartment/{id}","DepartmentController@saveddepartment");
@@ -122,7 +131,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource("notification","NotificationController");
         Route::post("savenotification","NotificationController@savenotification");
 
-      
+
 
         Route::get("setting/{id}","NotificationController@showsetting");
         Route::post("savebasicsetting","NotificationController@savebasicsetting");
@@ -162,34 +171,34 @@ Route::group(['prefix' => 'admin'], function () {
         #ARticle
         Route::resource('articles', 'ArticleController');
 
-        #Blog 
+        #Blog
         Route::resource('blogs', 'BlogController');
         Route::get('edit-blog/{slug}', 'BlogController@edit');
         Route::post('delete-blog/{slug}', 'BlogController@delete');
         Route::post('update-blog/{slug}', 'BlogController@update');
         Route::get('show-blog/{slug}', 'BlogController@show');
 
-        #Workshop 
+        #Workshop
         Route::resource('workshops', 'WorkshopController');
         Route::get('edit-workshop/{slug}', 'WorkshopController@edit');
         Route::post('delete-workshop/{slug}', 'WorkshopController@delete');
         Route::post('update-workshop/{slug}', 'WorkshopController@update');
         Route::get('show-workshop/{slug}', 'WorkshopController@show');
 
-        #Room 
+        #Room
         Route::resource('rooms', 'RoomController');
         Route::get('edit-room/{slug}', 'RoomController@edit');
         Route::post('delete-room/{slug}', 'RoomController@delete');
         Route::post('update-room/{slug}', 'RoomController@update');
         Route::get('show-room/{slug}', 'RoomController@show');
 
-      
-        #Subscriber 
+
+        #Subscriber
         Route::get('subscribers', 'DoctorController@subscribers');
         Route::post('delete-subscriber/{id}', 'DoctorController@deleteSubscriber');
 
 
-        #FAQ 
+        #FAQ
         Route::resource('faqs', 'FaqController');
         Route::get('edit-faq/{slug}', 'FaqController@edit');
         Route::post('delete-faq/{slug}', 'FaqController@delete');
@@ -197,36 +206,42 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('show-faq/{slug}', 'FaqController@show');
 
 
-        #Events 
+        #Events
         Route::resource('events', 'EventController');
         Route::get('edit-event/{slug}', 'EventController@edit');
         Route::post('delete-event/{slug}', 'EventController@destroy');
         Route::post('update-event/{slug}', 'EventController@update');
         Route::get('show-event/{slug}', 'EventController@show');
 
-        #About Us  
+        #About Us
         Route::resource('about', 'AboutController');
         Route::get('edit-about/{slug}', 'AboutController@edit');
         Route::post('update-about/{slug}', 'AboutController@update');
 
-        #Women Empoerment  
+        #Women Empowerment
         Route::resource('women', 'WomenEmpowermentController');
         Route::get('edit-women/{slug}', 'WomenEmpowermentController@edit');
         Route::post('update-women/{slug}', 'WomenEmpowermentController@update');
 
+        #Home
+        Route::resource('home-section', 'HomeSectionController');
+        Route::get('edit-home/{slug}', 'HomeSectionController@edit');
+        Route::post('update-home/{slug}', 'HomeSectionController@update');
 
-	 });
+        
 
-});
+        });
+
+    });
 
 
 
-    
-Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}']], function () {
-    Route::get('/', 'HomeController@index')->name('home-locale');
 
-    Route::get('article/{id}', 'HomeController@article')->name('article');
-});
+// Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}']], function () {
+//     Route::get('/', 'HomeController@index')->name('home-locale');
+
+//     Route::get('article/{id}', 'HomeController@article')->name('article');
+// });
 
 
 

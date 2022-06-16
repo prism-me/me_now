@@ -102,6 +102,10 @@
                         <a href="{{ url('admin/women') }}"> <i
                                 class="menu-icon fa fa-female"></i>{{ __('messages.Women') }}</a>
                     </li>
+                    <li class="active">
+                        <a href="{{ url('admin/home-section') }}"> <i
+                                class="menu-icon fa fa-home"></i>{{ __('messages.Home') }}</a>
+                    </li>
                   
                     <li class="active">
                         <a href="{{ url('admin/faqs') }}"> <i

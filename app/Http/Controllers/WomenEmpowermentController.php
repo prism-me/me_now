@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\WomenEmpowerment;
+use App\Model\Home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\UploadController;
@@ -73,5 +74,9 @@ class WomenEmpowermentController extends UploadController
         $create = WomenEmpowerment::where('slug',$slug)->update($data);
         return redirect("admin/women");
     }
+
+
+
+
 
 }
