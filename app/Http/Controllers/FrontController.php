@@ -12,11 +12,6 @@ use App\Model\TimeTable;
 use App\Model\Appointment;
 use App\Model\DepartService;
 use App\Model\Token;
-<<<<<<< HEAD
-use App\Model\About;
-use App\Model\Home;
-=======
->>>>>>> 9bbc82386610b5adabf885f7235e8a266bb33d8e
 use App\Model\WorkshopBooking;
 use App\Model\WomenEmpowerment;
 use App\Model\Workshop;
@@ -98,18 +93,10 @@ class FrontController extends Controller
         $rooms = Room::get()->take(3);
         $department= Department::with('service')->get();
         $setting= Setting::find(1);
-<<<<<<< HEAD
-        
-        $reviews= Review::with('doctors','users')->get()->take(4);
-        $home= Home::all();
-        
-        return view("front.home")->with('rooms',$rooms)->with("setting",$setting)->with("department",$department)->with('home',$home);
-=======
         $reviews= Review::with('doctors','users')->get()->take(4);
         $home = Home::all();
         
         return view("front.home")->with('rooms',$rooms)->with("setting",$setting)->with("department",$department)->with("review",$reviews)->with("doctor",$doctor)->with("chatpage",'1')->with('home',$home);
->>>>>>> 9bbc82386610b5adabf885f7235e8a266bb33d8e
     }
 
     public function blog(){
@@ -229,11 +216,7 @@ class FrontController extends Controller
         $doctor=Doctor::get()->take(4);
          $department=Department::with('service')->get();
          $setting=Setting::find(1);
-<<<<<<< HEAD
-            $women = WomenEmpowerment::all();
-=======
         $women = WomenEmpowerment::all();
->>>>>>> 9bbc82386610b5adabf885f7235e8a266bb33d8e
         //  $reviews=Review::with('doctors','users')->get()->take(4);
        return view("front.become_member")->with('doctor',$doctor)->with('rooms',$rooms)->with("setting",$setting)->with("department",$department)->with('women',$women);
      

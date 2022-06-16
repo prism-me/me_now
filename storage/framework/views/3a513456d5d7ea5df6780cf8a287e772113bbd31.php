@@ -38,15 +38,8 @@
                 <div class="col-md-7">
                     <div class="about_content text-center">
                         
-<<<<<<<< HEAD:storage/framework/views/3a513456d5d7ea5df6780cf8a287e772113bbd31.php
-                        <div class="services_home_container global-heading ">'
-                         <p><?php echo e(trans('message.workshop')); ?></p>
-'
-                            <h2 class="animated fadeInDown delay-2s ">Women, We See You, You’re at The Heart of Me Now</h2>
-========
                         <div class="services_home_container global-heading ">
                             <h2 class="animated fadeInDown delay-2s "><?php echo e($home[2]['title']); ?></h2>
->>>>>>>> 9bbc82386610b5adabf885f7235e8a266bb33d8e:storage/framework/views/23017604941eaec569155e3e70ff9b3529ee101d.php
                         </div>
                         <p class="animated fadeInDown mb-5"><?php echo $home[2]['description']; ?>
 
@@ -160,8 +153,4 @@
 
 
 
-<<<<<<<< HEAD:storage/framework/views/3a513456d5d7ea5df6780cf8a287e772113bbd31.php
 <?php echo $__env->make('front.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\meNow1\resources\views/front/home.blade.php ENDPATH**/ ?>
-========
-<?php echo $__env->make('front.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/u877734042/domains/menow.ae/public_html/resources/views/front/home.blade.php ENDPATH**/ ?>
->>>>>>>> 9bbc82386610b5adabf885f7235e8a266bb33d8e:storage/framework/views/23017604941eaec569155e3e70ff9b3529ee101d.php

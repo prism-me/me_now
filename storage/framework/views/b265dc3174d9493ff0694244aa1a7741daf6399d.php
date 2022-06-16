@@ -89,8 +89,4 @@
 
 </div>
 </div> 
-<<<<<<<< HEAD:storage/framework/views/b265dc3174d9493ff0694244aa1a7741daf6399d.php
 <?php /**PATH C:\xampp\htdocs\meNow1\resources\views/front/services_section.blade.php ENDPATH**/ ?>
-========
-<?php /**PATH /home/u877734042/domains/menow.ae/public_html/resources/views/front/services_section.blade.php ENDPATH**/ ?>
->>>>>>>> 9bbc82386610b5adabf885f7235e8a266bb33d8e:storage/framework/views/0580f4647d3c138f66ace07e6024efeffe3ad0bd.php

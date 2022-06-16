@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
 
+
 <head>
     <title id="changeunreadcount"><?php echo $__env->yieldContent('title'); ?></title>
     <?php echo $__env->yieldContent('meta_title'); ?>
@@ -57,12 +58,11 @@
             <div class="navigation-custom-single">
                 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
                     <a class="navbar-brand" href="<?php echo e(url('/')); ?>">
-                        <?php if(isset($setting->logo)): ?>
+                        
                             
-                            <img src="<?php echo e(asset('front/img/logo.png')); ?>" class="logo-img">
-                        <?php else: ?>
+                            
                             <img src="<?php echo e(Session::get('logo')); ?>" class="logo-img">
-                        <?php endif; ?>
+                        
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#CollapsingNavbar"
                         aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
@@ -109,7 +109,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="<?php echo e(url('workshop')); ?>"><?php echo e(__('messages.Workshops')); ?></a>
+                                    href="<?php echo e(url('workshop')); ?>"><?php echo e(trans('messages.Workshops')); ?></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
@@ -129,7 +129,18 @@
                                     style="color:white !important; width: 132px;padding: 0.5rem !important;" href="#"
                                     data-toggle="modal" data-target="#appointmentModal"><?php echo e(__('Book Now')); ?></a>
                             </li>
-                        </ul>
+                            <ul class="navbar-nav ml-auto">
+                                <?php $locale = session()->get('locale'); ?>
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        Language <span class="caret"></span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" value="en" <?php echo e(session()->get('locale') == 'en' ? 'selected' : ''); ?>>English</a>
+                                        <a class="dropdown-item" value="ar" <?php echo e(session()->get('locale') == 'ar' ? 'selected' : ''); ?>>Arabic</a>
+                                    </div>
+                                </li>
+                            </ul>
                     </div>
                 </nav>
             </div>
@@ -310,7 +321,7 @@
 
                                     <a href="<?php echo e(url('about-us')); ?>"><?php echo e(__('messages.About')); ?></a>
                                     <a href="<?php echo e(url('events')); ?>"><?php echo e(__('messages.Events')); ?></a>
-                                    <a href="<?php echo e(url('workshop')); ?>"><?php echo e(__('messages.Workshops')); ?></a>
+                                    <a href="<?php echo e(url('workshop')); ?>"><?php echo e(trans('messages.Workshops')); ?></a>
                                     
                                     <a href="<?php echo e(url('faqs')); ?>"><?php echo e(__('messages.FAQs')); ?></a>
                                     <a href="<?php echo e(url('contact-us')); ?>"><?php echo e(__('messages.Contact Us')); ?></a>
@@ -466,9 +477,9 @@
         //     });
         // }
     </script>
-    <script type="text/javascript" src="<?php echo e(asset('js/front.js?v=4543543')); ?>"></script>
+    
 
 </body>
 
 </html>
-<?php /**PATH /home/u877734042/domains/menow.ae/public_html/resources/views/front/layout.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\xampp\htdocs\meNow1\resources\views/front/layout.blade.php ENDPATH**/ ?>

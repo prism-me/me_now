@@ -41,8 +41,4 @@
         </div>
     </div>
 </div>
-<<<<<<<< HEAD:storage/framework/views/5bf0eeec5061a76adb52ad6c1b9849181de9f164.php
 <?php /**PATH C:\xampp\htdocs\meNow1\resources\views/front/doctor_section.blade.php ENDPATH**/ ?>
-========
-<?php /**PATH /home/u877734042/domains/menow.ae/public_html/resources/views/front/doctor_section.blade.php ENDPATH**/ ?>
->>>>>>>> 9bbc82386610b5adabf885f7235e8a266bb33d8e:storage/framework/views/1d5bb7eb9f42ff648d30606d5546c765172fde82.php
