@@ -19,6 +19,7 @@ use App\Model\Event;
 use App\Model\Home;
 use App\Model\About;
 use App\Model\Review;
+use App\Model\Faq;
 use App\Model\Blog;
 use App\Model\Room;
 use App\Model\Service;
@@ -181,6 +182,7 @@ class FrontController extends Controller
         if(!isset($_COOKIE['fload'])){
             setcookie('fload','1', time() + (86400 * 30), "/");
          }
+         $faqs = Faq::all();
          $rooms = Room::get()->take(3);
          $service=Service::get()->take(8);
          $package=Package::get()->take(3);
@@ -188,7 +190,7 @@ class FrontController extends Controller
          $department=Department::with('service')->get();
          $setting=Setting::find(1);
          $reviews=Review::with('doctors','users')->get()->take(4);
-       return view("front.faqs")->with('rooms',$rooms)->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department);
+         return view("front.faqs")->with('rooms',$rooms)->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with('faqs',$faqs);
      
     }
 
