@@ -10,6 +10,17 @@
       'Debugbar' => 'Barryvdh\\Debugbar\\Facades\\Debugbar',
     ),
   ),
+  'facade/ignition' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Facade\\Ignition\\IgnitionServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Flare' => 'Facade\\Ignition\\Facades\\Flare',
+    ),
+  ),
   'fideloper/proxy' => 
   array (
     'providers' => 
@@ -83,11 +94,29 @@
       'Excel' => 'Maatwebsite\\Excel\\Facades\\Excel',
     ),
   ),
+  'mcamara/laravel-localization' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Mcamara\\LaravelLocalization\\LaravelLocalizationServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'LaravelLocalization' => 'Mcamara\\LaravelLocalization\\Facades\\LaravelLocalization',
+    ),
+  ),
   'nesbot/carbon' => 
   array (
     'providers' => 
     array (
       0 => 'Carbon\\Laravel\\ServiceProvider',
+    ),
+  ),
+  'nunomaduro/collision' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
     ),
   ),
   'yajra/laravel-datatables-buttons' => 

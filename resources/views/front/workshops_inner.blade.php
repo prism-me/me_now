@@ -9,7 +9,13 @@
 @section('content')
     <div class="workshop_wrapper">
         <div class="banner-img">
-            <img src="{{ @$workshop->banner_img }}" alt="" class="img-fluid banner workshop-banner">
+            <div class="row no-gutters">
+                <div class="col-md-9">
+                    <img src="{{ @$workshop->banner_img }}" alt="" class="img-fluid banner workshop-banner">
+
+                </div>
+                <div class="col-md-3"></div>
+            </div>
             <div class="workshop_inner_overlay" data-aos="fade-left">
                 <div class="meta_content">
                     <div class="meta1"><span class="fa fa-chevron-right"></span> <b>Date & Time:
