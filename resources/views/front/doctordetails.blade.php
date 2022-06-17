@@ -321,7 +321,7 @@
         </div>
         @if (count($review) > 0)
             <div class="testimonial-main-box">
-                <div class="container">
+                <div class="container-fluid">
                     <div class="global-heading">
                         <h2>Client’s Reviews</h2>
                         <p>See what our clients have to say about the Me Now Center and our
