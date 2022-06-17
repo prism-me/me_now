@@ -1295,6 +1295,14 @@ select.form-control:not([size]):not([multiple]) {
 .testimonial-carousel .owl-nav button span {
     display: none;
 }
+.testimonial-carousel .owl-item{  
+    border : 1px solid #49b7c6;
+    margin: .7rem;
+    border-radius:10px;
+}
+.testimonial-carousel .owl-stage{
+    display:flex;
+}
 .testimonial-carousel .owl-nav .owl-prev::after,
 .testimonial-carousel .owl-nav .owl-next::after {
     content: "\f104";
@@ -1331,7 +1339,9 @@ color: #1b7081;
 .testimonial-carousel .owl-nav button img {
     display: none;
 }
-
+input.form-control.review {
+    background-color: #f2f2f2;
+}
 
 
 

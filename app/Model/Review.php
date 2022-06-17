@@ -8,6 +8,7 @@ class Review extends Model
 {
     protected $table = 'review';
     protected $primaryKey = 'id';
+    protected $guarded = '';
 
       public function doctors()
     {      

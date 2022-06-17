@@ -439,14 +439,14 @@ class FrontController extends Controller
        }
 
        public function doctordetails($slug){
-        $rooms = Room::get()->take(3);
+            $rooms = Room::get()->take(3);
             $department=Department::all();
             $doctor=Doctor::where('slug',$slug)->first();
             $departmentdetails=Department::with("doctor","service")->find($doctor->department_id); 
             $doctor->total_ratting=count(Review::where("doctor_id",$doctor->id)->get());
             $doctor->ratting=Review::where("doctor_id",$doctor->id)->avg('ratting');
             $reviews=Review::with('doctors','users')->where("doctor_id",$doctor->id)->get();
-             $setting=Setting::find(1);
+            $setting=Setting::find(1);
             return view("front.doctordetails")->with('rooms',$rooms)->with("department",$department)->with("review",$reviews)->with("doctor",$doctor)->with("departmentdetails",$departmentdetails)->with("id",$doctor->id)->with("setting",$setting);
        }
 
@@ -474,15 +474,21 @@ class FrontController extends Controller
        }
 
        public function addreview(Request $request){
-                $data=new Review();
-                $data->doctor_id=$request->get("doctor_id");
-                $data->user_id=Auth::id();
-                $data->review=$request->get("messages");
-                $data->ratting=$request->get("rating");
-                $data->save();
-                Session::flash('message',__('messages.Review Add Successfully')); 
-          Session::flash('alert-class', 'alert-success'); 
-          return redirect()->back();
+           
+            $store  = new Review();
+            $doctor  = Doctor::where('slug',$request->doctor_id)->first();
+            $data['doctor_id'] = $doctor->id;
+            
+            $store->name=$request->get("name");
+            $store->email=$request->get("email");
+            $store->ratting=$request->get("ratting");
+            $store->review=$request->get("review");
+            $store->doctor_id = $doctor->id;
+            $store->save();
+        
+            $create = Review::create($data);
+            Session::flash('alert-class', 'alert-success'); 
+            return redirect()->back();
        }
 
 
