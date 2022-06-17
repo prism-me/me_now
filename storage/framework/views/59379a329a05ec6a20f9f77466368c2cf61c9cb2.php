@@ -153,4 +153,4 @@
 
 
 
-<?php echo $__env->make('front.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\meNow1\resources\views/front/home.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('front.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\me_now\resources\views/front/home.blade.php ENDPATH**/ ?>

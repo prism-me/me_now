@@ -22,8 +22,9 @@ class LangController extends Controller
      *
      * @return \Illuminate\Http\Response
     */
-    public function change(Request $request)
+    public function change(Request $request , $lang)
     {   
+
         
         if($request->lang){
             
@@ -32,7 +33,7 @@ class LangController extends Controller
             
         }else{
             App::setLocale('en');
-            session()->put('locale', 'app.locale');
+            session()->put('locale', 'en');
         }
 
         return redirect()->back();

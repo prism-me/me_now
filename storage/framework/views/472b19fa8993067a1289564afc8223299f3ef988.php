@@ -14,4 +14,4 @@
         </div>
     </div>
 </div>
-<?php /**PATH C:\xampp\htdocs\meNow1\resources\views/front/banner_static.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\xampp\htdocs\me_now\resources\views/front/banner_static.blade.php ENDPATH**/ ?>

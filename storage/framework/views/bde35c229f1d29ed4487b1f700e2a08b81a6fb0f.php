@@ -89,4 +89,4 @@
 
 </div>
 </div> 
-<?php /**PATH C:\xampp\htdocs\meNow1\resources\views/front/services_section.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\xampp\htdocs\me_now\resources\views/front/services_section.blade.php ENDPATH**/ ?>

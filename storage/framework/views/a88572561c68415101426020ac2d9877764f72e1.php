@@ -10,4 +10,4 @@
 
     </ul>
 </div>
-<?php /**PATH D:\Projects\Menow\me_now\resources\views/front/instagram_feeds.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\xampp\htdocs\me_now\resources\views/front/instagram_feeds.blade.php ENDPATH**/ ?>

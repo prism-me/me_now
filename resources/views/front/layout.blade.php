@@ -93,10 +93,10 @@
 			        			<a class="nav-link" href="{{url('/')}}">{{ __('messages.Home' )}}</a>
 			  				</li> --}}
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('about-us') }}">{{ __('messages.About') }}</a>
+                                <a class="nav-link" href="about-us">{{ __('messages.About') }}</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Services </a>
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Services</a>
                                 <ul class="dropdown-menu services-dropdown">
 
 
@@ -126,7 +126,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('doctorlist') }}">Our Team</a>
+                                <a class="nav-link" href="{{ url('doctorlist') }}">{{ __('messages.Our Team') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
@@ -140,7 +140,7 @@
                             </li> --}}
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="{{ url('women-empowerment') }}">{{ __('messages.Women Empowerment') }}</a>
+                                    href="women-empowerment">{{ __('messages.Women Empowerment') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
@@ -153,16 +153,14 @@
                                     data-target="#appointmentModal">{{ __('Book Now') }}</a>
                             </li>
                             <ul class="navbar-nav ml-auto">
-                                @php $locale = session()->get('locale'); @endphp
                                 <li class="nav-item dropdown">
-                                    {{-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"
-                                        role="button" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false" v-pre>
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         Language <span class="caret"></span>
-                                    </a> --}}
-                                    <a class="dropdown-item" href="{{ url('en') }}">English</a>
-                                    <a class="dropdown-item" href="{{ url('ar') }}">Arabic</a>
-
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item"  href="{{ url('en') }}">English</a>
+                                        <a class="dropdown-item" href="{{ url('ar') }}">Arabic</a>
+                                    </div>
                                 </li>
                             </ul>
                     </div>

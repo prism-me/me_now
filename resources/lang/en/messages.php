@@ -496,4 +496,6 @@ return [
 		"Women" => "Women",
 		"Home" => "Home",
 		"Save Home" => "Save Home",
+		"Our Team" => "Our Team",
+		"Services " => "Services ",
 	];

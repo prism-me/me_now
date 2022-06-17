@@ -49,7 +49,7 @@
 <body onload="gettimezone()" class="animated fadeIn">
     
     
-    <?php echo $__env->yieldContent('loader'); ?>
+    
 
 
     <div class="header-pinned fixed-top" id="header">
@@ -59,10 +59,8 @@
                 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
                     <a class="navbar-brand" href="<?php echo e(url('/')); ?>">
                         
-                            
-                            
-                            <img src="<?php echo e(Session::get('logo')); ?>" class="logo-img">
                         
+                        <img src="<?php echo e(asset('front/img/logo.png')); ?>" class="logo-img">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#CollapsingNavbar"
                         aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,10 +70,10 @@
                         <ul class="nav navbar-nav ml-auto">
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="<?php echo e(url('about-us')); ?>"><?php echo e(__('messages.About')); ?></a>
+                                <a class="nav-link" href="about-us"><?php echo e(__('messages.About')); ?></a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Services </a>
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Services</a>
                                 <ul class="dropdown-menu services-dropdown">
 
 
@@ -105,20 +103,19 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?php echo e(url('doctorlist')); ?>">Our Team</a>
+                                <a class="nav-link" href="<?php echo e(url('doctorlist')); ?>"><?php echo e(__('messages.Our Team')); ?></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
                                     href="<?php echo e(url('workshop')); ?>"><?php echo e(trans('messages.Workshops')); ?></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"
-                                    href="<?php echo e(url('events')); ?>"><?php echo e(__('messages.Events')); ?></a>
+                                <a class="nav-link" href="<?php echo e(url('events')); ?>"><?php echo e(__('messages.Events')); ?></a>
                             </li>
                             
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="<?php echo e(url('women-empowerment')); ?>"><?php echo e(__('messages.Women Empowerment')); ?></a>
+                                    href="women-empowerment"><?php echo e(__('messages.Women Empowerment')); ?></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
@@ -126,18 +123,18 @@
                             </li>
                             <li class="nav-item book-now-nav">
                                 <a class="nav-link btn-hover color-9"
-                                    style="color:white !important; width: 132px;padding: 0.5rem !important;" href="#"
-                                    data-toggle="modal" data-target="#appointmentModal"><?php echo e(__('Book Now')); ?></a>
+                                    style="color:white !important; width: 132px;padding: 0.5rem !important;"
+                                    href="#" data-toggle="modal"
+                                    data-target="#appointmentModal"><?php echo e(__('Book Now')); ?></a>
                             </li>
                             <ul class="navbar-nav ml-auto">
-                                <?php $locale = session()->get('locale'); ?>
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         Language <span class="caret"></span>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" value="en" <?php echo e(session()->get('locale') == 'en' ? 'selected' : ''); ?>>English</a>
-                                        <a class="dropdown-item" value="ar" <?php echo e(session()->get('locale') == 'ar' ? 'selected' : ''); ?>>Arabic</a>
+                                        <a class="dropdown-item"  href="<?php echo e(url('en')); ?>">English</a>
+                                        <a class="dropdown-item" href="<?php echo e(url('ar')); ?>">Arabic</a>
                                     </div>
                                 </li>
                             </ul>
@@ -164,7 +161,8 @@
                         data-target="#appointmentModal">Book Now</button>
                 </div>
                 <div class="col-3">
-                    <a href="tel:+97142398448"><img src="<?php echo e(asset('front/img/call_now.png')); ?>" alt=""></a>
+                    <a href="tel:+97142398448"><img src="<?php echo e(asset('front/img/call_now.png')); ?>"
+                            alt=""></a>
                 </div>
                 <div class="col-3">
                     <a href="https://wa.me/+971565553483" target="_blank"><img
@@ -223,9 +221,10 @@
                                     <input type="text" required name="phone_no" id="phone_no"
                                         placeholder="<?php echo e(__('messages.Enter Phone number')); ?>"
                                         class="appo-right-input" value="">
-                                    <input type="date" required name="date" id="app_date" min="<?= date('Y-m-d') ?>"
-                                        placeholder="dd/mm/yyyy">
-                                    <input type="time" required name="time" placeholder="Time" class="appo-right-input">
+                                    <input type="date" required name="date" id="app_date"
+                                        min="<?= date('Y-m-d') ?>" placeholder="dd/mm/yyyy">
+                                    <input type="time" required name="time" placeholder="Time"
+                                        class="appo-right-input">
                                     <textarea rows="3" required name="messages" placeholder="<?php echo e(__('messages.Enter Your Messages')); ?>"></textarea>
                                 </div>
                                 <div class="appo-btn-main-box">
@@ -384,7 +383,8 @@
                         </div>
 
                         <div class="col-md-3 footer-bottom-right">
-                            <a href="https://www.prism-me.com"><?php echo e(__('messages.Designed and Managed by Prism')); ?></a>
+                            <a
+                                href="https://www.prism-me.com"><?php echo e(__('messages.Designed and Managed by Prism')); ?></a>
 
                         </div>
 
@@ -482,4 +482,4 @@
 </body>
 
 </html>
-<?php /**PATH C:\xampp\htdocs\meNow1\resources\views/front/layout.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\xampp\htdocs\me_now\resources\views/front/layout.blade.php ENDPATH**/ ?>

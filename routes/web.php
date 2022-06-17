@@ -14,16 +14,19 @@ use App\Http\Controllers\LanguageController;
 |
 */
 
-    Route::get('/', function() {
-    Artisan::call('optimize');
-        return redirect('/');
-    });
+    // Route::get('/', function() {
+    // Artisan::call('optimize');
+    //     return redirect('/');
+    // });
 
     
 
 
     
 
+
+
+    Route::get('changeLang/{lang}','LangController@change');
 
 
     Route::get('instagram','FrontController@instagram');
@@ -38,11 +41,11 @@ use App\Http\Controllers\LanguageController;
      Route::get('auth/{driver}', 'Auth\FacebookController@redirectToProvider')->name('social.oauth');
      Route::get('auth/{driver}/callback', 'Auth\FacebookController@handleProviderCallback')->name('social.callback');
      Route::get("/","FrontController@showhome");
-     Route::get("/about-us","FrontController@about");
+     Route::get("about-us","FrontController@about")->name('about-us');
      Route::get("blog","FrontController@blog");
      Route::get("services","FrontController@services");
      Route::get("faqs","FrontController@faqs");
-     Route::get("women-empowerment","FrontController@women_empowerment");
+     Route::get("women-empowerment","FrontController@women_empowerment")->name('women-empowerment');
      Route::get("special-membership-for-women","FrontController@become_member");
      Route::get("workshop","FrontController@workshop");
      Route::get("events","FrontController@events");
