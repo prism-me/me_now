@@ -19,7 +19,7 @@
 
                
                     <a  href="https://api.whatsapp.com/send/?phone=00971565553483" class="btn btn-primary get-in-touch-button"
-                        ><?php echo e(__('Book Now')); ?></a>
+                        ><?php echo e(__('messages.Book Now')); ?></a>
                 </div>
             </div>
         </div>
@@ -35,7 +35,7 @@
 
                  
                     <a  href="https://api.whatsapp.com/send/?phone=00971565553483" class="btn btn-primary get-in-touch-button"
-                        ><?php echo e(__('Book Now')); ?></a>
+                        ><?php echo e(__('messages.Book Now')); ?></a>
                 </div>
             </div>
         </div>
@@ -52,7 +52,7 @@
 
                     
                     <a  href="https://api.whatsapp.com/send/?phone=00971565553483" class="btn btn-primary get-in-touch-button"
-                        ><?php echo e(__('Book Now')); ?></a>
+                        ><?php echo e(__('messages.Book Now')); ?></a>
                 </div>
             </div>
         </div>

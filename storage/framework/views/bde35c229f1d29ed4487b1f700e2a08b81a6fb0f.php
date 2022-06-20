@@ -1,18 +1,19 @@
 <div class="services-main-box" data-aos="fade-up" data-aos-duration="3000">
     <div class="container-fluid">
         <div class="services_home_container text-center global-heading">
-            <h2 class="">Our Services</h2>
-            <p class="pb-5">At Me Now, we are passionate about helping all those suffering from mental illnesses. Our licensed and highly qualified practitioners provide a variety of therapeutic treatments, including holistic therapies, Tomatis Listening Programs, and body therapies to help with mental and physical wellness. To begin your journey to well-being, speak with one of our Practitioners.
+            <h2 class=""><?php echo e(__('messages.Our Services')); ?></h2>
+            <p class="pb-5"><?php echo e(__('messages.At Me Now, we are passionate about helping all those suffering from mental illnesses. Our licensed and highly qualified practitioners provide a variety of therapeutic treatments, including holistic therapies, Tomatis Listening Programs, and body therapies to help with mental and physical wellness. To begin your journey to well-being, speak with one of our Practitioners.')); ?>
+
 
 
             </p>
         </div>
         <div class="services-left-part">
             <div class="left-part-detail">
-                <h2><?php echo e($home[1]['title']); ?> </h2>
-                <p class="serviceContent"><?php echo $home[1]['description']; ?></p>
+                <h2><?php echo e(@$home[1]['title']); ?> </h2>
+                <p class="serviceContent"><?php echo @$home[1]['description']; ?></p>
                 <div class="services-btn-main-box">
-                    <a href="<?php echo e(url('about')); ?>" class="btn-hover color-9">About Us</a>
+                    <a href="<?php echo e(url('about')); ?>" class="btn-hover color-9"><?php echo e(__('messages.About Us')); ?></a>
                 </div>
                 <div class="left-triangle">
                 </div>

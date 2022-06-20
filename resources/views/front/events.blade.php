@@ -9,7 +9,7 @@
 @section('content')
     <div class="container-fluid">
         <div class="global-heading">
-            <h2 style="display: block;">Events</h2>
+            <h2 style="display: block;">{{ __('messages.Events') }}</h2>
             {{-- <p>{{ __("messages.The best doctor is the one you run to and can't find") }}</p> --}}
         </div>
         <div class="doctorpg-part-main-box mb-5">
@@ -28,14 +28,13 @@
                     <div class="col-lg-7 col-md-7 col-sm-6 {{$class}}" data-aos="fade-up">
                         <div class="events-detail">
                             <h2>{{ $d->name }}</h2>
-                            <p>Event Date: {{ $d->created_at->diffForHumans() }}</p>
+                            <p>{{ __('messages.Event Date')}} {{ $d->created_at->diffForHumans() }}</p>
                             <div class="event-description">
                                 {!! $d->description !!}
                             </div>
                             <div class="book_now_event">
 
-                                <a href="https://api.whatsapp.com/send/?phone=00971565553483" class="btn-hover color-9">Book
-                                    Now</a>
+                                <a href="https://api.whatsapp.com/send/?phone=00971565553483" class="btn-hover color-9">{{ __('messages.Book Now') }}</a>
                             </div>
                         </div>
 

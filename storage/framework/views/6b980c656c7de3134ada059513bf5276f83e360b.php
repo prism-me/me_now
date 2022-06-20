@@ -1,9 +1,10 @@
 <div class="doctorl-main-box " data-aos="zoom-in">
     <div class="container-fluid">
         <div class="global-heading">
-            <h2>Me Now Team</h2>
+            <h2><?php echo e(__('messages.Me Now Team')); ?></h2>
 
-            <p>Our team is rooted in the belief that all people deserve high-quality mental health care. We take pride in offering the most comprehensive and holistic approach to mental health and our Practitioners include licensed therapists, psychologists, and psychiatrists with expertise in their respective domains. They are eager to help you in your battles against mental health and to assist you in achieving mental wellbeing.
+            <p><?php echo e(__('messages.Our team is rooted in the belief that all people deserve high-quality mental health care. We take pride in offering the most comprehensive and holistic approach to mental health and our Practitioners include licensed therapists, psychologists, and psychiatrists with expertise in their respective domains. They are eager to help you in your battles against mental health and to assist you in achieving mental wellbeing.')); ?>
+
 
 </p>
         </div>
@@ -29,7 +30,7 @@
                                         <h4><?php echo e(ucwords($d->name)); ?></h4>
                                         <p><?php echo e($d->excerpt); ?> </p>
                                         <a href="<?php echo e(url('doctordetails/') . '/' . $d->slug); ?>"
-                                            class="btn-hover color-9 mt-3">Read More</a>
+                                            class="btn-hover color-9 mt-3"><?php echo e(__('messages.Read More')); ?></a>
                                     </div>
                                 </div>
                             </div>

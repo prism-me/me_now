@@ -150,7 +150,7 @@
                                 <a class="nav-link btn-hover color-9"
                                     style="color:white !important; width: 132px;padding: 0.5rem !important;"
                                     href="#" data-toggle="modal"
-                                    data-target="#appointmentModal">{{ __('Book Now') }}</a>
+                                    data-target="#appointmentModal">{{ __('messages.Book Now') }}</a>
                             </li>
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item dropdown">
@@ -183,7 +183,7 @@
             <div class="row">
                 <div class="col-6">
                     <button type="submit" class="btn-hover color-9" data-toggle="modal"
-                        data-target="#appointmentModal">Book Now</button>
+                        data-target="#appointmentModal">{{ __('messages.Book Now') }}</button>
                 </div>
                 <div class="col-3">
                     <a href="tel:+97142398448"><img src="{{ asset('front/img/call_now.png') }}"

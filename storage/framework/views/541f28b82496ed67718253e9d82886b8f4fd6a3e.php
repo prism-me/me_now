@@ -5,15 +5,15 @@
                 <div class="about_content">
                     
                     <div class="services_home_container global-heading text-center">
-                        <h2 class="animated fadeInDown delay-2s "><?php echo e($home[0]['title']); ?></h2>
-                    </div><?php echo $home[0]['description']; ?>
+                        <h2 class="animated fadeInDown delay-2s "><?php echo e(@$home[0]['title']); ?></h2>
+                    </div><?php echo @$home[0]['description']; ?>
 
 
                     </p>
                 </div>
             </div>
             <div class="col-md-5 col-sm-6 col-12 text-center about_img_section">
-                <div class="about_img_wrapper"><img src=<?php echo e($home[0]['featured_img']); ?> alt="about us section">
+                <div class="about_img_wrapper"><img src=<?php echo e(@$home[0]['featured_img']); ?> alt="about us section">
                 </div>
             </div>
         </div>

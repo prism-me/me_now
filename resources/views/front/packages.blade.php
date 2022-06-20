@@ -16,7 +16,7 @@
                     {!!$women[4]['description']!!}
                
                     <a  href="https://api.whatsapp.com/send/?phone=00971565553483" class="btn btn-primary get-in-touch-button"
-                        >{{ __('Book Now') }}</a>
+                        >{{ __('messages.Book Now') }}</a>
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
                     {!!$women[5]['description']!!}
                  
                     <a  href="https://api.whatsapp.com/send/?phone=00971565553483" class="btn btn-primary get-in-touch-button"
-                        >{{ __('Book Now') }}</a>
+                        >{{ __('messages.Book Now') }}</a>
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@
                     {!! $women[6]['description'] !!}
                     
                     <a  href="https://api.whatsapp.com/send/?phone=00971565553483" class="btn btn-primary get-in-touch-button"
-                        >{{ __('Book Now') }}</a>
+                        >{{ __('messages.Book Now') }}</a>
                 </div>
             </div>
         </div>

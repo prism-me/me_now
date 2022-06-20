@@ -31,7 +31,7 @@
         <div class="women_wrapper " data-aos="fade-up">
             <div class="row">
                 <div class="col-md-5 text-center women_img_section">
-                    <div class="women_img_wrapper"><img src=<?php echo e($home[2]['featured_img']); ?> class="img-fluid" alt="about us section">
+                    <div class="women_img_wrapper"><img src=<?php echo e(@$home[2]['featured_img']); ?> class="img-fluid" alt="about us section">
                     </div>
                 </div>
                 
@@ -39,13 +39,13 @@
                     <div class="about_content text-center">
                         
                         <div class="services_home_container global-heading ">
-                            <h2 class="animated fadeInDown delay-2s "><?php echo e($home[2]['title']); ?></h2>
+                            <h2 class="animated fadeInDown delay-2s "><?php echo e(@$home[2]['title']); ?></h2>
                         </div>
-                        <p class="animated fadeInDown mb-5"><?php echo $home[2]['description']; ?>
+                        <p class="animated fadeInDown mb-5"><?php echo @$home[2]['description']; ?>
 
     
                         </p>
-                        <a href="<?php echo e(url('women-empowerment')); ?>" class="btn-hover color-9">Read More</a>
+                        <a href="<?php echo e(url('women-empowerment')); ?>" class="btn-hover color-9"><?php echo e(__('messages.Read More')); ?></a>
                     </div>
                 </div>
 
@@ -60,9 +60,8 @@
     <div class="testimonial-main-box">
         <div class="container-fluid" style="padding-left: 0px ; padding-right: 0px;">
             <div class="global-heading">
-                <h2>Client’s Reviews</h2>
-                <p>See what our clients have to say about the Me Now Center and our
-                    mental health services</p>
+                <h2><?php echo e(__('messages.Client’s Reviews')); ?></h2>
+                <p><?php echo e(__('messages.See what our clients have to say about the Me Now Center and our mental health services')); ?></p>
             </div>
             <div class="testimonial-part-main-box">
                 <div class="owl-carousel testimonial-carousel patient-reviews-slider">

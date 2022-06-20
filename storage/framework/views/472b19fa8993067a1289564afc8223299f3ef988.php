@@ -7,10 +7,8 @@
         
         <div class=""></div>
         <div class="caption">
-            <h1 class="heading " data-aos="fade-up" data-aos-anchor-placement="top-bottom">Live, Heal and Breathe
-                Again. </h1>
-            <button type="submit" class="btn-hover color-9" data-toggle="modal" data-target="#appointmentModal">Book a
-                Consultation</button>
+            <h1 class="heading " data-aos="fade-up" data-aos-anchor-placement="top-bottom"> <?php echo e(__('messages.Live, Heal and Breathe Again.')); ?></h1>
+            <button type="submit" class="btn-hover color-9" data-toggle="modal" data-target="#appointmentModal"><?php echo e(__('messages.Book a Consultation')); ?></button>
         </div>
     </div>
 </div>
