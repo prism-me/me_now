@@ -4,7 +4,7 @@ return [
 		'Our Services' =>'Our Services',
 		'Events' =>'Events',
 		'Rooms' =>'Rooms',
-	    "About_Me_Now" => "About Me Now",
+	    "About Me Now" => "About Me Now",
 		"site name"=>"Single Clinic",
 		"meta_description_admin"=>"Single Web Clinic Admin",
 		"meta_keyword"=>"Single,Clinic,Hospital",
@@ -504,8 +504,11 @@ return [
 		"Book a Consultation" => "Book a Consultation",
 		"Live, Heal and Breathe Again." => "Live, Heal and Breathe Again.",
 		"Book a Consultation" => "Book a Consultation",
-		"Book Now" => "Book Now",
 		"Client’s Reviews" => "Client’s Reviews",
-		"What we stand for" => "What we stand for",
 		"See what our clients have to say about the Me Now Center and our mental health services" => "See what our clients have to say about the Me Now Center and our mental health services",
+		"With the goal of de-stigmatizing mental illness and providing patients with a variety of treatment options, we re a group of compassionate, dedicated, and experienced practitioners who want nothing more than to see a different you walk out the door after working with us." => "With the goal of de-stigmatizing mental illness and providing patients with a variety of treatment options, we re a group of compassionate, dedicated, and experienced practitioners who want nothing more than to see a different you walk out the door after working with us.",
+		"Book Now" => "Book Now",
+		"Workshop Date" => "Workshop Date",
+		"Select Date and Time" => "Select Date and Time",
+
 	];

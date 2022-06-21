@@ -9,6 +9,7 @@
 </p>
         </div>
         <div class="row">
+       
             <?php if(count($doctor) > 0): ?>
                 <?php $__currentLoopData = $doctor; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="col-lg-3 col-md-6 col-sm-6">

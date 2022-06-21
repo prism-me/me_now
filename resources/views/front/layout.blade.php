@@ -292,11 +292,7 @@
                                     {{-- <h3>{{ __('messages.About us') }}</h3> --}}
                                     {{-- <p>{{ __('messages.front_about') }}</p> --}}
                                     <p>
-                                        With the goal of de-stigmatizing mental illness and providing patients with a
-                                        variety of treatment options, we're a group of compassionate, dedicated, and
-                                        experienced practitioners who want nothing more than to see "a different you"
-                                        walk out the door after working with us.
-                                    </p>
+                                      {{ __('messages.With the goal of de-stigmatizing mental illness and providing patients with a variety of treatment options, we re a group of compassionate, dedicated, and experienced practitioners who want nothing more than to see a different you walk out the door after working with us.') }}                                    </p>
                                 </div>
                                 <div class="footer-d1-box">
                                     <h3>{{ __('messages.Contact Us') }}</h3>
@@ -321,7 +317,7 @@
                                         @foreach ($department as $d)
                                             @if ($i < 5)
                                                 <a href="{{ url('services') . '/' . $d->slug }}">{{ $d->name }}
-                                                    {{ __('messages.Department') }}</a>
+                                                    </a>
                                                 <?php $i++; ?>
                                             @endif
                                         @endforeach
@@ -330,7 +326,7 @@
                                             @foreach (Session::get('departmentlist') as $d)
                                                 @if ($i < 5)
                                                     <a href="{{ url('services') . '/' . $d->slug }}">{{ $d->name }}
-                                                        {{ __('messages.Department') }}</a>
+                                                        </a>
                                                     <?php $i++; ?>
                                                 @endif
                                             @endforeach
@@ -377,7 +373,7 @@
                                     <form>
                                         <div class="inputWithIcon">
                                             <input type="text" name="subscribeemail" id="subscribeemail"
-                                                placeholder="Email">
+                                                placeholder="{{ __('messages.Email') }}">
                                             <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
                                         </div>
                                         <div class="subcribe-button-box">

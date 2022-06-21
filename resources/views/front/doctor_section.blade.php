@@ -8,6 +8,7 @@
 </p>
         </div>
         <div class="row">
+       
             @if (count($doctor) > 0)
                 @foreach ($doctor as $d)
                     <div class="col-lg-3 col-md-6 col-sm-6">

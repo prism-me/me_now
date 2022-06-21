@@ -50,6 +50,7 @@ class HomeController extends Controller
     }
 
     public function postlogin(Request $request){
+        dd('h');
         if($request->get("type")=='2'){
             $checkuser=User::where("email",$request->get("email"))->where("password",$request->get("password"))->where("usertype",'2')->first();
         }

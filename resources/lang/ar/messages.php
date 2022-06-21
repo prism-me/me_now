@@ -25,8 +25,19 @@ return [
 	"See what our clients have to say about the Me Now Center and our mental health services" => "تعرف على ما يقوله عملاؤنا عن مركز Me Now وخدمات الصحة العقلية الخاصة بنا",
 	"Client’s Reviews" => "مراجعات العملاء",
 	"What we stand for" => "ما نمثله",
-	"Event Date" => "تاريخ الحدث",
-
-
+	"With the goal of de-stigmatizing mental illness and providing patients with a variety of treatment options, we re a group of compassionate, dedicated, and experienced practitioners who want nothing more than to see a different you walk out the door after working with us." => "بهدف إزالة وصمة العار عن الأمراض العقلية وتزويد المرضى بمجموعة متنوعة من خيارات العلاج ، نحن مجموعة من الممارسين المتعاطفين والمتفانين وذوي الخبرة الذين لا يريدون أكثر من رؤية شخص مختلف يخرجون من المنزل بعد العمل معنا
+	",
+	"FAQs" => "أسئلة وأجوبة",
+	"Contact Us" => "اتصل بنا",
+	"Terms & Condition" => "الشروط والأحكام",
+	"Privacy Policy" => "سياسة الخصوصية",	
+	"Helpful links" => "روابط مفيدة",
+	"Address" => "تبوك",
+	"Subscribe More Info" => "اشترك في مزيد من المعلومات",
+	"Workshop Date" => "تاريخ ورشة العمل",
+	"Select Date and Time" => "حدد التاريخ والوقت",
+	"Terms of Service" => "شروط الخدمة",
+	"Subscribe" => "الإشتراك",
+	"Email" => "البريد الإلكتروني",
 
 ];

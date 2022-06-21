@@ -136,18 +136,20 @@ class FrontController extends Controller
 
     
 
-    public function workshop(){
+    public function workshop(Request $request){
+        $segment = $request->segment(1);
         if(!isset($_COOKIE['fload'])){
             setcookie('fload','1', time() + (86400 * 30), "/");
          }
          $service=Service::get()->take(8);
-         $workshop=Workshop::orderBy('id','desc')->get();
+         $workshop=Workshop::where('lang',$segment)->orderBy('id','desc')->get();
+      
          $package=Package::get()->take(3);
-         $doctor=Doctor::get()->take(4);
-         $rooms = Room::get()->take(3);
-         $department=Department::with('service')->get();
+         $doctor=Doctor::where('lang',$segment)->get()->take(4);
+         $rooms = Room::where('lang',$segment)->get()->take(3);
+         $department=Department::with('service')->where('lang',$segment)->get();
          $setting=Setting::find(1);
-         $reviews=Review::with('doctors','users')->get()->take(4);
+         $reviews=Review::with('doctors','users')->where('lang',$segment)->get()->take(4);
         return view("front.workshop")->with('rooms',$rooms)->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with("workshop",$workshop);
     }
     
@@ -440,20 +442,23 @@ class FrontController extends Controller
        }
 
        
-       public function doctorlist(){
-        $rooms = Room::get()->take(3);
-          $department=Department::all();
-          $doctor=Doctor::all();
-          $departmentdoctor=Department::with('doctor')->get();
-          $setting=Setting::find(1);
-          $department=Department::with('service')->get();
-          return view("front.doctorlist")->with('rooms',$rooms)->with("department",$department)->with("doctor",$doctor)->with("departmentdoctor",$departmentdoctor)->with("setting",$setting);
-       }
+        public function doctorlist(Request $request){
+            $segment = $request->segment(1);
+            $rooms = Room::where('lang',$segment)->get()->take(3);
+            $department= Department::get();
 
-       public function doctordetails($slug){
-        $rooms = Room::get()->take(3);
-            $department=Department::all();
-            $doctor=Doctor::where('slug',$slug)->first();
+            $doctor= Doctor::where('lang',$segment)->where('lang',$segment)->get();
+            $departmentdoctor=Department::with('doctor')->where('lang',$segment)->get();
+            $setting=Setting::find(1);
+            $department=Department::with('service')->where('lang',$segment)->get();
+            return view("front.doctorlist")->with('rooms',$rooms)->with("department",$department)->with("doctor",$doctor)->with("departmentdoctor",$departmentdoctor)->with("setting",$setting);
+        }
+
+       public function doctordetails(Request $request, $slug){
+            $segment = $request->segment(1);
+            $rooms = Room::where('lang',$segment)->get()->take(3);
+            $department=Department::where('lang',$segment)->get();
+            $doctor=Doctor::where('slug',$slug)->where('lang',$segment)->first();
             $departmentdetails=Department::with("doctor","service")->find($doctor->department_id); 
             $doctor->total_ratting=count(Review::where("doctor_id",$doctor->id)->get());
             $doctor->ratting=Review::where("doctor_id",$doctor->id)->avg('ratting');

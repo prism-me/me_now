@@ -261,11 +261,7 @@
                                     
                                     
                                     <p>
-                                        With the goal of de-stigmatizing mental illness and providing patients with a
-                                        variety of treatment options, we're a group of compassionate, dedicated, and
-                                        experienced practitioners who want nothing more than to see "a different you"
-                                        walk out the door after working with us.
-                                    </p>
+                                      <?php echo e(__('messages.With the goal of de-stigmatizing mental illness and providing patients with a variety of treatment options, we re a group of compassionate, dedicated, and experienced practitioners who want nothing more than to see a different you walk out the door after working with us.')); ?>                                    </p>
                                 </div>
                                 <div class="footer-d1-box">
                                     <h3><?php echo e(__('messages.Contact Us')); ?></h3>
@@ -291,7 +287,7 @@
                                             <?php if($i < 5): ?>
                                                 <a href="<?php echo e(url('services') . '/' . $d->slug); ?>"><?php echo e($d->name); ?>
 
-                                                    <?php echo e(__('messages.Department')); ?></a>
+                                                    </a>
                                                 <?php $i++; ?>
                                             <?php endif; ?>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -301,7 +297,7 @@
                                                 <?php if($i < 5): ?>
                                                     <a href="<?php echo e(url('services') . '/' . $d->slug); ?>"><?php echo e($d->name); ?>
 
-                                                        <?php echo e(__('messages.Department')); ?></a>
+                                                        </a>
                                                     <?php $i++; ?>
                                                 <?php endif; ?>
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -348,7 +344,7 @@
                                     <form>
                                         <div class="inputWithIcon">
                                             <input type="text" name="subscribeemail" id="subscribeemail"
-                                                placeholder="Email">
+                                                placeholder="<?php echo e(__('messages.Email')); ?>">
                                             <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
                                         </div>
                                         <div class="subcribe-button-box">

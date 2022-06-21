@@ -99,8 +99,8 @@ use App\Http\Controllers\LanguageController;
         Route::get("/","HomeController@showlogin");
         Route::post("postlogin","HomeController@postlogin");
 
-        Route::group([  'prefix' => '{locale}', 'middleware' => [ 'setLocale' , 'admincheckexiste']], function () {
-
+        Route::group(['middleware' => ['admincheckexiste']], function () {
+            
             Route::get("dashboard","HomeController@showdashboard")->name("dashboard");
             Route::get("logout","HomeController@logout");
             Route::get("settimezone/{time}","HomeController@settimezone");

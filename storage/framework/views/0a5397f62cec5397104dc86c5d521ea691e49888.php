@@ -34,14 +34,14 @@
                                             <div class="workshop-schedule row">
 
                                                 <div class="col-md-4 col-5" style="padding-left:0px;">
-                                                    <span>Workshop Date:</span>
+                                                    <span><?php echo e(__('messages.Workshop Date')); ?>:</span>
                                                 </div>
                                                 <div class="col-md-8 col-7" style="padding-right:0px;">
                                                     <?php $event_date = $d->event_date; ?>
 
                                                     <select name="dob" id="" class="form-control"
                                                         style="color:#000;width:90%;">
-                                                        <option value="0">Select Date and Time</option>
+                                                        <option value="0"><?php echo e(__('messages.Select Date and Time')); ?></option>
                                                         <?php if(!is_null($event_date)): ?>
                                                             <?php $__currentLoopData = $event_date; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $date): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                                 <option value="<?php echo e($date); ?>">
