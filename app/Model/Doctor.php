@@ -11,18 +11,18 @@ class Doctor extends Model
 
      public function department()
     {      
-        return $this->hasone('App\Model\Department', 'id', 'department_id');
+        return $this->hasOne('App\Model\Department', 'id', 'department_id');
     }
 
     public function TimeTabledata(){
-    	return $this->hasmany('App\Model\TimeTable',"doctor_id","id");
+    	return $this->hasMany('App\Model\TimeTable',"doctor_id","id");
     }
     
 
 
     public function rattingdata()
     {      
-        return $this->hasmany('App\Model\Review', 'doctor_id', 'id');
+        return $this->hasMany('App\Model\Review', 'doctor_id', 'id');
     }
     
 }

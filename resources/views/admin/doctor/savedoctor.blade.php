@@ -52,7 +52,7 @@
                     
                   </ul>
                   <div class="tab-content pl-3 p-1" id="myTabContent">
-                        <form action="{{url('admin/updatedoctorprofile')}}" method="post"  enctype="multipart/form-data">
+                        <form action="/{{Session::get('locale')}}/admin/updatedoctorprofile" method="post"  enctype="multipart/form-data">
                            {{csrf_field()}}
                            <input type="hidden" name="id" id="id" value="{{$doctor_id}}"/>
                            <input type="hidden" name="real_image" id="real_image" value="{{ isset($data->image)?$data->image:''}}"/>

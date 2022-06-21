@@ -15,7 +15,7 @@
       <div class="page-header float-right">
          <div class="page-title">
             <ol class="breadcrumb text-right">
-               <li><a href="{{url('admin/workshops')}}">{{__('messages.Workshop')}}</a></li>
+               <li><form action="/{{Session::get('locale')}}/admin/workshops">{{__('messages.Workshop')}}</a></li>
                <li class="active">{{__('messages.Save Workshop')}}</li>
             </ol>
          </div>

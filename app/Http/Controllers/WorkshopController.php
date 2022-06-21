@@ -67,7 +67,7 @@ class WorkshopController extends UploadController
             $data['banner_img'] = $mediaUpload1 ;
         }
         $workshopCreate = Workshop::create($data);
-        return redirect("admin/workshops");
+        return redirect()->route('workshops',$segment);
     }
 
     /**
@@ -106,6 +106,7 @@ class WorkshopController extends UploadController
     public function update(Request $request,Workshop $workshop)
     {
         $slug = $request->segment(4);
+        $segment = $request->segment(1);
        
         $mediaUpload = "";
         $mediaUpload1 = "";
@@ -132,7 +133,7 @@ class WorkshopController extends UploadController
             $data['banner_img'] = $mediaUpload1 ;
         }
         $workshopCreate = Workshop::where('slug',$slug)->update($data);
-        return redirect("admin/workshops");
+        return redirect()->route('workshops',$segment);
     }
 
     /**

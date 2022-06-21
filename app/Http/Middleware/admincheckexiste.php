@@ -16,7 +16,7 @@ class admincheckexiste
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::check()&&Auth::user()->usertype==2){
+        if(Auth::check() && Auth::user()->usertype==2){
             return $next($request);            
         }else{
             return redirect('admin');

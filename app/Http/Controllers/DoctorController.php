@@ -40,7 +40,6 @@ class DoctorController extends UploadController
             $setting=Setting::find(1);
             if($request->get("id")!="0"){
                 $request->validate([
-                    'department' => 'required',
                     'name' => 'required',
                     'phone_no'=>'required',
                     'about_us'=>'required',
@@ -48,7 +47,6 @@ class DoctorController extends UploadController
                 ]);
               }else{
                 $request->validate([
-                    'department' => 'required',
                     'name' => 'required',
                     'email' => 'required',
                     'phone_no'=>'required',
@@ -88,24 +86,26 @@ class DoctorController extends UploadController
             $store->slug = $request->get("slug");
             $store->lang = $segment;
             $store->short_description=$request->get("short_description");
-             if($mediaUpload){
-                    $store->image = $mediaUpload;
+            if($mediaUpload){
+                $store->image = $mediaUpload;
             }
             $store->save(); 
-            return redirect("admin/doctor");
-
+            return redirect()->route('doctor',$segment);
     }
  
     
-    public function deletedoctor($id){
-        $data=Doctor::find($id);
+    public function deletedoctor(Request $request ){
+        $id = $request->segment(4);
+        
+        $segment = $request->segment(1);
+        $data=Doctor::where('id',$id)->first();
         if($data){
         $data->delete();
         }
         
         Session::flash('message',__('messages.Doctor Delete Successfully')); 
         Session::flash('alert-class', 'alert-success');
-        return redirect("admin/doctor");
+        return redirect()->route('doctor',$segment);
     }
 
     public function showreview(){

@@ -71,7 +71,7 @@
                                 class="menu-icon fa fa-dashboard"></i>{{ __('messages.Dashboard') }} </a>
                     </li>
                     <li class="active">
-                        <a href="{{ url('admin/appointment/0/0') }}"> <i
+                        <a href="appointment/0/0"> <i
                                 class="menu-icon fa fa-calendar"></i>{{ __('messages.Appointment') }}</a>
                     </li>
                     <li class="active">
@@ -79,94 +79,94 @@
                                 class="menu-icon fa fa-user-md"></i>{{ __('messages.Doctors') }}</a>
                     </li>
                     <li class="active">
-                        <a href="{{ url('admin/patient') }}"> <i
+                        <a href="patient"> <i
                                 class="menu-icon fa fa-grav"></i>{{ __('messages.Patient') }}</a>
                     </li>
                     <li class="active">
-                        <a href="{{ url('admin/blogs') }}"> <i
+                        <a href="blogs"> <i
                                 class="menu-icon fa  fa-handshake-o"></i>{{ __('messages.Blog') }}</a>
                     </li>
                     <li class="active">
-                        <a href="{{ url('admin/workshops') }}"> <i
+                        <a href="workshops"> <i
                                 class="menu-icon fa  fa-newspaper-o"></i>{{ __('messages.Workshop') }}</a>
                     </li>
                     <li class="active">
-                        <a href="admin/department"> <i
+                        <a href="department"> <i
                                 class="menu-icon fa fa-eercast"></i>{{ __('messages.Department') }}</a>
                     </li>
                     <li class="active">
-                        <a href="{{ url('admin/rooms') }}"> <i
+                        <a href="rooms"> <i
                                 class="menu-icon fa fa-home"></i>{{ __('messages.Room') }}</a>
                     </li>
                     <li class="active">
-                        <a href="{{ url('admin/about') }}"> <i
+                        <a href="about"> <i
                                 class="menu-icon fa fa-info"></i>{{ __('messages.About Us') }}</a>
                     </li>
                     <li class="active">
-                        <a href="{{ url('admin/women') }}"> <i
+                        <a href="women"> <i
                                 class="menu-icon fa fa-female"></i>{{ __('messages.Women') }}</a>
                     </li>
                     <li class="active">
-                        <a href="{{ url('admin/home-section') }}"> <i
+                        <a href="home-section"> <i
                                 class="menu-icon fa fa-home"></i>{{ __('messages.Home') }}</a>
                     </li>
                   
                     <li class="active">
-                        <a href="{{ url('admin/faqs') }}"> <i
+                        <a href="faqs"> <i
                                 class="menu-icon fa fa-question-circle"></i>{{ __('messages.Faq') }}</a>
                     </li>
                     {{-- <li class="active">
-                        <a href="{{ url('admin/package') }}"> <i
+                        <a href="package"> <i
                                 class="menu-icon fa fa-user-md"></i>{{ __('messages.Help Package') }}</a>
                     </li> --}}
                     {{-- <li class="active">
-                        <a href="{{ url('admin/chat') }}"> <i
+                        <a href="chat"> <i
                                 class="menu-icon fa fa-comment"></i>{{ __('messages.Chat') }} </a>
                     </li> --}}
                     {{-- <li class="active">
-                        <a href="{{ url('admin/gallery') }}"> <i
+                        <a href="gallery"> <i
                                 class="menu-icon fa fa-file-image-o"></i>{{ __('messages.Gallery') }}</a>
                     </li> --}}
                     <!--<li class="active">-->
-                    <!--    <a href="{{ url('admin/review') }}"> <i-->
+                    <!--    <a href="review') <i-->
                     <!--            class="menu-icon fa fa-star"></i>{{ __('messages.Review') }}</a>-->
                     <!--</li>-->
                     <li class="active">
-                        <a href="{{ url('admin/subscription') }}"> <i
+                        <a href="subscription"> <i
                                 class="menu-icon fa fa-gift"></i>{{ __('messages.Subscription') }}</a>
                     </li>
                     <li class="active">
-                        <a href="{{ url('admin/subscribers') }}"> <i
+                        <a href="subscribers"> <i
                                 class="menu-icon fa fa-rocket"></i>{{ __('messages.Subscriber') }}</a>
                     </li>
                     <li class="active">
-                        <a href="{{ url('admin/pages') }}"> <i
+                        <a href="pages"> <i
                                 class="menu-icon fa fa-pagelines"></i>{{ __('messages.Pages') }}</a>
                     </li>
                     {{-- <li class="active">
-                        <a href="{{ url('admin/news') }}"> <i
+                        <a href="news"> <i
                                 class="menu-icon fa  fa-newspaper-o"></i>{{ __('messages.News') }}</a>
                     </li> --}}
                     {{-- <li class="active">
-                        <a href="{{ url('admin/contactus') }}"> <i
+                        <a href="contactus"> <i
                                 class="menu-icon fa  fa-address-card"></i>{{ __('messages.Contact Us') }}</a>
                     </li>
                     <li class="active">
-                        <a href="{{ url('admin/service') }}"> <i
+                        <a href="service"> <i
                                 class="menu-icon fa fa-book"></i>{{ __('messages.Facilities') }}</a>
                     </li> --}}
 
 
                     {{-- <li class="active">
-                        <a href="{{ url('admin/notification') }}"> <i
+                        <a href="notification"> <i
                                 class="menu-icon fa fa-bell"></i>{{ __('messages.Notification') }}</a>
                     </li> --}}
                     {{-- <li class="active">
-                        <a href="{{ url('admin/paymentgateway') }}"> <i
+                        <a href="paymentgateway"> <i
                                 class="menu-icon fa fa-money"></i>{{ __('messages.Payment Gateway') }}</a>
                     </li> --}}
                     <li class="active">
-                        <a href="{{ url('admin/setting/1') }}"> <i
+                        <a href="setting/1"> <i
                                 class="menu-icon fa fa-cogs"></i>{{ __('messages.Setting') }}</a>
                     </li>
 
@@ -201,9 +201,9 @@
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Profile <span class="caret"></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                     <a class="nav-link" href="{{ url('admin/editprofile') }}"><i
+                                     <a class="nav-link" href="editprofile"><i
                                         class="fa fa-user"></i> {{ __('messages.My Profile') }}</a>
-                                    <a class="nav-link" href="{{ url('admin/changepassword') }}"><i
+                                    <a class="nav-link" href="changepassword"><i
                                             class="fa fa-user"></i> {{ __('messages.Change password') }}</a>
                                     <a class="nav-link" href="javascript:logout()"><i class="fa fa-power-off"></i>
                                         {{ __('messages.Logout') }}</a>

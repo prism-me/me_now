@@ -42,8 +42,8 @@
                   </div>
                   <?php endif; ?>
                   <div>
-                     <a href="<?php echo e(url('admin/savedoctor/0/1')); ?>" class="btn btn-primary"><?php echo e(__('messages.Add').' '.__('messages.Doctors')); ?></a>
-                     
+                     <a href="savedoctor/0/1" class="btn btn-primary"><?php echo e(__('messages.Add').' '.__('messages.Doctors')); ?></a>
+               
                   
                      </div>
                   <div class="table-responsive">
@@ -73,15 +73,19 @@
                            <td><?php echo e($d->phone_no); ?></td>
                            <td>
                               <div class="group">
-                                <a href="<?php echo e(url('admin/savedoctor/').'/'.$d->id.'/1'); ?>" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
+
+                                <a href="savedoctor/<?php echo e($d->id . '/1'); ?>"> <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
                               </div>
                               <div class="group">
-                                
-                                 <a href="javascript:deleterow('deletedoctor','<?= $d->id ?>')" >
+                                <form action="deletedoctor/<?php echo e($d->id); ?>"  novalidate="novalidate"  method="POST"  > 
+                                <?php echo e(csrf_field()); ?>
+
+                                 <button class='btn btn-default' type='submit' value='submit'>
                                    <i class='fa fa-trash fa-lg'></i>
-                                 </a>
-                               
+                                 </button>
+                                </form>
                               </div>
+                             
                            </td>
                         </tr>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -96,6 +100,5 @@
    </div>
 </div>
 <?php $__env->stopSection(); ?>
-
 
 <?php echo $__env->make('admin.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\me_now\resources\views/admin/doctor/default.blade.php ENDPATH**/ ?>

@@ -36,7 +36,7 @@
                   </div>
                   @endif
                   <div>
-                     <a href="{{ URL::to('admin/workshops/create')}}" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Workshop')}}</a>
+                     <a href="workshops/create" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Workshop')}}</a>
                   </div>
                   <div class="table-responsive">
                   <table id="service" class="table  table-striped table-bordered">
@@ -61,10 +61,10 @@
                            </td>
                            <td>
                               <div class="group">
-                                <a href="{{URL::to('admin/edit-workshop') . '/' . $d->slug}}" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
+                                <a href="edit-workshop/{{ $d->slug}}" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
                               </div>
                               <div class="group">
-                                <form action="{{ url('admin/delete-workshop'.'/' . $d->slug)}}"  novalidate="novalidate"  method="POST"  > 
+                                <form action="delete-workshop/{{  $d->slug }}"  novalidate="novalidate"  method="POST"  > 
                                 {{csrf_field()}}
                                  <button class='btn btn-default' type='submit' value='submit'>
                                    <i class='fa fa-trash fa-lg'></i>

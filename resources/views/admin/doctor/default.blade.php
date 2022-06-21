@@ -40,18 +40,8 @@
                   </div>
                   @endif
                   <div>
-                     <a href="{{url('admin/savedoctor/0/1')}}" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Doctors')}}</a>
-                     {{-- <form action="{{ url('admin/doctor')}}" class="selectLang" >
-
-                        <select id="title"  class="form-control" required name="isArabic" onchange="fetch_select(this.value);"><i class="fa fa-language" aria-hidden="true"></i>
-                          
-                           <option > &#xf042;</option>
-                           <option value="0">English</option>
-                           <option value="1">Arabic</option>
-                           
-                        </select>
-                     
-                     </form> --}}
+                     <a href="savedoctor/0/1" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Doctors')}}</a>
+               
                   
                      </div>
                   <div class="table-responsive">
@@ -81,15 +71,18 @@
                            <td>{{$d->phone_no}}</td>
                            <td>
                               <div class="group">
-                                <a href="{{url('admin/savedoctor/').'/'.$d->id.'/1'}}" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
+
+                                <a href="savedoctor/{{ $d->id . '/1' }}"> <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
                               </div>
                               <div class="group">
-                                
-                                 <a href="javascript:deleterow('deletedoctor','<?= $d->id ?>')" >
+                                <form action="deletedoctor/{{  $d->id }}"  novalidate="novalidate"  method="POST"  > 
+                                {{csrf_field()}}
+                                 <button class='btn btn-default' type='submit' value='submit'>
                                    <i class='fa fa-trash fa-lg'></i>
-                                 </a>
-                               
+                                 </button>
+                                </form>
                               </div>
+                             
                            </td>
                         </tr>
                         @endforeach
@@ -104,24 +97,3 @@
    </div>
 </div>
 @stop
-
-{{-- <script src="http://code.jquery.com/jquery-latest.min.js"
-        type="text/javascript"></script>
-        <script type="text/javascript">
-        function fetch_select (val){
-         
-         
-            $.ajax({
-               headers: {
-                    'X-CSRF-Token': token 
-               },
-                type: 'post',
-                url: '/admin/doctor',
-                datatype:'json',
-                data: { option:val },
-                success: function (response) {
-                    alert(response);
-                }
-            });
-        }
-    </script> --}}

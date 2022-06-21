@@ -55,7 +55,7 @@
                     
                   </ul>
                   <div class="tab-content pl-3 p-1" id="myTabContent">
-                        <form action="admin/updatedoctorprofile" method="post"  enctype="multipart/form-data">
+                        <form action="/<?php echo e(Session::get('locale')); ?>/admin/updatedoctorprofile" method="post"  enctype="multipart/form-data">
                            <?php echo e(csrf_field()); ?>
 
                            <input type="hidden" name="id" id="id" value="<?php echo e($doctor_id); ?>"/>
