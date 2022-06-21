@@ -11,9 +11,10 @@ use App\Http\Controllers\UploadController;
 class WomenEmpowermentController extends UploadController
 {
   
-    public function index()
+    public function index(Request $request)
     {
-        $data  = WomenEmpowerment::all();
+        $segment = $request->segment(1);
+        $data  = WomenEmpowerment::where('lang',$segment)->get();
         return view("admin.women.default")->with("data",$data);
     }
 
@@ -24,6 +25,7 @@ class WomenEmpowermentController extends UploadController
 
     public function store(Request $request)
     {
+        $segment = $request->segment(1);
         $mediaUpload = "";
        
         if ($img = $request->hasFile('featured_img')) {
@@ -39,21 +41,23 @@ class WomenEmpowermentController extends UploadController
         if($mediaUpload){
             $data['featured_img'] = $mediaUpload;
         }
-     
+        $data['lang'] = $segment;
        
         $create = WomenEmpowerment::create($data);
         return redirect("admin/women");
     }
 
  
-    public function edit(WomenEmpowerment $womenEmpowerment,$slug)
+    public function edit(Request $request)
     {
+        $slug = $request->segment(4);
         $data = WomenEmpowerment::where('slug',$slug)->first();
         return view('admin.women.save')->with('data', $data);
     }
 
-    public function update(Request $request, WomenEmpowerment $womenEmpowerment,$slug)
+    public function update(Request $request)
     {
+        $slug = $request->segment(4);
          $mediaUpload = "";
        
         if ($img = $request->hasFile('featured_img')) {
@@ -78,72 +82,6 @@ class WomenEmpowermentController extends UploadController
 
 
 
-<<<<<<< HEAD
-=======
-    // Home Section
-    public function all()
-    {
-        $data  = Home::all();
-        return view("admin.home.default")->with("data",$data);
-    }
-
-    public function homeCreate()
-    {
-        return view("admin.home.add");
-    }
-
-    public function homeStore(Request $request)
-    {
-        $mediaUpload = "";
-       
-        if ($img = $request->hasFile('featured_img')) {
-               
-           $media =  UploadController::upload_media($request->featured_img);
-           $mediaUpload = $media['url'];
-
-        }
-       
-       
-        $data  =$request->all();
-        
-        if($mediaUpload){
-            $data['featured_img'] = $mediaUpload;
-        }
-     
-       
-        $create = Home::create($data);
-        return redirect("admin/home");
-    }
-
- 
-    public function homeEdit($slug)
-    {
-        $data = Home::where('slug',$slug)->first();
-        return view('admin.home.save')->with('data', $data);
-    }
-
-    public function homeUpdate(Request $request, $slug)
-    {
-         $mediaUpload = "";
-       
-        if ($img = $request->hasFile('featured_img')) {
-               
-           $media =  UploadController::upload_media($request->featured_img);
-           $mediaUpload = $media['url'];
-
-        }
-       
-       
-        $data  =$request->except('_token');
-        
-        if($mediaUpload){
-            $data['featured_img'] = $mediaUpload;
-        }
-     
-       
-        $create = Home::where('slug',$slug)->update($data);
-        return redirect("admin/home");
-    }
->>>>>>> 9bbc82386610b5adabf885f7235e8a266bb33d8e
+    
 
 }

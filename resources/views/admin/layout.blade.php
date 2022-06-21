@@ -56,14 +56,18 @@
                     aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="{{ url('admin/dashboard') }}">{{ __('messages.Admin') }}</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            >
+                            <img class="user-avatar rounded-circle" src="{{ asset('front/img/logo.png') }}"
+                                alt="User Avatar">
+                    </a>
                 <a class="navbar-brand hidden"
                     href="{{ url('admin/dashboard') }}">{{ __('messages.shortcode') }}</a>
             </div>
             <div id="main-menu" class="main-menu collapse navbar-collapse admin-main-menu">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="{{ url('admin/dashboard') }}"> <i
+                        <a href="admin/dashboard"> <i
                                 class="menu-icon fa fa-dashboard"></i>{{ __('messages.Dashboard') }} </a>
                     </li>
                     <li class="active">
@@ -71,7 +75,7 @@
                                 class="menu-icon fa fa-calendar"></i>{{ __('messages.Appointment') }}</a>
                     </li>
                     <li class="active">
-                        <a href="{{ url('admin/doctor') }}"> <i
+                        <a href="doctor"> <i
                                 class="menu-icon fa fa-user-md"></i>{{ __('messages.Doctors') }}</a>
                     </li>
                     <li class="active">
@@ -87,7 +91,7 @@
                                 class="menu-icon fa  fa-newspaper-o"></i>{{ __('messages.Workshop') }}</a>
                     </li>
                     <li class="active">
-                        <a href="{{ url('admin/department') }}"> <i
+                        <a href="admin/department"> <i
                                 class="menu-icon fa fa-eercast"></i>{{ __('messages.Department') }}</a>
                     </li>
                     <li class="active">
@@ -179,20 +183,34 @@
                     </div>
                 </div>
                 <div class="col-sm-5">
-                    <div class="user-area dropdown float-right">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="{{ asset('front/img/logo.png') }}"
-                                alt="User Avatar">
-                        </a>
-                        <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="{{ url('admin/editprofile') }}"><i
-                                    class="fa fa-user"></i> {{ __('messages.My Profile') }}</a>
-                            <a class="nav-link" href="{{ url('admin/changepassword') }}"><i
-                                    class="fa fa-user"></i> {{ __('messages.Change password') }}</a>
-                            <a class="nav-link" href="javascript:logout()"><i class="fa fa-power-off"></i>
-                                {{ __('messages.Logout') }}</a>
-                        </div>
+                    <div class="user-area dropdown">
+                      
+                        <ul class="navbar-nav first_nav_drop">
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Language <span class="caret"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item"  href="{{ url('en/admin/dashboard') }}">English</a>
+                                    <a class="dropdown-item" href="{{ url('ar/admin/dashboard') }}">Arabic</a>
+                                </div>
+                            </li>
+                        </ul>   
+                         <ul class="navbar-nav second_nav_drop">
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Profile <span class="caret"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                     <a class="nav-link" href="{{ url('admin/editprofile') }}"><i
+                                        class="fa fa-user"></i> {{ __('messages.My Profile') }}</a>
+                                    <a class="nav-link" href="{{ url('admin/changepassword') }}"><i
+                                            class="fa fa-user"></i> {{ __('messages.Change password') }}</a>
+                                    <a class="nav-link" href="javascript:logout()"><i class="fa fa-power-off"></i>
+                                        {{ __('messages.Logout') }}</a>
+                                </div>
+                            </li>
+
+                        </ul>                        
                     </div>
                 </div>
             </div>

@@ -97,7 +97,7 @@
 
                      <div class="form-group">
                         <label for="file" class=" form-control-label">  
-                        Banner Image<span class="reqfield" >*</span>
+                        {{ __('messages.Banner Image') }}<span class="reqfield" >*</span>
                         </label>
                         @if($department_id!=0)
                         <img src="{{$data->banner_image}}" class="imgsize1 departmentimg" style="width:50px;height:50px;"/> 

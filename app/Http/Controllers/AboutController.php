@@ -13,10 +13,10 @@ class AboutController  extends UploadController
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-       
-        $data  = About::all();
+        $segment = $request->segment(1);
+        $data  = About::where('lang',$segment)->get();
         return view("admin.about.default")->with("data",$data);
     }
 
@@ -38,6 +38,7 @@ class AboutController  extends UploadController
      */
     public function store(Request $request)
     {
+        $segment = $request->segment(1);
         $mediaUpload = "";
         $mediaUpload1 = "";
         $mediaUpload2 = "";
@@ -70,6 +71,7 @@ class AboutController  extends UploadController
         if($mediaUpload2){
             $data['featured_img'] = $mediaUpload2;
         }
+        $data['lang'] = $segment;
        
         $create = About::create($data);
         return redirect("admin/about");
@@ -92,8 +94,9 @@ class AboutController  extends UploadController
      * @param  \App\Model\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function edit(About $about,$slug)
+    public function edit(Request $request)
     {
+        $slug = $request->segment(4);
         $data = About::where('slug',$slug)->first();
         return view('admin.about.save')->with('data', $data);
     }
@@ -105,8 +108,9 @@ class AboutController  extends UploadController
      * @param  \App\Model\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, About $about,$slug)
+    public function update(Request $request)
     {
+        $slug = $request->segment(4);
         $mediaUpload = "";
         $mediaUpload1 = "";
         $mediaUpload2 = "";

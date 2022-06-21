@@ -18,28 +18,24 @@ use validate;
 class DoctorController extends UploadController
 {
  
-    public function index(){
-       
-        // if($request->option == 1){
-           
-        //     $data=Doctor::with('department')->where('isArabic','1')->get();
-           
-        //     return view("admin.doctor.default")->with("data",$data);
-        // }else{
-            
-            $data=Doctor::with('department')->get();
-            return view("admin.doctor.default")->with("data",$data);
-        // }
+    public function index(Request $request){
+        $segment = $request->segment(1);
+        $data=Doctor::with('department')->where('lang',$segment)->get();
+        
+        return view("admin.doctor.default")->with("data",$data);
     }
   
-    public function savedoctor($id,$tab_id){
-        $department=Department::all();
-        $data=Doctor::find($id);
-    
+    public function savedoctor( Request $request, $id){
+       
+        $segment = $request->segment(1);
+        $id = $request->segment(4);
+        $department=Department::where('lang',$segment)->get();
+        $data=Doctor::where('lang',$segment)->where('id',$id)->first();
         return view("admin.doctor.savedoctor")->with("doctor_id",$id)->with("department",$department)->with("data",$data);
     }
 
     public function updatedoctorprofile(Request $request){
+            $segment = $request->segment(1);
         
             $setting=Setting::find(1);
             if($request->get("id")!="0"){
@@ -90,6 +86,7 @@ class DoctorController extends UploadController
             $store->designation = $request->get("designation");
             $store->excerpt = $request->get("excerpt");
             $store->slug = $request->get("slug");
+            $store->lang = $segment;
             $store->short_description=$request->get("short_description");
              if($mediaUpload){
                     $store->image = $mediaUpload;

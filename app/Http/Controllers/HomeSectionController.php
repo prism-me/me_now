@@ -9,10 +9,10 @@ use App\Http\Controllers\UploadController;
 
 class HomeSectionController extends  UploadController
 {
-     public function index()
+     public function index(Request $request)
     {
-        
-        $data  = Home::all();
+        $segment = $request->segment(1);
+        $data  = Home::where('lang',$segment)->get();
         return view("admin.home.default")->with("data",$data);
     }
 
@@ -23,6 +23,7 @@ class HomeSectionController extends  UploadController
 
     public function store(Request $request)
     {
+        $segment = $request->segment(1);
         $mediaUpload = "";
        
         if ($img = $request->hasFile('featured_img')) {
@@ -38,6 +39,7 @@ class HomeSectionController extends  UploadController
         if($mediaUpload){
             $data['featured_img'] = $mediaUpload;
         }
+        $data['lang'] = $segment;
      
        
         $create = Home::create($data);
@@ -45,14 +47,16 @@ class HomeSectionController extends  UploadController
     }
 
  
-    public function edit(Home $Home,$slug)
+    public function edit(Request $request)
     {
+        $slug = $request->segment(4);
         $data = Home::where('slug',$slug)->first();
         return view('admin.home.save')->with('data', $data);
     }
 
-    public function update(Request $request, Home $Home,$slug)
+    public function update(Request $request)
     {
+        $slug = $request->segment(4);
          $mediaUpload = "";
        
         if ($img = $request->hasFile('featured_img')) {

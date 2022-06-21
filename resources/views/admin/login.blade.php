@@ -54,7 +54,7 @@
                      </div>
                      @endif
                   </div>
-                  <form action="{{url('admin/postlogin')}}" method="post">
+                  <form action="admin/postlogin" method="post">
                      {{csrf_field()}}      
                      <input type="hidden" name="type" value="{{$type}}"/>         
                      <div class="form-group">

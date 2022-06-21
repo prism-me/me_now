@@ -50,7 +50,7 @@ class HomeController extends Controller
     }
 
     public function postlogin(Request $request){
-        dd('h');
+       
         if($request->get("type")=='2'){
             $checkuser=User::where("email",$request->get("email"))->where("password",$request->get("password"))->where("usertype",'2')->first();
         }
@@ -74,7 +74,9 @@ class HomeController extends Controller
                if($request->get("type")=='2'){
                    Session::put("profile_pic",asset("public/upload/profile").'/'.$checkuser->profile_pic);
                    Session::put("profile_pic_path","/profile/".$checkuser->profile_pic);
-                    return redirect("admin/dashboard");
+                    $lang = session()->get('locale');
+                 
+                    return redirect($lang."/admin/dashboard");
                }else{
                  $doctor=Doctor::where("user_id",Auth::id())->first();
 

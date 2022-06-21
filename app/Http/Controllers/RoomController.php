@@ -12,11 +12,10 @@ class RoomController extends UploadController
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-      
-        $room = Room::all();
-       
+        $segment = $request->segment(1);
+        $room = Room::where('lang',$segment)->get();
         return view("admin.room.default")->with("data",$room);
     }
 
@@ -38,7 +37,7 @@ class RoomController extends UploadController
      */
     public function store(Request $request)
     {
-      
+        $segment = $request->segment(1);
         $mediaUpload = "";
         $mediaUpload1 = "";
         $mediaUpload2 = "";
@@ -102,6 +101,7 @@ class RoomController extends UploadController
         if($mediaUpload4){
             $data['featured_img2'] =$mediaUpload4;
         }
+        $data['lang'] = $segment;
         $roomCreate = Room::create($data);
         return redirect("admin/rooms");
     }
@@ -112,8 +112,9 @@ class RoomController extends UploadController
      * @param  \App\Room  $room
      * @return \Illuminate\Http\Response
      */
-    public function show( $slug)
+    public function show(Request $request)
     {
+        $segment = $request->segment(4);
         $data = Room::where('slug',$slug)->first();
         return view('admin.room.show')->with('data', $data);
     }
@@ -124,8 +125,9 @@ class RoomController extends UploadController
      * @param  \App\Room  $room
      * @return \Illuminate\Http\Response
      */
-    public function edit($slug)
+    public function edit(Request $request)
     {
+        $slug = $request->segment(4);
         $data = Room::where('slug',$slug)->first();
         return view('admin.room.save')->with('data', $data);
     }
@@ -137,8 +139,9 @@ class RoomController extends UploadController
      * @param  \App\Room  $room
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,  $slug)
+    public function update(Request $request)
     {
+        $slug = $request->segment(4);
         $mediaUpload = "";
         $mediaUpload1 = "";
         $mediaUpload2 = "";
@@ -208,8 +211,9 @@ class RoomController extends UploadController
      * @param  \App\Room  $room
      * @return \Illuminate\Http\Response
      */
-    public function delete( $slug)
+    public function delete( Request $request)
     {   
+        $slug = $request->segment(4);
 
         $room = Room::where('slug',$slug)->delete();
          return redirect("admin/rooms");

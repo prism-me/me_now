@@ -70,7 +70,8 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'admincheckexiste' => \App\Http\Middleware\admincheckexiste::class,
         'Doctorcheck' => \App\Http\Middleware\Doctorcheck::class,
-        'setLocale' =>      \App\Http\Middleware\Localization::class, 
+        'setLocale' =>      \App\Http\Middleware\Localization::class,
+        'setAdminLocale' =>      \App\Http\Middleware\AdminLocalization::class, 
        
     ];
 }

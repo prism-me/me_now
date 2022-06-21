@@ -16,13 +16,15 @@ use validate;
 class DepartmentController extends UploadController
 {
  
-    public function index(){
-         $department=Department::all();
-         return view("admin.department.default")->with("data",$department);
+    public function index(Request $request){
+        $segment = $request->segment(1);
+        $department=Department::where('lang',$segment)->get();
+        return view("admin.department.default")->with("data",$department);
     }
 
-    public function saveddepartment($id){
-        $data=Department::find($id);
+    public function saveddepartment(Request $request){
+        $id = $request->segment(4);
+        $data=Department::where('id',$id)->first();
         return view("admin.department.savedepartment")->with("data",$data)->with("department_id",$id);
     }
 

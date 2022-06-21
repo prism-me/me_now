@@ -15,10 +15,10 @@
       <div class="page-header float-right">
          <div class="page-title">
             <ol class="breadcrumb text-right">
-               <li class="active">{{__('messages.Dashboard')}}</li>
+                    
             </ol>
          </div>
-      </div>
+         </div>
    </div>
 </div>
 <div class="content mt-3">

@@ -510,5 +510,6 @@ return [
 		"Book Now" => "Book Now",
 		"Workshop Date" => "Workshop Date",
 		"Select Date and Time" => "Select Date and Time",
+		"Doctor designation" => "Doctor designation",
 
 	];

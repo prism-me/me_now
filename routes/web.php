@@ -94,13 +94,14 @@ use App\Http\Controllers\LanguageController;
 
     });
 
-    Route::group(['prefix' => 'admin'], function () {
+    Route::group(['prefix' => '{locale}', 'middleware' => 'setAdminLocale'], function () {
         
-        Route::get("/","HomeController@showlogin");
-        Route::post("postlogin","HomeController@postlogin");
+        Route::group(['prefix' => 'admin'], function () {        
+            Route::get("/","HomeController@showlogin");
+            Route::post("postlogin","HomeController@postlogin");
 
-        Route::group(['middleware' => ['admincheckexiste']], function () {
-            
+        Route::group([ 'middleware' => 'admincheckexiste'], function () {
+
             Route::get("dashboard","HomeController@showdashboard")->name("dashboard");
             Route::get("logout","HomeController@logout");
             Route::get("settimezone/{time}","HomeController@settimezone");
@@ -239,6 +240,7 @@ use App\Http\Controllers\LanguageController;
             
 
         });
+        });
 
     });
 
@@ -250,6 +252,3 @@ use App\Http\Controllers\LanguageController;
 
 //     Route::get('article/{id}', 'HomeController@article')->name('article');
 // });
-
-
-

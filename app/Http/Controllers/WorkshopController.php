@@ -13,10 +13,10 @@ class WorkshopController extends UploadController
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-
-        $workshop = Workshop::all();
+        $segment = $request->segment(1);
+        $workshop = Workshop::where('lang',$segment)->get();
         return view("admin.workshop.default")->with("data",$workshop);
     }
 
@@ -39,7 +39,7 @@ class WorkshopController extends UploadController
      */
     public function store(Request $request)
     {
-       
+        $segment = $request->segment(1);
         $mediaUpload = "";
         $mediaUpload1 = "";
 
@@ -88,8 +88,9 @@ class WorkshopController extends UploadController
      * @param  \App\Workshop  $workshop
      * @return \Illuminate\Http\Response
      */
-    public function edit(Workshop $workshop,$slug)
+    public function edit(Request $request,Workshop $workshop,$slug)
     {
+        $slug = $request->segment(4);
         $doctor  = Doctor::all();
         $data = Workshop::where('slug',$slug)->first();
         return view('admin.workshop.saveWorkshop')->with('data', $data)->with('doctor', $doctor);
@@ -102,8 +103,9 @@ class WorkshopController extends UploadController
      * @param  \App\Workshop  $workshop
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Workshop $workshop , $slug)
-    {  
+    public function update(Request $request,Workshop $workshop)
+    {
+        $slug = $request->segment(4);
        
         $mediaUpload = "";
         $mediaUpload1 = "";
@@ -139,8 +141,9 @@ class WorkshopController extends UploadController
      * @param  \App\Workshop  $workshop
      * @return \Illuminate\Http\Response
      */
-    public function delete(Workshop $workshop,$slug)
-    {   
+    public function delete(Request $request)
+    {
+        $slug = $request->segment(4);
 
         $blog = Workshop::where('slug',$slug)->delete();
          return redirect("admin/workshops");
