@@ -24,7 +24,7 @@
 
     
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <?php if(isset($setting->is_rtl) && $setting->is_rtl == '0'): ?>
+    <?php if(Session::get('locale') == 'ar'): ?>
         <link rel="stylesheet" type="text/css" href="<?php echo e(asset('front/css/rtl-style.css?v=5r12')); ?>">
     <?php else: ?>
         <link rel="stylesheet" type="text/css" href="<?php echo e(asset('front/css/style.css?v=45d')); ?>">
@@ -67,77 +67,85 @@
                         &#9776;
                     </button>
                     <div class="collapse navbar-collapse navbar-toggleable-sm" id="CollapsingNavbar">
-                        <ul class="nav navbar-nav ml-auto">
-                            
-                            <li class="nav-item">
-                                <a class="nav-link" href="about-us"><?php echo e(__('messages.About')); ?></a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"><?php echo e(__('messages.Services')); ?></a>
-                                <ul class="dropdown-menu services-dropdown">
+                        <?php if(Session::get('locale') == 'ar'): ?>
+                            <ul class="nav navbar-nav mr-auto">
+                            <?php else: ?>
+                                <ul class="nav navbar-nav ml-auto">
+                        <?php endif; ?>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="about-us"><?php echo e(__('messages.About')); ?></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#"
+                                data-toggle="dropdown"><?php echo e(__('messages.Services')); ?></a>
+                            <ul class="dropdown-menu services-dropdown">
 
 
-                                    <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $departments): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                        <li><a class="dropdown-item"
-                                                href="<?php echo e(url('services') . '/' . $departments->slug); ?>">
-                                                <?php echo e($departments->name); ?> </a>
+                                <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $departments): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <li><a class="dropdown-item"
+                                            href="<?php echo e(url('services') . '/' . $departments->slug); ?>">
+                                            <?php echo e($departments->name); ?> </a>
 
-                                            <?php if(!blank($departments->service)): ?>
-                                                <ul class="submenu dropdown-menu">
-                                                    <?php $__currentLoopData = $departments->service; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $subdepartment): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <li><a class="dropdown-item"
-                                                                href="<?php echo e(url('services') . '/' . $departments->slug . '/' . $subdepartment->slug); ?>">
-                                                                <?php echo e($subdepartment->name); ?></a>
-                                                        </li>
-                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                                </ul>
-                                            <?php endif; ?>
-                                        </li>
-                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                    <?php $__currentLoopData = $rooms; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $room): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                        <li><a class="dropdown-item" href="<?php echo e(url('rooms') . '/' . $room->slug); ?>">
-                                                <?php echo e($room->title); ?> </a>
-                                        </li>
-                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        <?php if(!blank($departments->service)): ?>
+                                            <ul class="submenu dropdown-menu">
+                                                <?php $__currentLoopData = $departments->service; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $subdepartment): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <li><a class="dropdown-item"
+                                                            href="<?php echo e(url('services') . '/' . $departments->slug . '/' . $subdepartment->slug); ?>">
+                                                            <?php echo e($subdepartment->name); ?></a>
+                                                    </li>
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                            </ul>
+                                        <?php endif; ?>
+                                    </li>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                <?php $__currentLoopData = $rooms; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $room): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <li><a class="dropdown-item" href="<?php echo e(url('rooms') . '/' . $room->slug); ?>">
+                                            <?php echo e($room->title); ?> </a>
+                                    </li>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?php echo e(url('doctorlist')); ?>"><?php echo e(__('messages.Our Team')); ?></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link"
-                                    href="<?php echo e(url('workshop')); ?>"><?php echo e(trans('messages.Workshops')); ?></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?php echo e(url('events')); ?>"><?php echo e(__('messages.Events')); ?></a>
-                            </li>
-                            
-                            <li class="nav-item">
-                                <a class="nav-link"
-                                    href="women-empowerment"><?php echo e(__('messages.Women Empowerment')); ?></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link"
-                                    href="<?php echo e(url('special-membership-for-women')); ?>"><?php echo e(__('messages.Become a Member')); ?></a>
-                            </li>
-                            <li class="nav-item book-now-nav">
-                                <a class="nav-link btn-hover color-9"
-                                    style="color:white !important; width: 132px;padding: 0.5rem !important;"
-                                    href="#" data-toggle="modal"
-                                    data-target="#appointmentModal"><?php echo e(__('messages.Book Now')); ?></a>
-                            </li>
-                            <ul class="navbar-nav ml-auto">
-                                <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        <?php echo e(__('messages.Language')); ?> <span class="caret"></span>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item"  href="<?php echo e(url('en')); ?>"><?php echo e(__('messages.English')); ?></a>
-                                        <a class="dropdown-item" href="<?php echo e(url('ar')); ?>"><?php echo e(__('messages.Arabic')); ?></a>
-                                    </div>
-                                </li>
                             </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo e(url('doctorlist')); ?>"><?php echo e(__('messages.Our Team')); ?></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                href="<?php echo e(url('workshop')); ?>"><?php echo e(trans('messages.Workshops')); ?></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo e(url('events')); ?>"><?php echo e(__('messages.Events')); ?></a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="women-empowerment"><?php echo e(__('messages.Women Empowerment')); ?></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                href="<?php echo e(url('special-membership-for-women')); ?>"><?php echo e(__('messages.Become a Member')); ?></a>
+                        </li>
+                        <li class="nav-item book-now-nav">
+                            <a class="nav-link btn-hover color-9"
+                                style="color:white !important; width: 132px;padding: 0.5rem !important;"
+                                href="#" data-toggle="modal"
+                                data-target="#appointmentModal"><?php echo e(__('messages.Book Now')); ?></a>
+                        </li>
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"
+                                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    v-pre>
+                                    <?php echo e(__('messages.Language')); ?> <span class="caret"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item"
+                                        href="<?php echo e(url('en')); ?>"><?php echo e(__('messages.English')); ?></a>
+                                    <a class="dropdown-item"
+                                        href="<?php echo e(url('ar')); ?>"><?php echo e(__('messages.Arabic')); ?></a>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </nav>
             </div>
@@ -261,7 +269,9 @@
                                     
                                     
                                     <p>
-                                      <?php echo e(__('messages.With the goal of de-stigmatizing mental illness and providing patients with a variety of treatment options, we re a group of compassionate, dedicated, and experienced practitioners who want nothing more than to see a different you walk out the door after working with us.')); ?>                                    </p>
+                                        <?php echo e(__('messages.With the goal of de-stigmatizing mental illness and providing patients with a variety of treatment options, we re a group of compassionate, dedicated, and experienced practitioners who want nothing more than to see a different you walk out the door after working with us.')); ?>
+
+                                    </p>
                                 </div>
                                 <div class="footer-d1-box">
                                     <h3><?php echo e(__('messages.Contact Us')); ?></h3>
@@ -287,7 +297,7 @@
                                             <?php if($i < 5): ?>
                                                 <a href="services/<?php echo e($d->slug); ?>"><?php echo e($d->name); ?>
 
-                                                    </a>
+                                                </a>
                                                 <?php $i++; ?>
                                             <?php endif; ?>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -297,7 +307,7 @@
                                                 <?php if($i < 5): ?>
                                                     <a href="<?php echo e(url('services') . '/' . $d->slug); ?>"><?php echo e($d->name); ?>
 
-                                                        </a>
+                                                    </a>
                                                     <?php $i++; ?>
                                                 <?php endif; ?>
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -335,7 +345,8 @@
                             <div class="footer-r1-detail">
                                 <div class="footer-d1-box">
                                     <h3><?php echo e(__('messages.Address')); ?></h3>
-                                    <p><a href="https://maps.app.goo.gl/4DJn6E47x4QUAW5S6"><?php echo e(__('messages.24-32 - 5 B St -Jumeirah -Jumeirah 1 - Dubai, UAE')); ?></a>
+                                    <p><a
+                                            href="https://maps.app.goo.gl/4DJn6E47x4QUAW5S6"><?php echo e(__('messages.24-32 - 5 B St -Jumeirah -Jumeirah 1 - Dubai, UAE')); ?></a>
                                     </p>
                                 </div>
                                 <div class="footer-d1-box">

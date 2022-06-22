@@ -148,4 +148,5 @@ return [
 	"Term & Condition" => "الشروط و الأحكام",
 	"Main Banner" => "لافتة رئيسية",
 	"Key Details" => "التفاصيل الرئيسية",
+	"See what our clients have to say about the Me Now Center and our mental health services" => "التفاتعرف على ما يقوله عملاؤنا عن مركز Me Now وخدمات الصحة العقلية التي نقدمها",
 ];
