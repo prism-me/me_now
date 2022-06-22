@@ -140,4 +140,12 @@ return [
 	"End Date" => "تاريخ الانتهاء",
 	"Search" => "يبحث",
 	"Reset" => "إعادة ضبط",
+	"Show" => "يعرض",
+	"entries" => "إدخالات",
+	"Previous" => "سابق",
+	"Next" => "التالي",
+	"Search" => "يبحث",
+	"Term & Condition" => "الشروط و الأحكام",
+	"Main Banner" => "لافتة رئيسية",
+	"Key Details" => "التفاصيل الرئيسية",
 ];
