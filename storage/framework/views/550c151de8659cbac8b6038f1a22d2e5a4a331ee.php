@@ -169,8 +169,8 @@
                                     Language <span class="caret"></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item"  href="<?php echo e(url('en/admin/dashboard')); ?>">English</a>
-                                    <a class="dropdown-item" href="<?php echo e(url('ar/admin/dashboard')); ?>">Arabic</a>
+                                    <a class="dropdown-item"  href="<?php echo e(url('en/admin/dashboard')); ?>"><?php echo e(__('messages.English')); ?></a>
+                                    <a class="dropdown-item" href="<?php echo e(url('ar/admin/dashboard')); ?>"><?php echo e(__('messages.Arabic')); ?></a>
                                 </div>
                             </li>
                         </ul>   

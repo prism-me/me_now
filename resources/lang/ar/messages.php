@@ -136,4 +136,8 @@ return [
 	"Me Now" => "مي ناو",
 	"All Right Reserved" => "جميع الحقوق محفوظة",
 	"Designed and Managed by Prism" => "تم التصميم والتطوير بواسطة بريسم",
+	"MeNow" => "مي ناو",
+	"End Date" => "تاريخ الانتهاء",
+	"Search" => "يبحث",
+	"Reset" => "إعادة ضبط",
 ];
