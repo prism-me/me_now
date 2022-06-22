@@ -153,18 +153,24 @@ class DepartmentController extends UploadController
           return redirect()->route('department',$segment);
     }
 
-    public function departmentservice($id){ 
+
+    
+
+    public function departmentservice(Request $request){ 
+        $id = $request->segment(4);
         $data=DepartService::where("department_id",$id)->get();      
         return view("admin.department.saveservice")->with("department_id",$id)->with("data",$data);
     }
 
-    public function savedepartmentservice($depart_id,$id){
-        
+    public function savedepartmentservice(Request $request,$id){
+        $id = $request->segment(5);
+        $depart_id = $request->segment(4);
         $data=DepartService::find($id);
         return view("admin.department.addservice")->with("departmentservice",$depart_id)->with("id",$id)->with("data",$data);
     }
 
     public function updatedepartmentservice(Request $request){
+        $segment = $request->segment(1);
         if($request->get("id")!="0"){
                 $request->validate([
                     'name' => 'required'
@@ -199,11 +205,12 @@ class DepartmentController extends UploadController
 
             $store->name=$request->get("name");
             $store->price=isset( $store->price ) ? $store->price : " " ;
-            $store->department_id= $request->get("depart_id");   
+            $store->department_id= $request->get("depart_id");  
             $store->price= isset( $request->get['price'] ) ? $request->get['price'] : " " ;
             $store->description= $request->get("description");
             $store->slug= $request->get("slug");
             $store->excerpt= $request->get("excerpt");
+            $store->lang= $segment;
             $store->short_description= $request->get("short_description");
             $store->price_for=isset( $request->get['price_for'] ) ? $request->get['price_for'] : " " ;
             
@@ -220,17 +227,13 @@ class DepartmentController extends UploadController
             $store->save(); 
             Session::flash('message',$msg); 
             Session::flash('alert-class', 'alert-success');
-            return redirect("admin/departmentservice/".$store->department_id);
+            return redirect()->route("departmentservice",[$segment,$store->department_id]);
     }
 
-    public function deletedepartmentservice($id){
+    public function deletedepartmentservice(Request $request){
+        $id = $request->segment('4');
          $data=DepartService::find($id);  
-         $appointment=Appointment::where("service_id",$id)->get();
-               if(count($appointment)>0){
-                    foreach ($appointment as $d) {
-                        $d->delete();//appointemnt delete
-                    }
-               }        
+         
          $data->delete();
          Session::flash('message',__('messages.Department Service Delete Successfully')); 
          Session::flash('alert-class', 'alert-success');

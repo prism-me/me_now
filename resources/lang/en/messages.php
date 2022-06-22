@@ -401,7 +401,6 @@ return [
 		"Expert doctors"=>"Expert doctors",
 		"World wide branch"=>"World wide branch",
 		"Meet Our Doctors"=>"Meet Our Doctors",
-		"Talent wins games, but teamwork and intelligence win championships"=>"Talent wins games, but teamwork and intelligence win championships",
 		"Patient Reviews"=>"Patient Reviews",
 		"Feedback is the breakfast of champions."=>"Feedback is the breakfast of champions.",
 		"About us"=>"About us",

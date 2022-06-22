@@ -115,10 +115,10 @@ use App\Http\Controllers\LanguageController;
                     Route::post("deletedepartment/{id}","DepartmentController@deletedepartment");
 
                     #Department service
-                    Route::get("departmentservice/{id}","DepartmentController@departmentservice");
+                    Route::get("departmentservice/{id}","DepartmentController@departmentservice")->name('departmentservice');
                     Route::get("savedepartmentservice/{dept_id}/{id}","DepartmentController@savedepartmentservice");
                     Route::post("updatedepartmentservice","DepartmentController@updatedepartmentservice");
-                    Route::get("deletedepartmentservice/{id}","DepartmentController@deletedepartmentservice");
+                    Route::post("deletedepartmentservice/{id}","DepartmentController@deletedepartmentservice");
 
                     #Doctor
                     Route::get("doctor","DoctorController@index")->name('doctor');
@@ -208,7 +208,9 @@ use App\Http\Controllers\LanguageController;
 
 
                     #FAQ
-                    Route::resource('faqs', 'FaqController');
+                    Route::get('faqs', 'FaqController@index')->name('faqs');
+                    Route::get('add-faq', 'FaqController@create');
+                    Route::post('create-faq', 'FaqController@store');
                     Route::get('edit-faq/{slug}', 'FaqController@edit');
                     Route::post('delete-faq/{slug}', 'FaqController@delete');
                     Route::post('update-faq/{slug}', 'FaqController@update');
@@ -216,11 +218,13 @@ use App\Http\Controllers\LanguageController;
 
 
                     #Events
-                    Route::resource('events', 'EventController');
+                    Route::get('events', 'EventController@index')->name('events');
+                    Route::get('add-event', 'EventController@create');
+                    Route::post('create-event', 'EventController@store');
                     Route::get('edit-event/{slug}', 'EventController@edit');
                     Route::post('delete-event/{slug}', 'EventController@destroy');
                     Route::post('update-event/{slug}', 'EventController@update');
-                    Route::get('show-event/{slug}', 'EventController@show');
+                  
 
                     #About Us
                     Route::get('about', 'AboutController@index')->name('about');

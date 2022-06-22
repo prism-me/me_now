@@ -36,7 +36,7 @@
                   </div>
                   @endif
                   <div>
-                     <a href="{{ URL::to('admin/faqs/create')}}" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Faq')}}</a>
+                     <a href="add-faq" class="btn btn-primary">{{__('messages.Add Faq')}}</a>
                   </div>
                   <div class="table-responsive">
                   <table id="service" class="table  table-striped table-bordered">
@@ -57,10 +57,10 @@
                            <td>{{  substr($d->description, 0,  50) }}...</td>
                            <td>
                               <div class="group">
-                                <a href="{{URL::to('admin/edit-faq') . '/' . $d->slug}}" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
+                                <a href="edit-faq/{{ $d->slug}}" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
                               </div>
                               <div class="group">
-                                <form action="{{ url('admin/delete-faq'.'/' . $d->slug)}}"  novalidate="novalidate"  method="POST"  > 
+                                <form action="delete-faq/{{  $d->slug }}"  novalidate="novalidate"  method="POST"  > 
                                 {{csrf_field()}}
                                  <button class='btn btn-default' type='submit' value='submit'>
                                    <i class='fa fa-trash fa-lg'></i>

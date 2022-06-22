@@ -12,9 +12,10 @@ class FaqController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $faq = Faq::all();
+        $segment = $request->segment(1);
+        $faq = Faq::where('lang', $segment)->get();
         return view("admin.faq.default")->with("data",$faq);
     }
 
@@ -37,8 +38,9 @@ class FaqController extends Controller
      */
     public function store(Request $request)
     {
+        $segment = $request->segment(1);
         $data  =$request->all();
-        
+        $data['lang'] = $segment;
         $create = Faq::create($data);
         $msg=__('messages.Faq Added Successfully');
         return redirect("admin/faqs");
@@ -61,9 +63,9 @@ class FaqController extends Controller
      * @param  \App\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function edit( $slug)
+    public function edit( Request $request)
     {
-       
+        $slug= $request->segment(4);
         $data = Faq::where('slug',$slug)->first();
         return view('admin.faq.save')->with('data', $data);
     }
@@ -75,13 +77,14 @@ class FaqController extends Controller
      * @param  \App\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $slug)
+    public function update(Request $request)
     {
+        $segment = $request->segment(1);
+        $slug = $request->segment(4);
         $data  =$request->except('_token');
-       
         $create = Faq::where('slug',$slug)->update($data);
         $msg=__('messages.Faq Updated Successfully');
-        return redirect("admin/faqs");
+        return redirect()->route("faqs",$segment);
     }
 
     /**
@@ -90,10 +93,12 @@ class FaqController extends Controller
      * @param  \App\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function delete($slug)
+    public function delete(Request $request)
     {
+        $segment = $request->segment(1);
+        $slug = $request->segment(4);
         $data = Faq::where('slug',$slug)->delete();
         $msg=__('messages.Faq Deleted Successfully');
-        return redirect("admin/faqs");
+         return redirect()->route("faqs",$segment);
     }
 }

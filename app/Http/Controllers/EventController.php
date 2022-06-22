@@ -12,9 +12,10 @@ class EventController extends  UploadController
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = Event::all();
+        $segment = $request->segment(1);
+        $data = Event::where('lang',$segment)->get();
         return view("admin.event.default")->with("data",$data);
     }
 
@@ -36,7 +37,7 @@ class EventController extends  UploadController
      */
     public function store(Request $request)
     {
-        
+        $segment = $request->segment(1);
         $mediaUpload = "";
         $mediaUpload1 = "";
         if ($img = $request->hasFile('banner_img')) {
@@ -58,8 +59,9 @@ class EventController extends  UploadController
         if($mediaUpload1){
             $data['thumbnail_img'] = $mediaUpload1;
         }
+        $data['lang'] = $segment;
         $eventCreate = Event::create($data);
-        return redirect("admin/events");
+        return redirect()->route("events",$segment);
     }
 
     /**
@@ -68,8 +70,9 @@ class EventController extends  UploadController
      * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show(Request $request)
     {
+        $slug = $request->segment(4);
         $data = Event::where('slug',$slug)->first();
         return view('admin.event.show')->with('data', $data);
     }
@@ -80,8 +83,9 @@ class EventController extends  UploadController
      * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function edit($slug)
+    public function edit(Request $request)
     {
+        $slug = $request->segment(4);
         $data = Event::where('slug',$slug)->first();
         return view('admin.event.save')->with('data', $data);
     }
@@ -93,8 +97,10 @@ class EventController extends  UploadController
      * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$slug)
+    public function update(Request $request)
     {
+        $slug = $request->segment(4);
+        $segment = $request->segment(1);
         $mediaUpload = "";
         $mediaUpload1 = "";
         if ($img = $request->hasFile('banner_img')) {
@@ -117,7 +123,7 @@ class EventController extends  UploadController
             $data['thumbnail_img'] = $mediaUpload1;
         }
         $eventCreate = Event::where('slug',$slug)->update($data);
-        return redirect("admin/events");
+        return redirect()->route("events",$segment);
     }
 
     /**
@@ -126,11 +132,13 @@ class EventController extends  UploadController
      * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function destroy($slug)
-    {   
+    public function destroy(Request $request)
+    {
+        $slug = $request->segment(4);
+        $segment = $request->segment(1);
 
         $event = Event::where('slug',$slug)->delete();
-        return redirect("admin/events");
+        return redirect()->route("events",$segment);
       
         
     }

@@ -37,7 +37,7 @@
                   </div>
                   @endif
                   <div>
-                     <a href="{{url('admin/savedepartmentservice/').'/'.$department_id.'/0'}}" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Department Service')}}s</a>
+                     <a href="/{{Session::get('locale')}}/admin/savedepartmentservice/{{$department_id.'/0'}}" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Department Service')}}</a>
                   </div>
                   <div class="table-responsive">
                   <table id="service" class="table  table-striped table-bordered">
@@ -61,12 +61,18 @@
                            <td>{{ substr($d->short_description,0,50)}}..</td>
                            <td>
                               <div class="group">
-                                <a href="{{url('admin/savedepartmentservice/').'/'.$d->department_id.'/'.$d->id}}" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
+                                <a href="/{{Session::get('locale')}}/admin/savedepartmentservice/{{ $d->department_id.'/'.$d->id}}" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
                               </div>
                               <div class="group">
-                                <a href="javascript:deleterow('deletedepartmentservice','<?= $d->id ?>')">
+                                 <div class="group">
+                                <form action="/{{Session::get('locale')}}/admin/deletedepartmentservice/{{  $d->id }}"  novalidate="novalidate"  method="POST"  > 
+                                {{csrf_field()}}
+                                 <button class='btn btn-default' type='submit' value='submit'>
                                    <i class='fa fa-trash fa-lg'></i>
-                                </a>
+                                 </button>
+                                </form>
+                              </div>
+                               
                               
                               </div>
                            </td>

@@ -39,7 +39,7 @@
                   </div>
                   <?php endif; ?>
                   <div>
-                     <a href="<?php echo e(url('admin/savedepartmentservice/').'/'.$department_id.'/0'); ?>" class="btn btn-primary"><?php echo e(__('messages.Add').' '.__('messages.Department Service')); ?>s</a>
+                     <a href="/<?php echo e(Session::get('locale')); ?>/admin/savedepartmentservice/<?php echo e($department_id.'/0'); ?>" class="btn btn-primary"><?php echo e(__('messages.Add').' '.__('messages.Department Service')); ?></a>
                   </div>
                   <div class="table-responsive">
                   <table id="service" class="table  table-striped table-bordered">
@@ -63,12 +63,19 @@
                            <td><?php echo e(substr($d->short_description,0,50)); ?>..</td>
                            <td>
                               <div class="group">
-                                <a href="<?php echo e(url('admin/savedepartmentservice/').'/'.$d->department_id.'/'.$d->id); ?>" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
+                                <a href="/<?php echo e(Session::get('locale')); ?>/admin/savedepartmentservice/<?php echo e($d->department_id.'/'.$d->id); ?>" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
                               </div>
                               <div class="group">
-                                <a href="javascript:deleterow('deletedepartmentservice','<?= $d->id ?>')">
+                                 <div class="group">
+                                <form action="/<?php echo e(Session::get('locale')); ?>/admin/deletedepartmentservice/<?php echo e($d->id); ?>"  novalidate="novalidate"  method="POST"  > 
+                                <?php echo e(csrf_field()); ?>
+
+                                 <button class='btn btn-default' type='submit' value='submit'>
                                    <i class='fa fa-trash fa-lg'></i>
-                                </a>
+                                 </button>
+                                </form>
+                              </div>
+                               
                               
                               </div>
                            </td>

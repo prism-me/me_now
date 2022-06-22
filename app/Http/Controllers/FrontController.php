@@ -188,16 +188,17 @@ class FrontController extends Controller
         return view("front.events")->with('doctor',$doctor)->with('rooms',$rooms)->with("setting",$setting)->with("department",$department)->with("events",$events);
     }
 
-    public function faqs(){
+    public function faqs(Request $request){
+        $segment = $request->segment(1);
         if(!isset($_COOKIE['fload'])){
             setcookie('fload','1', time() + (86400 * 30), "/");
          }
-         $faqs = Faq::all();
-         $rooms = Room::get()->take(3);
+         $faqs = Faq::where('lang',$segment)->get();
+         $rooms = Room::where('lang',$segment)->get()->take(3);
          $service=Service::get()->take(8);
          $package=Package::get()->take(3);
-         $doctor=Doctor::get()->take(4);
-         $department=Department::with('service')->get();
+         $doctor=Doctor::where('lang',$segment)->get()->take(4);
+         $department=Department::with('service')->where('lang',$segment)->get();
          $setting=Setting::find(1);
          $reviews=Review::with('doctors','users')->get()->take(4);
          return view("front.faqs")->with('rooms',$rooms)->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with('faqs',$faqs);
