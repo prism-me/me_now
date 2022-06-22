@@ -46,7 +46,7 @@
                      </ul>
                   </div>
                   @endif                              
-                  <form action="{{url('admin/updatedepartment')}}" method="post" novalidate="novalidate" enctype="multipart/form-data">
+                  <form action="/{{Session::get('locale')}}/admin/updatedepartment" method="post" novalidate="novalidate" enctype="multipart/form-data">
                      {{csrf_field()}}
                      <input type="hidden" name="id" id="id" value="{{$department_id}}"/>
                      <input type="hidden" name="real_image" id="real_image" value="{{ isset($data->image)?$data->image:''}}"/>

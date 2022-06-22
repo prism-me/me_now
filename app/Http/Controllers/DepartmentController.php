@@ -29,6 +29,7 @@ class DepartmentController extends UploadController
     }
 
     public function updatedepartment(Request $request){
+          $segment = $request->segment(1);
              if($request->get("id")!="0"){
                 $request->validate([
                     'name' => 'required',
@@ -65,6 +66,7 @@ class DepartmentController extends UploadController
             }
 
             $store->name=$request->get("name");
+            $store->lang=$segment;
             $store->description=$request->get("description");
             $store->short_description=$request->get("short_description");
             $store->slug=$request->get("slug");
@@ -80,69 +82,75 @@ class DepartmentController extends UploadController
             $store->save(); 
             Session::flash('message',$msg); 
             Session::flash('alert-class', 'alert-success');
-            return redirect("admin/department");
+             return redirect()->route('department',$segment);
     }
 
-    public function deletedepartment($id){
-          $data=Department::find($id);
-          if($data){
-               $departser=DepartService::where("department_id",$id)->get();
-               if(count($departser)>0){
-                    foreach ($departser as $d) {
-                        $d->delete();//delete department service
-                    }
-               }
-               $deletedoc=Doctor::where("department_id",$id)->get();
-               if(count($deletedoc)>0){
-                  foreach ($deletedoc as $k) {
-                     $deletereview=Review::where("doctor_id",$k->id)->get();
-                     if(count($deletereview)>0){
-                        foreach ($deletereview as $d) {
-                              $d->delete();//delete doctor review
-                        }
-                     }
-                     $gettimetable=TimeTable::where("doctor_id",$k->id)->get();
-                     if(count($gettimetable)>0){
-                        foreach ($gettimetable as $d) {
-                              $d->delete();//delete doctor working hour
-                        }
-                     }
-                     $removetoken=Token::where("doctor_id",$k->id)->get();
-                     if(count($removetoken)>0){
-                        foreach ($removetoken as $d) {
-                              $d->delete();//delete doctor token
-                        }
-                     }
-                     $image_path = public_path() ."/upload/doctor/".$k->image;
-                      if(file_exists($image_path)) {
-                            try {
-                                   unlink($image_path);//delete doctor pic
-                            }
-                            catch(Exception $e) {
-                            }                        
-                      }
-                        $k->delete();//delete doctor
-                    }
-               }
-               $appointment=Appointment::where("department_id",$id)->get();
-               if(count($appointment)>0){
-                    foreach ($appointment as $d) {
-                        $d->delete();//appointemnt delete
-                    }
-               }
-              $image_path = public_path() ."/upload/department/".$data->image;
-              if(file_exists($image_path)) {
-                    try {
-                           unlink($image_path);//department image delete
-                    }
-                    catch(Exception $e) {
-                    }                        
-              }
-              $data->delete();//department delete
-          }          
+    public function deletedepartment(Request $request){
+        $id = $request->segment('4');
+        $segment = $request->segment('1');
+        $data=Department::where('id',$id)->first();
+        if($data){
+        $data->delete();
+        }
+        //   $data=Department::find($id);
+        //   if($data){
+        //        $departser=DepartService::where("department_id",$id)->get();
+        //        if(count($departser)>0){
+        //             foreach ($departser as $d) {
+        //                 $d->delete();//delete department service
+        //             }
+        //        }
+        //        $deletedoc=Doctor::where("department_id",$id)->get();
+        //        if(count($deletedoc)>0){
+        //           foreach ($deletedoc as $k) {
+        //              $deletereview=Review::where("doctor_id",$k->id)->get();
+        //              if(count($deletereview)>0){
+        //                 foreach ($deletereview as $d) {
+        //                       $d->delete();//delete doctor review
+        //                 }
+        //              }
+        //              $gettimetable=TimeTable::where("doctor_id",$k->id)->get();
+        //              if(count($gettimetable)>0){
+        //                 foreach ($gettimetable as $d) {
+        //                       $d->delete();//delete doctor working hour
+        //                 }
+        //              }
+        //              $removetoken=Token::where("doctor_id",$k->id)->get();
+        //              if(count($removetoken)>0){
+        //                 foreach ($removetoken as $d) {
+        //                       $d->delete();//delete doctor token
+        //                 }
+        //              }
+        //              $image_path = public_path() ."/upload/doctor/".$k->image;
+        //               if(file_exists($image_path)) {
+        //                     try {
+        //                            unlink($image_path);//delete doctor pic
+        //                     }
+        //                     catch(Exception $e) {
+        //                     }                        
+        //               }
+        //                 $k->delete();//delete doctor
+        //             }
+        //        }
+        //        $appointment=Appointment::where("department_id",$id)->get();
+        //        if(count($appointment)>0){
+        //             foreach ($appointment as $d) {
+        //                 $d->delete();//appointemnt delete
+        //             }
+        //        }
+        //       $image_path = public_path() ."/upload/department/".$data->image;
+        //       if(file_exists($image_path)) {
+        //             try {
+        //                    unlink($image_path);//department image delete
+        //             }
+        //             catch(Exception $e) {
+        //             }                        
+        //       }
+        //       $data->delete();//department delete
+        //   }          
           Session::flash('message',__('messages.Department Delete Successfully')); 
           Session::flash('alert-class', 'alert-success');
-          return redirect("admin/department");
+          return redirect()->route('department',$segment);
     }
 
     public function departmentservice($id){ 
@@ -151,6 +159,7 @@ class DepartmentController extends UploadController
     }
 
     public function savedepartmentservice($depart_id,$id){
+        
         $data=DepartService::find($id);
         return view("admin.department.addservice")->with("departmentservice",$depart_id)->with("id",$id)->with("data",$data);
     }

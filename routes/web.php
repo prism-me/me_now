@@ -107,10 +107,12 @@ use App\Http\Controllers\LanguageController;
                     Route::get("settimezone/{time}","HomeController@settimezone");
 
                     #Department
-                    Route::resource("department","DepartmentController");
+                    Route::get('department', 'DepartmentController@index')->name('department');
+                    Route::get('add-department', 'DepartmentController@create');
+                    Route::post('create-department', 'DepartmentController@store');
                     Route::get("savedepartment/{id}","DepartmentController@saveddepartment");
                     Route::post("updatedepartment","DepartmentController@updatedepartment");
-                    Route::get("deletedepartment/{id}","DepartmentController@deletedepartment");
+                    Route::post("deletedepartment/{id}","DepartmentController@deletedepartment");
 
                     #Department service
                     Route::get("departmentservice/{id}","DepartmentController@departmentservice");
@@ -189,7 +191,9 @@ use App\Http\Controllers\LanguageController;
                     Route::get('show-workshop/{slug}', 'WorkshopController@show');
 
                     #Room
-                    Route::resource('rooms', 'RoomController');
+                    Route::get('rooms', 'RoomController@index')->name('rooms');
+                    Route::get('add-room', 'RoomController@create');
+                    Route::post('create-room', 'RoomController@store');
                     Route::get('edit-room/{slug}', 'RoomController@edit');
                     Route::post('delete-room/{slug}', 'RoomController@delete');
                     Route::post('update-room/{slug}', 'RoomController@update');

@@ -36,7 +36,7 @@
                   </div>
                   @endif
                   <div>
-                     <a href="{{ URL::to('admin/rooms/create')}}" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Room')}}</a>
+                     <a href="add-room" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Room')}}</a>
                   </div>
                   <div class="table-responsive">
                   <table id="service" class="table  table-striped table-bordered">
@@ -60,10 +60,10 @@
                            
                            <td>
                               <div class="group">
-                                <a href="{{URL::to('admin/edit-room') . '/' . $d->slug}}" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
+                                <a href="edit-room/{{  $d->slug }}" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
                               </div>
                               <div class="group">
-                                <form action="{{ url('admin/delete-room'.'/' . $d->slug)}}"  novalidate="novalidate"  method="POST"  > 
+                                <form action="/{{Session::get('locale')}}/admin/delete-room/{{  $d->slug }}"  novalidate="novalidate"  method="POST"  > 
                                 {{csrf_field()}}
                                  <button class='btn btn-default' type='submit' value='submit'>
                                    <i class='fa fa-trash fa-lg'></i>

@@ -47,7 +47,7 @@
                                     </ul>
                                 </div>
                             @endif
-                              <form action="{{ URL::to('admin/update-room').'/' . $data->slug}}" method="POST" novalidate="novalidate" enctype="multipart/form-data">
+                              <form action="/{{Session::get('locale')}}/admin/update-room/{{  $data->slug }}" method="POST" novalidate="novalidate" enctype="multipart/form-data">
 
                                 {{ csrf_field() }}
 

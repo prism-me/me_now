@@ -36,7 +36,7 @@
                   </div>
                   @endif
                   <div>
-                     <a href="{{url('admin/savedepartment/0')}}" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Department')}}</a>
+                     <a href="/{{Session::get('locale')}}/admin/savedepartment/0" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Department')}}</a>
                   </div>
                   <div class="table-responsive">
                   <table id="service" class="table  table-striped table-bordered">
@@ -61,14 +61,18 @@
                            <td>{{ substr($d->short_description , 0,50)}}...</td>
                            <td>
                               <div class="group">
-                                <a href="{{url('admin/savedepartment/').'/'.$d->id}}" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
+                                <a href="/{{Session::get('locale')}}/admin/savedepartment/{{  $d->id }}"> <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
                               </div>
                               <div class="group">
-                                <a href="{{url('admin/departmentservice/').'/'.$d->id}}" > <i class='fa fa-plus-circle fa-lg' aria-hidden="true"> </i> </a>
+                                <a href="/{{Session::get('locale')}}/admin/departmentservice/{{  $d->id }}"> <i class='fa fa-plus-circle fa-lg' aria-hidden="true"> </i> </a>
                               </div>
                               <div class="group">
-                                 <a href="javascript:deleterow('deletedepartment','<?= $d->id ?>')" >
-                                   <i class='fa fa-trash fa-lg'></i></a>
+                                <form action="/{{Session::get('locale')}}/admin/deletedepartment/{{  $d->id }}"  novalidate="novalidate"  method="POST"  > 
+                                {{csrf_field()}}
+                                 <button class='btn btn-default' type='submit' value='submit'>
+                                   <i class='fa fa-trash fa-lg'></i>
+                                 </button>
+                                </form>
                               </div>
                            </td>
                            

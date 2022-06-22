@@ -103,7 +103,7 @@ class RoomController extends UploadController
         }
         $data['lang'] = $segment;
         $roomCreate = Room::create($data);
-        return redirect("admin/rooms");
+        return redirect()->route('rooms',$segment);
     }
 
     /**
@@ -142,6 +142,8 @@ class RoomController extends UploadController
     public function update(Request $request)
     {
         $slug = $request->segment(4);
+        
+        $segment = $request->segment(1);
         $mediaUpload = "";
         $mediaUpload1 = "";
         $mediaUpload2 = "";
@@ -202,7 +204,8 @@ class RoomController extends UploadController
         }
         
         $blogCreate = Room::where('slug',$slug)->update($data);
-        return redirect("admin/rooms");
+        
+        return redirect()->route('rooms',$segment);
     }
 
     /**
@@ -214,10 +217,9 @@ class RoomController extends UploadController
     public function delete( Request $request)
     {   
         $slug = $request->segment(4);
-
+        $segment = $request->segment(1);
         $room = Room::where('slug',$slug)->delete();
-         return redirect("admin/rooms");
-      
+        return redirect()->route('rooms',$segment);
         
     }
 }

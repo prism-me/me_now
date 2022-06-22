@@ -15,8 +15,8 @@
       <div class="page-header float-right">
          <div class="page-title">
             <ol class="breadcrumb text-right">
-               <li><a href="{{url('admin/department')}}">{{__('messages.Department')}}</a></li>
-               <li><a href="{{url('admin/departmentservice').'/'.$departmentservice}}">{{__('messages.Department Service')}}</a></li>
+               <li><a href="/{{Session::get('locale')}}/admin/department">{{__('messages.Department')}}</a></li>
+               <li><a href="/{{Session::get('locale')}}/admin/departmentservice').'/'.$departmentservice">{{__('messages.Department Service')}}</a></li>
                <li class="active">{{__('messages.Save Department Service')}}</li>
             </ol>
          </div>
@@ -47,7 +47,7 @@
                      </ul>
                   </div>
                   @endif                              
-                  <form action="{{url('admin/updatedepartmentservice')}}" method="post" novalidate="novalidate" enctype="multipart/form-data">
+                  <form action="/{{Session::get('locale')}}/admin/updatedepartmentservice" method="post" novalidate="novalidate" enctype="multipart/form-data">
                      {{csrf_field()}}
                      <input type="hidden" name="depart_id" id="depart_id" value="{{$departmentservice}}"/>   
                      <input type="hidden" name="id" id="id" value="{{$id}}"/>                 
