@@ -89,9 +89,9 @@
                     </button>
                     <div class="collapse navbar-collapse navbar-toggleable-sm" id="CollapsingNavbar">
                         @if (Session::get('locale') == 'ar')
-                        <ul class="nav navbar-nav mr-auto">
-                        @else
-                        <ul class="nav navbar-nav ml-auto">
+                            <ul class="nav navbar-nav mr-auto">
+                            @else
+                                <ul class="nav navbar-nav ml-auto">
                         @endif
                         {{-- <li class="nav-item">
 			        			<a class="nav-link" href="{{url('/')}}">{{ __('messages.Home' )}}</a>
@@ -100,7 +100,8 @@
                             <a class="nav-link" href="about-us">{{ __('messages.About') }}</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Services</a>
+                            <a class="nav-link dropdown-toggle" href="#"
+                                data-toggle="dropdown">{{ __('messages.Services') }}</a>
                             <ul class="dropdown-menu services-dropdown">
 
 
@@ -160,11 +161,13 @@
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"
                                     role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                     v-pre>
-                                    Language <span class="caret"></span>
+                                    {{ __('messages.Language') }} <span class="caret"></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ url('en') }}">English</a>
-                                    <a class="dropdown-item" href="{{ url('ar') }}">Arabic</a>
+                                    <a class="dropdown-item"
+                                        href="{{ url('en') }}">{{ __('messages.English') }}</a>
+                                    <a class="dropdown-item"
+                                        href="{{ url('ar') }}">{{ __('messages.Arabic') }}</a>
                                 </div>
                             </li>
                         </ul>
@@ -303,7 +306,7 @@
                                 <div class="footer-d1-box">
                                     <h3>{{ __('messages.Contact Us') }}</h3>
                                     <p><span class="fa fa-phone phone-icon"></span><a
-                                            href="tel:+97142398448">{{ isset($setting->phone_no) ? $setting->phone_no : Session::get('phone_no') }}</a>
+                                            href="tel:+97142398448">{{ __('messages.04 239 8448') }}</a>
                                     </p>
                                     <p><span class="fa fa-envelope mail-icon"></span><a
                                             href="mailto:info@menow.me">{{ isset($setting->email) ? $setting->email : Session::get('email') }}</a>
@@ -322,7 +325,7 @@
                                     @if (isset($department))
                                         @foreach ($department as $d)
                                             @if ($i < 5)
-                                                <a href="{{ url('services') . '/' . $d->slug }}">{{ $d->name }}
+                                                <a href="services/{{ $d->slug }}">{{ $d->name }}
                                                 </a>
                                                 <?php $i++; ?>
                                             @endif
@@ -370,8 +373,8 @@
                             <div class="footer-r1-detail">
                                 <div class="footer-d1-box">
                                     <h3>{{ __('messages.Address') }}</h3>
-                                    <p><a href="https://maps.app.goo.gl/4DJn6E47x4QUAW5S6">24-32 - 5 B St - Jumeirah -
-                                            Jumeirah 1 - Dubai, UAE</a>
+                                    <p><a
+                                            href="https://maps.app.goo.gl/4DJn6E47x4QUAW5S6">{{ __('messages.24-32 - 5 B St -Jumeirah -Jumeirah 1 - Dubai, UAE') }}</a>
                                     </p>
                                 </div>
                                 <div class="footer-d1-box">

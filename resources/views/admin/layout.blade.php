@@ -191,8 +191,8 @@
                                     Language <span class="caret"></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item"  href="{{ url('en/admin/dashboard') }}">English</a>
-                                    <a class="dropdown-item" href="{{ url('ar/admin/dashboard') }}">Arabic</a>
+                                    <a class="dropdown-item"  href="{{ url('en/admin/dashboard') }}">{{ __('messages.English')}}</a>
+                                    <a class="dropdown-item" href="{{ url('ar/admin/dashboard') }}">{{ __('messages.Arabic')}}</a>
                                 </div>
                             </li>
                         </ul>   

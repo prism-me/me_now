@@ -510,5 +510,13 @@ return [
 		"Workshop Date" => "Workshop Date",
 		"Select Date and Time" => "Select Date and Time",
 		"Doctor designation" => "Doctor designation",
+		"Language" => "Language",
+		"Arabic" => "Arabic",
+		"English" => "English",
+		"Read More" => "Read More",
+		"24-32 - 5 B St -Jumeirah -Jumeirah 1 - Dubai, UAE" => "24-32 - 5 B St -Jumeirah -Jumeirah 1 - Dubai, UAE",
+		"04 239 8448" => "04 239 8448",
+		
+		
 
 	];

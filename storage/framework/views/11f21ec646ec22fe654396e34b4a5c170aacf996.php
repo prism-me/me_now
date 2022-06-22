@@ -73,7 +73,7 @@
                                 <a class="nav-link" href="about-us"><?php echo e(__('messages.About')); ?></a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Services</a>
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"><?php echo e(__('messages.Services')); ?></a>
                                 <ul class="dropdown-menu services-dropdown">
 
 
@@ -130,11 +130,11 @@
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        Language <span class="caret"></span>
+                                        <?php echo e(__('messages.Language')); ?> <span class="caret"></span>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item"  href="<?php echo e(url('en')); ?>">English</a>
-                                        <a class="dropdown-item" href="<?php echo e(url('ar')); ?>">Arabic</a>
+                                        <a class="dropdown-item"  href="<?php echo e(url('en')); ?>"><?php echo e(__('messages.English')); ?></a>
+                                        <a class="dropdown-item" href="<?php echo e(url('ar')); ?>"><?php echo e(__('messages.Arabic')); ?></a>
                                     </div>
                                 </li>
                             </ul>
@@ -266,7 +266,7 @@
                                 <div class="footer-d1-box">
                                     <h3><?php echo e(__('messages.Contact Us')); ?></h3>
                                     <p><span class="fa fa-phone phone-icon"></span><a
-                                            href="tel:+97142398448"><?php echo e(isset($setting->phone_no) ? $setting->phone_no : Session::get('phone_no')); ?></a>
+                                            href="tel:+97142398448"><?php echo e(__('messages.04 239 8448')); ?></a>
                                     </p>
                                     <p><span class="fa fa-envelope mail-icon"></span><a
                                             href="mailto:info@menow.me"><?php echo e(isset($setting->email) ? $setting->email : Session::get('email')); ?></a>
@@ -285,7 +285,7 @@
                                     <?php if(isset($department)): ?>
                                         <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <?php if($i < 5): ?>
-                                                <a href="<?php echo e(url('services') . '/' . $d->slug); ?>"><?php echo e($d->name); ?>
+                                                <a href="services/<?php echo e($d->slug); ?>"><?php echo e($d->name); ?>
 
                                                     </a>
                                                 <?php $i++; ?>
@@ -335,8 +335,7 @@
                             <div class="footer-r1-detail">
                                 <div class="footer-d1-box">
                                     <h3><?php echo e(__('messages.Address')); ?></h3>
-                                    <p><a href="https://maps.app.goo.gl/4DJn6E47x4QUAW5S6">24-32 - 5 B St - Jumeirah -
-                                            Jumeirah 1 - Dubai, UAE</a>
+                                    <p><a href="https://maps.app.goo.gl/4DJn6E47x4QUAW5S6"><?php echo e(__('messages.24-32 - 5 B St -Jumeirah -Jumeirah 1 - Dubai, UAE')); ?></a>
                                     </p>
                                 </div>
                                 <div class="footer-d1-box">

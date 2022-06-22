@@ -30,6 +30,7 @@ class Localization
         }
 
         if (!in_array($locale, ['en' , 'ar'])) {
+           
             $segments = $request->segments();
             $lang_push = session()->get('locale', $locale);
             $route = array_merge(array_slice($segments, 0 , 0), array($lang_push), array_slice($segments, 0));
