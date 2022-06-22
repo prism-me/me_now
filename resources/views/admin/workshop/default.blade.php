@@ -36,7 +36,7 @@
                   </div>
                   @endif
                   <div>
-                     <a href="workshops/create" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Workshop')}}</a>
+                     <a href="add-workshop" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Workshop')}}</a>
                   </div>
                   <div class="table-responsive">
                   <table id="service" class="table  table-striped table-bordered">

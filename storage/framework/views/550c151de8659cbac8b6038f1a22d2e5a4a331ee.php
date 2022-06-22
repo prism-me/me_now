@@ -115,7 +115,10 @@
                         <a href="faqs"> <i
                                 class="menu-icon fa fa-question-circle"></i><?php echo e(__('messages.Faq')); ?></a>
                     </li>
-                    
+                    <li class="active">
+                        <a href="events"> <i
+                                class="menu-icon fa fa-user-md"></i><?php echo e(__('messages.Events')); ?></a>
+                    </li>
                     
                     
                     <!--<li class="active">-->

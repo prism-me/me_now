@@ -36,7 +36,7 @@
                   </div>
                   @endif
                   <div>
-                     <a href="{{ URL::to('admin/women/create')}}" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Women Empowerment')}}</a>
+                     <a href="add-women" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Women Empowerment')}}</a>
                   </div>
                   <div class="table-responsive">
                   <table id="service" class="table  table-striped table-bordered">
@@ -58,7 +58,7 @@
                            
                            <td>
                               <div class="group">
-                                <a href="{{URL::to('admin/edit-women') . '/' . $d->slug}}" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
+                                <a href="edit-women/{{ $d->slug}}" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
                               </div>
                               
                            </td>

@@ -115,10 +115,10 @@
                         <a href="faqs"> <i
                                 class="menu-icon fa fa-question-circle"></i>{{ __('messages.Faq') }}</a>
                     </li>
-                    {{-- <li class="active">
-                        <a href="package"> <i
-                                class="menu-icon fa fa-user-md"></i>{{ __('messages.Help Package') }}</a>
-                    </li> --}}
+                    <li class="active">
+                        <a href="events"> <i
+                                class="menu-icon fa fa-user-md"></i>{{ __('messages.Events') }}</a>
+                    </li>
                     {{-- <li class="active">
                         <a href="chat"> <i
                                 class="menu-icon fa fa-comment"></i>{{ __('messages.Chat') }} </a>

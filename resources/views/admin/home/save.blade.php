@@ -15,7 +15,7 @@
       <div class="page-header float-right">
          <div class="page-title">
             <ol class="breadcrumb text-right">
-               <li><a href="{{url('admin/about')}}">{{__('messages.Home')}}</a></li>
+               <li><a href="home-section">{{__('messages.Home')}}</a></li>
                <li class="active">{{__('messages.Save Home')}}</li>
             </ol>
          </div>
@@ -46,7 +46,7 @@
                      </ul>
                   </div>
                   @endif                              
-                    <form action="{{ URL::to('admin/update-home'.'/'.$data->slug) }}" method="POST" novalidate="novalidate"
+                    <form action="/{{Session::get('locale')}}/admin/update-home/{{  $data->slug }}" method="POST" novalidate="novalidate"
                                 enctype="multipart/form-data">
                                 {{ csrf_field() }}
                              

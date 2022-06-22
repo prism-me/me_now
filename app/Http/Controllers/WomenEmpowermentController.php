@@ -44,7 +44,7 @@ class WomenEmpowermentController extends UploadController
         $data['lang'] = $segment;
        
         $create = WomenEmpowerment::create($data);
-        return redirect("admin/women");
+        return redirect()->route("women",$segment);
     }
 
  
@@ -58,6 +58,7 @@ class WomenEmpowermentController extends UploadController
     public function update(Request $request)
     {
         $slug = $request->segment(4);
+        $segment = $request->segment(1);
          $mediaUpload = "";
        
         if ($img = $request->hasFile('featured_img')) {
@@ -76,7 +77,7 @@ class WomenEmpowermentController extends UploadController
      
        
         $create = WomenEmpowerment::where('slug',$slug)->update($data);
-        return redirect("admin/women");
+        return redirect()->route("women",$segment);
     }
 
 

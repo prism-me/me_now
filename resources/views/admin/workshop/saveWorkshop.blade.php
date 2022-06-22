@@ -15,7 +15,7 @@
             <div class="page-header float-right">
                 <div class="page-title">
                     <ol class="breadcrumb text-right">
-                        <li><a href="{{ url('admin/workshops') }}">{{ __('messages.Workshop') }}</a></li>
+                        <li><a href="workshops">{{ __('messages.Workshop') }}</a></li>
                         <li class="active">{{ __('messages.Save Workshop') }}</li>
                     </ol>
                 </div>
@@ -49,7 +49,7 @@
                                 </div>
                             @endif
 
-                            <form action="{{ URL::to('admin/update-workshop') . '/' . $data->slug }}" method="post"
+                            <form action="/{{Session::get('locale')}}/admin/update-workshop/{{  $data->slug }}" method="post"
                                 novalidate="novalidate" enctype="multipart/form-data">
                                 @csrf
 

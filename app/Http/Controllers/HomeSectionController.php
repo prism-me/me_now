@@ -43,7 +43,7 @@ class HomeSectionController extends  UploadController
      
        
         $create = Home::create($data);
-        return redirect("admin/home-section");
+        return redirect()->route("home-section",$segment);
     }
 
  
@@ -57,6 +57,7 @@ class HomeSectionController extends  UploadController
     public function update(Request $request)
     {
         $slug = $request->segment(4);
+        $segment = $request->segment(1);
          $mediaUpload = "";
        
         if ($img = $request->hasFile('featured_img')) {
@@ -75,6 +76,6 @@ class HomeSectionController extends  UploadController
      
        
         $create = Home::where('slug',$slug)->update($data);
-        return redirect("admin/home-section");
+        return redirect()->route("home-section",$segment);
     }
 }

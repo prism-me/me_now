@@ -36,7 +36,7 @@
                   </div>
                   @endif
                   <div>
-                     <a href="{{ URL::to('admin/home-section/create')}}" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Home')}}</a>
+                     <a href="add-home-section" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Home')}}</a>
                   </div>
                   <div class="table-responsive">
                   <table id="service" class="table  table-striped table-bordered">
@@ -58,7 +58,7 @@
                            
                            <td>
                               <div class="group">
-                                <a href="{{URL::to('admin/edit-home') . '/' . $d->slug}}" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
+                                <a href="edit-home/{{  $d->slug }}" > <i class='fa fa-pencil fa-lg' aria-hidden="true"> </i> </a>
                               </div>
                               
                            </td>

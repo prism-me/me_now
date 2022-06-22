@@ -108,4 +108,5 @@ return [
     "Timing" => "توقيت",
     "Messages" => "رسائل",
     "Status" => "حالة",
+    
 ];

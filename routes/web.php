@@ -184,11 +184,13 @@ use App\Http\Controllers\LanguageController;
                     Route::get('show-blog/{slug}', 'BlogController@show');
 
                     #Workshop
-                    Route::resource('workshops', 'WorkshopController');
+                    Route::get('workshops', 'WorkshopController@index')->name('workshops');
+                    Route::get('add-workshop', 'HomeSectionController@create');
+                    Route::post('create-workshop', 'HomeSectionController@store');
                     Route::get('edit-workshop/{slug}', 'WorkshopController@edit');
-                    Route::post('delete-workshop/{slug}', 'WorkshopController@delete');
                     Route::post('update-workshop/{slug}', 'WorkshopController@update');
-                    Route::get('show-workshop/{slug}', 'WorkshopController@show');
+                    Route::post('delete-workshop/{slug}', 'WorkshopController@delete');
+                   
 
                     #Room
                     Route::get('rooms', 'RoomController@index')->name('rooms');
@@ -221,25 +223,25 @@ use App\Http\Controllers\LanguageController;
                     Route::get('show-event/{slug}', 'EventController@show');
 
                     #About Us
-                    Route::resource('about', 'AboutController');
+                    Route::get('about', 'AboutController@index')->name('about');
+                    Route::get('add-about', 'AboutController@create');
+                    Route::post('create-about', 'AboutController@store');
                     Route::get('edit-about/{slug}', 'AboutController@edit');
                     Route::post('update-about/{slug}', 'AboutController@update');
 
                     #Women Empowerment  
-                    Route::resource('women', 'WomenEmpowermentController');
+                    Route::get('women', 'WomenEmpowermentController@index')->name('women');
+                    Route::get('add-women', 'WomenEmpowermentController@create');
+                    Route::post('create-women', 'WomenEmpowermentController@store');
                     Route::get('edit-women/{slug}', 'WomenEmpowermentController@edit');
                     Route::post('update-women/{slug}', 'WomenEmpowermentController@update');
                     
                     #Home
-                    Route::resource('home-section', 'HomeSectionController');
+                    Route::get('home-section', 'HomeSectionController@index')->name('home-section');
+                    Route::get('add-home-section', 'HomeSectionController@create');
+                    Route::post('create-home-section', 'HomeSectionController@store');
                     Route::get('edit-home/{slug}', 'HomeSectionController@edit');
-                    Route::post('update-home/{slug}', 'HomeSectionController@update');
-                        
-
-                    #Home
-                    Route::resource('home-section', 'HomeSectionController');
-                    Route::get('edit-home/{slug}', 'HomeSectionController@edit');
-                    Route::post('update-home/{slug}', 'HomeSectionController@update');
+                    Route::post('update-home/{slug}', 'HomeSectionController@update');;
 
                     
 

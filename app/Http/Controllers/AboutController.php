@@ -74,7 +74,7 @@ class AboutController  extends UploadController
         $data['lang'] = $segment;
        
         $create = About::create($data);
-        return redirect("admin/about");
+        return redirect()->route("about",$segment);
     }
 
     /**
@@ -111,6 +111,7 @@ class AboutController  extends UploadController
     public function update(Request $request)
     {
         $slug = $request->segment(4);
+        $segment = $request->segment(1);
         $mediaUpload = "";
         $mediaUpload1 = "";
         $mediaUpload2 = "";
@@ -145,7 +146,7 @@ class AboutController  extends UploadController
         }
        
         $create = About::where('slug',$slug)->update($data);
-        return redirect("admin/about");
+        return redirect()->route("about",$segment);
     }
 
     /**
