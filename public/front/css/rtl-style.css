@@ -1,6 +1,6 @@
 /* Global css */
 
-@font-face {
+/* @font-face {
     font-family: 'Roboto', sans-serif ;
     src: url('../font/AvenirLTStd-Book.eot'); 
     src: local('Roboto', sans-serif ), local('Roboto', sans-serif ), url('AvenirLTStd-Book.otf') format('opentype');
@@ -16,11 +16,16 @@
     font-family: 'Roboto', sans-serif ;
     src: url('../font/AvenirLTStd-Roman.eot'); 
     src: local('Roboto', sans-serif ), local('Roboto', sans-serif ), url('AvenirLTStd-Roman.otf') format('opentype');
-}
+} */
 
 body {
     font-family: 'Roboto', sans-serif !important;
     direction: rtl;
+}
+
+.pricingpg-departmentlist-main-box {
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 a{
@@ -28,23 +33,40 @@ a{
     color: black;
 }
 
-a:hover{
+.button-facebook {
+    text-align: center;
+    margin-top: 18px;
+}
+a:hover {
     text-decoration: none;
 }
 
-.global-heading h2::after {
-    content: '';
+.global-heading h2::after,
+.services-content h2::after,
+.services-inner-content h2::after,
+.room_description h3::after,
+.room_long_description h3:after,
+.dcotors-heading-effect h3::after,
+.services-inner-content h3::after,
+.events-detail h2::after {
+    content: url("../img/icons/after.png");
     height: 8px;
-    width: 67px;
-    background-color: #49B7C6;
     position: absolute;
     bottom: 0;
     right: 0;
     left: 0;
-    margin: -18px auto;
+    margin: -8px auto;
 }
 
-.global-heading h2 {
+.global-heading h2,
+.services-content h2,
+.services-inner-content h2,
+.room_description h3,
+.room_long_description h3,
+.dcotors-heading-effect h2,
+.services-inner-content h3,
+.events-detail h2 {
+    margin: 3rem auto 4rem;
     display: inline-block;
     position: relative;
     color: #356380;
@@ -57,14 +79,13 @@ a:hover{
 }
 
 .global-heading p {
-    font-size: 20px;
+    font-size: 16px;
     color: #767676;
-    margin-bottom: 0;
-    width: 75%;
-    margin: 25px auto 0;
-    font-family: 'Roboto', sans-serif ;
+    margin-bottom: 0rem !important;
+    margin: 0px auto 0;
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 15px;
 }
-
 .global-part-heading {
     text-align: right;
 }
@@ -126,7 +147,7 @@ a:hover{
 }
 
 .spacefor-global {
-    height: 108px;
+    height: 97px;
 }
 
 .button-facebook {
@@ -400,14 +421,15 @@ a:hover{
 }
 
 .services-main-box .services-left-part {
-    background-image: url(../img/services.png);
+    background-image: url(../img/left-banner.jpeg);
     width: 30%;
-    height: 513px;
+    height: 855px;
     background-size: cover;
     position: relative;
-    z-index: -2;
+    z-index: 0;
     float: right;
     margin-right: 15px;
+    border-radius: 10px;
 }
 
 .services-main-box .services-left-part::after {
@@ -426,6 +448,13 @@ a:hover{
 .left-part-detail {
     color: white;
     text-align: center;
+    padding: 125px 51px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
 }
 
 .left-part-detail h2 {
@@ -463,7 +492,8 @@ a:hover{
     padding: 25px;
     border-radius: 10px;
     margin-bottom: 30px;
-    text-align: right;
+    text-align: center;
+    height: 265px;
 }
 
 .services-part1-box {
@@ -482,7 +512,7 @@ a:hover{
     margin-bottom: 0;
     color: #767676;
     font-family: 'Roboto', sans-serif ;
-    text-align: right;
+    text-align: center;
 }
 
 .services-part2-box {
@@ -587,8 +617,10 @@ a:hover{
 }
 
 .services-part-box img {
-    width: 80px;
-    height: auto;
+    width: auto;
+    height: 70px;
+    margin: 34px auto;
+    display: block;
 }
 
 .numbers-counter-part-box img {
@@ -643,7 +675,11 @@ a:hover{
 }
 
 .doctorl-dp-img {
-    height: 200px;
+    width: 100%;
+    height: auto;
+    transition: 0.3s all ease-in-out;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .doctorl-dp-img-1 {
@@ -663,7 +699,7 @@ a:hover{
 }
 
 .doctorl-dp-img {
-    height: 266px;
+    /* height: 266px; */
     width: 100%;
     background-size: cover;
 }
@@ -1027,9 +1063,9 @@ a:hover{
     border: 1px solid white; 
 }
 
-.doctorpg-main-box {
+/* .doctorpg-main-box {
     margin: 80px 0px;
-}
+} */
 
 .d-detail-collapse-doctor {
     margin-top: 50px;
@@ -2652,4 +2688,37 @@ img {
 }
 div#addreview {
     float: right;
+}
+
+.appointment-section .item .caption{
+    text-align: right;
+    right: 3%;
+}
+
+.mail-icon, .phone-icon{
+    padding-left: 10px;
+}
+.who_we_are_cotent p, .who_we_are_sub_section p{
+    text-align: right;
+}
+.who_we_are_cotent h2:nth-child(1){
+    text-align: right;
+}
+.about-content-widget{
+    text-align: right;
+}
+
+.text-section-about p{
+    border-left: 0px ;
+    border-right: 3px solid #49b7c6;
+}
+
+.workshop-part-detail h4{
+    text-align: right;
+}
+@media (max-width: 1200px){
+.navbar-toggler {
+    left: 10px;
+    right: unset !important;
+}
 }

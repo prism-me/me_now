@@ -14,10 +14,11 @@ use App\Http\Controllers\LanguageController;
 |
 */
 
-    // Route::get('/', function() {
+    Route::get('/', function() {
     // Artisan::call('optimize');
-    //     return redirect('/');
-    // });
+    $lang = Session::get('locale') == null ? 'en' : Session::get('locale');
+        return redirect("/".$lang);
+    });
 
     
 
@@ -54,7 +55,7 @@ use App\Http\Controllers\LanguageController;
      Route::get("getserviceanddoctor/{id}","FrontController@getserviceanddoctor");
      Route::post("bookappoinment","FrontController@bookappoinment");
      Route::get("allfacilites","FrontController@allfacilites");
-     Route::get("services/{service}","FrontController@department");
+     Route::get("services/{service}","FrontController@department")->name('services');
      Route::get("services/{service}/{subservice}","FrontController@departmentdetail");
      Route::get("doctorlist","FrontController@doctorlist");
      Route::get("gallery","FrontController@gallery");

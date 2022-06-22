@@ -25,7 +25,7 @@
     {{-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> --}}
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    @if (isset($setting->is_rtl) && $setting->is_rtl == '0')
+    @if (Session::get('locale') == 'ar')
         <link rel="stylesheet" type="text/css" href="{{ asset('front/css/rtl-style.css?v=5r12') }}">
     @else
         <link rel="stylesheet" type="text/css" href="{{ asset('front/css/style.css?v=45d') }}">
@@ -88,81 +88,86 @@
                         &#9776;
                     </button>
                     <div class="collapse navbar-collapse navbar-toggleable-sm" id="CollapsingNavbar">
+                        @if (Session::get('locale') == 'ar')
+                        <ul class="nav navbar-nav mr-auto">
+                        @else
                         <ul class="nav navbar-nav ml-auto">
-                            {{-- <li class="nav-item">
+                        @endif
+                        {{-- <li class="nav-item">
 			        			<a class="nav-link" href="{{url('/')}}">{{ __('messages.Home' )}}</a>
 			  				</li> --}}
-                            <li class="nav-item">
-                                <a class="nav-link" href="about-us">{{ __('messages.About') }}</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Services</a>
-                                <ul class="dropdown-menu services-dropdown">
+                        <li class="nav-item">
+                            <a class="nav-link" href="about-us">{{ __('messages.About') }}</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Services</a>
+                            <ul class="dropdown-menu services-dropdown">
 
 
-                                    @foreach ($department as $departments)
-                                        <li><a class="dropdown-item"
-                                                href="{{ url('services') . '/' . $departments->slug }}">
-                                                {{ $departments->name }} </a>
+                                @foreach ($department as $departments)
+                                    <li><a class="dropdown-item"
+                                            href="{{ url('services') . '/' . $departments->slug }}">
+                                            {{ $departments->name }} </a>
 
-                                            @if (!blank($departments->service))
-                                                <ul class="submenu dropdown-menu">
-                                                    @foreach ($departments->service as $subdepartment)
-                                                        <li><a class="dropdown-item"
-                                                                href="{{ url('services') . '/' . $departments->slug . '/' . $subdepartment->slug }}">
-                                                                {{ $subdepartment->name }}</a>
-                                                        </li>
-                                                    @endforeach
-                                                </ul>
-                                            @endif
-                                        </li>
-                                    @endforeach
-                                    @foreach ($rooms as $room)
-                                        <li><a class="dropdown-item" href="{{ url('rooms') . '/' . $room->slug }}">
-                                                {{ $room->title }} </a>
-                                        </li>
-                                    @endforeach
+                                        @if (!blank($departments->service))
+                                            <ul class="submenu dropdown-menu">
+                                                @foreach ($departments->service as $subdepartment)
+                                                    <li><a class="dropdown-item"
+                                                            href="{{ url('services') . '/' . $departments->slug . '/' . $subdepartment->slug }}">
+                                                            {{ $subdepartment->name }}</a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        @endif
+                                    </li>
+                                @endforeach
+                                @foreach ($rooms as $room)
+                                    <li><a class="dropdown-item" href="{{ url('rooms') . '/' . $room->slug }}">
+                                            {{ $room->title }} </a>
+                                    </li>
+                                @endforeach
 
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('doctorlist') }}">{{ __('messages.Our Team') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link"
-                                    href="{{ url('workshop') }}">{{ trans('messages.Workshops') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('events') }}">{{ __('messages.Events') }}</a>
-                            </li>
-                            {{-- <li class="nav-item">
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('doctorlist') }}">{{ __('messages.Our Team') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                href="{{ url('workshop') }}">{{ trans('messages.Workshops') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('events') }}">{{ __('messages.Events') }}</a>
+                        </li>
+                        {{-- <li class="nav-item">
                                 <a class="nav-link" href="#">{{ __('messages.Blog') }}</a>
                             </li> --}}
-                            <li class="nav-item">
-                                <a class="nav-link"
-                                    href="women-empowerment">{{ __('messages.Women Empowerment') }}</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="women-empowerment">{{ __('messages.Women Empowerment') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                href="{{ url('special-membership-for-women') }}">{{ __('messages.Become a Member') }}</a>
+                        </li>
+                        <li class="nav-item book-now-nav">
+                            <a class="nav-link btn-hover color-9"
+                                style="color:white !important; width: 132px;padding: 0.5rem !important;"
+                                href="#" data-toggle="modal"
+                                data-target="#appointmentModal">{{ __('messages.Book Now') }}</a>
+                        </li>
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"
+                                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    v-pre>
+                                    Language <span class="caret"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ url('en') }}">English</a>
+                                    <a class="dropdown-item" href="{{ url('ar') }}">Arabic</a>
+                                </div>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link"
-                                    href="{{ url('special-membership-for-women') }}">{{ __('messages.Become a Member') }}</a>
-                            </li>
-                            <li class="nav-item book-now-nav">
-                                <a class="nav-link btn-hover color-9"
-                                    style="color:white !important; width: 132px;padding: 0.5rem !important;"
-                                    href="#" data-toggle="modal"
-                                    data-target="#appointmentModal">{{ __('messages.Book Now') }}</a>
-                            </li>
-                            <ul class="navbar-nav ml-auto">
-                                <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        Language <span class="caret"></span>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item"  href="{{ url('en') }}">English</a>
-                                        <a class="dropdown-item" href="{{ url('ar') }}">Arabic</a>
-                                    </div>
-                                </li>
-                            </ul>
+                        </ul>
                     </div>
                 </nav>
             </div>
@@ -292,7 +297,8 @@
                                     {{-- <h3>{{ __('messages.About us') }}</h3> --}}
                                     {{-- <p>{{ __('messages.front_about') }}</p> --}}
                                     <p>
-                                      {{ __('messages.With the goal of de-stigmatizing mental illness and providing patients with a variety of treatment options, we re a group of compassionate, dedicated, and experienced practitioners who want nothing more than to see a different you walk out the door after working with us.') }}                                    </p>
+                                        {{ __('messages.With the goal of de-stigmatizing mental illness and providing patients with a variety of treatment options, we re a group of compassionate, dedicated, and experienced practitioners who want nothing more than to see a different you walk out the door after working with us.') }}
+                                    </p>
                                 </div>
                                 <div class="footer-d1-box">
                                     <h3>{{ __('messages.Contact Us') }}</h3>
@@ -317,7 +323,7 @@
                                         @foreach ($department as $d)
                                             @if ($i < 5)
                                                 <a href="{{ url('services') . '/' . $d->slug }}">{{ $d->name }}
-                                                    </a>
+                                                </a>
                                                 <?php $i++; ?>
                                             @endif
                                         @endforeach
@@ -326,7 +332,7 @@
                                             @foreach (Session::get('departmentlist') as $d)
                                                 @if ($i < 5)
                                                     <a href="{{ url('services') . '/' . $d->slug }}">{{ $d->name }}
-                                                        </a>
+                                                    </a>
                                                     <?php $i++; ?>
                                                 @endif
                                             @endforeach

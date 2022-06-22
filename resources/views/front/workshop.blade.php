@@ -35,38 +35,44 @@
                                                 <div class="col-md-4 col-5" style="padding-left:0px;">
                                                     <span>{{ __('messages.Workshop Date') }}:</span>
                                                 </div>
-                                                <div class="col-md-8 col-7" style="padding-right:0px;">
-                                                    @php $event_date = $d->event_date; @endphp
+                                                @if (Session::get('locale') == 'en')
+                                                    <div class="col-md-8 col-7" style="padding-right:0px;">
+                                                    @else
+                                                        <div class="col-md-8 col-7" style="padding-left:0px;">
+                                                @endif
 
-                                                    <select name="dob" id="" class="form-control"
-                                                        style="color:#000;width:90%;">
-                                                        <option value="0">{{ __('messages.Select Date and Time') }}</option>
-                                                        @if (!is_null($event_date))
-                                                            @foreach ($event_date as $date)
-                                                                <option value="{{ $date }}">
-                                                                    {{ date('m/d/Y H:i:s', strtotime($date)) }}</option>
-                                                            @endforeach
-                                                        @endif
+                                                @php $event_date = $d->event_date; @endphp
 
-                                                    </select>
-                                                </div>
+                                                <select name="dob" id="" class="form-control"
+                                                    style="color:#000;width:90%;">
+                                                    <option value="0">{{ __('messages.Select Date and Time') }}
+                                                    </option>
+                                                    @if (!is_null($event_date))
+                                                        @foreach ($event_date as $date)
+                                                            <option value="{{ $date }}">
+                                                                {{ date('m/d/Y H:i:s', strtotime($date)) }}</option>
+                                                        @endforeach
+                                                    @endif
 
+                                                </select>
                                             </div>
-                                            {{-- <p style="color:rgb(108, 108, 108)">
-                                                    {!! substr($d->short_description, 0,  90) !!}... <a href="{{ url('workshop') . '/' . $d->slug }}"> Read More</a> </p> --}}
-                                            <div class="book_appointment_doctor">
-                                                {{-- <button>Book Event</button> --}}
-                                            </div>
+
                                         </div>
-
+                                        {{-- <p style="color:rgb(108, 108, 108)">
+                                                    {!! substr($d->short_description, 0,  90) !!}... <a href="{{ url('workshop') . '/' . $d->slug }}"> Read More</a> </p> --}}
+                                        <div class="book_appointment_doctor">
+                                            {{-- <button>Book Event</button> --}}
+                                        </div>
                                     </div>
+
                                 </div>
                             </div>
-                        @endforeach
                     </div>
+                    @endforeach
                 </div>
             </div>
         </div>
+    </div>
 
 
     </div>
