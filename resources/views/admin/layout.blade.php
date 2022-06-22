@@ -188,11 +188,11 @@
                         <ul class="navbar-nav first_nav_drop">
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    Language <span class="caret"></span>
+                                    {{ __('messages.Language')}} <span class="caret"></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item"  href="{{ url('en/admin/dashboard') }}">English</a>
-                                    <a class="dropdown-item" href="{{ url('ar/admin/dashboard') }}">Arabic</a>
+                                    <a class="dropdown-item"  href="{{ url('en/admin/dashboard') }}">{{ __('messages.English')}}</a>
+                                    <a class="dropdown-item" href="{{ url('ar/admin/dashboard') }}">{{ __('messages.Arabic')}}</a>
                                 </div>
                             </li>
                         </ul>   

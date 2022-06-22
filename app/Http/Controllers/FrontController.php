@@ -100,6 +100,7 @@ class FrontController extends Controller
         $department= Department::with('service')->where('lang',$segment)->get();
         $setting= Setting::find(1);
         $reviews= Review::with('doctors','users')->where('lang',$segment)->get()->take(4);
+        
         $home = Home::where('lang' , $segment)->get();
        
         return view("front.home")->with('rooms',$rooms)->with("setting",$setting)->with("department",$department)->with("review",$reviews)->with("doctor",$doctor)->with("chatpage",'1')->with('home',$home);
@@ -456,6 +457,7 @@ class FrontController extends Controller
         }
 
        public function doctordetails(Request $request, $slug){
+            $slug = $request->segment('3');
             $segment = $request->segment(1);
             $rooms = Room::where('lang',$segment)->get()->take(3);
             $department=Department::where('lang',$segment)->get();

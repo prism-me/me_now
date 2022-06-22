@@ -21,7 +21,7 @@
                                 $image = asset('upload/profile/profile.png');
                             }
                             ?>
-                            <a href="<?php echo e(url('doctordetails/') . '/' . $d->slug); ?>" class="box-container">
+                            <a href="doctordetails/<?php echo e($d->slug); ?>" class="box-container">
                                 <img class="doctorl-dp-img doctorl-dp-img-1 doctor_img_hover" src="<?= $image ?>" />
                             </a>
                             <div class="doctorl-part-detail text-center">
