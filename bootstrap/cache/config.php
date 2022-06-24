@@ -189,7 +189,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\xampp\\htdocs\\me_now\\storage\\framework/cache/data',
+        'path' => 'D:\\Projects\\Menow\\me_now\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -355,12 +355,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\xampp\\htdocs\\me_now\\storage\\app',
+        'root' => 'D:\\Projects\\Menow\\me_now\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\xampp\\htdocs\\me_now\\storage\\app/public',
+        'root' => 'D:\\Projects\\Menow\\me_now\\storage\\app/public',
         'url' => 'http://127.0.0.1:8000/storage',
         'visibility' => 'public',
       ),
@@ -377,7 +377,7 @@
     ),
     'links' => 
     array (
-      'C:\\xampp\\htdocs\\me_now\\public\\storage' => 'C:\\xampp\\htdocs\\me_now\\storage\\app/public',
+      'D:\\Projects\\Menow\\me_now\\public\\storage' => 'D:\\Projects\\Menow\\me_now\\storage\\app/public',
     ),
   ),
   'hashing' => 
@@ -457,13 +457,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'C:\\xampp\\htdocs\\me_now\\storage\\logs/laravel.log',
+        'path' => 'D:\\Projects\\Menow\\me_now\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'C:\\xampp\\htdocs\\me_now\\storage\\logs/laravel.log',
+        'path' => 'D:\\Projects\\Menow\\me_now\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -513,7 +513,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'C:\\xampp\\htdocs\\me_now\\storage\\logs/laravel.log',
+        'path' => 'D:\\Projects\\Menow\\me_now\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -579,7 +579,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\xampp\\htdocs\\me_now\\resources\\views/vendor/mail',
+        0 => 'D:\\Projects\\Menow\\me_now\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -684,7 +684,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\xampp\\htdocs\\me_now\\storage\\framework/sessions',
+    'files' => 'D:\\Projects\\Menow\\me_now\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -713,9 +713,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\me_now\\resources\\views',
+      0 => 'D:\\Projects\\Menow\\me_now\\resources\\views',
     ),
-    'compiled' => 'C:\\xampp\\htdocs\\me_now\\storage\\framework\\views',
+    'compiled' => 'D:\\Projects\\Menow\\me_now\\storage\\framework\\views',
   ),
   'debugbar' => 
   array (
@@ -729,7 +729,7 @@
     array (
       'enabled' => true,
       'driver' => 'file',
-      'path' => 'C:\\xampp\\htdocs\\me_now\\storage\\debugbar',
+      'path' => 'D:\\Projects\\Menow\\me_now\\storage\\debugbar',
       'connection' => NULL,
       'provider' => '',
       'hostname' => '127.0.0.1',
@@ -968,7 +968,7 @@
     ),
     'temporary_files' => 
     array (
-      'local_path' => 'C:\\xampp\\htdocs\\me_now\\storage\\framework/cache/laravel-excel',
+      'local_path' => 'D:\\Projects\\Menow\\me_now\\storage\\framework/cache/laravel-excel',
       'remote_disk' => NULL,
       'remote_prefix' => NULL,
       'force_resync_remote' => NULL,

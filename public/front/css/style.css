@@ -702,12 +702,20 @@ a:hover {
     font-size: 15px;
     float: left;
 }
+.testimonial-carousel .owl-item{
+    border: 1px solid #49b7c6;
+    margin: 0.7rem;
+    border-radius: 10px;
+}
 
+.testimonial-carousel .owl-stage{
+    display: flex;
+}
 .testimonial-part-box {
     padding: 15px;
-    border: 1px solid #49b7c6;
+    /* border: 1px solid #49b7c6;
     border-radius: 10px;
-    height: 185px;
+    height: 185px; */
 }
 .testimage {
     padding-left: 0px;
