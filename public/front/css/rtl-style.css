@@ -2758,7 +2758,9 @@ div#addreview {
 }
 
 
-
+.services-content , .services-inner-content ul{
+    text-align: right !important;
+}
 
 
 

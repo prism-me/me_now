@@ -37,12 +37,8 @@
                         11:00 AM </div> --}}
                     <div class="meta1"><span class="fa fa-chevron-right"></span> <b>{{ __('messages.Workshop Type') }}:
                         </b>&nbsp;{{ ucfirst($workshop->event_type) }}</div>
-                    <div class="meta1"><span class="fa fa-chevron-right"></span> <b>{{ __('messages.Age') }}: </b>&nbsp;
-                        Adults (18
-                        Yrs+) </div>
-                    <div class="meta1"><span class="fa fa-chevron-right"></span> <b>{{ __('messages.Facilitated by') }}:
-                        </b>
-                    </div>
+                    <div class="meta1"><span class="fa fa-chevron-right"></span> <b>{{ __('messages.Age') }}: </b>&nbsp;{{ __('messages.Adults (18 Yrs+)') }}</div>
+                    <div class="meta1"><span class="fa fa-chevron-right"></span> <b>{{ __('messages.Facilitated by')}}: </b></div>
 
                 </div>
                 <div class="facilitated">
@@ -94,7 +90,7 @@
                             </div>
                         @endif
                         <span id="loginerrorreview"></span>
-                        <form action="{{ url('workshop-booking') }}" method="post">
+                        <form action="/{{Session::get('locale')}}/workshop-booking" method="post">
                             {{ csrf_field() }}
                             <div class="appo-input-main-box">
                                 <input type="hidden" name="price" value="{{ $workshop->price }}">

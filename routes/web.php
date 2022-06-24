@@ -93,7 +93,7 @@ use App\Http\Controllers\LanguageController;
      Route::Get("getcurrenttime/{offset}","HomeController@getcurrenttime");
      Route::get("blog","FrontController@blog");
      Route::get("blog-detail/{id}","FrontController@blogdetails");
-     Route::post("workshop-booking","FrontController@workshopBooking");
+     Route::post("workshop-booking","FrontController@workshopBooking")->name("workshop-booking");
      Route::get("events","FrontController@events");
 
     });

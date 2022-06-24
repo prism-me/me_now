@@ -156,25 +156,23 @@ class FrontController extends Controller
     public function workshopdetail(Request $request,$id)
     {
         $slug = $request->segment(3);
+        $segment = $request->segment(1);
         if(!isset($_COOKIE['fload'])){
             setcookie('fload','1', time() + (86400 * 30), "/");
         }
         
-         $rooms = Room::get()->take(3);
-         $service=Service::get()->take(8);
-         $package=Package::get()->take(3);
-         $doctor=Doctor::get()->take(4);
-         $department=Department::with('service')->get();
+         $rooms = Room::where('lang',$segment)->get()->take(3);
+         $doctor=Doctor::where('lang',$segment)->get()->take(4);
+         $department=Department::with('service')->where('lang',$segment)->get();
          $setting=Setting::find(1);
-         $reviews=Review::with('doctors','users')->get()->take(4);
+         $reviews=Review::with('doctors','users')->where('lang',$segment)->get()->take(4);
          
-         $workshop=  Workshop::where('slug',$slug)->with('doctor')->first();
-         
+         $workshop=  Workshop::where('slug',$slug)->with('doctor')->where('lang',$segment)->get()->first();
         //  dd($workshop->short_description);
         //https://prismdigital.ae/why-do-business-websites-need-a-good-design/ - test url
          $social = \Share::page('http://127.0.0.1:8000/en/workshop/'. $workshop->slug , $workshop->title)->facebook()->linkedin()->whatsapp()->twitter();
         //   dd($social);
-       return view("front.workshops_inner")->with('rooms',$rooms)->with('social', $social)->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with('workshop',$workshop);
+       return view("front.workshops_inner")->with('rooms',$rooms)->with('social', $social)->with('doctor',$doctor)->with("setting",$setting)->with("department",$department)->with('workshop',$workshop);
     }
 
     public function events(Request $request )
@@ -795,10 +793,11 @@ class FrontController extends Controller
 
         $emailData = $request->all();
         $data = $request->except('name');
-       
+        
         $add = WorkshopBooking::create($data);
         $userEmail = $request['email'];
         $mail = Mail::to($userEmail)->send(new BookingMail($emailData));
+        dd($mail);
 
         Session::flash('message',__('messages.Booking Done Successfully. Please Check Your Registered E-Mail to confirm the Booking.')); 
         Session::flash('alert-class', 'alert-success');           
