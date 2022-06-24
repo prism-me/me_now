@@ -38,8 +38,11 @@ use App\Http\Controllers\LanguageController;
 
 
     Route::group([ 'prefix' => '{locale}', 'middleware' => 'setLocale'] , function () { 
-
-     Route::get('auth/{driver}', 'Auth\FacebookController@redirectToProvider')->name('social.oauth');
+     
+    // Route::get("/","FrontController@showhome")->name('locale.home');
+     
+    
+    Route::get('auth/{driver}', 'Auth\FacebookController@redirectToProvider')->name('social.oauth');
      Route::get('auth/{driver}/callback', 'Auth\FacebookController@handleProviderCallback')->name('social.callback');
      Route::get("/","FrontController@showhome");
      Route::get("about-us","FrontController@about")->name('about-us');
@@ -254,6 +257,7 @@ use App\Http\Controllers\LanguageController;
         });
 
     });
+
 
 
 

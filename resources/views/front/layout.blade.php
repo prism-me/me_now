@@ -96,6 +96,9 @@
                         {{-- <li class="nav-item">
 			        			<a class="nav-link" href="{{url('/')}}">{{ __('messages.Home' )}}</a>
 			  				</li> --}}
+                        {{-- <li class="nav-item">
+                            <a class="nav-link" href="{{ route('locale.home') }}">Home</a>
+                        </li> --}}
                         <li class="nav-item">
                             <a class="nav-link" href="about-us">{{ __('messages.About') }}</a>
                         </li>
