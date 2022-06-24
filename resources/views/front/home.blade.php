@@ -26,34 +26,36 @@
     </div> --}}
 
     @include('front.doctor_section')
-<div class="outer_container_women_wrapper">
-    <div class="container-fluid">
-        <div class="women_wrapper " data-aos="fade-up">
-            <div class="row">
-                <div class="col-md-5 text-center women_img_section">
-                    <div class="women_img_wrapper"><img src={{ @$home[2]['featured_img']}} class="img-fluid" alt="about us section">
-                    </div>
-                </div>
-                
-                <div class="col-md-7">
-                    <div class="about_content text-center">
-                        {{-- <img src={{ @$home[2]['fatured_img']}} alt="logo" class="about-section-logo"> --}}
-                        <div class="services_home_container global-heading ">
-                            <h2 class="animated fadeInDown delay-2s ">{{ @$home[2]['title']}}</h2>
+    <div class="outer_container_women_wrapper">
+        <div class="container-fluid">
+            <div class="women_wrapper " data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-5 text-center women_img_section">
+                        <div class="women_img_wrapper"><img src={{ @$home[2]['featured_img'] }} class="img-fluid"
+                                alt="about us section">
                         </div>
-                        <p class="animated fadeInDown mb-5">{!! @$home[2]['description'] !!}
-    
-                        </p>
-                        <a href="{{ url('women-empowerment') }}" class="btn-hover color-9">{{ __('messages.Read More') }}</a>
                     </div>
-                </div>
 
+                    <div class="col-md-7">
+                        <div class="about_content text-center">
+                            {{-- <img src={{ @$home[2]['fatured_img']}} alt="logo" class="about-section-logo"> --}}
+                            <div class="services_home_container global-heading ">
+                                <h2 class="animated fadeInDown delay-2s ">{{ @$home[2]['title'] }}</h2>
+                            </div>
+                            <p class="animated fadeInDown mb-5">{!! @$home[2]['description'] !!}
+
+                            </p>
+                            <a href="{{ url('women-empowerment') }}"
+                                class="btn-hover color-9">{{ __('messages.Read More') }}</a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-    
+
     {{-- <div class="home_promo_banner" data-aos="fade-up">
         <div class="container-fluid">
             <div class="home_promo_banner_inner">
@@ -71,37 +73,36 @@
         </div>
     </div> --}}
 
-    <div class="testimonial-main-box">
-        <div class="container-fluid" style="padding-left: 0px ; padding-right: 0px;">
-            <div class="global-heading">
-                <h2>{{ __('messages.Client’s Reviews') }}</h2>
-                <p>{{ __('messages.See what our clients have to say about the Me Now Center and our mental health services') }}</p>
-            </div>
-            <div class="testimonial-part-main-box">
-                <div class="owl-carousel testimonial-carousel patient-reviews-slider">
-               
-                    @foreach ($reviews as $r)
-                        @if (isset($r->users))
-                            <div class="single-testimonial">
-                                <div class="testimonial-part-box">
-                                    <div class="testimonial-inner-images">
-                                        <div class="col-md-3 testimage">
-                                            
-                                            <img src="{{ $r->img }}" class="testimonial-profile-img img-fluid">
-                                        </div>
-                                        <div class="col-md-9 testtext">
-                                            <p class="testip">{{ $r->review }}</p>
-                                            <span class="testimonialspan"></span>
-                                            @if (isset($r->name))
-                                                <h3 class="testimonialh">- {{ $r->name }}</h3>
-                                            @endif
-                                        </div>
+    <div class="container-fluid" style="padding-left: 0px ; padding-right: 0px;">
+        <div class="global-heading">
+            <h2>{{ __('messages.Client’s Reviews') }}</h2>
+            <p>{{ __('messages.See what our clients have to say about the Me Now Center and our mental health services') }}
+            </p>
+        </div>
+        <div class="testimonial-part-main-box">
+            <div class="owl-carousel testimonial-carousel patient-reviews-slider">
+
+                @foreach ($reviews as $r)
+                    @if (isset($r->users))
+                        <div class="single-testimonial">
+                            <div class="testimonial-part-box">
+                                <div class="testimonial-inner-images">
+                                    <div class="col-md-3 testimage">
+
+                                        <img src="{{ $r->img }}" class="testimonial-profile-img img-fluid">
+                                    </div>
+                                    <div class="col-md-9 testtext">
+                                        <p class="testip">{{ $r->review }}</p>
+                                        <span class="testimonialspan"></span>
+                                        @if (isset($r->name))
+                                            <h3 class="testimonialh">- {{ $r->name }}</h3>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
-                        @endif
-                    @endforeach
-                </div>
+                        </div>
+                    @endif
+                @endforeach
             </div>
         </div>
     </div>

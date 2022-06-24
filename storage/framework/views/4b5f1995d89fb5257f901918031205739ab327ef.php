@@ -139,7 +139,7 @@
                                     v-pre>
                                     <?php echo e(__('messages.Language')); ?> <span class="caret"></span>
                                 </a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu dropdown-menu-right lang-dropdown" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item"
                                         href="<?php echo e(url('en')); ?>"><?php echo e(__('messages.English')); ?></a>
                                     <a class="dropdown-item"

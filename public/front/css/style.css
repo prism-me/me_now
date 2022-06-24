@@ -2790,3 +2790,15 @@ img {
     display: inline;
     margin: 0px 5px;
 }
+.lang-dropdown{
+    top: 40px;
+    width: 110px;
+    min-width: 110px;
+}
+
+.lang-dropdown .dropdown-item{
+    line-height: 30px;
+    font-size: 13px;
+    padding: 5px 15px;
+
+}
