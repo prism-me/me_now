@@ -15,19 +15,18 @@
         </div>
     </div>
     <div class="container-fluid">
-        <div class="global-heading" data-aos="fade-right">
+        <div class="global-heading">
          
             <h2><?php echo e($current->name); ?></h2>
         </div>
-        <div class="services-content" data-aos="fade-up"><?php echo $current->description; ?></div>
+        <div class="services-content" ><?php echo $current->description; ?></div>
         <div class="department-part-main-box">
             <div class="row">
-              
                 <?php if(count($departmentService) > 0): ?>
 
                     <?php $__currentLoopData = $departmentService; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $service): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     
-                        <div class="col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in">
+                        <div class="col-lg-3 col-md-4 col-sm-6">
                             <div class="department-part-box hover-services">
                                 <div class="department-part-img">
                                     <img src="<?php echo e($service->img); ?>">
