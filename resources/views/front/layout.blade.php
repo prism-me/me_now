@@ -123,7 +123,7 @@
                                     </li>
                                 @endforeach
                                 @foreach ($rooms as $room)
-                                    <li><a class="dropdown-item" href="{{ url('rooms') . '/' . $room->slug }}">
+                                    <li><a class="dropdown-item" href="{{ route('rooms/',[Session::get('locale'),  $room->slug]) }}">
                                             {{ $room->title }} </a>
                                     </li>
                                 @endforeach

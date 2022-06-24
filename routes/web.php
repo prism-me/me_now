@@ -16,7 +16,7 @@ use App\Http\Controllers\LanguageController;
 
     Route::get('/', function() {
     // Artisan::call('optimize');
-    $lang = Session::get('locale') == null ? 'en' : Session::get('locale');
+        $lang = Session::get('locale') == null ? 'en' : Session::get('locale');
         return redirect("/".$lang);
     });
 
@@ -50,7 +50,7 @@ use App\Http\Controllers\LanguageController;
      Route::get("special-membership-for-women","FrontController@become_member");
      Route::get("workshop","FrontController@workshop");
      Route::get("events","FrontController@events");
-     Route::get("rooms/{slug}","FrontController@rooms");
+     Route::get("rooms/{slug}","FrontController@rooms")->name('rooms/');
      Route::get("workshop/{id}","FrontController@workshopdetail")->name('workshop.details');
      Route::get("getserviceanddoctor/{id}","FrontController@getserviceanddoctor");
      Route::post("bookappoinment","FrontController@bookappoinment");
@@ -70,7 +70,7 @@ use App\Http\Controllers\LanguageController;
      Route::get("userlogout","FrontController@userlogout");
      Route::get("postforgot","FrontController@postforgot");
      Route::get("doctordetails/{slug}","FrontController@doctordetails")->name('doctor.details');
-     Route::any("addreview","FrontController@addreview");
+     Route::any("addreview","FrontController@addreview")->name('addreview');
      Route::post("mediaupload","FrontController@mediaupload");
      Route::post("deletemedia","FrontController@deletemedia");
 
