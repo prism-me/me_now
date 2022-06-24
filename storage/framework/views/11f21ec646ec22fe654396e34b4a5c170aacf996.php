@@ -100,7 +100,7 @@
                                     </li>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 <?php $__currentLoopData = $rooms; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $room): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <li><a class="dropdown-item" href="<?php echo e(url('rooms') . '/' . $room->slug); ?>">
+                                    <li><a class="dropdown-item" href="<?php echo e(route('rooms/',[Session::get('locale'),  $room->slug])); ?>">
                                             <?php echo e($room->title); ?> </a>
                                     </li>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

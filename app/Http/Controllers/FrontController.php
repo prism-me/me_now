@@ -16,9 +16,9 @@ use App\Model\WorkshopBooking;
 use App\Model\WomenEmpowerment;
 use App\Model\Workshop;
 use App\Model\Event;
+use App\Model\Review;
 use App\Model\Home;
 use App\Model\About;
-use App\Model\Review;
 use App\Model\Faq;
 use App\Model\Blog;
 use App\Model\Room;
@@ -256,16 +256,19 @@ class FrontController extends Controller
 
     public function rooms($slug ,Request $request){
         $segment = $request->segment(1);
+        $slug = $request->segment(3);
+       
         if(!isset($_COOKIE['fload'])){
             setcookie('fload','1', time() + (86400 * 30), "/");
          }
          $rooms = Room::where('lang',$segment)->get()->take(3);
          $room = Room::where('lang',$segment)->where('slug',$slug)->first();
-         $service = Service::where('lang',$segment)->get()->take(8);
+      
+         $service = DepartService::where('lang',$segment)->get()->take(8);
          $doctor=Doctor::where('lang',$segment)->get()->take(4);
         //  $package = Package::get()->take(3);
         //  $doctor = Doctor::get()->take(4);
-         $department = Department::with('service')->where('lang',$segment)->get()->get();
+         $department = Department::with('service')->where('lang',$segment)->get();
          $setting = Setting::find(1);
          $reviews = Review::with('doctors','users')->where('lang',$segment)->get()->take(4);
        return view("front.rooms")->with('doctor',$doctor)->with('room',$room)->with('rooms',$rooms)->with("services",$service)->with("setting",$setting)->with("department",$department);
@@ -324,9 +327,9 @@ class FrontController extends Controller
        }
 
         public function department(Request $request,$service){
-            $service=$request->segment('3');
+            // $service=$request->segment('3');
             $segment = $request->segment(1);
-            $rooms = Room::get()->take(3);
+            $rooms = Room::where('lang',$segment)->get()->take(3);
             $departmentId = Department::where('slug' , $service)->where('lang',$segment)->first();
             $departmentService=DepartService::where("department_id",$departmentId->id)->get();
             $department= Department::with('service')->where('lang',$segment)->get();
@@ -340,8 +343,8 @@ class FrontController extends Controller
             $service = $request->segment(3);
             $subService = $request->segment(4);
 
-            $rooms = Room::get()->take(3);
-           $department = Department::with('service')->where('lang',$segment)->get();
+            $rooms = Room::where('lang',$segment)->get()->take(3);
+            $department = Department::with('service')->where('lang',$segment)->get();
             
            //current sub service
            $currentService = DepartService::where("slug", $subService)->where('lang',$segment)->first();
@@ -364,11 +367,11 @@ class FrontController extends Controller
         }
 
 
-       public function contact_us(){
-        $rooms = Room::get()->take(3);
-
-           $department=Department::all();
-           $doctor=Doctor::get()->take(4);
+       public function contact_us(Request $request){
+            $segment = $request->segment(1);
+           $rooms = Room::where('language',$segment)->get()->take(3);
+           $department=Department::where('language',$segment)->get();
+           $doctor=Doctor::where('language',$segment)->get()->take(4);
            $setting=Setting::find(1);
            return view("front.contactus")->with('doctor',$doctor)->with('rooms',$rooms)->with("department",$department)->with("setting",$setting);
        }
@@ -499,17 +502,7 @@ class FrontController extends Controller
           return redirect()->back();
        }
 
-       public function addreview(Request $request){
-                $data=new Review();
-                $data->doctor_id=$request->get("doctor_id");
-                $data->user_id=Auth::id();
-                $data->review=$request->get("messages");
-                $data->ratting=$request->get("rating");
-                $data->save();
-                Session::flash('message',__('messages.Review Add Successfully')); 
-          Session::flash('alert-class', 'alert-success'); 
-          return redirect()->back();
-       }
+       
 
 
        public function savesubscribe($email){
@@ -806,6 +799,27 @@ class FrontController extends Controller
 
     }
 
+
+    public function addreview(Request $request){
+        $segment = $request->segment(1);
+        $store  = new Review();
+        $doctor  = Doctor::where('slug',$request->doctor_id)->first();
+        $data['doctor_id'] = $doctor->id;
+        
+        $store->name=$request->get("name");
+        $store->email=$request->get("email");
+        $store->ratting=$request->get("ratting");
+        $store->review=$request->get("review");
+        $store->doctor_id = $doctor->id;
+        $store->save();
+    
+        $create = Review::create($data);
+        Session::flash('alert-class', 'alert-success'); 
+        return redirect()->back();
+    }
+
+
+   
 
    
 }

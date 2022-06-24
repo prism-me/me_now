@@ -1331,7 +1331,9 @@ color: #1b7081;
 .testimonial-carousel .owl-nav button img {
     display: none;
 }
-
+input.form-control.review {
+    background-color: #f2f2f2;
+}
 
 
 

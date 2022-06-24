@@ -210,55 +210,55 @@
                             </div>
                         </div>
                         <div id="addreview" class="tabcontent">
-                            @if (Auth::id())
+                            
                                 <div class="dd-tab-part-mbox">
                                     <div class="global-part-heading global-heading dcotors-heading-effect">
                                         {{-- <h2>{{ __('messages.Add review') }}</h2> --}}
                                         <span id="loginerrorreview"></span>
-                                        <form action="{{ url('addreview') }}" method="post">
+                                        <form action="/{{Session::get('locale')}}/addreview" method="post">
                                             {{ csrf_field() }}
-                                            <input type="hidden" name="doctor_id" value="{{ $id }}">
+                                        
+                                            <input type="hidden" name="doctor_id" value="{{ $doctor->slug}}">
                                             <div class="yourrating-main-box">
                                                 <h5>{{ __('messages.Your rating') }}</h5>
                                                 <span class="star-rating">
-                                                    <input type="radio" id="5-stars" name="rating" value="5" />
+                                                    <input type="radio" id="5-stars" name="ratting" value="5" />
                                                     <label for="5-stars" class="star"><i
                                                             class="fas fa-star"></i></label>
-                                                    <input type="radio" id="4-stars" name="rating" value="4" />
+                                                    <input type="radio" id="4-stars" name="ratting" value="4" />
                                                     <label for="4-stars" class="star"><i
                                                             class="fas fa-star"></i></label>
-                                                    <input type="radio" id="3-stars" name="rating" value="3" />
+                                                    <input type="radio" id="3-stars" name="ratting" value="3" />
                                                     <label for="3-stars" class="star"><i
                                                             class="fas fa-star"></i></label>
-                                                    <input type="radio" id="2-stars" name="rating" value="2" />
+                                                    <input type="radio" id="2-stars" name="ratting" value="2" />
                                                     <label for="2-stars" class="star"><i
                                                             class="fas fa-star"></i></label>
-                                                    <input type="radio" id="1-star" name="rating" value="1" />
+                                                    <input type="radio" id="1-star" name="ratting" value="1" />
                                                     <label for="1-star" class="star"><i
                                                             class="fas fa-star"></i></label>
                                                 </span>
                                             </div>
                                             <div class="yourrating-main-box">
-                                                <h5>{{ __('messages.Your review') }}</h5>
-                                                <textarea id="messages" name="messages" required=""></textarea>
+                                                <h5>{{ __('messages.Name') }}</h5>
+                                                
+                                                <input name="name" class="form-control review" required /><br>
+                                                
+                                                <h5>{{ __('messages.E-Mail') }}</h5>
+                                                
+                                                <input name="email" class="form-control review" required /><br>
+                                                <h5>{{ __('messages.Review') }}</h5>
+                                                
+                                                <textarea id="messages" name="review" required=""></textarea>
                                                 <div class="appo-btn-main-box">
-                                                    @if (Auth::id())
                                                         <button type="submit">{{ __('messages.submit') }}</button>
-                                                    @else
-                                                        <button type="button"
-                                                            onclick="userloginalert()">{{ __('messages.submit') }}</button>
-                                                    @endif
+                                                   
                                                 </div>
                                             </div>
                                         </form>
                                     </div>
                                 </div>
-                            @else
-                                <p style="margin-top: 15px;">
-                                    {{ __('messages.Please') }} <a href="#" onclick="showloginmodel()"
-                                        data-toggle="modal" data-target="#myModal">{{ __('messages.Login') }}</a>
-                                    {{ __('messages.Your Account Then Try To Review') }}
-                            @endif
+                        
                             </p>
                         </div>
                     </div>
@@ -321,7 +321,7 @@
         </div>
         @if (count($review) > 0)
             <div class="testimonial-main-box">
-                <div class="container">
+                <div class="container-fluid">
                     <div class="global-heading">
                         <h2>Client’s Reviews</h2>
                         <p>See what our clients have to say about the Me Now Center and our
