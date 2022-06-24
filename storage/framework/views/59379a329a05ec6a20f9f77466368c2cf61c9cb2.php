@@ -65,7 +65,8 @@
             </div>
             <div class="testimonial-part-main-box">
                 <div class="owl-carousel testimonial-carousel patient-reviews-slider">
-                    <?php $__currentLoopData = $review; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+               
+                    <?php $__currentLoopData = $reviews; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <?php if(isset($r->users)): ?>
                             <div class="single-testimonial">
                                 <div class="testimonial-part-box">

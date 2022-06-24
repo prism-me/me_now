@@ -98,12 +98,11 @@ class FrontController extends Controller
         $doctor= Doctor::where('lang',$segment)->get()->take(4);
         $rooms = Room::where('lang',$segment)->get();
         $department= Department::with('service')->where('lang',$segment)->get();
+        $depart= Department::where('lang',$segment)->get();
         $setting= Setting::find(1);
         $reviews= Review::with('doctors','users')->where('lang',$segment)->get()->take(4);
-        
         $home = Home::where('lang' , $segment)->get();
-       
-        return view("front.home")->with('rooms',$rooms)->with("setting",$setting)->with("department",$department)->with("review",$reviews)->with("doctor",$doctor)->with("chatpage",'1')->with('home',$home);
+        return view("front.home")->with('rooms',$rooms)->with("setting",$setting)->with("department",$department)->with("reviews",$reviews)->with("doctor",$doctor)->with("chatpage",'1')->with('home',$home);
     }
 
     public function blog(){
@@ -154,10 +153,13 @@ class FrontController extends Controller
         return view("front.workshop")->with('rooms',$rooms)->with('doctor',$doctor)->with("services",$service)->with("setting",$setting)->with("department",$department)->with("workshop",$workshop);
     }
     
-    public function workshopdetail($id){
+    public function workshopdetail(Request $request,$id)
+    {
+        $slug = $request->segment(3);
         if(!isset($_COOKIE['fload'])){
             setcookie('fload','1', time() + (86400 * 30), "/");
-         }
+        }
+        
          $rooms = Room::get()->take(3);
          $service=Service::get()->take(8);
          $package=Package::get()->take(3);
@@ -166,7 +168,7 @@ class FrontController extends Controller
          $setting=Setting::find(1);
          $reviews=Review::with('doctors','users')->get()->take(4);
          
-         $workshop=  Workshop::where('slug',$id)->with('doctor')->first();
+         $workshop=  Workshop::where('slug',$slug)->with('doctor')->first();
          
         //  dd($workshop->short_description);
         //https://prismdigital.ae/why-do-business-websites-need-a-good-design/ - test url
@@ -323,29 +325,35 @@ class FrontController extends Controller
            return view("front.facilites")->with('rooms',$rooms)->with("department",$department)->with("facilites",$service)->with("setting",$setting);
        }
 
-        public function department($service){
+        public function department(Request $request,$service){
+            $service=$request->segment('3');
+            $segment = $request->segment(1);
             $rooms = Room::get()->take(3);
-            $departmentId = Department::where('slug' , $service)->first();
+            $departmentId = Department::where('slug' , $service)->where('lang',$segment)->first();
             $departmentService=DepartService::where("department_id",$departmentId->id)->get();
-            $department=Department::with('service')->get();
+            $department= Department::with('service')->where('lang',$segment)->get();
             $doctor=Doctor::get()->take(4);
             $setting=Setting::find(1);
             return view("front.department")->with('dcotor',$doctor)->with('rooms',$rooms)->with("department",$department)->with("setting",$setting)->with("departmentService",$departmentService)->with('serviceSlug' , $service)->with('current',$departmentId);
         }
 
-        public function departmentdetail($service,$subService){
+        public function departmentdetail(Request $request){
+            $segment = $request->segment(1);
+            $service = $request->segment(3);
+            $subService = $request->segment(4);
+
             $rooms = Room::get()->take(3);
-           $department = Department::with('service')->get();
+           $department = Department::with('service')->where('lang',$segment)->get();
             
            //current sub service
-           $currentService = DepartService::where("slug", $subService)->first();
+           $currentService = DepartService::where("slug", $subService)->where('lang',$segment)->first();
 
             //sub services            
-            $subServices =  DepartService::where('department_id', $currentService->department_id)->get();
+            $subServices =  DepartService::where('department_id', $currentService->department_id)->where('lang',$segment)->get();
                         
             // dd($subServices);    
             //doctors and sub services of the selected service
-            $departmentdetails= Department::with("doctor")->where('slug' ,$service)->get();
+            $departmentdetails= Department::with("doctor")->where('slug' ,$service)->where('lang',$segment)->get();
             //get doctors
             $doctors = $departmentdetails[0]->doctor;
              
@@ -355,7 +363,7 @@ class FrontController extends Controller
 
            return view("front.departmentdetails")->with('doctor',$doctor)->with('rooms',$rooms)->with('service_slug',$service)->with('doctors',$doctors)->with('current',$currentService)->with('subServices',$subServices)->with("department",$department)->with("departmentdetails",$departmentdetails)->with("setting",$setting);
 
-       }
+        }
 
 
        public function contact_us(){

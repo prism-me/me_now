@@ -107,14 +107,14 @@
 
                                 @foreach ($department as $departments)
                                     <li><a class="dropdown-item"
-                                            href="{{ url('services') . '/' . $departments->slug }}">
+                                            href="{{ route('department.service/',[Session::get('locale'), $departments->slug]) }}">
                                             {{ $departments->name }} </a>
 
                                         @if (!blank($departments->service))
                                             <ul class="submenu dropdown-menu">
                                                 @foreach ($departments->service as $subdepartment)
                                                     <li><a class="dropdown-item"
-                                                            href="{{ url('services') . '/' . $departments->slug . '/' . $subdepartment->slug }}">
+                                                            href="{{ route('services/',[Session::get('locale'), $departments->slug , $subdepartment->slug]) }}">
                                                             {{ $subdepartment->name }}</a>
                                                     </li>
                                                 @endforeach

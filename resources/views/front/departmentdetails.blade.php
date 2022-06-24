@@ -12,8 +12,7 @@
         <div class="service_caption">
             <h2>{{ $current->name }}</h2>
             <br />
-            <button type="submit" class="btn-hover color-9" data-toggle="modal" data-target="#appointmentModal">Consult with
-                Us</button>
+            <button type="submit" class="btn-hover color-9" data-toggle="modal" data-target="#appointmentModal">{{ __('messages.Consult with Us') }}</button>
         </div>
         <div class="container-fluid">
             <div class="d-detailpg-part-main-box">
@@ -31,10 +30,9 @@
                         </div>
 
                         <div class="services-cta mb-5">
-                            <p>Learn more about our therapeutical approaches.</p>
+                            <p>{{ __('messages.Learn more about our therapeutical approaches.') }}</p>
                             <button type="submit" class="btn-hover color-9" data-toggle="modal"
-                                data-target="#appointmentModal">Consult with
-                                Us</button>
+                                data-target="#appointmentModal">{{ __('messages.Consult with Us') }}</button>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-12">

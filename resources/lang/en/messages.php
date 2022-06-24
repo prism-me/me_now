@@ -516,7 +516,21 @@ return [
 		"Read More" => "Read More",
 		"24-32 - 5 B St -Jumeirah -Jumeirah 1 - Dubai, UAE" => "24-32 - 5 B St -Jumeirah -Jumeirah 1 - Dubai, UAE",
 		"04 239 8448" => "04 239 8448",
-		
+		"Consult with Us" => "Consult with Us",
+		"Learn more about our therapeutical approaches." => "Learn more about our therapeutical approaches.",
+		"Check Us Out on Instagram"  => "Check Us Out on Instagram" ,
+		"First Name" => "First Name",
+		"Last Name" => "Last Name",
+		"Phone Number" => "Phone Number",
+		"Email" => "Email",
+		"Your Message" => "Your Message",
+		"Date & Time" => "Date & Time",
+		"Workshop Type" => "Workshop Type",
+		"Age" => "Age",
+		"Facilitated by" => "Facilitated by",
+		"Share" => "Share",
+		"Book Now!" => "Book Now!",
+			
 		
 
 	];

@@ -21,7 +21,7 @@
                                 $image = asset('upload/profile/profile.png');
                             }
                             ?>
-                            <a href="doctordetails/<?php echo e($d->slug); ?>" class="box-container">
+                            <a href="<?php echo e(route('doctor.details',[Session::get('locale'),$d->slug])); ?>" class="box-container">
                                 <img class="doctorl-dp-img doctorl-dp-img-1 doctor_img_hover" src="<?= $image ?>" />
                             </a>
                             <div class="doctorl-part-detail text-center">
@@ -30,7 +30,8 @@
                                     <div class="inner_overlay_doctor">
                                         <h4><?php echo e(ucwords($d->name)); ?></h4>
                                         <p><?php echo e($d->excerpt); ?> </p>
-                                        <a href="<?php echo e(url('doctordetails/') . '/' . $d->slug); ?>"
+                                        
+                                        <a href="<?php echo e(route('doctor.details',[Session::get('locale'),$d->slug])); ?>"
                                             class="btn-hover color-9 mt-3"><?php echo e(__('messages.Read More')); ?></a>
                                     </div>
                                 </div>

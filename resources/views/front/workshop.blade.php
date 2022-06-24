@@ -22,13 +22,13 @@
                             <div class="col-lg-4 col-md-4 col-sm-6" data-aos="fade-up">
                                 <div class="d-detail-collapse-doctor">
                                     <div class="doctorl-part-box workshops-wrapper">
-                                        <a href="{{ url('workshop') . '/' . $d->slug }}" class="denone box-container">
+                                        <a href="{{ route('workshop.details',[Session::get('locale'),$d->slug]) }}" class="denone box-container">
                                             <img src="{{ $d->featured_img }}" class="img-fluid">
                                         </a>
 
                                         <div class="workshop-part-detail">
                                             <h4><a
-                                                    href="{{ url('workshop') . '/' . $d->slug }}">{{ ucwords($d->title) }}</a>
+                                                    href="{{ route('workshop.details',[Session::get('locale'),$d->slug]) }}">{{ ucwords($d->title) }}</a>
                                             </h4>
                                             <div class="workshop-schedule row">
 
@@ -59,7 +59,7 @@
 
                                         </div>
                                         {{-- <p style="color:rgb(108, 108, 108)">
-                                                    {!! substr($d->short_description, 0,  90) !!}... <a href="{{ url('workshop') . '/' . $d->slug }}"> Read More</a> </p> --}}
+                                                    {!! substr($d->short_description, 0,  90) !!}... <a href="{{ route('workshop.details',[Session::get('locale'),$d->slug]) }}"> Read More</a> </p> --}}
                                         <div class="book_appointment_doctor">
                                             {{-- <button>Book Event</button> --}}
                                         </div>
