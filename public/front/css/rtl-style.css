@@ -19,7 +19,7 @@
 } */
 
 body {
-    font-family: 'Roboto', sans-serif !important;
+    font-family: "Roboto", sans-serif !important;
     direction: rtl;
 }
 
@@ -28,7 +28,7 @@ body {
     padding-left: 15px;
 }
 
-a{
+a {
     text-decoration: none;
     color: black;
 }
@@ -96,7 +96,7 @@ a:hover {
     margin-bottom: 0;
     width: 100%;
     margin: 25px 0 0;
-    font-family: 'Roboto', sans-serif ;
+    font-family: "Roboto", sans-serif;
 }
 
 .global-heading h3 {
@@ -108,40 +108,39 @@ a:hover {
 }
 
 .global-heading h3:after {
-    content: '';
+    content: "";
     width: 68px;
     height: 8px;
     position: absolute;
     left: 0;
-    background-color: #1B7081;
+    background-color: #1b7081;
     bottom: 0;
     top: 35px;
 }
 
-
 .services-btn-main-box a {
-    background-color: #49B7C6;
+    background-color: #49b7c6;
     border: none;
     color: white;
     width: 100%;
     padding: 15px;
     border-radius: 100px;
     outline: none;
-    font-family: 'Roboto', sans-serif ;
+    font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     font-size: 13px;
     display: block;
 }
 
 .appo-btn-main-box button {
-    background-color: #49B7C6;
+    background-color: #49b7c6;
     border: none;
     color: white;
     width: 100%;
     padding: 15px;
     border-radius: 100px;
     outline: none;
-    font-family: 'Roboto', sans-serif ;
+    font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     font-size: 15px;
 }
@@ -164,19 +163,19 @@ a:hover {
 /* Loader */
 
 #overlayer {
-    width:100%;
-    height:100%;  
-    position:fixed;
-    z-index:11;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 11;
     top: 0;
-    background: #49B7C6;
+    background: #49b7c6;
 }
 .loader {
     display: inline-block;
     width: 50px;
     height: 50px;
     position: fixed;
-    z-index:12;
+    z-index: 12;
     border: 4px solid #356380;
     top: 50%;
     left: 50%;
@@ -195,19 +194,19 @@ a:hover {
     0% {
         transform: rotate(0deg);
     }
-  
+
     25% {
         transform: rotate(180deg);
     }
-  
+
     50% {
         transform: rotate(180deg);
     }
-  
+
     75% {
         transform: rotate(360deg);
     }
-  
+
     100% {
         transform: rotate(360deg);
     }
@@ -215,21 +214,21 @@ a:hover {
 
 @keyframes loader-inner {
     0% {
-       height: 0%;
+        height: 0%;
     }
-      
+
     25% {
-       height: 0%;
+        height: 0%;
     }
-      
+
     50% {
-       height: 100%;
+        height: 100%;
     }
-      
+
     75% {
-       height: 100%;
+        height: 100%;
     }
-      
+
     100% {
         height: 0%;
     }
@@ -242,7 +241,7 @@ a:hover {
 /* css */
 
 .top-header {
-    background-color: #49B7C6;
+    background-color: #49b7c6;
 }
 
 .top-header .top-right-text {
@@ -280,13 +279,13 @@ a:hover {
     padding: 0px 15px;
     margin: 0;
     /* text-transform: uppercase; */
-    color: black!important;
+    color: black !important;
     font-size: 15px;
 }
 
 .navigation-custom-single .nav-item {
     padding: 0;
-    margin: 0!important;
+    margin: 0 !important;
 }
 
 .navigation-custom-single .navbar {
@@ -301,8 +300,8 @@ a:hover {
     right: 0;
     z-index: 2;
     background: #fff;
-    webkit-box-shadow: 0 0 3px 1px rgba(0,0,0,.2);
-    box-shadow: 0 0 3px 1px rgba(0,0,0,.2);
+    webkit-box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
     will-change: transform;
     transition: transform 200ms linear;
 }
@@ -347,7 +346,7 @@ a:hover {
     padding: 10px;
     color: #3f3f3f;
     margin-bottom: 15px;
-    font-family: 'Roboto', sans-serif ;
+    font-family: "Roboto", sans-serif;
 }
 
 .appo-select-box .dropdown {
@@ -413,7 +412,7 @@ a:hover {
     width: 100%;
     outline: none;
     height: 78px;
-   text-align: right;
+    text-align: right;
 }
 
 .appointment-section {
@@ -433,7 +432,7 @@ a:hover {
 }
 
 .services-main-box .services-left-part::after {
-    content: '';
+    content: "";
     height: 100%;
     width: 100%;
     right: 0;
@@ -467,7 +466,7 @@ a:hover {
     font-size: 15px;
     padding-bottom: 20px;
     margin-bottom: 0;
-    font-family: 'Roboto', sans-serif ;
+    font-family: "Roboto", sans-serif;
 }
 
 .left-part-detail {
@@ -511,7 +510,7 @@ a:hover {
     font-size: 13px;
     margin-bottom: 0;
     color: #767676;
-    font-family: 'Roboto', sans-serif ;
+    font-family: "Roboto", sans-serif;
     text-align: center;
 }
 
@@ -546,7 +545,7 @@ a:hover {
     margin-bottom: 0;
     font-size: 20px;
     font-weight: bold;
-    color: #49B7C6;
+    color: #49b7c6;
 }
 
 .pricing-cost h6 {
@@ -574,18 +573,18 @@ a:hover {
     width: 80%;
     margin: 0 auto;
     color: #767676;
-    font-family: 'Roboto', sans-serif ;
+    font-family: "Roboto", sans-serif;
 }
 
 .pricing-part-btn button {
-    background-color: #49B7C6;
+    background-color: #49b7c6;
     border: none;
     color: white;
     width: 100%;
     padding: 15px;
     border-radius: 10px;
     outline: none;
-    font-family: 'Roboto', sans-serif ;
+    font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     font-size: 15px;
     border-top-left-radius: 0px;
@@ -613,7 +612,7 @@ a:hover {
     text-transform: uppercase;
     font-size: 17px;
     margin-bottom: 0;
-    font-family: 'Roboto', sans-serif ;
+    font-family: "Roboto", sans-serif;
 }
 
 .services-part-box img {
@@ -644,7 +643,7 @@ a:hover {
     font-size: 14px;
     color: #767676;
     margin-bottom: 10px;
-    font-family: 'Roboto', sans-serif ;
+    font-family: "Roboto", sans-serif;
 }
 
 .facebook-doctorl i {
@@ -656,7 +655,7 @@ a:hover {
 }
 
 .gp-doctorl i {
-    color: #DB4437;
+    color: #db4437;
 }
 
 .instagram-doctorl img {
@@ -686,16 +685,16 @@ a:hover {
     background-image: url(../img/dp1.png);
 }
 
-.doctorl-dp-img-2 { 
-    background-image: url(../img/dp2.png); 
+.doctorl-dp-img-2 {
+    background-image: url(../img/dp2.png);
 }
 
-.doctorl-dp-img-3 { 
-    background-image: url(../img/dp3.png); 
+.doctorl-dp-img-3 {
+    background-image: url(../img/dp3.png);
 }
 
-.doctorl-dp-img-4 { 
-    background-image: url(../img/dp4.png); 
+.doctorl-dp-img-4 {
+    background-image: url(../img/dp4.png);
 }
 
 .doctorl-dp-img {
@@ -712,22 +711,43 @@ a:hover {
 
 .testimonial-part-main-box {
     margin-top: 50px;
+    direction: ltr;
 }
 
-.testimonial-part-box {
-    padding: 30px;
-    border: 1px solid #d7d7d7;
+.testimonial-carousel .owl-item {
+    border: 1px solid #49b7c6;
+    margin: 0.7rem;
     border-radius: 10px;
 }
+.testimonial-carousel .owl-stage {
+    display: flex;
+}
+.testimonial-part-box {
+    padding: 15px;
+    /* border: 1px solid #49b7c6;
+    border-radius: 10px;
+    height: 185px; */
+}
+.testimonial-part-box .testtext {
+    text-align: right;
+}
 
+.testimonial-carousel .owl-nav .owl-prev {
+    margin-right: 30px !important;
+    margin-left: 0px;
+}
 .testimonial-profile-img {
     height: 80px;
-    width: 80px!important;
+    width: 80px !important;
     border-radius: 10px;
+}
+
+.instagram_wrapper .slick-list {
+    direction: ltr;
 }
 
 .testimonial-inner-images .test-quote-img {
-    width: 45px!important;
+    width: 45px !important;
     left: 67px;
     top: 50px;
     position: absolute;
@@ -737,7 +757,7 @@ a:hover {
     color: #767676;
     font-size: 14px;
     margin: 20px 0px;
-    font-family: 'Roboto', sans-serif ;
+    font-family: "Roboto", sans-serif;
     line-height: 25px;
     text-align: right;
 }
@@ -765,7 +785,7 @@ a:hover {
 }
 
 .owl-nav button {
-    outline: 0!important;
+    outline: 0 !important;
 }
 
 .owl-nav {
@@ -776,11 +796,10 @@ a:hover {
 .owl-nav .owl-prev {
     margin-left: 30px;
 }
-
 .footer-main-box {
-    padding: 50px;
-    background-color: black;
-    color: white;
+    padding: 50px 0px 0px;
+    background-color: #fff1d0;
+    color: #767676;
 }
 
 .footer-logo-box img {
@@ -791,28 +810,40 @@ a:hover {
 
 .footer-r1-detail h3 {
     font-size: 17px;
-    font-family: 'Roboto', sans-serif ;
+    font-family: "Roboto", sans-serif;
     text-align: right;
 }
 
 .footer-r1-detail p {
     margin-bottom: 10px;
     font-size: 12px;
-    font-family: 'Roboto', sans-serif ;
+    font-family: "Roboto", sans-serif;
     text-align: right;
 }
 
 .footer-r1-detail a {
     margin-bottom: 5px;
     font-size: 12px;
-    font-family: 'Roboto', sans-serif ;
+    font-family: "Roboto", sans-serif;
     cursor: pointer;
     display: inline-block;
-    color: white;
+    color: #767676;
     width: 90%;
     text-align: right;
 }
-
+.inner_overlay_doctor p{
+    margin-bottom: 2rem !important;
+}
+.footer-d1-box p{
+    font-size: 14px !important;
+}
+.who_we_are_cotent {
+    text-align: right;
+}
+.footer-bottom-left{
+    text-align: right;
+    font-size: 14px;
+}
 .footer-d1-box {
     margin-bottom: 30px;
 }
@@ -862,7 +893,7 @@ a:hover {
 .footer-icons-main-box .footer-icon-box {
     height: 35px;
     width: 35px;
-    background-color: #1B7081;
+    background-color: #1b7081;
     text-align: center;
     padding: 6px 0px;
     border-radius: 1000px;
@@ -881,7 +912,7 @@ a:hover {
     padding: 20px 0px 0px;
     margin-bottom: 0px;
     font-size: 12px;
-    font-family: 'Roboto', sans-serif ;
+    font-family: "Roboto", sans-serif;
 }
 
 .footer-bottom-main-box {
@@ -903,7 +934,7 @@ a:hover {
 }
 
 .department-part-box {
-    background-color: #DAF0FF;
+    background-color: #daf0ff;
     border-radius: 10px;
     padding: 30px;
     text-align: center;
@@ -951,7 +982,7 @@ a:hover {
 
 .pricelist-part-img-box {
     padding: 10px;
-    background-color: #1B7081;
+    background-color: #1b7081;
     display: inline-block;
     border-radius: 100px;
     float: left;
@@ -976,7 +1007,7 @@ a:hover {
     color: #767676;
     font-size: 14px;
     margin-bottom: 0;
-    font-family: 'Roboto', sans-serif ;
+    font-family: "Roboto", sans-serif;
 }
 
 .pricelist-part-detail-box {
@@ -1008,7 +1039,7 @@ a:hover {
 .d-detail-emergency-mainbox p {
     margin: 30px 0px 10px;
     font-size: 17px;
-    color: #1B7081;
+    color: #1b7081;
     font-weight: bold;
 }
 
@@ -1016,12 +1047,12 @@ a:hover {
     margin-top: 0px;
     font-size: 17px;
     color: black;
-    font-family: 'Roboto', sans-serif ;
+    font-family: "Roboto", sans-serif;
 }
 
 .d-detail-collapse-doctor .accordion .card-header {
     cursor: pointer;
-    background-color: #1B7081;
+    background-color: #1b7081;
     color: white;
 }
 
@@ -1060,7 +1091,7 @@ a:hover {
 }
 
 .d-detail-collapse-doctor .card {
-    border: 1px solid white; 
+    border: 1px solid white;
 }
 
 /* .doctorpg-main-box {
@@ -1102,8 +1133,8 @@ a:hover {
 }
 
 .doctorpg-tab-mainbox .slick-active.active {
-    background-color: #1B7081;
-    border: 1px solid #1B7081;
+    background-color: #1b7081;
+    border: 1px solid #1b7081;
     color: white;
 }
 
@@ -1112,8 +1143,8 @@ a:hover {
 }
 
 .doctorpg-tab-mainbox .tabcontent {
-  display: none;
-} 
+    display: none;
+}
 
 .facility-img-main-box img {
     width: 100%;
@@ -1149,7 +1180,7 @@ a:hover {
 }
 
 .pricingpg-main-box {
-    margin: 80px 0px; 
+    margin: 80px 0px;
 }
 
 .pricingpg-part-main-box {
@@ -1174,7 +1205,7 @@ a:hover {
 
 .contactpg-part2-main-box {
     width: 40%;
-    background-color: #1B7081;
+    background-color: #1b7081;
     text-align: center;
 }
 
@@ -1213,8 +1244,8 @@ a:hover {
 
 .part-form-main-box button {
     border-radius: 1000px;
-    font-family: 'Roboto', sans-serif ;
-    background-color: #1B7081;
+    font-family: "Roboto", sans-serif;
+    background-color: #1b7081;
     border: none;
     padding: 10px 50px;
     color: #35627f;
@@ -1244,15 +1275,14 @@ a:hover {
     font-size: 20px;
     color: white;
     margin: 15px 0px 5px;
-    font-family: 'Roboto', sans-serif ;
-
+    font-family: "Roboto", sans-serif;
 }
 
 .part2-part-main-box p {
     font-size: 18px;
     color: white;
     margin-bottom: 0;
-    font-family: 'Roboto', sans-serif ;
+    font-family: "Roboto", sans-serif;
 }
 
 .part2-part-main-box {
@@ -1281,29 +1311,29 @@ a:hover {
     width: 100%;
     background-size: cover;
 }
-.doctor-detail-main-box{
+.doctor-detail-main-box {
     text-align: right;
 }
 
 .doctor-detail-main-box h4 {
     font-size: 28px;
     color: black;
-    font-family: 'Roboto', sans-serif ;
+    font-family: "Roboto", sans-serif;
 }
 
 .doctor-detail-main-box h6 {
     font-size: 15px;
     color: #2f3658;
-    font-family: 'Roboto', sans-serif ;
+    font-family: "Roboto", sans-serif;
     margin-bottom: 20px;
 }
 
 .doctor-review-s-color {
-    color: #dbdbdb!important;
+    color: #dbdbdb !important;
 }
 
 .doctor-detail-main-box span i.fas.fa-star {
-    color: #1B7081;
+    color: #1b7081;
     font-size: 20px;
 }
 
@@ -1317,7 +1347,7 @@ a:hover {
 .doctor-detail-main-box p {
     font-size: 15px;
     color: #767676;
-    font-family: 'Roboto', sans-serif ;
+    font-family: "Roboto", sans-serif;
     margin: 30px 0px;
 }
 
@@ -1330,7 +1360,7 @@ a:hover {
 .appo-btn-main-box a {
     padding: 10px 30px;
     display: inline-block;
-    background-color: #1B7081;
+    background-color: #1b7081;
     color: white;
     border-radius: 100px;
     margin-top: 30px;
@@ -1379,26 +1409,26 @@ a:hover {
     flex-direction: row-reverse;
     font-size: 20px;
     justify-content: space-around;
-    padding: 0px .2em;
+    padding: 0px 0.2em;
     width: 170px;
 }
 
 .star-rating input {
-    display:none;
+    display: none;
 }
 
 .star-rating label {
-    color:#ccc;
-    cursor:pointer;
+    color: #ccc;
+    cursor: pointer;
 }
 
 .star-rating :checked ~ label {
-    color:#1B7081;
+    color: #1b7081;
 }
 
 .star-rating label:hover,
 .star-rating label:hover ~ label {
-    color:#1B7081;
+    color: #1b7081;
 }
 
 /* css end */
@@ -1420,7 +1450,7 @@ a:hover {
 }
 
 .part-form-main-box {
-    margin: 0px; 
+    margin: 0px;
 }
 
 .modal h2 {
@@ -1432,7 +1462,7 @@ a:hover {
     font-size: 15px;
     margin-bottom: 0;
     margin-top: 30px;
-    font-family: 'Roboto', sans-serif ;
+    font-family: "Roboto", sans-serif;
     color: black;
     text-align: center;
 }
@@ -1450,7 +1480,6 @@ a:hover {
     outline: none;
     margin: 0px 0px 15px;
 }
-
 
 .part-form-main-box input[type="email"] {
     width: 100%;
@@ -1485,7 +1514,7 @@ a:hover {
 
 /* Extra */
 
-.termsmar{
+.termsmar {
     margin-top: 35px;
 }
 
@@ -1507,7 +1536,7 @@ a:hover {
 }
 
 .chat-home-bottom-mbox span:before {
-    content: '';
+    content: "";
     background-color: green;
     width: 10px;
     height: 10px;
@@ -1519,12 +1548,10 @@ a:hover {
 
 /* Extra end */
 
-
-
 /* My account page */
 
 .my-accountpg-main-box .nav-tabs {
-  display: none;
+    display: none;
 }
 
 .my-accountpg-main-box .tab-chpmainbox {
@@ -1636,10 +1663,9 @@ a:hover {
     }
 }
 
-
 .myaccountpg-main-tabbox {
     width: 30%;
-    background-color: #1B7081;
+    background-color: #1b7081;
     padding: 80px 50px;
 }
 
@@ -1650,9 +1676,7 @@ a:hover {
 .myaccountpg-main-tabcontentbox {
     width: 70%;
     padding: 80px 50px;
-
 }
-
 
 .tab-appointment-box img {
     width: 80px;
@@ -1683,7 +1707,7 @@ a:hover {
 .tab-appointment-main-box h5 {
     font-size: 20px;
     color: black;
-    font-family: 'Roboto', sans-serif ;
+    font-family: "Roboto", sans-serif;
     text-align: right;
 }
 
@@ -1722,7 +1746,7 @@ a:hover {
     font-size: 14px;
     display: inline-block;
     padding: 6px 10px;
-    background-color: #49B7C6;
+    background-color: #49b7c6;
     color: black;
     border-radius: 10px;
 }
@@ -1739,7 +1763,7 @@ a:hover {
 }
 
 .pending {
-    color: #49B7C6;
+    color: #49b7c6;
 }
 
 .cancel {
@@ -1786,32 +1810,30 @@ a:hover {
     margin-top: 10px;
 }
 
-
-
 .notification {
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  box-shadow: 5px 7px 20px 4px rgba(0, 0, 0, 0.14);
-  display: -webkit-box;
-  display: flex;
-  height: 80px;
-  position: fixed;
-  right: 25px;
-  top: -250px;
-  width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 5px 7px 20px 4px rgba(0, 0, 0, 0.14);
+    display: -webkit-box;
+    display: flex;
+    height: 80px;
+    position: fixed;
+    right: 25px;
+    top: -250px;
+    width: 300px;
 }
 .notification .logo {
-  -webkit-box-align: center;
-          align-items: center;
-  display: -webkit-inline-box;
-  display: inline-flex;
-  height: 100%;
-  -webkit-box-pack: center;
-          justify-content: center;
-  width: 80px;
+    -webkit-box-align: center;
+    align-items: center;
+    display: -webkit-inline-box;
+    display: inline-flex;
+    height: 100%;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 80px;
 }
 .notification .logo #face {
- /* border: 3px solid #555;
+    /* border: 3px solid #555;
   border-radius: 100%;
   display: block;
   height: 70%;
@@ -1820,7 +1842,7 @@ a:hover {
   width: 70%;*/
 }
 .notification .logo #face .eye {
-  /*background-color: transparent;
+    /*background-color: transparent;
   border: 3px solid #555;
   border-radius: 100%;
   display: block;
@@ -1830,13 +1852,13 @@ a:hover {
   width: 10px;*/
 }
 .notification .logo #face .eye:first-of-type {
-  left: 8px;
+    left: 8px;
 }
 .notification .logo #face .eye:last-of-type {
-  right: 8px;
+    right: 8px;
 }
 .notification .logo #face span#mouth {
- /* background-color: transparent;
+    /* background-color: transparent;
   border: 3px solid #555;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -1850,125 +1872,125 @@ a:hover {
   width: 58%;*/
 }
 .notification .body {
-  height: 100%;
-  width: 220px;
+    height: 100%;
+    width: 220px;
 }
 .notification .body span,
 .notification .body p {
-  color: #EEEEEE;
-  display: block;
-  font-family: 'segoe ui';
-  padding-left: 17px;
+    color: #eeeeee;
+    display: block;
+    font-family: "segoe ui";
+    padding-left: 17px;
 }
 .notification .body span.title {
-  font-size: 15pt;
-  margin-top: 12px;
+    font-size: 15pt;
+    margin-top: 12px;
 }
 .notification .body p.message {
-  font-size: 10pt;
-  margin-top: 6px;
-  padding: 0 17px;
+    font-size: 10pt;
+    margin-top: 6px;
+    padding: 0 17px;
 }
 .notification.success {
-  background-color: black;
+    background-color: black;
 }
 .notification.success .logo {
-  background-color: #79C994;
+    background-color: #79c994;
 }
 .notification.fail {
-  background-color: #C66363;
+    background-color: #c66363;
 }
 .notification.fail .logo {
-  background-color: #EB6D74;
+    background-color: #eb6d74;
 }
 .notification.fail .logo #face #mouth {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 .notification:after {
-  -webkit-box-align: center;
-          align-items: center;
-  background-color: #fff;
-  border: none;
-  border-radius: 100%;
-  color: #aaa;
-  content: 'x';
-  display: -webkit-inline-box;
-  display: inline-flex;
-  font-family: 'segoe ui';
-  font-weight: bolder;
-  height: 22px;
-  -webkit-box-pack: center;
-          justify-content: center;
-  padding-bottom: 5px;
-  position: absolute;
-  right: -7px;
-  top: -7px;
-  width: 22px;
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: #fff;
+    border: none;
+    border-radius: 100%;
+    color: #aaa;
+    content: "x";
+    display: -webkit-inline-box;
+    display: inline-flex;
+    font-family: "segoe ui";
+    font-weight: bolder;
+    height: 22px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding-bottom: 5px;
+    position: absolute;
+    right: -7px;
+    top: -7px;
+    width: 22px;
 }
 .notification.visible {
-  top: 50px;
+    top: 50px;
 }
 .notification.ease {
-  -webkit-transition: top 0.5s ease;
-  transition: top 0.5s ease;
+    -webkit-transition: top 0.5s ease;
+    transition: top 0.5s ease;
 }
 .notification.ease-in {
-  -webkit-transition: top 0.5s ease-in;
-  transition: top 0.5s ease-in;
+    -webkit-transition: top 0.5s ease-in;
+    transition: top 0.5s ease-in;
 }
 .notification.ease-out {
-  -webkit-transition: top 0.5s ease-out;
-  transition: top 0.5s ease-out;
+    -webkit-transition: top 0.5s ease-out;
+    transition: top 0.5s ease-out;
 }
 .notification.ease-in-out {
-  -webkit-transition: top 0.5s ease-in-out;
-  transition: top 0.5s ease-in-out;
+    -webkit-transition: top 0.5s ease-in-out;
+    transition: top 0.5s ease-in-out;
 }
 .notification.linear {
-  -webkit-transition: top 0.5s linear;
-  transition: top 0.5s linear;
+    -webkit-transition: top 0.5s linear;
+    transition: top 0.5s linear;
 }
 
 div#registermodel {
     display: none;
 }
-div#forgotmodel{
+div#forgotmodel {
     display: none;
 }
 
-#overlay{   
+#overlay {
     position: fixed;
     top: 0;
     z-index: 100;
     width: 100%;
-    height:100%;
+    height: 100%;
     display: none;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
 }
 .cv-spinner {
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;  
+    align-items: center;
 }
-#overlaychk{   
+#overlaychk {
     position: fixed;
     top: 0;
     z-index: 100;
     width: 100%;
-    height:100%;
+    height: 100%;
     display: none;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
 }
-.laychk{   
+.laychk {
     position: fixed;
     top: 0;
     z-index: 100;
     width: 100%;
-    height:100%;
+    height: 100%;
     display: none;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
 }
 .spinner {
     width: 40px;
@@ -1979,26 +2001,26 @@ div#forgotmodel{
     animation: sp-anime 0.8s infinite linear;
 }
 @keyframes sp-anime {
-    100% { 
-        transform: rotate(360deg); 
+    100% {
+        transform: rotate(360deg);
     }
 }
-.is-hide{
-    display:none;
+.is-hide {
+    display: none;
 }
 
 .notification {
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  box-shadow: 5px 7px 20px 4px rgba(0, 0, 0, 0.14);
-  display: -webkit-box;
-  display: flex;
-  height: 80px;
-  position: fixed;
-  right: 25px;
-  top: -250px;
-  width: 300px;
-  z-index: 10;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 5px 7px 20px 4px rgba(0, 0, 0, 0.14);
+    display: -webkit-box;
+    display: flex;
+    height: 80px;
+    position: fixed;
+    right: 25px;
+    top: -250px;
+    width: 300px;
+    z-index: 10;
 }
 
 .notification.ease.success.visible {
@@ -2006,17 +2028,17 @@ div#forgotmodel{
 }
 
 .notification .logo {
-  -webkit-box-align: center;
-          align-items: center;
-  display: -webkit-inline-box;
-  display: inline-flex;
-  height: 100%;
-  -webkit-box-pack: center;
-          justify-content: center;
-  width: 80px;
+    -webkit-box-align: center;
+    align-items: center;
+    display: -webkit-inline-box;
+    display: inline-flex;
+    height: 100%;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 80px;
 }
 .notification .logo #face {
- /* border: 3px solid #555;
+    /* border: 3px solid #555;
   border-radius: 100%;
   display: block;
   height: 70%;
@@ -2025,7 +2047,7 @@ div#forgotmodel{
   width: 70%;*/
 }
 .notification .logo #face .eye {
-  /*background-color: transparent;
+    /*background-color: transparent;
   border: 3px solid #555;
   border-radius: 100%;
   display: block;
@@ -2035,13 +2057,13 @@ div#forgotmodel{
   width: 10px;*/
 }
 .notification .logo #face .eye:first-of-type {
-  left: 8px;
+    left: 8px;
 }
 .notification .logo #face .eye:last-of-type {
-  right: 8px;
+    right: 8px;
 }
 .notification .logo #face span#mouth {
- /* background-color: transparent;
+    /* background-color: transparent;
   border: 3px solid #555;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -2055,91 +2077,91 @@ div#forgotmodel{
   width: 58%;*/
 }
 .notification .body {
-  height: 100%;
-  width: 220px;
+    height: 100%;
+    width: 220px;
 }
 .notification .body span,
 .notification .body p {
-  color: #EEEEEE;
-  display: block;
-  font-family: 'segoe ui';
-  padding-left: 17px;
+    color: #eeeeee;
+    display: block;
+    font-family: "segoe ui";
+    padding-left: 17px;
 }
 .notification .body span.title {
-  font-size: 15pt;
-  margin-top: 12px;
+    font-size: 15pt;
+    margin-top: 12px;
 }
 .notification .body p.message {
-  font-size: 10pt;
-  margin-top: 6px;
-  padding: 0 17px;
+    font-size: 10pt;
+    margin-top: 6px;
+    padding: 0 17px;
 }
 .notification.success {
-  background-color: black;
+    background-color: black;
 }
 .notification.success .logo {
-  background-color: #79C994;
+    background-color: #79c994;
 }
 .notification.fail {
-  background-color: #C66363;
+    background-color: #c66363;
 }
 .notification.fail .logo {
-  background-color: #EB6D74;
+    background-color: #eb6d74;
 }
 .notification.fail .logo #face #mouth {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 .notification:after {
-  -webkit-box-align: center;
-          align-items: center;
-  background-color: #fff;
-  border: none;
-  border-radius: 100%;
-  color: #aaa;
-  content: 'x';
-  display: -webkit-inline-box;
-  display: inline-flex;
-  font-family: 'segoe ui';
-  font-weight: bolder;
-  height: 22px;
-  -webkit-box-pack: center;
-          justify-content: center;
-  padding-bottom: 5px;
-  position: absolute;
-  right: -7px;
-  top: -7px;
-  width: 22px;
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: #fff;
+    border: none;
+    border-radius: 100%;
+    color: #aaa;
+    content: "x";
+    display: -webkit-inline-box;
+    display: inline-flex;
+    font-family: "segoe ui";
+    font-weight: bolder;
+    height: 22px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding-bottom: 5px;
+    position: absolute;
+    right: -7px;
+    top: -7px;
+    width: 22px;
 }
 .notification.visible {
-  top: 50px;
+    top: 50px;
 }
 .notification.ease {
-  -webkit-transition: top 0.5s ease;
-  transition: top 0.5s ease;
+    -webkit-transition: top 0.5s ease;
+    transition: top 0.5s ease;
 }
 .notification.ease-in {
-  -webkit-transition: top 0.5s ease-in;
-  transition: top 0.5s ease-in;
+    -webkit-transition: top 0.5s ease-in;
+    transition: top 0.5s ease-in;
 }
 .notification.ease-out {
-  -webkit-transition: top 0.5s ease-out;
-  transition: top 0.5s ease-out;
+    -webkit-transition: top 0.5s ease-out;
+    transition: top 0.5s ease-out;
 }
 .notification.ease-in-out {
-  -webkit-transition: top 0.5s ease-in-out;
-  transition: top 0.5s ease-in-out;
+    -webkit-transition: top 0.5s ease-in-out;
+    transition: top 0.5s ease-in-out;
 }
 .notification.linear {
-  -webkit-transition: top 0.5s linear;
-  transition: top 0.5s linear;
+    -webkit-transition: top 0.5s linear;
+    transition: top 0.5s linear;
 }
 
-
-
-
-.container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
-   
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl {
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -2152,7 +2174,7 @@ div#forgotmodel{
 .call-main-row {
     bottom: 0;
     left: 0;
-   /* overflow: auto;*/
+    /* overflow: auto;*/
     padding-bottom: inherit;
     padding-top: inherit;
     position: absolute;
@@ -2203,14 +2225,14 @@ div#forgotmodel{
     align-items: center;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
 }
 .user-img {
     display: inline-block;
     position: relative;
 }
 .float-left {
-    float: left!important;
+    float: left !important;
 }
 .avatar-sm {
     width: 2.5rem;
@@ -2222,8 +2244,9 @@ div#forgotmodel{
     width: 3rem;
     height: 3rem;
 }
-.mr-2, .mx-2 {
-    margin-right: .5rem!important;
+.mr-2,
+.mx-2 {
+    margin-right: 0.5rem !important;
 }
 .avatar > img {
     width: 100%;
@@ -2232,14 +2255,14 @@ div#forgotmodel{
     object-fit: cover;
 }
 .rounded-circle {
-    border-radius: 50%!important;
+    border-radius: 50% !important;
 }
 img {
     vertical-align: middle;
     border-style: none;
 }
 .float-left {
-    float: left!important;
+    float: left !important;
 }
 .fixed-header .user-info a {
     color: #272b41;
@@ -2295,7 +2318,7 @@ img {
 }
 .nav-link {
     display: block;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
 }
 .dropdown-toggle {
     white-space: nowrap;
@@ -2377,7 +2400,7 @@ img {
     text-transform: uppercase;
 }
 .material-icons {
-    font-family: 'Material Icons';
+    font-family: "Material Icons";
     font-weight: normal;
     font-style: normal;
     font-size: 24px;
@@ -2391,23 +2414,21 @@ img {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: 'liga';
+    font-feature-settings: "liga";
 }
 
-
-.my-video ul li video{
-     border: 3px solid #fff;
-     border-radius: 6px;
-     width:150px;
+.my-video ul li video {
+    border: 3px solid #fff;
+    border-radius: 6px;
+    width: 150px;
 }
 
-.user-video video{
+.user-video video {
     height: 350px;
     width: 100%;
 }
 
-#button-leave
-{
+#button-leave {
     background-color: #f06060;
     border-radius: 161px;
     border: none;
@@ -2429,21 +2450,21 @@ img {
 }
 .alert {
     position: relative;
-    padding: .75rem 1.25rem;
+    padding: 0.75rem 1.25rem;
     margin-bottom: 1rem;
     border: 1px solid transparent;
-    border-radius: .25rem;
+    border-radius: 0.25rem;
 }
 .fade {
-    transition: opacity .15s linear;
+    transition: opacity 0.15s linear;
 }
 .alert-dismissible .close {
     position: absolute;
     top: 0;
     right: 0;
-    padding: .75rem 1.25rem;
+    padding: 0.75rem 1.25rem;
     color: inherit;
-        box-shadow: none;
+    box-shadow: none;
     background: none;
 }
 .alert-success {
@@ -2453,25 +2474,24 @@ img {
 }
 
 .pricing-part-btn a {
-    background-color: #49B7C6;
+    background-color: #49b7c6;
     border: none;
     color: white;
     width: 100%;
     padding: 15px;
     border-radius: 10px;
     outline: none;
-    font-family: 'Roboto', sans-serif ;
+    font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     font-size: 15px;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
 }
 
-.card-header{
-    color:white;
-    background: #49B7C6;
+.card-header {
+    color: white;
+    background: #49b7c6;
 }
-
 
 /* My account page end */
 
@@ -2492,7 +2512,7 @@ img {
 }
 
 .ssuccess-main-box {
-    font-family: 'Roboto', sans-serif ;
+    font-family: "Roboto", sans-serif;
 }
 
 .success-des p {
@@ -2523,7 +2543,7 @@ img {
     float: right;
     margin-right: 0px;
     margin-top: 10px;
-    background-color: #49B7C6;
+    background-color: #49b7c6;
     border-radius: 1000px;
     border: none;
     padding: 7px 15px;
@@ -2552,7 +2572,7 @@ img {
     float: right;
     margin-right: 0px;
     margin-top: 10px;
-    background-color: #49B7C6;
+    background-color: #49b7c6;
     border-radius: 1000px;
     border: none;
     padding: 7px 15px;
@@ -2570,7 +2590,7 @@ img {
 
 .call-notification-box {
     padding: 10px 20px;
-    background-color: #49B7C6;
+    background-color: #49b7c6;
     display: flex;
 }
 
@@ -2604,7 +2624,7 @@ img {
     width: 85%;
 }
 
-.call-notification-img-box img{
+.call-notification-img-box img {
     width: 50px;
 }
 
@@ -2641,22 +2661,22 @@ img {
 }
 
 .loader-bg {
-    background-color:black;
-    width:100%;
-    height:100%;
-    opacity:.5;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
 }
 
 .ch1 {
     position: fixed;
     bottom: 0;
     right: 0;
-    margin: .6em;
+    margin: 0.6em;
     width: 300px;
 }
 
 .ch2 {
-    background-color: #49B7C6;
+    background-color: #49b7c6;
     padding: 20px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -2690,35 +2710,58 @@ div#addreview {
     float: right;
 }
 
-.appointment-section .item .caption{
+.appointment-section .item .caption {
     text-align: right;
     right: 3%;
 }
 
-.mail-icon, .phone-icon{
+.mail-icon,
+.phone-icon {
     padding-left: 10px;
 }
-.who_we_are_cotent p, .who_we_are_sub_section p{
+.who_we_are_cotent p,
+.who_we_are_sub_section p {
     text-align: right;
 }
-.who_we_are_cotent h2:nth-child(1){
+.who_we_are_cotent h2:nth-child(1) {
     text-align: right;
 }
-.about-content-widget{
+.about-content-widget {
     text-align: right;
 }
 
-.text-section-about p{
-    border-left: 0px ;
+.text-section-about p {
+    border-left: 0px;
     border-right: 3px solid #49b7c6;
 }
 
-.workshop-part-detail h4{
+.workshop-part-detail h4 {
     text-align: right;
 }
-@media (max-width: 1200px){
-.navbar-toggler {
-    left: 10px;
-    right: unset !important;
+
+.about_tiles .inner-single-title ul li{
+    text-align: right;
+    padding-right: 1rem;
 }
+
+.get-in-touch-button {
+
+    right: 88px;
 }
+
+.workshop_wrapper .workshop_inner_overlay{
+    text-align: right;
+}
+
+
+
+
+
+
+@media (max-width: 1200px) {
+    .navbar-toggler {
+        left: 10px;
+        right: unset !important;
+    }
+}
+

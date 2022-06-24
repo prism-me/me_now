@@ -9,15 +9,25 @@
 @section('content')
     <div class="workshop_wrapper">
         <div class="banner-img">
-            <img src="{{ @$workshop->banner_img }}" alt="" class="img-fluid banner workshop-banner">
+            <div class="row no-gutters">
+                <div class="col-md-9" style="order : <?= Session::get('locale') == 'ar' ? 2 : '' ?>">
+                    <img src="{{ @$workshop->banner_img }}" alt="" class="img-fluid banner workshop-banner">
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+
+
+
+            {{-- <img src="{{ @$workshop->banner_img }}" alt="" class="img-fluid banner workshop-banner"> --}}
             <div class="workshop_inner_overlay" data-aos="fade-left">
                 <div class="meta_content">
                     <div class="meta1"><span class="fa fa-chevron-right"></span> <b>{{ __('messages.Date & Time') }}:
                         </b>&nbsp;
                         @php $event_date = $workshop->event_date; @endphp
-                        <select name="date_time" id="" class="form-control" style="color:#000;width:80%;font-size: 13px;
+                        <select name="date_time" id="" class="form-control"
+                            style="color:#000;width:80%;font-size: 13px;
                                 padding-left: 7px;">
-                            <option value="0">{{ __('messages.Select Date and Time')}}</option>
+                            <option value="0">{{ __('messages.Select Date and Time') }}</option>
                             @foreach ($event_date as $date)
                                 <option value="{{ $date }}">{{ date('m/d/Y H:i:s', strtotime($date)) }}</option>
                             @endforeach
@@ -40,7 +50,7 @@
                     </div>
                 </div>
 
-                <span class="workshop-share"><b>{{ __('messages.Share')}}:</b></span>
+                <span class="workshop-share"><b>{{ __('messages.Share') }}:</b></span>
                 {!! $social !!}
 
 
@@ -88,24 +98,28 @@
                                 {{-- <label class="text-sm text-gray-500">Number of attendees? <span
                                         class="text-red-500">*</span></label>
                                 <input type="number" name="attendees" min="1" max="5" required value="1"><br><br> --}}
-                                <input type="text" required name="first_name" id="name" placeholder="{{ __('messages.First Name') }}">
-                                <input type="text" required name="last_name" id="name" placeholder="{{ __('messages.Last Name') }}">
-                                <input type="text" required name="email" id="email" placeholder="{{ __('messages.Email') }}"
-                                    class="appo-right-input">
-                                <input type="text" required name="phone_number" id="phone_no" placeholder="{{ __('messages.Phone Number') }}">
+                                <input type="text" required name="first_name" id="name"
+                                    placeholder="{{ __('messages.First Name') }}">
+                                <input type="text" required name="last_name" id="name"
+                                    placeholder="{{ __('messages.Last Name') }}">
+                                <input type="text" required name="email" id="email"
+                                    placeholder="{{ __('messages.Email') }}" class="appo-right-input">
+                                <input type="text" required name="phone_number" id="phone_no"
+                                    placeholder="{{ __('messages.Phone Number') }}">
                                 @php $event_date = $workshop->event_date; @endphp
                                 <select name="date" id="" class="form-control" style="color:#000;width:100%;">
-                                    <option value="0">{{ __('messages.Select Date and Time')}}</option>
+                                    <option value="0">{{ __('messages.Select Date and Time') }}</option>
                                     @foreach ($event_date as $date)
                                         <option value="{{ $date }}">{{ date('m/d/Y H:i:s', strtotime($date)) }}
                                         </option>
                                     @endforeach
                                 </select>
-                                <textarea type="text" required name="message" id="message_workshop" placeholder="{{ __('messages.Your Message') }}"></textarea>
+                                <textarea type="text" required name="message" id="message_workshop"
+                                    placeholder="{{ __('messages.Your Message') }}"></textarea>
                             </div>
                             <div class="appo-btn-main-box">
 
-                                <button type="submit" >{{ __('messages.Book Now') }}</button>
+                                <button type="submit">{{ __('messages.Book Now') }}</button>
 
 
                             </div>

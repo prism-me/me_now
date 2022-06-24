@@ -227,6 +227,7 @@ function getserviceanddoctor(val) {
     });
 }
 
+
 function userloginalert() {
     document.getElementById("loginerrorreview").innerHTML =
         '<div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">' +

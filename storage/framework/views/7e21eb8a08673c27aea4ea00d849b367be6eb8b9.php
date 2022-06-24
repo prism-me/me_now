@@ -10,13 +10,23 @@
 <?php $__env->startSection('content'); ?>
     <div class="workshop_wrapper">
         <div class="banner-img">
-            <img src="<?php echo e(@$workshop->banner_img); ?>" alt="" class="img-fluid banner workshop-banner">
+            <div class="row no-gutters">
+                <div class="col-md-9" style="order : <?= Session::get('locale') == 'ar' ? 2 : '' ?>">
+                    <img src="<?php echo e(@$workshop->banner_img); ?>" alt="" class="img-fluid banner workshop-banner">
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+
+
+
+            
             <div class="workshop_inner_overlay" data-aos="fade-left">
                 <div class="meta_content">
                     <div class="meta1"><span class="fa fa-chevron-right"></span> <b><?php echo e(__('messages.Date & Time')); ?>:
                         </b>&nbsp;
                         <?php $event_date = $workshop->event_date; ?>
-                        <select name="date_time" id="" class="form-control" style="color:#000;width:80%;font-size: 13px;
+                        <select name="date_time" id="" class="form-control"
+                            style="color:#000;width:80%;font-size: 13px;
                                 padding-left: 7px;">
                             <option value="0"><?php echo e(__('messages.Select Date and Time')); ?></option>
                             <?php $__currentLoopData = $event_date; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $date): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -85,11 +95,14 @@
                                 <input type="hidden" name="price" value="<?php echo e($workshop->price); ?>">
                                 <input type="hidden" name="name" value="<?php echo e($workshop->title); ?>">
                                 
-                                <input type="text" required name="first_name" id="name" placeholder="<?php echo e(__('messages.First Name')); ?>">
-                                <input type="text" required name="last_name" id="name" placeholder="<?php echo e(__('messages.Last Name')); ?>">
-                                <input type="text" required name="email" id="email" placeholder="<?php echo e(__('messages.Email')); ?>"
-                                    class="appo-right-input">
-                                <input type="text" required name="phone_number" id="phone_no" placeholder="<?php echo e(__('messages.Phone Number')); ?>">
+                                <input type="text" required name="first_name" id="name"
+                                    placeholder="<?php echo e(__('messages.First Name')); ?>">
+                                <input type="text" required name="last_name" id="name"
+                                    placeholder="<?php echo e(__('messages.Last Name')); ?>">
+                                <input type="text" required name="email" id="email"
+                                    placeholder="<?php echo e(__('messages.Email')); ?>" class="appo-right-input">
+                                <input type="text" required name="phone_number" id="phone_no"
+                                    placeholder="<?php echo e(__('messages.Phone Number')); ?>">
                                 <?php $event_date = $workshop->event_date; ?>
                                 <select name="date" id="" class="form-control" style="color:#000;width:100%;">
                                     <option value="0"><?php echo e(__('messages.Select Date and Time')); ?></option>
@@ -99,11 +112,12 @@
                                         </option>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </select>
-                                <textarea type="text" required name="message" id="message_workshop" placeholder="<?php echo e(__('messages.Your Message')); ?>"></textarea>
+                                <textarea type="text" required name="message" id="message_workshop"
+                                    placeholder="<?php echo e(__('messages.Your Message')); ?>"></textarea>
                             </div>
                             <div class="appo-btn-main-box">
 
-                                <button type="submit" ><?php echo e(__('messages.Book Now')); ?></button>
+                                <button type="submit"><?php echo e(__('messages.Book Now')); ?></button>
 
 
                             </div>
