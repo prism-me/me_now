@@ -292,8 +292,8 @@
                                 <div class="footer-d1-box">
                                     <h3><?php echo e(__('messages.Our Services')); ?></h3>
                                     <?php $i = 0; ?>
-                                    
-                                        <?php $__currentLoopData = $depart; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <?php if(isset($department)): ?>
+                                        <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <?php if($i < 5): ?>
                                                 <a href="services/<?php echo e($d->slug); ?>"><?php echo e($d->name); ?>
 
@@ -301,7 +301,18 @@
                                                 <?php $i++; ?>
                                             <?php endif; ?>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                   
+                                    <?php else: ?>
+                                        <?php if(Session::get('departmentlist')): ?>
+                                            <?php $__currentLoopData = Session::get('departmentlist'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <?php if($i < 5): ?>
+                                                    <a href="<?php echo e(url('services') . '/' . $d->slug); ?>"><?php echo e($d->name); ?>
+
+                                                    </a>
+                                                    <?php $i++; ?>
+                                                <?php endif; ?>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        <?php endif; ?>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>

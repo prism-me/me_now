@@ -27,8 +27,7 @@
                     
                     <div class="meta1"><span class="fa fa-chevron-right"></span> <b><?php echo e(__('messages.Workshop Type')); ?>:
                         </b>&nbsp;<?php echo e(ucfirst($workshop->event_type)); ?></div>
-                    <div class="meta1"><span class="fa fa-chevron-right"></span> <b><?php echo e(__('messages.Age')); ?>: </b>&nbsp; Adults (18
-                        Yrs+) </div>
+                    <div class="meta1"><span class="fa fa-chevron-right"></span> <b><?php echo e(__('messages.Age')); ?>: </b>&nbsp;<?php echo e(__('messages.Adults (18 Yrs+)')); ?></div>
                     <div class="meta1"><span class="fa fa-chevron-right"></span> <b><?php echo e(__('messages.Facilitated by')); ?>: </b></div>
 
                 </div>
@@ -79,7 +78,7 @@
                             </div>
                         <?php endif; ?>
                         <span id="loginerrorreview"></span>
-                        <form action="<?php echo e(url('workshop-booking')); ?>" method="post">
+                        <form action="/<?php echo e(Session::get('locale')); ?>/workshop-booking" method="post">
                             <?php echo e(csrf_field()); ?>
 
                             <div class="appo-input-main-box">

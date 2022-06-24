@@ -530,6 +530,7 @@ return [
 		"Facilitated by" => "Facilitated by",
 		"Share" => "Share",
 		"Book Now!" => "Book Now!",
+		"Adults (18 Yrs+)" => "Adults (18 Yrs+)",
 			
 		
 
