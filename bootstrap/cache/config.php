@@ -974,6 +974,46 @@
       'force_resync_remote' => NULL,
     ),
   ),
+  'laravellocalization' => 
+  array (
+    'supportedLocales' => 
+    array (
+      'en' => 
+      array (
+        'name' => 'English',
+        'script' => 'Latn',
+        'native' => 'English',
+        'regional' => 'en_GB',
+      ),
+      'es' => 
+      array (
+        'name' => 'Spanish',
+        'script' => 'Latn',
+        'native' => 'español',
+        'regional' => 'es_ES',
+      ),
+    ),
+    'useAcceptLanguageHeader' => true,
+    'hideDefaultLocaleInURL' => false,
+    'localesOrder' => 
+    array (
+    ),
+    'localesMapping' => 
+    array (
+    ),
+    'utf8suffix' => '.UTF-8',
+    'urlsIgnored' => 
+    array (
+      0 => '/skipped',
+    ),
+    'httpMethodsIgnored' => 
+    array (
+      0 => 'POST',
+      1 => 'PUT',
+      2 => 'PATCH',
+      3 => 'DELETE',
+    ),
+  ),
   'datatables-buttons' => 
   array (
     'namespace' => 

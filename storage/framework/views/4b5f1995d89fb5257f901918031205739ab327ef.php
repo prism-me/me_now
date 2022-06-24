@@ -84,14 +84,14 @@
 
                                 <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $departments): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <li><a class="dropdown-item"
-                                            href="<?php echo e(url('services') . '/' . $departments->slug); ?>">
+                                            href="<?php echo e(route('department.service/',[Session::get('locale'), $departments->slug])); ?>">
                                             <?php echo e($departments->name); ?> </a>
 
                                         <?php if(!blank($departments->service)): ?>
                                             <ul class="submenu dropdown-menu">
                                                 <?php $__currentLoopData = $departments->service; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $subdepartment): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <li><a class="dropdown-item"
-                                                            href="<?php echo e(url('services') . '/' . $departments->slug . '/' . $subdepartment->slug); ?>">
+                                                            href="<?php echo e(route('services/',[Session::get('locale'), $departments->slug , $subdepartment->slug])); ?>">
                                                             <?php echo e($subdepartment->name); ?></a>
                                                     </li>
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

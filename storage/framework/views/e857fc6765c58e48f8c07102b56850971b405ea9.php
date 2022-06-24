@@ -1,6 +1,6 @@
 <div class="instagram_wrapper">
     <div class="global-heading mb-5">
-        <h2 class="instagram_heading">Check Us Out on Instagram #<a href="https://www.instagram.com/menowdubai/"
+        <h2 class="instagram_heading"><?php echo e(__('messages.Check Us Out on Instagram')); ?> #<a href="https://www.instagram.com/menowdubai/"
                 rel="nofollow">menowdubai</a></h2>
     </div>
     <script src="https://assets.juicer.io/embed.js" type="text/javascript"></script>

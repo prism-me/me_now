@@ -2749,7 +2749,9 @@ div#addreview {
     right: 88px;
 }
 
-
+.workshop_wrapper .workshop_inner_overlay{
+    text-align: right;
+}
 
 
 

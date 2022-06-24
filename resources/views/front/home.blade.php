@@ -79,7 +79,8 @@
             </div>
             <div class="testimonial-part-main-box">
                 <div class="owl-carousel testimonial-carousel patient-reviews-slider">
-                    @foreach ($review as $r)
+               
+                    @foreach ($reviews as $r)
                         @if (isset($r->users))
                             <div class="single-testimonial">
                                 <div class="testimonial-part-box">

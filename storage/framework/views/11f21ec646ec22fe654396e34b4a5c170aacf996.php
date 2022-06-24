@@ -84,14 +84,14 @@
 
                                 <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $departments): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <li><a class="dropdown-item"
-                                            href="<?php echo e(url('services') . '/' . $departments->slug); ?>">
+                                            href="<?php echo e(route('department.service/',[Session::get('locale'), $departments->slug])); ?>">
                                             <?php echo e($departments->name); ?> </a>
 
                                         <?php if(!blank($departments->service)): ?>
                                             <ul class="submenu dropdown-menu">
                                                 <?php $__currentLoopData = $departments->service; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $subdepartment): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <li><a class="dropdown-item"
-                                                            href="<?php echo e(url('services') . '/' . $departments->slug . '/' . $subdepartment->slug); ?>">
+                                                            href="<?php echo e(route('services/',[Session::get('locale'), $departments->slug , $subdepartment->slug])); ?>">
                                                             <?php echo e($subdepartment->name); ?></a>
                                                     </li>
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -292,8 +292,8 @@
                                 <div class="footer-d1-box">
                                     <h3><?php echo e(__('messages.Our Services')); ?></h3>
                                     <?php $i = 0; ?>
-                                    <?php if(isset($department)): ?>
-                                        <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    
+                                        <?php $__currentLoopData = $depart; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <?php if($i < 5): ?>
                                                 <a href="services/<?php echo e($d->slug); ?>"><?php echo e($d->name); ?>
 
@@ -301,18 +301,7 @@
                                                 <?php $i++; ?>
                                             <?php endif; ?>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                    <?php else: ?>
-                                        <?php if(Session::get('departmentlist')): ?>
-                                            <?php $__currentLoopData = Session::get('departmentlist'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                <?php if($i < 5): ?>
-                                                    <a href="<?php echo e(url('services') . '/' . $d->slug); ?>"><?php echo e($d->name); ?>
-
-                                                    </a>
-                                                    <?php $i++; ?>
-                                                <?php endif; ?>
-                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                        <?php endif; ?>
-                                    <?php endif; ?>
+                                   
                                 </div>
                             </div>
                         </div>
