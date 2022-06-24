@@ -526,10 +526,10 @@
       array (
         'transport' => 'smtp',
         'host' => 'smtp.gmail.com',
-        'port' => '465',
+        'port' => '587',
         'encryption' => 'tls',
         'username' => 'prism.marketing786@gmail.com',
-        'password' => 'Prism@2020#',
+        'password' => 'niqwmtrbfcgdfseo',
         'timeout' => NULL,
         'auth_mode' => NULL,
       ),

@@ -39,8 +39,7 @@
 
                                             <p>{{ $service->excerpt }}</p>
                                             <a class="btn-hover color-9"
-                                                href="{{ url('services') . '/' . $serviceSlug . '/' . $service->slug }}">Read
-                                                More</a>
+                                                href="{{ url('services') . '/' . $serviceSlug . '/' . $service->slug }}">{{ __('messages.Read More') }}</a>
                                         </div>
                                     </div>
 

@@ -35,11 +35,12 @@
 
                             <img src="{{ $s->image }}">
                             <div class="text-detail-box">
-                                <h4><a href="{{ url('services') . '/' . $s->slug }}">{{ $s->name }}</a>
+                                
+                                <h4><a href="{{ route('department.service/',[Session::get('locale'),  $s->slug]) }}">{{ $s->name }}</a>
                                 </h4>
                                 <div class="services_overlay">
                                     <div class="services_content">
-                                        <h4><a href="{{ url('services') . '/' . $s->slug }}">{{ $s->name }}</a>
+                                        <h4><a href="{{ route('department.service/',[Session::get('locale'),  $s->slug]) }}">{{ $s->name }}</a>
                                         </h4>
                                         <p>{{ $s->short_description }}</p>
                                     </div>

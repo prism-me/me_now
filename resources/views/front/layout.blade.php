@@ -217,7 +217,7 @@
                     <div id="loginmodel">
                         <h2>{{ __('messages.Appointment Now!') }}</h2>
                         <div class="part-form-main-box">
-                            <form action="{{ url('bookappoinment') }}" method="post">
+                            <form action="/{{Session::get('locale')}}/bookappoinment" method="post">
                                 {{ csrf_field() }}
                                 <div class="appo-select-main-box">
                                     <div class="appo-select-box">
@@ -535,28 +535,9 @@
             e.stopPropagation();
         });
 
-        // make it as accordion for smaller screens
-        // if ($(window).width() < 992) {
-        //     $('.dropdown-menu a').click(function(e) {
-        //         e.preventDefault();
-        //         if ($(this).next('.submenu').length) {
-        //             $(this).next('.submenu').toggle();
-        //         }
-        //         $('.dropdown').on('hide.bs.dropdown', function() {
-        //             $(this).find('.submenu').hide();
-        //         })
-        //     });
-        // }
+       
     </script>
-    {{-- <script type="text/javascript">
   
-        var url = "{{ route('changeLang') }}";
-    
-        $(".changeLang").change(function(){
-            window.location.href = url + "?lang="+ $(this).val();
-        });
-    
-    </script> --}}
 
 </body>
 

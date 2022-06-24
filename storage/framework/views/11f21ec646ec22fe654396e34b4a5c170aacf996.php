@@ -73,6 +73,7 @@
                                 <ul class="nav navbar-nav ml-auto">
                         <?php endif; ?>
                         
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="about-us"><?php echo e(__('messages.About')); ?></a>
                         </li>
@@ -189,7 +190,7 @@
                     <div id="loginmodel">
                         <h2><?php echo e(__('messages.Appointment Now!')); ?></h2>
                         <div class="part-form-main-box">
-                            <form action="<?php echo e(url('bookappoinment')); ?>" method="post">
+                            <form action="/<?php echo e(Session::get('locale')); ?>/bookappoinment" method="post">
                                 <?php echo e(csrf_field()); ?>
 
                                 <div class="appo-select-main-box">
@@ -470,20 +471,9 @@
             e.stopPropagation();
         });
 
-        // make it as accordion for smaller screens
-        // if ($(window).width() < 992) {
-        //     $('.dropdown-menu a').click(function(e) {
-        //         e.preventDefault();
-        //         if ($(this).next('.submenu').length) {
-        //             $(this).next('.submenu').toggle();
-        //         }
-        //         $('.dropdown').on('hide.bs.dropdown', function() {
-        //             $(this).find('.submenu').hide();
-        //         })
-        //     });
-        // }
+       
     </script>
-    
+  
 
 </body>
 

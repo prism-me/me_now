@@ -327,10 +327,11 @@ class FrontController extends Controller
        }
 
         public function department(Request $request,$service){
-            // $service=$request->segment('3');
+            $service=$request->segment('3');
             $segment = $request->segment(1);
             $rooms = Room::where('lang',$segment)->get()->take(3);
             $departmentId = Department::where('slug' , $service)->where('lang',$segment)->first();
+         
             $departmentService=DepartService::where("department_id",$departmentId->id)->get();
             $department= Department::with('service')->where('lang',$segment)->get();
             $doctor=Doctor::get()->take(4);
@@ -786,12 +787,9 @@ class FrontController extends Controller
 
         $emailData = $request->all();
         $data = $request->except('name');
-        
         $add = WorkshopBooking::create($data);
         $userEmail = $request['email'];
         $mail = Mail::to($userEmail)->send(new BookingMail($emailData));
-        dd($mail);
-
         Session::flash('message',__('messages.Booking Done Successfully. Please Check Your Registered E-Mail to confirm the Booking.')); 
         Session::flash('alert-class', 'alert-success');           
         return redirect()->back();
