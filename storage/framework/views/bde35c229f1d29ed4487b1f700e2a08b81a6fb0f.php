@@ -13,7 +13,7 @@
                 <h2><?php echo e(@$home[1]['title']); ?> </h2>
                 <p class="serviceContent"><?php echo @$home[1]['description']; ?></p>
                 <div class="services-btn-main-box">
-                    <a href="<?php echo e(url('about')); ?>" class="btn-hover color-9"><?php echo e(__('messages.About Us')); ?></a>
+                    <a href="about-us" class="btn-hover color-9"><?php echo e(__('messages.About Us')); ?></a>
                 </div>
                 <div class="left-triangle">
                 </div>

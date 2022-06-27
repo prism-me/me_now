@@ -12,7 +12,7 @@
                 <h2>{{ @$home[1]['title'] }} </h2>
                 <p class="serviceContent">{!! @$home[1]['description'] !!}</p>
                 <div class="services-btn-main-box">
-                    <a href="{{ url('about') }}" class="btn-hover color-9">{{ __('messages.About Us') }}</a>
+                    <a href="about-us" class="btn-hover color-9">{{ __('messages.About Us') }}</a>
                 </div>
                 <div class="left-triangle">
                 </div>
