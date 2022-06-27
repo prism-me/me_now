@@ -178,7 +178,7 @@
                         <div class="doctorpg-tab-mainbox doctorpg-tab-mainbox">
                             <section class="customer-logos slider tab">
                                 <div class="slide tablinks" id="defaultOpen" onclick="openCity(event, 'aboutdoctor')">
-                                    Experience
+                                    {{ __('messages.Experience') }}
                                 </div>
                                 <div class="slide tablinks" onclick="openCity(event, 'services')">
                                     {{ __('messages.Service') }}
@@ -251,7 +251,7 @@
                                                 
                                                 <textarea id="messages" name="review" required=""></textarea>
                                                 <div class="appo-btn-main-box">
-                                                        <button type="submit">{{ __('messages.submit') }}</button>
+                                                        <button type="submit">{{ __('messages.Submit') }}</button>
                                                    
                                                 </div>
                                             </div>

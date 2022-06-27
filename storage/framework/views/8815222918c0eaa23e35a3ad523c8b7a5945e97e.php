@@ -90,7 +90,8 @@
                         <div class="doctorpg-tab-mainbox doctorpg-tab-mainbox">
                             <section class="customer-logos slider tab">
                                 <div class="slide tablinks" id="defaultOpen" onclick="openCity(event, 'aboutdoctor')">
-                                    Experience
+                                    <?php echo e(__('messages.Experience')); ?>
+
                                 </div>
                                 <div class="slide tablinks" onclick="openCity(event, 'services')">
                                     <?php echo e(__('messages.Service')); ?>
@@ -166,7 +167,7 @@
                                                 
                                                 <textarea id="messages" name="review" required=""></textarea>
                                                 <div class="appo-btn-main-box">
-                                                        <button type="submit"><?php echo e(__('messages.submit')); ?></button>
+                                                        <button type="submit"><?php echo e(__('messages.Submit')); ?></button>
                                                    
                                                 </div>
                                             </div>

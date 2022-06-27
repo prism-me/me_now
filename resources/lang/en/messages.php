@@ -531,6 +531,7 @@ return [
 		"Share" => "Share",
 		"Book Now!" => "Book Now!",
 		"Adults (18 Yrs+)" => "Adults (18 Yrs+)",
+		"dd/mm/yyyy" => "dd/mm/yyyy",
 			
 		
 

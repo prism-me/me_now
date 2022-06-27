@@ -166,12 +166,9 @@ class FrontController extends Controller
          $department=Department::with('service')->where('lang',$segment)->get();
          $setting=Setting::find(1);
          $reviews=Review::with('doctors','users')->where('lang',$segment)->get()->take(4);
-         
          $workshop=  Workshop::where('slug',$slug)->with('doctor')->where('lang',$segment)->get()->first();
-        //  dd($workshop->short_description);
         //https://prismdigital.ae/why-do-business-websites-need-a-good-design/ - test url
          $social = \Share::page('http://127.0.0.1:8000/en/workshop/'. $workshop->slug , $workshop->title)->facebook()->linkedin()->whatsapp()->twitter();
-        //   dd($social);
        return view("front.workshops_inner")->with('rooms',$rooms)->with('social', $social)->with('doctor',$doctor)->with("setting",$setting)->with("department",$department)->with('workshop',$workshop);
     }
 

@@ -93,14 +93,8 @@
                             @else
                                 <ul class="nav navbar-nav ml-auto">
                         @endif
-                        {{-- <li class="nav-item">
-			        			<a class="nav-link" href="{{url('/')}}">{{ __('messages.Home' )}}</a>
-			  				</li> --}}
-                        {{-- <li class="nav-item">
-                            <a class="nav-link" href="{{ route('locale.home') }}">Home</a>
-                        </li> --}}
                         <li class="nav-item">
-                            <a class="nav-link" href="about-us">{{ __('messages.About') }}</a>
+                            <a class="nav-link" href={{ url('about-us') }}>{{ __('messages.About') }}</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#"
@@ -224,7 +218,7 @@
                                         <select id="department" required class="dropdown" name="department_id"
                                             onchange="getserviceanddoctor(this.value)">
                                             <option value="" disabled="disabled" selected="selected">-
-                                                Select Service</option>
+                                                {{ __('messages.Select Service')}}</option>
                                             @if (isset($department))
                                                 @foreach ($department as $d)
                                                     <option value="{{ $d->id }}">{{ $d->name }}</option>
@@ -234,8 +228,8 @@
                                     </div>
                                     <div class="appo-select-box11">
                                         <select id="service" class="dropdown appo-select-box" name="service_id">
-                                            <option value="" disabled="disabled" selected="selected">-
-                                                Select Sub Service</option>
+                                            <option value="" disabled="disabled" selected="selected">{{ __('messages.Select Sub Service') }}</option>
+                                               
 
                                             @if (isset($department))
                                                 @foreach ($department as $d)
@@ -264,7 +258,7 @@
                                         placeholder="{{ __('messages.Enter Phone number') }}"
                                         class="appo-right-input" value="">
                                     <input type="date" required name="date" id="app_date"
-                                        min="<?= date('Y-m-d') ?>" placeholder="dd/mm/yyyy">
+                                        min="<?= date('Y-m-d') ?>" placeholder="{{ __('messages.dd/mm/yyyy') }}">
                                     <input type="time" required name="time" placeholder="Time"
                                         class="appo-right-input">
                                     <textarea rows="3" required name="messages" placeholder="{{ __('messages.Enter Your Messages') }}"></textarea>

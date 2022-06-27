@@ -88,7 +88,7 @@
                             </div>
                         <?php endif; ?>
                         <span id="loginerrorreview"></span>
-                        <form action="/<?php echo e(Session::get('locale')); ?>/workshop-booking" method="post">
+                        <form action=" workshop-booking" method="post">
                             <?php echo e(csrf_field()); ?>
 
                             <div class="appo-input-main-box">
