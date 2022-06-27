@@ -2771,3 +2771,13 @@ div#addreview {
     }
 }
 
+.navbar-nav .dropdown-menu {
+    padding: 0px;
+    line-height: 34px;
+    border-radius: 0px;
+    border: none;
+    box-shadow: 0px 0px 5px grey;
+    text-align: center;
+   
+}
+

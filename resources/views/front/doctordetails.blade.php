@@ -175,7 +175,7 @@
                   </div>
                </div>
             </div> --}}
-                        <div class="doctorpg-tab-mainbox doctorpg-tab-mainbox">
+                         <div class="doctorpg-tab-mainbox doctorpg-tab-mainbox">
                             <section class="customer-logos slider tab">
                                 <div class="slide tablinks" id="defaultOpen" onclick="openCity(event, 'aboutdoctor')">
                                     {{ __('messages.Experience') }}

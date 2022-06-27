@@ -87,17 +87,17 @@
                             </div>
                         </div>
                         
-                        <div class="doctorpg-tab-mainbox doctorpg-tab-mainbox">
+                         <div class="doctorpg-tab-mainbox doctorpg-tab-mainbox">
                             <section class="customer-logos slider tab">
-                                <div class="slide tablinks" id="defaultOpen" onclick="openCity(event, 'aboutdoctor')">
+                                <div class="slide tablinks slick-list" id="defaultOpen" onclick="openCity(event, 'aboutdoctor')">
                                     <?php echo e(__('messages.Experience')); ?>
 
                                 </div>
-                                <div class="slide tablinks" onclick="openCity(event, 'services')">
+                                <div class="slide tablinks slick-list" onclick="openCity(event, 'services')">
                                     <?php echo e(__('messages.Service')); ?>
 
                                 </div>
-                                <div class="slide tablinks" onclick="openCity(event, 'addreview')">
+                                <div class="slide tablinks slick-list" onclick="openCity(event, 'addreview')">
                                     <?php echo e(__('messages.Add review')); ?>
 
                                 </div>

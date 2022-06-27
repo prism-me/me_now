@@ -107,7 +107,7 @@ use App\Http\Controllers\LanguageController;
                 Route::group([ 'middleware' => 'admincheckexiste'], function () {
 
                     Route::get("dashboard","HomeController@showdashboard")->name("dashboard");
-                    Route::get("logout","HomeController@logout");
+                    Route::get("logout","HomeController@logout")->name('logout');
                     Route::get("settimezone/{time}","HomeController@settimezone");
 
                     #Department

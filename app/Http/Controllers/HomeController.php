@@ -109,12 +109,14 @@ class HomeController extends Controller
     }
 
     public function logout(){
+       
         $user=User::find(Auth::id());
         $user->last_seen=date('Y-m-d h:i:s');
         $user->status="offline";
         $user->save();
     	Auth::logout();
-    	return redirect("admin");
+    	
+        return redirect("admin");
     }
 
 

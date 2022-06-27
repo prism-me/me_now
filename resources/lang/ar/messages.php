@@ -183,4 +183,7 @@ return [
 	"Book Appointment" =>"موعد الكتاب",
 	"Event Date" => "تاريخ الحدث",
 	"Workshop List" => "قائمة ورشة العمل",
+	"site name" => "عيادة واحدة",
+	"Sign in" => "تسجيل الدخول",
+	"Remember Me" => "تذكرنى",
 ];

@@ -96,8 +96,8 @@ class FrontController extends Controller
         // $package= Package::get()->take(3);
     
         $doctor= Doctor::where('lang',$segment)->get()->take(4);
-        $rooms = Room::where('lang',$segment)->get();
-        $department= Department::with('service')->where('lang',$segment)->get();
+        $rooms = Room::where('lang',$segment)->get()->take(3);
+        $department= Department::with('service')->where('lang',$segment)->get()->take(6);
         $depart= Department::where('lang',$segment)->get();
         $setting= Setting::find(1);
         $reviews= Review::with('doctors','users')->where('lang',$segment)->get()->take(4);
