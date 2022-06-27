@@ -12,4 +12,4 @@
         </div>
     </div>
 </div>
-<?php /**PATH C:\xampp\htdocs\me_now\resources\views/front/banner_static.blade.php ENDPATH**/ ?>
+<?php /**PATH D:\Projects\Menow\me_now\resources\views/front/banner_static.blade.php ENDPATH**/ ?>

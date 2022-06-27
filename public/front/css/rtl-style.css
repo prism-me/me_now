@@ -737,8 +737,8 @@ a:hover {
     margin-left: 0px;
 }
 .testimonial-profile-img {
-    height: 80px;
-    width: 80px !important;
+    /* height: 80px;
+    width: 80px !important; */
     border-radius: 10px;
 }
 
@@ -2762,7 +2762,19 @@ div#addreview {
     text-align: right !important;
 }
 
+.lang-dropdown{
+    top: 40px;
+    right:-28px !important;
+    width: 110px;
+    min-width: 110px;
+}
 
+.lang-dropdown .dropdown-item{
+    line-height: 30px;
+    font-size: 13px;
+    padding: 5px 15px;
+
+}
 
 @media (max-width: 1200px) {
     .navbar-toggler {

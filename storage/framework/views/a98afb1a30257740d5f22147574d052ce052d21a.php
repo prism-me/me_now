@@ -19,4 +19,4 @@
         </div>
     </div>
 </div>
-<?php /**PATH C:\xampp\htdocs\me_now\resources\views/front/about_section.blade.php ENDPATH**/ ?>
+<?php /**PATH D:\Projects\Menow\me_now\resources\views/front/about_section.blade.php ENDPATH**/ ?>
