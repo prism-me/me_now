@@ -23,18 +23,7 @@
                         <h2>{{$women[1]['title']}}</h2>
                         {{-- <h2>We Help To Get Solutions</h2> --}}
                         <div class="women-empowerment-" data-aos="zoom-in">
-                            <p>We utilize a custom-made strategy known as the <strong>'5 P Model’</strong> that stands for
-                                five novel
-                                approaches
-                                to empower women:</p>
-                            <ul>
-                                <li><strong>Proud</strong> to be a woman with dignity, strength, and courage.</li>
-                                <li><strong>Powerful</strong> to stand up for and with yourself and then stand up for your
-                                    families.</li>
-                                <li><strong>Preciousness</strong> that comes from the face you see in the mirror.</li>
-                                <li><strong>Peace</strong> which comes with your smile.</li>
-                                <li><strong>Potential</strong> which is endless, do what you were created to do.</li>
-                            </ul>
+                          {!! $women[1]['description'] !!}.
                             <blockquote class="blockquote">
                                 <span class="fa fa-quote-left"></span>
                                     {!! $women[2]['description'] !!}.

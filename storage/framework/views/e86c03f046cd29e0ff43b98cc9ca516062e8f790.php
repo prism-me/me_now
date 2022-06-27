@@ -84,11 +84,11 @@
                                 </div>
                             </div>
                         </div>
-                        
                         <div class="doctorpg-tab-mainbox doctorpg-tab-mainbox">
                             <section class="customer-logos slider tab">
                                 <div class="slide tablinks" id="defaultOpen" onclick="openCity(event, 'aboutdoctor')">
-                                    Experience
+                                    <?php echo e(__('messages.Experience')); ?>
+
                                 </div>
                                 <div class="slide tablinks" onclick="openCity(event, 'services')">
                                     <?php echo e(__('messages.Service')); ?>
@@ -159,17 +159,18 @@
 
                                             <textarea id="messages" name="review" required=""></textarea>
                                             <div class="appo-btn-main-box">
-                                                <button type="submit"><?php echo e(__('messages.submit')); ?></button>
+                                                <button type="submit"><?php echo e(__('messages.Submit')); ?></button>
 
                                             </div>
                                         </div>
-                                    </form>
                                 </div>
+                                </form>
                             </div>
-
-                            </p>
                         </div>
+
+                        </p>
                     </div>
+
                     <div class="col-lg-3 col-md-12">
                         <div class="d-detail-emergency-mainbox">
                             <img src="<?php echo e(asset('front/img/emergency.png')); ?>">
@@ -181,7 +182,7 @@
                             <p><?php echo e(__('messages.Email address')); ?></p>
                             <h4><a href="mailto:<?php echo e($doctor->email); ?>"><?php echo e($doctor->email); ?></a></h4>
                         </div>
-                        
+    
                     </div>
 
                 </div>
@@ -231,6 +232,7 @@
                 </div>
             </div>
         <?php endif; ?>
+    </div>
     <?php $__env->stopSection(); ?>
 
     <?php $__env->startSection('footer'); ?>

@@ -72,10 +72,8 @@
                             <?php else: ?>
                                 <ul class="nav navbar-nav ml-auto">
                         <?php endif; ?>
-                        
-                        
                         <li class="nav-item">
-                            <a class="nav-link" href="about-us"><?php echo e(__('messages.About')); ?></a>
+                            <a class="nav-link" href=<?php echo e(url('about-us')); ?>><?php echo e(__('messages.About')); ?></a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#"
@@ -198,7 +196,7 @@
                                         <select id="department" required class="dropdown" name="department_id"
                                             onchange="getserviceanddoctor(this.value)">
                                             <option value="" disabled="disabled" selected="selected">-
-                                                Select Service</option>
+                                                <?php echo e(__('messages.Select Service')); ?></option>
                                             <?php if(isset($department)): ?>
                                                 <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <option value="<?php echo e($d->id); ?>"><?php echo e($d->name); ?></option>
@@ -208,8 +206,8 @@
                                     </div>
                                     <div class="appo-select-box11">
                                         <select id="service" class="dropdown appo-select-box" name="service_id">
-                                            <option value="" disabled="disabled" selected="selected">-
-                                                Select Sub Service</option>
+                                            <option value="" disabled="disabled" selected="selected"><?php echo e(__('messages.Select Sub Service')); ?></option>
+                                               
 
                                             <?php if(isset($department)): ?>
                                                 <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -231,7 +229,7 @@
                                         placeholder="<?php echo e(__('messages.Enter Phone number')); ?>"
                                         class="appo-right-input" value="">
                                     <input type="date" required name="date" id="app_date"
-                                        min="<?= date('Y-m-d') ?>" placeholder="dd/mm/yyyy">
+                                        min="<?= date('Y-m-d') ?>" placeholder="<?php echo e(__('messages.dd/mm/yyyy')); ?>">
                                     <input type="time" required name="time" placeholder="Time"
                                         class="appo-right-input">
                                     <textarea rows="3" required name="messages" placeholder="<?php echo e(__('messages.Enter Your Messages')); ?>"></textarea>

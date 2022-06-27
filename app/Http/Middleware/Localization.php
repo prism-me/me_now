@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 
+
 class Localization
 {
     /**
@@ -25,7 +26,6 @@ class Localization
         if (in_array($locale, ['en' , 'ar'])) {
             \App::setLocale($locale);
             session()->put('locale', $locale);
-            
             return $next($request);
         }
 

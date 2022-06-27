@@ -82,86 +82,10 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- <div class="d-detail-main-box">
-               <div class="d-pricelist-main-box">
-                  <div class="global-part-heading global-heading">
-                     <h3>{{__('messages.Working time')}}</h3>
-                  </div>
-                  <div class="row">
-                     <div class="col-lg-6 col-md-6">
-                        <div class="pricelist-part-detail-mainbox">
-                           <?php $arr = [__('messages.Monday'), __('messages.Tuesday'), __('messages.Wednesday'), __('messages.Thursday'), __('messages.Friday'), __('messages.Saturday'), __('messages.Sunday')]; ?>
-                           <div class="pricelist-part-detail-box">
-                              <p>{{$arr[0]}}</p>
-                              <?php if (isset($doctor->TimeTabledata[0])) {
-                                  @$starttime = date_format(date_create($doctor->TimeTabledata[0]->from), 'H:i a');
-                                  $endtime = date_format(date_create($doctor->TimeTabledata[0]->to), 'h:i a');
-                              } ?>
-                              <span>- {{@$starttime}} {{__('messages.To')}} {{$endtime}}</span>
-                           </div>
-                           <div class="pricelist-part-detail-box">
-                              <p>{{$arr[1]}}</p>
-                              <?php if (isset($doctor->TimeTabledata[1])) {
-                                  $starttime = date_format(date_create($doctor->TimeTabledata[1]->from), 'H:i a');
-                                  $endtime = date_format(date_create($doctor->TimeTabledata[1]->to), 'h:i a');
-                              } ?>
-                              <span>- {{$starttime}} {{__('messages.To')}} {{$endtime}}</span>
-                           </div>
-                           <div class="pricelist-part-detail-box">
-                              <p>{{$arr[2]}}</p>
-                              <?php if (isset($doctor->TimeTabledata[2])) {
-                                  $starttime = date_format(date_create($doctor->TimeTabledata[2]->from), 'H:i a');
-                                  $endtime = date_format(date_create($doctor->TimeTabledata[2]->to), 'h:i a');
-                              } ?>
-                              <span>- {{$starttime}} {{__('messages.To')}} {{$endtime}}</span>
-                           </div>
-                           <div class="pricelist-part-detail-box">
-                              <p>{{$arr[3]}}</p>
-                              <?php if (isset($doctor->TimeTabledata[3])) {
-                                  $starttime = date_format(date_create($doctor->TimeTabledata[3]->from), 'H:i a');
-                                  $endtime = date_format(date_create($doctor->TimeTabledata[3]->to), 'h:i a');
-                              } ?>
-                              <span>- {{$starttime}} {{__('messages.To')}} {{$endtime}}</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-6 col-md-6">
-                        <div class="pricelist-part-detail-mainbox">
-                           <div class="pricelist-part-detail-box">
-                              <p>{{$arr[4]}}</p>
-                              <?php if (isset($doctor->TimeTabledata[4])) {
-                                  $starttime = date_format(date_create($doctor->TimeTabledata[4]->from), 'H:i a');
-                                  $endtime = date_format(date_create($doctor->TimeTabledata[4]->to), 'h:i a');
-                              } ?>
-                              <span>- {{$starttime}} to {{$endtime}}</span>
-                           </div>
-                           <div class="pricelist-part-detail-box">
-                              <p>{{$arr[5]}}</p>
-                              <?php if (isset($doctor->TimeTabledata[5])) {
-                                  $starttime = date_format(date_create($doctor->TimeTabledata[5]->from), 'H:i a');
-                                  $endtime = date_format(date_create($doctor->TimeTabledata[5]->to), 'h:i a');
-                              }
-                              ?>
-                              <span>- {{$starttime}} to {{$endtime}}</span>
-                           </div>
-                           <div class="pricelist-part-detail-box">
-                              <p>{{$arr[6]}}</p>
-                              <?php if (isset($doctor->TimeTabledata[6])) {
-                                  $starttime = date_format(date_create($doctor->TimeTabledata[6]->from), 'H:i a');
-                                  $endtime = date_format(date_create($doctor->TimeTabledata[6]->to), 'h:i a');
-                              }
-                              ?>
-                              <span>- {{$starttime}} to {{$endtime}}</span>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div> --}}
                         <div class="doctorpg-tab-mainbox doctorpg-tab-mainbox">
                             <section class="customer-logos slider tab">
                                 <div class="slide tablinks" id="defaultOpen" onclick="openCity(event, 'aboutdoctor')">
-                                    Experience
+                                    {{ __('messages.Experience') }}
                                 </div>
                                 <div class="slide tablinks" onclick="openCity(event, 'services')">
                                     {{ __('messages.Service') }}
@@ -229,17 +153,18 @@
 
                                             <textarea id="messages" name="review" required=""></textarea>
                                             <div class="appo-btn-main-box">
-                                                <button type="submit">{{ __('messages.submit') }}</button>
+                                                <button type="submit">{{ __('messages.Submit') }}</button>
 
                                             </div>
                                         </div>
-                                    </form>
                                 </div>
+                                </form>
                             </div>
-
-                            </p>
                         </div>
+
+                        </p>
                     </div>
+
                     <div class="col-lg-3 col-md-12">
                         <div class="d-detail-emergency-mainbox">
                             <img src="{{ asset('front/img/emergency.png') }}">
@@ -251,47 +176,7 @@
                             <p>{{ __('messages.Email address') }}</p>
                             <h4><a href="mailto:{{ $doctor->email }}">{{ $doctor->email }}</a></h4>
                         </div>
-                        {{-- <div class="d-detail-collapse-doctor">
-               <div class="accordion indicator-plus-before round-indicator" id="accordionH" aria-multiselectable="true">
-                  <div class="card m-b-0">
-                     @if ($doctor)
-                     <?php $i = 0; ?>
-                     <div class="card-header collapsed" role="tab" id="heading{{$i}}" href="#collapse{{$i}}" onclick="changedoctorblog('{{$i}}')" data-parent="#accordion{{$i}}" aria-expanded="false" aria-controls="collapse{{$i}}">
-                        <a class="card-title">
-                        {{ucwords(strtolower($doctor->name))}}
-                        </a>
-                     </div>
-                     @if ($i == 0)
-                     <div class="collapse in" id="collapse{{$i}}" role="tabpanel" aria-labelledby="heading{{$i}}">
-                        @else
-                        <div class="collapse" id="collapse{{$i}}" role="tabpanel" aria-labelledby="heading{{$i}}">
-                           @endif
-                           <div class="card-body">
-                              <div class="doctorl-part-box">
-                                 <?php if ($doctor->image) {
-                                     $image = $doctor->image;
-                                 } else {
-                                     $image = asset('upload/profile/profile.png');
-                                 } ?>
-                                 <div class="doctorl-dp-img doctorl-dp-img-1" style="margin-top: -1px;background-image: url('<?= $image ?>')"></div>
-                                 <div class="doctor-detail-part-11">
-                                    <div class="doctorl-part-detail">
-                                       <h4>{{$doctor->name}}</h4>
-                                       <p>{{ substr($doctor->short_description,0,50 )}}...</p>
-                                    </div>
-
-                                 </div>
-                                 <a href="https://api.whatsapp.com/send/?phone=00971565553483"  class="under-doctor-appointment-button">Book an Appointment</a>
-                              </div>
-                           </div>
-                        </div>
-                        <?php $i++; ?>
-                        <input type="hidden" id="avilabledoctor" value="{{$i}}">
-                        @endif	
-                     </div>
-                  </div>
-               </div>
-            </div> --}}
+    
                     </div>
 
                 </div>
@@ -341,6 +226,7 @@
                 </div>
             </div>
         @endif
+    </div>
     @stop
 
     @section('footer')
