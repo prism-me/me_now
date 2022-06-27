@@ -56,7 +56,7 @@ use App\Http\Controllers\LanguageController;
      Route::get("rooms/{slug}","FrontController@rooms")->name('rooms/');
      Route::get("workshop/{id}","FrontController@workshopdetail")->name('workshop.details');
      Route::get("getserviceanddoctor/{id}","FrontController@getserviceanddoctor");
-     Route::post("bookappoinment","FrontController@bookappoinment");
+     Route::post("bookappoinment","FrontController@bookappoinment")->name('bookappoinment');
      Route::get("allfacilites","FrontController@allfacilites");
      Route::get("services/{service}","FrontController@department")->name('department.service/');
      Route::get("services/{service}/{subservice}","FrontController@departmentdetail")->name('services/');

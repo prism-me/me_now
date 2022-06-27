@@ -101,7 +101,7 @@
                                     </li>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 <?php $__currentLoopData = $rooms; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $room): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <li><a class="dropdown-item" href="<?php echo e(url('rooms') . '/' . $room->slug); ?>">
+                                    <li><a class="dropdown-item" href="<?php echo e(route('rooms/',[Session::get('locale'),  $room->slug])); ?>">
                                             <?php echo e($room->title); ?> </a>
                                     </li>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -190,7 +190,7 @@
                     <div id="loginmodel">
                         <h2><?php echo e(__('messages.Appointment Now!')); ?></h2>
                         <div class="part-form-main-box">
-                            <form action="<?php echo e(url('bookappoinment')); ?>" method="post">
+                            <form action="/<?php echo e(Session::get('locale')); ?>/bookappoinment" method="post">
                                 <?php echo e(csrf_field()); ?>
 
                                 <div class="appo-select-main-box">
@@ -471,20 +471,9 @@
             e.stopPropagation();
         });
 
-        // make it as accordion for smaller screens
-        // if ($(window).width() < 992) {
-        //     $('.dropdown-menu a').click(function(e) {
-        //         e.preventDefault();
-        //         if ($(this).next('.submenu').length) {
-        //             $(this).next('.submenu').toggle();
-        //         }
-        //         $('.dropdown').on('hide.bs.dropdown', function() {
-        //             $(this).find('.submenu').hide();
-        //         })
-        //     });
-        // }
+       
     </script>
-    
+  
 
 </body>
 

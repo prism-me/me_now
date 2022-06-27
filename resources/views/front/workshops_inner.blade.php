@@ -90,7 +90,7 @@
                             </div>
                         @endif
                         <span id="loginerrorreview"></span>
-                        <form action="/{{Session::get('locale')}}/workshop-booking" method="post">
+                        <form action=" workshop-booking" method="post">
                             {{ csrf_field() }}
                             <div class="appo-input-main-box">
                                 <input type="hidden" name="price" value="{{ $workshop->price }}">

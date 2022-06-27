@@ -13,7 +13,7 @@
                 <h2><?php echo e(@$home[1]['title']); ?> </h2>
                 <p class="serviceContent"><?php echo @$home[1]['description']; ?></p>
                 <div class="services-btn-main-box">
-                    <a href="<?php echo e(url('about')); ?>" class="btn-hover color-9"><?php echo e(__('messages.About Us')); ?></a>
+                    <a href="about-us" class="btn-hover color-9"><?php echo e(__('messages.About Us')); ?></a>
                 </div>
                 <div class="left-triangle">
                 </div>
@@ -36,11 +36,12 @@
 
                             <img src="<?php echo e($s->image); ?>">
                             <div class="text-detail-box">
-                                <h4><a href="<?php echo e(url('services') . '/' . $s->slug); ?>"><?php echo e($s->name); ?></a>
+                                
+                                <h4><a href="<?php echo e(route('department.service/',[Session::get('locale'),  $s->slug])); ?>"><?php echo e($s->name); ?></a>
                                 </h4>
                                 <div class="services_overlay">
                                     <div class="services_content">
-                                        <h4><a href="<?php echo e(url('services') . '/' . $s->slug); ?>"><?php echo e($s->name); ?></a>
+                                        <h4><a href="<?php echo e(route('department.service/',[Session::get('locale'),  $s->slug])); ?>"><?php echo e($s->name); ?></a>
                                         </h4>
                                         <p><?php echo e($s->short_description); ?></p>
                                     </div>

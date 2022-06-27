@@ -9,7 +9,7 @@
         </div>
     @endif
     <span id="loginerrorreview"></span>
-    <form action="{{ url('bookappoinment') }}" method="post">
+    <form action="/{{Session::get('locale')}}/bookappoinment" method="post">
         {{ csrf_field() }}
         <div class="appo-select-main-box">
             <div class="appo-select-box">

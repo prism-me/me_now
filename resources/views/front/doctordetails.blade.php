@@ -73,28 +73,11 @@
                                         <h3>( {{ $doctor->total_ratting }} {{ __('messages.Rating') }} )</h3>
                                     </span>
                                     <p>{{ $doctor->about_us }}</p>
-                                    {{-- <div class="icons-images doctor-detail-icon-box">
-                        <span class="facebook-doctorl">
-                        <a href="{{isset($doctor->facebook_id)?$doctor->facebook_id:''}}" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        </span>
-                        <span class="twitter-doctorl">
-                        <a href="{{isset($doctor->twitter_id)?$doctor->twitter_id:''}}" target="_blank"><i class="fab fa-twitter"></i></a>
-                        </span>
-                        <span class="gp-doctorl">
-                        <a href="{{isset($doctor->google_id)?$doctor->google_id:''}}" target="_blank"><i class="fab fa-google-plus-g"></i></a>
-                        </span>
-                        <span class="instagram-doctorl">
-                        <a href="{{isset($doctor->instagram_id)?$doctor->instagram_id:''}}" target="_blank"><img src="{{asset('front/img/instagram.png')}}"></a>
-                        </span>
-                     </div> --}}
+
                                     <div class="appo-btn-main-box">
 
                                         <button data-toggle="modal"
                                             data-target="#appointmentModal">{{ __('messages.Make an appointment') }}</button>
-
-                                        {{-- <a href="#" type="button" onclick="changehiddenstatus()" data-toggle="modal" data-target="#myModal">{{__('messages.Make an appointment')}}</a>
-                      
-                        <a href="{{url('chatarea/').'/'.$doctor->user_id}}">{{__('messages.Chat with Doctor')}}</a> --}}
                                     </div>
                                 </div>
                             </div>
@@ -210,55 +193,50 @@
                             </div>
                         </div>
                         <div id="addreview" class="tabcontent">
-                            
-                                <div class="dd-tab-part-mbox">
-                                    <div class="global-part-heading global-heading dcotors-heading-effect">
-                                        {{-- <h2>{{ __('messages.Add review') }}</h2> --}}
-                                        <span id="loginerrorreview"></span>
-                                        <form action="/{{Session::get('locale')}}/addreview" method="post">
-                                            {{ csrf_field() }}
-                                        
-                                            <input type="hidden" name="doctor_id" value="{{ $doctor->slug}}">
-                                            <div class="yourrating-main-box">
-                                                <h5>{{ __('messages.Your rating') }}</h5>
-                                                <span class="star-rating">
-                                                    <input type="radio" id="5-stars" name="ratting" value="5" />
-                                                    <label for="5-stars" class="star"><i
-                                                            class="fas fa-star"></i></label>
-                                                    <input type="radio" id="4-stars" name="ratting" value="4" />
-                                                    <label for="4-stars" class="star"><i
-                                                            class="fas fa-star"></i></label>
-                                                    <input type="radio" id="3-stars" name="ratting" value="3" />
-                                                    <label for="3-stars" class="star"><i
-                                                            class="fas fa-star"></i></label>
-                                                    <input type="radio" id="2-stars" name="ratting" value="2" />
-                                                    <label for="2-stars" class="star"><i
-                                                            class="fas fa-star"></i></label>
-                                                    <input type="radio" id="1-star" name="ratting" value="1" />
-                                                    <label for="1-star" class="star"><i
-                                                            class="fas fa-star"></i></label>
-                                                </span>
+
+                            <div class="dd-tab-part-mbox">
+                                <div class="global-part-heading global-heading dcotors-heading-effect">
+                                    {{-- <h2>{{ __('messages.Add review') }}</h2> --}}
+                                    <span id="loginerrorreview"></span>
+                                    <form action="/{{ Session::get('locale') }}/addreview" method="post">
+                                        {{ csrf_field() }}
+
+                                        <input type="hidden" name="doctor_id" value="{{ $doctor->slug }}">
+                                        <div class="yourrating-main-box">
+                                            <h5>{{ __('messages.Your rating') }}</h5>
+                                            <span class="star-rating">
+                                                <input type="radio" id="5-stars" name="ratting" value="5" />
+                                                <label for="5-stars" class="star"><i class="fas fa-star"></i></label>
+                                                <input type="radio" id="4-stars" name="ratting" value="4" />
+                                                <label for="4-stars" class="star"><i class="fas fa-star"></i></label>
+                                                <input type="radio" id="3-stars" name="ratting" value="3" />
+                                                <label for="3-stars" class="star"><i class="fas fa-star"></i></label>
+                                                <input type="radio" id="2-stars" name="ratting" value="2" />
+                                                <label for="2-stars" class="star"><i class="fas fa-star"></i></label>
+                                                <input type="radio" id="1-star" name="ratting" value="1" />
+                                                <label for="1-star" class="star"><i class="fas fa-star"></i></label>
+                                            </span>
+                                        </div>
+                                        <div class="yourrating-main-box">
+                                            <h5>{{ __('messages.Name') }}</h5>
+
+                                            <input name="name" class="form-control review" required /><br>
+
+                                            <h5>{{ __('messages.E-Mail') }}</h5>
+
+                                            <input name="email" class="form-control review" required /><br>
+                                            <h5>{{ __('messages.Review') }}</h5>
+
+                                            <textarea id="messages" name="review" required=""></textarea>
+                                            <div class="appo-btn-main-box">
+                                                <button type="submit">{{ __('messages.submit') }}</button>
+
                                             </div>
-                                            <div class="yourrating-main-box">
-                                                <h5>{{ __('messages.Name') }}</h5>
-                                                
-                                                <input name="name" class="form-control review" required /><br>
-                                                
-                                                <h5>{{ __('messages.E-Mail') }}</h5>
-                                                
-                                                <input name="email" class="form-control review" required /><br>
-                                                <h5>{{ __('messages.Review') }}</h5>
-                                                
-                                                <textarea id="messages" name="review" required=""></textarea>
-                                                <div class="appo-btn-main-box">
-                                                        <button type="submit">{{ __('messages.submit') }}</button>
-                                                   
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
+                                        </div>
+                                    </form>
                                 </div>
-                        
+                            </div>
+
                             </p>
                         </div>
                     </div>
@@ -344,7 +322,7 @@
                                                         $image = asset('upload/profile/profile.png');
                                                     }
                                                     ?>
-                                                    <img src="{{ $r->img}}" class="testimonial-profile-img">
+                                                    <img src="{{ $r->img }}" class="testimonial-profile-img">
                                                 </div>
                                                 <div class="col-md-9 testtext">
                                                     <p class="testip">{{ $r->review }}</p>
@@ -364,3 +342,9 @@
             </div>
         @endif
     @stop
+
+    @section('footer')
+
+        <script type="text/javascript" src="{{ asset('js/front.js') }}"></script>
+
+    @endsection
